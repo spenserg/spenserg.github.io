@@ -21,8 +21,9 @@
     	  </div>
     	  <br/><button class="btn btn-success btn-lg" style="border-color:black; font-style:bold" onclick="get_data()">FETCH!</button>
         </div>
+        <h2>Results:</h2>
         <div class="well" style="border-color:black; background-color:#939cff">
-          <h2>Results</h2>
+          No searches done yet!
         </div>
       </div>
     </div>
@@ -32,7 +33,15 @@
 <script>
 
   function get_data() {
-    console.log("HI");
+    $.ajax({
+    	url: 'http://rollerderbytestomatic.com/',
+        type: 'GET',
+        dataType: 'json',
+        contentType: "application/json",
+        success: function(data){
+            alert(data);
+        }
+    });
   }
   
 </script>
