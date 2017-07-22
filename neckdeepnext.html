@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -12,6 +11,16 @@
   <div id="header"></div>
     <div id="content">
 <style>
+  .btn_image {
+  	width: 60%;
+  	height: 60px;
+  	background-color: black
+  }
+  
+  .btn_image:hover {
+  	background-color: white;
+  }
+  
   .cover {
     width: 300px;
     height: 300px;
@@ -52,12 +61,6 @@
   
   .endgamebutton:hover {
     background: #C4830B;
-  }
-  
-  .btn_image {
-  	width: 60%;
-  	height: 60px;
-  	background-color: black
   }
   
   .titletext {
@@ -123,11 +126,11 @@
   <div style="text-align:center">
     <span id="q_text" style="font-size:16px"></span>
   </div><br/>
-  <img src="Ben.svg" onclick="next_question(0)" /><br/><br/>
-  <img src="Fil.svg" onclick="next_question(1)" /><br/><br/>
-  <img src="Dani.svg" onclick="next_question(2)" /><br/><br/>
-  <img src="West.svg" onclick="next_question(3)" /><br/><br/>
-  <img src="Sam.svg" onclick="next_question(4)" /><br/><br/>
+  <img class="btn_image" src="Ben.svg" onclick="next_question(0)" /><br/><br/>
+  <img class="btn_image" src="Fil.svg" onclick="next_question(1)" /><br/><br/>
+  <img class="btn_image" src="Dani.svg" onclick="next_question(2)" /><br/><br/>
+  <img class="btn_image" src="West.svg" onclick="next_question(3)" /><br/><br/>
+  <img class="btn_image" src="Sam.svg" onclick="next_question(4)" /><br/><br/>
 </div>
 
 <br/><br/>
