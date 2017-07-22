@@ -78,7 +78,7 @@
 <!--
   <iframe src="https://open.spotify.com/embed?uri=spotify%3Aartist%3A2TM0qnbJH4QPhGMCdPt7fH&theme=white&view=coverart" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
 -->
-  <iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" style="width:40%" frameborder="0">
+  <iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" style="width:50%" frameborder="0">
   	
   </iframe>
 </div>
@@ -118,7 +118,7 @@
     <span id="q_text" style="font-size:16px"></span>
   </div><br/>
   <button class="btn btn-default btn-block" style="font-size:16px" onclick="next_question(0)">
-  	<img style="" src="/Ben.svg" />
+  	<img style="" src="Ben.svg" />
   </button><br/>
   <button class="btn btn-default btn-block" style="font-size:16px" onclick="next_question(1)">B. Fil</button><br/>
   <button class="btn btn-default btn-block" style="font-size:16px" onclick="next_question(2)">C. Dani</button><br/>
@@ -129,7 +129,7 @@
 <br/><br/>
 
 <div align="center">
-  <img style="width:80%" src="https://www.rocksound.tv/assets/uploads/neckdeep_peacepanic_head.jpg">
+  <img id="bottom_img" style="width:80%" src="nd_tpatp_quiz-v1.jpg">
 </div>
 
 <script>
@@ -141,10 +141,12 @@ var q_list = {
     1:['Is first when all names are arranged alphabetically?',0],
     2:['Shares a name with a koala rescued after the 2009 bush fires in Victoria, Australia',4]
   };
+  
 $(function(){
   var client_id = '9703476fa53e4b85ab401b7c301a961d'; // Your client id
   var client_secret = 'e17b9f9ef5644e5296196157ae751108'; // Your secret key
 });
+
 function next_question(ans) {
   if (ans !== undefined && ans == q_list[$("#question_id").val()][1]) {
     num_right++;
@@ -157,6 +159,7 @@ function next_question(ans) {
     $("#question_id").val(next_q);
   }
 }
+
 function end_quiz() {
   $("#question_after").hide();
   $("#title_subtext").hide();
@@ -171,7 +174,9 @@ function end_quiz() {
   $("#end_comment").html(comment);
   $("#question_end").show();
 }
+
 function start_quiz() {
+  $("#bottom_img").attr("src", "https://www.rocksound.tv/assets/uploads/neckdeep_peacepanic_head.jpg");
   $("#question_before").hide();
   $("#question_end").hide();
   $("#question_after").show();
@@ -180,6 +185,7 @@ function start_quiz() {
   num_right = 0;
   next_question();
 }
+
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
