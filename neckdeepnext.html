@@ -11,7 +11,6 @@
   <div id="header"></div>
     <div id="content">
 <style>
-
   .btn_image {
   	width: 100%;
   	height: 200px;
@@ -69,7 +68,6 @@
     right: 5px;
     cursor: pointer;
   }
-  
 </style>
 
 <script>(function(d, s, id) {
@@ -78,32 +76,28 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<div align="right">
-<!--
-  <iframe src="https://open.spotify.com/embed?uri=spotify%3Aartist%3A2TM0qnbJH4QPhGMCdPt7fH&theme=white&view=coverart" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-  <iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" style="width:50%" frameborder="0">
--->
-  	
-  </iframe>
-</div>
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <div class="row">
   <div class="col-xs-12 col-sm-6">
-  	<img style="width:100%" src="logo_2017.png" />
+    <img style="width:100%" src="logo_2017.png" />
   </div>
   <div class="col-xs-12 col-sm-6">
-  	<iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" width="100%" frameborder="0">
+  	<div id="stream_div_before">
+  	  <img style="width:100%" src="stream_landscape.svg" />
+	</div>
+    <div id="stream_div_after">
+  	  <iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" width="100%" frameborder="0">
+	</div>
   </div>
 </div>
 <img style="width:100%" src="ppq.svg" />
 <div style="text-align: center;" id="title_subtext">
-  Are You Neck Deep's Biggest Fan? Prove It.<br/>
-  Test your knowledge by answering the questions below<br/>
-  and make sure to share your results!
+Are You Neck Deep's Biggest Fan? Prove It.<br/>
+Test your knowledge by answering the questions below<br/>
+and make sure to share your results!
 </div><br/>
-
 <div id="question_before" style="text-align:center">
   <button class="btn btn-primary" onclick="start_quiz()">Click to Begin Quiz!</button>
 </div>
