@@ -17,7 +17,6 @@
   
   .btn_image {
   	width: 100%;
-  	height: 200px;
   	background-color: black
   }
   
@@ -82,15 +81,10 @@
         <div class="col-xs-12 col-sm-6">
           <img style="width:100%" src="logo_2017.png" />
         </div>
-        <div class="col-xs-12 col-sm-6"><!--
-  	      <div id="stream_div_before">
-  	        <img style="width:100%" src="stream_landscape.svg" onclick="start_stream()" />
-	      </div>
-          <div id="stream_div_after" style="display:none"> -->
+        <div class="col-xs-12 col-sm-6">
   	        <iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" width="100%" frameborder="0"></iframe>
-	      <!-- </div> -->
         </div>
-      </div>
+      </div><br/>
       <img style="width:100%" src="https://static1.squarespace.com/static/5914df471e5b6c34c2d2a661/t/5916511429687fd2caf2b4b7/1494634776147/" /><br/>
       <img style="width:100%" src="ppq.svg" />
       <div style="text-align: center;" id="title_subtext">
@@ -99,7 +93,7 @@ Test your knowledge by answering the questions below<br/>
 and make sure to share your results!
       </div><br/>
       <div id="question_before" style="text-align:center">
-        <button class="btn btn-primary" onclick="start_quiz()">Click to Begin Quiz!</button>
+        <button class="btn btn-primary" onclick="bq_click()">Click to Begin Quiz!</button>
       </div>
       <div id="question_end" style="display:none">
         <h3 class="titletext" id="score"></h3>
@@ -176,6 +170,11 @@ function end_quiz() {
   $("#question_end").show();
 }
 
+function bq_click() {
+  start_stream();
+  start_quiz();
+}
+
 function start_quiz() {
   $("#bottom_img").attr("src", "https://www.rocksound.tv/assets/uploads/neckdeep_peacepanic_head.jpg");
   $("#question_before").hide();
@@ -188,9 +187,7 @@ function start_quiz() {
 }
 
 function start_stream() {
-  $("#stream_div_before").hide();
-  $("#stream_div_after").show();
-  $("#mainPlayIcon > div.action").click();
+  $("#mainPlayControl").click();
 }
 
 function shuffleArray(array) {
