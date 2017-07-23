@@ -16,7 +16,6 @@
   <style>
   
   .btn_image {
-  	width: 100%;
   	background-color: black
   }
   
@@ -85,6 +84,7 @@
   	        <iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" width="100%" frameborder="0"></iframe>
         </div>
       </div><br/>
+      play button ready
       <img style="width:100%" src="https://static1.squarespace.com/static/5914df471e5b6c34c2d2a661/t/5916511429687fd2caf2b4b7/1494634776147/" /><br/>
       <img style="width:100%" src="ppq.svg" />
       <div style="text-align: center;" id="title_subtext">
@@ -120,14 +120,19 @@ and make sure to share your results!
         <div style="text-align:center">
           <span id="q_text" style="font-size:16px"></span>
         </div><br/>
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-md-8">
         <img class="btn_image" src="Ben.svg" onclick="next_question(0)" /><br/><br/>
         <img class="btn_image" src="Fil.svg" onclick="next_question(1)" /><br/><br/>
         <img class="btn_image" src="Dani.svg" onclick="next_question(2)" /><br/><br/>
         <img class="btn_image" src="West.svg" onclick="next_question(3)" /><br/><br/>
         <img class="btn_image" src="Sam.svg" onclick="next_question(4)" /><br/><br/>
+          </div>
+        </div>
       </div>
 
       <script>
+var play_button;
 var max = 2;
 var q_left = Array(max + 1);
 var num_right = 0;
@@ -141,6 +146,8 @@ $(function(){
   var client_id = '9703476fa53e4b85ab401b7c301a961d'; // Your client id
   var client_secret = 'e17b9f9ef5644e5296196157ae751108'; // Your secret key
 });
+
+$.ready(function() { play_button = $("#mainPlayControl"); });
 
 function next_question(ans) {
   if (ans !== undefined && ans == q_list[$("#question_id").val()][1]) {
@@ -171,7 +178,7 @@ function end_quiz() {
 }
 
 function bq_click() {
-  start_stream();
+  play_button.click();
   start_quiz();
 }
 
