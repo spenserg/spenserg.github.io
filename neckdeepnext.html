@@ -85,9 +85,9 @@
   </div>
   <div class="col-xs-12 col-sm-6">
   	<div id="stream_div_before">
-  	  <img style="width:100%" src="stream_landscape.svg" />
+  	  <img style="width:100%" src="stream_landscape.svg" onclick="start_stream()" />
 	</div>
-    <div id="stream_div_after">
+    <div id="stream_div_after" style="display:none">
   	  <iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" width="100%" frameborder="0">
 	</div>
   </div>
@@ -185,6 +185,12 @@ function start_quiz() {
   q_left = shuffleArray(Array.apply(null, {length: max + 1}).map(Function.call, Number));
   num_right = 0;
   next_question();
+}
+
+function start_stream() {
+  $("#stream_div_before").hide();
+  $("#stream_div_after").show();
+  $("#mainPlayIcon > div.action").click();
 }
 
 function shuffleArray(array) {
