@@ -90,23 +90,23 @@
         </div>
         <!-- Streaming widgets -->
         <div class="col-xs-12 col-sm-6">
-Example:
-<table align="center" border="0" cellspacing="0"cellpadding="0">
-  <tbody>
-    <tr><td>
-      <div align="center"><script src='musicplayer.js' type='text/javascript'></script></div>
-    </td></tr><tr><td>
-      <div align="center">
-        <a href="http://www.websitemusicplayer.com" target="_blank">website music player</a>
-      </div>
-    </td></tr>
-  </tbody>
-</table>
-
-Another Example:
-<script src="/wimpy/wimpy.js"></script>
-<div data-wimpyplayer data-media="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></div>
-
+          <div id="stream_apple" style="display:none">
+          	<!-- Apple Music -->
+  	        <iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" width="100%" frameborder="0"></iframe>
+  	      </div>
+  	      <div id="stream_spotify" style="display:none">
+  	        <!-- Spotify -->
+  	        
+  	      </div>
+  	      <div id="stream_amazon" style="display:none">
+  	      	<!-- Amazon Music -->
+  	        
+  	      </div>
+  	      <div id="stream_deezer" style="display:none">
+  	        <!-- Deezer -->
+  	        <div id="dz-root"></div>
+  	        <div id="player" style="width:100%;" align="center"></div>
+  	      </div>
         </div>
       </div><br/>
       <img style="width:100%" src="https://static1.squarespace.com/static/5914df471e5b6c34c2d2a661/t/5916511429687fd2caf2b4b7/1494634776147/" /><br/>
@@ -116,11 +116,50 @@ Another Example:
       </div>
 	
       <div id="question_before" style="text-align:center">
-      
-        <button class="btn btn-large" style="color:black" onclick="bq_click()">Begin Quiz</button>
-      
+      	<!-- For phone screens -->
+        <div class="row">
+      	  <div class="hidden-xs col-sm-1"></div>
+      	  <div class="col-xs-6 col-sm-5 hidden-md hidden-lg hidden-xl">
+      	  	<img class="stream_icon" src="Apple3.jpg" onclick="bq_click(3)" />
+      	  </div>
+      	  <div class="col-xs-6 col-sm-5 hidden-md hidden-lg hidden-xl">
+      	    <img class="stream_icon" src="Spotify3.jpg" onclick="bq_click(4)" />
+      	  </div>
+      	  <div class="hidden-xs col-sm-1"></div>
+      	</div>
+      	<div class="row" style="padding-top:15px">
+      	  <div class="hidden-xs col-sm-1"></div>
+      	  <div class="col-xs-6 col-sm-5 hidden-md hidden-lg hidden-xl">
+      	  	<img class="stream_icon" src="Amazon.jpg" onclick="bq_click(1)" />
+      	  </div>
+      	  <div class="col-xs-6 col-sm-5 hidden-md hidden-lg hidden-xl">
+      	    <img class="stream_icon" src="Deezer3.jpg" onclick="bq_click(2)" />
+      	  </div>
+      	  <div class="hidden-xs col-sm-1"></div>
+      	</div>
+      	
+      	<!-- For larger screens -->
+      	<div class="row">
+      	  <div class="hidden-xs hidden-sm col-md-3"></div>
+      	  <div class="hidden-xs hidden-sm col-md-3">
+      	  	<img class="stream_icon" src="Apple3.jpg" onclick="bq_click(3)" />
+      	  </div>
+      	  <div class="hidden-xs hidden-sm col-md-3">
+      	    <img class="stream_icon" src="Spotify3.jpg" onclick="bq_click(4)" />
+      	  </div>
+      	  <div class="hidden-xs hidden-sm col-md-3"></div>
+      	</div>
+      	<div class="row" style="padding-top:15px">
+      	  <div class="hidden-xs hidden-sm col-md-3"></div>
+      	  <div class="hidden-xs hidden-sm col-md-3">
+      	    <img class="stream_icon" src="Amazon.jpg" onclick="bq_click(1)" />
+      	  </div>
+      	  <div class="hidden-xs hidden-sm col-md-3">
+      	    <img class="stream_icon" src="Deezer3.jpg" onclick="bq_click(2)" />
+      	  </div>
+      	  <div class="hidden-xs hidden-sm col-md-3"></div>
+      	</div>
       </div>
-      
       
       <div id="question_end" style="display:none">
         <h3 class="titletext" id="score"></h3>
@@ -238,6 +277,19 @@ function shuffleArray(array) {
     array[j] = temp;
   }
   return array;
+}
+
+DZ.init({
+  appId  : '246102',
+  channelUrl : 'https://spenserg.github.io/channel.html',
+  player : {
+    container : 'player',
+    onload : onPlayerLoaded
+  }
+});
+function onPlayerLoaded() {
+  DZ.player.playAlbum(43937671, false);
+  //DZ.player.play;
 }
 
       </script>
