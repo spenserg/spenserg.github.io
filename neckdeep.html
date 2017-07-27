@@ -89,8 +89,9 @@
       </div><br/>
       <img style="width:100%" src="https://static1.squarespace.com/static/5914df471e5b6c34c2d2a661/t/5916511429687fd2caf2b4b7/1494634776147/" /><br/>
       <img style="width:100%" src="ppq.svg" />
-      <img style="width:100%" src="biggestfan.svg" />
-      <br/><br/>
+      <div id="biggest_fan_img">
+        <img id="biggest_fan_img" style="width:100%" src="biggestfan.svg" /><br/><br/>
+      </div>
       
     <!--  
       1 = Amazon
@@ -231,6 +232,7 @@ function bq_click() {
 	//2 = Deezer
 	//3 = Apple
 	//4 = Spotify
+  $("#biggest_fan_img").hide();
   start_stream();
   start_quiz();
 }
