@@ -102,7 +102,7 @@
         </div>
         <div class="hidden-xs hidden-sm col-md-3"></div>
         <div class="hidden-xs hidden-sm col-md-6">
-          <img style="width:100%" src="ppq.svg" />
+          <img id="mainGraphic" style="width:100%" src="ppq.svg" />
         </div>
       </div>
       <div id="biggest_fan_img">
@@ -253,6 +253,7 @@ function end_quiz() {
 //Initial service button click
 function bq_click(service) {
   $("#biggest_fan_img").hide();
+  $("#mainGraphic").attr('src','stream_landscape.svg');
   start_stream(service);
   start_quiz();
 }
