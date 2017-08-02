@@ -6,7 +6,6 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -108,10 +107,24 @@
         </div>
       </div><br/>
       <img style="width:100%" src="https://static1.squarespace.com/static/5914df471e5b6c34c2d2a661/t/5916511429687fd2caf2b4b7/1494634776147/" /><br/>
-      <img style="width:100%" src="ppq.svg" />
-      <div id="biggest_fan_img">
-        <img id="biggest_fan_img" style="width:100%" src="biggestfan.svg" /><br/><br/>
+      <div class="row">
+        <div class="col-xs-12 hidden-md hidden-lg hidden-xl">
+          <img style="width:100%" src="ppq.svg" />
+        </div>
+        <div class="hidden-xs hidden-sm col-md-6">
+          <img style="width:100%" src="ppq.svg" />
+        </div>
       </div>
+      <div id="biggest_fan_img">
+        <div class="row">
+          <div class="col-xs-12 hidden-md hidden-lg hidden-xl">
+            <img id="biggest_fan_img" style="width:100%" src="biggestfan.svg" />
+          </div>
+          <div class="hidden-xs hidden-sm col-md-6">
+            <img id="biggest_fan_img" style="width:100%" src="biggestfan.svg" />
+          </div>
+        </div>
+      </div><br/><br/>
 	
       <div id="question_before" style="text-align:center">
       	<!-- For phone screens -->
@@ -154,6 +167,7 @@
           </div>
         </div>
       </div>
+      
       <div id="question_after" style="display: none;text-align:center">
         <input type="hidden" value="0" id="question_id" />
         <h3 class="titletext">What member of Neck Deep...</h3>
@@ -236,11 +250,13 @@ function bq_click(service) {
 }
 
 function start_stream(service) {
-  // 1 = Amazon
-  // 2 = Deezer
   // 3 = Apple Music
   // 4 = Spotify
   $("#stream_" + service).show();
+  
+  //Apple
+  $("#mainPlayControl").click()
+  
 }
 
 function start_quiz() {
@@ -261,19 +277,6 @@ function shuffleArray(array) {
     array[j] = temp;
   }
   return array;
-}
-
-DZ.init({
-  appId  : '246102',
-  channelUrl : 'https://spenserg.github.io/channel.html',
-  player : {
-    container : 'player',
-    onload : onPlayerLoaded
-  }
-});
-function onPlayerLoaded() {
-  DZ.player.playAlbum(43937671); //autoplay is true by default
-  //DZ.player.play;
 }
 
       </script>
