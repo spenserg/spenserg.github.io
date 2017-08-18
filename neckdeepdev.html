@@ -42,29 +42,16 @@
   }
   
   .endgamebutton {
-    background: #FDAB10;
-    border: 1px solid black;
-    border-radius: 4px;
-    color: black;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size:13px;
-    font-weight: bold;
-    height: 28px;
-    letter-spacing: normal;
-    padding: 0 4px 0 6px;
+    cursor: pointer;
+  	padding: 0 4px 0 6px;
     padding-left: 4px;
     padding-right: 4px;
-    text-align: center;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    vertical-align: middle;
-    white-space: nowrap;
-    word-spacing: normal;
+  	white-space: nowrap;
+  	width:100%;
   }
   
-  .endgamebutton:hover {
-    background: #C4830B;
+  .end_img {
+    width:100%;
   }
   
   .stream_icon {
@@ -149,9 +136,10 @@
         <div class="col-xs-12 col-md-6">
           <div id="stream_apple" style="display:none">
           	<!-- Apple Music -->
+          	<a href="https://itunes.apple.com/us/album/the-peace-and-the-panic/id1238959632?app=music&ign-mpt=uo%3D4"><img src="apple_badge.svg" /></a>
+          	<br/><br/>
   	        <iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" width="100%" frameborder="0"></iframe>
   	        <br/><br/>
-  	        <a href="https://itunes.apple.com/us/album/the-peace-and-the-panic/id1238959632?app=music&ign-mpt=uo%3D4"><img src="apple_badge.svg" /></a>
   	      </div>
   	      <div id="stream_spotify" style="display:none">
   	        <!-- Spotify -->
@@ -161,17 +149,43 @@
       </div>
       
       <div id="question_end" style="display:none">
-        <h3 class="titletext" id="score"></h3>
-        <div style="text-align: center;" id="end_comment"></div>
-        <br/><br/>
-        <div class="row">
-          <div class="col-xs-6" style="text-align:right">
-            <div class="fb-share-button" data-href="https://www.facebook.com/neckdeepuk/" data-layout="button" data-size="large" data-mobile-iframe="true">
-              <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fneckdeepuk%2F&amp;src=sdkpreparse">Share</a>
+        <!--<h3 class="titletext" id="score"></h3>-->
+        <div style="text-align: center;" id="end_comment">
+          <div class="row">
+            <div class="col-xs-1 hidden-sm hidden-md hidden-lg hidden-xl"></div>
+            <div class="col-xs-10 hidden-sm hidden-md hidden-lg hidden-xl">
+              <img id="end_img_1" class="end_img" src="" style="display:none" />
             </div>
           </div>
-          <div class="col-xs-6">
-            <button class="endgamebutton" onclick="start_quiz()">Try Again</button>
+          <div class="row">
+            <div class="hidden-xs col-sm-2 hidden-md hidden-lg hidden-xl"></div>
+            <div class="hidden-xs col-sm-8 hidden-md hidden-lg hidden-xl">
+              <img id="end_img_2" class="end_img" src="" style="display:none" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="hidden-xs hidden-sm col-md-3"></div>
+            <div class="hidden-xs hidden-sm col-md-6">
+              <img id="end_img_3" class="end_img" src="" style="display:none" />
+            </div>
+          </div>
+        </div>
+        <br/><br/>
+        <a id="fb_link" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fneckdeepuk%2F&amp;src=sdkpreparse"></a>
+        <div class="row">
+          <div class="col-xs-12 hidden-sm hidden-md hidden-lg hidden-xl">
+            <img src="tryagain.png" class="endgamebutton" onclick="start_quiz()" /><br/><br/>
+          </div>
+          <div class="col-xs-12 hidden-sm hidden-md hidden-lg hidden-xl">
+        	<img src="fbshare.png" class="endgamebutton" onclick="fb_link()" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="hidden-xs col-sm-6">
+            <img src="tryagain.png" class="endgamebutton" onclick="start_quiz()" />
+          </div>
+          <div class="hidden-xs col-sm-6">
+        	<img src="fbshare.png" class="endgamebutton" onclick="fb_link()" />
           </div>
         </div>
       </div>
@@ -199,22 +213,18 @@
           </div>
         </div>
       </div>
-
+      
       <script>
-var max = 2;
+var max = 99; //max index in question array
 var q_left = Array(max + 1);
 var num_right = 0;
-var q_list = {
-    0:['Has a name that is also a cardinal direction?',3],
-    1:['Is first when all names are arranged alphabetically?',0],
-    2:['Shares a name with a koala rescued after the 2009 bush fires in Victoria, Australia',4]
-  };
+var q_list = get_questions();
 
 // Button shrink grow animations
 $(".btn_image").click(function() {
   $(this)
-  	.animate({ width: "90%" }, 100)
-  	.animate({ width:"100%" }, 100);
+  	.animate({ width: "90%" }, 70)
+  	.animate({ width:"100%" }, 70);
 });
 $(".btn_image_small").click(function() {
   $(this)
@@ -223,14 +233,20 @@ $(".btn_image_small").click(function() {
 });
 
 function next_question(ans) {
-  if (ans !== undefined && ans == q_list[$("#question_id").val()][1]) {
+  if (ans !== undefined && ans != -1 && ans == q_list[$("#question_id").val()][1]) {
     num_right++;
+    $('body').css('background-color','#009900');
+  } else {
+  	if (ans != -1) {
+      $('body').css('background-color','#990000');
+    }
   }
+  $('body').animate({'background-color':"black"}, 500);
   if (q_left.length == 0) {
     end_quiz();
   } else {
     next_q = q_left.pop();
-    $("#q_text").html(q_list[next_q][0]);
+    $("#q_text").html(q_list[next_q][0] + "?");
     $("#question_id").val(next_q);
   }
 }
@@ -245,8 +261,15 @@ function end_quiz() {
   } else {
     comment = "You are definitely a fan, but you could<br/>brush up on your Sam Bowden knowledge";
   }
-  $("#score").html("You scored " + percent + "%");
-  $("#end_comment").html(comment);
+  //$("#score").html("You scored " + percent + "%");
+  var img_name = "20";
+  if (percent > 19) { img_name = "2039"; }
+  if (percent > 39) { img_name = "4059"; }
+  if (percent > 59) { img_name = "6079"; }
+  if (percent > 79) { img_name = "8099"; }
+  if (percent > 99) { img_name = "100"; }
+  $(".end_img").attr('src',img_name + '.png');
+  $(".end_img").show();
   $("#question_end").show();
 }
 
@@ -262,7 +285,6 @@ function start_stream(service) {
   // 3 = Apple Music
   // 4 = Spotify
   $("#stream_" + service).show();
-  
 }
 
 function start_quiz() {
@@ -272,7 +294,7 @@ function start_quiz() {
   $("#title_subtext").show();
   q_left = shuffleArray(Array.apply(null, {length: max + 1}).map(Function.call, Number));
   num_right = 0;
-  next_question();
+  next_question(-1);
 }
 
 function shuffleArray(array) {
@@ -284,6 +306,118 @@ function shuffleArray(array) {
   }
   return array;
 }
+
+function get_questions(){
+	//0 = Ben
+	//1 = Fil
+	//2 = Dani
+	//3 = West
+	//4 = Sam
+  return {
+    0:['Has a name that is also a cardinal direction',3],
+    1:['Is first when all names are arranged alphabetically',0],
+    2:['Shares a name with a koala rescued after the 2009 bush fires in Victoria, Australia',4],
+  	3:['Loves to eat Frost Shreddies (AKA Frosted Mini Wheats)',0],
+  	4:['Is a die hard Manchester United fan',0],
+  	5:['Really appreciates the mammal group "Primates"',0],
+  	6:['Claims "The Goonies" as his all time favorite movie',0],
+  	7:['Earned money as a Paper Boy in his early years',0],
+  	8:['If asked to describe himself in one word, says "Introverted"',0],
+  	9:['HATES Twitter',0],
+  	10:['Loves FIFA',0],
+  	11:['Started playing guitar at age 12',4],
+  	12:['Really enjoys Coffee flavored ice cream',4],
+  	13:['If asked to describe himself in one word, says "Shot"',4],
+  	14:["Can't get enough Katy Perry",4],
+  	15:['Is deathly afraid of spiders',4],
+  	16:['Was previously in a band named Blood Youth',4],
+  	17:["Is allergic to fellow band member West",4],
+  	18:["Can't stand milk",4],
+  	19:['Is vegan',4],
+  	20:['Says his favorite food ever is the Hot Box (no veg) from Dream Wok',3],
+  	21:['Claims Alkaline Trio as his biggest musical influence',3],
+  	22:['If asked to describe himself in one word, says "Done"',3],
+  	23:['Says his favorite snack is a sausage sandwich',3],
+  	24:['NEVER had a weird nickname',3],
+  	25:['Was previously in a metal band named "Ruins"',3],
+  	26:['Is allergic to fun',3],
+  	27:['HATES everything, ever...',3],
+  	28:['Loves anime',3],
+  	29:['Loves wrestling',3],
+  	30:["Doesn't really ever eat vegetables",3],
+  	31:['"Bleeds" Dr. Pepper',3],
+  	32:["Can't stop listening to American Rock band Incubus",2],
+  	33:['Wishes he could see Finnish Goth Rock band HIM live',2],
+  	34:['If asked to describe himself in one word, says "Tort"',2],
+  	35:['Last read the book Scribblebop',2],
+  	36:['Was no good at math in school',2],
+  	37:['Was nicknamed "Disco" as a kid',2],
+  	38:['Was previously in a band named Bad to the Boner',2],
+  	39:['Is allergic to nuts',2],
+  	40:['Absolutely HATES avocado',2],
+  	41:['Despises mushrooms',2],
+  	42:["Doesn't get down with Grime music",2],
+  	43:['Claims his favorite album is Take Off Your Pants and Jacket',1],
+  	44:['Cannot live without his MacBook on tour',1],
+  	45:["Can't get enough of the tangy, taffy like candy, Airheads",1],
+  	46:['If asked to describe himself in one word, says "Average"',1],
+  	47:['Loves watching the on-screen depictions of legendary thespian Leonardo Dicaprio',1],
+  	48:['Claims his favorite holiday is Christmas',1],
+  	49:["Loved watching Beartooth above all others on this year's Warped Tour",1],
+  	50:["Can't stand Trap music",1],
+  	51:['Love to eat at casual dining restaurant Buffallo Wild Wings (B-Dubs)',1],
+  	52:['Is a cat person (no, not literally...)',1],
+  	53:['Always wakes up first in the morning',3],
+  	54:['Is the "Band Dad"',3],
+  	55:['Has the worst eating habits',3],
+  	56:['Takes the longest getting ready before a show',4],
+  	57:['Has the most tattoos',0],
+  	58:['Has the most peculiar fashion sense',0],
+  	59:['Spends the most time sleeping',0],
+  	60:['Spends the most time soundchecking',4],
+  	61:['Was the best student in school',0],
+  	62:['Plays music everyone else hates in the van',2],
+  	63:['Misses bus call the most often',4],
+  	64:['Is prone to zoning out',0],
+  	65:['Is the biggest loud mouth',1],
+  	66:['Spends the most time working out',4],
+  	67:['Has more pairs of shoes than any other member',2],
+  	68:['Wears the tightest of tight pants',2],
+  	69:['Is the most competitive',4],
+  	70:['Is the best skateboarder',0],
+  	71:['Set foot on the most countries',4],
+  	72:['Thought of the band name Neck Deep',0],
+  	73:['is Welsh',0],
+  	74:['Studied Digital Film Production in college',1],
+  	75:['Has a father that owns a record label',0],
+  	76:['Has a brother who helped produce The Peace and the Panic',0],
+  	77:['Designed the infamous Taco Bell T-Shirt',1],
+  	78:['Owns and operates a skate shop in the U.K.',2],
+  	79:['Owns Lazy Bones',1],
+  	80:['Played the teacher in the music video for Happy Judgement Day',0],
+  	81:['Has the longest, maybe BEST beard in all the land',3],
+  	82:['Is king of Riff Style guitar playing',3],
+  	83:['Is last when all names are arranged alphabetically',3],
+  	84:['Lives in California',1],
+  	85:['Was a pizza delivery boy right before Neck Deep got signed',1],
+  	86:['Is obsessed with Japanese culture',3],
+  	87:['Sleeps with his eyes open',1],
+  	88:['Is unanimously known as the least responsible',2],
+  	89:['Loves Rocky IV',0],
+  	90:['Reached 10th Prestige on Call of Duty 4',0],
+  	91:['Converted from Xbox to Playstation',0],
+  	92:['Dressed up as Jack Skellington for Halloween one year',0],
+  	93:['Loves to sing Taylor Swift songs in the shower',1],
+  	94:['Claims his favorite cartoon character is Cartman from South Park',0],
+  	95:['Loves to drink Canada Dry',1],
+  	96:['Favorite magician related movie is The Prestige',1],
+  	97:['Has the best haircut (excluding chin hair)',2],
+  	98:['Rocks dreads',2],
+  	99:['Has a celebrity mancrush on Danny De Vito',2]
+  };
+}
+
+function fb_link(){ window.location = document.getElementById('fb_link').href }
 
       </script>
     </div>
