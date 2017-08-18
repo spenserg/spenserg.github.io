@@ -194,7 +194,14 @@
         <input type="hidden" value="0" id="question_id" />
         <h3 class="titletext">What member of Neck Deep...</h3>
         <div style="text-align:center">
-          <span id="q_text" style="font-size:16px"></span>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 hidden-md hidden-lg hidden-xl">
+              <span class="q_text" style="font-size:32px"></span>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-12">
+              <span class="q_text" style="font-size:16px"></span>
+            </div>
+          </div>
         </div><br/>
         <div class="row" style="test-align:center">
           <div class="col-xs-12 col-sm-10 hidden-md hidden-lg hidden-xl" style="display:inline-block;float:none">
@@ -246,7 +253,7 @@ function next_question(ans) {
     end_quiz();
   } else {
     next_q = q_left.pop();
-    $("#q_text").html(q_list[next_q][0] + "?");
+    $(".q_text").html(q_list[next_q][0] + "?");
     $("#question_id").val(next_q);
   }
 }
