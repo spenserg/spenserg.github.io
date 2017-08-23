@@ -108,25 +108,17 @@
       	<!-- For phone screens -->
         <div class="row">
       	  <div class="hidden-xs col-sm-1"></div>
-      	  <div class="col-xs-6 col-sm-5 hidden-md hidden-lg hidden-xl">
-      	  	<img class="stream_icon" src="Apple3.jpg" onclick="bq_click('apple')" />
+      	  <div class="col-xs-12 col-sm-10 hidden-md hidden-lg hidden-xl">
+      	    <img class="stream_icon" src="stream_portrait.svg" onclick="bq_click('spotify')" />
       	  </div>
-      	  <div class="col-xs-6 col-sm-5 hidden-md hidden-lg hidden-xl">
-      	    <img class="stream_icon" src="Spotify3.jpg" onclick="bq_click('spotify')" />
-      	  </div>
-      	  <div class="hidden-xs col-sm-1"></div>
       	</div>
       	
       	<!-- For larger screens -->
       	<div class="row">
-      	  <div class="hidden-xs hidden-sm col-md-3"></div>
-      	  <div class="hidden-xs hidden-sm col-md-3">
-      	  	<img class="stream_icon" src="Apple3.jpg" onclick="bq_click('apple')" />
+      	  <div class="hidden-xs hidden-sm col-md-4"></div>
+      	  <div class="hidden-xs hidden-sm col-md-4">
+      	    <img class="stream_icon" src="Spotify3.jpg" onclick="bq_click()" />
       	  </div>
-      	  <div class="hidden-xs hidden-sm col-md-3">
-      	    <img class="stream_icon" src="Spotify3.jpg" onclick="bq_click('spotify')" />
-      	  </div>
-      	  <div class="hidden-xs hidden-sm col-md-3"></div>
       	</div>
       </div>
       
@@ -134,13 +126,6 @@
       <div class="row">
         <div class="hidden-xs col-md-3"></div>
         <div class="col-xs-12 col-md-6">
-          <div id="stream_apple" style="display:none">
-          	<!-- Apple Music -->
-          	<a href="https://itunes.apple.com/us/album/the-peace-and-the-panic/id1238959632?app=music&ign-mpt=uo%3D4"><img src="apple_badge.svg" /></a>
-          	<br/><br/>
-  	        <iframe src="//tools.applemusic.com/embed/v1/album/1238959632?country=us" width="100%" frameborder="0"></iframe>
-  	        <br/><br/>
-  	      </div>
   	      <div id="stream_spotify" style="display:none">
   	        <!-- Spotify -->
   	        <iframe src="https://open.spotify.com/embed?uri=spotify:album:6MiQ7JVsKlOBJFJzWQZ2Kz" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
@@ -281,17 +266,15 @@ function end_quiz() {
 }
 
 //Initial service button click
-function bq_click(service) {
+function bq_click() {
   $("#biggest_fan_img").hide();
   $("#mainGraphic").attr('src','stream_landscape.svg');
-  start_stream(service);
+  start_stream();
   start_quiz();
 }
 
-function start_stream(service) {
-  // 3 = Apple Music
-  // 4 = Spotify
-  $("#stream_" + service).show();
+function start_stream() {
+  $("#stream_spotify").show();
 }
 
 function start_quiz() {
