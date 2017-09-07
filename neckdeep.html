@@ -124,13 +124,19 @@
       
       <!-- Streaming widgets -->
       <div class="row">
-        <div class="hidden-xs col-md-3"></div>
-        <div class="col-xs-12 col-md-6">
-  	      <div id="stream_spotify" style="display:none">
-  	        <!-- Spotify -->
-  	        <iframe src="https://open.spotify.com/embed?uri=spotify:album:6MiQ7JVsKlOBJFJzWQZ2Kz" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-  	      </div>
+        <div class="col-xs-12 hidden-sm hidden-md hidden-lg hidden-xl">
+          <img class="stream_now_img" src="stream_now_top.svg" style="width:100%; display:none" /><br/><br/>
         </div>
+        <div class="col-xs-12 col-sm-6">
+          <span class="pull-right">
+  	        <div id="stream_spotify" style="display:none">
+  	          <!-- Spotify widget-->
+  	        </div>
+  	      </span>
+        </div>
+        <div class="hidden-xs col-sm-6"><span class="pull-right">
+          <img class="stream_now_img" id="stream_now_img" src="stream_now.svg" style="width:100%; display:none" />
+        </span></div>
       </div>
       
       <div id="question_end" style="display:none">
@@ -212,6 +218,20 @@ var q_left = Array(max + 1);
 var num_right = 0;
 var q_list = get_questions();
 
+//On page load
+$(function(){
+  var w = 300; var h = 380; // Initial vals for Spotify widget
+  var page_width = $('#content').width();
+  w = (page_width < 600) ? 300 : (page_width / 2);
+  //h = (w / 300) * 380;
+  $("#stream_spotify").html('<iframe src="https://open.spotify.com/embed?uri=spotify:album:6MiQ7JVsKlOBJFJzWQZ2Kz" width="' + w + '" height="' + h + '" frameborder="0" allowtransparency="true"></iframe>');
+  update_stream_now_width();
+});
+
+$(window).resize(function() {
+  update_stream_now_width();
+});
+
 // Button shrink grow animations
 $(".btn_image").click(function() {
   $(this)
@@ -275,6 +295,7 @@ function bq_click() {
 
 function start_stream() {
   $("#stream_spotify").show();
+  $(".stream_now_img").show();
 }
 
 function start_quiz() {
@@ -295,6 +316,19 @@ function shuffleArray(array) {
     array[j] = temp;
   }
   return array;
+}
+
+function update_stream_now_width() {
+  //$('#stream_now_img').width($('#content').width() - $("#stream_spotify>iframe").width() - 20);
+  $('#stream_now_img').width($('#content').width() / 2);
+  if ($('#stream_now_img').height() > $("#stream_spotify>iframe").height()) {
+    $('#stream_now_img').height($("#stream_spotify>iframe").height());
+  }
+  if ($('#stream_now_img').height() < 200) {
+    $('#stream_now_img').hide();
+  } else {
+    $('#stream_now_img').show();
+  }
 }
 
 function get_questions(){
