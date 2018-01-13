@@ -29,53 +29,53 @@
   	<br/><br/>
   	<div class="row" align="center" style="margin:5px">
   	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="hand" src="images/mocks/white/twy_posters_white_hand.jpg" />
+  	  	<img id="hand" src="images/Mocks/White/twy_posters_white_hand.jpg" />
   	  </div>
   	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="lungs" src="images/square/white/lungs.jpg" />
+  	  	<img id="lungs" src="images/Mocks/White/twy_posters_white_lungs.jpg" />
   	  </div>
   	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="mountain" src="images/square/white/mountain.jpg" />
+  	  	<img id="mountains" src="images/Mocks/White/twy_posters_white_mountains.jpg" />
   	  </div>
   	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="ivy" src="images/square/white/ivy.jpg" />
+  	  	<img id="ivy" src="images/Mocks/White/twy_posters_white_ivy.jpg" />
   	  </div>
   	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="dog" src="images/square/white/dog.jpg" />
+  	  	<img id="dog" src="images/Mocks/White/twy_posters_white_dog.jpg" />
   	  </div>
   	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="grave" src="images/square/white/grave.jpg" />
-  	  </div>
-  	</div>
-  	<div class="row" align="center" style="margin:5px">
-  	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="hydrangea" src="images/square/white/hydrangea.jpg" />
-  	  </div>
-  	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="fox" src="images/square/white/fox.jpg" />
-  	  </div>
-  	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="torigate" src="images/square/white/torigate.jpg" />
-  	  </div>
-  	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="rowhome" src="images/square/white/rowhome.jpg" />
-  	  </div>
-  	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="oilrig" src="images/square/white/oilrig.jpg" />
-  	  </div>
-  	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="orange" src="images/square/white/orange.jpg" />
+  	  	<img id="grave" src="images/Mocks/White/twy_posters_white_grave.jpg" />
   	  </div>
   	</div>
   	<div class="row" align="center" style="margin:5px">
   	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="plane" src="images/square/white/plane.jpg" />
+  	  	<img id="hydrangea" src="images/Mocks/White/twy_posters_white_hydrangea.jpg" />
   	  </div>
   	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="crane" src="images/square/white/crane.jpg" />
+  	  	<img id="fox" src="images/Mocks/White/twy_posters_white_fox.jpg" />
   	  </div>
   	  <div class="col-xs-4 col-sm-2">
-  	  	<img id="moons" src="images/square/white/moons.jpg" />
+  	  	<img id="torigate" src="images/Mocks/White/twy_posters_white_torigate.jpg" />
+  	  </div>
+  	  <div class="col-xs-4 col-sm-2">
+  	  	<img id="rowhome" src="images/Mocks/White/twy_posters_white_rowhome.jpg" />
+  	  </div>
+  	  <div class="col-xs-4 col-sm-2">
+  	  	<img id="oilrig" src="images/Mocks/White/twy_posters_white_oilrig.jpg" />
+  	  </div>
+  	  <div class="col-xs-4 col-sm-2">
+  	  	<img id="orange" src="images/Mocks/White/twy_posters_white_orange.jpg" />
+  	  </div>
+  	</div>
+  	<div class="row" align="center" style="margin:5px">
+  	  <div class="col-xs-4 col-sm-2">
+  	  	<img id="plane" src="images/Mocks/White/twy_posters_white_plane.jpg" />
+  	  </div>
+  	  <div class="col-xs-4 col-sm-2">
+  	  	<img id="crane" src="images/Mocks/White/twy_posters_white_crane.jpg" />
+  	  </div>
+  	  <div class="col-xs-4 col-sm-2">
+  	  	<img id="moons" src="images/Mocks/White/twy_posters_white_moons.jpg" />
   	  </div>
   	</div>
     
@@ -90,12 +90,12 @@
       
       function check_val(val) {
       	var answers = ['crane', 'dog', 'fox', 'grave', 'hand', 'hydrangea',
-      			'ivy', 'lungs', 'moons', 'mountain', 'oilrig',
+      			'ivy', 'lungs', 'moons', 'mountains', 'oilrig',
       			'orange', 'plane', 'rowhome', 'torigate'];
       	if (answers.includes(val)) {
       	  if (!($('#' + val).attr('src').includes('black'))) {
       	    $('#toptext').val('');
-      	    $('#' + val).attr('src','images/Square/black/' + val + '.jpg');
+      	    $('#' + val).attr('src','images/Mocks/Black/twy_posters_black_' + val + '.jpg');
       	  }
       	}
       }
