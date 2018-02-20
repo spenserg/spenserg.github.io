@@ -4,22 +4,49 @@
   	<title>Harvest Moon 64 Calculator</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   
-  <body style="margin-top:20px; background-color:lightgray" align="center">
-  	<button class="btn btn-danger btn-lg" onclick="clear_all()">RESET VALUES</button>
-  	<br/><br/>
+  <style>
+  	input{
+  		color:black;
+  	}
+  	
+  	img{
+  		height:65px;
+  		width:65px;
+  	}
+  </style>
+  
+  <body style="margin-top:20px; color:white; background-color:black" align="center">
+  	<div class="row">
+  	  <div class="col-xs-7 col-sm-4 col-md-3">
+  	  	  	<img src="/images/girls/Ann.png" id="girl_1" style="border:2px solid black" onclick="change_girl(1)" />
+  	  	  	<img src="/images/girls/Elli.png" id="girl_2" style="border:2px solid black" onclick="change_girl(2)" />
+  	  	  	<img src="/images/girls/Karen.png" id="girl_3" style="border:2px solid red" onclick="change_girl(3)" />
+  	  		<img src="/images/girls/Maria.png" id="girl_4" style="border:2px solid black" onclick="change_girl(4)" />
+  	  		<img src="/images/girls/Popuri.png" id="girl_5" style="border:2px solid black" onclick="change_girl(5)" />
+  	  	  </div>
+  	  	</div>
+  	  </div>
+  	</div>
+  	<br/>
+  	<div align="left">
+  	  <button class="btn btn-danger btn-lg" onclick="clear_all()">RESET VALUES</button>
+  	</div>
+  	<br/>
   	<div class="row" align="center">
-  	  <div class="col-xs-5 col-xs-offset-1">
+  	  <div class="col-xs-7 col-sm-4 col-md-3">
   	  	<h2>LUMBER</h2>
+  	  	
+  	  	<input type="hidden" name="amount_lum" id="amount_lum" value="450" readonly />
+<!-- Is the goal really necessary?
   	  	<div class="form-group">
   	  	  <label for="amount_lum">GOAL:</label>
   	  	  <input type="number" name="amount_lum" id="amount_lum" value="450" readonly />
   	  	</div>
+-->
   	  	<div class="form-group">
   	  	  <label for="amount_lum_cur">CUR:</label>
   	  	  <input type="number" name="amount_lum_cur" id="amount_lum_cur" value="0" readonly />
@@ -28,77 +55,195 @@
   	  	  <label for="amount_lum_left">LEFT:</label>
   	  	  <input type="text" name="amount_lum_left" id="amount_lum_left" value="75 Stumps" readonly />
   	  	</div>
-  	  </div>
-  	  <div class="col-xs-5">
+  	  	<div class="row">
+  	  	  <div class="col-xs-12">
+  	  	  	<img src="/images/HM64_Axe_Silver.png" onclick="add_lum(6)" />
+  	  	  	<img src="/images/AxeX7.png" onclick="add_lum(42)" />
+  	  	  	<img id="hc" src="/images/HeadCarpenter.png" onclick="add_kitchen()" />
+  	  	  </div>
+  	  	</div>
+  	  	
   	  	<h2>GOLD</h2>
+  	  	
+  	  	<input type="hidden" name="amount_g" id="amount_g" value="5980" readonly />
+<!-- Is the goal really necessary?
   	  	<div class="form-group">
   	  	  <label for="amount_g">GOLD:</label>
-  	  	  <input type="number" name="amount_g" id="amount_g" value="5000" readonly />
+  	  	  <input type="number" name="amount_g" id="amount_g" value="5980" readonly />
   	  	</div>
+-->
   	  	<div class="form-group">
   	  	  <label for="amount_g_cur">CUR:</label>
-  	  	  <input type="number" name="amount_g_cur" id="amount_g_cur" value="0" readonly />
+  	  	  <input type="number" name="amount_g_cur" id="amount_g_cur" value="300" readonly />
   	  	</div>
   	  	<div class="form-group">
   	  	  <label for="amount_g_left">LEFT:</label>
   	  	  <input type="number" name="amount_g_left" id="amount_g_left" value="5000" readonly />
   	  	</div>
-  	  </div>
-  	</div>
-  	<div class="row">
-  	  <div class="col-xs-6">
-  	  	<img src="/images/HM64_Axe_Silver.png" onclick="add_lum(6)" />
-  	  </div>
-  	  <div class="col-xs-6">
-  	  	<div class="row">
-  	  	  <div class="col-xs-4">
-  	  	  	<img src="/images/HM64_Edible_Herbs.png" onclick="add_g(30)" />
+  	  	
+  	  	<!-- Ann only -->
+  	  	<div id="buttons_1">
+  	  	  <div class="row" style="margin-bottom:5px">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/Edible.png" onclick="add_g(30)" />
+  	  	  	  <img src="/images/Berry.png" onclick="add_g(40)" />
+  	  	  	  <img src="/images/Medicinal.png" onclick="add_g(70)" />
+  	  	    </div>
   	  	  </div>
-  	  	  <div class="col-xs-4">
-  	  	  	<img src="/images/HM64_Veryberry_Fruit.png" onclick="add_g(40)" />
-  	  	  </div>
-  	  	  <div class="col-xs-4">
-  	  	  	<img src="/images/HM64_Medicinal_Herbs.png" onclick="add_g(70)" />
-  	  	  </div>
-  	  	</div><br/>
-  	  	<div class="row">
-  	  	  <div class="col-xs-6">
-  	  	  	<img src="/images/HM64_Tropical_Fruit.png" onclick="add_g(40)" />
-  	  	  </div>
-  	  	  <div class="col-xs-6">
-  	  	  	<img src="/images/HM64_Walnuts.png" onclick="add_g(70)" />
-  	  	  </div>
-  	  	</div><br/>
-  	  	<div class="row">
-  	  	  <div class="col-xs-6">
-  	  	  	<img src="/images/HM64_Mushrooms.png" onclick="add_g(70)" />
-  	  	  </div>
-  	  	  <div class="col-xs-6">
-  	  	  	<img src="/images/HM64_Wild_Grapes.png" onclick="add_g(40)" />
+  	  	  <div class="row">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/LargeFish.png" onclick="add_g(180)" />
+  	  	  	  <img src="/images/MediumFish.png" onclick="add_g(100)" />
+  	  	  	  <img src="/images/FF.png" onclick="add_g(430)" />
+  	  	    </div>
   	  	  </div>
   	  	</div>
-  	  </div>
-  	</div>
+  	  	
+  	  	<!-- Elli only -->
+  	  	<div id="buttons_2">
+  	  	  <div class="row" style="margin-bottom:5px">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/Edible.png" onclick="add_g(30)" />
+  	  	  	  <img src="/images/Berry.png" onclick="add_g(40)" />
+  	  	  	  <img src="/images/Medicinal.png" onclick="add_g(70)" />
+  	  	    </div>
+  	  	  </div>
+  	  	  <div class="row" style="margin-bottom:5px">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/LargeFish.png" onclick="add_g(180)" />
+  	  	  	  <img src="/images/MediumFish.png" onclick="add_g(100)" />
+  	  	  	  <img src="/images/FF.png" onclick="add_g(430)" />
+  	  	  	</div>
+  	  	 </div>
+  	  	 <div class="row">
+  	  	    <div class="col-xs-12">
+  	  	      <img src="/images/Chicken_Sell.jpg" onclick="add_g(500)" />
+  	  	  	  <img src="/images/Egg.png" onclick="add_g(50)" />
+  	  	  	  <img src="/images/Chicken_Buy.jpg" onclick="add_g(-1500)" />
+  	  	    </div>
+  	  	  </div>
+  	  	</div>
+  	  	
+  	  	<!-- Karen only -->
+  	  	<div id="buttons_3">
+  	  	  <div class="row" style="margin-bottom:5px">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/Edible.png" onclick="add_g(30)" />
+  	  	  	  <img src="/images/Berry.png" onclick="add_g(40)" />
+  	  	  	  <img src="/images/Medicinal.png" onclick="add_g(70)" />
+  	  	    </div>
+  	  	  </div>
+  	  	  <div class="row">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/LargeFish.png" onclick="add_g(180)" />
+  	  	  	  <img src="/images/MediumFish.png" onclick="add_g(100)" />
+  	  	  	  <img src="/images/FF.png" onclick="add_g(430)" />
+  	  	    </div>
+  	  	  </div>
+  	  	</div>
+  	  	
+  	  	<!-- Maria only -->
+  	  	<div id="buttons_4">
+  	  	  <div class="row" style="margin-bottom:5px">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/Edible.png" onclick="add_g(30)" />
+  	  	  	  <img src="/images/Berry.png" onclick="add_g(40)" />
+  	  	  	  <img src="/images/Medicinal.png" onclick="add_g(70)" />
+  	  	    </div>
+  	  	  </div>
+  	  	  <div class="row">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/LargeFish.png" onclick="add_g(180)" />
+  	  	  	  <img src="/images/MediumFish.png" onclick="add_g(100)" />
+  	  	  	  <img src="/images/FF.png" onclick="add_g(430)" />
+  	  	    </div>
+  	  	  </div>
+  	  	</div>
+  	  	
+  	  	<!-- Popuri only -->
+  	  	<div id="buttons_5">
+  	  	  <div class="row" style="margin-bottom:5px">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/Edible.png" onclick="add_g(30)" />
+  	  	  	  <img src="/images/Berry.png" onclick="add_g(40)" />
+  	  	  	  <img src="/images/Medicinal.png" onclick="add_g(70)" />
+  	  	    </div>
+  	  	  </div>
+  	  	  <div class="row">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/LargeFish.png" onclick="add_g(180)" />
+  	  	  	  <img src="/images/MediumFish.png" onclick="add_g(100)" />
+  	  	  	  <img src="/images/FF.png" onclick="add_g(430)" />
+  	  	    </div>
+  	  	  </div>
+  	  	</div>
+  	  	
+	</div>
+    
     <script>
+    
+      $(function(){
+        change_girl(3);
+      })
+    
+      function change_girl(val) {
+      	clear_all();
+      	$('#girl_1').css('border', '2px solid black');
+      	$('#girl_2').css('border', '2px solid black');
+      	$('#girl_3').css('border', '2px solid black');
+      	$('#girl_4').css('border', '2px solid black');
+      	$('#girl_5').css('border', '2px solid black');
+      	
+      	$('#girl_' + val).css('border', '2px solid red');
+      	
+      	$("#buttons_1").hide();
+      	$("#buttons_2").hide();
+      	$("#buttons_3").hide();
+      	$("#buttons_4").hide();
+      	$("#buttons_5").hide();
+      	
+      	$("#buttons_" + val).show();
+      }
 
       function clear_all() {
       	$('#amount_lum').val(450);
       	$('#amount_lum_cur').val(0);
       	$('#amount_lum_left').val("75 Stumps");
-      	$('#amount_g').val(5000);
-      	$('#amount_g_cur').val(0);
-      	$('#amount_g_left').val(5000);
+      	$('#amount_g').val(5980);
+      	$('#amount_g_cur').val(300);
+      	$('#amount_g_left').val(5980);
+      	$("#hc").css('background-color', 'red');
+      	$('#amount_lum').val(450);
+      	$('#amount_g').val(5980);
       }
 
       function add_lum (val) {
       	$('#amount_lum_cur').val(parseInt($('#amount_lum_cur').val()) + val);
       	var lum_left = parseInt($('#amount_lum').val()) - parseInt($('#amount_lum_cur').val());
-      	$('#amount_lum_left').val(Math.floor(lum_left / 6) + " Stumps");
+      	lum_left = Math.ceil(lum_left / 6);
+      	$('#amount_lum_left').val((lum_left < 0 ? 0 : lum_left) + " Stumps");
+      	if (parseInt($('#amount_g_cur').val()) >= 5000 && parseInt($('#amount_lum_cur').val()) >= 450) {
+      	  $("#hc").css('background-color', 'green');
+      	}
       }
 
       function add_g (val) {
       	$('#amount_g_cur').val(parseInt($('#amount_g_cur').val()) + val);
-      	$('#amount_g_left').val(parseInt($('#amount_g').val()) - parseInt($('#amount_g_cur').val()));
+      	var g_left = parseInt($('#amount_g').val()) - parseInt($('#amount_g_cur').val());
+      	$('#amount_g_left').val(g_left < 0 ? 0 : g_left);
+      	if (parseInt($('#amount_g_cur').val()) >= 5000 && parseInt($('#amount_lum_cur').val()) >= 450) {
+      	  $("#hc").css('background-color', 'green');
+      	}
+      }
+      
+      function add_kitchen() {
+      	if (parseInt($('#amount_g_cur').val()) >= 5000 && parseInt($('#amount_lum_cur').val()) >= 450) {
+      	  $("#hc").css('background-color', 'red');
+      	  $('#amount_lum').val(0);
+      	  $('#amount_g').val(980);
+      	  add_lum(-450);
+      	  add_g(-5000);
+      	}
       }
 
     </script>
