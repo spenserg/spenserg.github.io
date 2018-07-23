@@ -121,8 +121,8 @@ function get_actions_elli (d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Meet", 'cid':rick_id, 'val':4});
 			}
 			a.push({'desc':"Talk", 'cid':rick_id, 'val':3});
-			a.push({'desc':"MusBox Fix", 'cid':'f_new_mus_box', 'val':1, 'sr':true, 'sel':(aff[rick_id] >= _RICK_MUSBOX_FIX - 3)});
-			a.push({'desc':"Gift", 'cid':rick_id, 'val':3, 'sr':true,  'sel':(aff[rick_id] < _RICK_MUSBOX_FIX - 3)});
+			a.push({'desc':"MusBox Fix", 'cid':'f_new_mus_box', 'val':1, 'sr':true, 'sel':(aff[rick_id] >= _RICK_FIX_MIN - 3)});
+			a.push({'desc':"Gift", 'cid':rick_id, 'val':3, 'sr':true,  'sel':(aff[rick_id] < _RICK_FIX_MIN - 3)});
 		}
 	}
 	

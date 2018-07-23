@@ -221,7 +221,9 @@ function to_html(a = actions) {
 	return html + ((html.length > 0) ? '</div><br/>' : '') + '<button type="button" class="btn btn-primary" onclick="next_day()">Sleep</button>';
 }
 
-function calc_bets(g = vars['gold'], need = 500 - vars['medals']) {
+function calc_bets() {
+	g = ($('#b_gold').val() === undefined) ? vars['gold'] : $('#b_gold').val();
+	need = ($('#b_need').val() === undefined) ? 500 - vars['medals'] : $('#b_need').val();
 	
 	// If you already have enough medals, set bet values to zero
 	if (need <= 0) {
@@ -241,8 +243,11 @@ function calc_bets(g = vars['gold'], need = 500 - vars['medals']) {
 
 	// If you can afford it, minimum required medals to achieve goal for all
 	if (max_required * 50 <= g) {
+		
+		console.log(odds);
+		
 		$("input[id^='bg_']").each(function(i) {
-			$(this).val((Math.ceil(need / odds[i]) > 99) ? 99 : Math.ceil(need / odds[i]));	
+			$(this).val((Math.ceil(need / odds[i][0]) > 99) ? 99 : Math.ceil(need / odds[i][0]));
 		});
 		return;
 	}
