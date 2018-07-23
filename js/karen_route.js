@@ -7,8 +7,6 @@ function get_actions_karen (d = 3, g = 300, is_sunny = 1) {
 	if (d == 3) {
 		// Spring 3
 		a.push({'desc':"Greet the Mayor", 'cid':get_npc_id("mayor")});
-		
-		a = betting_table(a);
 	}
 
 	if (d == 90) {
