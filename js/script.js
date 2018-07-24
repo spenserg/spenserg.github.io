@@ -61,6 +61,9 @@ function next_day() {
 		$('.typhoon').hide();
 	}
 	
+	// Weather button to Rain or Snow, depending on season
+	$('.rainy').html((get_month(vars['day']) == 3) ? "SNOWY" : "RAINY");
+	
 	// Set forage values for next day
 	for (var i = 0; i < actions.length; i++) {
 		if (actions[i]['forage']) {
@@ -131,10 +134,23 @@ function new_game(id = null) {
 	vars['day'] = 2;
 	document.title = $('#ngid').find(":selected").text() + " - HM64 Router";
 
-	// Set affection of all characters to 0
+	// Set affection of all characters to 0, display at top
 	// Characters listed based on route
+	var aff_html = [];
+	$('.status_row').remove();
 	for (let key in route_affs[route_id]) {
-		aff[get_npc_id(route_affs[route_id][key])] = 0;
+		var npc_id = get_npc_id(route_affs[route_id][key]);
+		aff[npc_id] = 0;
+		aff_html.push('<div class="p-1 display_main">' +  route_affs[route_id][key].toUpperCase() + ': <span id="npc_' + npc_id + '">0</span></div>');
+	}
+	var tmp_html = '<div class="p-1 display_main">GOLD: <span id="disp_gold">300</span></div>';
+	if (route_affs.length <= 3) {
+		$('#status_row1').html(tmp_html + aff_html.join(""));
+	} else {
+		$('#status_row1').html(tmp_html + aff_html[0] + aff_html[1] + aff_html[2]);
+		for (var i = 3; i < aff_html.length; i++) {
+			//TODO
+		}
 	}
 
 	next_day();

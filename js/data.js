@@ -46,6 +46,10 @@ var flags = { "treasure_map" : 0, "new_mus_box" : 0, "old_mus_box" : 0,
 			"kitchen" : 0, "blue_feather" : 0, "propose" : 0,
 			"borrow_cows" : 0 };
 
+var ucfirst = function (str) {
+	return str.replace(/^\w/, c => c.toUpperCase());
+}
+
 var MD5 = function (string) {
 
 	function RotateLeft(lValue, iShiftBits) {
