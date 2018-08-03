@@ -11,11 +11,13 @@ function get_actions_karen (d = 3, g = 300, is_sunny = 1) {
 
 	if (d == 90) {
 		// Fall 30
+		a.push({'desc':"Enter / Exit House to Clear Cliff"});
 		a.push({'desc':"Accept Cows", 'cid':"f_borrow_cows", 'val':1});
 	}
 
 	if (d == 95) {
 		// Winter 5
+		a.push({'desc':"Enter / Exit House to Clear Cliff"});
 		if (flags['borrow_cows'] > 0) {
 			a.push({'desc':"1000G from Doug", 'cid':["v_gold", "f_borrow_cows"], 'val':[1000, -1]});
 		}
@@ -27,7 +29,7 @@ function get_actions_karen (d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Hot Springs", 'cid':["v_gold", "v_springs_days_worked"], 'val':[1000, 1]});
 		if (is_sunny && aff[karen_id] < 220 && ["TUES", "WED", "FRI", "SAT"].includes(get_day_of_week(vars['day'], true))) {
 			a.push({'desc':"Dog to Crossroads"});
-			a.push({'desc':"Dog to 220", 'cid':karen_id, 'val':221});
+			a.push({'desc':"Dog to 220", 'cid':karen_id, 'val':220});
 			a.push({'desc':"25% Beach, 25% Carpenter House"});
 		}
 	}
@@ -35,7 +37,7 @@ function get_actions_karen (d = 3, g = 300, is_sunny = 1) {
 	if (d == 109) {
 		// Winter 19, Dog Race
 		a = betting_table(a);
-		a.push({'desc':"Win 500 Lumber at Dog Race", 'cid':"v_lumber", 'val':500});
+		a.push({'desc':"Buy 500 Lumber", 'cid':"v_lumber", 'val':500});
 	}
 
 	if (d > 109 && d < 119) {

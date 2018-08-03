@@ -15,6 +15,21 @@
 	padding: 5px;
 }
 
+.dropdown-item {
+	cursor: pointer;
+}
+.dropdown-item:hover {
+	background-color:lightgray;
+}
+
+.dropdown-toggle {
+	font-weight: 500;
+}
+
+.navbar-toggler {
+	background-color:lightgray;
+}
+
 .weather {
 	border: 3px solid black;
 	border-radius: 5px;
@@ -34,10 +49,10 @@
 
 .dow {}
 
-.season.spring { background-color: #c7fc7e; }
-.season.summer { background-color: #ff9f99; }
-.season.fall { background-color: #ffca68; }
-.season.winter { background-color: #aafff5; }
+.spring { background-color: #c7fc7e; }
+.summer { background-color: #ff9f99; }
+.fall { background-color: #ffca68; }
+.winter { background-color: #aafff5; }
 
 .selected {
 	font-size:30px;

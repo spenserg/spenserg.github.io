@@ -15,12 +15,56 @@
 
 		<script src="js/elli_route.js" type="text/javascript"></script>
 		<script src="js/karen_route.js" type="text/javascript"></script>
+		<script src="js/popuri_route.js" type="text/javascript"></script>
 		<script src="js/data.js" type="text/javascript"></script>
 		<script src="js/script.js" type="text/javascript"></script>
 	</head>
 
 	<body>
+		
+		<nav class="navbar navbar-expand-sm navbar-light" style="background-color: lightblue; border:solid gray 1px" >
+			<span class="navbar-brand">
+				<img src="/icon.jpg" style="height:40px"/>
+			</span>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+  			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item dropdown">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          					New
+        				</a>
+        				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        					<span class="dropdown-item" onclick="new_game(2)">Karen</span>
+							<span class="dropdown-item" onclick="new_game(1)">Elli</span>
+							<span class="dropdown-item" onclick="new_game(3)">Popuri</span>
+        				</div>
+      				</li>
+
+					<li class="nav-item dropdown" id="skip_to_menu">
+        				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          					Skip to
+        				</a>
+        				<div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+        					<span class="dropdown-item" onclick="skip_to(3)">Spring 3 (WED)</span>
+        				</div>
+      				</li>
+      			</ul>
+      		</div>
+		</nav>
+		
 		<div class="container">
+
+			<div class="d-flex flex-row">
+				<div class="ml-4"  style="display:none">
+					<button type="button" class="btn btn-danger" onclick="jump_prev()" id="jump_prev">Go Back</button>
+				</div>
+				<div class="ml-4"  style="display:none">
+					<button type="button" class="btn btn-danger" onclick="jump_next()" id="jump_next">Go Forward</button>
+				</div>
+			</div>
 
 			<div class="d-flex flex-row">
 				<div class="display_main season spring">Spring</div>
@@ -33,10 +77,7 @@
 					GOLD: <span id="disp_gold">300</span>
 				</div>
 				<div class="p-1 display_main">
-					ELLI: <span id="npc_8">0</span>
-				</div>
-				<div class="p-1 display_main">
-					RICK: <span id="npc_29">0</span>
+					KAREN: <span id="npc_8">0</span>
 				</div>
 			</div>
 
@@ -56,17 +97,7 @@
 					Meet the Mayor
 				</div>
 			</div>
-			<hr/>
-			
-			<div class="d-flex flex-row">
-				<select class="form-control" id="ngid">
-					<option value="1">Elli</option>
-					<option value="2">Karen</option>
-				</select>
-				<div class="ml-4">
-					<button type="button" class="btn btn-danger" onclick="new_game()">New</button>
-				</div>
-			</div>
+
 		</div>
 	</body>
 
