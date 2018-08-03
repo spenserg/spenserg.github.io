@@ -26,11 +26,13 @@ function get_actions_karen (d = 3, g = 300, is_sunny = 1) {
 	if (d >= 102 && d <= 106) {
 		// Winter 12 - 16
 		// THURS - FRI - SAT - SUN - MON
+		if (aff[karen_id] < 220) {
+			a.push({'desc':"Dog to Crossroads"});
+		}
 		a.push({'desc':"Hot Springs", 'cid':["v_gold", "v_springs_days_worked"], 'val':[1000, 1]});
 		if (is_sunny && aff[karen_id] < 220 && ["TUES", "WED", "FRI", "SAT"].includes(get_day_of_week(vars['day'], true))) {
-			a.push({'desc':"Dog to Crossroads"});
 			a.push({'desc':"Dog to 220", 'cid':karen_id, 'val':220});
-			a.push({'desc':"25% Beach, 25% Carpenter House"});
+			a.push({'desc':"25% Beach, 25% Carpenter House (10AM - 5PM)"});
 		}
 	}
 
@@ -41,24 +43,31 @@ function get_actions_karen (d = 3, g = 300, is_sunny = 1) {
 	}
 
 	if (d > 109 && d < 119) {
+		if (flags['kitchen'] == 2) {
+			a.push({'desc':'Carpenters finished with Kitchen'});
+		}
 		if (flags['kitchen'] < 1 && get_day_of_week(vars['day'], true) != "TUES") {
 			a.push({'desc':'Buy Kitchen', 'cid':['v_lumber', 'v_gold', 'f_kitchen'], 'val':[-500, -5000, (3 + 1 + 1)]});
-		}
-		if (is_sunny && aff[karen_id] < 220) {
-			if (["TUES", "WED", "FRI", "SAT"].includes(get_day_of_week(vars['day'], true))) {
+			if (is_sunny && aff[karen_id] < 220) {
 				a.push({'desc':"Dog to 220", 'cid':karen_id, 'val':220});
-				a.push({'desc':"25% Beach, 25% Carpenter House"});
-			}
-			if (["MON", "THURS"].includes(get_day_of_week(vars['day'], true))) {
-				a.push({'desc':"Dog to 220", 'cid':karen_id, 'val':220});
-				a.push({'desc':"Karen at Vineyard 100%"});
-				a.push({'desc':"Enter / Exit Wine Cellar to clear Ankle Event"});
+				a.push({'desc':"25% Beach, 25% Carpenter House (10AM - 5PM)"});
 			}
 		}
-		if (flags['kitchen'] >= 1 && flags['kitchen'] <= 2 && is_sunny && aff[karen_id] >= 220 && vars['gold'] >= 980 &&
-			flags['propose'] == 0 && ["TUES", "THURS", "FRI"].includes(get_day_of_week(vars['day'], true))) {
+		if (is_sunny && aff[karen_id] < 220 && ["MON", "THURS"].includes(get_day_of_week(vars['day'], true))) {
+			a.push({'desc':"Dog to 220", 'cid':karen_id, 'val':220});
+			a.push({'desc':"Karen at Vineyard 100%"});
+			a.push({'desc':"Enter / Exit Wine Cellar to clear Ankle Event", 'cid':'f_ankle_karen', 'val':1});
+		}
+		if (flags['kitchen'] >= 1 && flags['kitchen'] <= 2 && is_sunny && aff[karen_id] >= 220 && vars['gold'] >= 980 && flags['propose'] == 0) {
+			if (["TUES", "FRI"].includes(get_day_of_week(vars['day'], true))) {
 				a.push({'desc':"Buy Blue Feather", 'cid':['v_gold', 'f_blue_feather'], 'val':[-980, 1]});
 				a.push({'desc':"Propose", 'cid':['f_blue_feather', 'f_propose'], 'val':[-1, 1]});
+				a.push({'desc':"25% Beach, 25% Carpenter House (10AM - 5PM)"});
+			}
+			if (["MON", "THURS"].includes(get_day_of_week(vars['day'], true)) && flags['ankle_karen'] > 0) {
+				a.push({'desc':"Buy Blue Feather", 'cid':['v_gold', 'f_blue_feather'], 'val':[-980, 1]});
+				a.push({'desc':"Propose (Karen at Vineyard 100%)", 'cid':['f_blue_feather', 'f_propose'], 'val':[-1, 1]});
+			}
 		}
 	}
 

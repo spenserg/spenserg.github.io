@@ -264,6 +264,7 @@ function reset_vars() {
 	flags = { "treasure_map" : 0, "new_mus_box" : 0, "old_mus_box" : 0,
 			"new_chick" : 0, "new_chicken" : 0,
 			"ankle_elli" : 0, "dream_elli" : 0, "sick_elli" : 0, "recipe_elli" : 0,
+			"ankle_karen" : 0,
 			"ankle_popuri" : 0, "dream_popuri" : 0, "sick_popuri" : 0, "recipe_popuri" : 0,
 			"kitchen" : 0, "blue_feather" : 0, "propose" : 0,
 			"borrow_cows" : 0 };
