@@ -107,8 +107,8 @@ function skip_to(d = null) {
 	if (route_id == 2) { // Karen marriage
 		// [90, 102, 109, 110]
 		if (d > 109) { vars['lumber'] = 500; }
-		if (d > 102) { vars['gold'] += 6000; }
-		if (d > 90) { flags['borrow_cows'] = 1; }
+		if (d > 102) { vars['gold'] += 5000; }
+		if (d > 90) { flags['borrow_cows'] = 1; vars['gold'] += 1000; }
 	}
 	next_day(true);
 }
