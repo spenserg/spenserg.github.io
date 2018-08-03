@@ -13,6 +13,7 @@ const _MUS_BOX_AFF = 6;
 var month_names = ["Spring", "Summer", "Fall", "Winter", "SPR", "SUM", "FALL", "WIN"];
 var day_names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
 				"SUN", "MON", "TUES", "WED", "THURS", "FRI", "SAT"];
+var route_names = ["All Photos", "Elli", "Karen", "Popuri"];
 var bet_colors = ["lightgray", "black", "red", "blue", "yellow", "green"];
 var route_affs = [
 	[],
@@ -53,7 +54,7 @@ var route_id = null;
 var reset = false;
 
 var ucfirst = function (str) {
-	return str.replace(/^\w/, c => c.toUpperCase());
+	return str.toLowerCase().replace(/^\w/, c => c.toUpperCase());
 }
 
 var MD5 = function (string) {

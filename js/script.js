@@ -170,7 +170,7 @@ function new_game(id = null) {
 	route_id = id;
 	reset_vars();
 	vars['day'] = 2;
-	document.title = $('#ngid').find(":selected").text() + " - HM64 Router";
+	document.title = route_names[route_id] + " - HM64 Router";
 
 	// Set affection of all characters to 0, display at top
 	// Characters listed based on route
@@ -286,7 +286,7 @@ function to_html(a = actions) {
 				
 				html += '<span style="border:3px solid ' + bet_colors[a[i]['b_id']];
 				html += ';width:30px;height:30px;margin:5px;text-align:center">' + (parseInt(a[i]['b_id']) + 1) + '</span>';
-				html += 'x&nbsp;<input class="oddsInput" type="number" id="b_' + a[i]['b_id'] + '" value="1" style="margin-right:10px" onchange="calc_bets()" />';
+				html += 'x&nbsp;<input class="oddsInput" type="number" id="b_' + a[i]['b_id'] + '" value="1" onchange="calc_bets()" />';
 				html += '<input id="bg_' + a[i]['b_id'] + '" value="';
 				html += Math.floor(vars['gold'] / (6 * 50));
 				html += '" disabled=true style="border:1px solid black"/>';
@@ -346,16 +346,22 @@ function calc_bets() {
 		buy_amt -= odds[i][3];
 		i++;
 	}
-	
+
+console.log('i = ' + i);
+console.log(buy_amt);
+console.log(odds);
+
 	// Distribute remaining G as evenly as possible
-	var div_factor = 1;
-	for (var j = i + 1; j < odds.length; j++) {
+	var div_factor = 0;
+	for (var j = i; j < odds.length; j++) {
 		div_factor += odds[i][0] / odds[j][0];
 	}
 	odds[i][3] = Math.floor(buy_amt / div_factor);
-	for (var j = i; j < odds.length; j++) {
-		odds[j][3] = Math.floor(div_factor * odds[i][0] / odds[j][0]);
+	for (var j = i + 1; j < odds.length; j++) {
+		odds[j][3] = Math.floor(((buy_amt * odds[i][0]) / div_factor) / odds[j][0]);
+		buy_amt -= odds[j][3];
 	}
+	odds[i][3] += buy_amt;
 
 	// Display values
 	for (var i = 0; i < odds.length; i++) {

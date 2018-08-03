@@ -17,8 +17,8 @@ function get_actions_karen (d = 3, g = 300, is_sunny = 1) {
 
 	if (d == 95) {
 		// Winter 5
-		a.push({'desc':"Enter / Exit House to Clear Cliff"});
 		if (flags['borrow_cows'] > 0) {
+			a.push({'desc':"Enter / Exit House to Clear Cliff"});
 			a.push({'desc':"1000G from Doug", 'cid':["v_gold", "f_borrow_cows"], 'val':[1000, -1]});
 		}
 	}
