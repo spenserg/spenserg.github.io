@@ -83,8 +83,8 @@ function next_day(jump = false) {
 		}
 	}
 	
+	// Set weather to sunny and update action HTML
 	$(".sunny").click();
-	$('#hm64-content').html(to_html(actions));
 }
 
 function go_back() {
@@ -104,6 +104,9 @@ function skip_to(d = null) {
 
 	vars['day'] = d - 1;
 	actions = [];
+	if (route_id == 1) { // Elli marriage
+		if (d > 23) { aff[get_npc_id('elli')] = 12; aff[get_npc_id('rick')] = 2; }
+	}
 	if (route_id == 2) { // Karen marriage
 		// [90, 102, 109, 110]
 		if (d > 109) { vars['lumber'] = 500; }
@@ -303,7 +306,7 @@ function to_html(a = actions) {
 				html += '<span class="mr-2">' + ((a[i]['iid'] === undefined) ? get_npc_img(a[i]['cid']) : get_npc_img(a[i]['iid'])) + '</span>';
 			}
 			html += '<button type="button" class="btn btn-' + ((a[i]["sel"] === false) ? 'danger' : 'success');
-			html += ' action-button" id="ab_' + i + '" onclick="toggle_color(this)">' + a[i]['desc'] + '</button>';
+			html += ' action-button" id="ab_' + i + '" onclick="toggle_color(this, ' + get_toggle(a[i], a) + ')">' + a[i]['desc'] + '</button>';
 			if (a[i]['sr']) {
 				html += '</div>';
 			}
@@ -313,10 +316,27 @@ function to_html(a = actions) {
 		'<button type="button" class="btn btn-primary" onclick="next_day()">Sleep</button>';
 }
 
+function get_toggle (abid = null, a = actions) {
+	var result = [];
+	for (var i = 0; i < 4; i++) {
+		var tmp_res = [];
+		if (abid["t" + i] !== undefined) {
+			for (var j = 0; j < a.length; j++) {
+				if ((Array.isArray(abid["t" + i]) && abid["t" + i].includes(a[j]['desc'])) ||
+					(!Array.isArray(abid["t" + i]) && a[j]['desc'] === abid["t" + i])) {
+						tmp_res.push(j);
+				}
+			}
+			if (!tmp_res.length) {
+				console.log("WARNING: toggle added to action button, but id doesnt exist - (T" + i + " = " + abid["t" + i] + ')');
+			}
+		}
+		result.push('[' + tmp_res.join(", ") + ']');
+	}
+	return result.join(", ");
+}
+
 function get_npc_img(img_id = null) {
-
-	console.log(img_id);
-
 	var img_html = "";
 	
 	// If array of value is given, loop through and send back first non-empty result
@@ -394,18 +414,23 @@ function calc_bets() {
 	}
 }
 
-function toggle_color(t, toggle_id = null) {
+function toggle_color(t, t0 = [], t1 = [], t2 = [], t3 = []) {
 	if ($(t).hasClass("btn-danger")) {
 		$(t).removeClass("btn-danger").addClass("btn-success");
+		for (var i = 0; i < t2.length; i++) {
+			$("#ab_" + t2[i]).addClass("btn-danger").removeClass("btn-success");
+		}
+		for (var i = 0; i < t3.length; i++) {
+			$("#ab_" + t3[i]).removeClass("btn-danger").addClass("btn-success");
+		}
 	} else {
 		$(t).addClass("btn-danger").removeClass("btn-success");
-	}
-	if (toggle_id != null) {
-		if ($.isArray(toggle_id)) {
-			for(var i = 0; i < toggle_id.length; i++) {
-				toggle_color($("#ab_" + toggle_id[i].replace("ab_", "")));
-			}
-		} else { toggle_color($("#ab_" + toggle_id[i].replace("ab_", ""))); }
+		for (var i = 0; i < t0.length; i++) {
+			$("#ab_" + t0[i]).addClass("btn-danger").removeClass("btn-success");
+		}
+		for (var i = 0; i < t1.length; i++) {
+			$("#ab_" + t1[i]).removeClass("btn-danger").addClass("btn-success");
+		}
 	}
 }
 

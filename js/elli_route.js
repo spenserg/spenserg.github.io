@@ -11,7 +11,7 @@ function get_actions_elli (d = 3, g = 300, is_sunny = 1) {
 		
 		if (d == 3) {
 			// Spring 3
-			a.push({'desc':"Greet the Mayor", 'cid':get_npc_id("mayor")});
+			a.push({'desc':"Greet the Mayor", 'iid':get_npc_id("mayor")});
 		} if (d % 120 == 23) {
 			// Flower Festival, Spring 23
 			a.push({'desc':"Flower Festival (Town Square)"})
@@ -23,10 +23,10 @@ function get_actions_elli (d = 3, g = 300, is_sunny = 1) {
 		} if (d == 31) {
 			// Fireworks Fest, Summer 1
 			a.push({'desc':"Fishing Rod, Fish a lot", 'cid':get_npc_id("fisherman")});
-			a.push({'desc':"Meet", 'cid':elli_id, 'val':4});
-			a.push({'desc':"Talk", 'cid':elli_id, 'val':1, 'sr':true});
-			a.push({'desc':"Gift - M/L Fish", 'cid':elli_id, 'val':3});
-			a.push({'desc':"Gift - Other", 'cid':elli_id, 'val':1, 'sr':true, 'sel':false});
+			a.push({'desc':"Meet ", 'cid':elli_id, 'val':4, 't0':"Talk"});
+			a.push({'desc':"Talk", 'cid':elli_id, 'val':1, 'sr':true, 't3':"Meet "});
+			a.push({'desc':"Gift - M/L Fish", 'cid':elli_id, 'val':3, 't2':"Gift - Other"});
+			a.push({'desc':"Gift - Other", 'cid':elli_id, 'val':1, 'sr':true, 'sel':false, 't2':"Gift - M/L Fish"});
 			a.push({'desc':"Fireworks at 7PM (Bakery)", 'cid':elli_id, 'val':5});
 		}
 	}
@@ -76,7 +76,7 @@ function get_actions_elli (d = 3, g = 300, is_sunny = 1) {
 
 		} else if (is_sunny && ["MON", "TUES", "THURS", "FRI"].includes(get_day_of_week(d, true)) && 
 					d != 64 && d != 80 && d != 84 && d != 88) {
-				// 64 = Cow Fest, 80 = Egg Fest, Bridge Sunday, Horse Race
+				// 64 = Cow Fest, 80 = Egg Fest, 84 = Bridge Sunday, 88 = Horse Race
 
 			// A new chick hatched from an egg
 			if (flags['new_chicken'] == 1) {
