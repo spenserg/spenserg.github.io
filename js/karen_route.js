@@ -11,14 +11,14 @@ function get_actions_karen (d = 3, g = 300, is_sunny = 1) {
 
 	if (d == 90) {
 		// Fall 30
-		a.push({'desc':"Enter / Exit House to Clear Cliff"});
-		a.push({'desc':"Accept Cows", 'cid':"f_borrow_cows", 'val':1});
+		a.push({'desc':"Enter / Exit House to Clear Cliff", 'iid':get_npc_id('cliff')});
+		a.push({'desc':"Accept Cows", 'cid':"f_borrow_cows", 'val':1, 'iid':get_npc_id('doug')});
 	}
 
 	if (d == 95) {
 		// Winter 5
 		if (flags['borrow_cows'] > 0) {
-			a.push({'desc':"Enter / Exit House to Clear Cliff"});
+			a.push({'desc':"Enter / Exit House to Clear Cliff", 'iid':get_npc_id('cliff')});
 			a.push({'desc':"1000G from Doug", 'cid':["v_gold", "f_borrow_cows"], 'val':[1000, -1]});
 		}
 	}

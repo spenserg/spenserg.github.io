@@ -12,7 +12,8 @@ const _MUS_BOX_AFF = 6;
 
 var month_names = ["Spring", "Summer", "Fall", "Winter", "SPR", "SUM", "FALL", "WIN"];
 var day_names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
-				"SUN", "MON", "TUES", "WED", "THURS", "FRI", "SAT"];
+				"SUN", "MON", "TUES", "WED", "THURS", "FRI", "SAT",
+				"日", "月", "火", "水", "木", "金", "土"];
 var route_names = ["All Photos", "Elli", "Karen", "Popuri"];
 var bet_colors = ["lightgray", "black", "red", "blue", "yellow", "green"];
 var route_affs = [
@@ -31,11 +32,13 @@ var skip_to_list = [
 var actions = [];
 var actions_all = [];
 
-var npcs = ["Ann", "Baby", "Basil", "Carpenter Top", "Carpenter Bot", "Cliff", "Doug",
-			"Ellen", "Elli", "Fisherman", "Gotz", "Gotz Wife", "Grey", "Harris", "Jeff",
-			"Kai", "Karen", "Kent", "Lillia", "Maria", "Mas Carpenter", "May", "Mayor",
-			"Mayors Wife", "Midwife", "Old Man", "Old Woman", "Pastor", "Potion Master",
-			"Rick", "Saibara", "Shipper", "Sprite", "Stu", "horse", "dog", "chicken", "cow"];
+var npcs = ["Ann", "Bartender", "Basil", "Carpenter Bot", "Carpenter Top", "Cliff", "Doug",
+			"Elli", "Ellen", "Fisherman", "Gotz", "Gotz Wife", "Grey", "Harris", "Jeff",
+			"Kai", "Karen", "Kent", "Lillia", "Maria", "Mas Carpenter", "Mayors Wife",
+			"Midwife", "Old Man", "Old Woman", "Pastor", "Popuri", "Potion Master",
+			"Rick", "Saibara", "Shipper", "Stu",
+			"horse", "dog", "chicken", "cow",
+			"baby", "may", "mayor", "sprite"];
 var not_villagers = [1, 3, 4, 9, 20, 25, 26, 34, 35, 36, 37];
 
 var crops = ["Edible", "Berry", "Clover", "Walnut", "Mango", "Grapes", "Mushroom", "Pois Mush",

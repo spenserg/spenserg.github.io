@@ -226,6 +226,7 @@ function update_day_gui(d = vars['day'], jump = false) {
 	$('.display_main.season').html(m.charAt(0).toUpperCase() + m.toLowerCase().substr(1));
 	$('.display_main.day').html(get_day(d));
 	$('.display_main.dow').html(get_day_of_week(d, true));
+	$('.display_main.day.japanese').html(get_day_of_week(d, false, true));
 	$('#disp_gold').html(vars['gold']);
 	for (let key in aff) {
 		$("#npc_" + key).html(aff[key]);
@@ -236,14 +237,15 @@ function update_day_gui(d = vars['day'], jump = false) {
 
 	var html = "";
 	//Seasonal Foragables
-	for (var i = 0; i < crop_seasons[get_month(d)].length; i++) {
-		html += '<div class="ml-3">' + crops[crop_seasons[get_month(d)][i]] + ': ';
-		html += '<input style="width:40px" type="number" value="0" id="for_' + crop_seasons[get_month(d)][i] + '" /></div>';
+	tmp_cs = crop_seasons[get_month(d)];
+	for (var i = 0; i < tmp_cs.length; i++) {
+		html += '<div class="ml-3"><img class="forageDisp" src="/img/item/' + crops[tmp_cs[i]].toLowerCase().replace(" ", "_") + '.png" />&nbsp;';
+		html += '<input style="width:40px" type="number" value="0" id="for_' + tmp_cs[i] + '" /></div>';
 	}
 	
 	//Fish
 	for (var i = 13; i < 16; i++) {
-		html += '<div class="ml-3">' + crops[i] + ': ';
+		html += '<div class="ml-3"><img class="forageDisp" src="/img/item/' + crops[i].toLowerCase().replace(" ", "_") + '.png" />&nbsp;';
 		html += '<input style="width:40px" type="number" value="0" id="for_' + i + '" /></div>';
 	}
 	$('#forage_display').html(html);
@@ -279,6 +281,9 @@ function to_html(a = actions) {
 		}
 		if (a[i]['val'] === undefined) {
 			if (!a[i]['b_table']) {
+				if (a[i]['cid'] !== undefined || a[i]['iid'] !== undefined) {
+					html += '<span class="mr-2">' + ((a[i]['iid'] === undefined) ? get_npc_img(a[i]['cid']) : get_npc_img(a[i]['iid'])) + '</span>';
+				}
 				html += '<span>' + a[i]["desc"] + '</span>';
 			} else {
 				// Bet table
@@ -295,7 +300,7 @@ function to_html(a = actions) {
 			if (a[i]['sr']) {
 				html += '<div class="ml-3">';
 			} else {
-				html += '<span class="mr-2">' + ((Number.isInteger(parseInt(a[i]['cid']))) ? npcs[a[i]['cid']] : "") + '</span>';
+				html += '<span class="mr-2">' + ((a[i]['iid'] === undefined) ? get_npc_img(a[i]['cid']) : get_npc_img(a[i]['iid'])) + '</span>';
 			}
 			html += '<button type="button" class="btn btn-' + ((a[i]["sel"] === false) ? 'danger' : 'success');
 			html += ' action-button" id="ab_' + i + '" onclick="toggle_color(this)">' + a[i]['desc'] + '</button>';
@@ -304,7 +309,31 @@ function to_html(a = actions) {
 			}
 		}
 	}
-	return html + ((html.length > 0) ? '</div><br/>' : '') + '<button type="button" class="btn btn-primary" onclick="next_day()">Sleep</button>';
+	return html + ((html.length > 0) ? '</div><br/>' : '') +
+		'<button type="button" class="btn btn-primary" onclick="next_day()">Sleep</button>';
+}
+
+function get_npc_img(img_id = null) {
+
+	console.log(img_id);
+
+	var img_html = "";
+	
+	// If array of value is given, loop through and send back first non-empty result
+	if (Array.isArray(img_id)) {
+		for (var i = 0; i < img_id.length; i++) {
+			var x = get_npc_img(img_id[i]);
+			if (x !== "") { return x; }
+		}
+		return "";
+	}
+	
+	// Only accept numbers; ignore 'v_xyz' and 'f_xyz' for flag and variable values
+	if (Number.isInteger(parseInt(img_id)) && img_id > 0 && img_id < npcs.length) {
+		img_html = '<img class="forageDisp" src="/img/' +
+			(npcs[img_id] === npcs[img_id].toLowerCase() ? 'default' : ('npc/' + npcs[img_id].toLowerCase())) + '.png">';
+	}
+	return img_html;
 }
 
 function calc_bets() {
@@ -346,10 +375,6 @@ function calc_bets() {
 		buy_amt -= odds[i][3];
 		i++;
 	}
-
-console.log('i = ' + i);
-console.log(buy_amt);
-console.log(odds);
 
 	// Distribute remaining G as evenly as possible
 	var div_factor = 0;
@@ -482,9 +507,9 @@ function get_month_name (num = null, short_name = false) {
 	return month_names[get_month(num) + (short_name ? 4 : 0)];
 }
 
-function get_day_of_week (num = null, short_name = false) {
+function get_day_of_week (num = null, short_name = false, jap_name = false) {
 	if (num === null) { return null; }
-	return day_names[num % 7 + (short_name ? 7 : 0)];
+	return day_names[num % 7 + (short_name ? 7 : (jap_name ? 14 : 0))];
 }
 
 function get_day (num = null) {

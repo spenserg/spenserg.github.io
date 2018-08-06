@@ -26,6 +26,11 @@
 	font-weight: 500;
 }
 
+.forageDisp {
+	height:40px;
+	width:40px;
+}
+
 nav {
 	background-color: lightblue;
 	border:solid gray 1px;
@@ -51,9 +56,10 @@ nav {
 .rainy { background-color: lightblue; }
 .typhoon { background-color: orange; }
 
-.day {
+.day, .japanese {
 	border-radius: 50%;
 	text-align: center;
+	background-color:lightyellow;
 }
 
 .dow {}
