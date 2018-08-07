@@ -50,12 +50,12 @@ function get_actions_elli (d = 3, g = 300, is_sunny = 1) {
 				
 				a.push(forage(1500));
 				a.push({'desc':"Talk", 'cid':elli_id, 'val':1});
-				a.push({'desc':"Gift - M/L Fish", 'cid':elli_id, 'val':3, 'sr':true});
-				a.push({'desc':"Gift - Other", 'cid':elli_id, 'val':1, 'sr':true, 'sel':false});
+				a.push({'desc':"Gift - M/L Fish", 'cid':elli_id, 'val':3, 'sr':true, 't2':"Gift - Other"});
+				a.push({'desc':"Gift - Other", 'cid':elli_id, 'val':1, 'sr':true, 'sel':false, 't2':"Gift - M/L Fish"});
 				if (aff[get_npc_id('rick')] < 4) {
-					a.push({'desc':"Meet", 'cid':rick_id, 'val':4});
+					a.push({'desc':"Meet", 'cid':rick_id, 'val':4, 't0':"Talk"});
 				}
-				a.push({'desc':"Talk", 'cid':rick_id, 'val':3, 'sr':(aff[get_npc_id('rick')] < 4)});
+				a.push({'desc':"Talk", 'cid':rick_id, 'val':3, 'sr':(aff[get_npc_id('rick')] < 4), 't3':"Meet"});
 				a.push({'desc':"Gift", 'cid':rick_id, 'val':3, 'sr':true});
 			}
 		}
@@ -68,8 +68,8 @@ function get_actions_elli (d = 3, g = 300, is_sunny = 1) {
 			// Harvest Festival (Fall 12)
 
 			a.push({'desc':"Harvest Festival (Town Square)"})
-			if (d == 23) {
-				a.push({'desc':"Talk", 'cid':get_npc_id("rick"), 'val':2});
+			if (!aff[rick_id] || aff[rick_id] < _RICK_FIX_MIN - 3) {
+				a.push({'desc':"Talk", 'cid':rick_id, 'val':2});
 			}
 			a.push({'desc':"Talk", 'cid':elli_id, 'val':2});
 			a.push({'desc':"Dance", 'cid':elli_id, 'val':10, 'sr':true});
@@ -100,27 +100,28 @@ function get_actions_elli (d = 3, g = 300, is_sunny = 1) {
 			}
 			
 			// Elli
-			a.push({'desc':("Talk" + ((get_day_of_week(d, true) == "MON") ? " (MTN)" : "")), 'cid':elli_id, 'val':1, 'sel':(!flags['new_mus_box'])});
-			a.push({'desc':"MusBox", 'cid':elli_id, 'val':6, 'sel':flags['new_mus_box'], 'sr':true});
+			a.push({'desc':("Talk" + ((get_day_of_week(d, true) == "MON") ? " (MTN)" : "")), 'cid':elli_id, 'val':1, 'sel':(!flags['new_mus_box']), 't2':"MusBox"});
+			a.push({'desc':"MusBox", 'cid':elli_id, 'val':6, 'sel':flags['new_mus_box'], 'sr':true, 't2':a[a.length - 1]['desc']});
 			a.push({
 				'desc':("Elli-egg" + ((get_day_of_week(d, true) == "MON") ? " (MTN)" : "")),
 				'cid':((flags['recipe_elli'] == 1) ? elli_id : [elli_id, "f_recipe_elli"]),
 				'val':((flags['recipe_elli'] == 1) ? 6 : [4, 1]), 'sr':true,
-				'sel':(vars['chickens'] > 0)
+				'sel':(vars['chickens'] > 0),
+				't2':("Elli-gift" + ((get_day_of_week(d, true) == "MON") ? " (MTN)" : ""))
 			});
 			a.push({
 				'desc':("Elli-gift" + ((get_day_of_week(d, true) == "MON") ? " (MTN)" : "")),
-				'cid':elli_id, 'val':1, 'sr':true, 'sel':(vars['chickens'] == 0)
+				'cid':elli_id, 'val':1, 'sr':true, 'sel':(vars['chickens'] == 0), 't2':a[a.length - 1]['desc']
 			});
 			if (aff[elli_id] >= 160 && !flags['elli_dream']) {
 				a.push({'desc':"DREAM", 'cid':[elli_id, 'f_elli_dream'], 'val':[8, 1]});
 			}
 			
 			// Rick
-			if (aff[get_npc_id('rick')] < 4) {
-				a.push({'desc':"Meet", 'cid':rick_id, 'val':4});
+			if (aff[rick_id] < 4) {
+				a.push({'desc':"Meet ", 'cid':rick_id, 'val':4, 't0':"Talk "});
 			}
-			a.push({'desc':"Talk", 'cid':rick_id, 'val':3});
+			a.push({'desc':"Talk ", 'cid':rick_id, 'val':3, 't3':"Talk "});
 			a.push({'desc':"MusBox Fix", 'cid':'f_new_mus_box', 'val':1, 'sr':true, 'sel':(aff[rick_id] >= _RICK_FIX_MIN - 3)});
 			a.push({'desc':"Gift", 'cid':rick_id, 'val':3, 'sr':true,  'sel':(aff[rick_id] < _RICK_FIX_MIN - 3)});
 		}
@@ -142,31 +143,33 @@ function get_actions_elli (d = 3, g = 300, is_sunny = 1) {
 			if (aff[elli_id] >= 120 && !flags['sick_elli']) {
 				a.push({'desc':"Sick", 'cid':[elli_id, "f_sick_elli"], 'val':[10, 1]});
 			} else if (get_day_of_week(d, true) != "MON") {
-				a.push({'desc':"Talk", 'cid':elli_id, 'val':1, 'sel':(!flags['new_mus_box'])});
-				a.push({'desc':"MusBox", 'cid':elli_id, 'val':6, 'sel':flags['new_mus_box'], 'sr':true});
+				a.push({'desc':"Talk ", 'cid':elli_id, 'val':1, 'sel':(!flags['new_mus_box']), 't2':"MusBox"});
+				a.push({'desc':"MusBox", 'cid':elli_id, 'val':6, 'sel':flags['new_mus_box'], 'sr':true, 't2':"Talk "});
 				a.push({
 					'desc':"Elli-egg", 'sr':true,
 					'cid':((flags['recipe_elli'] == 1) ? elli_id : [elli_id, "f_recipe_elli"]),
 					'val':((flags['recipe_elli'] == 1) ? 6 : [4, 1]),
-					'sel':(vars['chickens'] > 0)
+					'sel':(vars['chickens'] > 0),
+					't2':"Elli-gift"
 				});
-				a.push({'desc':"Elli-gift", 'cid':elli_id, 'val':1, 'sr':true, 'sel':(vars['chickens'] == 0)});
+				a.push({'desc':"Elli-gift", 'cid':elli_id, 'val':1, 'sr':true, 'sel':(vars['chickens'] == 0), 't2':"Elli-egg"});
 				if (aff[elli_id] >= 160 && !flags['elli_dream']) {
 					a.push({'desc':"DREAM", 'cid':[elli_id, 'f_elli_dream'], 'val':[8, 1]});
 				}
 			}
 		} else {
-			a.push({'desc':("Talk" + ((get_day_of_week(d, true) == "MON") ? " (MTN)" : "")), 'cid':elli_id, 'val':1, 'sel':(!flags['new_mus_box'])});
-			a.push({'desc':"MusBox", 'cid':elli_id, 'val':6, 'sel':flags['new_mus_box'], 'sr':true});
+			a.push({'desc':("Talk" + ((get_day_of_week(d, true) == "MON") ? " (MTN)" : "")), 'cid':elli_id, 'val':1, 'sel':(!flags['new_mus_box']), 't2':"MusBox"});
+			a.push({'desc':"MusBox", 'cid':elli_id, 'val':6, 'sel':flags['new_mus_box'], 'sr':true, 't2':a[a.length - 1]['desc']});
 			a.push({
 				'desc':("Elli-egg" + ((get_day_of_week(d, true) == "MON") ? " (MTN)" : "")),
 				'cid':((flags['recipe_elli'] == 1) ? elli_id : [elli_id, "f_recipe_elli"]),
 				'val':((flags['recipe_elli'] == 1) ? 6 : [4, 1]), 'sr':true,
-				'sel':(vars['chickens'] > 0)
+				'sel':(vars['chickens'] > 0),
+				't2':':("Elli-gift" + ((get_day_of_week(d, true) == "MON") ? " (MTN)" : ""))
 			});
 			a.push({
 				'desc':("Elli-gift" + ((get_day_of_week(d, true) == "MON") ? " (MTN)" : "")),
-				'cid':elli_id, 'val':1, 'sr':true, 'sel':(vars['chickens'] == 0)
+				'cid':elli_id, 'val':1, 'sr':true, 'sel':(vars['chickens'] == 0), 't2':a[a.length - 1]['desc']
 			});
 		}
 			
@@ -187,29 +190,51 @@ function get_actions_elli (d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Music Box", 'cid':'f_old_mus_box', 'val':1});
 		}
 		
-		a.push({'desc':"Sell Chicken", 'cid':['v_gold', 'v_chickens'], 'val':[500, -1]});
+		if (vars['chickens'] > 0) {
+			a.push({'desc':"Sell Chicken", 'cid':['v_gold', 'v_chickens'], 'val':[500, -1]});
+		}
 		
 		// Elli
-		a.push({'desc':"Talk", 'cid':elli_id, 'val':1, 'sel':(!flags['new_mus_box'])});
-		a.push({'desc':"MusBox", 'cid':elli_id, 'val':6, 'sel':flags['new_mus_box'], 'sr':true});
+		a.push({'desc':"Talk", 'cid':elli_id, 'val':1, 'sel':(!flags['new_mus_box']), 't2':"MusBox"});
+		a.push({'desc':"MusBox", 'cid':elli_id, 'val':6, 'sel':flags['new_mus_box'], 'sr':true, 't2':"Talk"});
 		a.push({
 			'desc':"Elli-egg", 'sr':true,
 			'cid':((flags['recipe_elli'] == 1) ? elli_id : [elli_id, "f_recipe_elli"]),
 			'val':((flags['recipe_elli'] == 1) ? 6 : [4, 1]),
-			'sel':(vars['chickens'] > 0)
+			'sel':(vars['chickens'] > 0),
+			't2':"Elli-gift"
 		});
-		a.push({'desc':"Elli-gift", 'cid':elli_id, 'val':1, 'sr':true, 'sel':(vars['chickens'] == 0)});
+		a.push({'desc':"Elli-gift", 'cid':elli_id, 'val':1, 'sr':true, 'sel':(vars['chickens'] == 0), 't2':"Elli-egg"});
 		if (aff[elli_id] >= 160 && !flags['elli_dream']) {
 			a.push({'desc':"DREAM", 'cid':[elli_id, 'f_elli_dream'], 'val':[8, 1]});
 		}
 	}
 	
-	//TODO
+	// TODO: WINTER STUFF?
 	
 	if (d == 109) {
 		// Dog Race
 		a = betting_table(a);
 		a.push({'desc':"Win 500 Lumber at Dog Race", 'cid':"v_lumber", 'val':500});
+	}
+	
+	if (d > 109 && d < 119) {
+		if (flags['kitchen'] == 2) {
+			a.push({'desc':'Carpenters finished with Kitchen'});
+		}
+		if (flags['kitchen'] < 1 && get_day_of_week(vars['day'], true) != "TUES") {
+			a.push({'desc':'Buy Kitchen', 'cid':['v_lumber', 'v_gold', 'f_kitchen'], 'val':[-500, -5000, (3 + 1 + 1)]});
+		}
+		if (flags['kitchen'] >= 1 && flags['kitchen'] <= 2 && is_sunny && aff[elli_id] >= 220 && vars['gold'] >= 980
+			&& flags['propose'] == 0 && ["TUES", "THURS", "FRI"].includes(get_day_of_week(vars['day'], true))) {
+				a.push({'desc':"Buy Blue Feather", 'cid':['v_gold', 'f_blue_feather'], 'val':[-980, 1]});
+				a.push({'desc':"Propose", 'cid':['f_blue_feather', 'f_propose'], 'val':[-1, 1]});
+		}
+	}
+	
+	if (d >= 119) {
+		// Winter 29, SUN
+		a.push({'desc':((flags['propose'] == 1) ? "Married!" : "Reset")});
 	}
 	
 	return a;
