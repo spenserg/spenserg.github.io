@@ -2,78 +2,266 @@ $(document).ready(function() {
 	new_game(2);
 });
 
+function reset_vars() {
+	actions = [];
+	actions_all = {};
+	reset = false;
+	sell_stuff = false;
+
+	vars = { "chickens" : 0, "gold":300, "lumber" : 0, "day" : 3, "medals" : 0,
+			"feed" : 0, "fodder" : 0, "bridge_days_worked" : 0, "springs_days_worked" : 0,
+			"potatoes" : 0, "potato_waters" : 0, "watering_can_fill" : 0, "corn_waters" : 0,
+			"new_chicken_days" : "", "new_cow_days" : "", "cows" : 0, "grass" : 0,
+			"grass_planted" : 0, "happiness" : 0, "days_married" : 0 };
+	flags = { "treasure_map" : 0, "new_mus_box" : 0, "old_mus_box" : 0,
+			"fishing_rod" : 0, "dog_inside" : 0, "dog_entered" : 0,
+			"horse" : 0, "horse_brush" : 0, "sustaining_carrot" : 0, "horse_entered" : 0,
+			"cows_outside" : 0, "cow_entered" : 0, "milker" : 0,
+			"new_chick" : 0, "chicken_funeral" : 0, "chicken_outside" : 0,
+			"recipe_basil" : 0, "recipe_sprite" : 0, "golden_hammer" : 0,
+			"ankle_maria" : 0, "dream_maria" : 0, "sick_maria" : 0, "recipe_maria" : 0, "photo_maria" : 0,
+			"ankle_elli" : 0, "dream_elli" : 0, "sick_elli" : 0, "recipe_elli" : 0, "photo_elli" : 0,
+			"ankle_karen" : 0, "photo_karen" : 0, "blue_feather" : 0, "propose" : 0,
+			"ankle_popuri" : 0, "dream_popuri" : 0, "sick_popuri" : 0, "recipe_popuri" : 0, "photo_popuri" : 0,
+			"ankle_ann" : 0, "dream_ann" : 0, "sick_ann" : 0, "recipe_ann" : 0, "photo_ann" : 0,
+			"photo_springs" : 0, "photo_swimming" : 0, "photo_cowfest" : 0, "photo_harvest" : 0,
+			"photo_horserace" : 0, "photo_dograce" : 0, "photo_married" : 0, "photo_baby" : 0,
+			"berry_kappa" : 0, "berry_flowerfest" : 0, "berry_strength" : 0, "berry_mine" : 0,
+			"berry_eggfest" : 0, "berry_pond" : 0, "berry_farm" : 0, "berry_basil" : 0,
+			"wine_from_duke" : 0, "vineyard_restored" : 0, "baby" : 0,
+			"kitchen" : 0, "bathroom" : 0, "babybed" : 0, "stairway" : 0, "logterrace" : 0, "greenhouse" : 0,
+			"borrow_cows" : 0 , "harvest_king" : 0, "good_weather" : 1, "dontsave" : 0,
+			"cutscene_beach" : 0, "cutscene_rabbit" : 0, "cutscene_watermelon" : 0, "cutscene_bug" : 0, "cutscene_cookfish" : 0,
+			"fishing_rod_stored" : 0};
+	aff = {};
+}
+
+function load_game (slot = 0) {
+	
+}
+
 function get_actions(rid = null, d = vars['day'], g = vars['gold'], is_sunny = 1) {
 	if (reset == true) {
 		return [{'desc':"RESET"}];
 	} else {
+		if ([0, 5].includes(rid)) { return get_actions_photos(d, g, is_sunny); }
 		if (rid == 1) { return get_actions_elli(d, g, is_sunny); }
 		if (rid == 2) { return get_actions_karen(d, g, is_sunny); }
 		if (rid == 3) { return get_actions_popuri(d, g, is_sunny); }
+		if (rid == 4) { return get_actions_elli_photo(d, g, is_sunny); }
+		if (rid == 7) { return get_actions_maria(d, g, is_sunny); }
 	}
 	return [];
 }
 
 function next_day(jump = false) {
-	
-	// Update variables
-	for (var i = 0; i < actions.length; i++) {
-		if ($("#ab_" + i).length != 0) {
-			//element exists
-			if ($("#ab_" + i).hasClass("btn-success")) {
-				//element green
-				if (!Array.isArray(actions[i]['cid'])) {
-					calc_actions(actions[i]);
-				} else {
-					for (var j = 0; j < actions[i]['cid'].length; j++) {
-						var new_row = {};
-						for (key in actions[i]) {
-							new_row[key] = (Array.isArray(actions[i][key])) ? actions[i][key][j] : actions[i][key];
+	if (!jump) {
+		flags['good_weather'] = 1;
+
+		// Update variables
+		var tmp_actions = [];
+		for (var i = 0; i < actions.length; i++) {
+			if ($("#ab_" + i).length != 0) {
+				//element exists
+				if ($("#ab_" + i).hasClass("btn-success")) {
+					//element green
+					if (!Array.isArray(actions[i]['cid'])) {
+						tmp_actions = tmp_actions.concat(calc_actions(actions[i]));
+					} else {
+						for (var j = 0; j < actions[i]['cid'].length; j++) {
+							var new_row = {};
+							for (key in actions[i]) {
+								new_row[key] = (Array.isArray(actions[i][key])) ? actions[i][key][j] : actions[i][key];
+							}
+							tmp_actions = tmp_actions.concat(calc_actions(new_row));
 						}
-						calc_actions(new_row);
 					}
 				}
 			}
 		}
-	}
-	
-	// Calculate G from sold items
-	$("input[id^='for']").each(function(index) {
-		vars['gold'] += (this.value * crop_prices[this.id.split("_")[1]]);
-	});
-	
-	// Affection from 4 days bridge work
-	if (vars['day'] == 87 && flags['bridge_days_worked'] == 4) {
-		for (var i = 0; i < npcs.length; i++) {
-			if (aff[i] !== undefined && !not_villagers.includes(i)) {
-				aff[i] += 3;
+		if (tmp_actions.length) {
+			actions_all[vars['day']] = [tmp_actions, flags];
+		}
+
+		// Calculate G from sold items
+		var sell_amt = 0;
+		$("input[id^='for']").each(function(index) {
+			var tmp_cr_id = parseInt(this.id.split("_")[1]);
+			sell_amt += (this.value * parseInt(crop_prices[tmp_cr_id]));
+			if (crops[tmp_cr_id].includes('milk')) { // Number of Milks Shipped
+				var cow_id = get_npc_id('cow');
+				if (!aff[cow_id]) { aff[cow_id] = 0; }
+				aff[get_npc_id('cow')] += parseInt(this.value);
+			}
+			if (crops[tmp_cr_id].localeCompare("potato") == 0) {
+				// Decrease potatoes variable if potatoes are sold
+				vars['potatoes'] = (((vars['potatoes'] - this.value) < 0) ? 0 : (vars['potatoes'] - this.value));
+			}
+		});
+
+		vars['gold'] += parseInt(sell_amt);
+		sell_stuff = (sell_amt > 0);
+
+		// Affection from 4 days bridge work or hot springs work
+		if ((vars['day'] == 87 && flags['bridge_days_worked'] == 4) ||
+			(vars['day'] == 106 && flags['springs_days_worked'] == 4)) {
+			for (var i = 0; i < npcs.length; i++) {
+				if (aff[i] !== undefined && !not_villagers.includes(i)) {
+					aff[i] = ((aff[i] >= 253) ? 255 : (aff[i] + 3));
+				}
+			}
+		}
+
+		// Chicken Funeral
+		if (flags['chicken_funeral'] == 1) {
+			vars['chickens'] = 0;
+			var farm_npcs = [get_npc_id('grey'), get_npc_id('doug'), get_npc_id('ann')];
+			for (var tmp_v in aff) {
+				aff[tmp_v] -= (farm_npcs.includes(tmp_v) ? (_FUNERAL_AFF_LOSS * 30) : _FUNERAL_AFF_LOSS);
+				aff[tmp_v] = (aff[tmp_v] < 0) ? 0 : aff[tmp_v];
+			}
+		}
+
+		// decrement flag counters
+		for (var key in flags) {
+			if (flags[key] > 1) {
+				// When certain extensions are done, animals warp inside
+				// Sometimes the dog warps outside
+				if (flags['kitchen'] == 2 || flags['bathroom'] == 2) {
+					flags['cows_outside'] = 0;
+					flags['chicken_outside'] = 0;
+				}
+				if (flags['stairway'] == 2) { flags['dog_inside'] = 0; }
+				flags[key]--;
+			}
+		}
+
+		// Married Affection
+		if (flags['photo_married'] == 1) {
+			aff[get_npc_id('karen')]--;
+			vars['days_married']++;
+			if (vars['days_married'] >= 30 && flags['baby'] == 0 && flags['babybed'] == 1 && aff[get_npc_id('karen')] >= 250) {
+				flags['baby'] = (_BABY_BORN_DAYS + 2);
+			}
+		}
+
+		// Horse Affection
+		if (flags['horse'] > 0) {
+			var horse_id = get_npc_id('horse');
+			if (aff[horse_id] === undefined) { aff[horse_id] == 1; }
+			aff[horse_id]--;
+			aff[horse_id] = ((aff[horse_id] < 0) ? 0 : aff[horse_id]);
+		}
+
+		// Dog Affection
+		var dog_id = get_npc_id('dog');
+		if (aff[dog_id] === undefined) { aff[dog_id] = 0; }
+		aff[dog_id]--;
+		aff[dog_id] = (aff[dog_id] < 0) ? 0 : aff[dog_id];
+
+		// Increment waters if raining
+		flags['yesterday_rain'] = 0;
+		if ($('.rainy').hasClass('selected')) {
+			flags['yesterday_rain'] = 1;
+			if ([0, 5].includes(route_id)) {
+				if (get_month(vars['day']) == 0 && flags['potato_planted'] == 1) {
+					vars['potato_waters']++;
+				}
+				if (get_month(vars['day']) == 1 && flags['corn_planted'] == 1) {
+					vars['corn_waters']++;
+				}
+			}
+		}
+		if (vars['potato_waters'] == _POTATO_GROW_DAYS) {
+			vars['potato_waters']++; // So it doesn't stay on 6 and add 9 potatoes every day
+			vars['potatoes'] += 9;
+		}
+		if ($('.typhoon').hasClass('selected')) {
+			flags['yesterday_rain'] = 1;
+
+			// Typhoon Chicken Death
+			if (vars['chickens'] > 0 && flags['chicken_outside'] == 1) {
+				flags['chicken_funeral'] = 1;
+			}
+		}
+
+		// Fix offset flags and vars
+		vars['watering_can_fill'] = ((vars['watering_can_fill'] > 30) ? 30 : ((vars['watering_can_fill'] < 0) ? vars['watering_can_fill'] : 0));
+		if (flags['old_mus_box'] < 0) { flags['old_mus_box'] = 0; }
+
+		vars['day']++;
+
+		// Increment chickens if one is born today
+		// Remove day from list if before today
+		if (vars['new_chicken_days'].length > 0) {
+			if (parseInt(vars['new_chicken_days'].substring(0, 3)) < vars['day']) {
+				vars['new_chicken_days'] = vars['new_chicken_days'].substring(3);
+			}
+			if (parseInt(vars['new_chicken_days'].substring(0, 3)) == vars['day']) {
+				vars['chickens']++;
+			}
+		}
+
+		// Increment cows if one is born today
+		// Remove day from list if before today
+		if (vars['new_cow_days'].length > 0) {
+			if (parseInt(vars['new_cow_days'].substring(0, 3)) < vars['day']) {
+				vars['new_cow_days'] = vars['new_cow_days'].substring(3);
+			}
+			if (parseInt(vars['new_cow_days'].substring(0, 3)) == vars['day']) {
+				vars['cows']++;
 			}
 		}
 	}
-	
-	// decrement flag counters
-	for (var key in flags) {
-		if (flags[key] > 1) { flags[key]--; }
+
+	if (flags['dontsave'] == 0) {
+		// 0 = vars; 1 = flags; 2 = aff
+		
+		if (vars['corn_waters'] > 0 && get_month(vars['day']) != 1) {
+			vars['corn_waters'] = 0;
+		}
+		
+		for (var attr in vars) {
+			save_slots[cur_slot][0][attr] = ((['new_chicken_days', 'new_cow_days'].includes(attr)) ? "" : 0);
+            save_slots[cur_slot][0][attr] += vars[attr];
+		}
+		for (var attr in flags) {
+			save_slots[cur_slot][1][attr] = 0;
+           	save_slots[cur_slot][1][attr] += flags[attr];
+		}
+		for (var attr in aff) {
+			save_slots[cur_slot][2][attr] = 0;
+           	save_slots[cur_slot][2][attr] += aff[attr];
+		}
 	}
-	
-	// Increment flower waters if raining
-	// POPURI RUN ONLY
-	if ($('.rainy').hasClass('selected') && route_id == 3 && flags['moondrops_planted']) {
-		vars['moondrop_waters']++;
+	flags['dontsave'] = 0;
+
+	// Clear Horse and Dog entries after race days
+	if ([18, 89, 110].includes(get_day(vars['day']))) {
+		flags['horse_entered'] = 0;
+		flags['dog_entered'] = 0;
+		flags['cow_entered'] = 0;
+	}
+
+	// Include chicks on "chickens_outside" at beginning of Fall
+	// to end chicken cycling and leave one last egg
+	if (vars['day'] == 61 && vars['new_chicken_days'].length > 0) {
+		flags['chicken_outside'] = 0;
 	}
 
 	// Begin next day
-	update_day_gui(++vars['day'], jump);
-	actions = get_actions(route_id, vars['day'], vars['gold'], 1);
-	
+	update_day_gui(vars['day'], jump);
+	actions = get_actions(route_id, vars['day'], vars['gold'], flags['good_weather']);
+
 	// Show or hide typhoon button
 	$('.typhoon').show();
-	if (get_month(vars['day']) != 1 || is_festival(vars['day'], false)) {
+	if (get_month(vars['day']) != 1 || is_festival(vars['day'])) {
 		$('.typhoon').hide();
 	}
-	
+
 	// Weather button to Rain or Snow, depending on season
 	$('.rainy').html((get_month(vars['day']) == 3) ? "SNOWY" : "RAINY");
-	
+
 	// Set forage values for next day
 	for (var i = 0; i < actions.length; i++) {
 		if (actions[i]['forage']) {
@@ -82,41 +270,84 @@ function next_day(jump = false) {
 			}
 		}
 	}
-	
-	// Set weather to sunny and update action HTML
-	$(".sunny").click();
+
+	// Set weather and update action HTML
+	if (flags['good_weather'] == -1) {
+		$(".typhoon").click();
+	} else if (flags['good_weather'] == 0) {
+		$(".rainy").click();
+	} else {
+		$(".sunny").click();
+	}
 }
 
-function go_back() {
-	// TODO
+function reset_to (d = 3) {
+	var tmp_actall = {};
+	var tmp_flags = {};
+	if (d == 3) {
+		new_game(route_id);
+	} else {
+		for (let key in actions_all) {
+			if (parseInt(key) >= d) {
+				tmp_flags = actions_all[key][1];
+				for (var i = 0; i < actions_all[key][0].length; i++) {
+					calc_actions({'cid':actions_all[key][0][i][0], 'val':actions_all[key][0][i][1]});
+				}
+			} else {
+				tmp_actall[key] = actions_all[key];
+			}
+		}
+		actions_all = tmp_actall;
+		vars['day'] = d - 1;
+		actions = [];
+		flags = tmp_flags;
+		next_day(true);
+	}
 }
 
-// [0] = day 3 actions
-// [1] = day 4 actions
-function go_forward() {
-	// TODO
-}
+function skip_to(d = 3) {
+	new_game(route_id ? route_id : 0);
+	vars['day'] = d;
 
-function skip_to(d = null) {
-	if (d == null) { return; }
-	new_game(route_id);
-	if (d == 3) { return; }
-
-	vars['day'] = d - 1;
-	actions = [];
-	if (route_id == 1) { // Elli marriage
-		if (d > 23) { aff[get_npc_id('elli')] = 12; aff[get_npc_id('rick')] = 2; }
+	if (d == 3) { next_day(true); }
+	if ([0, 5].includes(route_id)) { // All Photos
+		actions_all = {
+			'3':[['f_dog_inside', 1], ['v_openers', 2]]
+		}
+	}
+	if (route_id == 1 || route_id == 4) { // Elli marriage & IL Photo
+		actions_all = {
+			'23' : [[get_npc_id('elli'), 12], [get_npc_id('rick'), 2]]
+		};
 	}
 	if (route_id == 2) { // Karen marriage
 		// [90, 102, 109, 110]
-		if (d > 109) { vars['lumber'] = 500; }
-		if (d > 102) { vars['gold'] += 5000; }
-		if (d > 90) { flags['borrow_cows'] = 1; vars['gold'] += 1000; }
+		actions_all = {
+			'90' : [['f_borrow_cows', 1]],
+			'95' : [['v_gold', 1000]],
+			'102' : [['v_gold', 5000]],
+			'109' : [['v_lumber', 500]]
+		};
 	}
+	
+	var tmp_actall = {};
+	for (let key in actions_all) {
+		if (parseInt(key) < d) {
+			for (var i = 0; i < actions_all[key].length; i++) {
+				tmp_actall[key] = actions_all[key];
+				calc_actions({'cid':actions_all[key][i][0], 'val':actions_all[key][i][1]});
+			}
+		}
+	}
+	actions_all = tmp_actall;
 	next_day(true);
 }
 
 function calc_actions(a = null) {
+	
+	//console.log(a);
+	
+	var actions_today = {};
 	if (a !== null && a['cid'] !== undefined) {
 		if (!Number.isInteger(a['cid'])) {
 			if (a['cid'].charAt(0).toLowerCase() == 'f') {
@@ -126,6 +357,10 @@ function calc_actions(a = null) {
 				} else {
 					if (a['val'] !== undefined) {
 						flags[a['cid'].substring(2)] += a['val'];
+						if (!actions_today[a['cid']]) { actions_today[a['cid']] = 0; }
+						actions_today[a['cid']] += parseInt(a['val']);
+					} else {
+						console.log("No value given for FLAG:" + a['cid']);
 					}
 				}
 			} else {
@@ -134,19 +369,37 @@ function calc_actions(a = null) {
 					console.log("undefined var: " + a['cid']);
 				} else {
 					if (a['val'] !== undefined) {
-						vars[a['cid'].substring(2)] += a['val'];
+						if (['v_new_chicken_days', 'v_new_cow_days'].includes(a['cid'])) {
+							var tmp_day = parseInt(a['val']);
+							if (parseInt(a['val']) < 10) { tmp_day = "0" + tmp_day; }
+							if (parseInt(a['val']) < 100) { tmp_day = "0" + tmp_day; }
+							actions_today[a['cid']] = tmp_day;
+							vars[a['cid'].substring(2)] += tmp_day;
+						} else {
+							if (!actions_today[a['cid']]) { actions_today[a['cid']] = 0; }
+							actions_today[a['cid']] += parseInt(a['val']);
+							vars[a['cid'].substring(2)] += a['val'];
+						}
+					} else {
+						console.log("No value given for VAR:" + a['cid']);
 					}
 				}
 			}
 		} else {
 			if (a['val'] !== undefined) {
-				if (aff[a['cid']] === undefined) {
-					aff[a['cid']] = 0;
-				}
+				if (!actions_today[a['cid']]) { actions_today[a['cid']] = 0; }
+				actions_today[a['cid']] += a['val'];
+
+				if (aff[a['cid']] === undefined) { aff[a['cid']] = 0; }
 				aff[a['cid']] += a['val'];
+
+				// 0 <= aff <= 255
+				aff[a['cid']] = ((aff[a['cid']] > 255) ? 255 : aff[a['cid']]);
+				aff[a['cid']] = ((aff[a['cid']] < 0) ? 0 : aff[a['cid']]);
 			}
 		}
 	}
+	return actions_today;
 }
 
 function fish() {
@@ -154,166 +407,349 @@ function fish() {
 }
 
 function betting_table(a = []) {
-	a.push({
-		'desc':'<div class="ml-3">GOLD:&nbsp;&nbsp;<input type="number" id="b_gold" value="' + vars['gold'] + '" style="margin-right:20px" onchange="calc_bets()" /></div>' +
-			'<div class="ml-3">NEED:&nbsp;&nbsp;<input type="number" id="b_need" onchange="calc_bets()" style="margin-right:20px" value="' + (((500 - vars['medals']) < 0) ? 0 : (500 - vars['medals'])) + '" /></div>' +
-			'<div class="ml-3">HAVE:&nbsp;&nbsp;<input type="number" id="b_have" onchange="calc_bets()" value="' + vars['medals'] + '" /></div>'
-	});
+	var tmp_medals_needed = (([0, 5].includes(route_id)) ? ((vars['day'] < 120) ? 2000 : 1000) : 500);
+	a.push({'desc':('<div class="ml-3">NEED:&nbsp;&nbsp;<input type="number" id="b_need" onchange="calc_bets()" style="margin-right:20px" value="' + tmp_medals_needed +
+			'" /></div>' + '<div class="ml-3">HAVE:&nbsp;&nbsp;<input type="number" id="b_have" onchange="calc_bets()" value="' + vars['medals'] + '" /></div>')});
 	for (var i = 0; i < 6; i++) {
 		a.push({'desc':'odds', 'b_table':true, 'b_id':i});
 	}
-	a.push({'desc':'Race #:&nbsp;&nbsp;<input type="number" id="b_race" onchange="calc_bets()" value="1" />'});
 	return a;
 }
 
-function new_game(id = null) {
-	if (id == null) {
-	  id = $('#ngid').val();
-	}
-	route_id = id;
+function new_game(rid = 0) {
+	route_id = rid;
 	reset_vars();
-	vars['day'] = 2;
+	vars['day'] = 3;
 	document.title = route_names[route_id] + " - HM64 Router";
 
-	// Set affection of all characters to 0, display at top
-	// Characters listed based on route
-	var aff_html = [];
-	$('.status_row').remove();
-	for (let key in route_affs[route_id]) {
-		var npc_id = get_npc_id(route_affs[route_id][key]);
-		aff[npc_id] = 0;
-		aff_html.push('<div class="p-1 display_main">' +  route_affs[route_id][key].toUpperCase() + ': <span id="npc_' + npc_id + '">0</span></div>');
+	// 0 = vars; 1 = flags; 2 = aff
+	cur_slot = 0;
+	save_slots = [[{}, {}, {}], [{}, {}, {}], [{}, {}, {}], [{}, {}, {}]];
+	for (var i = 0; i < 4; i++) {
+		$("#save_" + i).html("Slot " + (i + 1));
 	}
-
-	var tmp_html = '<div class="p-1 display_main">GOLD: <span id="disp_gold">300</span></div>';
-	if (aff_html.length <= 3) {
-		$('#status_row1').html(tmp_html + aff_html.join(""));
-	} else {
-		$('#status_row1').html(tmp_html + aff_html[0] + aff_html[1] + aff_html[2]);
-		for (var i = 3; i < aff_html.length; i++) {
-			//TODO
-			// Multiple affections to track
-			// Put on multiple rows; four per row
+	
+	// Pre-set npc_ids for quick lookup
+	for (var i = 0; i < npcs.length; i++) {
+		if (!npc_ids[npcs[i]]) {
+			npc_ids[npcs[i]] = i;
 		}
 	}
+
+	// Clear forageable count
+	$("input[id^='for_']").val(0);
+
+	// Set affection of included characters to 0
+	if ([0, 5].includes(route_id)) {
+		for (var i = 0; i < 38; i++) { aff[i] = 0; }
+	} else {
+		for (var i = 0; i < route_affs[route_id].length; i++) {
+			aff[get_npc_id(route_affs[route_id][i])] = 0;
+		}
+	}
+
+	// Characters listed based on route
+	$("#status_row").html(set_affections(route_id));
 
 	// Custom skip options
 	var html_list = [];
 	html_list.push('<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Skip to</a>');
 	html_list.push('<div class="dropdown-menu" aria-labelledby="navbarDropdown2">');
-	for (var i = 0; i < skip_to_list[route_id].length; i++) {
-		html_list.push('<span class="dropdown-item ' + get_month_name(skip_to_list[route_id][i]).toLowerCase() +
-			'" onclick="skip_to(' + skip_to_list[route_id][i] +
-			')">' + get_month_name(skip_to_list[route_id][i], true) + ' ' + get_day(skip_to_list[route_id][i]) +
-			' (' + get_day_of_week(skip_to_list[route_id][i], true).toUpperCase() + ')</span>');
+	if (route_id < skip_to_list.length) {
+		for (var i = 0; i < skip_to_list[route_id].length; i++) {
+			html_list.push('<span class="dropdown-item ' + get_month_name(skip_to_list[route_id][i]).toLowerCase() +
+				'" onclick="skip_to(' + skip_to_list[route_id][i] +
+				')">' + get_month_name(skip_to_list[route_id][i], true) + ' ' + get_day(skip_to_list[route_id][i]) +
+				' (' + get_day_of_week(skip_to_list[route_id][i], true).toUpperCase() + ')</span>');
+		}
 	}
-	$('#skip_to_menu').html(html_list.join("") + '</div>');
+	if (html_list.length > 2) {
+		$('#skip_to_menu').html(html_list.join("") + '</div>');
+	}
 
 	// Custom flags for particular run
+	if ([0, 5].includes(route_id)) { // All Photos
+		vars['openers'] = 0;
+		flags['potato_planted'] = 0;
+		flags['corn_planted'] = 0;
+	}
+
 	if (route_id == 3) { // Popuri marriage
 		flags['moondrops_bought'] = 0;
 		flags['moondrops_planted'] = 0;
 		vars['moondrop_waters'] = 0;
 	}
-
+	if (route_id == 4) {
+		flags['typhoon'] = 0;
+	}
 	next_day(true);
 }
 
 function update_day_gui(d = vars['day'], jump = false) {
 	var m = get_month_name(d);
+
 	if (d % 30 == 1 || jump) {
 		// Only update "month" on the first of the month
 		// or if jumped to this day
 		$('.display_main.season').removeClass('spring').removeClass('summer').removeClass('fall').removeClass('winter').addClass(m.toLowerCase());
 	}
-	$('.display_main.season').html(m.charAt(0).toUpperCase() + m.toLowerCase().substr(1));
+
+	$('.display_main.season').html(m.charAt(0).toUpperCase() + m.toLowerCase().substring(1));
 	$('.display_main.day').html(get_day(d));
 	$('.display_main.dow').html(get_day_of_week(d, true));
-	$('.display_main.day.japanese').html(get_day_of_week(d, false, true));
-	$('#disp_gold').html(vars['gold']);
-	for (let key in aff) {
-		$("#npc_" + key).html(aff[key]);
-		if (is_bachelorette(key)) {
-			$("#npc_" + key).parent().css('background-color', get_heart_color(aff[key]));
-		}
+	$('.display_main.japanese').html(get_day_of_week(d, false, true));
+	$('#happiness_meter').html(vars['happiness']);
+	$('#disp_gold').val(vars['gold']);
+
+	// Characters listed based on route
+	// All Photos is currently the only one where the affections listed
+	// 		at the top change during the run.
+	if (route_id == 0 && d != 3) {
+		$("#status_row").html(set_affections(route_id));
 	}
+
+	// Affections on top
+	$('[id^="npc_"]').each(function() {
+		var tmp_id = parseInt(this.id.substring(4));
+		$(this).html(aff[tmp_id]);
+		if (is_bachelorette(tmp_id)) {
+			$(this).parent().css('background-color', get_heart_color(aff[tmp_id]));
+		}
+	});
 
 	var html = "";
 	//Seasonal Foragables
-	tmp_cs = crop_seasons[get_month(d)];
+	var tmp_cs = [];
+	for (var i = 0; i < crop_seasons[get_month(d)].length; i++) {
+		tmp_cs.push(crop_seasons[get_month(d)][i]);
+	}
+	if (vars['potatoes'] > 0) { // Potatoes in Spring
+		tmp_cs.push(crops.indexOf('potato'));
+	}
+	if (vars['corn_waters'] >= _CORN_GROW_DAYS && [1,2].includes(get_month(d))) { // Corn in Summer
+		tmp_cs.push(crops.indexOf('corn'));
+	}
+	if (vars['chickens'] > 0) { // Eggs
+		tmp_cs.push(crops.indexOf('egg'));
+	}
+	if (flags['fishing_rod_stored'] == 0) { //Fish
+		var x = crops.indexOf('Fish S');
+		tmp_cs = tmp_cs.concat([x, x + 1, x + 2]);
+	}
+	if (vars['cows'] > 0) { // Milk
+		var x = crops.indexOf('milk s');
+		tmp_cs = tmp_cs.concat([x, x + 1, x + 2]);
+		if (flags['photo_cowfest'] == 1 || (flags['cow_entered'] == 1 && get_day(vars['day']) != 64)) {
+			tmp_cs.push(x + 3);
+		}
+	}
+
+	// Update Forage Inputs
 	for (var i = 0; i < tmp_cs.length; i++) {
-		html += '<div class="ml-3"><img class="forageDisp" src="/img/item/' + crops[tmp_cs[i]].toLowerCase().replace(" ", "_") + '.png" />&nbsp;';
+		html += '<div class="ml-3"><img class="forageDisp" id="img_for_' + tmp_cs[i] +
+			'" src="/img/item/' + crops[tmp_cs[i]].toLowerCase().replace(" ", "_") + '.png" ' +
+			'onclick="input_increment(this)" />&nbsp;';
 		html += '<input style="width:40px" type="number" value="0" id="for_' + tmp_cs[i] + '" /></div>';
 	}
-	
-	//Fish
-	for (var i = 13; i < 16; i++) {
-		html += '<div class="ml-3"><img class="forageDisp" src="/img/item/' + crops[i].toLowerCase().replace(" ", "_") + '.png" />&nbsp;';
-		html += '<input style="width:40px" type="number" value="0" id="for_' + i + '" /></div>';
-	}
 	$('#forage_display').html(html);
-	
-	// Prev and Next Day buttons
-	$("#jump_prev").attr("disabled", (vars['day'] <= 3));
-	$("#jump_next").attr("disabled", (vars['day'] >= actions_all.length - 3));
-	
-}
 
-function reset_vars() {
-	aff = {};
-	actions = [];
-	actions_all = [];
-	reset = false;
-	vars = { "chickens":0, "gold":300, "lumber":0, "day":3, "medals":0,
-			"bridge_days_worked":0, "springs_days_worked":0 };
-	flags = { "treasure_map" : 0, "new_mus_box" : 0, "old_mus_box" : 0,
-			"new_chick" : 0, "new_chicken" : 0,
-			"ankle_elli" : 0, "dream_elli" : 0, "sick_elli" : 0, "recipe_elli" : 0,
-			"ankle_karen" : 0,
-			"ankle_popuri" : 0, "dream_popuri" : 0, "sick_popuri" : 0, "recipe_popuri" : 0,
-			"kitchen" : 0, "blue_feather" : 0, "propose" : 0,
-			"borrow_cows" : 0 };
-}
+	// Flag Display
+	var flaglist = [];
+	for (var attr in flags) {
+		flaglist.push(attr);
+	}
+	flaglist.sort();
+	var val_html = '<div class="container">';
+	for (var i = 0; i < flaglist.length; i++) {
+		val_html += '<div class="d-flex flex-row"><div class="ml-4">' + flaglist[i].toLowerCase() + '</div><div class="ml-4"><input id="q_f_' + flaglist[i] + '" value="' + flags[flaglist[i]] + '" onchange="flag_update()" /></div></div>';
+	}
+	$("#all_values").html(val_html + "</div>");
 
-function to_html(a = actions) {
-	var html = "";
-	for (var i = 0; i < a.length; i++) {
-		if (a[i]['sr'] === undefined || !a[i]['sr']) {
-			if (i != 0) { html += "</div>"; }
-			html += '<div class="d-flex justify-content-start" style="margin-bottom:5px">';
+	// Affection Display
+	var afflist = [];
+	for (var i = 0; i < npcs.length; i++) {
+		afflist.push([aff[i], i]);
+	}
+	afflist.sort(function(a,b){return ((a[0] == undefined || b[0] == undefined) ? ((a[0] === undefined) ? 1 : -1) : b[0] - a[0]) });
+	val_html = "";
+	for (var i = 0; i < afflist.length; i++) {
+		val_html += '<div class="d-flex flex-row"><div class="ml-4">' + npcs[afflist[i][1]].toLowerCase() + '</div><div class="ml-4"><input id="q_n_' + afflist[i][1] + '" value="' + afflist[i][0] + '" onchange="npc_update()" /></div></div>';
+	}
+	$("#all_affs").html(val_html + "</div>");
+
+	/*
+	// Load Slot Menu
+	for (var i = 0; i < 4; i++) {
+		$('#save_' + cur_slot).html('Slot ' + (cur_slot + 1) + " (" + get_month_name(d, true) + " Y" + (Math.floor((d - 1) / 120) + 1) + ")");
+		if (d % 30 == 1 || d % 30 == 3 || jump) {
+			$('#save_' + cur_slot).removeClass('spring').removeClass('summer').removeClass('fall').removeClass('winter');
+			$('#save_' + cur_slot).addClass(get_month_name(d).toLowerCase());
 		}
-		if (a[i]['val'] === undefined) {
-			if (!a[i]['b_table']) {
-				if (a[i]['cid'] !== undefined || a[i]['iid'] !== undefined) {
+	}
+	*/
+}
+
+function load_save(slot = cur_slot) {
+	// 0 = vars; 1 = flags; 2 = aff
+	if (!$.isEmptyObject(save_slots[slot][0])) {
+		reset_vars();
+		for (var attr in save_slots[slot][0]) {
+			vars[attr] = ((['new_chicken_days', 'new_cow_days'].includes(attr)) ? "" : 0);
+            vars[attr] += save_slots[slot][0][attr];
+		}
+		for (var attr in save_slots[slot][1]) {
+			flags[attr] = 0;
+			flags[attr] += save_slots[slot][1][attr];
+		}
+		for (var attr in save_slots[slot][2]) {
+			aff[attr] = 0;
+			aff[attr] += save_slots[slot][2][attr];
+		}
+		next_day(true);
+	} else {
+		console.log('empty slot');
+	}
+}
+
+function add_recipes() {
+	// name, item, npc_give, aff_boost, [npc that gets aff boost, aff required for recipe, npc aff is required by, season]
+	recipes = [
+		["Cream of Turnip Stew", 16, 21, 7],
+		["Easy Tomato Soup", 19, 30, 7],
+		["Tomato Rice", 19, 11, 5, null, 30, 10],
+		["Tomato Soup", 19, 25, 6],
+		["Corn Fritter", 20, 6, 7],
+		["Corn Pasta", 20, 2, 7],
+		["Mashed Potatoes", 17, 0, 6],
+		["Fried Potatoes & Bacon", 17, 38, 7],
+		["Vegetable Tomato Stew", 19, 18, 7],
+		["Garlic Potato Beef", 17, 13, 9],
+		["Eggplant with Miso", 21, 22, 6],
+		["Rolled Cabbage", 18, 19, 5],
+		["Stuffed Omelet", 23, 12, 5, null, 51],
+		["Spa-poached Egg", 23, 17, 7],
+		["Handmade Butter", [24, 25, 26, 27], 28, 8],
+		["Mushroom Rice", 6, 20, 7],
+		["Fried Char", 15, 9, 0, null, 0, null, [0, 1, 2]],
+		["Grilled Trout", [14, 15], 3, 9, null, 0, null, [0, 1, 2]],
+		["Stuffed Mushroom", 6, 4, 3],
+		["Steamed Clam", 5, 10, 3, null, 48],
+		["Miso Soup w Sprouts", 0, 27, 7],
+		["Sesame Dandelion", 2, 29, 7],
+		["Mushroom Salsa", 6, 39, 2, null, 31],
+		["Strawberry Dog", 23, 31, 7],
+		["Walnut Cake", 3, 8, 7],
+		["Bread Pudding", [23, 24, 25, 26, 27], 7, 6],
+		["Herb Rice Cake", 0, 24, 8],
+		["Potato Pancake", 17, 37, 7],
+		["Strawberry Jam", 23, 26, 6],
+		["Strawberry Champagne", 23, 16, 3],
+		["Veryberry Wine", 1, 15, 5],
+		["Spice Tea", [23, 24, 25, 26, 27], 5, 8, null, 0, null, 3],
+		["Hot Spicy Wine", 5, 1, 7],
+		["Cinnamon Milk Tea", [24, 25, 26, 27], 14, 5],
+		["Pickled Turnips", 16, 23, 8]
+	];
+}
+
+function to_html(a = actions, show_red = true) {
+	
+	//console.log(a);
+	
+	var is_red = false;
+	var cur_vis = true;
+	var html = "";
+	var lines = 0;
+	var cur_div = null;
+	var div_list = [];
+	for (var i = 0; i < a.length; i++) {
+		if (a[i]['sr'] !== true) {
+			is_red = (a[i]['red'] === true);
+			if (!is_red || show_red) {
+				lines++;
+				if (i != 0) { html += "</div>"; }
+				if (a[i]['div'] != cur_div) {
+					cur_vis = (a[i]['vis'] === undefined) ? true : a[i]['vis'];
+					if (a[i]['div'] !== undefined) {
+						if (cur_div != null) { html += "</div>"; }
+						html += '<div id="' + a[i]['div'] + '"';
+						if (!cur_vis) {
+							html += ' style="display:none"';
+						}
+						html += '>';
+						if (div_list.includes(a[i]['div'])) {
+							console.log("WARNING: duplicate or split div id (" + a[i]['div'] + ")");
+						}
+						div_list.push(a[i]['div']);
+						cur_div = a[i]['div'];
+					} else if (cur_div != null) {
+						html += "</div>";
+						cur_div = null;
+					}
+				}
+				html += '<div class="d-flex justify-content-start" style="margin-bottom:5px;';
+				if (a[i]['imp'] == true) {
+					html += ' background-color:yellow;';
+				} else if (a[i]['red'] == true) {
+					html += ' background-color:pink;';
+				}
+				html += '">';
+			}
+		}
+		if (!is_red || show_red) {
+			if (a[i]['val'] === undefined) {
+				if (a[i]['b_table']) {
+					// Bet table
+					// {'desc':'odds', 'b_table':true, 'b_id':i}
+					
+					html += '<span style="border:3px solid ' + bet_colors[a[i]['b_id']];
+					html += ';width:30px;height:30px;margin:5px;text-align:center">' + (parseInt(a[i]['b_id']) + 1) + '</span>';
+					html += 'x&nbsp;<input class="oddsInput" type="number" id="b_' + a[i]['b_id'] + '" value="1" onchange="calc_bets()" />';
+					html += '<input id="bg_' + a[i]['b_id'] + '" value="';
+					html += Math.floor(vars['gold'] / (6 * 50));
+					html += '" disabled=true style="border:1px solid black"/>';
+					html += '<button class="btn" type="button" onclick="bet_winner(' + a[i]['b_id'] + ')" style="margin-left:5px; border:3px solid ' + bet_colors[a[i]['b_id']] + '" tabindex="-1">WINNER</button>';
+				} else {
+					// Plain text
+					if (a[i]['cid'] !== undefined || a[i]['iid'] !== undefined) {
+						// With Image
+						html += '<span class="mr-2">' + ((a[i]['iid'] === undefined) ? get_npc_img(a[i]['cid']) : get_npc_img(a[i]['iid'])) + '</span>';
+					}
+					html += '<span class="textHov">' + a[i]["desc"] + '</span>';
+				}
+			} else {
+				// Value defined
+				if (a[i]['sr']) {
+					html += '<div class="ml-3">';
+				} else {
 					html += '<span class="mr-2">' + ((a[i]['iid'] === undefined) ? get_npc_img(a[i]['cid']) : get_npc_img(a[i]['iid'])) + '</span>';
 				}
-				html += '<span>' + a[i]["desc"] + '</span>';
-			} else {
-				// Bet table
-				// {'desc':'odds', 'b_table':true, 'b_id':i}
-				
-				html += '<span style="border:3px solid ' + bet_colors[a[i]['b_id']];
-				html += ';width:30px;height:30px;margin:5px;text-align:center">' + (parseInt(a[i]['b_id']) + 1) + '</span>';
-				html += 'x&nbsp;<input class="oddsInput" type="number" id="b_' + a[i]['b_id'] + '" value="1" onchange="calc_bets()" />';
-				html += '<input id="bg_' + a[i]['b_id'] + '" value="';
-				html += Math.floor(vars['gold'] / (6 * 50));
-				html += '" disabled=true style="border:1px solid black"/>';
-			}
-		} else {
-			if (a[i]['sr']) {
-				html += '<div class="ml-3">';
-			} else {
-				html += '<span class="mr-2">' + ((a[i]['iid'] === undefined) ? get_npc_img(a[i]['cid']) : get_npc_img(a[i]['iid'])) + '</span>';
-			}
-			html += '<button type="button" class="btn btn-' + ((a[i]["sel"] === false) ? 'danger' : 'success');
-			html += ' action-button" id="ab_' + i + '" onclick="toggle_color(this, ' + get_toggle(a[i], a) + ')">' + a[i]['desc'] + '</button>';
-			if (a[i]['sr']) {
-				html += '</div>';
+				html += '<button type="button" class="btn btn-' + ((a[i]["sel"] === false) ? 'danger' : 'success') +
+					' action-button" id="ab_' + i + '" onclick="toggle_color(this, '+ "'" +
+					((a[i]['div_tog'] == undefined) ? "" : a[i]['div_tog']) + "', " +
+					get_toggle(a[i], a) + ')">' + a[i]['desc'] + '</button>';
+				if (a[i]['sr']) {
+					html += '</div>';
+				}
 			}
 		}
 	}
-	return html + ((html.length > 0) ? '</div><br/>' : '') +
-		'<button type="button" class="btn btn-primary" onclick="next_day()">Sleep</button>';
+	html += ((html.length > 0) ? '</div><br/>' : '') + '<button type="button" class="btn btn-primary';
+	if (flags['dontsave'] == 1) { html += ' dontsave'; }
+	html += '" onclick="next_day()">' + (((flags['dontsave'] == 1) ? "DONT SAVE" : "Sleep") + '</button>');
+
+	// Small Text for many lines
+	if (lines > 8) {
+		var tmp_h = "";
+		while (html != tmp_h) {
+			tmp_h = html;
+			html = html.replace('action-button', 'action-btn-small');
+			html = html.replace('forageDisp', 'forageDspSmall');
+			html = html.replace('textHov', 'textHvrSmall');
+		}
+	}
+	
+	return html;
 }
 
 function get_toggle (abid = null, a = actions) {
@@ -323,12 +759,12 @@ function get_toggle (abid = null, a = actions) {
 		if (abid["t" + i] !== undefined) {
 			for (var j = 0; j < a.length; j++) {
 				if ((Array.isArray(abid["t" + i]) && abid["t" + i].includes(a[j]['desc'])) ||
-					(!Array.isArray(abid["t" + i]) && a[j]['desc'] === abid["t" + i])) {
+					(!Array.isArray(abid["t" + i]) && a[j]['desc'].localeCompare(abid["t" + i]) == 0)) {
 						tmp_res.push(j);
 				}
 			}
 			if (!tmp_res.length) {
-				console.log("WARNING: toggle added to action button, but id doesnt exist - (T" + i + " = " + abid["t" + i] + ')');
+				console.log("WARNING: toggle added to action button, but id doesnt exist - (T" + i + " = " + abid["t" + i] + ' | desc = ' + abid['desc'] + ')');
 			}
 		}
 		result.push('[' + tmp_res.join(", ") + ']');
@@ -336,10 +772,10 @@ function get_toggle (abid = null, a = actions) {
 	return result.join(", ");
 }
 
-function get_npc_img(img_id = null) {
+function get_npc_img(img_id = null, for_title = false) {
 	var img_html = "";
-	
-	// If array of value is given, loop through and send back first non-empty result
+
+	// If array of values is given, loop through and send back first non-empty result
 	if (Array.isArray(img_id)) {
 		for (var i = 0; i < img_id.length; i++) {
 			var x = get_npc_img(img_id[i]);
@@ -347,20 +783,48 @@ function get_npc_img(img_id = null) {
 		}
 		return "";
 	}
-	
+
 	// Only accept numbers; ignore 'v_xyz' and 'f_xyz' for flag and variable values
-	if (Number.isInteger(parseInt(img_id)) && img_id > 0 && img_id < npcs.length) {
-		img_html = '<img class="forageDisp" src="/img/' +
-			(npcs[img_id] === npcs[img_id].toLowerCase() ? 'default' : ('npc/' + npcs[img_id].toLowerCase())) + '.png">';
+	if (Number.isInteger(parseInt(img_id)) && img_id >= 0 && img_id < npcs.length) {
+		img_html = '<img class="forageDisp" ';
+		if (for_title) {
+			img_html += ' style="margin-right:5px" ';
+		}
+		img_html += 'src="/img/' + ((npcs[img_id].substring(0, 1) == "_") ? 'default' : ('npc/' + npcs[img_id].toLowerCase().replace(" ", "_"))) + '.png">';
+		if (aff[img_id] !== undefined && !for_title) {
+			img_html = '<span style="font-size:12px; margin-left:2px' +
+			/*
+			 * 
+			 * TODO: change style of aff number next to img if >= 160 (photo min)
+			 *
+			 *	((aff[img_id] >= 160) ? ";background-color:lightgreen;" : "") +
+			 * 
+			*/
+				'">' + aff[img_id] + '</span>' + img_html;
+		}
 	}
 	return img_html;
 }
 
-function calc_bets() {
+function bet_winner(winner_id = 0) {
+	vars['medals'] += (parseInt($('#b_' + winner_id).val()) * parseInt($('#bg_' + winner_id).val()));
+	$('#b_have').val(vars['medals']);
+	gold_update();
+}
+
+function calc_bets(bet_type = 1) {
+	/*
+	 * BET TYPES:
+	 * 
+	 * 1 - DEMO STRAT
+	 * 2 - NILLOWS STRAT
+	 * 
+	 */
+
 	var g = ($('#b_gold').val() === undefined) ? vars['gold'] : $('#b_gold').val();
-	var need = ($('#b_need').val() === undefined) ? 500 - vars['medals'] : $('#b_need').val();
+	var need = ($('#b_need').val() === undefined) ? 500 : $('#b_need').val();
 	need -= ($('#b_have').val() === undefined) ? 0 : $('#b_have').val();
-	
+
 	// If you already have enough medals, set bet values to zero
 	if (need <= 0) {
 		$("input[id^='bg_']").val(0);
@@ -371,10 +835,19 @@ function calc_bets() {
 	var odds = [];
 	var bets = [];
 	var max_required = 0;
+
+	if (parseInt($("#b_have").val()) >= parseInt($('#b_need').val())) {
+		$("input[id^='bg_']").each(function(i) {
+			$(this).val(0);
+		});
+		return;
+	}
+
 	for (var i = 0; i < 6; i++) {
 		var cur_need = Math.ceil(need / parseInt($('#b_' + i).val()));
 		max_required += (cur_need > 99) ? 99 : cur_need;
-		odds.push([parseInt($('#b_' + i).val()), i, cur_need, 0]);
+		// [odd amt, original order, bets needed, bets actual]
+		odds[i] = [parseInt($('#b_' + i).val()), i, cur_need, 0];
 	}
 
 	// If you can afford it, minimum required medals to achieve goal for all
@@ -384,29 +857,78 @@ function calc_bets() {
 		});
 		return;
 	}
-	
-	// Fill from largest odds to smallest
-	// until need can't be met with remaining G
-	odds.sort(function(a, b){ return b[0] - a[0] });
+
 	var buy_amt = Math.floor(g / 50);
-	var i = 0;
-	while ((odds[i][2] > 99 ? 99 : odds[i][2]) <= buy_amt && i < 6) {
-		odds[i][3] = (odds[i][2] > 99 ? 99 : odds[i][2]);
-		buy_amt -= odds[i][3];
-		i++;
+	odds.sort(function(a, b){ return b[0] - a[0] });
+
+	// Get odds by betting strategy
+	if (bet_type == 1) { // DEMO
+		for (var i = odds.length - 1; i >= 0; i--) {
+			if (odds[i][2] <= 99 && odds[i][2] <= buy_amt) {
+				odds[i][3] = odds[i][2];
+				buy_amt -= odds[i][2];
+			}
+		}
+	} else if (bet_type == 2) { // NILLOWS
+		for (var i = 0; i < odds.length; i++) {
+			if (odds[i][2] <= 99 && odds[i][2] <= buy_amt) {
+				odds[i][3] = odds[i][2];
+				buy_amt -= odds[i][2];
+			}
+		}
 	}
 
-	// Distribute remaining G as evenly as possible
-	var div_factor = 0;
-	for (var j = i; j < odds.length; j++) {
-		div_factor += odds[i][0] / odds[j][0];
+	if ([0, 5].includes(route_id) && buy_amt > 0) { // All Photos
+		// Not enough to fill all bets to quota, but leftover bets
+		if (odds[5][3] == 0) {
+			var max_zero = -1;
+			var extra_medals = 0;
+
+			for (var i = 0; i < odds.length; i++) {
+				if (odds[i][3] == 0) {
+					if (max_zero == -1) { max_zero = i; }
+					extra_medals += Math.floor(odds[max_zero][0] / odds[i][0]);
+				}
+			}
+
+			if (extra_medals > 0) {
+				var spread = Math.floor(buy_amt / extra_medals);
+				for (var i = max_zero; i < odds.length; i++) {
+					var tmp_ex = spread * Math.floor(odds[max_zero][0] / odds[i][0]);
+					if ((tmp_ex + odds[i][3]) > 99) {
+						buy_amt -= (99 - odds[i][3]);
+						odds[i][3] = 99;
+					} else {
+						buy_amt -= tmp_ex;
+						odds[i][3] += tmp_ex;
+					}
+				}
+			}
+		}
+
+		// Filled all to quota, but more bets available
+		// Fill from lowest odds to highest
+		var i = 5;
+		while (buy_amt > 0 && i >= 0) {
+			if ((99 - odds[i][3]) <= buy_amt) {
+				buy_amt -= (99 - odds[i][3]);
+				odds[i][3] = 99;
+			} else {
+				var tmp_split = [i];
+				var j = i - 1;
+				while (j >= 0 && odds[j][3] == odds[i][3]) {
+					tmp_split.push(j);
+					j--;
+				}
+				for (var k = 0; k < tmp_split.length; k++) {
+					odds[tmp_split[k]][3] += Math.floor(buy_amt / tmp_split.length);
+				}
+				odds[i][3] += buy_amt % tmp_split.length;
+				buy_amt = 0;
+			}
+			i--;
+		}
 	}
-	odds[i][3] = Math.floor(buy_amt / div_factor);
-	for (var j = i + 1; j < odds.length; j++) {
-		odds[j][3] = Math.floor(((buy_amt * odds[i][0]) / div_factor) / odds[j][0]);
-		buy_amt -= odds[j][3];
-	}
-	odds[i][3] += buy_amt;
 
 	// Display values
 	for (var i = 0; i < odds.length; i++) {
@@ -414,7 +936,8 @@ function calc_bets() {
 	}
 }
 
-function toggle_color(t, t0 = [], t1 = [], t2 = [], t3 = []) {
+function toggle_color(t, div_tog = "", t0 = [], t1 = [], t2 = [], t3 = []) {
+	if (div_tog != "") { $('#' + div_tog).toggle(); }
 	if ($(t).hasClass("btn-danger")) {
 		$(t).removeClass("btn-danger").addClass("btn-success");
 		for (var i = 0; i < t2.length; i++) {
@@ -434,10 +957,11 @@ function toggle_color(t, t0 = [], t1 = [], t2 = [], t3 = []) {
 	}
 }
 
-function get_npc_id(n = null) {
-	if (!n) { return null; }
+function get_npc_id(n = "") {
+	n = n.toLowerCase().replace("'", "").replace("_", " ").trim();
+	if (npc_ids[n] !== undefined) { return npc_ids[n]; }
 	for (var i = 0; i < npcs.length; i++) {
-		if (n.toLowerCase().replace("'", "").localeCompare(npcs[i].toLowerCase()) === 0) {
+		if (n.localeCompare(npcs[i].toLowerCase().replace("'", "").replace("_", " ").trim()) === 0) {
 			return i;
 		}
 	}
@@ -454,19 +978,12 @@ function get_crop_id(n = null) {
 	return null;
 }
 
-function weather_change() {
-	update_day_gui();
-	var z = $('.weather.selected');
-	actions = (z.hasClass('typhoon')) ? [] : get_actions(route_id, vars['day'], vars['gold'], (z.hasClass('sunny')));
-	
-	//Set forage values for next day
-	for (var i = 0; i < actions.length; i++) {
-		if (actions[i]['forage']) {
-			for (var j = 0; j < actions[i]['forage_list'].length; j++) {
-				$("#for_" + actions[i]['forage_list'][j][0]).val(actions[i]['forage_list'][j][1]);
-			}
-		}
+function weather_change(update_gui = false) {
+	if (update_gui) {
+		update_day_gui();
 	}
+	var z = $('.weather.selected');
+	actions = get_actions(route_id, vars['day'], vars['gold'], (z.hasClass('sunny') ? 1 : (z.hasClass('typhoon') ? -1 : 0)));
 	$('#hm64-content').html(to_html(actions));
 }
 
@@ -484,6 +1001,26 @@ function is_festival (d = vars['day'], store_close_only = true) {
 		hol = hol.concat([31, 47, 100, 114]);
 	}
 	return hol.includes(d % 120);
+}
+
+function festival_name (d = vars['day']) {
+	if (d % 120 == 1) { return "New Years Day"; }
+	if (d % 120 == 8) { return "Planting Festival"; }
+	if (d % 120 == 17 || d % 120 == 88) { return "Horse Race"; }
+	if (d % 120 == 23) { return "Flower Festival"; }
+	if (d % 120 == 31) { return "Fireworks Festival"; }
+	if (d % 120 == 39) { return "Vegetable Festival"; }
+	if (d % 120 == 47) { return "Firefly Festival"; }
+	if (d % 120 == 54) { return "Sea Festival"; }
+	if (d % 120 == 64) { return "Cow Festival"; }
+	if (d % 120 == 72) { return "Harvest Festival"; }
+	if (d % 120 == 80) { return "Egg Festival"; }
+	if (d % 120 == 100) { return "Thanksgiving"; }
+	if (d % 120 == 109) { return "Dog Race"; }
+	if (d % 120 == 114) { return "Starry Night"; }
+	if (d % 120 == 117) { return "Spirit Festival"; }
+	if (d % 120 == 120) { return "New Years Eve"; }
+	return null;
 }
 
 function day_is (d = vars['day'], name = null) {
@@ -519,7 +1056,14 @@ function get_heart_color(num = 0) {
 }
 
 function is_bachelorette(gid = null) {
-	return (gid == get_npc_id('elli') || gid == get_npc_id('karen') || gid == get_npc_id('ann') || gid == get_npc_id('popuri') || gid == get_npc_id('maria'));
+	// Accepts string or integer
+	var bachs = ['elli', 'karen', 'ann', 'popuri', 'maria'];
+	for (var i = 0; i < bachs.length; i++) {
+		if (gid == get_npc_id(bachs[i]) || bachs[i].localeCompare(gid) == 0) {
+			return true;
+		}
+	}
+	return false;
 }
 
 function get_month (num = null) {
@@ -537,10 +1081,83 @@ function get_day_of_week (num = null, short_name = false, jap_name = false) {
 	return day_names[num % 7 + (short_name ? 7 : (jap_name ? 14 : 0))];
 }
 
+function get_dow (num = null, short_name = false, jap_name = false) {
+	return get_day_of_week(num, short_name, jap_name);
+}
+
 function get_day (num = null) {
 	if (num === null) { return null; }
 	if (num < 3) { return 0; }
 	return (num % 30 == 0) ? 30 : num % 30;
+}
+
+function flag_update() {
+	$("input[id^='q_f_']").each(function() {
+		if (flags[this.id.substring(4)] !== undefined) {
+			flags[this.id.substring(4)] = (isNaN(parseInt(this.value)) ? undefined : parseInt(this.value));
+		}
+	});
+	weather_change();
+}
+
+function npc_update() {
+	$("input[id^='q_n_']").each(function() {
+		if (aff[this.id.substring(4)] !== undefined) {
+			aff[this.id.substring(4)] = (isNaN(parseInt(this.value)) ? -1 : parseInt(this.value));
+		}
+	});
+	weather_change();
+}
+
+function gold_update() {
+	vars['gold'] = parseInt($('#disp_gold').val());
+	weather_change();
+}
+
+function arr_to_str(arr = []) {
+	return "[" + arr.join(", ") + "]";
+}
+
+function ats (arr = []) {
+	return arr_to_str(arr);
+}
+
+function next_sunday(d = 3) {
+	return d + (7 - (d % 7));
+}
+
+function set_affections (rid = 0) {
+	if (rid > route_affs.length - 1 ) { rid = 0; }
+	if (!vars['gold']) { vars['gold'] = 300; }
+
+	var tmp_html = '<div class="p-1 display_main">GOLD: <input type="number" id="disp_gold" value="' + vars['gold'] + 
+					'"  onchange="gold_update()" /></div>';
+	var tx = route_affs[rid];
+	if ([0, 5].includes(rid)) {
+		var tmp_day = get_day(vars['day']);
+		tx = [];
+
+		if (flags['photo_maria'] == 0) { tx.push('maria'); }
+		if (aff[get_npc_id('rick')] < _RICK_FIX_MIN) { tx.push('rick'); }
+		if (flags['photo_elli'] == 0) { tx.push('elli'); }
+		if (flags['wine_from_duke'] == 0 && aff[get_npc_id('bartender')] < _DUKE_WINE_MIN) { tx.push('bartender'); }
+		if (tx.length < 4 && aff[get_npc_id('sprite')] < _SPRITE_WINE_MIN) { tx.push('sprite'); }
+		if (tx.length < 4 && flags['photo_ann'] == 0) { tx.push('ann'); }
+		if (tx.length < 4 && ((vars['day'] % 120) > 14) && ((vars['day'] % 120) < 63)) { tx.push('basil'); }
+		if (tx.length < 4 && vars['day'] > 17) { tx.push('cliff'); }
+		if (tx.length < 4) { tx.push('mayor'); }
+		if (tx.length < 4) { tx.push('rick'); }
+	}
+	for (var i = 0; i < tx.length; i++) {
+		tmp_html += '<div class="p-1 display_main">';
+		if ([0, 5].includes(rid)) {
+			tmp_html += get_npc_img(get_npc_id(tx[i]), true);
+		} else {
+			tmp_html += npcs[get_npc_id(tx[i])].toUpperCase() + ': ';
+		}
+		tmp_html += '<span id="npc_' + get_npc_id(tx[i]) + '">' + aff[tx[i]] + '</span></div>';
+	}
+	return tmp_html;
 }
 
 function forage(need = 0, g = vars['gold'], d = vars['day']) {
@@ -657,4 +1274,22 @@ function forage(need = 0, g = vars['gold'], d = vars['day']) {
 	}
 
 	return { 'desc':d, 'forage':true, 'forage_list':forage_list };
+}
+
+function print_vars() {
+	$('#load_input').val(JSON.stringify(save_slots[cur_slot]));
+}
+
+function load_input() {
+	save_slots[0] = JSON.parse($('#load_input').val());
+	load_save(0);
+}
+
+function cliff_maxed() {
+	return (aff[get_npc_id('cliff')] >= (_PARTY_ATTEND_MIN - (8 - (flags['photo_swimming'] * 8)) - (8 - (flags['photo_harvest'] * 8))));
+}
+
+function basil_min(d) {
+	var x = (_BASIL_BERRY_MIN - ((182 - d) * 6));
+	return ((x > _BASIL_BERRY_MIN) ? _BASIL_BERRY_MIN : x);
 }

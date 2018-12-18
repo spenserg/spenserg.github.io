@@ -2,6 +2,12 @@
 	cursor: pointer;
 }
 
+.action-btn-small {
+	cursor:pointer;
+	height: 30px;
+	font-size: 12px;
+}
+
 .container {
 	display: block;
 	margin-left: auto;
@@ -13,6 +19,18 @@
 	border: 2px solid black;
 	margin: 5px;
 	padding: 5px;
+}
+
+.dontsave {
+	background-color: yellow;
+	border: 3px solid red;
+	color: black;
+	font-weight: bold;
+}
+.dontsave:hover {
+	background-color:red;
+	border: 3px solid black;
+	color:white;
 }
 
 .dropdown-item {
@@ -29,6 +47,21 @@
 .forageDisp {
 	height:40px;
 	width:40px;
+}
+.forageDspSmall {
+	height:30px;
+	width:30px;
+}
+
+.textHov {
+	margin-top:10px;
+	margin-left:10px;
+	font-size:16px;
+}
+.textHvrSmall {
+	margin-top:5px;
+	margin-left:10px;
+	font-size:12px;
 }
 
 nav {
@@ -63,6 +96,7 @@ nav {
 }
 
 .dow {}
+.happiness {}
 
 .spring { background-color: #c7fc7e; }
 .summer { background-color: #ff9f99; }
@@ -73,4 +107,8 @@ nav {
 	font-size:30px;
 	font-weight:bold;
 	border:5px solid red;
+}
+
+#disp_gold {
+	width:75px;
 }

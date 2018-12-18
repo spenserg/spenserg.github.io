@@ -3,58 +3,107 @@ const _DREAM_EVENT_MIN = 160;
 const _ANKLE_EVENT_MIN = 180;
 const _PHOTO_MIN = 200;
 const _PROPOSE_MIN = 220;
+const _PARTY_ATTEND_MIN = 160;
 const _RICK_FIX_MIN = 31;
+const _SPRITE_WINE_MIN = 50; // Meet + (14 gift/talk)
+const _DUKE_WINE_MIN = 41;
+const _BASIL_BERRY_MIN = 200;
 
 const _SICK_EVENT_AFF = 10;
 const _DREAM_EVENT_AFF = 8;
 const _ANKLE_EVENT_AFF = 10;
+const _PHOTO_EVENT_AFF = 10;
 const _MUS_BOX_AFF = 6;
+
+const _POTATO_GROW_DAYS = 6;
+const _CORN_GROW_DAYS = 13;
+const _BUILD_DAYS = 4;
+const _BABY_BORN_DAYS = 60;
+
+const _PREGNANT_SLEEPS = 30;
+const _BABY_SLEEPS = 60;
+const _CHICK_BORN_SLEEPS = 3;
+const _CHICK_GROW_SLEEPS = 7;
+const _COW_GROW_SLEEPS = 21;
+
+const _FUNERAL_AFF_LOSS = 10;
 
 var month_names = ["Spring", "Summer", "Fall", "Winter", "SPR", "SUM", "FALL", "WIN"];
 var day_names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
 				"SUN", "MON", "TUES", "WED", "THURS", "FRI", "SAT",
-				"日", "月", "火", "水", "木", "金", "土"];
-var route_names = ["All Photos", "Elli", "Karen", "Popuri"];
+				"日", "月", "火", "水", "木", "金", "土"
+];
+
+// ORDER OF EXTENSIONS IS IMPORTANT!!
+// DO NOT RE-ORDER THIS LIST
+// (See All-Photos Spr Y3)
+var extensions = [
+	["greenhouse", 30000, 580, "Greenhouse"],
+	["logterrace", 7000, 350, "Log Terrace"],
+	["stairway", 2000, 250, "Stairway"],
+	["bathroom", 3000, 300, "Bathroom"],
+	["babybed", 1000, 150, "Baby Bed"],
+	["kitchen", 5000, 450, "Kitchen"]
+];
+
+var route_names = ["All Photos (Karen)", "Elli", "Karen", "Popuri", "Elli IL Photo", "All Photos (Elli)", "All Recipes", "Maria"];
 var bet_colors = ["lightgray", "black", "red", "blue", "yellow", "green"];
 var route_affs = [
-	[],
-	['elli', 'rick'],
-	['karen'],
-	['popuri', 'rick']
+	[], // Placeholder for All Photos (Karen)
+	['elli', 'rick'], //Elli marriage
+	['karen'], //Karen marriage
+	['popuri', 'rick'], //Popuri marriage
+	['elli', 'rick'], //Elli IL
+	[], // Placeholder for All Photos (Elli)
+	[], // Placeholder for Recipes
+	['maria', 'rick'] // Maria
 ];
 var skip_to_list = [
-	[3],
-	[3, 23, 31],
-	[3, 90, 102, 109, 110],
-	[3]
+	[3, 17, 64], // Photos (Karen)
+	[3, 23, 31], // Elli
+	[3, 90, 102, 109, 110], // Karen
+	[3], // Popuri
+	[3, 31], // Elli IL Photo
+	[3, 17, 64], // Photos (Elli)
+	[3], // Recipes
+	[3] // Maria
 ];
 
+// 0 = vars; 1 = flags; 2 = aff
+var save_slots = [[{}, {}, {}], [{}, {}, {}], [{}, {}, {}], [{}, {}, {}]];
 var actions = [];
-var actions_all = [];
 
-var npcs = ["Ann", "Bartender", "Basil", "Carpenter Bot", "Carpenter Top", "Cliff", "Doug",
-			"Elli", "Ellen", "Fisherman", "Gotz", "Gotz Wife", "Grey", "Harris", "Jeff",
-			"Kai", "Karen", "Kent", "Lillia", "Maria", "Mas Carpenter", "Mayors Wife",
-			"Midwife", "Old Man", "Old Woman", "Pastor", "Popuri", "Potion Master",
-			"Rick", "Saibara", "Shipper", "Stu",
-			"horse", "dog", "chicken", "cow",
-			"baby", "may", "mayor", "sprite"];
-var not_villagers = [1, 3, 4, 9, 20, 25, 26, 34, 35, 36, 37];
+var npcs = ["ann", "bartender", "basil", "carpenter bot", "carpenter top", "cliff", "doug",
+			"elli", "ellen", "fisherman", "gotz", "gotz wife", "grey", "harris", "jeff",
+			"kai", "karen", "kent", "lillia", "maria", "mas carpenter", "may", "mayor", 
+			"mayors wife", "midwife", "old man", "old woman", "pastor", "popuri",
+			"potion master", "rick", "saibara", "salesman", "shipper", "sprite", "stu", "dog",
+			"horse", "_cow", "_baby", "chicken", "kappa", "goddess", "judge", "musbox"];
+var npc_ids = {};
+var not_villagers = [1, 3, 4, 9, 20, 23, 24, 32, 33, 34, 35, 36];
+var recipes = [];
 
 var crops = ["Edible", "Berry", "Clover", "Walnut", "Mango", "Grapes", "Mushroom", "Pois Mush",
 				"Ore", "Moonlight", "Blue Rock", "Pontata", "Rare Metal",
-				"Fish S", "Fish M", "Fish L"];
+				"Fish S", "Fish M", "Fish L", "turnip", "potato", "cabbage",
+				"tomato", "corn", "eggplant", "strawberry",
+				"egg", "milk s", "milk m", "milk l", "milk g"];
 var crop_prices = [30, 40, 70, 40, 70, 50, 60, 100,
 					100, 500, 700, 800, 1000,
-					30, 100, 180];
+					30, 100, 180, 60, 80, 90,
+					90, 120, 300, 500,
+					50, 100, 150, 300, 500];
 var crop_seasons =
  [[0, 1, 2], [0, 2, 3, 4], [0, 2, 5, 6, 7], [8, 9, 10, 11, 12]];
 
-var vars = {}
+var vars = {};
 var flags = {};
 var aff = {};
-var route_id = null;
+var cur_slot = 0;
+
+var route_id = 0;
 var reset = false;
+var sell_stuff = false;
 
 var ucfirst = function (str) {
 	return str.toLowerCase().replace(/^\w/, c => c.toUpperCase());

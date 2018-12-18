@@ -52,7 +52,7 @@ function get_actions_popuri (d = 3, g = 300, is_sunny = 1) {
 	if (d > 3 && d < 61 && !is_festival(d) && aff[popuri_id] < 220 &&
 		["MON", "TUES", "THURS"].includes(get_day_of_week(vars['day'], true))) {
 
-		if (is_sunny) {
+		if (is_sunny == 1) {
 			if (aff[rick_id] < 10) {
 				a.push({'desc':"Equip hoe"});
 				a.push({'desc':"Clear 9x9 space"});
@@ -113,7 +113,7 @@ function get_actions_popuri (d = 3, g = 300, is_sunny = 1) {
 		if (flags['kitchen'] < 1 && get_day_of_week(vars['day'], true) != "TUES") {
 			a.push({'desc':'Buy Kitchen', 'cid':['v_lumber', 'v_gold', 'f_kitchen'], 'val':[-500, -5000, (3 + 1 + 1)]});
 		}
-		if (flags['kitchen'] >= 1 && flags['kitchen'] <= 2 && is_sunny && aff[popuri_id] >= 220 && vars['gold'] >= 980 &&
+		if (flags['kitchen'] >= 1 && flags['kitchen'] <= 2 && is_sunny == 1 && aff[popuri_id] >= 220 && vars['gold'] >= 980 &&
 			flags['propose'] == 0 && ["MON", "TUES", "THURS"].includes(get_day_of_week(vars['day'], true))) {
 				a.push({'desc':"Buy Blue Feather", 'cid':['v_gold', 'f_blue_feather'], 'val':[-980, 1]});
 				a.push({'desc':"Propose", 'cid':['f_blue_feather', 'f_propose'], 'val':[-1, 1]});
