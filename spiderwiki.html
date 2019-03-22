@@ -14,19 +14,105 @@
 	Citation: <input name="src" id="src" />
 	<button onclick="compute()">Go</button><br/>
 	Wiki Ref:<br/>
-	<textarea id="wiki"></textarea><br/>br/>
+	<textarea id="wiki_ref"></textarea><br/><br/>
 	
-	Page Source: <input name="gen_src" />
-	<button onclick="get_page_data()">Go</button><br/>
-	Gen List:
-	<textarea id="wiki"></textarea><br/>br/>
+	Copy Paste Gen Page: <input name="gen_src" id="gen_src" />
+	<button onclick="compute2()">Go</button><br/>
+	Wiki page:
+	<textarea id="wiki_page"></textarea><br/><br/>
 </body>
 
 <script>
+	var authors = [
+		["Dahl", "F", "Friedrich Dahl"],
+		["Keyserling","E","Eugen von Keyserling"],
+		["Koch","CL","Carl Ludwig Koch"],
+		["Koch","L","Ludwig Carl Christian Koch"],
+		["Kulczyński","W","Władysław Kulczyński"],
+		["Lehtinen","PT","Pekka T. Lehtinen"],
+		["Pickard-Cambridge","FO","Frederick Octavius Pickard-Cambridge"],
+		["Pickard-Cambridge","O","Octavius Pickard-Cambridge"],
+		["Platnick","N","Norman I. Platnick"],
+		["Prószyński","J","Jerzy Prószyński"],
+		["Roewer","C","Carl Friedrich Roewer"],
+		["Simon","E","Eugène Simon"],
+		["Thorell","T","Tamerlan Thorell"],
+	];
+	var families = [
+		["Antrodiaetidae", "folding trapdoor spiders"],
+		["Atracidae","Australian funnel web spiders"],
+		["Atypidae","purseweb spiders"],
+		["Barychelidae","brushed trapdoor spiders"],
+		["Ctenizidae","trapdoor spiders"],
+		["Cyrtaucheniidae","wafer trapdoor spiders"],
+		["Dipluridae","curtain web spiders"],
+		["Idiopidae","armored trapdoor spiders"],
+		["Mecicobothriidae","dwarf tarantulas"],
+		["Migidae","tree trapdoor spiders"],
+		["Paratropididae","baldlegged spiders"],
+		["Theraphosidae","tarantulas"],
+		["Amaurobiidae","tangled nest spiders"],
+		["Anyphaenidae","anyphaenid sac spiders"],
+		["Araneidae","orb-weaver spiders"],
+		["Archaeidae","assassin spiders"],
+		["Clubionidae","sac spiders"],
+		["Corinnidae","corinnid sac spiders"],
+		["Ctenidae","wandering spiders"],
+		["Deinopidae","net-casting spiders"],
+		["Desidae","intertidal spiders"],
+		["Diguetidae","coneweb spiders"],
+		["Drymusidae","false violin spiders"],
+		["Dysderidae","woodlouse hunter spiders"],
+		["Eresidae","velvet spiders"],
+		["Filistatidae","crevice weavers"],
+		["Gnaphosidae","flat-bellied ground spiders"],
+		["Gradungulidae","large-clawed spiders"],
+		["Hahniidae","dwarf sheet spiders"],
+		["Hersiliidae","tree trunk spiders"],
+		["Hypochilidae","lampshade spiders"],
+		["Liocranidae","liocranid sac spiders"],
+		["Linyphiidae","dwarf spiders"],
+		["Lycosidae","wolf spiders"],
+		["Malkaridae","shield spiders"],
+		["Mimetidae","pirate spiders"],
+		["Miturgidae","long-legged sac spiders"],
+		["Mysmenidae","spurred orb-weavers"],
+		["Nesticidae","cave cobweb spiders"],
+		["Ochyroceratidae","midget ground weavers"],
+		["Oecobiidae","disc web spiders"],
+		["Oonopidae","goblin spiders"],
+		["Oxyopidae","lynx spiders"],
+		["Palpimanidae","palp-footed spiders"],
+		["Philodromidae","running crab spiders"],
+		["Pholcidae","cellar spiders"],
+		["Pisauridae","nursery web spiders"],
+		["Plectreuridae","plectreurid spiders"],
+		["Prodidomidae","long-spinneret ground spiders"],
+		["Salticidae","jumping spiders"],
+		["Scytodidae","spitting spiders"],
+		["Segestriidae","tube dwelling spiders"],
+		["Selenopidae","wall spiders"],
+		["Sicariidae","recluse spider"],
+		["Sparassidae","huntsman spiders"],
+		["Stiphidiidae","sheetweb spiders"],
+		["Symphytognathidae","dwarf orb-weavers"],
+		["Telemidae","long-legged cave spiders"],
+		["Tetragnathidae","long-jawed orb-weavers"],
+		["Theridiidae","tangle-web spiders"],
+		["Theridiosomatidae","ray spiders"],
+		["Thomisidae","crab spiders"],
+		["Uloboridae","cribellate orb-weavers"],
+		["Zodariidae","ant spiders"]
+	];
+	
   function compute() {
-    $("#wiki").val(get_citation($("#src").val()));
+    $("#wiki_src").val(get_citation($("#src").val()));
   }
-  
+	
+	function compute2() {
+		$("#wiki_page").val(get_page_data($("#gen_src").val()));
+	}
+ 
 function get_citation(ref = "") {
   var result = {};
   var cite_patt = /[\s]*(\S[\s\S]*)\(([0-9]+)[a-zA-Z]*\)[\.\s]*([^0-9]+)([0-9()a-zA-Z ]+)\:([\s\S]+)download pdf/;
@@ -62,7 +148,6 @@ function get_citation(ref = "") {
       result['title'] += ((result['title'].length > 0) ? ". " : "") + tmp_ans[i].trim();
     }
   }
-
   if (info[4].includes("(")) {
     var iss_patt = /([^()]*)\(([^()]*)\)/;
     tmp_ans = iss_patt.exec(info[4]);
@@ -80,14 +165,15 @@ function get_citation(ref = "") {
 }
 	
 function get_page_data() {
-	$.ajax({
-        url: 'https://wsc.nmbe.ch/genus/1188',
-        beforeSend: function(xhr) {
-             xhr.setRequestHeader("Authorization", "Bearer 6QXNMEMFHNY4FJ5ELNFMP5KRW52WFXN5")
-        }, success: function(data){
-            alert(data);
-            //process the JSON data etc
-        }
-})
+	var str = $("#wiki").val();
+	var info = [];
+
+	var info_patt = /Family:[\s]*([a-zA-Z]+)[\s]+([\S]+,[\s]*[0-9]+)/;
+	var tmp_info = info_patt.exec(str);
+	info['family'] = tmp_info[1];
+	info['authority'] = tmp_info[2];
+	
+	return info['family'] + " | " + info['authority'];
 }
+	
 </script>
