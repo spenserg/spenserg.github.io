@@ -1,0 +1,54 @@
+<script>
+var ref = function (ref = "") {
+
+  var result = {};
+  var cite_patt = /[\s]*(\S[\s\S]*)\(([0-9]+)[a-zA-Z]*\)[\.\s]*([^0-9]+)([0-9()a-zA-Z ]+)\:([\s\S]+)download pdf/;
+  var info = cite_patt.exec(ref);
+  var ref_name = "";
+
+  if (info[1].includes("&")) {
+    var allnames = info[1].replace("&",",").split(",");
+    for (var i = 0; i < allnames.length; i += 2) {
+      result['last' + (i/2 + 1)] = allnames[i].trim();
+      result['first' + (i/2 + 1)] = allnames[i + 1].trim();
+    }
+    ref_name = result['last1'].substr(0,4) + info[2];
+  } else {
+    var tmp_name = info[1].split(',');
+    result['last'] = tmp_name[0].trim();
+    result['first'] = tmp_name[1].trim();
+    ref_name = result['last'].substr(0,4) + info[2];
+  }
+  result['year'] = info[2];
+
+  var pages_patt = /([0-9]+)[\s]*(\-)[\s]*([0-9]+)/;
+  var tmp_ans = pages_patt.exec(info[5].replace("download pdf", ""));
+  tmp_ans.shift();
+  result['pages'] = tmp_ans.join('');
+
+  tmp_ans = info[3].split(".");
+  result['title'] = "";
+  for (var i = 0; i < tmp_ans.length; i++) {
+    if (i == tmp_ans.length - 1) {
+      result['journal'] = tmp_ans[i].trim();
+    } else {
+      result['title'] += ((result['title'].length > 0) ? ". " : "") + tmp_ans[i].trim();
+    }
+  }
+
+  if (info[4].includes("(")) {
+    var iss_patt = /([^()]*)\(([^()]*)\)/;
+    tmp_ans = iss_patt.exec(info[4]);
+    result['volume'] = tmp_ans[1];
+    result['issue'] = tmp_ans[2];
+  } else {
+    result['volume'] = info[4].trim();
+  }
+
+  var wiki_cite = "<ref name=" + ref_name + ">{{cite journal|";
+  for (var p in result) {
+    wiki_cite += "| " + p + "=" + result[p];
+  }
+  return wiki_cite + "}}</ref>";
+}
+</script>
