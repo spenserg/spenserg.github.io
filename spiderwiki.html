@@ -1,5 +1,15 @@
+<body>
+		Source: <input name="src" id="src" />
+		<button onclick="compute()">Go</button><br/>
+		<textarea id="wiki"></textarea><br/>
+</body>
+
 <script>
-var ref = function (ref = "") {
+  function compute() {
+    $("#wiki").val(get_citation($("#src").val()));
+  }
+  
+function get_citation(ref = "") {
 
   var result = {};
   var cite_patt = /[\s]*(\S[\s\S]*)\(([0-9]+)[a-zA-Z]*\)[\.\s]*([^0-9]+)([0-9()a-zA-Z ]+)\:([\s\S]+)download pdf/;
