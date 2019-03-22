@@ -165,15 +165,33 @@ function get_citation(ref = "") {
 }
 	
 function get_page_data() {
-	var str = $("#wiki").val();
+	var str = $("#gen_src").val();
 	var info = [];
+	var tmp_info = "";
+	var tmp_list = [];
+	var result = "{{Short description||Genus of spiders}}";
 
 	var info_patt = /Family:[\s]*([a-zA-Z]+)[\s]+([\S]+,[\s]*[0-9]+)/;
-	var tmp_info = info_patt.exec(str);
+	tmp_info = info_patt.exec(str);
 	info['family'] = tmp_info[1];
-	info['authority'] = tmp_info[2];
+	info['authority'] = tmp_info[2].trim();
+	if (!info['authority'].includes(" ")) {
+		tmp_list = info['authority'].split(",");
+		info['authority'] = tmp_list[0] + ", " + tmp_list[1];
+	}
 	
-	return info['family'] + " | " + info['authority'];
+	if (str.includes("synonymy:")) {
+		info_patt = /In synonymy:[\s]*([\s\S]*)Gen\./;
+		var syn_patt = /\)[\s]*([a-zA-Z]+) /ug;
+		tmp_info = info_patt.exec(str)[1];
+		
+		console.log(tmp_info);
+		
+		tmp_list = syn_patt.exec(tmp_info);
+		info['synonyms'] = tmp_list;
+	}
+	
+	return info;
 }
 	
 </script>
