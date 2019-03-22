@@ -11,9 +11,15 @@
 </head>
 
 <body>
-	Source: <input name="src" id="src" />
+	Citation: <input name="src" id="src" />
 	<button onclick="compute()">Go</button><br/>
-	<textarea id="wiki"></textarea><br/>
+	Wiki Ref:<br/>
+	<textarea id="wiki"></textarea><br/>br/>
+	
+	Page Source: <input name="gen_src" />
+	<button onclick="get_page_data()">Go</button><br/>
+	Gen List:
+	<textarea id="wiki"></textarea><br/>br/>
 </body>
 
 <script>
@@ -22,7 +28,6 @@
   }
   
 function get_citation(ref = "") {
-
   var result = {};
   var cite_patt = /[\s]*(\S[\s\S]*)\(([0-9]+)[a-zA-Z]*\)[\.\s]*([^0-9]+)([0-9()a-zA-Z ]+)\:([\s\S]+)download pdf/;
   var info = cite_patt.exec(ref);
@@ -72,5 +77,17 @@ function get_citation(ref = "") {
     wiki_cite += "| " + p + "=" + result[p];
   }
   return wiki_cite + "}}</ref>";
+}
+	
+function get_page_data() {
+	$.ajax({
+        url: 'https://wsc.nmbe.ch/genus/1188',
+        beforeSend: function(xhr) {
+             xhr.setRequestHeader("Authorization", "Bearer 6QXNMEMFHNY4FJ5ELNFMP5KRW52WFXN5")
+        }, success: function(data){
+            alert(data);
+            //process the JSON data etc
+        }
+})
 }
 </script>
