@@ -135,7 +135,7 @@ ref = function (ref = "") {
   }
   result['year'] = info[2];
 
-  var pages_patt = /([0-9]+)[\s]*(\-)[\s]*([0-9]+)/;
+  var pages_patt = /([0-9]+)[\s]*([\-]*)[\s]*([0-9]*)/;
   var tmp_ans = pages_patt.exec(info[5].replace("download pdf", ""));
   tmp_ans.shift();
   result['pages'] = tmp_ans.join('');
