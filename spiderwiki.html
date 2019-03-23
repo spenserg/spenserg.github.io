@@ -113,9 +113,10 @@
 		$("#wiki_page").val(get_page_data($("#gen_src").val()));
 	}
  
-function get_citation(ref = "") {
+//function get_citation(ref = "") {
+ref = function (ref = "") {
   var result = {};
-  var cite_patt = /[\s]*(\S[\s\S]*)\(([0-9]+)[a-zA-Z]*\)[\.\s]*([^0-9]+)([0-9()a-zA-Z ]+)\:([\s\S]+)download pdf/;
+  var cite_patt = /[\s]*(\S[\s\S]*)\(([0-9]+)[a-zA-Z]*\)[\.\s]*([\s\S]+) ([0-9()a-zA-Z]+)\:([\s\S]+)download pdf/;
   var info = cite_patt.exec(ref);
   var ref_name = "";
 
@@ -157,7 +158,7 @@ function get_citation(ref = "") {
     result['volume'] = info[4].trim();
   }
 
-  var wiki_cite = "<ref name=" + ref_name + ">{{cite journal|";
+  var wiki_cite = "<ref name=" + ref_name + ">{{cite journal";
   for (var p in result) {
     wiki_cite += "| " + p + "=" + result[p];
   }
