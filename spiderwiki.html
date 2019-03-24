@@ -113,8 +113,7 @@
 		$("#wiki_page").val(get_page_data($("#gen_src").val()));
 	}
  
-//function get_citation(ref = "") {
-ref = function (ref = "") {
+function ref = function (ref = "") {
   var result = {};
   var cite_patt = /[\s]*(\S[\s\S]*)\(([0-9]+)[a-zA-Z]*\)[\.\s]*([\s\S]+) ([0-9()a-zA-Z]+)\:([\s\S]+)download pdf/;
   var info = cite_patt.exec(ref);
@@ -167,32 +166,25 @@ ref = function (ref = "") {
 	
 function get_page_data() {
 	var str = $("#gen_src").val();
-	var info = [];
-	var tmp_info = "";
-	var tmp_list = [];
 	var result = "{{Short description||Genus of spiders}}";
+	var list = {};
+  	var gen_patt = /Gen.\s([^\s]+)\s([\s\S]*,\s[0-9]{4}[)\s]*)\[/;
+  	var tmp = gen_patt.exec(str);
+  	list['genus'] = tmp[1].trim();
+  	list['genus_auth'] = tmp[2].trim();
 
-	var info_patt = /Family:[\s]*([a-zA-Z]+)[\s]+([\S]+,[\s]*[0-9]+)/;
-	tmp_info = info_patt.exec(str);
-	info['family'] = tmp_info[1];
-	info['authority'] = tmp_info[2].trim();
-	if (!info['authority'].includes(" ")) {
-		tmp_list = info['authority'].split(",");
-		info['authority'] = tmp_list[0] + ", " + tmp_list[1];
-	}
+  	var fam_patt = /Family:\s([\S]+)\s/;
+  	tmp = fam_patt.exec(str);
+  	list['family'] = tmp[1].trim();
 	
-	if (str.includes("synonymy:")) {
-		info_patt = /In synonymy:[\s]*([\s\S]*)Gen\./;
-		var syn_patt = /\)[\s]*([a-zA-Z]+) /ug;
-		tmp_info = info_patt.exec(str)[1];
-		
-		console.log(tmp_info);
-		
-		tmp_list = syn_patt.exec(tmp_info);
-		info['synonyms'] = tmp_list;
-	}
+	result += "\n{{Automatic taxobox\n| taxon = " + list['genus'] +
+    "\n| authority = " + list["genus_auth"] + "<ref name=NMBE />" +
+    "\n| type species = ''[[" + list['type_species'] + "]]''" +
+    "\n| subdivision_ranks = Species" +
+    "\n| subdivision = " + list['num_spec'] + ", see text\n}}\n" +
+    "'''''" + list['genus'] + "''''' is a [[genus]] of ";
 	
-	return info;
+	$("#wiki_page").val(result);
 }
 	
 </script>
