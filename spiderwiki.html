@@ -113,7 +113,7 @@
 		$("#wiki_page").val(get_page_data($("#gen_src").val()));
 	}
  
-function ref = function (ref = "") {
+function ref (ref = "") {
   var result = {};
   var cite_patt = /[\s]*(\S[\s\S]*)\(([0-9]+)[a-zA-Z]*\)[\.\s]*([\s\S]+) ([0-9()a-zA-Z]+)\:([\s\S]+)download pdf/;
   var info = cite_patt.exec(ref);
