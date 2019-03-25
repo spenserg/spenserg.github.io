@@ -15,10 +15,11 @@
 	<button onclick="compute()">Go</button><br/>
 	Wiki Ref:<br/>
 	<textarea id="wiki_ref"></textarea><br/><br/>
+	<hr>
 	
-	Copy Paste Gen Page: <input name="gen_src" id="gen_src" />
-	Number: <input name="gen_num" id="gen_num" />
-	Image: <input name="img" id="img" />
+	Copy Paste Gen Page: <input name="gen_src" id="gen_src" /><br/>
+	Number: <input name="gen_num" id="gen_num" /><br/>
+	Image: <input name="img" id="img" /><br/>
 	Image Cap: <input name="img_cap" id="img_cap" />
 	<button onclick="compute2()">Go</button><br/>
 	Wiki page:
@@ -119,9 +120,9 @@
   function compute() {
     $("#wiki_src").val(get_citation($("#src").val()));
   }
-	
+
 	function compute2() {
-		$("#wiki_page").val(get_page_data($("#num").val(), $("#gen_src").val(), $("#img").val(), $("#img_cap".val()));
+		$("#wiki_page").val(get_page_data($("#num").val(), $("#gen_src").val(), $("#img").val(), $("#img_cap".val())));
 	}
  
 function ref (ref = "") {
