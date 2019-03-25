@@ -297,7 +297,7 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
     var tmp_locs = list['species'][i][3].split(',');
     for (var j = 0; j < tmp_locs.length; j++) {
       tmp_locs[j] = tmp_locs[j].replace(/\([^\)\(]*\)/, "").trim();
-      if (!list['locations'].includes(tmp_locs[j]) {
+      if (!list['locations'].includes(tmp_locs[j])) {
         list['locations'].push(tmp_locs[j]);
       }
     }
