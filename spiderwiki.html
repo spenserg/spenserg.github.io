@@ -14,15 +14,15 @@
 	Citation: <input name="src" id="src" />
 	<button onclick="compute()">Go</button><br/>
 	Wiki Ref:<br/>
-	<textarea id="wiki_ref"></textarea><br/><br/>
+	<textarea id="wiki_ref"></textarea><br/>
 	<hr>
 	
 	Copy Paste Gen Page: <input name="gen_src" id="gen_src" /><br/>
 	Number: <input name="gen_num" id="gen_num" /><br/>
 	Image: <input name="img" id="img" /><br/>
 	Image Cap: <input name="img_cap" id="img_cap" /><br/>
-	Other Text: <input name="other_txt" id="other_txt" />
-	<button onclick="compute2()">Go</button><br/>
+	Other Text: <input name="other_txt" id="other_txt" /><br/>
+	<button onclick="compute2()">Go</button>
 	Wiki page:
 	<textarea id="wiki_page"></textarea><br/><br/>
 </body>
@@ -135,6 +135,8 @@ function compute2() {
  
 function ref (ref = "") {
   var result = {};
+	
+	ref = $("#src").val();
   var cite_patt = /[\s]*(\S[\s\S]*)\(([0-9]+)[a-zA-Z]*\)[\.\s]*([\s\S]+) ([0-9()a-zA-Z]+)\:([\s\S]+)download pdf/;
   var info = cite_patt.exec(ref);
   var ref_name = "";
@@ -171,7 +173,7 @@ function ref (ref = "") {
   if (info[4].includes("(")) {
     var iss_patt = /([^()]*)\(([^()]*)\)/;
     tmp_ans = iss_patt.exec(info[4]);
-    result['volume'] = tmp_ans[1];
+    result['volume'] = tmp_ans[1];	
     result['issue'] = tmp_ans[2];
   } else {
     result['volume'] = info[4].trim();
