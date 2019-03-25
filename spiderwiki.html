@@ -225,17 +225,19 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
   if (str.includes("In synonymy:")) {
     z = 0;
     var s_patt = /In synonymy:([\s\S]*)Gen./;
-    list['synonyms'] = [s_patt.exec(str)[1].trim().split(" ")[0]];
-    var syn_group = s_patt.exec(str)[1];
-    do {
-      tmp_s_patt = /\)\s([^=]+) = /;
-      tmp = tmp_s_patt.exec(syn_group);
-      if (tmp) {
-        list['synonyms'].push(tmp[1].split(" ")[0]);
-        syn_group = syn_group.replace(tmp[1], "");
-      }
-      z++;
-    } while (tmp && z < 100);
+		if (s_patt.exec(str)) {
+    	list['synonyms'] = [s_patt.exec(str)[1].trim().split(" ")[0]];
+    	var syn_group = s_patt.exec(str)[1];
+    	do {
+      	tmp_s_patt = /\)\s([^=]+) = /;
+      	tmp = tmp_s_patt.exec(syn_group);
+      	if (tmp) {
+        	list['synonyms'].push(tmp[1].split(" ")[0]);
+        	syn_group = syn_group.replace(tmp[1], "");
+      	}
+      	z++;
+    	} while (tmp && z < 100);
+		}
   }
 
   result += "\n{{Automatic taxobox\n| taxon = " + list['genus'] +
