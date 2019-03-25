@@ -237,8 +237,8 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
       	}
       	z++;
     	} while (tmp && z < 100);
-		}
-  }
+		} else { list['synonyms'] = []; }
+  } else { list['synonyms'] = []; }
 
   result += "\n{{Automatic taxobox\n| taxon = " + list['genus'] +
 		"\n| image = " + img + "\n| image_caption = " + img_cap +
