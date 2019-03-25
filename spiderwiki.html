@@ -20,7 +20,7 @@
 	Copy Paste Gen Page: <input name="gen_src" id="gen_src" /><br/>
 	Number: <input name="gen_num" id="gen_num" /><br/>
 	Image: <input name="img" id="img" /><br/>
-	Image Cap: <input name="img_cap" id="img_cap" />
+	Image Cap: <input name="img_cap" id="img_cap" /><br/>
 	Other Text: <input name="other_txt" id="other_txt" />
 	<button onclick="compute2()">Go</button><br/>
 	Wiki page:
@@ -37,6 +37,7 @@
 		"Kulczyński":"Władysław Kulczyński",
 		"Kulczynski":"Władysław Kulczyński",
 		"Lehtinen":"Pekka T. Lehtinen",
+		"Marx":"George Marx",
 		"Menge":"Anton Menge",
 		"Millidge":"A. F. Millidge",
 		"F. O. Pickard-Cambridge":"Frederick Octavius Pickard-Cambridge", 
@@ -120,7 +121,7 @@
 	];
 	
   function compute() {
-    $("#wiki_src").val(get_citation($("#src").val()));
+    $("#wiki_src").val(ref($("#src").val()));
   }
 
 function compute2() {
