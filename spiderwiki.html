@@ -177,6 +177,7 @@ function ref (ref = "") {
 }
 	
 function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
+	if (str.length == 0) { return ""; }
 	/*
   str = $("#gen_src").val();
   gen_num = $("#gen_num").val();
