@@ -17,27 +17,38 @@
 	<textarea id="wiki_ref"></textarea><br/><br/>
 	
 	Copy Paste Gen Page: <input name="gen_src" id="gen_src" />
+	Number: <input name="gen_num" id="gen_num" />
+	Image: <input name="img" id="img" />
+	Image Cap: <input name="img_cap" id="img_cap" />
 	<button onclick="compute2()">Go</button><br/>
 	Wiki page:
 	<textarea id="wiki_page"></textarea><br/><br/>
 </body>
 
 <script>
-	var authors = [
-		["Dahl", "F", "Friedrich Dahl"],
-		["Keyserling","E","Eugen von Keyserling"],
-		["Koch","CL","Carl Ludwig Koch"],
-		["Koch","L","Ludwig Carl Christian Koch"],
-		["Kulczyński","W","Władysław Kulczyński"],
-		["Lehtinen","PT","Pekka T. Lehtinen"],
-		["Pickard-Cambridge","FO","Frederick Octavius Pickard-Cambridge"],
-		["Pickard-Cambridge","O","Octavius Pickard-Cambridge"],
-		["Platnick","N","Norman I. Platnick"],
-		["Prószyński","J","Jerzy Prószyński"],
-		["Roewer","C","Carl Friedrich Roewer"],
-		["Simon","E","Eugène Simon"],
-		["Thorell","T","Tamerlan Thorell"],
-	];
+	var authors = {
+		"Dahl":"Friedrich Dahl",
+		"Emerton":"James Henry Emerton",
+		"Keyserling":"Eugen von Keyserling",
+		"C. L. Koch":"Ludwig Carl Christian Koch",
+		"L. Koch":"Ludwig Carl Christian Koch",
+		"Kulczyński":"Władysław Kulczyński",
+		"Kulczynski":"Władysław Kulczyński",
+		"Lehtinen":"Pekka T. Lehtinen",
+		"Menge":"Anton Menge",
+		"Millidge":"A. F. Millidge",
+		"F. O. Pickard-Cambridge":"Frederick Octavius Pickard-Cambridge", 
+		"O. Pickard-Cambridge":"Octavius Pickard-Cambridge",
+		"Platnick":"Norman I. Platnick",
+		"Pocock":"Reginald Innes Pocock",
+		"Prószyński":"Jerzy Prószyński",
+		"Proszynski":"Jerzy Prószyński",
+		"Roewer":"Carl Friedrich Roewer",
+		"Saaristo":"Michael Saaristo",
+		"Strand":"Embrik Strand",
+		"Simon":"Eugène Simon",
+		"Thorell":"Tamerlan Thorell"
+	};
 	var families = [
 		["Antrodiaetidae", "folding trapdoor spiders"],
 		["Atracidae","Australian funnel web spiders"],
@@ -110,7 +121,7 @@
   }
 	
 	function compute2() {
-		$("#wiki_page").val(get_page_data($("#gen_src").val()));
+		$("#wiki_page").val(get_page_data($("#num").val(), $("#gen_src").val(), $("#img").val(), $("#img_cap".val()));
 	}
  
 function ref (ref = "") {
@@ -164,27 +175,123 @@ function ref (ref = "") {
   return wiki_cite + "}}</ref>";
 }
 	
-function get_page_data() {
-	var str = $("#gen_src").val();
-	var result = "{{Short description||Genus of spiders}}";
-	var list = {};
-  	var gen_patt = /Gen.\s([^\s]+)\s([\s\S]*,\s[0-9]{4}[)\s]*)\[/;
-  	var tmp = gen_patt.exec(str);
-  	list['genus'] = tmp[1].trim();
-  	list['genus_auth'] = tmp[2].trim();
+function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
+	/*
+  str = $("#gen_src").val();
+  gen_num = $("#gen_num").val();
+  img = $("#img").val();
+  img_cap = $("#img_cap").val();
+	*/
 
-  	var fam_patt = /Family:\s([\S]+)\s/;
-  	tmp = fam_patt.exec(str);
-  	list['family'] = tmp[1].trim();
-	
-	result += "\n{{Automatic taxobox\n| taxon = " + list['genus'] +
+	var result = "{{Short description|Genus of spiders}}";
+	var list = {};
+
+  var gen_patt = /Gen.\s([^\s]+)\s([\s\S]*,\s[0-9]{4}[)\s]*)\[/;
+  var tmp = gen_patt.exec(str);
+
+  list['genus'] = tmp[1].trim();
+  list['genus_auth'] = tmp[2].trim();
+
+  var fam_patt = /Family:\s([\S]+)\s/;
+  tmp = fam_patt.exec(str);
+  list['family'] = tmp[1].trim();
+
+  var z = 0;
+  list['species'] = [];
+  do {
+    var re = new RegExp("(" + list['genus'] + "\\s[\\S]+)\\s([^\\d]+,\\s[0-9]{4}[^\\s]*)[\\s\\*]+\\|[\\smf]+\\|([^\\[]+)\\[");
+    tmp = re.exec(str);
+    if (tmp) {
+      list['species'].push(tmp);
+      if (tmp[0].includes("*")) {
+        list['type_species'] = tmp[1];
+      }
+      list['species'][list['species'].length - 1][3] = list['species'][list['species'].length - 1][3].trim();
+      str = str.replace(tmp[0], "");
+    }
+    z++;
+  } while (tmp && z < 1000);
+
+  list['fam_nickname'] = "";
+  for (var i = 0; i < families.length; i++) {
+    if (list['family'].toLowerCase().localeCompare(families[i][0].toLowerCase()) == 0) {
+      list['fam_nickname'] = families[i][1];
+      break;
+    }
+  }
+
+  if (str.includes("In synonymy:")) {
+    z = 0;
+    var s_patt = /In synonymy:([\s\S]*)Gen./;
+    list['synonyms'] = [s_patt.exec(str)[1].trim().split(" ")[0]];
+    var syn_group = s_patt.exec(str)[1];
+    do {
+      tmp_s_patt = /\)\s([^=]+) = /;
+      tmp = tmp_s_patt.exec(syn_group);
+      if (tmp) {
+        list['synonyms'].push(tmp[1].split(" ")[0]);
+        syn_group = syn_group.replace(tmp[1], "");
+      }
+      z++;
+    } while (tmp && z < 100);
+  }
+
+  result += "\n{{Automatic taxobox\n| taxon = " + list['genus'] +
+		"\n| image = " + img + "\n| image_caption = " + img_cap +
     "\n| authority = " + list["genus_auth"] + "<ref name=NMBE />" +
     "\n| type species = ''[[" + list['type_species'] + "]]''" +
     "\n| subdivision_ranks = Species" +
-    "\n| subdivision = " + list['num_spec'] + ", see text\n}}\n" +
-    "'''''" + list['genus'] + "''''' is a [[genus]] of ";
-	
-	return result;
+    "\n| subdivision = " + list['species'].length + ", see text\n";
+  if (list['synonyms'].length > 0) {
+    result += "| synonyms =\n";
+    for (var i = 0; i < list['synonyms'].length; i++) {
+      result += "*''" + list['synonyms'][i] + "''\n";
+    }
+  }
+  result += "}}\n'''''" + list['genus'] + "''''' is a [[genus]] of ";
+
+  if (list['fam_nickname'].length > 0) {
+    result += "[[" + list['family'] + "|" + list['fam_nickname'] + "]]";
+  } else {
+    result += "spiders in the " + list['family'] + " family";
+  }
+  result += " first described by ";
+ 
+  var auth_names = list['genus_auth'].split(',');
+  for (var i = 0; i < auth_names.length - 1; i++) {
+    if (authors[auth_names[i].trim()]) {
+      auth_names[i] = "[[" + authors[auth_names[i].trim()] + "]]";
+    }
+    result += auth_names[i];
+    if (i < auth_names.length - 2) { result += ", "; }
+    if (i == auth_names.length - 1 && auth_names.length > 2) { result += " & "; }
+  }
+  result += " in " + auth_names[auth_names.length - 1].trim() + ".\n\n";
+
+  var curdate = new Date();
+  result += "== Species ==\n{{as of|" + curdate.getUTCFullYear() + "|" +
+    curdate.getUTCMonth() + "}} it contains " + list['species'].length + " species:" +
+    "<ref name=NMBE>{{cite web|title=Gen. " + list['genus'] + " " +
+    list['genus_auth'] + "| website=World Spider Catalog" +
+    "| publisher=Natural History Museum Bern| accessdate=" + 
+    curdate.getFullYear() + "-" + (curdate.getMonth()+1) + "-" +
+    curdate.getDate() + "| url=http://www.wsc.nmbe.ch/";
+  if (gen_num != null) {
+    result += "/genus/" + gen_num + "/" + list['genus'];
+  }
+  result += "}}</ref>\n" +
+    "<!--When updating this list, please also update the list at [[List of " +
+    list['family'] + " species#" + list['genus'] + "]]-->";
+
+  for (var i = 0; i < list['species'].length; i++) {
+    result += "\n*''[[" + list['species'][i][1] + "]]'' <small>" +
+      list['species'][i][2] + "</small>";
+  }
+
+  result += "\n\n==References==\n{{Reflist}}\n\n" +
+    "[[Category:" + list['family'] + "]]\n\n" +
+    "{{" + list['family'] + "-stub}}";
+  return result;
 }
 	
 </script>
