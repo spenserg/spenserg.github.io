@@ -21,6 +21,7 @@
 	Number: <input name="gen_num" id="gen_num" /><br/>
 	Image: <input name="img" id="img" /><br/>
 	Image Cap: <input name="img_cap" id="img_cap" />
+	Other Text: <input name="other_txt" id="other_txt" />
 	<button onclick="compute2()">Go</button><br/>
 	Wiki page:
 	<textarea id="wiki_page"></textarea><br/><br/>
@@ -40,6 +41,7 @@
 		"Millidge":"A. F. Millidge",
 		"F. O. Pickard-Cambridge":"Frederick Octavius Pickard-Cambridge", 
 		"O. Pickard-Cambridge":"Octavius Pickard-Cambridge",
+		"Perty":"Maximilian Perty",
 		"Platnick":"Norman I. Platnick",
 		"Pocock":"Reginald Innes Pocock",
 		"Prószyński":"Jerzy Prószyński",
@@ -122,7 +124,7 @@
   }
 
 function compute2() {
-	$("#wiki_page").val(get_page_data($("#num").val(), $("#gen_src").val(), $("#img").val(), $("#img_cap").val()));
+	$("#wiki_page").val(get_page_data($("#num").val(), $("#gen_src").val(), $("#img").val(), $("#img_cap").val(), $("#other_txt").val());
 }
  
 function ref (ref = "") {
@@ -175,8 +177,7 @@ function ref (ref = "") {
   }
   return wiki_cite + "}}</ref>";
 }
-	
-function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
+	function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
 	if (str.length == 0) { return ""; }
 	/*
   str = $("#gen_src").val();
@@ -275,7 +276,7 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
   var curdate = new Date();
   var month = (((curdate.getMonth()+1) < 10) ? ("0" + (curdate.getMonth()+1)) : (curdate.getMonth()+1));
   result += "== Species ==\n{{as of|" + curdate.getUTCFullYear() + "|" +
-    curdate.getUTCMonth() + "}} it contains " + list['species'].length + " species:" +
+    month + "}} it contains " + list['species'].length + " species:" +
     "<ref name=NMBE>{{cite web|title=Gen. " + list['genus'] + " " +
     list['genus_auth'] + "| website=World Spider Catalog" +
     "| publisher=Natural History Museum Bern| accessdate=" + 
@@ -288,14 +289,25 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
     "<!--When updating this list, please also update the list at [[List of " +
     list['family'] + " species#" + list['genus'] + "]]-->";
 
+  list['locations'] = [];
   for (var i = 0; i < list['species'].length; i++) {
     result += "\n*''[[" + list['species'][i][1] + "]]'' <small>" +
       list['species'][i][2] + "</small> — " + list['species'][i][3];
+    var tmp_locs = list['species'][i][3].split(',');
+    for (var j = 0; j < tmp_locs.length; j++) {
+      tmp_locs[j] = tmp_locs[j].replace(/\([^\)\(]*\)/, "").trim();
+      if (!list['locations'].includes(tmp_locs[j]) {
+        list['locations'].push(tmp_locs[j]);
+      }
+    }
   }
 
   result += "\n\n==References==\n{{Reflist}}\n\n" +
-    "[[Category:" + list['family'] + "]]\n\n" +
-    "{{" + list['family'] + "-stub}}";
+    "[[Category:" + list['family'] + "]]\n";
+  for (var i = 0; i < list['locations'].length; i++) {
+    result += "[[Spiders of " + list['locations'][i] + "]]\n";
+  }
+  result += "\n{{" + list['family'] + "-stub}}";
   return result;
 }
 	
