@@ -273,12 +273,13 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
   result += " in " + auth_names[auth_names.length - 1].trim() + ".\n\n";
 
   var curdate = new Date();
+  var month = (((curdate.getMonth()+1) < 10) ? ("0" + (curdate.getMonth()+1)) : (curdate.getMonth()+1);
   result += "== Species ==\n{{as of|" + curdate.getUTCFullYear() + "|" +
     curdate.getUTCMonth() + "}} it contains " + list['species'].length + " species:" +
     "<ref name=NMBE>{{cite web|title=Gen. " + list['genus'] + " " +
     list['genus_auth'] + "| website=World Spider Catalog" +
     "| publisher=Natural History Museum Bern| accessdate=" + 
-    curdate.getFullYear() + "-" + (curdate.getMonth()+1) + "-" +
+    curdate.getFullYear() + "-" + month + "-" +
     curdate.getDate() + "| url=http://www.wsc.nmbe.ch/";
   if (gen_num != null) {
     result += "/genus/" + gen_num + "/" + list['genus'];
@@ -289,7 +290,7 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
 
   for (var i = 0; i < list['species'].length; i++) {
     result += "\n*''[[" + list['species'][i][1] + "]]'' <small>" +
-      list['species'][i][2] + "</small>";
+      list['species'][i][2] + "</small> — " + list['species'][3];
   }
 
   result += "\n\n==References==\n{{Reflist}}\n\n" +
