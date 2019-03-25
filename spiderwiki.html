@@ -124,7 +124,7 @@
   }
 
 function compute2() {
-	$("#wiki_page").val(get_page_data($("#num").val(), $("#gen_src").val(), $("#img").val(), $("#img_cap").val(), $("#other_txt").val());
+	$("#wiki_page").val(get_page_data($("#num").val(), $("#gen_src").val(), $("#img").val(), $("#img_cap").val(), $("#other_txt").val()));
 }
  
 function ref (ref = "") {
@@ -177,7 +177,8 @@ function ref (ref = "") {
   }
   return wiki_cite + "}}</ref>";
 }
-	function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
+
+function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
 	if (str.length == 0) { return ""; }
 	/*
   str = $("#gen_src").val();
