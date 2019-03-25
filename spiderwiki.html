@@ -273,7 +273,7 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
   result += " in " + auth_names[auth_names.length - 1].trim() + ".\n\n";
 
   var curdate = new Date();
-  var month = (((curdate.getMonth()+1) < 10) ? ("0" + (curdate.getMonth()+1)) : (curdate.getMonth()+1);
+  var month = (((curdate.getMonth()+1) < 10) ? ("0" + (curdate.getMonth()+1)) : (curdate.getMonth()+1));
   result += "== Species ==\n{{as of|" + curdate.getUTCFullYear() + "|" +
     curdate.getUTCMonth() + "}} it contains " + list['species'].length + " species:" +
     "<ref name=NMBE>{{cite web|title=Gen. " + list['genus'] + " " +
