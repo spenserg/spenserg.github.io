@@ -296,7 +296,14 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
       list['species'][i][2] + "</small> — " + list['species'][i][3];
     var tmp_locs = list['species'][i][3].split(',');
     for (var j = 0; j < tmp_locs.length; j++) {
-      tmp_locs[j] = tmp_locs[j].replace(/\([^\)\(]*\)/, "").trim();
+	    
+	    console.log(tmp_locs[j]);
+	    
+      tmp_locs[j] = tmp_locs[j].replace(/\([^\)\(]*\)/, "");
+	tmp_locs = tmp_locs.trim();
+	    
+	    console.log(tmp_locs[j]);
+	    
       if (!list['locations'].includes(tmp_locs[j])) {
         list['locations'].push(tmp_locs[j]);
       }
@@ -306,7 +313,7 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
   result += "\n\n==References==\n{{Reflist}}\n\n" +
     "[[Category:" + list['family'] + "]]\n";
   for (var i = 0; i < list['locations'].length; i++) {
-    result += "[[Spiders of " + list['locations'][i] + "]]\n";
+    result += "[[Category:Spiders of " + list['locations'][i] + "]]\n";
   }
   result += "\n{{" + list['family'] + "-stub}}";
   return result;
