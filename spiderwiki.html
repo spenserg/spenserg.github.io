@@ -293,14 +293,17 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
   list['locations'] = [];
   for (var i = 0; i < list['species'].length; i++) {
     result += "\n*''[[" + list['species'][i][1] + "]]'' <small>" +
-      list['species'][i][2] + "</small> — " + list['species'][i][3];
-    var tmp_locs = list['species'][i][3].split(',');
+    list['species'][i][2] + "</small> — " + list['species'][i][3];
+		
+		console.log("===");
+		console.log(list['species'][i][3]);
+		
+		var tmp_locs = list['species'][i][3].replace(/\([^\)\(]*\)/g, "").split(',');
+		
+		console.log(tmp_locs);
+		
     for (var j = 0; j < tmp_locs.length; j++) {
-	    
-	    console.log(tmp_locs[j]);
-	    
-      tmp_locs[j] = tmp_locs[j].replace(/\([^\)\(]*\)/, "");
-	tmp_locs[j] = tmp_locs[j].trim();
+			tmp_locs[j] = tmp_locs[j].trim();
 	    
 	    console.log(tmp_locs[j]);
 	    
