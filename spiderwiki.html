@@ -254,8 +254,17 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
 		"\n| image = " + img + "\n| image_caption = " + img_cap +
     "\n| authority = " + list["genus_auth"] + "<ref name=NMBE />" +
     "\n| type species = ''[[" + list['type_species'] + "]]''" +
-    "\n| subdivision_ranks = Species" +
-    "\n| subdivision = " + list['species'].length + ", see text\n";
+    "\n| subdivision_ranks = Species\n| subdivision = ";
+	if (list['species'].length > 3) {
+		result += list['species'].length + ", see text\n";
+	} else {
+		result += "{{Specieslist";
+		for (var i = 0; i < list['species'].length; i++) {
+			result += "\n| [[" + list['species'][i][1] + "|<small>" +
+    	list['species'][i][2] + "</small> — " + list['species'][i][3];
+		}
+		result += "}}";
+	}
   if (list['synonyms'].length > 0) {
     result += "| synonyms =\n";
     for (var i = 0; i < list['synonyms'].length; i++) {
@@ -300,8 +309,10 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
 
   list['locations'] = [];
   for (var i = 0; i < list['species'].length; i++) {
-    result += "\n*''[[" + list['species'][i][1] + "]]'' <small>" +
-    list['species'][i][2] + "</small> — " + list['species'][i][3];
+		if (list['species'].length > 3) {
+    	result += "\n*''[[" + list['species'][i][1] + "]]'' <small>" +
+    	list['species'][i][2] + "</small> — " + list['species'][i][3];
+		}
 		var tmp_locs = list['species'][i][3].replace(/\([^\)\(]*\)/g, "").split(',');
     for (var j = 0; j < tmp_locs.length; j++) {
 			tmp_locs[j] = tmp_locs[j].trim();
