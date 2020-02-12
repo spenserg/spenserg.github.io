@@ -532,7 +532,7 @@ function actions_photos_spr_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 			if (vars['potatoes_bought'] == 0 || d == 30) {
 				a.push({'desc':"Buy Potato Seeds", 'cid':['v_gold', 'v_potatoes_bought'], 'val':[-200, 1], 'iid':get_npc_id('lillia'), 'imp':true});
 				if (d == 30) {
-					a.push({'desc':"Buy Cabbage Seeds", 'cid':'v_gold', 'val':, 'iid':get_npc_id('lillia'), 'sr':true});
+					a.push({'desc':"Buy Cabbage Seeds", 'cid':'v_gold', 'val':_PRICE_SEED_CABBAGE, 'iid':get_npc_id('lillia'), 'sr':true});
 				}
 			}
 
