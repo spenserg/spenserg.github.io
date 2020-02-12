@@ -29,13 +29,28 @@
 		<script src="js/routes/popuri_route.js" type="text/javascript"></script>
 		<script src="js/routes/elli_photo.js" type="text/javascript"></script>
 		<script src="js/routes/maria_route.js" type="text/javascript"></script>
+		<script src="js/routes/ann_photo.js" type="text/javascript"></script>
+		<script src="js/routes/karen_photo.js" type="text/javascript"></script>
+		
+		<script src="js/routes/all_recipes.js" type="text/javascript"></script>
+		<script src="js/routes/misc_routes.js" type="text/javascript"></script>
 
 		<script src="js/data.js" type="text/javascript"></script>
 		<script src="js/script.js" type="text/javascript"></script>
 	</head>
 
 	<body>
-		
+
+		<!-- Static Day Box in bottom corner -->
+		<div id="checklist_show" class="w3-theme-border" style="cursor:pointer;padding:0px;display:none;border:2px solid black;bottom:106px;height:20px;background-color:lightgreen;font-size:12px;text-align:center" onclick="checklist_click()">Show Checklist</div>
+		<div id="checklist" class="w3-theme-border" style="bottom:106px;height:140px;font-size:12px;width:200px" onclick="checklist_click()">
+			1 TEST<br>2 TEST<br>3 TEST<br>4 TEST<br>5 TEST<br>6 TEST<br>7 TEST
+		</div>
+		<div class="w3-theme-border" style="background-color:#cae8ca;bottom:0;height:110px;z-index:999">
+			<div class="display_main season spring" style="text-align:center">Spring</div>
+			<div class="display_main day">3</div>
+		</div>
+
 		<nav class="navbar navbar-expand-sm navbar-light">
 			<span class="navbar-brand">
 				<img src="/icon.jpg" style="height:40px"/>
@@ -52,11 +67,13 @@
         				</a>
         				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
         					<span class="dropdown-item" onclick="new_game(2)"><img src="/img/npc/karen.png" style="height:30px"/> Karen Mar <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
-							<span class="dropdown-item" onclick="new_game(1)"><img src="/img/npc/elli.png" style="height:30px"/> Elli Mar <img src="/img/under-construction.png" style="height:30px"/></span>
+							<span class="dropdown-item" onclick="new_game(1)"><img src="/img/npc/elli.png" style="height:30px"/> Elli Mar <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
 							<span class="dropdown-item" onclick="new_game(7)"><img src="/img/npc/maria.png" style="height:30px"/> Maria Mar <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
 							<span class="dropdown-item" onclick="new_game(3)"><img src="/img/npc/popuri.png" style="height:30px"/> Popuri Mar  <img src="/img/under-construction.png" style="height:30px"/></span>
 							<div class="dropdown-divider"></div>
+							<span class="dropdown-item" onclick="new_game(8)"><img src="/img/npc/ann.png" style="height:30px"/>Ann Photo <img src="/img/under-construction.png" style="height:30px"/></span>
 							<span class="dropdown-item" onclick="new_game(4)"><img src="/img/npc/elli.png" style="height:30px"/>Elli Photo <img src="/img/under-construction.png" style="height:30px"/></span>
+							<span class="dropdown-item" onclick="new_game(9)"><img src="/img/npc/karen.png" style="height:30px"/>Karen Photo <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
         				</div>
       				</li>
       				
@@ -65,8 +82,16 @@
           					Other
         				</a>
         				<div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-        					<span class="dropdown-item" onclick="new_game(0)"><img src="/img/npc/karen.png" style="height:30px"/> All Photos (Karen wife) <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
-        					<span class="dropdown-item" onclick="new_game(5)"><img src="/img/npc/elli.png" style="height:30px"/> All Photos (Elli wife)  <img src="/img/under-construction.png" style="height:30px"/></span>
+        					<span class="dropdown-item" onclick="new_game(5)"><img src="/img/npc/elli.png" style="height:30px"/> All Photos (Elli wife) <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
+        					<span class="dropdown-item" onclick="new_game(10)"><img src="/img/npc/judge.png" style="height:30px"/> All Recipes  <img src="/img/under-construction.png" style="height:30px"/></span>
+        					<span class="dropdown-item" onclick="new_game(21)"><img src="/img/npc/mayor.png" style="height:30px"/> All Festivals  <img src="/img/under-construction.png" style="height:30px"/></span>
+        					<div class="dropdown-divider"></div>
+        					<span class="dropdown-item" onclick="new_game(14)"><img src="/img/npc/mayor.png" style="height:30px"/> Balloon Photo <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
+        					<span class="dropdown-item" onclick="new_game(15)"><img src="/img/npc/horse.png" style="height:30px"/> Horse Photo <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
+        					<span class="dropdown-item" onclick="new_game(18)"><img src="/img/npc/dog.png" style="height:30px"/> Dog Race Photo <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
+        					<span class="dropdown-item" onclick="new_game(16)"><img src="/img/npc/cow.png" style="height:30px"/> Cow Photo  <img src="/img/under-construction.png" style="height:30px"/></span>
+        					<span class="dropdown-item" onclick="new_game(20)"><img src="/img/npc/mas_carpenter.png" style="height:30px"/> Hot Springs Photo <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
+        					<span class="dropdown-item" onclick="new_game(17)"><img src="/img/npc/kai.png" style="height:30px"/> Swim Photo <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
         				</div>
       				</li>
 
@@ -94,7 +119,7 @@
         			</li>
       			</ul>
       		</div>
-
+      		
       		<button class="btn btn-outline-danger" type="button" onclick="load_save()">RESET</button>
 
       		<form class="form-inline" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -157,7 +182,9 @@
 		</div><br/>
 
 		<input type="text" id="load_input" />
-		<button type="button" onclick="load_input()">LOAD</button> = -
+		<button type="button" onclick="load_input()">LOAD</button>
+		<br/><br/>
+
 		<br/><br/>
 		<button type="button" id="flag_disp_btn" class="btn btn-warning" onclick="toggle_flags()">SHOW FLAGS</button>
 		<div id="all_values" style="display:none"> </div>
@@ -166,6 +193,11 @@
 	</body>
 
 	<script>
+		$(function(){
+			// Start with All Photos route
+			new_game(5);
+  		});
+
 		$(".display_main.weather").click( function(){
 			if (!$(this).hasClass('selected')) {
 				$(".display_main.weather").removeClass('selected');
@@ -173,6 +205,11 @@
 			$(this).addClass('selected');
 			weather_change();
 		});
+
+		function checklist_click() {
+			$("#checklist").toggle();
+			$("#checklist_show").toggle();
+		}
 
 		function input_increment(item) {
 			$("#" + item.id.substring(4)).val(parseInt($("#" + item.id.substring(4)).val()) + 1);
