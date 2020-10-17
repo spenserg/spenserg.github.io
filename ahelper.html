@@ -1,0 +1,27 @@
+<head>
+		<title>Article Helper</title>
+		<meta name="viewport" content="user-scalable=no, width=device-width">
+		<meta charset="UTF-8">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet" >
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	BG: <textarea id="bg"></textarea><br/>
+  NMBE: <textarea id="nmbe"></textarea><br/>
+  WP: <textarea id="wp"></textarea><br/>
+	<button onclick="compute()">Go</button><br/>
+	<hr>
+  <textarea id="result"></textarea>
+</body>
+
+<script>
+  function compute() {
+    console.log("exec");
+    $("#result").val("done");
+  }
+</script>
