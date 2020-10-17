@@ -21,8 +21,9 @@
 
 <script>
   function compute() {
-    var r = /Home([^r]*)Guide/
+    var r = /Guide([^r]+)Arthropods/
     var result = r.exec($("#bg").val());
+	  console.log(result);
     $("#result").val(result);
   }
 </script>
