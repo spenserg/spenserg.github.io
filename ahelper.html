@@ -21,7 +21,8 @@
 
 <script>
   function compute() {
-    console.log("exec");
-    $("#result").val("done");
+    var r = /Home([^r]*)Guide/
+    var result = r.exec($("#bg").val());
+    $("#result").val(result);
   }
 </script>
