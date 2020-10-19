@@ -355,7 +355,7 @@ function actions_photos_spr_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 						tmp_spr_aff += 5;
 					}
 					a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':(aff[sprite_id] % 7 == 0),
-							'sel':(aff[sprite_id] < _SPRITE_WINE_MIN && (d < 7 || dow == "MON"),
+							'sel':(aff[sprite_id] < _SPRITE_WINE_MIN && (d < 7 || dow == "MON")),
 							'red':(aff[sprite_id] >= _SPRITE_WINE_MIN || (d > 6 && dow != "MON"))
 					});
 					a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
