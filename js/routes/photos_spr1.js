@@ -18,7 +18,7 @@ function actions_photos_spr_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	var dow = get_dow(d, true);
 	var has_opener = false;
-	var lumber_to_sprite = ((aff[sprite_id] >= _SPRITE_SPAM_MAX || d == 3) ? 0 : ((_SPRITE_SPAM_MAX - aff[sprite_id] > 6) ? 6 : (_SPRITE_SPAM_MAX - aff[sprite_id])));
+	var lumber_to_sprite = ((aff[sprite_id] >= _SPRITE_SPAM_MAX || d == 3) ? 0 : (((_SPRITE_SPAM_MAX - aff[sprite_id]) > 6) ? 6 : ((_SPRITE_SPAM_MAX - aff[sprite_id]))));
 	var get_horse = (flags['horse'] == 0 && vars['chickens'] == 0 && g >= 1500 && dow != "THURS" && is_sunny == 1 && !is_festival(d));
 	var visit_ranch = get_horse;
 	var chicken_action = [];
@@ -333,43 +333,41 @@ function actions_photos_spr_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 			if ((vars['chickens'] == 0 && g < 1500) || (dow == "MON" && is_sunny == 1)) {
 				// Mountain visit
 				// No chicken yet || MONDAY
-				
+
 				var tmp_spr_aff = aff[sprite_id];
 				// Chop Lumber for Inner Sprite Gifts
 
 				// SPRITE
 				if (dow != "SUN") {
-					if (aff[sprite_id] > 0 && lumber_to_sprite > 0) {
+					if (lumber_to_sprite > 0) {
+						var lum_desc = "";
+						if (aff[sprite_id] < (21 - 6)) {
+							a.push({'desc':"Flower", 'cid':sprite_id, 'val':1});
+						}
 						a.push({'desc':(lumber_to_sprite + " Lumber to Inner Sprite (Right Side)"),
 								'cid':[sprite_id, 'v_lumber'], 'val':[lumber_to_sprite, -1 * lumber_to_sprite]
 						});
 						a.push({'desc':"INNER SPRITE FIRST!", 'sr':true});
 						tmp_spr_aff += lumber_to_sprite;
 					}
-					if (aff[sprite_id] == 0) {
-						a.push({'desc':"Meet", 'cid':sprite_id, 'val':5});
+					if (aff[sprite_id] % 7 == 0) {
+						a.push({'desc':"Meet", 'cid':sprite_id, 'val':5, 'sel':(tmp_spr_aff > 18), 'red':tmp_spr_aff < 18});
 						tmp_spr_aff += 5;
 					}
-					a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':(aff[sprite_id] == 0),
-							'sel':(aff[sprite_id] < _SPRITE_WINE_MIN),
-							'red':(aff[sprite_id] >= _SPRITE_WINE_MIN)
+					a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':(aff[sprite_id] % 7 == 0),
+							'sel':(aff[sprite_id] < _SPRITE_WINE_MIN && (d < 7 || dow == "MON"),
+							'red':(aff[sprite_id] >= _SPRITE_WINE_MIN || (d > 6 && dow != "MON"))
 					});
-					a.push({'desc':"Flower", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
+					a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
 					tmp_spr_aff += 3;
-					if (aff[sprite_id] == 0 && lumber_to_sprite > 0) {
-						a.push({'desc':(lumber_to_sprite + " Lumber to Inner Sprite (Right Side)"),
-								'cid':[sprite_id, 'v_lumber'], 'val':[lumber_to_sprite, -1 * lumber_to_sprite]
-						});
-						tmp_spr_aff += lumber_to_sprite;
-					}
-					if (tmp_spr_aff < _SPRITE_SPAM_MAX && d > 3) {
-						a.push({'desc':"Equip Axe, Chop One Stump", 'imp':true, 'val':6, 'cid':'v_lumber', 'iid':get_npc_id('stump')});
-					}
 				}
 				
 				// FORAGE
 				if (dow != "SUN") {
 					a.push({'desc':("cave all, ber, pond all, " + ((d == 3) ? 2 : 3) + " flowers")}); // 2 + 6 = 8
+				}
+				if (tmp_spr_aff < _SPRITE_SPAM_MAX && d > 3) {
+					a.push({'desc':"Equip Axe, Chop One Stump", 'imp':true, 'val':6, 'cid':'v_lumber', 'iid':get_npc_id('stump')});
 				}
 
 				// Cliff
