@@ -18,14 +18,11 @@
 
 <script>
   function compute() {
-    var result = 'on run {input, parameters}\ntell application "System Events"';
+    var result = 'on run {input, parameters}\ntell application "Google Chrome" to activate\ntell Application "System Events"\ndelay 0.5';
     var ans = $("#page_txt").val();
     var r1 = new RegExp(/NEXT\sQUIZ\nPLAY\sANOTHER\n([\s\S]+)Today\'s\sDaily\sDose\n/, 'i');
-    var r2 = new RegExp(/\n[^\t]+\t([^\t\n]+)[\t\n]/, 'i');
-
-    if (r1.test(ans)) { ans = ans.replace(r1, '$1'); }
-    if (r2.test(ans)) { ans = ans.replace(r2, '\nkeystroke "$1"\ndelay 0.5\nkey code 51 using {control down}'); }
-    
-    $('#ans_text').val(result + ans + "\nend\nend run");
+    var r2 = new RegExp(/\n[^\t]+\t([^\t\n]+)[\t\n]/, 'g');
+    if (r1.test(ans)) { ans = r1.exec(ans)[1]; console.log(ans);} while ((array1 = r2.exec(ans)) !== null) { result += '\nkeystroke "' + array1[1] + '"\nkeystroke "a" using {command down}\ndelay 0.5\nkey code 51'; }
+    $('#ans_txt').val(result + "\nend\nend run");
   }
 </script>
