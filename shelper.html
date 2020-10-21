@@ -11,18 +11,25 @@
 </head>
 
 <body>
-	Text: <textarea id="page_txt"></textarea>
+	Text: <textarea id="page_txt" rows="10"></textarea>
 	<button onclick="compute()">Go</button><br/><br/>
-  Ans: <textarea id="ans_txt"></textarea>
+  	Ans: <textarea id="ans_txt"></textarea>
 </body>
 
 <script>
   function compute() {
-    var result = 'on run {input, parameters}\ntell application "Google Chrome" to activate\ntell Application "System Events"\ndelay 0.5';
+    var result = '';
     var ans = $("#page_txt").val();
     var r1 = new RegExp(/NEXT\sQUIZ\nPLAY\sANOTHER\n([\s\S]+)Today\'s\sDaily\sDose\n/, 'i');
     var r2 = new RegExp(/\n[^\t]+\t([^\t\n]+)[\t\n]/, 'g');
-    if (r1.test(ans)) { ans = r1.exec(ans)[1]; console.log(ans);} while ((array1 = r2.exec(ans)) !== null) { result += '\nkeystroke "' + array1[1] + '"\nkeystroke "a" using {command down}\ndelay 0.5\nkey code 51'; }
-    $('#ans_txt').val(result + "\nend\nend run");
+    if (r1.test(ans)) {
+	ans = r1.exec(ans)[1];
+	result = 'on run {input, parameters}\ntell application "Google Chrome" to activate\ntell Application "System Events"\ndelay 0.5';
+	while ((array1 = r2.exec(ans)) !== null) {
+		result += '\nkeystroke "' + array1[1] + '"\nkeystroke "a" using {command down}\ndelay 0.5\nkey code 51';
+	}
+	result += "\nend\nend run";
+    }
+    $('#ans_txt').val(result);
   }
 </script>
