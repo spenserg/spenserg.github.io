@@ -1,0 +1,31 @@
+<head>
+		<title>SHelper</title>
+		<meta name="viewport" content="user-scalable=no, width=device-width">
+		<meta charset="UTF-8">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet" >
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	Text: <textarea id="page_txt"></textarea>
+	<button onclick="compute()">Go</button><br/><br/>
+  Ans: <textarea id="ans_txt"></textarea>
+</body>
+
+<script>
+  function compute() {
+    var result = 'on run {input, parameters}\ntell application "System Events"';
+    var ans = $("#page_txt").val();
+    var r1 = new RegExp(/NEXT\sQUIZ\nPLAY\sANOTHER\n([\s\S]+)Today\'s\sDaily\sDose\n/, 'i');
+    var r2 = new RegExp(/\n[^\t]+\t([^\t\n]+)[\t\n]/, 'i');
+
+    if (r1.test(ans)) { ans = ans.replace(r1, '$1'); }
+    if (r2.test(ans)) { ans = ans.replace(r2, '\nkeystroke "$1"\ndelay 0.5\nkey code 51 using {control down}'); }
+    
+    $('#ans_text').val(result + ans + "\nend\nend run");
+  }
+</script>
