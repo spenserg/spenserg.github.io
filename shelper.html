@@ -12,22 +12,39 @@
 
 <body>
 	Text: <textarea id="page_txt" rows="10"></textarea>
-	<button onclick="compute()">Go</button><br/><br/>
+	<button onclick="compute()">Go</button><br/>
+	<input type="checkbox" id="last_only" name="last_only" value="1">
+	<label for="last_only"> Last Name Only</label><br/><br/>
   	Ans: <textarea id="ans_txt"></textarea>
 </body>
 
 <script>
+  Array.prototype.unique = function() {
+    return this.filter(function (value, index, self) { 
+      return self.indexOf(value) === index;
+    });
+  }
+
   function compute() {
     var result = '';
     var ans = $("#page_txt").val();
+    var ans_list = [];
     var r1 = new RegExp(/NEXT\sQUIZ\nPLAY\sANOTHER\n([\s\S]+)Today\'s\sDaily\sDose\n/, 'i');
     var r2 = new RegExp(/\n[^\t]+\t([^\t\n]+)[\t\n]/, 'g');
     if (r1.test(ans)) {
 	ans = r1.exec(ans)[1];
 	result = 'on run {input, parameters}\ntell application "Google Chrome" to activate\ntell Application "System Events"\ndelay 0.5';
 	while ((array1 = r2.exec(ans)) !== null) {
-		result += '\nkeystroke "' + array1[1] + '"\nkeystroke "a" using {command down}\ndelay 0.5\nkey code 51';
+		var tmp_ans = array[1].normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+		if (document.getElementById("last_only").checked) {
+			tmp_ans = tmp_ans.split(" ").pop();
+		}
+		list_ans.push(tmp_ans.toLowerCase().trim());
 	}
+	list_ans = list_ans.unique();
+	for (var i = 0; i < list_ans.length; i++) {
+		result += '\nkeystroke "' + list_ans[i] + '"\nkeystroke "a" using {command down}\ndelay 0.5\nkey code 51';
+	}  
 	result += "\nend\nend run";
     }
     $('#ans_txt').val(result);
