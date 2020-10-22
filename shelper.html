@@ -43,7 +43,6 @@
     }
     
     if (split_1) {
-	ans = r1.exec(ans)[1];
 	result = 'on run {input, parameters}\ntell application "Google Chrome" to activate\ntell Application "System Events"\ndelay 0.5';
 	while ((array1 = r2.exec(ans)) !== null) {
 		var tmp_ans = array[1].normalize("NFD").replace(/[\u0300-\u036f]/g, "");
