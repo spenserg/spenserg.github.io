@@ -30,8 +30,19 @@
     var ans = $("#page_txt").val();
     var ans_list = [];
     var r1 = new RegExp(/NEXT\sQUIZ\nPLAY\sANOTHER\n([\s\S]+)Today\'s\sDaily\sDose\n/, 'i');
+    var r1b = new RegExp(/NEXT\sQUIZ\nPLAY\sANOTHER\n([\s\S]+)play\squizzes\sad/, 'i');
     var r2 = new RegExp(/\n[^\t]+\t([^\t\n]+)[\t\n]/, 'g');
+
+    var split_1 = false;
     if (r1.test(ans)) {
+	    split_1 = true;
+	    ans = r1.exec(ans)[1];
+    } else if (r1b.test(ans)) {
+	    split_1 = true;
+	    ans = r1b.exec(ans)[1];
+    }
+    
+    if (split_1) {
 	ans = r1.exec(ans)[1];
 	result = 'on run {input, parameters}\ntell application "Google Chrome" to activate\ntell Application "System Events"\ndelay 0.5';
 	while ((array1 = r2.exec(ans)) !== null) {
