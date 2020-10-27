@@ -12,7 +12,7 @@
 
 <body>
 	Text: <textarea id="page_txt" rows="10"></textarea><br/>
-	<button onclick="compute(1)">Inb Flights</button><br/>
+	<button onclick="compute(1)">Inb Flights (left)</button><br/>
   	<button onclick="compute(2)">Inb Mail Dest</button><br/>
   	Ans: <textarea id="ans_txt"></textarea>
 </body>
@@ -27,9 +27,10 @@
     } else if (type == 2) {
 	    rgx = new RegExp(/\n[A-Z]{3}([A-Z]{3})\n/, 'i');
     }
-    while ((array1 = rgx.exec($("#page_txt").val())) !== null) {
+    var ans = $("#page_txt").val();
+    while ((array1 = rgx.exec(ans)) !== null) {
 	if (type == 1) {
-		result = result + array1[1] + "\t" + array1[2] + ":" + array1[3] + array1[4].replace(/DFW/g, "");
+		result = result + array1[1] + "\t" + array1[2] + ":" + array1[3] + array1[4];
 	} else if (type == 2) {
 		if (result2[array1[1]] === undefined) {
 			result2[array1[1]] = 0;
@@ -41,6 +42,8 @@
 	for (var prop in result2) {
 	    result = result + prop + "/t" + result2['prop'] + "/n";
 	}
+    } else if (type == 1) {
+	result = result.replace(/DFW/g, "");    
     }
     console.log(result);
   }
