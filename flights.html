@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	Text: <textarea id="page_txt" rows="10"></textarea>
+	Text: <textarea id="page_txt" rows="10"></textarea><br/>
 	<button onclick="compute(1)">Inb Flights</button><br/>
   	<button onclick="compute(2)">Inb Mail Dest</button><br/>
   	Ans: <textarea id="ans_txt"></textarea>
@@ -21,9 +21,9 @@
   function compute(type = 2) {
     var rgx;
     if (type == 1) {
-	    rgx = new Regexp(/AA\s([\d]+)\n\d+\-[a-zA-Z]+\-\d+\s(\d+)\:(\d+)\:\d+\s\([^\)]+\)\n[^\n]+\n([A-Z]+)/, 'i');
+	    rgx = new RegExp(/AA\s([\d]+)\n\d+\-[a-zA-Z]+\-\d+\s(\d+)\:(\d+)\:\d+\s\([^\)]+\)\n[^\n]+\n([A-Z]+)/, 'i');
     } else if (type == 2) {
-	    rgx = new Regexp(/\n[A-Z]{3}([A-Z]{3})\n/, 'i');
+	    rgx = new RegExp(/\n[A-Z]{3}([A-Z]{3})\n/, 'i');
     }
     var result = rgx.exec($("#page_txt").val());
     console.log(result);
