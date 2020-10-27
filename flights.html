@@ -20,12 +20,28 @@
 <script>
   function compute(type = 2) {
     var rgx;
+    var result = "";
+    var result2 = {};
     if (type == 1) {
 	    rgx = new RegExp(/AA\s([\d]+)\n\d+\-[a-zA-Z]+\-\d+\s(\d+)\:(\d+)\:\d+\s\([^\)]+\)\n[^\n]+\n([A-Z]+)/, 'i');
     } else if (type == 2) {
 	    rgx = new RegExp(/\n[A-Z]{3}([A-Z]{3})\n/, 'i');
     }
-    var result = rgx.exec($("#page_txt").val());
+    while ((array1 = rgx.exec($("#page_txt").val())) !== null) {
+	if (type == 1) {
+		result = result + array1[1] + "\t" + array1[2] + ":" + array1[3] + array1[4].replace(/DFW/g, "");
+	} else if (type == 2) {
+		if (result2[array1[1]] === undefined) {
+			result2[array1[1]] = 0;
+		}
+		result2[array1[1]]++;
+	}
+    }
+    if (type == 2) {
+	for (var prop in result2) {
+	    result = result + prop + "/t" + result2['prop'] + "/n";
+	}
+    }
     console.log(result);
   }
 </script>
