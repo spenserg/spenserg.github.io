@@ -50,16 +50,16 @@
 	while ((array1 = r2.exec(ans)) !== null) {
 		var tmp_ans = array1[1].normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 		if (document.getElementById("last_only").checked) {
-			tmp_ans = tmp_ans.split(" ").pop();
+			tmp_ans = tmp_ans.split(" ").pop().replace(/[^\w\s]/g, "");
 		}
 		if (!tmp_ans.includes("|")) {
 			var rx = new RegExp(/(time[\d]+follow)/, 'i');
 			if (!rx.test(tmp_ans)) {
-				list_ans.push(tmp_ans.toLowerCase().trim());
+				list_ans.push(tmp_ans.toLowerCase().trim().replace(/[^\w\s]/g, ""));
 			}
 		}
 	}
-	list_ans = list_ans.replace(/[^\w\s]/g, "").unique();
+	list_ans = list_ans.unique();
 	for (var i = 0; i < list_ans.length; i++) {
 		result += '\nkeystroke "' + list_ans[i] + '"\nkeystroke "a" using {command down}\ndelay 0.5\nkey code 51';
 	}  
