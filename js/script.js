@@ -781,10 +781,10 @@ function update_day_gui(d = vars['day'], jump = false) {
 		// or if jumped to this day
 		$('.display_main.season').removeClass('spring').removeClass('summer').removeClass('fall').removeClass('winter').addClass(m.toLowerCase());
 	}
-
 	$('.display_main.season').html(m.charAt(0).toUpperCase() + m.toLowerCase().substring(1));
 	$('.display_main.day').html(get_day(d));
 	$('.display_main.dow').html(get_day_of_week(d, true));
+	
 	$('.display_main.japanese').html(get_day_of_week(d, false, true));
 	$('#happiness_meter').html(vars['happiness']);
 	$('#disp_gold').val(vars['gold']);
