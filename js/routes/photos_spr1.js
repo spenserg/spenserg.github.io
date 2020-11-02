@@ -46,6 +46,7 @@ function actions_photos_spr_y1 (a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Equip Watering Can, sell edible herb"});
 	}
 	if (d == 5 && is_sunny == 0) { reset = "No Rain on Spr 5"; }
+	if (d == 7 && g < 1500) { reset = "Can't afford a chicken"; }
 
 	// Need Money for a Power Berry
 	if (d == 22 && g < 1000) { a.push({'desc':"Need 1000G for Berry Tomorrow", 'imp':true}); }
@@ -491,12 +492,12 @@ function actions_photos_spr_y1 (a = [], d = 3, g = 300, is_sunny = 1) {
 				if (aff[elli_id] == 0) { a.push({'desc':"Meet", 'cid':elli_id, 'val':4}); }
 				a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk (Bakery)"), 'cid':elli_id, 'val':1,
 						'sr':(aff[elli_id] == 0), 't2':"MusBox ",
-						'sel':(!["WED", "SAT"].includes(dow) && (is_sunny == 1 || vars['chickens'] < 1) && (flags['new_mus_box'] != 1 || musbox_to_ann))});
+						'sel':((d == 6 || !["WED", "SAT"].includes(dow)) && (is_sunny == 1 || vars['chickens'] < 1) && (flags['new_mus_box'] != 1 || musbox_to_ann))});
 				a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 
 					'sel':((!["WED", "SAT"].includes(dow) && is_sunny == 1 && (flags['new_mus_box'] == 1 && !musbox_to_ann))), 't2':a[a.length - 1]['desc']});
 				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
 					't2':((vars['chickens'] > 0) ? ["Egg", "M/L Fish"] : "M/L Fish"),
-					'sel':(d == 9 || (!["WED", "SAT"].includes(dow) && ((is_sunny == 0 || vars['chickens'] < 1) || (d != 24 && (vars['chickens'] == 0 || flags['new_chick'] == 1)))))
+					'sel':(d == 6 || (!["WED", "SAT"].includes(dow) && ((is_sunny == 0 || vars['chickens'] < 1) || (d != 24 && (vars['chickens'] == 0 || flags['new_chick'] == 1)))))
 				});
 				a.push({
 					'desc':((vars['chickens'] > 0) ? "Egg" : "M/L Fish"), 'sr':true,
@@ -524,8 +525,8 @@ function actions_photos_spr_y1 (a = [], d = 3, g = 300, is_sunny = 1) {
 			// MAYOR
 			if (is_sunny == 1 && dow != "SUN") {
 				if (aff[mayor_id] == 0) { a.push({'desc':"Meet", 'cid':mayor_id, 'val':4}); }
-				a.push({'desc':((dow == "SAT") ? "Talk (Lib 50%)" : "Talk"), 'cid':mayor_id, 'val':3, 'sr':(aff[mayor_id] == 0), 'sel':(!["WED", "SAT"].includes(dow))});
-				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(dow != "WED" && aff[mayor_id] < aff[rick_id])});
+				a.push({'desc':((dow == "SAT") ? "Talk (Lib 50%)" : "Talk"), 'cid':mayor_id, 'val':3, 'sr':(aff[mayor_id] == 0), 'sel':(d == 6 || !["WED", "SAT"].includes(dow))});
+				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(dow != "WED" && aff[mayor_id] <= aff[rick_id])});
 			}
 
 			// RICK (NO NEW BOX IN INVENTORY)
@@ -605,7 +606,7 @@ function actions_photos_spr_y1 (a = [], d = 3, g = 300, is_sunny = 1) {
 					});
 				}
 				a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 'sr':(aff[maria_id] == 0), 'red':(dow == "SUN" && !get_horse),
-					'sel':(!["WED", "SAT"].includes(dow) && (is_sunny == 1 || vars['chickens'] < 1) && (dow != "SUN" || get_horse) && ((aff[rick_id] < _RICK_FIX_MIN - 6) || (["SAT", "WED"].includes(dow))))
+					'sel':((d == 6 || !["WED", "SAT"].includes(dow)) && (is_sunny == 1 || vars['chickens'] < 1) && (dow != "SUN" || get_horse) && ((aff[rick_id] < _RICK_FIX_MIN - 6) || (["SAT", "WED"].includes(dow))))
 				});
 				if (aff[rick_id] >= _RICK_FIX_MIN - 6) {
 					a[a.length - 1]['t2'] = "MusBox";
@@ -613,7 +614,7 @@ function actions_photos_spr_y1 (a = [], d = 3, g = 300, is_sunny = 1) {
 						'sel':((is_sunny == 1 || vars['chickens'] < 1) && (!["WED", "SAT", "SUN"].includes(dow) || get_horse) && (!((aff[rick_id] < _RICK_FIX_MIN - 6) || (["SAT", "SUN", "WED"].includes(dow)))))
 					});
 				}
-				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':((!["WED", "SAT", "SUN"].includes(dow) || get_horse) && (is_sunny == 1 || vars['chickens'] < 1))});
+				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':((d == 6 || !["WED", "SAT", "SUN"].includes(dow) || get_horse) && (is_sunny == 1 || vars['chickens'] < 1))});
 	
 				// MAY
 				if (aff[may_id] < 100 && is_sunny == 0) {
@@ -626,7 +627,7 @@ function actions_photos_spr_y1 (a = [], d = 3, g = 300, is_sunny = 1) {
 	
 			// MAY
 			if (aff[may_id] < 100 && is_sunny == 1 && dow == "SAT") {
-				a.push({'desc':"Spam May (By Midwife) [83 Talks]", 'cid':may_id, 'val':255, 'sel':false, 'red':(dow == "SUN")});
+				a.push({'desc':"Spam May (By Midwife) [83 Talks]", 'cid':may_id, 'val':255, 'sel':(d == 6), 'red':(dow == "SUN")});
 			}
 
 			// Potatoes; Equip before entering farm screen
