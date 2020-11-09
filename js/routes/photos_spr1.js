@@ -202,7 +202,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				if (!flags['treasure_map']) {
 					a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1, 'sr':true});
 				}
-				a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'iid':get_npc_id("musbox"), 'sel':(!["WED", "SAT", "SUN"].includes(dow))});
+				a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'iid':get_npc_id("musbox"), 'sel':(is_sunny == 1 && !["WED", "SAT", "SUN"].includes(dow))});
 				if (flags['berry_farm'] == 0) {
 					a.push({'desc':"Dig a Berry", 'val':1, 'cid':'f_berry_farm', 'sr':true, 'sel':false});
 				}
@@ -326,7 +326,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					tmp_spr_aff += 5;
 				}
 				a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':(aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35),
-						'sel':(is_sunny == 1 && aff[sprite_id] < _SPRITE_WINE_MIN && ([6, 9].includes(d) || dow == "MON") && d != 15),
+						'sel':((is_sunny == 1 || d == 9) && aff[sprite_id] < _SPRITE_WINE_MIN && ([6, 9].includes(d) || dow == "MON") && d != 15),
 						'red':(aff[sprite_id] >= _SPRITE_WINE_MIN || (d > 6 && dow != "MON" && d != 9))
 				});
 				a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
@@ -339,7 +339,11 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 				// FORAGE
 				if (dow != "SUN") {
-					a.push({'desc':("cave all, ber, pond all, " + ((d == 3) ? 2 : 3) + " flowers")}); // 2 + 6 = 8
+					if (d < 15) {
+						a.push({'desc':("cave all, ber, pond all, " + ((d == 3) ? 2 : 3) + " flowers")}); // 2 + 6 = 8
+					} else {
+						a.push({'desc':"ed, ber, flower, into cave"});
+					}
 				}
 				if (tmp_spr_aff < _SPRITE_SPAM_MAX && d > 3) {
 					a.push({'desc':"Equip Axe, Chop One Stump", 'imp':true, 'val':6, 'cid':'v_lumber', 'iid':get_npc_id('stump')});
@@ -462,12 +466,12 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				if (aff[elli_id] == 0) { a.push({'desc':"Meet", 'cid':elli_id, 'val':4}); }
 				a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk (Bakery)"), 'cid':elli_id, 'val':1,
 						'sr':(aff[elli_id] == 0), 't2':"MusBox ",
-						'sel':((d == 6 || !["WED", "SAT"].includes(dow)) && (is_sunny == 1 || vars['chickens'] < 1) && (flags['new_mus_box'] != 1 || musbox_to_ann))});
+						'sel':((d == 6 || !["WED", "SAT"].includes(dow)) && (is_sunny == 1 || vars['chickens'] < 1 || d == 9) && (flags['new_mus_box'] != 1 || musbox_to_ann))});
 				a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 
 					'sel':((!["WED", "SAT"].includes(dow) && is_sunny == 1 && (flags['new_mus_box'] == 1 && !musbox_to_ann))), 't2':a[a.length - 1]['desc']});
 				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
 					't2':((vars['chickens'] > 0) ? ["Egg", "M/L Fish"] : "M/L Fish"),
-					'sel':(d == 6 || (!["WED", "SAT"].includes(dow) && is_sunny == 1 && ((vars['chickens'] < 1) || (d != 24 && (vars['chickens'] == 0 || flags['new_chick'] == 1)))))
+					'sel':(d == 6 || (!["WED", "SAT"].includes(dow) && (is_sunny == 1 || d == 9) && ((vars['chickens'] < 1) || (d != 24 && (vars['chickens'] == 0 || flags['new_chick'] == 1 || d == 9)))))
 				});
 				a.push({
 					'desc':((vars['chickens'] > 0) ? "Egg" : "M/L Fish"), 'sr':true,
@@ -493,7 +497,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (is_sunny == 1 && dow != "SUN") {
 				if (aff[mayor_id] == 0) { a.push({'desc':"Meet", 'cid':mayor_id, 'val':4}); }
 				a.push({'desc':((dow == "SAT") ? "Talk (Lib 50%)" : "Talk"), 'cid':mayor_id, 'val':3, 'sr':(aff[mayor_id] == 0), 'sel':(d == 6 || !["WED", "SAT"].includes(dow))});
-				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(dow != "WED" && aff[mayor_id] <= aff[rick_id])});
+				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(!["WED", "SAT"].includes(dow) || d == 6)});
 			}
 
 			// RICK (NO NEW BOX IN INVENTORY)
@@ -573,7 +577,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					});
 				}
 				a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 'sr':(aff[maria_id] == 0), 'red':(dow == "SUN" && !get_horse),
-					'sel':((d == 6 || !["WED", "SAT"].includes(dow)) && (is_sunny == 1 || vars['chickens'] < 1) && (dow != "SUN" || get_horse) && ((aff[rick_id] < _RICK_FIX_MIN - 6) || (["SAT", "WED"].includes(dow))))
+					'sel':((d == 6 || !["WED", "SAT"].includes(dow)) && (is_sunny == 1 || vars['chickens'] < 1 || d == 9) && (dow != "SUN" || get_horse) && ((aff[rick_id] < _RICK_FIX_MIN - 6) || (["SAT", "WED"].includes(dow))))
 				});
 				if (aff[rick_id] >= _RICK_FIX_MIN - 6) {
 					a[a.length - 1]['t2'] = "MusBox";
@@ -581,7 +585,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 						'sel':((is_sunny == 1 || vars['chickens'] < 1) && (!["WED", "SAT", "SUN"].includes(dow) || get_horse) && (!((aff[rick_id] < _RICK_FIX_MIN - 6) || (["SAT", "SUN", "WED"].includes(dow)))))
 					});
 				}
-				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':((d == 6 || !["WED", "SAT", "SUN"].includes(dow) || get_horse) && (is_sunny == 1 || vars['chickens'] < 1))});
+				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':((d == 6 || !["WED", "SAT", "SUN"].includes(dow) || get_horse) && (d == 9 || is_sunny == 1 || vars['chickens'] < 1))});
 	
 				// MAY
 				if (aff[may_id] < 100 && is_sunny == 0) {
@@ -664,7 +668,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
 		a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':(dow != "SUN" && !is_festival(d)) });
 		if (aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
-			a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
+			a.push({'desc':"Brush", 'val':[2, (1 - flags['horse_brush'])], 'cid':[horse_id, 'f_horse_brush'], 'sr':true, 'sel':false});
 		}
 	}
 
