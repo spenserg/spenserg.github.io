@@ -602,7 +602,8 @@ function fish() {
 
 function betting_table(a = []) {
 	var tmp_medals_needed = (([0, 5].includes(route_id)) ? 1000 : 500);
-	a.push({'desc':('<div class="ml-3">NEED:&nbsp;&nbsp;<input type="number" id="b_need" onchange="calc_bets()" style="margin-right:20px" value="' + tmp_medals_needed +
+	a.push({'desc':('<div class="ml-3">' + ((route_id == -1) ? 'MONEY:&nbsp;&nbsp;<input type="number" id="disp_gold" onchange="calc_bets()" style="margin-right:20px" value="6000" /></div><div class="ml-3">' : '') +
+			'NEED:&nbsp;&nbsp;<input type="number" id="b_need" onchange="calc_bets()" style="margin-right:20px" value="' + tmp_medals_needed +
 			'" /></div>' + '<div class="ml-3">HAVE:&nbsp;&nbsp;<input type="number" id="b_have" onchange="calc_bets()" value="' + vars['medals'] + '" /></div>')});
 	for (var i = 0; i < 6; i++) {
 		a.push({'desc':'odds', 'b_table':true, 'b_id':i});
@@ -1359,7 +1360,6 @@ function calc_bets(bet_type = 1, use_leftover = false) {
 		});
 		return;
 	}
-
 	var buy_amt = Math.floor(g / 50);
 	odds.sort(function(a, b){ return b[0] - a[0] });
 
