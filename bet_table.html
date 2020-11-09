@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HM64 Router</title>
+		<meta name="viewport" content="user-scalable=no, width=device-width">
+		<meta charset="UTF-8">
+
+		<link rel="shortcut icon" href="/icon.jpg" />
+
+		<link href="css/bootstrap.min.css" rel="stylesheet" >
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+    <script src="js/data.js" type="text/javascript"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="hm64-content">
+				<div class="d-flex flex-row" style="margin-bottom:5px">
+					Meet the Mayor
+				</div>
+			</div>
+  </body>
+  
+  <script>
+    $(function(){
+			$("#hm64-content").html(to_html(betting_table()));
+    });
+  </script>
+</html>
