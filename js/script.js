@@ -609,7 +609,7 @@ function betting_table(a = [], bet_type = 1) {
 		a.push({'desc':'odds', 'b_table':true, 'b_id':i});
 	}	
 	if (route_id == -1) {
-		a.push({'desc':'<select name="bet_type" id="bet_type" onchange="set_type(this.value)"><option value="3">Photos</option><option value="1">Marriage (Type 1)</option><option value="2">Marriage (Type 2)</option></select>});
+		a.push({'desc':'<select name="bet_type" id="bet_type" onchange="set_type(this.value)"><option value="3">Photos</option><option value="1">Marriage (Type 1)</option><option value="2">Marriage (Type 2)</option></select>'});
 	}
 	return a;
 }
