@@ -600,23 +600,16 @@ function fish() {
 	return { 'desc':'Fish', 'forage':true, forage_list:[[get_crop_id('fish s'), 0], [get_crop_id('fish m'), 0], [get_crop_id('fish l'), 0]] };
 }
 
-function betting_table(a = []) {
+function betting_table(a = [], bet_type = 1) {
 	var tmp_medals_needed = (([0, 5].includes(route_id)) ? 1000 : 500);
-	a.push({'desc':('<div class="ml-3">' + ((route_id == -1) ? 'MONEY:&nbsp;&nbsp;<input type="number" id="b_gold" onchange="calc_bets()" style="margin-right:20px" value="6000" /></div><div class="ml-3">' : '') +
-			'NEED:&nbsp;&nbsp;<input type="number" id="b_need" onchange="calc_bets()" style="margin-right:20px" value="' + tmp_medals_needed +
-			'" /></div>' + '<div class="ml-3">HAVE:&nbsp;&nbsp;<input type="number" id="b_have" onchange="calc_bets()" value="' + vars['medals'] + '" /></div>')});
+	a.push({'desc':('<div class="ml-3">' + ((route_id == -1) ? 'MONEY:&nbsp;&nbsp;<input type="number" id="b_gold" onchange="calc_bets(' + bet_type + ')" style="margin-right:20px" value="6000" /></div><div class="ml-3">' : '') +
+			'NEED:&nbsp;&nbsp;<input type="number" id="b_need" onchange="calc_bets(' + bet_type + ')" style="margin-right:20px" value="' + tmp_medals_needed +
+			'" /></div>' + '<div class="ml-3">HAVE:&nbsp;&nbsp;<input type="number" id="b_have" onchange="calc_bets(' + bet_type + ')" value="' + vars['medals'] + '" /></div>')});
 	for (var i = 0; i < 6; i++) {
 		a.push({'desc':'odds', 'b_table':true, 'b_id':i});
-	}
-/*
-	<button type="button" class="btn btn-' + ((a[i]["sel"] === false) ? 'danger' : 'success') +
-					' action-button" id="ab_' + i + '" onclick="toggle_color(this, '+ "'" +
-					((a[i]['div_tog'] == undefined) ? "" : a[i]['div_tog']) + "', " +
-					get_toggle(a[i], a) + ')">' + a[i]['desc'] + '</button>';
-*/	
-	
+	}	
 	if (route_id == -1) {
-		a.push({'desc':'<button type="button" class="btn btn-success action-button" id="ab_1" onclick="toggle_type(1)">Photos</button>'});
+		a.push({'desc':'<select name="bet_type" id="bet_type" onchange="set_type(this.value)"><option value="3">Photos</option><option value="1">Marriage (Type 1)</option><option value="2">Marriage (Type 2)</option></select>
 	}
 	return a;
 }
@@ -869,7 +862,7 @@ function update_day_gui(d = vars['day'], jump = false) {
 	});
 	var val_html = '<div class="container">';
 	for (var i = 0; i < flaglist.length; i++) {
-		val_html += '<div class="d-flex flex-row"><div class="ml-4">' + flaglist[i].toLowerCase() + '</div><div class="ml-4"><input id="q_f_' + flaglist[i] + '" value="' + flags[flaglist[i]] + '" onchange="flag_update()" /></div></div>';
+		val_html += '<div class="d-flex flex-row"><div class="ml-4">' + flaglist[i].toLowerCase() + '</div><div class="ml-4"><input id="q_f_' + flaglist[i] + '" value="' + flags[flaglist[i]] + '" ="flag_update()" /></div></div>';
 	}
 	$("#all_values").html(val_html + "</div>");
 
@@ -1126,7 +1119,6 @@ function to_html(a = actions, show_red = true) {
 					html += '<span class="dogracex" style="width:30px;height:30px;margin:3px;">X</span>';
 					html += '<span style="border:3px solid ' + bet_colors[a[i]['b_id']];
 					html += ';width:30px;height:30px;margin:5px;text-align:center">' + (parseInt(a[i]['b_id']) + 1) + '</span>';
-					html += 'x&nbsp;<input class="oddsInput" type="number" id="b_' + a[i]['b_id'] + '" value="1" onchange="calc_bets()" />';
 					html += '<input id="bg_' + a[i]['b_id'] + '" value="';
 					html += Math.floor(vars['gold'] / (6 * 50));
 					html += '" disabled=true style="border:1px solid black"/>';
@@ -1159,7 +1151,7 @@ function to_html(a = actions, show_red = true) {
 	}
 	html += ((html.length > 0) ? '</div><br/>' : '');
 	if (route_id != -1) {
-		'<button type="button" class="btn btn-primary';
+		html += '<button type="button" class="btn btn-primary';
 		if (flags['dontsave'] == 1) { html += ' dontsave'; }
 		html += '" onclick="next_day()">' + (((flags['dontsave'] == 1) ? "DONT SAVE" : "Sleep") + '</button>');
 	}
@@ -1375,7 +1367,7 @@ function calc_bets(bet_type = 1, use_leftover = false) {
 	var buy_amt = Math.floor(g / 50);
 	odds.sort(function(a, b){ return b[0] - a[0] });
 
-	if ([0, 5].includes(route_id)) {
+	if ([0, 5].includes(route_id) || bet_type == 3) {
 		// Photos
 		odds = slow_calc(odds, buy_amt);
 	} else {
@@ -1395,16 +1387,6 @@ function calc_bets(bet_type = 1, use_leftover = false) {
 				}
 			}
 		}
-		/*
-		console.log(odds);
-		
-		if (use_leftover) {
-			var tmp_arr = [];
-			for (var b = 0; b < odds.length; b++) {
-				
-			}
-		}
-		*/
 	}
 
 	// Display values
