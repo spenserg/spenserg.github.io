@@ -608,12 +608,12 @@ function betting_table(a = []) {
 	for (var i = 0; i < 6; i++) {
 		a.push({'desc':'odds', 'b_table':true, 'b_id':i});
 	}
-	
+/*
 	<button type="button" class="btn btn-' + ((a[i]["sel"] === false) ? 'danger' : 'success') +
 					' action-button" id="ab_' + i + '" onclick="toggle_color(this, '+ "'" +
 					((a[i]['div_tog'] == undefined) ? "" : a[i]['div_tog']) + "', " +
 					get_toggle(a[i], a) + ')">' + a[i]['desc'] + '</button>';
-	
+*/	
 	
 	if (route_id == -1) {
 		a.push({'desc':'<button type="button" class="btn btn-success action-button" id="ab_1" onclick="toggle_type(1)">Photos</button>'});
