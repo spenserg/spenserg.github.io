@@ -5,8 +5,6 @@
 		<meta name="viewport" content="user-scalable=no, width=device-width">
 		<meta charset="UTF-8">
 
-		<link rel="shortcut icon" href="/icon.jpg" />
-
 		<link href="css/bootstrap.min.css" rel="stylesheet" >
 		<link href="css/style.css" rel="stylesheet" type="text/css">
 
@@ -26,5 +24,9 @@
       vars['gold'] = 6000;
       $("#hm64-content").html(to_html(betting_table()));
     });
+
+  function set_type (t = 1) {
+    $(input).setAttribute("onchange", ("calc_bets(" + t + ")"));	  
+  }
   </script>
 </html>
