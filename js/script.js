@@ -603,10 +603,20 @@ function fish() {
 function betting_table(a = []) {
 	var tmp_medals_needed = (([0, 5].includes(route_id)) ? 1000 : 500);
 	a.push({'desc':('<div class="ml-3">' + ((route_id == -1) ? 'MONEY:&nbsp;&nbsp;<input type="number" id="b_gold" onchange="calc_bets()" style="margin-right:20px" value="6000" /></div><div class="ml-3">' : '') +
-			'NErD:&nbsp;&nbsp;<input type="number" id="b_need" onchange="calc_bets()" style="margin-right:20px" value="' + tmp_medals_needed +
+			'NEED:&nbsp;&nbsp;<input type="number" id="b_need" onchange="calc_bets()" style="margin-right:20px" value="' + tmp_medals_needed +
 			'" /></div>' + '<div class="ml-3">HAVE:&nbsp;&nbsp;<input type="number" id="b_have" onchange="calc_bets()" value="' + vars['medals'] + '" /></div>')});
 	for (var i = 0; i < 6; i++) {
 		a.push({'desc':'odds', 'b_table':true, 'b_id':i});
+	}
+	
+	<button type="button" class="btn btn-' + ((a[i]["sel"] === false) ? 'danger' : 'success') +
+					' action-button" id="ab_' + i + '" onclick="toggle_color(this, '+ "'" +
+					((a[i]['div_tog'] == undefined) ? "" : a[i]['div_tog']) + "', " +
+					get_toggle(a[i], a) + ')">' + a[i]['desc'] + '</button>';
+	
+	
+	if (route_id == -1) {
+		a.push({'desc':'<button type="button" class="btn btn-success action-button" id="ab_1" onclick="toggle_type(1)">Photos</button>'});
 	}
 	return a;
 }
