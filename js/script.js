@@ -862,7 +862,7 @@ function update_day_gui(d = vars['day'], jump = false) {
 	});
 	var val_html = '<div class="container">';
 	for (var i = 0; i < flaglist.length; i++) {
-		val_html += '<div class="d-flex flex-row"><div class="ml-4">' + flaglist[i].toLowerCase() + '</div><div class="ml-4"><input id="q_f_' + flaglist[i] + '" value="' + flags[flaglist[i]] + '" ="flag_update()" /></div></div>';
+		val_html += '<div class="d-flex flex-row"><div class="ml-4">' + flaglist[i].toLowerCase() + '</div><div class="ml-4"><input id="q_f_' + flaglist[i] + '" value="' + flags[flaglist[i]] + '" onchange="flag_update()" /></div></div>';
 	}
 	$("#all_values").html(val_html + "</div>");
 
@@ -1119,6 +1119,7 @@ function to_html(a = actions, show_red = true) {
 					html += '<span class="dogracex" style="width:30px;height:30px;margin:3px;">X</span>';
 					html += '<span style="border:3px solid ' + bet_colors[a[i]['b_id']];
 					html += ';width:30px;height:30px;margin:5px;text-align:center">' + (parseInt(a[i]['b_id']) + 1) + '</span>';
+					html += 'x&nbsp;<input class="oddsInput" type="number" id="b_' + a[i]['b_id'] + '" value="1" onchange="calc_bets()" />';
 					html += '<input id="bg_' + a[i]['b_id'] + '" value="';
 					html += Math.floor(vars['gold'] / (6 * 50));
 					html += '" disabled=true style="border:1px solid black"/>';
