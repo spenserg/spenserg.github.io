@@ -1580,7 +1580,7 @@ function npc_update() {
 
 function gold_update() {
 	vars['gold'] = parseInt($('#disp_gold').val());
-	weather_change();
+	if (route_id != -1) { weather_change(); }
 }
 
 function arr_to_str(arr = []) {
