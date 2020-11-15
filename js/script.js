@@ -1584,7 +1584,9 @@ function gold_update() {
 		for (var i = 0; i < 6; i++) {
 			$("#b_" + i).val(1);
 			$("#bg_" + i).val(0);
+			$("#bt_" + i).val(0);
 		}
+		$('#b_0').focus();
 	} else {
 		weather_change();
 	}
