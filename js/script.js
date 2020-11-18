@@ -1758,7 +1758,16 @@ function forage(need = 0, g = vars['gold'], d = vars['day']) {
 function add_time(t = []) {
 	var tmp_date = new Date();
 	var tmp_timestamp = [vars['day'], tmp_date.getTime()];
-	tmp_timestamp.push((t.length > 0) ? ((tmp_date - t[0][1]) / 1000) : 0);
+	var rel_time = ((t.length > 0) ? ((tmp_date - t[0][1]) / 1000) : 0);
+	tmp_timestamp.push(rel_time);
+
+	// Convert to hh:mm:ss time string
+	time_str = "";
+	if (rel_time > 3600) {
+		timestr += (Math.round(rel_time / 3600, 0) + ":");
+		rel_time -= 3600 * Math.round(rel_time / 3600, 0);
+	}
+	tmp_timestamp.push(timestr + fmtMSS(rel_time));
 	t.push(tmp_timestamp);
 	return t;
 }
@@ -1787,3 +1796,5 @@ function basil_min(d) {
 	var x = (_BASIL_BERRY_MIN - ((182 - d) * 6));
 	return ((x > _BASIL_BERRY_MIN) ? _BASIL_BERRY_MIN : x);
 }
+
+function fmtMSS(s){return(s-(s%=60))/60+(9<s?':':':0')+s}
