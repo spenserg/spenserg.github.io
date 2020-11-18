@@ -1762,7 +1762,7 @@ function add_time(t = []) {
 	tmp_timestamp.push(rel_time);
 
 	// Convert to hh:mm:ss time string
-	time_str = "";
+	timestr = "";
 	if (rel_time > 3600) {
 		timestr += (Math.round(rel_time / 3600, 0) + ":");
 		rel_time -= 3600 * Math.round(rel_time / 3600, 0);
