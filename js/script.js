@@ -1757,7 +1757,9 @@ function forage(need = 0, g = vars['gold'], d = vars['day']) {
 
 function add_time(t = []) {
 	var tmp_date = new Date();
-	t.push([vars['day'], tmp_date.getTime()]);
+	var tmp_timestamp = [vars['day'], tmp_date.getTime()];
+	tmp_timestamp.push((t.length > 0) ? ((tmp_date / 1000) - t[0][1]) : 0);
+	t.push(tmp_timestamp);
 	return t;
 }
 
