@@ -1,6 +1,7 @@
 function reset_vars() {
 	actions = [];
 	actions_all = {};
+	timestamps = [];
 	reset = false;
 	sell_stuff = false;
 
@@ -87,6 +88,7 @@ function get_checklist(rid = null) {
 }
 
 function next_day(jump = false) {
+	timestamps = add_time(timestamps);
 	if (!jump) {
 		flags['good_weather'] = 1;
 
@@ -1751,6 +1753,16 @@ function forage(need = 0, g = vars['gold'], d = vars['day']) {
 		}
 	}
 	return { 'desc':d, 'forage':true, 'forage_list':forage_list };
+}
+
+function add_time(t = []) {
+	var tmp_date = new Date();
+	t.push([d, tmp_date.getTime()])
+	return t;
+}
+
+function print_time() {
+	console.log(timestamps);
 }
 
 function print_vars() {
