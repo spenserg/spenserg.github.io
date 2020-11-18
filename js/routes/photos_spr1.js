@@ -122,11 +122,11 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	} else { // Not a Festival
 
 		// Chicken
-		if (dow == "MON" || [12, 15, 19].includes(d)) {
-			if (d == 12 && flags['new_chick'] == 1) {
+		if (d > 8 && (dow == "MON" || [12, 19].includes(d))) {
+			if (flags['new_chick'] == 1) {
 				a.push({'desc':"SAVE EGG FOR INCUBATION", 'imp':true});
 			}
-			if (dow == "MON" && vars['chickens'] > 2) {
+			if (dow == "MON" && d > 15) {
 				chicken_action.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'), 'imp':true});
 				if (vars['feed'] < 4) {
 					var tmp_seeds = (((10 - vars['feed']) < Math.floor(vars['gold'] / 10)) ? (10 - vars['feed']) : Math.floor(vars['gold'] / 10));
@@ -151,8 +151,6 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				has_opener = true;
 				if (flags['new_chick'] != 1 && vars['new_chicken_days'].length > 0 && parseInt(vars['new_chicken_days'].substr(0,3)) == d) {
 					a.push({'desc':"Bring Chicken Outside", 'iid':chicken_id, 'sr':true, 'val':1, 'cid':'f_chicken_outside'});
-				} else {
-					//a.push({'desc':"DONT ENTER COOP", 'sr':(vars['new_chicken_days'].length > 0 && parseInt(vars['new_chicken_days'].substr(0,3)) == d), 'red':true});
 				}
 
 				// new chk | incubate
