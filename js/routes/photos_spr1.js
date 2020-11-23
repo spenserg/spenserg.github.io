@@ -23,7 +23,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	var visit_ranch = get_horse;
 	var chicken_action = [];
 	var reset = "";
-	
+
 	// Strength Berry on Spr 9
 	if (flags['berry_strength'] == 0 && d == 9) {
 		a.push({'desc':"No Stamina Use Today", 'imp':true});
@@ -31,7 +31,10 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Dog Affection
 	if (flags['dog_inside'] == 1) {
-		a.push({'desc':"Whistle / Pick up Dog", 'cid':dog_id, 'val':2});
+		a.push({'desc':"Whistle / Pick up Dog", 'cid':dog_id, 'val':2, 'imp':(dow == "MON" && d > 8 && aff[karen_id] < 100)});
+		if (dow == "MON" && d > 8 && aff[karen_id] < 100) {
+			a.push({'desc':"Bring Dog Outside [Karen aff]", 'sr':true});
+		}
 	}
 
 	if (d == 3) { // Spring 3
@@ -299,7 +302,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					tmp_spr_aff += 5;
 				}
 				a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':(aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35),
-						'sel':(d < 7 || (is_sunny == 1 && aff[sprite_id] < _SPRITE_WINE_MIN && dow == "MON")),
+						'sel':(d == 7 || (is_sunny == 1 && aff[sprite_id] < _SPRITE_WINE_MIN && dow == "MON")),
 						'red':(aff[sprite_id] >= _SPRITE_WINE_MIN || (d > 6 && dow != "MON" && d != 9))
 				});
 				a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
@@ -432,37 +435,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 			}
 
-			if (d == 4) { a.push({'desc':"SELL CLOVER", 'imp':true}); }
-
-			// MAY
-			if (aff[may_id] < 100 && is_sunny == 1 && dow == "SAT") {
-				a.push({'desc':"Spam May (By Midwife) [83 Talks]", 'cid':may_id, 'val':255, 'sel':(d == 6), 'red':(dow == "SUN")});
-			}
-
-			// MARIA
-			// " Talk" -1 spaces
-			if (dow != "MON") {
-				// Maria in library
-				if (aff[maria_id] == 0) {
-					a.push({'desc':"Meet", 'cid':maria_id, 'val':4, 'red':(dow == "SUN" && !get_horse), 'sel':(!["SAT", "SUN", "WED"].includes(dow))});
-				}
-				a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 'sr':(aff[maria_id] == 0), 'red':(dow == "SUN" && !get_horse),
-					'sel':(flags['new_mus_box'] == 0 && (d == 6 || !["WED", "SAT", "SUN"].includes(dow)))
-				});
-				if (aff[rick_id] >= _RICK_FIX_MIN - 6) {
-					a[a.length - 1]['t2'] = "MusBox";
-					a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'], 'sel':(flags['new_mus_box'] == 1)});
-				}
-				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':((d == 6 || !["WED", "SAT", "SUN"].includes(dow)) && (d == 9 || is_sunny == 1 || vars['chickens'] < 1))});
-	
-				// MAY
-				if (aff[may_id] < 100 && is_sunny == 0) {
-					a.push({'desc':"Spam May (Library) [83 Talks]", 'cid':may_id, 'val':255, 'sel':false, 'red':true});
-				}
-			} else if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && !flags["sick_maria"]) {
-				// Sick Event
-				a.push({'desc':"Sick Event", 'cid':[maria_id, "f_sick_maria"], 'val':[_SICK_EVENT_AFF, 1]});
-			}
+			a = ((aff[may_id] < 50) ? elli_spry1(a, d, g, is_sunny) : maria_spry1(a, d, g, is_sunny));
 
 			// MAYOR
 			if (is_sunny == 1 && dow != "SUN") {
@@ -537,34 +510,11 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 			}
 
-			// ELLI
-			// "Gift " <- one space
-			// "Talk " <- one space
-			if (!["SUN", "MON"].includes(dow)) {
-				if (aff[elli_id] == 0) { a.push({'desc':"Meet", 'cid':elli_id, 'val':4}); }
-				a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk (Bakery)"), 'cid':elli_id, 'val':1,
-						'sr':(aff[elli_id] == 0), 't2':"MusBox ",
-						'sel':(d == 6 || (d != 4 && !["WED", "SAT"].includes(dow) && is_sunny == 1 && aff[rick_id] < _RICK_FIX_MIN - 6))});
-				a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
-					'sel':(is_sunny == 1 && (aff[rick_id] >= _RICK_FIX_MIN - 6) && (!["SAT", "WED", "SUN"].includes(dow))),
-					't2':a[a.length - 1]['desc']});
-				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
-					't2':((vars['chickens'] > 0) ? ["Egg", "M/L Fish"] : "M/L Fish"),
-					'sel':(d == 6 || (d != 4 && !["WED", "SAT"].includes(dow) && (is_sunny == 1 || d == 9) && ((vars['chickens'] < 1) || (d != 24 && (vars['chickens'] == 0 || flags['new_chick'] == 1 || d == 9)))))
-				});
-				a.push({
-					'desc':((vars['chickens'] > 0) ? "Egg" : "M/L Fish"), 'sr':true,
-					't2':((vars['chickens'] > 0) ? ["Gift ", "M/L Fish"] : "Gift "),
-					'sel':(d != 9 && is_sunny == 1 && !["WED", "SAT"].includes(dow) &&(d == 24 || (vars['chickens'] > 0 && flags['new_chick'] != 1))),
-					'cid':((vars['chickens'] > 0) ? ((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id) : [elli_id, 'v_happiness']),
-					'val':((vars['chickens'] > 0) ? ((flags['recipe_elli'] == 0) ? [1, 6] : 4) : [3, 1])
-				});
-				if (vars['chickens'] > 0) {
-					a.push({'desc':"M/L Fish", 'sr':true, 't2':["Gift ", "Egg"],
-							'cid':[elli_id, 'v_happiness'],
-							'val':[3, 1], 'sel':false
-					});
-				}
+			a = ((aff[may_id] > 50) ? elli_spry1(a, d, g, is_sunny) : maria_spry1(a, d, g, is_sunny));
+
+			// MAY
+			if (aff[may_id] < 100 && is_sunny == 1 && dow == "SAT") {
+				a.push({'desc':"Spam May (By Midwife) [83 Talks]", 'cid':may_id, 'val':255, 'sel':(d == 6), 'red':(dow == "SUN")});
 			}
 
 			// POTATOES
@@ -613,6 +563,10 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Chicken Outside", 'val':1, 'cid':'f_chicken_outside', 'imp':true, 'iid':chicken_id});
 			}
 
+			if (dow == "MON" && d > 8 && aff[karen_id] < 100) {
+				a.push({'desc':"Dog Karen to Pink", 'cid':karen_id, 'val':(208 - aff[karen_id]), 'sel':false});
+			}
+
 			if (is_sunny == 1 && (d == 30 || (dow != "SUN" && ((flags['berry_kappa'] == 0 && vars['chickens'] == 0) || aff[karen_id] < 120)))) {
 				if (flags['berry_kappa'] == 0 && vars['chickens'] == 0) {
 					a.push({'desc':"Dock fishing, then bar"});
@@ -623,6 +577,11 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				if (aff[duke_id] == 0) { a.push({'desc':"Meet", 'cid':duke_id, 'val':3, 'imp':(d < 7), 'sel':(d < 7)}); }
 				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'imp':(d < 7), 'sel':(d < 7), 'red':(d > 7 && dow != "MON")});
 				a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(d < 7), 'sr':true});
+
+				if (aff[karen_id] == 0 && !["MON", "TUES", "WED"].includes(dow)) {
+					a.push({'desc':"Meet", 'cid':karen_id, 'val':4, 'sel':false, 'red':(d > 7 && dow != "MON")});
+					a.push({'desc':"Talk", 'cid':karen_id, 'val':1, 'sel':false, 'sr':true});
+				}
 			}
 		} // End of if (d > 3)
 	}
@@ -651,6 +610,78 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	if (reset.length > 0) {
 		flags['dontsave'] = false;
 		a = [{'desc':"RESET", 'red':true}, {'desc':("REASON: " + reset)}];
+	}
+	return a;
+}
+
+function elli_spry1 (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
+	var elli_id = get_npc_id('elli');
+	var rick_id = get_npc_id('rick');
+	var dow = get_dow(d, true); 
+
+	// ELLI
+	// "Gift " <- one space
+	// "Talk " <- one space
+	if (!["SUN", "MON"].includes(dow)) {
+		if (aff[elli_id] == 0) { a.push({'desc':"Meet", 'cid':elli_id, 'val':4}); }
+		a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk (Bakery)"), 'cid':elli_id, 'val':1,
+			'sr':(aff[elli_id] == 0), 't2':"MusBox ",
+			'sel':(d == 6 || (d != 4 && !["WED", "SAT"].includes(dow) && is_sunny == 1 && aff[rick_id] < _RICK_FIX_MIN - 6))});
+		a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
+			'sel':(is_sunny == 1 && (aff[rick_id] >= _RICK_FIX_MIN - 6) && (!["SAT", "WED", "SUN"].includes(dow))),
+			't2':a[a.length - 1]['desc']});
+		a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
+			't2':((vars['chickens'] > 0) ? ["Egg", "M/L Fish"] : "M/L Fish"),
+			'sel':(d == 6 || (d != 4 && !["WED", "SAT"].includes(dow) && (is_sunny == 1 || d == 9) && ((vars['chickens'] < 1) || (d != 24 && (vars['chickens'] == 0 || flags['new_chick'] == 1 || d == 9)))))
+		});
+		a.push({
+			'desc':((vars['chickens'] > 0) ? "Egg" : "M/L Fish"), 'sr':true,
+			't2':((vars['chickens'] > 0) ? ["Gift ", "M/L Fish"] : "Gift "),
+			'sel':(d != 9 && is_sunny == 1 && !["WED", "SAT"].includes(dow) &&(d == 24 || (vars['chickens'] > 0 && flags['new_chick'] != 1))),
+			'cid':((vars['chickens'] > 0) ? ((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id) : [elli_id, 'v_happiness']),
+			'val':((vars['chickens'] > 0) ? ((flags['recipe_elli'] == 0) ? [1, 6] : 4) : [3, 1])
+		});
+		if (vars['chickens'] > 0) {
+			a.push({'desc':"M/L Fish", 'sr':true, 't2':["Gift ", "Egg"],
+					'cid':[elli_id, 'v_happiness'],
+					'val':[3, 1], 'sel':false
+			});
+		}
+	}
+	return a;
+}
+
+function maria_spry1 (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
+	var dow = get_dow(d, true);
+	var maria_id = get_npc_id('maria');
+	var rick_id = get_npc_id('rick');
+
+	if (d == 9) { a.push({'desc':"MARIA FIRST", 'imp':true}); }
+
+	// MARIA
+	// " Talk" -1 spaces
+	if (dow != "MON") {
+		// Maria in library
+		if (aff[maria_id] == 0) {
+			a.push({'desc':"Meet", 'cid':maria_id, 'val':4, 'red':(dow == "SUN" && d != 7), 'sel':(!["SAT", "SUN", "WED"].includes(dow))});
+		}
+		a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 'sr':(aff[maria_id] == 0), 'red':(dow == "SUN" && d != 7),
+			'sel':(flags['new_mus_box'] == 0 && (d == 6 || !["WED", "SAT", "SUN"].includes(dow)))
+		});
+		if (aff[rick_id] >= _RICK_FIX_MIN - 6) {
+			a[a.length - 1]['t2'] = "MusBox";
+			a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'], 'sel':(flags['new_mus_box'] == 1)});
+		}
+		a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':((d == 6 || !["WED", "SAT", "SUN"].includes(dow)) && (d == 9 || is_sunny == 1 || vars['chickens'] < 1))});
+
+		var may_id = get_npc_id('may');
+		// MAY
+		if (aff[may_id] < 100 && is_sunny == 0) {
+			a.push({'desc':"Spam May (Library) [83 Talks]", 'cid':may_id, 'val':255, 'sel':false, 'red':true});
+		}
+	} else if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && !flags["sick_maria"]) {
+		// Sick Event
+		a.push({'desc':"Sick Event", 'cid':[maria_id, "f_sick_maria"], 'val':[_SICK_EVENT_AFF, 1]});
 	}
 	return a;
 }
