@@ -553,7 +553,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				// BAR
 				var duke_id = get_npc_id('bartender');
 				if (aff[duke_id] == 0) { a.push({'desc':"Meet", 'cid':duke_id, 'val':3, 'imp':(d < 7), 'sel':(d < 7)}); }
-				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'imp':(d < 7), 'sel':(d < 7), 'red':(d > 7 && (dow != "MON" || (aff[karen_id] > 120 && flags['berry_kappa'] == 1)))});
+				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'imp':(d < 7), 'sel':(d < 7), 'red':(d > 7 && aff[duke_id] >= 27 && (dow != "MON" || (aff[karen_id] > 120 && flags['berry_kappa'] == 1)))});
 				a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(a[a.length - 1]['sel']), 'sr':true});
 
 				if (aff[karen_id] == 0 && !["MON", "TUES", "WED"].includes(dow)) {
