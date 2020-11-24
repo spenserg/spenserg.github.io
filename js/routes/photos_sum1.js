@@ -1,4 +1,4 @@
-function actions_photos_sum_y1(a = [], d = 3, g = 300, is_sunny = 1) {
+actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var ann_id = get_npc_id('ann');
 	var chicken_id = get_npc_id('chicken');
 	var cliff_id = get_npc_id('cliff');
@@ -47,9 +47,6 @@ function actions_photos_sum_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 		if (flags['dog_inside'] == 1) {
 			a.push({'desc':"Whistle / Pick up Dog", 'cid':dog_id, 'val':2});
 		}
-		if (is_sunny == 1) {
-			a.push({'desc':"Scare Birds", 'cid':'v_happiness', 'val':1, 'sr':(flags['dog_inside'] == 1), 'sel':false});
-		}
 
 		// Music Box Dig
 		if (flags['old_mus_box'] == 0 && is_sunny == 1) {
@@ -87,7 +84,7 @@ function actions_photos_sum_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':((flags['chicken_outside'] == 1) ? "Chicken Inside / Feed" : "Feed Chicken"),
 						'cid':((flags['chicken_outside'] == 1) ? ['f_chicken_outside', 'v_feed'] : 'v_feed'),
 						'val':((flags['chicken_outside'] == 1) ? [-1, -1] : -1), 'iid':chicken_id,
-						'imp':(is_sunny != flags['chicken_outside']), 'sel':(is_sunny == 0),
+						'imp':(is_sunny != flags['chicken_outside']), 'sel':false,
 						'sr':(vars['new_chicken_days'].length > 0 && parseInt(vars['new_chicken_days'].substr(0,3)) == d)
 				});
 				if (flags['chicken_outside'] == 0 && is_sunny == 1) {
@@ -99,40 +96,56 @@ function actions_photos_sum_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 			}
 
-			// New Chicken | Incubate
-			if (vars['chickens'] > 0 && flags['new_chick'] <= 1) {
-				// new chk
+			// Chicken
+			if (dow == "MON") {
 				if (flags['new_chick'] == 1) {
-					a.push({'desc':"New Chick", 'cid':["v_new_chicken_days", "f_new_chick"],
-							'val':[d + _CHICK_GROW_SLEEPS, -1], 'sel':false, 'sr':(vars['chickens'] > 0)
+					a.push({'desc':"SAVE EGG FOR INCUBATION", 'imp':true});
+				}
+				a.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'), 'imp':true});
+				if (vars['feed'] < 4) {
+					var tmp_seeds = (((10 - vars['feed']) < Math.floor(vars['gold'] / 10)) ? (10 - vars['feed']) : Math.floor(vars['gold'] / 10));
+					if (tmp_seeds > 0) {
+						chicken_action.push({'desc':"Buy " + tmp_seeds + " Feed", 'cid':['v_gold', 'v_feed'], 'val':[10 * tmp_seeds, tmp_seeds], 'sr':true});
+					}
+				}
+				if (flags['new_chick'] == 1) {
+					ca.push({'desc':"New Chick", 'iid':chicken_id, 'cid':["v_new_chicken_days", "f_new_chick"],
+							'val':[d + _CHICK_GROW_SLEEPS, -1], 't0':"Incubate", 'imp':true, 'sr':(dow == "MON" && vars['chickens'] > 1)
 					});
-					if (a[a.length - 1]['sr'] == false) { a[a.length - 1]['iid'] = chicken_id; }
+					a.push({'desc':"Incubate", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1), 'sr':true});
 				}
+			} else {
+				if (vars['chickens'] > 0 && flags['new_chick'] <= 1) {
+					if (flags['new_chick'] != 1 && vars['new_chicken_days'].length > 0 && parseInt(vars['new_chicken_days'].substr(0,3)) == d) {
+						a.push({'desc':"Bring Chicken Outside", 'iid':chicken_id, 'sr':true, 'val':1, 'cid':'f_chicken_outside'});
+					}
 
-				/* INCUBATE
-				a.push({'desc':"Incubate", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1),
-						'sr':(flags['new_chick'] == 1 || vars['chickens'] > 0), 'sel':false
-				});
-				if (vars['chickens'] == 0 && flags['new_chick'] != 1) {
-					a[a.length - 1]['iid'] = chicken_id;
+					// new chk | incubate
+					if (flags['new_chick'] == 1) {
+						a.push({'desc':"New Chick", 'iid':chicken_id, 'cid':["v_new_chicken_days", "f_new_chick"], 'sel':false,
+								'val':[d + _CHICK_GROW_SLEEPS, -1], 't0':"Incubate", 'red':true
+						});
+					}
+					a.push({'desc':"Incubate", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1),
+							'iid':chicken_id, 'sr':(flags['new_chick'] == 1), 'sel':(d == 9), 'red':(d > 12), 'imp':(d == 9)
+					});
+					if (flags['new_chick'] == 1) { a[a.length - 1]['t3'] = "New Chick"; }
 				}
-				if (flags['new_chick'] == 1) { a[a.length - 1]['t3'] = "New Chick"; }
-				*/
 			}
 
 			if (is_sunny == 1 && d < 60 && flags['corn_planted'] == 1) {
 				// Water Corn
 				a.push({'desc':"Equip Watering Can", 'imp':(!is_festival(d) || flags['chicken_outside'] == 0)});
-				a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':30, 'sel':false, 'sr':true});
 				a.push({'desc':"Water Corn", 'cid':['v_watering_can_fill', 'v_corn_waters'], 'val':[-10, 1], 'sr':true, 'sel':false});
+				a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':(30 - vars['watering_can_fill']), 'sel':false, 'sr':true});
 				if (vars['corn_waters'] >= _CORN_GROW_DAYS && !is_festival(d)) {
 					a.push({'desc':"Corn for Ann"});
 				}
 			}
 
 			if (is_festival(d)) {
-				// 9 -  Veg Fest
-				// 24 - Sea Fest
+				// 9 / 39 -  Veg Fest
+				// 24 / 54 - Sea Fest
 
 				// Sea Festival
 				if (d == 54) { // Swim Fest
@@ -174,7 +187,7 @@ function actions_photos_sum_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 					}
 
 					// SPRITE
-					a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sel':(aff[sprite_id] < (_SPRITE_WINE_MIN - 1)), 'red':(aff[sprite_id] >= (_SPRITE_WINE_MIN - 1))});
+					a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sel':(aff[sprite_id] < 45), 'red':(aff[sprite_id] >= (_SPRITE_WINE_MIN - 1))});
 					a.push({'desc':"Flower", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
 
 					// MARIA
@@ -191,7 +204,7 @@ function actions_photos_sum_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 						});
 					}
 					if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - 2)) {
-						a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':false});
+						a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true});
 					}
 
 					// ANN
@@ -237,10 +250,9 @@ function actions_photos_sum_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 							'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
 						});
 						a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
-							't2':((vars['chickens'] > 0) ? "Egg " : "M/L Fish"),
-							'sel':(is_sunny == 1 && (vars['chickens'] == 0 || flags['new_chick'] == 1))
+							't2':((vars['chickens'] > 0) ? "Egg " : "M/L Fish"), 'sel':false
 						});
-						a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':(!(is_sunny == 1 && (vars['chickens'] == 0 || flags['new_chick'] == 1))),
+						a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':(is_sunny == 1),
 							'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
 							'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
 						});
@@ -340,17 +352,14 @@ function actions_photos_sum_y1(a = [], d = 3, g = 300, is_sunny = 1) {
 
 				if (d == 31) { // Fireworks Festival
 					// CORN
-					a.push({'desc':"Gather gifts for Bar;"});
-					a.push({'desc':"Equip Corn", 'sr':true});
+					a.push({'desc':"Equip Corn"});
 					a.push({'desc':"Plant Corn", 'iid':get_npc_id('lillia'), 'cid':['v_gold', 'f_corn_planted'], 'val':[-300, 1], 'sr':true});
 					a.push({'desc':"Equip Watering Can"});
-					a.push({'desc':"Water Corn", 'cid':['v_watering_can_fill', 'v_corn_waters'], 'val':[-10, 1], 'sr':true, 'sel':false});
-					a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':30, 'sr':true, 'sel':false});
-					a.push({'desc':"Scare birds by pond", 'cid':'v_happiness', 'val':1, 'sel':false});
-					a.push({'desc':"Equip hammer, Clear rocks on farm until 5 PM"});
+					a.push({'desc':"Water Corn", 'cid':['v_watering_can_fill', 'v_corn_waters'], 'val':[-10, 1], 'sr':true});
+					a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':(30 - vars['watering_can_fill']), 'sr':true, 'sel':false});
 					a = visit_bar(a, dow, is_sunny, true);
-					a.push({'desc':"Fast Text Glitch; Axe description", 'imp':true});
 					a.push({'desc':"Fireworks (Ranch)", 'cid':[ann_id, 'f_dontsave'], 'val':[5, 1]});
+					a.push({'desc':"FAST TEXT GLITCH", 'sr':true});
 					if (aff[ann_id] >= 55) {
 						// Bonus Sparkler Scene at 55 aff or higher
 						a[a.length - 1]['cid'].push('v_happiness');
@@ -404,21 +413,21 @@ function ranch_stuff_sum(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1)
 			tmp_act.push({
 				'desc':(" Talk (" + ((is_sunny == 0) ? "Barn)" : "Ranch)")),
 				'cid':ann_id, 'val':1, 'red':(dow == "SUN"),
-				'sel':(flags['new_mus_box'] == 0 && dow != "SUN"), 't2':" MusBox"
+				'sel':(is_sunny == 1 && flags['new_mus_box'] == 0 && dow != "SUN"), 't2':" MusBox"
 			});
 			tmp_act.push({
 				'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
-				'sel':(flags['new_mus_box'] == 1 && dow != "SUN"), 't2':tmp_act[tmp_act.length - 1]['desc']
+				'sel':(is_sunny == 1 && flags['new_mus_box'] == 1 && dow != "SUN"), 't2':tmp_act[tmp_act.length - 1]['desc']
 			});
 			tmp_act.push({
 				'desc':" Gift", 'cid':ann_id, 'sr':true,
 				'val':((vars['day'] == 44) ? 3 : 1), 't2':"Corn / Potato",
-				'sel':(vars['potatoes'] <= 0 && vars['corn_waters'] < _CORN_GROW_DAYS && dow != "SUN")
+				'sel':(is_sunny == 1 && vars['potatoes'] <= 0 && vars['corn_waters'] < _CORN_GROW_DAYS && dow != "SUN")
 			}); 
 			tmp_act.push({
 				'desc':"Corn / Potato", 'cid':[ann_id, 'v_potatoes'], 'sr':true,
 				'val':[((vars['day'] == 44) ? 5 : 3), -1], 't2':" Gift",
-				'sel':(dow != "SUN" && (vars['potatoes'] > 0 || vars['corn_waters'] >= _CORN_GROW_DAYS))
+				'sel':(is_sunny == 1 && dow != "SUN" && (vars['potatoes'] > 0 || vars['corn_waters'] >= _CORN_GROW_DAYS))
 			});
 			
 			// Cliff
@@ -435,10 +444,10 @@ function ranch_stuff_sum(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1)
 				}
 				tmp_act.push({
 					'desc':("Talk (" + ((dow == "WED") ? "Ranch" : "Beach") + ")"), 'red':no_beach,
-					'cid':cliff_id, 'val':2, 'sel':(dow == "WED"), 'sr':(aff[cliff_id] == 5 || aff[cliff_id] == 0)
+					'cid':cliff_id, 'val':2, 'sel':(vars['day'] == 31), 'sr':(aff[cliff_id] == 5 || aff[cliff_id] == 0)
 				});
-				tmp_act.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
-				tmp_act.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+				tmp_act.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':(vars['day'] == 31 && vars['chickens'] <= 1), 't2':"   Egg   ", 'sr':true});
+				tmp_act.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':(vars['day'] == 31 && vars['chickens'] > 1), 't2':"   Gift   ", 'sr':true});
 			}
 
 			if (is_sunny == 1 && dow == "MON") {
@@ -466,8 +475,8 @@ function ranch_stuff_sum(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1)
 				});
 			}
 		}
-		if (vars['chickens'] > 1) {
-			tmp_act.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug')});
+		if (vars['chickens'] > 0) {
+			tmp_act.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'), 'sel':(vars['chickens'] > 3), 'red':(dow != "MON")});
 		}
 	}
 	return tmp_act;
@@ -481,16 +490,17 @@ function visit_bar(tmp_act = [], dow = get_dow(vars['day'], true), is_sunny = 1,
 		duke_exists = (duke_exists || tmp_act[key]['cid'] == duke_id);
 	}
 	if (dow != "SUN" && !duke_exists) {
-		tmp_act.push({'desc':"Go to Bar" + ((imp_visit || (vars['day'] == 60 && aff[karen_id] < 250)) ? "" : " if 5PM or later, otherwise sleep")});
-
-		tmp_act.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sel':(imp_visit && flags['wine_from_duke'] == 0), 'imp':((imp_visit || (aff[duke_id] >= (_DUKE_WINE_MIN - 6))) && flags['wine_from_duke'] == 0)});
-		tmp_act.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(imp_visit && flags['wine_from_duke'] == 0), 'sr':true});
+		tmp_act.push({'desc':("Talk"), 'cid':duke_id, 'val':3,
+			      'sel':(imp_visit || ((dow == "MON" || (vars['day'] < 11 && !["SAT", "WED"].includes(dow))) && aff[duke_id] < 33)),
+			      'imp':(imp_visit || (vars['day'] >= 57 && aff[duke_id] < 33))
+		});
+		tmp_act.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(tmp_act[tmp_act.length - 1]['sel']), 'sr':true});
 		if (flags['wine_from_duke'] == 0) {
 			tmp_act.push({'desc':"Get Wine", 'cid':'f_wine_from_duke', 'val':1, 'sr':true, 'sel':false});
 		}
-	} else {
-		tmp_act.push({'desc':"Bar is closed on Sundays", 'iid':duke_id, 'red':true});
+		if (aff[duke_id] < 33) {
+			tmp_act.push({'desc':("(" + Math.round((33 - aff[duke_id]) / 6) + " visits left)"), 'sr':true});
+		}
 	}
 	return tmp_act;
 }
-
