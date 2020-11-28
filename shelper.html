@@ -26,19 +26,43 @@
   }
 
   function compute(type = -1) {
-    var result = '';
-    var ans = "";
-    var r0 = new RegExp(/\n[A-Z]{3}([A-Z]{3})\n/, 'i');
-    var r1 = new RegExp(/\n[A-Z]{3}([A-Z]{3})\n/, 'i');
+    var result = "";
+    var reg;
 
     if (type != -1) {
 	var list_ans = [];
 	ans = ((type == 0) ? ($("#outbound").val()) : ($("#inbound").val()));
-	var r2 = ((type == 0) ? r0 : r1;
-	//result = 'on run {input, parameters}\ntell application "Google Chrome" to activate\ntell Application "System Events"\ndelay 0.5
-	while ((array1 = r2.exec(ans)) !== null) {
-		var tmp_ans = array1[1];
-		console.log(tmp_ans);
+	if (type == 1) {
+		reg = /\n[A-Z]{3}([A-Z]{3})\n/g;
+	} else {
+		reg = /AA(\d+)\n[^\n]+\nDFW([A-Z]{3})[^\:]+\:\s(\d+)\:(\d+)\:[^\n]+\n[^\:]+\:\s([^\n]+)\nDFW\n\d/g;
+	}
+
+	var net = 0;
+	var result2;
+	var list_ans = {};
+	while((result2 = reg.exec(ans)) !== null && net < 1000) {
+		if (type == 1) {
+    			if (!(result2[1] in list_ans)) {
+				list_ans[result2[1]] = 0;
+			}
+			list_ans[result2[1]]++;
+		} else {
+			console.log(result2);
+			result += result2[1] + "\t" + result2[5] + "\t" + result2[3] + result2[4] + "\n";
+			//$1\t$5\t$3$4\n
+		}
+		net++;
+	}
+	if (type == 1) {
+		var sortable = [];
+		for (var dest in list_ans) {
+			sortable.push([dest, list_ans[dest]]);
+		}
+		sortable.sort(function(a, b) { return b[1] - a[1]; } );
+		sortable.forEach(function(item, index) {
+			result += item[0] + "\t" + item[1] + "\n"
+		});
 	}
     }
     $('#ans_txt').val(result);
