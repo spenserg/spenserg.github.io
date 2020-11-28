@@ -11,11 +11,11 @@
 </head>
 
 <body>
-	Text: <textarea id="page_txt" rows="10"></textarea>
-	<button onclick="compute()">Go</button><br/>
-	<input type="checkbox" id="last_only" name="last_only" value="1">
-	<label for="last_only"> Last Name Only</label><br/><br/>
-  	Ans: <textarea id="ans_txt"></textarea>
+	Outbound List: <textarea id="outbound" rows="5"></textarea>
+	<button onclick="compute(0)">Go</button><br/>
+	Inbound List: <textarea id="inbound" rows="5"></textarea>
+	<button onclick="compute(1)">Go</button><br/>
+  	Ans: <textarea id="ans_txt" rows="5"></textarea>
 </body>
 
 <script>
@@ -25,45 +25,21 @@
     });
   }
 
-  function compute() {
+  function compute(type = -1) {
     var result = '';
-    var ans = $("#page_txt").val();
-    var ans_list = [];
-    var r1 = new RegExp(/NEXT\sQUIZ\nPLAY\sANOTHER\n([\s\S]+)Today\'s\sDaily\sDose\n/, 'i');
-    var r1b = new RegExp(/NEXT\sQUIZ\nPLAY\sANOTHER\n([\s\S]+)Remove Ads\./, 'i');
-    var r2 = new RegExp(/\t([^\n]+)\n/, 'g');
+    var ans = "";
+    var r0 = new RegExp(/\n[A-Z]{3}([A-Z]{3})\n/, 'i');
+    var r1 = new RegExp(/\n[A-Z]{3}([A-Z]{3})\n/, 'i');
 
-    var split_1 = false;
-    if (r1.test(ans)) {
-	    split_1 = true;
-	    ans = r1.exec(ans)[1];
-    } else if (r1b.test(ans)) {
-	    split_1 = true;
-	    ans = r1b.exec(ans)[1];
-    }
-
-    if (split_1) { console.log(ans);
+    if (type != -1) {
 	var list_ans = [];
-	result = 'on run {input, parameters}\ntell application "Google Chrome" to activate\ntell Application "System Events"\ndelay 0.5';
-	var xt = new RegExp(/(\t[^\d])/, 'g');
-	if (!xt.test(ans)) { r2 = new RegExp(/([^\n]+)\n/, 'g'); }
+	ans = ((type == 0) ? ($("#outbound").val()) : ($("#inbound").val()));
+	var r2 = ((type == 0) ? r0 : r1;
+	//result = 'on run {input, parameters}\ntell application "Google Chrome" to activate\ntell Application "System Events"\ndelay 0.5
 	while ((array1 = r2.exec(ans)) !== null) {
-		var tmp_ans = array1[1].normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-		if (document.getElementById("last_only").checked) {
-			tmp_ans = tmp_ans.split(" ").pop().replace(/[^\w\s]/g, "");
-		}
-		if (!tmp_ans.includes("|")) {
-			var rx = new RegExp(/(time[\d]+follow)/, 'i');
-			if (!rx.test(tmp_ans)) {
-				list_ans.push(tmp_ans.toLowerCase().trim().replace(/[^\w\s]/g, ""));
-			}
-		}
+		var tmp_ans = array1[1];
+		console.log(tmp_ans);
 	}
-	list_ans = list_ans.unique();
-	for (var i = 0; i < list_ans.length; i++) {
-		result += '\nkeystroke "' + list_ans[i] + '"\nkeystroke "a" using {command down}\ndelay 0.5\nkey code 51';
-	}  
-	result += "\nend\nend run";
     }
     $('#ans_txt').val(result);
   }
