@@ -67,7 +67,7 @@
 		} else {
 			result += "BULK\t" + sortable[0] + "\n \t" + sortable[1] + "\n";
 			result += ((sortable.length % 2 != 0) ? " " : (sortable[sortable.length - ((sortable.length - 2) / 2)])) + "\t" + sortable[2] + "\n";
-			for (var i = 3; i < ((Math.ceil(sortable.length \ 2) + 1); i++) {
+			for (var i = 3; i < (Math.ceil(sortable.length \ 2) + 1); i++) {
 				result += sortable[i + Math.floor((sortable.length - 2) / 2)] + "\t" + sortable[i] + "\n";
 			}
 		}
