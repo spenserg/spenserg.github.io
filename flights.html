@@ -60,9 +60,17 @@
 			sortable.push([dest, list_ans[dest]]);
 		}
 		sortable.sort(function(a, b) { return b[1] - a[1]; } );
-		sortable.forEach(function(item, index) {
-			result += item[0] + "\t" + item[1] + "\n"
-		});
+		if (sortable.length < 6) {
+			sortable.forEach(function(item, index) {
+				result += item[0] + "\t" + item[1] + "\n"
+			});
+		} else {
+			result += "BULK\t" + sortable[0] + "\n \t" + sortable[1] + "\n";
+			result += ((sortable.length % 2 != 0) ? " " : (sortable[sortable.length - ((sortable.length - 2) / 2)])) + "\t" + sortable[2] + "\n";
+			for (var i = 3; i < ((Math.ceil(sortable.length \ 2) + 1); i++) {
+				result += sortable[i + Math.floor((sortable.length - 2) / 2)] + "\t" + sortable[i] + "\n";
+			}
+		}
 	}
     }
     $('#ans_txt').val(result);
