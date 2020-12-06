@@ -48,9 +48,7 @@
 			}
 			list_ans[result2[1]]++;
 		} else {
-			console.log(result2);
 			result += result2[1] + "\t" + result2[5] + "\t" + result2[3] + result2[4] + "\n";
-			//$1\t$5\t$3$4\n
 		}
 		net++;
 	}
@@ -65,10 +63,13 @@
 				result += item[0] + "\t" + item[1] + "\n"
 			});
 		} else {
-			result += "BULK\t" + sortable[0] + "\n \t" + sortable[1] + "\n";
-			result += ((sortable.length % 2 != 0) ? " " : (sortable[sortable.length - ((sortable.length - 2) / 2)])) + "\t" + sortable[2] + "\n";
-			for (var i = 3; i < (Math.ceil(sortable.length \ 2) + 1); i++) {
-				result += sortable[i + Math.floor((sortable.length - 2) / 2)] + "\t" + sortable[i] + "\n";
+			result += " \tBULK\t" + sortable[0][0] + "\t" + sortable[0][1] + "\n" + " \t \t" + sortable[1][0] + "\t" + sortable[1][1] + "\n";
+			result += ((sortable.length % 2 == 0) ? sortable[((sortable.length / 2) + 1)][0] : " ") + "\t";
+			result += ((sortable.length % 2 == 0) ? sortable[((sortable.length / 2) + 1)][1] : " ") + "\t" + sortable[2][0] + "\t" + sortable[2][1] + "\n";
+
+			for (var i = 3; i < (Math.ceil(sortable.length / 2) + 1); i++) {
+				result += sortable[i + (Math.floor(sortable.length / 2) - 1)][0] + "\t" + sortable[i + (Math.floor(sortable.length / 2) - 1)][1] + "\t";
+				result += sortable[i][0] + "\t" + sortable[i][1] + "\n";
 			}
 		}
 	}
