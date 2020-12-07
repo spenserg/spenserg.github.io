@@ -15,7 +15,7 @@
 	<button onclick="compute(0)">Go</button><br/>
 	Inbound List: <textarea id="inbound" rows="5"></textarea>
 	<button onclick="compute(1)">Go</button><br/>
-  	Ans: <textarea id="ans_txt" rows="5"></textarea>
+  	Ans: <textarea id="ans_txt" rows="5" style="width:300px"></textarea>
 </body>
 
 <script>
@@ -58,22 +58,22 @@
 			sortable.push([dest, list_ans[dest]]);
 		}
 		sortable.sort(function(a, b) { return b[1] - a[1]; } );
-		if (sortable.length < 6) {
+		result += "BULK\t";
+		if (sortable.length < 3) {
 			sortable.forEach(function(item, index) {
-				result += item[0] + "\t" + item[1] + "\n"
+				result += item[0] + "\t" + item[1] + "\n \t";
 			});
 		} else {
-			result += " \tBULK\t" + sortable[0][0] + "\t" + sortable[0][1] + "\n" + " \t \t" + sortable[1][0] + "\t" + sortable[1][1] + "\n";
-			result += ((sortable.length % 2 == 0) ? sortable[((sortable.length / 2) + 1)][0] : " ") + "\t";
-			result += ((sortable.length % 2 == 0) ? sortable[((sortable.length / 2) + 1)][1] : " ") + "\t" + sortable[2][0] + "\t" + sortable[2][1] + "\n";
-
-			for (var i = 3; i < (Math.ceil(sortable.length / 2) + 1); i++) {
-				result += sortable[i + (Math.floor(sortable.length / 2) - 1)][0] + "\t" + sortable[i + (Math.floor(sortable.length / 2) - 1)][1] + "\t";
-				result += sortable[i][0] + "\t" + sortable[i][1] + "\n";
+			for (var i = 0; i < Math.floor(sortable.length / 2); i++) {
+				result += sortable[i][0] + "\t" + sortable[i][1] + "\t" +
+				sortable[i + Math.ceil(sortable.length / 2)][0] + "\t" + sortable[i + Math.ceil(sortable.length / 2)][1] + "\n \t";
+            		}
+			if (sortable.length % 2 == 1) {
+				result += sortable[Math.floor(sortable.length / 2)][0] + "\t" + sortable[Math.floor(sortable.length / 2)][1];
 			}
 		}
-	}
+    	}
+    	$('#ans_txt').val(result);
     }
-    $('#ans_txt').val(result);
-  }
+}
 </script>
