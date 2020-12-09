@@ -851,7 +851,7 @@ function update_day_gui(d = vars['day'], jump = false) {
 			'onclick="input_increment(this)" />&nbsp;';
 		html += '<input style="width:40px" type="number" value="0" id="for_' + tmp_cs[i] + '" /></div>';
 	}
-	$('#forage_display').html(html);
+	$('#forage_display').html(html + '<div id="new_g_total">' + vars['gold'] + '</div>');
 
 	// Flag Display
 	var flaglist = [];
