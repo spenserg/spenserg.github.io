@@ -220,7 +220,7 @@
 		function calc_new_g() {
 			var result = vars['gold'];
 			$("input[id^='for_']").each(function() {
-				if (this.value < 0) { this.val(0); }
+				if (this.value < 0) { this.val(0);
 				} else {
 					result += (this.value * crop_prices[this.id.substring(4)]);
 				}
