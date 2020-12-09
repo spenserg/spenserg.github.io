@@ -295,19 +295,19 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':(lumber_to_sprite + " Lumber to Inner Sprite (Right Side)"), 'sr':(aff[sprite_id] < (21 - 6)),
 							'cid':[sprite_id, 'v_lumber'], 'val':[lumber_to_sprite, -1 * lumber_to_sprite]
 					});
-					a.push({'desc':"INNER SPRITE FIRST!", 'sr':true});
+					if (tmp_spr_aff >= 18) { a.push({'desc':"INNER SPRITE FIRST!", 'sr':true}); }
 					tmp_spr_aff += lumber_to_sprite;
 				}
 				if (aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35) {
 					a.push({'desc':"Meet", 'cid':sprite_id, 'val':5, 'sel':(tmp_spr_aff > 18), 'red':tmp_spr_aff < 18});
-					tmp_spr_aff += 5;
+					if (tmp_spr_aff > 18) { tmp_spr_aff += 5 };
 				}
 				a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':(aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35),
 						'sel':([6, 9].includes(d) || (is_sunny == 1 && aff[sprite_id] < _SPRITE_WINE_MIN && dow == "MON")),
 						'red':(aff[sprite_id] >= _SPRITE_WINE_MIN || (d > 6 && dow != "MON" && d != 9))
 				});
 				a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
-				tmp_spr_aff += 3;
+				if (tmp_spr_aff > 18) { tmp_spr_aff += 3; }
 			}
 
 			if ((vars['chickens'] == 0 && g < 1500) || (dow == "MON" && is_sunny == 1) || d == 9) {
@@ -352,7 +352,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					} else if (d < 7) {
 						a.push({
 							'desc':((d == 6) ? "Leave/Re-enter Screen" : ("BMF Scene #" + (d - 3))),
-							'iid':popuri_id
+							'iid':popuri_id, 'imp':(d == 6)
 						});
 					}
 					a.push({'desc':"Blue Mist Flower Glitch", 'iid':popuri_id, 'cid':'f_photo_popuri', 'val':1, 'sel':(d == 6), 'sr':true});
@@ -443,7 +443,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (is_sunny == 1 && dow != "SUN") {
 				if (aff[mayor_id] == 0) { a.push({'desc':"Meet", 'cid':mayor_id, 'val':4}); }
 				a.push({'desc':((dow == "SAT") ? "Talk (Lib 50%)" : "Talk"), 'cid':mayor_id, 'val':3, 'sr':(aff[mayor_id] == 0), 'sel':(d == 6 || !["WED", "SAT"].includes(dow))});
-				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(d == 6 || ((flags['horse_brush'] == 1 || g >= 600) && !["WED", "SAT"].includes(dow)))});
+				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':((d < 7 || flags['horse_brush'] == 1 || g >= 600) && !["WED", "SAT"].includes(dow))});
 			}
 
 			// RICK (NO NEW BOX IN INVENTORY)
@@ -458,7 +458,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					'cid':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [rick_id, 'f_cutscene_rick'] : rick_id),
 					'val':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [3, 1] : 3)
 				});
-				a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(dow != "SAT" && (flags['horse_brush'] == 1 || g >= 600))});
+				a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(dow != "SAT" && (d < 7 || flags['horse_brush'] == 1 || g >= 600))});
 				if (aff[rick_id] >= (_RICK_FIX_MIN - 6)) {
 					a.push({'desc':"Rick Fix", 'sr':true, 'sel':(dow != "SAT"),
 						'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1], 't3':"Talk  "
