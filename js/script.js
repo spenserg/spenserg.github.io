@@ -848,10 +848,10 @@ function update_day_gui(d = vars['day'], jump = false) {
 	for (var i = 0; i < tmp_cs.length; i++) {
 		html += '<div class="ml-3"><img class="forageDisp" id="img_for_' + tmp_cs[i] +
 			'" src="/img/item/' + crops[tmp_cs[i]].toLowerCase().replace(" ", "_") + '.png" ' +
-			'onclick="input_increment(this)" />&nbsp;';
+			'onclick="input_increment(this)" onchange="calc_new_g()" />&nbsp;';
 		html += '<input style="width:40px" type="number" value="0" id="for_' + tmp_cs[i] + '" /></div>';
 	}
-	$('#forage_display').html(html + '<div id="new_g_total">' + vars['gold'] + '</div>');
+	$('#forage_display').html(html + '&nbsp;<div id="new_g_total">' + vars['gold'] + '</div>');
 
 	// Flag Display
 	var flaglist = [];
