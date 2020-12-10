@@ -12,16 +12,13 @@
 
 <body>
 	Citation: <input name="src" id="src" />
-	<button onclick="compute()">Go</button><br/>
+	<button onclick="compute_ref()">Go</button><br/>
 	Wiki Ref:<br/>
 	<textarea id="wiki_ref"></textarea><br/>
 	<hr>
 	
-	Copy Paste Gen Page: <input name="gen_src" id="gen_src" /><br/>
-	Number: <input name="gen_num" id="gen_num" /><br/>
-	Image: <input name="img" id="img" /><br/>
-	Image Cap: <input name="img_cap" id="img_cap" /><br/>
-	Other Text: <input name="other_txt" id="other_txt" /><br/>
+	WSC API Key: <input id="wsc_api" /><br/>
+	URL ID: <input id="genus_id" />&nbsp;&nbsp;OR&nbsp;LSID: <input id="lsid" /><br/>
 	<button onclick="compute2()">Go</button>
 	Wiki page:
 	<textarea id="wiki_page"></textarea><br/><br/>
@@ -125,7 +122,7 @@
 		["Zodariidae","ant spiders"]
 	];
 	
-  function compute() {
+  function compute_ref() {
     $("#wiki_src").val(ref($("#src").val()));
   }
 
@@ -188,18 +185,11 @@ function ref (ref = "") {
 
 function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
 	if (str.length == 0) { return ""; }
-	/*
-  str = $("#gen_src").val();
-  gen_num = $("#gen_num").val();
-  img = $("#img").val();
-  img_cap = $("#img_cap").val();
-	*/
-
 	var result = "{{Short description|Genus of spiders}}";
 	var list = {};
 
-  var gen_patt = /Gen.\s([^\s]+)\s([\s\S]*,\s[0-9]{4}[)\s]*)\[/;
-  var tmp = gen_patt.exec(str);
+  	var gen_patt = /Gen.\s([^\s]+)\s([\s\S]*,\s[0-9]{4}[)\s]*)\[/;
+  	var tmp = gen_patt.exec(str);
 
   list['genus'] = tmp[1].trim();
   list['genus_auth'] = tmp[2].trim();
