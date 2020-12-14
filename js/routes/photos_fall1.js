@@ -1,6 +1,5 @@
 actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var ann_id = get_npc_id('ann');
-	var basil_id = get_npc_id('basil');
 	var chicken_id = get_npc_id('chicken');
 	var cliff_id = get_npc_id('cliff');
 	var dog_id = get_npc_id('dog');
@@ -19,7 +18,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	var dow = get_dow(d, true);
 	var chicken_actions = [];
-	var bar_night = (flags['wine_from_duke'] == 0 && dow != "SUN" && is_sunny == 1);
+	var reset = "";
 
 	if (d == 65 || d == 71) { // Fall 5 & 11
 		flags['dontsave'] = true;
@@ -45,7 +44,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	if (flags['old_mus_box'] == 0) {
 		// Music Box Dig
 		a.push({'desc':"Equip hoe", 'iid':get_npc_id("musbox"), 'red':(is_sunny == 0 || is_festival || (aff[maria_id] > 150 && aff[ann_id] > 200))});
-		a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'sel':(is_sunny == 1 && !is_festival(d) && (aff[maria_id] < 150 || aff[ann_id] < 200))});
+		a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'sel':(!["WED", "SAT", "SUN"].includes(dow) && is_sunny == 1 && !is_festival(d) && (aff[maria_id] < 150 || aff[ann_id] < 200))});
 		if (flags['berry_farm'] == 0) {
 			a.push({'desc':"Dig a Berry", 'val':1, 'cid':'f_berry_farm', 'sr':true, 'sel':false});
 		}
@@ -54,14 +53,12 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	// Chickens
 	if (dow != "THURS" && vars['chickens'] > 0) {
 		chicken_actions.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'),
-					'sel':((!(["SAT", "SUN", "WED"].includes(dow))) && (vars['chickens'] > 1 || (aff[maria_id] > 150 && aff[ann_id] > 180)))
+					'sel':((!(["SAT", "SUN", "WED"].includes(dow))) && (vars['chickens'] > 2 || (aff[maria_id] > 150 && aff[ann_id] > 180)))
 		});
-	}
-	if (flags['new_chick'] == 1) {
-		chicken_actions.push({'desc':"New Chick", 'iid':chicken_id, 'cid':["v_new_chicken_days", "f_new_chick"],
+		chicken_actions.push({'desc':"New Chick", 'iid':chicken_id, 'cid':["v_new_chicken_days", "f_new_chick"], 'sel':false,
 					'val':[d + _CHICK_GROW_SLEEPS, -1], 't0':"Incubate LAST", 'sr':(dow != "THURS" && vars['chickens'] > 0)
 		});
-		chicken_actions.push({'desc':"Incubate LAST", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1), 'sr':true});
+		chicken_actions.push({'desc':"Incubate LAST", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1), 'sr':true, 'sel':false});
 		chicken_actions.push({'desc':"Chick Outside", 'sr':true});
 	}
 
@@ -94,7 +91,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Dance with Elli", 'val':10, 'cid':elli_id, 'sel':(aff[ann_id] >= _PHOTO_MIN && aff[maria_id] >= _PHOTO_MIN)});
 			a.push({'desc':"Talk", 'val':2, 'cid':elli_id, 'sr':true});
 			a.push({'desc':"RESET IF NOT KING", 'imp':true});
-		} else if (d == 80 && aff[basil_id] < 200 && flags['berry_ocean'] == 0) {
+		} else if (d == 80 && flags['berry_ocean'] == 0) {
 			// Egg Festival
 			a.push({
 				'desc':'Win Egg Festival', 'iid':mayor_id, 'imp':true,
@@ -146,13 +143,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					if (dow == "THURS") { cliff_loc = " (Carp House)"; }
 					if (dow == "SUN") { cliff_loc = " (Carp House) [50%]"; }
 					if (dow == "MON") { cliff_loc = " (Hot Springs)"; }
-					if (aff[cliff_id] == 5 || aff[cliff_id] == 0) {
-						// Cliff's intro gives affection to GRAY
-						a.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'iid':cliff_id, 'sel':false});
-					}
-					a.push({
-						'desc':("Talk" + cliff_loc), 'cid':cliff_id, 'val':2, 'sel':false, 'sr':(aff[cliff_id] == 5 || aff[cliff_id] == 0)
-					});
+					a.push({'desc':("Talk" + cliff_loc), 'cid':cliff_id, 'val':2, 'sel':false});
 					a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
 					a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
 				}
@@ -162,6 +153,10 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Ignore Ann if she is crouching", 'imp':true});
 					a.push({'desc':"DREAM (Cave)", 'cid':[ann_id, 'f_dream_ann'], 'val':[_DREAM_EVENT_AFF, 1]});
 				}
+			} else {
+				a.push({'desc':"Talk (Carp House / Cave)", 'cid':cliff_id, 'val':2, 'sel':false});
+				a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
+				a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
 			}
 
 			// SPRITE
@@ -338,15 +333,19 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a = ranch_stuff_fall(a, dow, is_sunny, chicken_actions);
 		}
 
-		if ([67, 69].includes(d) || (d < 63 && flags['wine_from_duke'] == 0)) {
+		if ([65, 67, 69].includes(d) || (d < 63 && flags['wine_from_duke'] == 0)) {
 			if (d < 66 && ![63, 64].includes(d)) {
-				// BAR
-				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'imp':(is_sunny == 1), 'sel':(is_sunny == 1), 'red':(is_sunny == 0)});
-				a.push({'desc':"Grapes", 'sr':true, 'sel':(is_sunny == 1),
-					'cid':((flags['recipe_duke'] == 0) ? [duke_id, 'f_recipe_duke'] : duke_id),
-					'val':((flags['recipe_duke'] == 0) ? [7, 1] : 5)
-				});
-				a.push({'desc':"Get Wine", 'cid':'f_wine_from_duke', 'val':1, 'sr':true, 'sel':(is_sunny == 1)});
+				if (d == 65 && flags['wine_from_duke'] == 0 && is_sunny == 0) {
+					reset = "Last Wine Day; Can't get wine in the rain";
+				} else {
+					// BAR
+					a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'imp':(is_sunny == 1), 'sel':(is_sunny == 1), 'red':(is_sunny == 0)});
+					a.push({'desc':"Grapes", 'sr':true, 'sel':(is_sunny == 1),
+						'cid':((flags['recipe_duke'] == 0) ? [duke_id, 'f_recipe_duke'] : duke_id),
+						'val':((flags['recipe_duke'] == 0) ? [7, 1] : 5)
+					});
+					a.push({'desc':"Get Wine", 'cid':'f_wine_from_duke', 'val':1, 'sr':true, 'sel':(is_sunny == 1)});
+				}
 			} else {
 				a.push({'desc':(((d == 67) ? "Karen" : "Elli") + " Photo at 6 PM"), 'imp':true, 'val':[_PHOTO_EVENT_AFF, 1, 1] });
 				a[a.length - 1]['cid'] = ((d == 67) ? [get_npc_id('karen'), 'f_photo_karen', 'f_dontsave'] : [elli_id, 'f_photo_elli', 'f_dontsave']);
@@ -375,6 +374,11 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Feed dog
 	a.push({'desc':"Feed Dog", 'cid':dog_id, 'val':2, 'sel':false});
+
+	if (reset.length > 0) {
+		flags['dontsave'] = false;
+		a = [{'desc':"RESET", 'red':true}, {'desc':("REASON: " + reset)}];
+	}
 	return a;
 }
 
@@ -432,8 +436,8 @@ function ranch_stuff_fall(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1
 				tmp_act.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':(vars['day'] < 41 && !no_beach && vars['chickens'] <= 1), 't2':"   Egg   ", 'sr':true});
 				tmp_act.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':(vars['day'] < 41 && !no_beach && vars['chickens'] > 1), 't2':"   Gift   ", 'sr':true});
 			}
-			tmp_act = tmp_act.concat(chicken_actions);
 		}
+		tmp_act = tmp_act.concat(chicken_actions);
 	}
 	return tmp_act;
 }
