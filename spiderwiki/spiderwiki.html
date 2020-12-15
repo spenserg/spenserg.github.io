@@ -1,27 +1,21 @@
 <head>
-		<title>Spider Wiki Helper</title>
-		<meta name="viewport" content="user-scalable=no, width=device-width">
-		<meta charset="UTF-8">
+	<title>Spider Wiki Helper</title>
+	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<meta charset="UTF-8">
 
-		<link href="css/bootstrap.min.css" rel="stylesheet" >
-		<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" >
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-	Citation: <input name="src" id="src" />
-	<button onclick="compute_ref()">Go</button><br/>
-	Wiki Ref:<br/>
-	<textarea id="wiki_ref"></textarea><br/>
-	<hr>
-	
-	WSC API Key: <input id="wsc_api" /><br/>
-	URL ID: <input id="genus_id" />&nbsp;&nbsp;OR&nbsp;LSID: <input id="lsid" /><br/>
-	<button onclick="compute2()">Go</button><br/><br/>
-	Wiki page:
-	<textarea id="wiki_page"></textarea>
+	WSC HTML: <textarea name="src" id="src" rows="5"></textarea>
+	<button onclick="compute_src">Go</button><br/>
+	Ref: <textarea name="ref" id="ref" rows="5"></textarea>
+	<button onclick="compute_ref">Go</button><br/>
+  	Ans: <textarea id="ans_txt" rows="5"></textarea>
 </body>
 
 <script>
@@ -121,14 +115,20 @@
 		["Uloboridae","cribellate orb-weavers"],
 		["Zodariidae","ant spiders"]
 	];
-	
-  function compute_ref() {
-    $("#wiki_src").val(ref($("#src").val()));
-  }
 
-function compute2() {
-	$("#wiki_page").val(get_page_data($("#num").val(), $("#gen_src").val(), $("#img").val(), $("#img_cap").val(), $("#other_txt").val()));
-}
+	Array.prototype.unique = function() {
+    		return this.filter(function (value, index, self) { 
+      			return self.indexOf(value) === index;
+    		});
+  	}
+
+	function compute_ref() {
+    		$("#ref").val(parse_ref($("#ref").val());
+	}
+
+	function compute_src() {
+		$("#src").val(parse_src($("#src").val());
+	}
  
 function ref (ref = "") {
   var result = {};
