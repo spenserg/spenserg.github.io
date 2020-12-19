@@ -12,9 +12,9 @@
 
 <body>
 	Outbound List: <textarea id="outbound" rows="5"></textarea>
-	<button onclick="compute(0)">Go</button><br/>
+	<button onclick="compute(0)">Go</button>&nbsp;&nbsp;<button onclick="clear(0)">Clear</button><br/>
 	Inbound List: <textarea id="inbound" rows="5"></textarea>
-	<button onclick="compute(1)">Go</button><br/>
+	<button onclick="compute(1)">Go</button>&nbsp;&nbsp;<button onclick="clear(1)">Clear</button><br/>
 	Ans: <textarea id="ans_txt" rows="5" style="width:300px"></textarea><div id="total"></div>
 </body>
 
@@ -26,6 +26,14 @@ var gate_changes = {};
     return this.filter(function (value, index, self) { 
       return self.indexOf(value) === index;
     });
+  }
+
+  function clear(type = -1) {
+	if (type == 0) {
+		$("#outbound").val("");
+	} else if (type == 1) {
+		$("#inbound").val("");
+	}
   }
 
   function compute(type = -1) {
