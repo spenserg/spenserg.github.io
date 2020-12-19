@@ -619,74 +619,32 @@ function betting_table(a = [], bet_type = 1) {
 function cows(a = [], is_sunny = 1) {
 	var cow_id = get_npc_id('cow');
 	var doug_id = get_npc_id('doug');
-	var spacer = "";
-	var s_list = ['Normal'+ spacer, 'Sick'+ spacer, 'Mad'+ spacer];
 
 	if (vars['cows'] == 0 && vars['new_cow_days'] == "") { return a; }
 
-	if (flags['milker'] == 1 || (!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1 && vars['gold'] >= _PRICE_MILKER)) {
+	if (vars['day'] > 94 && vars['day'] < 115 && flags['cow_steal_glitch'] == 1) {
+		a.push({'desc':"DONT VISIT COWS YET", 'imp':true});
+	}
+	if (flags['cows_outside'] == 0 && d >= 131) { // GRASS READY ON SPR 11
+		a.push({'desc':"Put Cows Outside", 'cid':'f_cows_outside', 'val':1, 'iid':cow_id, 'sel':(flags['grass_ready'] == 1),
+				'red':(vars['day'] < 122 || flags['grass_ready'] != 1), 'imp':(flags['grass_ready'] == 1)
+		});
+	}
+
+	if (d >= 131 && flags['milker'] == 1 || (!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1 && vars['gold'] >= _PRICE_MILKER)) {
 		// Have or can afford Milker
 		if ((vars['day'] == 112 && flags['cow_steal_glitch'] == 1) || (flags['grass_ready'] == 1)) {
-			// Stolen cows grown or enough 
+			// Stolen cows grown or enough GRASS
 			a.push({'desc':"Equip Milker", 'iid':cow_id});
 			a.push({'desc':"Milk Cows", 'sr':true});
 		}
 	}
 
-	if (vars['day'] == 112 && flags['cow_steal_glitch'] == 1) {
-		// Give them a day to get sick
-		a.push({'desc':"DONT VISIT COWS YET", 'imp':true});
-	}
-	if (flags['cows_outside'] == 0) {
-		a.push({'desc':"Put Cows Outside", 'cid':'f_cows_outside', 'val':1, 'iid':cow_id, 'sel':(flags['grass_ready'] == 1),
-				'red':(vars['day'] < 122 || flags['grass_ready'] != 1), 'imp':(flags['grass_ready'] == 1)
+	// Selling a cow
+	if (d > 120 && d < 214 && get_dow(vars['day'], true) != "THURS" && !is_festival(vars['day']) && vars['cows'] > 1)) {
+		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':1,
+					'iid':doug_id, 'red':(vars['day'] < 184), 'sel':false
 		});
-	} else if (parseInt(vars['new_cow_days'].substring(0, 3)) == vars['day']) {
-		// New cow grown while others are outside
-		a.push({'desc':"Put New Cow Outside", 'cid':'f_cows_outside', 'val':1, 'iid':cow_id, 'imp':true});
-	}
-	if (flags['grass_ready'] == 1 || (flags['cows_outside'] == 0 && (vars['cow_status'].slice(0, 1).toUpperCase()) != "M")) {
-		if (flags['cows_outside'] == 1) { s_list.push('Happy'+ spacer); }
-		if (flags['cow_steal_glitch'] > 0 && vars['day'] == 112) { s_list = ['Normal'+ spacer]; }
-		var sell_list = [];
-		for(var i = 0; i < vars['cows']; i++) {
-			var stat = vars['cow_status'].slice(i * 2, i * 2 + 1).toUpperCase(); // N0N0N0 - 0,1 | 2,3 | 4,5
-			a.push({'desc':names_eng[i], 'iid':(47 + i),
-				'red':((vars['day'] == 112 && flags['cow_steal_glitch'] == 1) ||
-					(vars['cow_status'].replace(/[Mm\d]/g,"").length == 0 && vars['day'] < 150 && vars['new_cow_days'].length > 0))
-			});
-			for (var j = 0; j < s_list.length; j++) {
-				var tmp_t2 = ['Normal' + spacer, 'Sick' + spacer, 'Mad' + spacer];
-				if (flags['cows_outside'] == 1) { tmp_t2.push('Happy'+ spacer); }
-				tmp_t2.splice(j, 1);
-				if (j == 2) { tmp_t2.push("Hammer to Mad" + spacer); } // No "Hammer to Mad" if Mad
-				a.push({'desc':(s_list[j] + spacer), 'sr':true,
-						'cid':('c_' + i + '_' + s_list[j].slice(0, 1) + "_" + ((flags['cows_outside'] == 0) ? 2 : is_sunny)),
-						'sel':(stat == s_list[j].slice(0, 1)), 'val':1
-				});
-				if (flags['cow_steal_glitch'] == 0 || vars['day'] != 112) {
-					a[a.length - 1]['t2'] = tmp_t2;
-				}
-				if (j == 1) { a[a.length - 1]['t3'] = ("Hammer to Mad" + spacer); } // If Sick, turn on "Hammer to Mad"
-		}
-			a.push({'desc':("Hammer to Mad" + spacer), 'sr':true,
-				'cid':('c_' + i + '_R_' + ((flags['cows_outside'] == 0) ? 2 : is_sunny)),
-				'val':1, 'sel':(stat == "S")
-			});
-			if (flags['cow_steal_glitch'] == 0 || vars['day'] != 112) {
-				a[a.length - 1]['t2'] = ('Mad' + spacer);
-			}
-
-			// Selling a cow
-			var tmp_eng = names_eng.map(x => "Sell " + x); tmp_eng.splice(i, 1);
-			if (get_dow(vars['day'], true) != "THURS" && !is_festival(vars['day'])) {
-				sell_list.push({'desc':("Sell " + names_eng[i]), 'cid':('c_' + i + '_x'), 'val':1,
-					'iid':doug_id, 'red':(vars['day'] < 184), 'sr':(i > 0), 'sel':false, 't2':tmp_eng
-				});
-			}
-			spacer += " ";
-		}
-		a = a.concat(sell_list);
 	}
 	return a;
 }
