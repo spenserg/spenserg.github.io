@@ -18,13 +18,16 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		// Ridiculously long "borrowing cows" cutscene
 		a.push({'desc':"DONT GO OUTSIDE TODAY", 'imp':true});
 	}
-	if (d > 94 && aff[maria_id] >= _DREAM_EVENT_MIN && d > 94) {
+	if (d > 94 && aff[maria_id] >= _DREAM_EVENT_MIN && d > 94 && !is_festival(d)) {
 		// Save the dream event for her summer photo
 		a.push({'desc':"DONT ENTER LIBRARY", 'imp':true});
 	}
 
 	if (flags['cow_steal_glitch'] > 0 && d == 112) {
 		a.push({'desc':"Cows mature today", 'iid':cow_id});
+	}
+	if (vars['day'] > 94 && vars['day'] < 115 && flags['cow_steal_glitch'] == 1) {
+		a.push({'desc':"DONT VISIT COWS YET", 'imp':true, 'sr':(flags['cow_steal_glitch'] > 0 && d == 112)});
 	}
 
 	if (flags['fishing_rod_stored'] == 0) {
@@ -107,6 +110,15 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 		}
 
+		// Pond Berry
+		if (flags['berry_pond'] == 0 && !is_festival(d)){
+			a.push({'desc':"Pond Rock Berry", 'cid':'f_berry_pond', 'val':1, 'sel':(flags['golden_hammer'] == 1), 'iid':get_npc_id('kappa')});
+			if (flags['golden_hammer'] == 0) {
+				a[a.length - 1]['t3'] = "Golden Hammer";
+				a.push({'desc':"Golden Hammer", 'cid':'f_golden_hammer', 'val':1, 't0':"Pond Rock Berry", 'sel':false, 'sr':true});
+			}
+		}
+
 		// ANN
 		if (aff[ann_id] < _PHOTO_EVENT_AFF && flags['photo_ann'] == 0) {
 			if (flags['chicken_outside'] == 1) {
@@ -158,20 +170,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 
 		if (d > 109) { // After Dog Race
-			if (((vars['cows'] + (vars['new_cow_days'].length / 3)) < (3 + ((flags['cow_steal_glitch'] > 0) ? 1 : 0))) && vars['gold'] >= (6000 + 1800 - (1800 * flags['milker']))) {
-				// Buy Cows
-				// Win 20, 21, 22
-				// Fri, Sat, Sun
-				for (var z = 0; z < horse_action_ids.length; z++) {
-					a[horse_action_ids[z]]['sel'] = true;
-				}
-
-				a.push({'desc':"Equip axe, chop 3 stumps", 'iid':get_npc_id('doug')});
-				a.push({'desc':('Buy Cow (#' + ((vars['new_cow_days'].length + 3) / 3) + ')'), 'sr':true,
-						'cid':['v_gold', 'v_new_cow_days'],
-						'val':[-6000, d + _COW_GROW_SLEEPS]
-				});
-			}
+			// Extensions
 			if (dow != "TUES") {
 				var tmp_getext = false;
 				if (flags['kitchen'] == 0) {
@@ -182,6 +181,10 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					});
 					tmp_getext = true;
 				} else if (flags['kitchen'] == 1 && flags['babybed'] == 0 && vars['gold'] >= 1000) {
+					if (flags['cow_steal_glitch'] > 0) {
+						a.push({'desc':"Hammer cows", 'iid':(get_npc_id('cow')), 'imp':true});
+					}
+
 					// Babybed
 					a.push({'desc':"Buy a Baby Bed (1000 G)", 'iid':mas_carp_id,
 							'cid':['v_gold', 'v_lumber', 'f_babybed'],
@@ -202,6 +205,21 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Talk", 'cid':mas_carp_id, 'val':3, 'sr':true, 'sel':false});
 					a.push({'desc':"Gift", 'cid':mas_carp_id, 'val':3, 'sr':true, 'sel':false});
 				}
+			}
+
+			// Buy Cow (s)
+			if (((vars['cows'] + (vars['new_cow_days'].length / 3)) < (3 + ((flags['cow_steal_glitch'] > 0) ? 1 : 0))) && vars['gold'] >= (6000 + 1800 - (1800 * flags['milker']))) {
+				// Buy Cows
+				// Win 20, 21, 22
+				// Fri, Sat, Sun
+				for (var z = 0; z < horse_action_ids.length; z++) {
+					a[horse_action_ids[z]]['sel'] = true;
+				}
+
+				a.push({'desc':('Buy Cow (#' + ((vars['new_cow_days'].length + 3) / 3) + ')'),
+						'cid':['v_gold', 'v_new_cow_days'], 'iid':get_npc_id('doug'),
+						'val':[-6000, d + _COW_GROW_SLEEPS]
+				});
 			}
 
 			if (!["WED", "SUN"].includes(dow) && is_sunny == 1) {
@@ -236,8 +254,9 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a[horse_action_ids[z]]['sel'] = true;
 			}
 			// Hot Springs
-			a.push({'desc':"Hot Springs Work", 'iid':mas_carp_id, 'sel':(d != 105),
-				'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000], 'imp':(d == 106)
+			a.push({'desc':"Hot Springs Work", 'iid':mas_carp_id, 'sel':(d != 105 || vars['springs_days_worked'] == 2),
+				'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000], 'imp':(vars['springs_days_worked'] == (d - 103)),
+				'red':(d == 105 && vars['springs_days_worked'] == 3)
 			});
 			if (d == 106) {
 				// Hot Springs Photo
@@ -282,33 +301,28 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':(flags['new_mus_box'] == 1), 't2':"Talk (CHURCH / HOUSE)"});
 			a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true});
 			a.push({'desc':"Karen Dream Warp (Vineyard)", 'cid':[karen_id, 'f_dream_karen'], 'val':[_DREAM_EVENT_AFF, 1]});
-			a.push({'desc':"Hammer Rocks / Dock Fish Until Morning"});
-			a.push({'desc':"Cow Steal Glitch", cid:'f_cow_steal_glitch', 'val':5, 'imp':true});
 		} else if (d < 94) {
 			// Before Cow Stealing
-			if (aff[maria_id] >= (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
+			if (flags['new_mus_box'] == 1 && aff[maria_id] >= (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
 				a.push({'desc':"NO MUSBOX FOR MARIA", 'iid':maria_id, 'imp':true});
 			}
-			a.push({'desc':"Talk", 'cid':maria_id, 'val':1, 'sel':false, 'red':(aff[maria_id] == (_DREAM_EVENT_MIN - 1))});
-			if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
+			a.push({'desc':"Talk", 'cid':maria_id, 'val':1, 'sel':false, 'red':(aff[maria_id] >= 157)});
+			if (flags['new_mus_box'] == 1 || flags['old_mus_box'] == 1) {
 				a[a.length - 1]['t2'] = "MusBox";
 				a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
 						'sel':false, 't2':a[a.length - 1]['desc']
 				});
 			}
-			if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - 2)) {
-				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':false});
-			}
+			a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':false});
 		}
 	}
 
-	// Pond Berry
-	if (flags['berry_pond'] == 0){
-		if (flags['golden_hammer'] == 0) {
-			a.push({'desc':"Golden Hammer", 'cid':'f_golden_hammer', 'val':1, 't0':"Pond Rock Berry", 'sel':false});
-		}
-		a.push({'desc':"Pond Rock Berry", 'cid':'f_berry_pond', 'val':1, 'sel':(flags['golden_hammer'] == 1), 'iid':get_npc_id('kappa')});
-		if (flags['golden_hammer'] == 0) { a[a.length - 1]['t3'] = "Golden Hammer"; }
+	// Cow Stealing
+	if (d == 94 && flags['dream_maria'] == 0) {
+		// Steal the Cows
+		a.push({'desc':"Dock Fishing"});
+		a.push({'desc':"Ocean Berry", 'cid':"f_berry_ocean", 'val':1, 'sel':false, 'sr':true});
+		a.push({'desc':"Stay Up All Night", cid:'f_cow_steal_glitch', 'val':5, 'imp':true});
 	}
 
 	a.push({'desc':"Feed Dog", 'cid':dog_id, 'val':2, 'sel':false});
