@@ -619,12 +619,11 @@ function betting_table(a = [], bet_type = 1) {
 function cows(a = [], is_sunny = 1) {
 	var cow_id = get_npc_id('cow');
 	var doug_id = get_npc_id('doug');
+	var d = vars['day'];
+	var dow = get_dow(d, true);
 
 	if (vars['cows'] == 0 && vars['new_cow_days'] == "") { return a; }
 
-	if (vars['day'] > 94 && vars['day'] < 115 && flags['cow_steal_glitch'] == 1) {
-		a.push({'desc':"DONT VISIT COWS YET", 'imp':true});
-	}
 	if (flags['cows_outside'] == 0 && d >= 131) { // GRASS READY ON SPR 11
 		a.push({'desc':"Put Cows Outside", 'cid':'f_cows_outside', 'val':1, 'iid':cow_id, 'sel':(flags['grass_ready'] == 1),
 				'red':(vars['day'] < 122 || flags['grass_ready'] != 1), 'imp':(flags['grass_ready'] == 1)
