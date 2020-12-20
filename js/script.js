@@ -641,7 +641,7 @@ function cows(a = [], is_sunny = 1) {
 	}
 
 	// Selling a cow
-	if (d > 120 && d < 214 && get_dow(vars['day'], true) != "THURS" && !is_festival(vars['day']) && vars['cows'] > 1)) {
+	if (d > 120 && d < 214 && get_dow(vars['day'], true) != "THURS" && !is_festival(vars['day']) && vars['cows'] > 1) {
 		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':1,
 					'iid':doug_id, 'red':(vars['day'] < 184), 'sel':false
 		});
