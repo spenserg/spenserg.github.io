@@ -136,10 +136,6 @@ function actions_photos_sum_y2(a, d, g, is_sunny) {
 					a.push({'desc':"  Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
 				}
 
-				if (d > 168 && flags['photo_married'] == 0 && flags['propose'] == 0) {
-					// Propose to Elli
-					a.push({'desc':"Propose at Bakery", 'cid':['f_blue_feather', 'f_propose'], 'val':[-1, (next_sunday(d + 1) - d + 1)], 'iid':elli_id});
-				}
 				if (is_sunny == 1 && d > 168) {
 					if (flags['photo_married'] == 0 && flags['propose'] == 0) {
 						// Propose to Elli
@@ -176,8 +172,9 @@ function actions_photos_sum_y2(a, d, g, is_sunny) {
 			// Fireworks Festival
 			if (flags['dream_karen'] == 0) {
 				a.push({'desc':"DREAM WARP (Vineyard)", 'cid':[karen_id, 'f_dream_karen'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':false});
-			} else if (aff[elli_id] > 220 && flags['photo_married'] == 0) {
-				a.push({'desc':"NIGHT WARP (Bakery)", 'cid':['v_happiness'], 'val':[0], 'sel':false});
+			} else if (flags['photo_married'] == 0) {
+				a.push({'desc':"NIGHT WARP (Bakery)", 'cid':['v_happiness'], 'val':[10], 'sel':false});
+				a.push({'desc':"(Need 250 Aff for Elli)"});
 			}
 			a.push({'desc':"Fireworks (Town Square)", 'cid':maria_id, 'val':5, 'sel':false});
 		}
