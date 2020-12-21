@@ -13,7 +13,7 @@ function reset_vars() {
 	flags = { "treasure_map" : 0, "new_mus_box" : 0, "old_mus_box" : 0,
 			"fishing_rod" : 0, "dog_inside" : 0, "dog_entered" : 0,
 			"horse" : 0, "horse_brush" : 0, "sustaining_carrot" : 0, "horse_entered" : 0,
-			"cows_outside" : 0, "cow_entered" : 0, "milker" : 0,
+			"cows_outside" : 0, "cow_entered" : 0, "milker" : 0, "miracle_potion" : 0,
 			"new_chick" : 0, "chicken_funeral" : 0, "chicken_outside" : 0,
 			"recipe_basil" : 0, "recipe_sprite" : 0, "golden_hammer" : 0, "recipe_duke" : 0,
 			"ankle_maria" : 0, "dream_maria" : 0, "sick_maria" : 0, "recipe_maria" : 0, "photo_maria" : 0,
@@ -149,14 +149,13 @@ function next_day(jump = false) {
 		// Stumps
 		aff[get_npc_id('stump')] = vars['lumber'];
 
-/*
 		// All Photos
 		// Reset Happiness to zero just before Cow Fest
 		// Cheaty way to account for hammering sick cows over and over
 		if (route_id == 0 && d == 183) {
 			vars['happiness'] = 0;
 		}
-*/
+
 		// Calculate G from sold items
 		var sell_amt = 0;
 		$("input[id^='for']").each(function(index) {
@@ -632,10 +631,27 @@ function cows(a = [], is_sunny = 1) {
 
 	if (d >= 131 && flags['milker'] == 1 || (!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1 && vars['gold'] >= _PRICE_MILKER)) {
 		// Have or can afford Milker
-		if ((vars['day'] == 112 && flags['cow_steal_glitch'] == 1) || (flags['grass_ready'] == 1)) {
+		if ((vars['day'] == 112 && flags['cow_steal_glitch'] == 1) || flags['grass_ready'] == 1) {
 			// Stolen cows grown or enough GRASS
 			a.push({'desc':"Equip Milker", 'iid':cow_id});
 			a.push({'desc':"Milk Cows", 'sr':true});
+
+			// Calc Money Left Until End
+			var g_left = vars['gold'];
+			g_left -= ((flags['bathroom'] > 0) ? 0 : 1) * 3000);
+			g_left -= ((vars['day'] < 184 && flags['miracle_potion'] == 0) ? _PRICE_MIRACLE_POTION : 0);
+			g_left += ((vars['cows'] * 7500) + ((vars['cows'] > 0 && vars['day'] < 228) ? 1000 : 0));
+			g_left -= (((flags['log_terrace'] > 0) ? 0 : 1) * 7000);
+			g_left -= (((flags['greenhouse'] > 0) ? 0 : 1) * 30000);
+			g_left -= (((flags['stairway'] > 0) ? 0 : 1) * 2000);
+			g_left -= (((flags['bathroom'] > 0) ? 0 : 1) * 3000);
+			g_left -= (((flags['baby_bed'] > 0) ? 0 : 1) * 1000);
+			g_left -= (((flags['kitchen'] > 0) ? 0 : 1) * 5000);
+			g_left -= ((44 - (vars['grass'] + vars['grass_planted'])) * 500);
+			g_left -= ((vars['day'] > 183 && vars['day'] < 206 && flags['miracle_potion'] == 0) ? _PRICE_MIRACLE_POTION : 0);
+			g_left += ((vars['day'] < 240) ? 6500 : 0);
+			g_left += ((vars['day'] < 262) ? 6500 : 0);
+			a.push({'desc':("(" + (-1 * g_left) + " G LEFT)"), 'imp':(g_left < 0), 'red':(g_left >= 0)});
 		}
 	}
 
