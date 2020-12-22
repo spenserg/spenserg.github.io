@@ -657,9 +657,14 @@ function cows(a = [], is_sunny = 1) {
 
 	// Selling a cow
 	if (d > 120 && d < 214 && get_dow(vars['day'], true) != "THURS" && !is_festival(vars['day']) && vars['cows'] > 1) {
-		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':1,
-					'iid':doug_id, 'red':(vars['day'] < 184), 'sel':false
+		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, ((d < 184) ? 7500 : 6500)], 'iid':doug_id,
+		       'sel':(flags['babybed'] == 1 && flags['stairway'] == 0 && vars['gold'] >= 2000 && is_sunny == 0)
 		});
+		if (d < 183 && flags['miracle_potion'] == 0) {
+			a.push({'desc':"Buy Miracle Potion", 'cid':['f_miracle_potion', 'v_gold'], 'val':[1, (-1 * _PRICE_MIRACLE_POTION)], 'sr':true,
+				'sel':(flags['babybed'] == 1 && flags['stairway'] == 0 && vars['gold'] >= 2000 && is_sunny == 0)
+			});
+		}
 	}
 	return a;
 }
