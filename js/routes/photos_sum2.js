@@ -1,4 +1,4 @@
-function actions_photos_sum_y2(a, d, g, is_sunny) {
+actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 	var ann_id = get_npc_id('ann');
 	var dog_id = get_npc_id('dog');
 	var elli_id = get_npc_id('elli');
@@ -16,13 +16,8 @@ function actions_photos_sum_y2(a, d, g, is_sunny) {
 	if (flags['propose'] == 1) {
 		a.push({'desc':"Wedding Day", 'iid':elli_id, 'cid':['f_photo_married', 'f_propose'], 'val':[1, -1], 'imp':true});
 	} else {
-		/*
-		if (flags['photo_married'] == 0 && flags['propose'] == 0 && flags['photo_maria'] == 0) {
-			a.push({'desc':"MARIA PHOTO before MARRIED", 'imp':true, 'iid':elli_id});
-		}
-		*/
 		// Save dream warp for photo event
-		if (aff[maria_id] >= _DREAM_EVENT_MIN && aff['maria_id'] < (_PHOTO_MIN - _MUS_BOX_AFF - 1) && flags['dream_maria'] == 0) {
+		if (!is_festival && aff[maria_id] >= _DREAM_EVENT_MIN && aff['maria_id'] < (_PHOTO_MIN - _MUS_BOX_AFF - 1) && flags['dream_maria'] == 0) {
 			a.push({'desc':"DONT ENTER LIBRARY", 'imp':true});
 		}
 
@@ -105,6 +100,25 @@ function actions_photos_sum_y2(a, d, g, is_sunny) {
 					}
 				} // End of Buy Extensions
 
+				// ELLI
+				if (dow != "SUN") {
+					if (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0) {
+						a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1]});
+					} else {
+						a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : ((dow == "MON") ? "Talk (MTN)" : "Talk ")), 'cid':elli_id, 'val':1, 'sel':false, 't2':"MusBox ", 'red':(dow != "WED" && aff[elli_id] >= 250)});
+						a.push({'desc':"MusBox ", 'sel':false, 't2':a[a.length - 1]['desc'],
+							'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
+						});
+						a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
+							't2':((vars['chickens'] > 0) ? "Egg " : "M/L Fish"), 'sel':false
+						});
+						a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':false,
+							'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
+							'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
+						});
+					}
+				}
+
 				// RICK
 				if (is_sunny == 1 && !["WED", "SUN"].includes(dow)) {
 					a.push({
@@ -143,7 +157,7 @@ function actions_photos_sum_y2(a, d, g, is_sunny) {
 					}
 
 					// Maria Dream/Photo
-					if (flags['photo_maria'] == 0) {{
+					if (flags['photo_maria'] == 0) {
 						// WARP TO PHOTO
 						if (flags['dream_maria'] == 0) {
 							a.push({'desc':"DREAM WARP (Library)", 'imp':true, 'cid':[maria_id, 'f_dream_maria'], 'val':[_DREAM_EVENT_AFF, 1]});
@@ -183,9 +197,7 @@ function actions_photos_sum_y2(a, d, g, is_sunny) {
 	if (horse_today) {
 		for (var z = 0; z < horse_action_ids.length; z++) {
 			if (a[horse_action_ids[z]]['desc'] != "Brush") {
-				if (a[horse_action_ids[z]]['desc'] != "Ride" || (aff[cow_id] < 60 && mn >= 0)) {
-					a[horse_action_ids[z]]['sel'] = true;
-				}
+				a[horse_action_ids[z]]['sel'] = true;
 			}
 		}
 	}
