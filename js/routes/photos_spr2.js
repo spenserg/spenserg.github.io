@@ -1,4 +1,4 @@
-function actions_photos_spr_y2(a = [], d = 3, g = 300, is_sunny = 1) {
+actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var ann_id = get_npc_id('ann');
 	var basil_id = get_npc_id('basil');
 	var cow_id = get_npc_id('cow');
@@ -15,7 +15,7 @@ function actions_photos_spr_y2(a = [], d = 3, g = 300, is_sunny = 1) {
 	var horse_action_ids = [];
 
 	// Save dream warp for photo event
-	if (aff[maria_id] >= _DREAM_EVENT_MIN && flags['dream_maria'] == 0) {
+	if (!is_festival(d) && aff[maria_id] >= _DREAM_EVENT_MIN && flags['dream_maria'] == 0) {
 		a.push({'desc':"DONT ENTER LIBRARY", 'imp':true});
 	}
 
@@ -100,7 +100,7 @@ function actions_photos_spr_y2(a = [], d = 3, g = 300, is_sunny = 1) {
 	} else { // Not a festival
 		a = cows(a);
 		horse_today = true;
-		if (vars['grass_planted'] < 3 && vars['grass'] == 0 && is_sunny == 1 && !["WED", "SAT", "SUN"].includes(dow)) {
+		if (vars['grass_planted'] < 3 && vars['grass'] == 0 && is_sunny == 1) {
 			a.push({'desc':"Equip hoe", 'iid':get_npc_id("musbox")});
 			a.push({'desc':"Till four 3x3 squares by barn"});
 			if (flags['berry_farm'] == 0) {
@@ -123,16 +123,35 @@ function actions_photos_spr_y2(a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 			}
 
+			// ELLI
+			if (dow != "SUN") {
+				if (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0) {
+					a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1]});
+				} else {
+					a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : ((dow == "MON") ? "Talk (MTN)" : "Talk ")), 'cid':elli_id, 'val':1, 'sel':false, 't2':"MusBox ", 'red':(dow != "WED" && aff[elli_id] >= 250)});
+					a.push({'desc':"MusBox ", 'sel':false, 't2':a[a.length - 1]['desc'],
+						'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
+					});
+					a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
+						't2':((vars['chickens'] > 0) ? "Egg " : "M/L Fish"), 'sel':false
+					});
+					a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':false,
+						'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
+						'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
+					});
+				}
+			}
+
 			// RICK
 			if (is_sunny == 1 && !["WED", "SUN"].includes(dow)) {
 				a.push({
 					'desc':"Talk  ", 'cid':rick_id, 'val':3,
 					'sel':(dow != "SAT" && aff[rick_id] < _PARTY_ATTEND_MIN),
-					'red':(aff[rick_id] >= _PARTY_ATTEND_MIN && aff[maria_id] >= (_PHOTO_MIN - _DREAM_EVENT_AFF))
+					'red':(aff[rick_id] >= _PARTY_ATTEND_MIN && flags['milker'] == 1)
 				});
 				a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN)});
 				if (aff[rick_id] >= (_RICK_FIX_MIN - 6) && (aff[maria_id] < _PHOTO_MIN || flags['old_mus_box'] == 1)) {
-					a.push({'desc':"Rick Fix", 'sel':(dow != "SAT"), 'sr':true,
+					a.push({'desc':"Rick Fix", 'sel':false, 'sr':true,
 						'cid':['f_old_mus_box', 'f_new_mus_box', rick_id], 'val':[-1, 1, 3], 't3':"Talk  "
 					});
 				}
