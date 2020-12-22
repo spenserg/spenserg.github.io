@@ -39,7 +39,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 
 		if (is_sunny != -1) {
 			// Not a Typhoon
-			a = cows(a);
+			a = cows(a, is_sunny);
 
 			if (is_festival(d)) {
 				// 9 = Veggie Fest
@@ -52,11 +52,6 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 					});
 				}
 			} else {
-				// Sell cows if you want
-				if (dow != "THURS" && vars['cows'] > 0) {
-					a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, 7500], 'sel':false, 'red':true, 'iid':get_npc_id('doug')});
-				}
-
 				// Cutscene with Cliff + Ann when Cliff >= 143 affection
 				if (dow != "TUES") {
 					// Extensions on rainy days to avoid cutscenes if Cliff aff >= 143
@@ -69,8 +64,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 								'val':[-5000, -450, _BUILD_DAYS + 1]
 						});
 					} else if (flags['kitchen'] == 1) {
-						var leftover_g = vars['gold'] - (980 - 980 * ((flags['blue_feather'] > 0 || flags['propose'] > 0 || flags['photo_married'] > 0) ? 1 : 0)) - (1800 - 1800 * flags['milker']);
-						if (flags['babybed'] == 0 && leftover_g >= 1000) {
+						if (flags['babybed'] == 0 && g >= 1000) {
 							// Babybed
 							horse_today = true;
 							a.push({'desc':"Buy a Baby Bed (1000 G)", 'iid':get_npc_id('mas_carpenter'),
@@ -78,14 +72,16 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 								'val':[-1000, -150, _BUILD_DAYS + 1]
 							});
 						} else if (flags['babybed'] == 1) {
-							if (flags['stairway'] == 0 && d > 174 && leftover_g >= 2000) {
+							if (flags['stairway'] == 0 && g >= 2000) {
 								// Stairway
 								horse_today = true;
 								a.push({'desc':"Buy a Stairway (2000 G)", 'iid':get_npc_id('mas_carpenter'),
 									'cid':['v_gold', 'v_lumber', 'f_stairway'],
 									'val':[-2000, -250, _BUILD_DAYS + 1], 'sel':(is_sunny == 0)
 								});
-								a.push({'desc':"Chop One Stump", 'sr':true});
+								if (is_sunny == 1) {
+									a.push({'desc':"(Wait for rain to skip cutscenes)", 'sr':true});
+								}
 							}
 						}
 					}
@@ -110,7 +106,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 							'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
 						});
 						a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
-							't2':((vars['chickens'] > 0) ? "Egg " : "M/L Fish"), 'sel':false
+							't2':"Egg ", 'sel':false
 						});
 						a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':false,
 							'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
@@ -124,7 +120,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 					a.push({
 						'desc':"Talk  ", 'cid':rick_id, 'val':3,
 						'sel':(dow != "SAT" && aff[rick_id] < _PARTY_ATTEND_MIN),
-						'red':(aff[rick_id] >= _PARTY_ATTEND_MIN)
+						'red':(aff[rick_id] >= _PARTY_ATTEND_MIN && (flags['blue_feather'] == 1 || flags['propose'] > 0 || flags['photo_married'] == 1))
 					});
 					a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN)});
 					a.push({'desc':"Rick Fix", 'sel':false, 'sr':true,
@@ -187,10 +183,10 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 			if (flags['dream_karen'] == 0) {
 				a.push({'desc':"DREAM WARP (Vineyard)", 'cid':[karen_id, 'f_dream_karen'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':false});
 			} else if (flags['photo_married'] == 0) {
-				a.push({'desc':"NIGHT WARP (Bakery)", 'cid':['v_happiness'], 'val':[10], 'sel':false});
-				a.push({'desc':"(Need 250 Aff for Elli)"});
+				a.push({'desc':"NIGHT WARP (Bakery)", 'cid':['v_happiness'], 'val':[10], 'sel':false, 'red':(aff[elli_id] < 240), 'iid':elli_id});
+				a.push({'desc':"(Need 250 Aff for Elli)", 'sr':true});
 			}
-			a.push({'desc':"Fireworks (Town Square)", 'cid':maria_id, 'val':5, 'sel':false});
+			a.push({'desc':"Fireworks (Town Square)", 'cid':maria_id, 'val':5, 'sel':false, 'red':(aff[elli_id] < 240)});
 		}
 	}
 
