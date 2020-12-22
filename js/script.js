@@ -638,7 +638,6 @@ function cows(a = [], is_sunny = 1) {
 
 			// Calc Money Left Until End
 			var g_left = vars['gold'];
-			g_left -= ((flags['bathroom'] > 0) ? 0 : 1) * 3000);
 			g_left -= ((vars['day'] < 184 && flags['miracle_potion'] == 0) ? _PRICE_MIRACLE_POTION : 0);
 			g_left += ((vars['cows'] * 7500) + ((vars['cows'] > 0 && vars['day'] < 228) ? 1000 : 0));
 			g_left -= (((flags['log_terrace'] > 0) ? 0 : 1) * 7000);
@@ -647,6 +646,7 @@ function cows(a = [], is_sunny = 1) {
 			g_left -= (((flags['bathroom'] > 0) ? 0 : 1) * 3000);
 			g_left -= (((flags['baby_bed'] > 0) ? 0 : 1) * 1000);
 			g_left -= (((flags['kitchen'] > 0) ? 0 : 1) * 5000);
+			g_left -= (((flags['bathroom'] > 0) ? 0 : 1) * 3000);
 			g_left -= ((44 - (vars['grass'] + vars['grass_planted'])) * 500);
 			g_left -= ((vars['day'] > 183 && vars['day'] < 206 && flags['miracle_potion'] == 0) ? _PRICE_MIRACLE_POTION : 0);
 			g_left += ((vars['day'] < 240) ? 6500 : 0);
