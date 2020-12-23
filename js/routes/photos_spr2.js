@@ -16,7 +16,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Save dream warp for photo event
 	if (!is_festival(d) && aff[maria_id] >= _DREAM_EVENT_MIN && flags['dream_maria'] == 0) {
-		a.push({'desc':"DONT ENTER LIBRARY", 'imp':true});
+		a.push({'desc':"DONT ENTER LIBRARY", 'red':true});
 	}
 
 	// Dog Affection
@@ -81,7 +81,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a = cows(a);
 				a.push({'desc':"Win Horse Race", 'cid':'f_photo_horserace','val':1, 'iid':get_npc_id('doug'), 'imp':true});
 			} else {
-				a.push({'desc':"DONT ATTEND HORSE RACE", 'imp':true, 'iid':mayor_id});
+				a.push({'desc':"DONT ATTEND HORSE RACE", 'red':true, 'iid':mayor_id});
 				a = cows(a);
 			}
 			a = betting_table(a);
@@ -90,15 +90,18 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			horse_today = true;
 			a = cows(a);
 			a.push({'desc':"Go to Town Square", 'iid':mayor_id, 'cid':'v_happiness', 'val':5});
-			a.push({'desc':"Buy a Power Nut", 'cid':['f_berry_flowerfest','v_gold'],
+			a.push({'desc':"Buy a Power Nut", 'cid':['f_berry_flowerfest','v_gold'], 'imp':true,
 					'val':[1, -1000], 'iid':get_npc_id('salesman'), 'sel':(vars['gold'] >= 1000)
 			});
-			//a.push({'desc':"Talk", 'cid':basil_id, 'val':2, 'sel':(aff[basil_id] < _PARTY_ATTEND_MIN || (flags['berry_mine'] == 0 && aff[basil_id] < _BASIL_BERRY_MIN))});
 			a.push({'desc':"Talk", 'cid':rick_id,  'val':2, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN)});
 			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN)});
+			a.push({'desc':"Talk", 'cid':maria_id, 'val':2, 'imp':true});
+			a.push({'desc':"Dance",'cid':[maria_id, 'f_dontsave'], 'val':[10, 1], 't2':"Dance ", 'sr':true});
+			a.push({'desc':"Talk", 'cid':elli_id, 'val':2});
+			a.push({'desc':"Dance ",'cid':[elli_id, 'f_dontsave'], 'val':[10, 1], 't2':"Dance", 'sel':false, 'sr':true});
 		}
 	} else { // Not a festival
-		a = cows(a);
+		a = cows(a, is_sunny);
 		horse_today = true;
 		if (vars['grass_planted'] < 3 && vars['grass'] == 0 && is_sunny == 1) {
 			a.push({'desc':"Equip hoe", 'iid':get_npc_id("musbox")});
