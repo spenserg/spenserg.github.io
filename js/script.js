@@ -511,74 +511,6 @@ function calc_actions(a = null) {
 				} else {
 					console.log("No value given for VAR:" + a['cid']);
 				}
-			} else if (a['cid'].charAt(0).toLowerCase() == 'c') {
-				// Cows
-				// 0 = rain/typhoon/snow, 1 = sunny, 2 = indoors
-				var cow_info = a['cid'].split("_");
-				var cur_stat = vars['cow_status'].slice(parseInt(cow_info[1]) * 2, parseInt(cow_info[1]) * 2 + 1).toUpperCase();
-				// cow id | new_status | weather
-
-				// Happiness change
-				if (cur_stat != cow_info[2]) {
-					if (cow_info[2] == "H") { vars['happiness'] += 5; }
-					if (cow_info[2] == "S") { vars['happiness'] -= 10; }
-					if (["M", "R"].includes(cow_info[2])) { vars['happiness'] -= 5; }
-				}
-
-				if (cow_info[2] == "x") {
-					// Sell Cow
-					vars['cows']--;
-					vars['cow_status'] = vars['cow_status'].substr(0, parseInt(cow_info[1]) * 2) + vars['cow_status'].substr(parseInt(cow_info[1]) * 2 + 2);
-					names_eng.splice(parseInt(cow_info[1]), 1);
-					vars['gold'] += 6500;
-					if (aff[(47 + parseInt(cow_info[1]))] >= 150) { vars['gold'] += 500; } // M milk
-					if (aff[(47 + parseInt(cow_info[1]))] >= 221) { vars['gold'] += 500; } // L milk
-					if (vars['cows'] == 1 && flags['photo_cowfest'] == 1) { vars['gold'] += 1000; } // G milk
-					
-					// Shift cow affections
-					for (var xyz = parseInt(cow_info[1]); xyz < 5; xyz++) {
-						aff[47 + xyz] = aff[47 + xyz + 1];
-					}
-					aff[47 + 5] = 0;
-					
-				} else {
-					if (parseInt(cow_info[3]) == 2) {
-						// Inside
-						if (cur_stat == "N") {
-							// Indoors Normal
-							aff[(47 + parseInt(cow_info[1]))] -= 1;
-							if (cow_info[2] == "N") { aff[(47 + parseInt(cow_info[1]))] -= 7; }
-							if (cow_info[2] == "S") { aff[(47 + parseInt(cow_info[1]))] += 51; }
-						}
-					} else if (parseInt(cow_info[3]) == 1) {
-						// Outside + Sunny + fed
-						if (cur_stat == "N") {
-							if (cow_info[2] == "H") { aff[(47 + parseInt(cow_info[1]))] += 60; }
-						} else if (cur_stat == "M") {
-							if (["M", "N"].includes(cow_info[2])) { aff[(47 + parseInt(cow_info[1]))] += 16; }
-						}
-					} else {
-						// Outside + Rain / Typhoon / Snow
-						if (cur_stat == "N") {
-							if (cow_info[2] == "N") { aff[(47 + parseInt(cow_info[1]))] -= 8; }
-							if (cow_info[2] == "M") { aff[(47 + parseInt(cow_info[1]))] += 40; }
-							if (cow_info[2] == "S") { aff[(47 + parseInt(cow_info[1]))] += 52; }
-						} else if (cur_stat == "H") {
-							if (cow_info[2] == "S") { aff[(47 + parseInt(cow_info[1]))] += 60; }
-						} else if (cur_stat == "M") {
-							if (cow_info[2] == "S") { aff[(47 + parseInt(cow_info[1]))] += 60; }
-						}
-					}
-	
-					vars['cow_status'] = vars['cow_status'].substr(0, parseInt(cow_info[1]) * 2) + cow_info[2] + vars['cow_status'].substr(parseInt(cow_info[1]) * 2 + 1);
-					if (cow_info[2] == "R") {
-						// Hit with hammer
-						if (cur_stat == "N") { aff[(47 + parseInt(cow_info[1]))] += 30; }
-						if (cur_stat == "H") { aff[(47 + parseInt(cow_info[1]))] += 45; }
-						if (cur_stat == "S") { aff[(47 + parseInt(cow_info[1]))] += 60; }
-						vars['cow_status'] = vars['cow_status'].substr(0, parseInt(cow_info[1]) * 2) + "M" + vars['cow_status'].substr(parseInt(cow_info[1]) * 2 + 1);
-					}
-				}
 			}
 		} else {
 			if (a['val'] !== undefined) {
@@ -615,15 +547,17 @@ function betting_table(a = [], bet_type = 1) {
 	return a;
 }
 
-function cows(a = [], is_sunny = 1) {
+function cows(a = [], is_sunny = 1, sell_cow = false) {
 	var cow_id = get_npc_id('cow');
 	var doug_id = get_npc_id('doug');
+	var maria_id = get_npc_id('maria');
+
 	var d = vars['day'];
 	var dow = get_dow(d, true);
 
 	if (vars['cows'] == 0 && vars['new_cow_days'] == "") { return a; }
 
-	if (flags['cows_outside'] == 0 && d >= 131) { // GRASS READY ON SPR 11
+	if (flags['cows_outside'] == 0 && d >= 131 && d < 185) { // GRASS READY ON SPR 11
 		a.push({'desc':"Put Cows Outside", 'cid':'f_cows_outside', 'val':1, 'iid':cow_id, 'sel':(flags['grass_ready'] == 1),
 				'red':(vars['day'] < 122 || flags['grass_ready'] != 1), 'imp':(flags['grass_ready'] == 1)
 		});
@@ -631,11 +565,7 @@ function cows(a = [], is_sunny = 1) {
 
 	if (d >= 131 && flags['milker'] == 1 || (!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1 && vars['gold'] >= _PRICE_MILKER)) {
 		// Have or can afford Milker
-		if ((vars['day'] == 112 && flags['cow_steal_glitch'] == 1) || flags['grass_ready'] == 1) {
-			// Stolen cows grown or enough GRASS
-			a.push({'desc':"Equip Milker", 'iid':cow_id});
-			a.push({'desc':"Milk Cows", 'sr':true});
-
+		if (vars['day'] < 185 && ((vars['day'] == 112 && flags['cow_steal_glitch'] == 1) || flags['grass_ready'] == 1)) {
 			// Calc Money Left Until End
 			var g_left = vars['gold'];
 			g_left -= ((vars['day'] < 184 && flags['miracle_potion'] == 0) ? _PRICE_MIRACLE_POTION : 0);
@@ -651,19 +581,34 @@ function cows(a = [], is_sunny = 1) {
 			g_left -= ((vars['day'] > 183 && vars['day'] < 206 && flags['miracle_potion'] == 0) ? _PRICE_MIRACLE_POTION : 0);
 			g_left += ((vars['day'] < 240) ? 6500 : 0);
 			g_left += ((vars['day'] < 262) ? 6500 : 0);
-			a.push({'desc':("(" + (-1 * g_left) + " G LEFT)"), 'imp':(g_left < 0), 'red':(g_left >= 0)});
+
+			// Stolen cows grown or enough GRASS
+			a.push({'desc':"Equip Milker", 'iid':cow_id, 'red':(g_left >= 0)});
+			a.push({'desc':"Milk Cows", 'sr':true});
+			a.push({'desc':("(" + (-1 * g_left) + " G LEFT)"), 'sr':true});
 		}
 	}
 
 	// Selling a cow
-	if (d > 120 && d < 214 && get_dow(vars['day'], true) != "THURS" && !is_festival(vars['day']) && vars['cows'] > 1) {
-		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, ((d < 184) ? 7500 : 6500)], 'iid':doug_id,
-		       'sel':(flags['babybed'] == 1 && flags['stairway'] == 0 && vars['gold'] >= 2000 && is_sunny == 0)
-		});
+	if (d > 120 && d < 184 && get_dow(vars['day'], true) != "THURS" && !is_festival(vars['day']) && vars['cows'] > 1) {
+		var tmp_t3 = [];
+		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, ((d < 184) ? 7500 : 6500)], 'iid':doug_id, 'sel':(sell_cow)});
+		// Blue Feather
+		if (is_sunny == 1 && flags['blue_feather'] == 0 && !["SUN", "SAT", "WED"].includes(dow) && flags['propose'] == 0 && flags['photo_married'] == 0 && flags['kitchen'] == 1) {
+			tmp_t3.push("Buy Blue Feather");
+		}
+		// Maria Ankle
+		if (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") {
+			tmp_t3.push("Ankle");
+		}
 		if (d < 183 && flags['miracle_potion'] == 0) {
+			tmp_t3.push("Buy Miracle Potion");
+			a[a.length - 1]['t3'] = tmp_t3;
 			a.push({'desc':"Buy Miracle Potion", 'cid':['f_miracle_potion', 'v_gold'], 'val':[1, (-1 * _PRICE_MIRACLE_POTION)], 'sr':true,
-				'sel':(flags['babybed'] == 1 && flags['stairway'] == 0 && vars['gold'] >= 2000 && is_sunny == 0)
+				'sel':(d > 151 && flags['babybed'] == 1 && flags['stairway'] == 0 && vars['gold'] >= 2000 && is_sunny == 0)
 			});
+		} else if (tmp_t3.length > 0) {
+			a[a.length - 1]['t3'] = tmp_t3;
 		}
 	}
 	return a;
