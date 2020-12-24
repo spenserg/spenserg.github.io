@@ -368,8 +368,8 @@ actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"FAST TEXT GLITCH", 'sr':true});
 					if (aff[ann_id] >= 55) {
 						// Bonus Sparkler Scene at 55 aff or higher
-						a[a.length - 1]['cid'].push('v_happiness');
-						a[a.length - 1]['val'].push(5);
+						a[a.length - 2]['cid'].push('v_happiness');
+						a[a.length - 2]['val'].push(5);
 					}
 				} else if (dow != "SUN" && !(is_sunny == 1 && aff[maria_id] >= (_PHOTO_MIN - _DREAM_EVENT_AFF) && flags['dream_maria'] == 0)){
 					if (flags['wine_from_duke'] == 0) {
