@@ -1,0 +1,43 @@
+<head>
+		<title>SHelper</title>
+		<meta name="viewport" content="user-scalable=no, width=device-width">
+		<meta charset="UTF-8">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet" >
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+    <script src="/spiderwiki/wikispider.js"></script>
+</head>
+
+<body>
+  ID: <input type="number" id="fam_id" name="fam_id" val="1" />
+  <button onclick="new_id()">Go</button><br/>
+	Outbound WSC: <textarea id="outbound" rows="5"></textarea>
+	<a id="wsc_link" href="" class="button" target="_blank">Go</a>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
+	Inbound WK: <textarea id="inbound" rows="5"></textarea>
+	<a id="wk_link" href="" class="button" target="_blank">Go</a>&nbsp;&nbsp;<button onclick="clear_input(1)">Clear</button><br/>
+	Ans: <textarea id="ans_txt" rows="5" style="width:300px"></textarea><div id="total"></div>
+  <button onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input(1)">Clear</button><br/>
+</body>
+
+<script>
+function clear_input (type = -1) {
+	if (type == 0) {
+		$("#outbound").val("");
+	} else if (type == 1) {
+		$("#inbound").val("");
+	}
+}
+
+function new_id() {
+  var fam = get_next_fam($("#fam_id").val());
+  $("#wk_link").attr("href", ("https://wsc.nmbe.ch/family/" + fam[0]));
+  $("#wk_link").attr("href", ("https://en.wikipedia.org/w/index.php?title=" + fam[3] + "&action=edit"));
+}
+
+function compute() {
+
+}
+</script>
