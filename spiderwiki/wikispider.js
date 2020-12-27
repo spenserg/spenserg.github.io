@@ -2,6 +2,7 @@ var fam_ids = [1, 2, 3, 4, 136, 6, 7, 8, 9, 10, 120, 124, 11, 12, 13, 137, 14, 1
 var fams = get_all_fams();
 
 function get_fam_by_id(id = -1) {
+    id = parseInt(id);
     if (!fam_ids.includes(id)) { return null; }
     var index = ((id >= fams.length) ? fams.length : id);
 
