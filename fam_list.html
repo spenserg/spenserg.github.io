@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  ID: <input type="number" id="fam_id" name="fam_id" val="1" />
+  ID: <input id="fam_id" name="fam_id" val="1" />
   <button onclick="new_id()">Go</button><br/>
 	Outbound WSC: <textarea id="outbound" rows="5"></textarea>
 	<a id="wsc_link" href="" class="button" target="_blank">Go</a>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
@@ -32,13 +32,35 @@ function clear_input (type = -1) {
 }
 
 function new_id() {
-  var fam = get_fam_by_id(get_next_fam($("#fam_id").val()));
-  $("#fam_id").val(fam[0]);
-  $("#wk_link").attr("href", ("https://wsc.nmbe.ch/family/" + fam[0]));
-  $("#wk_link").attr("href", ("https://en.wikipedia.org/w/index.php?title=" + fam[3] + "&action=edit"));
+	var fam = get_fam_by_id(get_next_fam(parseInt($("#fam_id").val())));
+	if (fam !== null) {
+		$("#fam_id").val(fam[0]);
+		$("#wsc_link").attr("href", ("view-source:https://wsc.nmbe.ch/family/" + fam[0]));
+		$("#wk_link").attr("href", ("https://en.wikipedia.org/w/index.php?title=List_of_" + fam[1] + "_species&action=edit"));
+	}
 }
 
 function compute() {
+	var today = new Date();
+	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
+	var wsc_html = $("#outbound").val();
+	var month = (((today.getMonth() + 1) < 10) ? ("0" + (today.getMonth() + 1)) : (today.getMonth() + 1));
+	var day = ((today.getDate() < 10) ? ("0" + today.getDate()) : today.getDate());
+	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[1] + "}}\n" +
+		"This page lists all described [[genus|genera]] and [[species]] of the spider family '''" + fam[1] +
+		"'''. {{As of|" + today.getFullYear() + "|" + month + "}}, the [[World Spider Catalog]] accepts " + (wsc_html.match(/genusTitle/g) || []).length +
+		" species in " + (wsc_html.match(/speciesTitle/g) || []).length + " genera:<ref name=NMBE>{{cite web| title=" +
+		(wsc_html.match(/Family\: [a-zA-Z]+\<\/strong\>([^\<]+)\<span class\=\"lsid\"\>\[urn\:lsid/g)) + "| website=World Spider Catalog Version 20.0| accessdate=" +
+		today.getFullYear() + "-" + month + "-" + day + "| year=" +  today.getFullYear() + "| publisher=Natural History Museum Bern| url=http://www.wsc.nmbe.ch/family/" +
+		fam[0] + "| doi=10.24436/2}}</ref>";
 
+	var gen_list = [];
+	var tmp_gens = wsc_html.split('genusTitle');
+	for (var i = 1; i < tmp_gens.length; i++) {
+		var tmp_specs = tmp_gens[i].split('speciesTitle');
+		for (var j = 1; j < tmp_specs.length; j++) {
+		    console.log(tmp_specs[j]);
+		}
+	}
 }
 </script>
