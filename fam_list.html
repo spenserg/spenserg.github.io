@@ -32,7 +32,8 @@ function clear_input (type = -1) {
 }
 
 function new_id() {
-  var fam = get_next_fam($("#fam_id").val());
+  var fam = get_fam_by_id(get_next_fam($("#fam_id").val()));
+  $("#fam_id").val(fam[0]);
   $("#wk_link").attr("href", ("https://wsc.nmbe.ch/family/" + fam[0]));
   $("#wk_link").attr("href", ("https://en.wikipedia.org/w/index.php?title=" + fam[3] + "&action=edit"));
 }
