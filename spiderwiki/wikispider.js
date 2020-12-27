@@ -30,4 +30,10 @@
     }
     return null;
   }
+
+  function get_next_fam(id = -1) {
+    var index = fams.indexOf(id);
+    if (id == -1) { return fams[1]; }
+    return ((id == (fams.length - 1)) ? 1 : (id + 1));
+  }
 </script>
