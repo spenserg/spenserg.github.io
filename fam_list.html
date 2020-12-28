@@ -40,10 +40,12 @@ function new_id() {
 	}
 }
 
-function compute() {
+function compute=function() {
+	var errors = [];
 	var today = new Date();
 	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
 	var wsc_html = $("#outbound").val();
+	var wk_html = $("#inbound").val();
 	var month = (((today.getMonth() + 1) < 10) ? ("0" + (today.getMonth() + 1)) : (today.getMonth() + 1));
 	var day = ((today.getDate() < 10) ? ("0" + today.getDate()) : today.getDate());
 	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[1] + "}}\n" +
@@ -54,13 +56,62 @@ function compute() {
 		today.getFullYear() + "-" + month + "-" + day + "| year=" +  today.getFullYear() + "| publisher=Natural History Museum Bern| url=http://www.wsc.nmbe.ch/family/" +
 		fam[0] + "| doi=10.24436/2}}</ref>";
 
-	var gen_list = [];
+	// WSC parse
+	var gen_list = {};
 	var tmp_gens = wsc_html.split('genusTitle');
 	for (var i = 1; i < tmp_gens.length; i++) {
 		var tmp_specs = tmp_gens[i].split('speciesTitle');
+        	var genreg = /Gen\.\s\<strong\>\<i\>([^\<]+)\<\/i\>\<\/strong\>([^\<]+)\<span class\=\"lsid/g;
+        	var g_props = genreg.exec(tmp_gens[i]);
+        	var tmp_g = {'name':g_props[1], 'auth':g_props[2].trim(), 'species':[]};
 		for (var j = 1; j < tmp_specs.length; j++) {
-		    console.log(tmp_specs[j]);
+            		var reg = /\<strong\>\<i\>([^\<]+)\<\/i\>\<\/strong\>\<\/a\>([^\<]+)\<[^\|]+\|[^\|]+\|([^\[]+)&nbsp;&nbsp;&nbsp; \[urn:lsid:/g;
+            		var spc_list = reg.exec(tmp_specs[j]);
+            		tmp_g['species'].push({'name':spc_list[1], 'auth':spc_list[2].trim(), 'loc':spc_list[3].trim()});
 		}
+        	gen_list[g_props[1]] = tmp_g;
 	}
+
+	// WK parse
+	tmp_gens = wk_html.split("==''");
+	for(var i = 1; i < tmp_gens.length; i++) {
+		var genreg = /\'\'\[\[([^\s]+)\]\]\'\'\s*\<small\>([^\<]+)\<\/small\>/g;
+		var g_props = genreg.exec(tmp_gens[i]);
+		var g_split = tmp_gens[i].split(g_props[0]);
+		var tmp_g = {'name':g_props[1], 'auth':g_props[2].trim(), 'species':[]};
+
+		// Species
+		var spec_reg = /\*\s*\'\'\[\[([^\]]+)\]\]\'\'\s*\<small\>([^\<]+)\<\/small\>\s\—([^\n]+)\n/g
+		var net = 0;
+		while((result2 = spec_reg.exec(g_split[1])) !== null && net < 1000) {
+			tmp_g['species'].push({'name':result2[1], 'auth':result2[2].trim()});
+			net++;
+		}
+
+		// Compare to WSC
+		if (gen_list[g_props[1]] !== undefined) {
+			// Check lists
+		} else {
+			// Not in WSC
+			errors.push('"' + g_props[1] + '" is not listed in the WSC");
+		}
+
+		// Images
+		var img_list = [];
+		var img_reg1 = /image\d*\s*\=\s*([^\n]+)\n\|\scaption\d*\s*\=\s*([^\n\}]+)[\n\}]/g;
+		net = 0;
+		while((result2 = img_reg1.exec(g_split[0])) !== null && net < 1000) {
+			img_list.push({'img':result2[1], 'caption':result2[2]});
+			net++;
+		} net = 0;
+		var img_reg2 = /\[\[Image\:([^\|]+)\|[^\n]+\|([^\n]+)\]\]\n/g
+		while((result2 = img_reg2.exec(g_split[0])) !== null && net < 1000) {
+			img_list.push({'img':result2[1], 'caption':result2[2]});
+			net++;
+		}
+		tmp_g['images'] = img_list;
+	}
+
+	// Build new list
 }
 </script>
