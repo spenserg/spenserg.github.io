@@ -40,7 +40,7 @@ function new_id() {
 	}
 }
 
-function compute() {
+function compute = function() {
 	var errors = [];
 	var today = new Date();
 	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
@@ -105,16 +105,16 @@ function compute() {
 		// Compare to WSC
 		if (gen_list[g_props[1]] === undefined) {
 			// Not in WSC
-			errors.push('"' + g_props[1] + '" is not listed in the WSC");
+			errors.push('"' + g_props[1] + '" is not listed in the WSC');
 		} else {
-			result += "==''" + g_props[1] + ''==\n";
+			result += "==''" + g_props[1] + "''==\n";
 			if (img_list.length > 0) {
 				result += "{{multiple image\n| title = ''" + g_props[1] + "''\n| direction = vertical";
 				for (var k = 0; k < img_list.length; k++) {
 					result += "| image" + (k + 1) + " = " + img_list[k]['img'].trim() +
 						"\n| caption" + (k + 1) + " = " + img_list[k]['caption'].trim();
 				}
-				result += "}}\n	
+				result += "}}\n";
 			} else {
 				// No images
 				result += "<!--Use this template to add pictures\n{{multiple image\n| title = ''" +
