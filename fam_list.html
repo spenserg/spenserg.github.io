@@ -41,8 +41,6 @@ function new_id() {
 }
 
 function compute() {
-	// TODO: Check Genus Link
-
 	var errors = [];
 	var today = new Date();
 	var month_num = ((today.getMonth() == 0) ? 12 : today.getMonth());
@@ -56,7 +54,7 @@ function compute() {
 		$("#fam_id").val(fidreg.exec(wsc_html)[1]);
 	}
 	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
-	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[1] + "}}\n" +
+	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[4].replace("_"," ") + "}}\n" +
 		"This page lists all described [[species]] of the spider family '''" + fam[1] +
 		"''' {{as of|" + ((month == 12) ? (today.getFullYear() - 1) : today.getFullYear()) +
 	    	"|" + month + "|lc=y}}:<ref name=NMBE>{{cite web| title=";
@@ -73,13 +71,22 @@ function compute() {
 	var tmp_gens = wsc_html.split('genusTitle');
 	for (var i = 1; i < tmp_gens.length; i++) {
 		var tmp_specs = tmp_gens[i].split('speciesTitle');
-        	var genreg = /Gen\.\s\<strong\>\<i\>([^\<]+)\<\/i\>\<\/strong\>([^\<]+)\<span class\=\"lsid/g;
+        	var genreg = /Gen\.\s\<strong\>\<i\>([^\<]+)\<\/i\>\<\/strong\>([^\<]+)\<span class\=\"lsid[\s\S]+genusdetail\/(\d+)\"\>/g;
         	var g_props = genreg.exec(tmp_gens[i]);
-        	var tmp_g = {'name':g_props[1], 'auth':g_props[2].trim(), 'species':[]};
+		rgen = get_gen_by_id(g_props[3]);
+        	var tmp_g = {'id':((rgen == null) ? 0 : rgen[0]), 'name':g_props[1], 'auth':g_props[2].trim(), 'species':[], 'img':[], 'subfamily':""};
 		for (var j = 1; j < tmp_specs.length; j++) {
-            		var reg = /\<strong\>\<i\>([^\<]+)\<\/i\>\<\/strong\>\<\/a\>([^\<]+)\<[^\|]+\|[^\|]+\|([^\[]+)&nbsp;&nbsp;&nbsp; \[urn:lsid:/g;
+            		var reg = /\<strong\>\<i\>([^\<]+)\<\/i\>\<\/strong\>\<\/a\>([^\<]+)\<[^\|]+\|[^\|]+\|([^\[]+)\[urn:lsid:/g;
             		var spc_list = reg.exec(tmp_specs[j]);
-            		tmp_g['species'].push({'name':spc_list[1], 'auth':spc_list[2].trim(), 'loc':spc_list[3].trim(), 'type':tmp_specs[j].includes(" * ")});
+            		tmp_g['species'].push({'name':spc_list[1], 'auth':spc_list[2].replaceAll('&nbsp;', '').trim(),
+					       'loc':spc_list[3].replaceAll('&nbsp;','').trim(), 'type':tmp_specs[j].includes(" * ")
+			});
+		}
+		if (rgen == null) {
+			errors.push('"' + g_props[1] + '" is not in database');
+			tmp_g['link'] = g_props[1];
+		} else {
+			tmp_g['link'] = ((g_props[1].localeCompare(rgen[2]) == 0) ? rgen[2] : (rgen[2] + "|" + g_props[1]));
 		}
         	gen_list[g_props[1]] = tmp_g;
 	}
@@ -87,17 +94,23 @@ function compute() {
 	// WK parse
 	tmp_gens = wk_html.split("==''");
 	for(var i = 1; i < tmp_gens.length; i++) {
-		var genreg = /\'\'\[\[([^\s]+)\]\]\'\'\s*\<small\>([^\<]+)\<\/small\>/g;
+		var genreg = /\'\'\[\[([^\]]+)\]\]\'\'\s*\<small\>([^\<]+)\<\/small\>([^\n]*)\n/g;
 		var g_props = genreg.exec(tmp_gens[i]);
 		var g_split = tmp_gens[i].split(g_props[0]);
-		var tmp_g = {'name':g_props[1], 'auth':g_props[2].trim(), 'species':[]};
+		if (g_props[1].includes("|")) {
+			g_props[1] = g_props[1].split("|")[1].trim();
+		}
 
 		// Images
 		var img_list = [];
 		var img_reg1 = /image\d*\s*\=\s*([^\n]+)\n\|\scaption\d*\s*\=\s*([^\n\}]+)[\n\}]/g;
 		net = 0;
 		while((result2 = img_reg1.exec(g_split[0])) !== null && net < 1000) {
-			img_list.push({'img':result2[1], 'caption':result2[2]});
+			if (result2[1].replace("'", "").replace('"',"").trim().length > 0 &&
+			   result2[2].replace("[","").replace("]","").replace("'","").replace('"',"").trim().length > 0) {
+				// Image and Caption are not empty
+				img_list.push({'img':result2[1], 'caption':result2[2]});
+			}
 			net++;
 		} net = 0;
 		var img_reg2 = /\[\[Image\:([^\|]+)\|[^\n]+\|([^\n]+)\]\]\n/g
@@ -112,15 +125,15 @@ function compute() {
 			errors.push('"' + g_props[1] + '" is not listed in the WSC');
 		} else {
 			gen_list[g_props[1]]['img'] = img_list;
+			gen_list[g_props[1]]['subfamily'] = g_props[3].replace("-", "").trim();
 		}
 	}
 
 	for(var name in gen_list) {
 		var genus = gen_list[name];
 		result += "==''" + name + "''==\n";
-
 		if (genus['img'].length > 0) {
-			result += "{{multiple image\n| title = ''" + g_props[1] + "''\n| direction = vertical\n| align = right\n";
+			result += "{{multiple image\n| title = ''" + name + "''\n| direction = vertical\n| align = right\n";
 			for (var k = 0; k < genus['img'].length; k++) {
 				result += "| image" + (k + 1) + " = " + genus['img'][k]['img'].trim() +
 					"\n| caption" + (k + 1) + " = " + genus['img'][k]['caption'].trim() + "\n";
@@ -134,15 +147,28 @@ function compute() {
 		}
 
 		// Species
-		result += "''[[" + name + "]]'' <small>" + genus['auth'] + "</small>\n";
+		result += "''[[" + genus['link'] + "]]'' <small>" + genus['auth'] + "</small>" +
+			((genus['subfamily'].length > 0) ? (" - " + genus['subfamily']) : "") + "\n";
 		for (var k = 0; k < gen_list[name]['species'].length; k++) {
-			result += "* ''[[" + gen_list[name]['species'][k]['name'] + "|" +
-				gen_list[name]['species'][k]['name'].split(" ")[0].charAt(0).toUpperCase() +
-				". " + gen_list[name]['species'][k]['name'].split(" ")[1] + "]]'' <small>" +
-				gen_list[name]['species'][k]['auth'] + "</small> " +
+			if (gen_list[name]['species'][k]['name'].split(" ").length == 3) {
+				// Subspecies
+				var gn_split = gen_list[name]['species'][k]['name'].split(" ");
+				var prev_gen = gen_list[name]['species'][k - 1];
+				result += "** ''" + gn_split[0].charAt(0).toUpperCase() + ". " +
+					gn_split[1].charAt(0).toLowerCase() + ". " + gn_split[1].toLowerCase() + "'' <small>" +
+					prev_gen['auth'] + "</small> - " + prev_gen['loc'] + "\n" +
+					"** ''" + gn_split[0].charAt(0).toUpperCase() + ". " +
+					gn_split[1].charAt(0).toLowerCase() + ". " + gn_split[2].toLowerCase() + "''";
+			} else {
+				result += "* ''[[" + gen_list[name]['species'][k]['name'] + "|" +
+					gen_list[name]['species'][k]['name'].split(" ")[0].charAt(0).toUpperCase() +
+					". " + gen_list[name]['species'][k]['name'].split(" ")[1] + "]]''";
+			}
+			result += " <small>" + gen_list[name]['species'][k]['auth'] + "</small> " +
 				(gen_list[name]['species'][k]['type'] ? "([[Type species|type]]) " : "") +
 				"— " + gen_list[name]['species'][k]['loc'] + "\n";
 		}
+		result += "\n";
 	}
 	result += "==References==\n{{Reflist}}\n\n{{Araneae}}\n\n{{DEFAULTSORT:" + fam[1] +
 		"}}\n\n[[Category:Lists of spider species by family|" + fam[1] + "]]\n[[Category:" + fam[1] + "| ]]";
