@@ -41,19 +41,31 @@ function new_id() {
 }
 
 function compute() {
+	// TODO: Check Genus Link
+
 	var errors = [];
 	var today = new Date();
-	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
+	var month_num = ((today.getMonth() == 0) ? 12 : today.getMonth());
+	var month = ((month_num < 10) ? ("0" + month_num) : month_num);
+	var day = ((today.getDate() < 10) ? ("0" + today.getDate()) : today.getDate());
+
 	var wsc_html = $("#outbound").val();
 	var wk_html = $("#inbound").val();
-	var month = (((today.getMonth() + 1) < 10) ? ("0" + (today.getMonth() + 1)) : (today.getMonth() + 1));
-	var day = ((today.getDate() < 10) ? ("0" + today.getDate()) : today.getDate());
+	if ($("#fam_id").val().trim().length == 0 && wsc_html.length > 0) {
+		var fidreg = /\/familydetail\/(\d+)\"/g;
+		$("#fam_id").val(fidreg.exec(wsc_html)[1]);
+	}
+	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
 	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[1] + "}}\n" +
-		"This page lists all described [[genus|genera]] and [[species]] of the spider family '''" + fam[1] +
-		"'''. {{As of|" + today.getFullYear() + "|" + month + "}}, the [[World Spider Catalog]] accepts " + (wsc_html.match(/genusTitle/g) || []).length +
-		" species in " + (wsc_html.match(/speciesTitle/g) || []).length + " genera:<ref name=NMBE>{{cite web| title=" +
-		(wsc_html.match(/Family\: [a-zA-Z]+\<\/strong\>([^\<]+)\<span class\=\"lsid\"\>\[urn\:lsid/g)) + "| website=World Spider Catalog Version 20.0| accessdate=" +
-		today.getFullYear() + "-" + month + "-" + day + "| year=" +  today.getFullYear() + "| publisher=Natural History Museum Bern| url=http://www.wsc.nmbe.ch/family/" +
+		"This page lists all described [[species]] of the spider family '''" + fam[1] +
+		"''' {{as of|" + ((month == 12) ? (today.getFullYear() - 1) : today.getFullYear()) +
+	    	"|" + month + "|lc=y}}:<ref name=NMBE>{{cite web| title=";
+	var wsct_reg = /(Family\: [a-zA-Z]+)\<\/strong\>([^\<]+)\<span class\=\"lsid\"\>\[urn\:lsid/g;
+	var wsc_title = wsct_reg.exec(wsc_html);
+	result += wsc_title[1].trim() + " " + wsc_title[2].trim() +
+		"| website=World Spider Catalog Version 20.0| accessdate=" + today.getFullYear() + "-" + 
+		((today.getMonth() < 9) ? ("0" + (today.getMonth() + 1)) : (today.getMonth() + 1)) + "-" + day +
+		"| year=" +  today.getFullYear() + "| publisher=Natural History Museum Bern| url=http://www.wsc.nmbe.ch/family/" +
 		fam[0] + "| doi=10.24436/2}}</ref>\n\n";
 
 	// WSC parse
@@ -67,7 +79,7 @@ function compute() {
 		for (var j = 1; j < tmp_specs.length; j++) {
             		var reg = /\<strong\>\<i\>([^\<]+)\<\/i\>\<\/strong\>\<\/a\>([^\<]+)\<[^\|]+\|[^\|]+\|([^\[]+)&nbsp;&nbsp;&nbsp; \[urn:lsid:/g;
             		var spc_list = reg.exec(tmp_specs[j]);
-            		tmp_g['species'].push({'name':spc_list[1], 'auth':spc_list[2].trim(), 'loc':spc_list[3].trim()});
+            		tmp_g['species'].push({'name':spc_list[1], 'auth':spc_list[2].trim(), 'loc':spc_list[3].trim(), 'type':tmp_specs[j].includes(" * ")});
 		}
         	gen_list[g_props[1]] = tmp_g;
 	}
@@ -79,15 +91,7 @@ function compute() {
 		var g_props = genreg.exec(tmp_gens[i]);
 		var g_split = tmp_gens[i].split(g_props[0]);
 		var tmp_g = {'name':g_props[1], 'auth':g_props[2].trim(), 'species':[]};
-/*
-		// Species
-		var spec_reg = /\*\s*\'\'\[\[([^\]]+)\]\]\'\'\s*\<small\>([^\<]+)\<\/small\>\s\—([^\n]+)\n/g
-		var net = 0;
-		while((result2 = spec_reg.exec(g_split[1])) !== null && net < 1000) {
-			tmp_g['species'].push({'name':result2[1], 'auth':result2[2].trim(), 'loc':result2[3]});
-			net++;
-		}
-*/
+
 		// Images
 		var img_list = [];
 		var img_reg1 = /image\d*\s*\=\s*([^\n]+)\n\|\scaption\d*\s*\=\s*([^\n\}]+)[\n\}]/g;
@@ -107,35 +111,41 @@ function compute() {
 			// Not in WSC
 			errors.push('"' + g_props[1] + '" is not listed in the WSC');
 		} else {
-			result += "==''" + g_props[1] + "''==\n";
-			if (img_list.length > 0) {
-				result += "{{multiple image\n| title = ''" + g_props[1] + "''\n| direction = vertical";
-				for (var k = 0; k < img_list.length; k++) {
-					result += "| image" + (k + 1) + " = " + img_list[k]['img'].trim() +
-						"\n| caption" + (k + 1) + " = " + img_list[k]['caption'].trim();
-				}
-				result += "}}\n";
-			} else {
-				// No images
-				result += "<!--Use this template to add pictures\n{{multiple image\n| title = ''" +
-					g_props[1] + "''\n| direction = vertical\n| image1 = \n| caption1 = ''[[]]''\n" +
-					"| image2 = \n| caption2 = ''[[]]''\n}}-->\n";
-			}
-
-			// Species
-			// TODO: Check Link
-			result += "''[[" + g_props[1] + "]]'' <small>" + g_props[2] + "</small>\n";
-			for (var k = 0; k < gen_list[g_props[1]]['species'].length; k++) {
-				//TODO: Use first letter abbreviation in link
-				result += "* ''[[" + gen_list[g_props[1]]['species'][k]['name'] + "]]'' <small>" +
-					gen_list[g_props[1]]['auth'] + "</small> — " + gen_list[g_props[1]]['loc'] + "\n";
-				// TODO: Type species
-			}
-		} // end of genus exists in WSC
-		result += "==References==\n{{Reflist}}\n\n{{Araneae}}\n\n{{DEFAULTSORT:" + g_props[1] +
-			"}}\n\n[[Category:Lists of spider species by family|" + g_props[1] +
-			"]]\n[[Category:" + g_props[1] + "| ]]";
-		$('#ans_txt').val(result);
+			gen_list[g_props[1]]['img'] = img_list;
+		}
 	}
+
+	for(var name in gen_list) {
+		var genus = gen_list[name];
+		result += "==''" + name + "''==\n";
+
+		if (genus['img'].length > 0) {
+			result += "{{multiple image\n| title = ''" + g_props[1] + "''\n| direction = vertical\n| align = right\n";
+			for (var k = 0; k < genus['img'].length; k++) {
+				result += "| image" + (k + 1) + " = " + genus['img'][k]['img'].trim() +
+					"\n| caption" + (k + 1) + " = " + genus['img'][k]['caption'].trim() + "\n";
+			}
+			result += "}}\n";
+		} else {
+			// No images
+			result += "<!--Use this template to add pictures\n{{multiple image\n| title = ''" +
+				name + "''\n| direction = vertical\n| image1 = \n| caption1 = ''[[]]''\n" +
+				"| image2 = \n| caption2 = ''[[]]''\n}}-->\n";
+		}
+
+		// Species
+		result += "''[[" + name + "]]'' <small>" + genus['auth'] + "</small>\n";
+		for (var k = 0; k < gen_list[name]['species'].length; k++) {
+			result += "* ''[[" + gen_list[name]['species'][k]['name'] + "|" +
+				gen_list[name]['species'][k]['name'].split(" ")[0].charAt(0).toUpperCase() +
+				". " + gen_list[name]['species'][k]['name'].split(" ")[1] + "]]'' <small>" +
+				gen_list[name]['species'][k]['auth'] + "</small> " +
+				(gen_list[name]['species'][k]['type'] ? "([[Type species|type]]) " : "") +
+				"— " + gen_list[name]['species'][k]['loc'] + "\n";
+		}
+	}
+	result += "==References==\n{{Reflist}}\n\n{{Araneae}}\n\n{{DEFAULTSORT:" + fam[1] +
+		"}}\n\n[[Category:Lists of spider species by family|" + fam[1] + "]]\n[[Category:" + fam[1] + "| ]]";
+	$('#ans_txt').val(result);
 }
 </script>
