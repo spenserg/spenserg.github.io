@@ -24,6 +24,27 @@ function get_fam_by_id(id = -1) {
     return null;
 }
 
+function get_gen_by_id(id = -1) {
+    id = parseInt(id);
+    var index = ((id >= gens.length) ? gens.length : id);
+
+    // Index should be close to id
+    while (index > 0 && index < gens.length) {
+        if (gens[index][0] == id) { return gens[index]; }
+        if (gens[index][0] > id) {
+            index--;
+        } else {
+            index++;
+        }
+    }
+
+    // Backup search (
+    for(var i = 0; i < gens.length; i++) {
+        if (gens[i][0] == id) { return gens[i]; }
+    }
+    return null;
+}
+
 function get_fam_by_name(name = "") {
     if (name.length < 2) { return null; }
     name = name.trim().charAt(0).toUpperCase() + name.trim().slice(1).toLowerCase();
