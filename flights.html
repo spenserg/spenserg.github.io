@@ -15,6 +15,8 @@
 	<button onclick="compute(0)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
 	Inbound List: <textarea id="inbound" rows="5"></textarea>
 	<button onclick="compute(1)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(1)">Clear</button><br/>
+	Rollover List: <textarea id="rollover" rows="5"></textarea>
+	<button onclick="compute(2)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(2)">Clear</button><br/>
 	Ans: <textarea id="ans_txt" rows="5" style="width:300px"></textarea><div id="total"></div>
 </body>
 
@@ -33,6 +35,8 @@ var gate_changes = {};
 		$("#outbound").val("");
 	} else if (type == 1) {
 		$("#inbound").val("");
+	} else if (type == 2) {
+		$("#rollover").val("");	
 	}
   }
 
@@ -46,8 +50,10 @@ var gate_changes = {};
 	ans = ((type == 0) ? ($("#outbound").val()) : ($("#inbound").val()));
 	if (type == 1) {
 		reg = /\n[A-Z]{3}([A-Z]{3})\n/g;
-	} else {
+	} else if (type == 0) {
 		reg = /AA(\d+)\n[^\n]+\nDFW([A-Z]{3})[^\:]+\:\s(\d+)\:(\d+)\:[^\n]+\n[^\:]+\:\s([^\n]+)\nDFW\n\d/g;
+	} else {
+		reg = /\n[^\n]+(\d{2})\n[^\n]+\n([A-Z]{6})\n[^\:]+\:\s(\d+\-[^\-]+\-\d{4})[^\n]+\s([a-zA-Z]+s)\n/g;
 	}
 
 	var net = 0;
@@ -55,11 +61,13 @@ var gate_changes = {};
 	var list_ans = {};
 	while((result2 = reg.exec(ans)) !== null && net < 1000) {
 		if (type == 1) {
+			// Inbound
     			if (!(result2[1] in list_ans)) {
 				list_ans[result2[1]] = 0;
 			}
 			list_ans[result2[1]]++;
-		} else {
+		} else if (type == 0) {
+			// Outbound
 			if (!(result2[1] in gates)) {
 				gates[result2[1]] = result2[5];
 			}
@@ -73,8 +81,23 @@ var gate_changes = {};
 				gates[result2[1]] = result2[5];
 			}
 			result += result2[1] + "\t" + result2[5] + "\t" + result2[3] + result2[4] + "\n";
+		} else if (type ==2) {
+			// Rollover
+			if (!(result2[3] in list_ans)) {
+				list_ans[result2[3]] = {};
+			}
+			if (!(result2[4] in list_ans[result2[3]])) {
+				list_ans[result2[3]][result2[4]] = [];
+			}
+			if (!(result2[4] in list_ans[result2[3]][result2[4]])) {
+				list_ans[result2[3]][result2[4]][result2[2]] = 0;
+			}
+			if (result2[5].localeCompare("Letters") == 0) {
+				list_ans[result2[3]][result2[4]][result2[2]] += parseInt(result2[1]);
+			}
 		}
 		net++;
+		console.log(list_ans);
 	}
 	if (type == 1) {
 		var total = 0;
@@ -99,7 +122,18 @@ var gate_changes = {};
 			}
 		}
 		$("#total").html("TOTAL: " + total);
-    	}
+    	} else if (type == 2) {
+		// Rollover
+		for (var dest in list_ans) {
+			for (var date in list_ans[dest]) {
+				for (var origin in list_ans[dest][date]) {
+					result += "DFW\t(TODAY)\t" + date + "\t" + dest + "\tDFW\t" + origin +
+						((origin.localeCompare("DFW") == 0) ? "" : "DFW") + "\t" +
+						dest + "\t" + list_ans[dest][date][origin] + "\n";
+				}
+			}
+		}
+	}
     	$('#ans_txt').val(result.trim());
     }
 }
