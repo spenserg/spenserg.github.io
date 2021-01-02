@@ -24,13 +24,13 @@
 var gates = {};
 var gate_changes = {};
 
-  Array.prototype.unique = function() {
+Array.prototype.unique = function() {
     return this.filter(function (value, index, self) { 
       return self.indexOf(value) === index;
     });
-  }
+}
 
-  function clear_input (type = -1) {
+function clear_input (type = -1) {
 	if (type == 0) {
 		$("#outbound").val("");
 	} else if (type == 1) {
@@ -38,22 +38,25 @@ var gate_changes = {};
 	} else if (type == 2) {
 		$("#rollover").val("");	
 	}
-  }
+}
 
-  function compute (type = -1) {
+function compute =function(type = -1) {
     var result = "";
     var reg;
 
     $("#total").html("");
     if (type != -1) {
 	var list_ans = [];
-	ans = ((type == 0) ? ($("#outbound").val()) : ($("#inbound").val()));
+	ans = "";
 	if (type == 1) {
 		reg = /\n[A-Z]{3}([A-Z]{3})\n/g;
+		ans = $("#inbound").val();
 	} else if (type == 0) {
+		ans = $("#outbound").val();
 		reg = /AA(\d+)\n[^\n]+\nDFW([A-Z]{3})[^\:]+\:\s(\d+)\:(\d+)\:[^\n]+\n[^\:]+\:\s([^\n]+)\nDFW\n\d/g;
 	} else {
-		reg = /\n[^\n]+(\d{2})\n[^\n]+\n([A-Z]{6})\n[^\:]+\:\s(\d+\-[^\-]+\-\d{4})[^\n]+\s([a-zA-Z]+s)\n/g;
+		ans = $("#rollover").val();
+		reg = /\n[^\n]+(\d{2})\n[^\n]+\n([A-Z]{3})([A-Z]{3})\n[^\:]+\:\s(\d+\-[^\-]+\-\d{4})[^\n]+\s([a-zA-Z]+s)\n/g;
 	}
 
 	var net = 0;
@@ -93,7 +96,10 @@ var gate_changes = {};
 				list_ans[result2[3]][result2[4]][result2[2]] = 0;
 			}
 			if (result2[5].localeCompare("Letters") == 0) {
+				//console.log(parseInt(result2[1]));
+				//console.log(list_ans[result2[3]][result2[4]][result2[2]]);
 				list_ans[result2[3]][result2[4]][result2[2]] += parseInt(result2[1]);
+				//console.log(list_ans[result2[3]][result2[4]][result2[2]]);
 			}
 		}
 		net++;
@@ -124,12 +130,14 @@ var gate_changes = {};
 		$("#total").html("TOTAL: " + total);
     	} else if (type == 2) {
 		// Rollover
-		for (var dest in list_ans) {
-			for (var date in list_ans[dest]) {
-				for (var origin in list_ans[dest][date]) {
-					result += "DFW\t(TODAY)\t" + date + "\t" + dest + "\tDFW\t" + origin +
-						((origin.localeCompare("DFW") == 0) ? "" : "DFW") + "\t" +
-						dest + "\t" + list_ans[dest][date][origin] + "\n";
+		for (var destx in list_ans) {
+			for (var date in list_ans[destx]) {
+				for (var origin in list_ans[destx][date]) {
+					if (list_ans[destx][date][origin] > 0) {
+						result += "DFW\t(TODAY)\t" + date + "\t" + origin + "\t" +
+							((origin.localeCompare("DFW") == 0) ? " " : "DFW") + "\t" +
+							destx + "\t" + list_ans[destx][date][origin] + "\n";
+					}
 				}
 			}
 		}
