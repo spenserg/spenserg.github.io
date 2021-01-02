@@ -55,7 +55,7 @@ function compute(type = -1) {
 		ans = $("#outbound").val();
 		reg = /AA(\d+)\n[^\n]+\nDFW([A-Z]{3})[^\:]+\:\s(\d+)\:(\d+)\:[^\n]+\n[^\:]+\:\s([^\n]+)\nDFW\n\d/g;
 	} else {
-		ans = $("#rollover").val();
+		ans = $("#rollover").val() + "\n";
 		reg = /\n[^\n]+(\d{2})\n[^\n]+\n([A-Z]{3})([A-Z]{3})\n[^\:]+\:\s(\d+\-[^\-]+\-\d{4})[^\n]+\s([a-zA-Z]+s)\n/g;
 	}
 
