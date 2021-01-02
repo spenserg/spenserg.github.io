@@ -25,9 +25,20 @@ var gates = {};
 var gate_changes = {};
 
 Array.prototype.unique = function() {
-    return this.filter(function (value, index, self) { 
+    return this.filter(function (value, index, self) {
       return self.indexOf(value) === index;
     });
+}
+
+function get_month_name(id = -1) {
+	if (id < 0 || id > 11) { return "NULL"; }
+	return ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][id];
+}
+	
+function today() {
+	var today = new Date();
+	return (((today.getDate() < 10) ? ("0" + today.getDate()) : today.getDate()) + "-" +
+		get_month_name(today.getMonth()) + "-" + today.getFullYear());
 }
 
 function clear_input (type = -1) {
@@ -96,6 +107,9 @@ function compute(type = -1) {
 				list_ans[result2[3]][result2[4]][result2[2]] = 0;
 			}
 			if (result2[5].localeCompare("Letters") == 0) {
+				
+				console.log(list_ans[result2[3]][result2[4]][result2[2]] + " + " + parseInt(result2[1]) + " = " + (list_ans[result2[3]][result2[4]][result2[2]] + parseInt(result2[1])));
+				
 				list_ans[result2[3]][result2[4]][result2[2]] += parseInt(result2[1]);
 			}
 		}
@@ -130,7 +144,7 @@ function compute(type = -1) {
 			for (var date in list_ans[destx]) {
 				for (var origin in list_ans[destx][date]) {
 					if (list_ans[destx][date][origin] > 0) {
-						result += "DFW\t(TODAY)\t" + date + "\t" + origin + "\t" +
+						result += "DFW\t" + today() + "\t" + date + "\t" + origin + "\t" +
 							((origin.localeCompare("DFW") == 0) ? " " : "DFW") + "\t" +
 							destx + "\t" + list_ans[destx][date][origin] + "\n";
 					}
