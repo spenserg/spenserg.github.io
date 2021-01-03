@@ -35,8 +35,11 @@ function get_month_name(id = -1) {
 	return ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][id];
 }
 	
-function today() {
+function today(report_date = true) {
 	var today = new Date();
+	if (report_date && today.getHours() > 15) {
+		today.setDate(today.getDate() + 1);
+	}
 	return (((today.getDate() < 10) ? ("0" + today.getDate()) : today.getDate()) + "-" +
 		get_month_name(today.getMonth()) + "-" + today.getFullYear());
 }
@@ -51,7 +54,7 @@ function clear_input (type = -1) {
 	}
 }
 
-function compute(type = -1) {
+function compute (type = -1) {
     var result = "";
     var reg;
 
@@ -67,7 +70,7 @@ function compute(type = -1) {
 		reg = /AA(\d+)\n[^\n]+\nDFW([A-Z]{3})[^\:]+\:\s(\d+)\:(\d+)\:[^\n]+\n[^\:]+\:\s([^\n]+)\nDFW\n\d/g;
 	} else {
 		ans = $("#rollover").val() + "\n";
-		reg = /\n[^\n]+(\d{2})\n[^\n]+\n([A-Z]{3})([A-Z]{3})\n[^\:]+\:\s(\d+\-[^\-]+\-\d{4})[^\n]+\s([a-zA-Z]+s)\n/g;
+		reg = /\n[^\n]+(\d{2})\n([^\n]+)\n([A-Z]{3})([A-Z]{3})\n[^\:]+\:\s(\d+\-[^\-]+\-\d{4}\s\d+\:\d+)[^\d][^\n]*\s([a-zA-Z]+s)\n/g;
 	}
 
 	var net = 0;
@@ -97,20 +100,34 @@ function compute(type = -1) {
 			result += result2[1] + "\t" + result2[5] + "\t" + result2[3] + result2[4] + "\n";
 		} else if (type == 2) {
 			// Rollover
-			if (!(result2[3] in list_ans)) {
-				list_ans[result2[3]] = {};
-			}
-			if (!(result2[4] in list_ans[result2[3]])) {
-				list_ans[result2[3]][result2[4]] = [];
-			}
-			if (!(result2[2] in list_ans[result2[3]][result2[4]])) {
-				list_ans[result2[3]][result2[4]][result2[2]] = 0;
-			}
-			if (result2[5].localeCompare("Letters") == 0) {
-				
-				console.log(list_ans[result2[3]][result2[4]][result2[2]] + " + " + parseInt(result2[1]) + " = " + (list_ans[result2[3]][result2[4]][result2[2]] + parseInt(result2[1])));
-				
-				list_ans[result2[3]][result2[4]][result2[2]] += parseInt(result2[1]);
+			var date_split = result2[5].split(" ");
+			if (result2[2].trim().localeCompare("DELIVERED") != 0) {
+				var k_now = new Date();
+				var k_due = new Date(result2[5]);
+				var count_mail = false;
+				if (k_now.getDay() == k_due.getDay() && ((k_due.getHours() - k_now.getHours()) < 12)) {
+					// Due in < 12 hours on current day
+					count_mail = true;
+				} else if (k_now.getHours() > 17 && k_due.getHours() < 9 && (k_due.getDay() == (k_now.getDay() + 1))) {
+					// Due before 9AM tomorrow and it's after 6PM
+					count_mail = true;
+				}
+				if (k_due.getTime() <= k_now.getTime()) {
+					// Due time is before now
+					count_mail = true;
+				}
+				if (count_mail) {
+					if (!(result2[4] in list_ans)) {
+						list_ans[result2[4]] = {};
+					}
+					if (!(date_split[0] in list_ans[result2[4]])) {
+						list_ans[result2[4]][date_split[0]] = [];
+					}
+					if (!(result2[3] in list_ans[result2[4]][date_split[0]])) {
+						list_ans[result2[4]][date_split[0]][result2[3]] = 0;
+					}
+					list_ans[result2[4]][date_split[0]][result2[3]] += parseInt(result2[1]);
+				}
 			}
 		}
 		net++;
