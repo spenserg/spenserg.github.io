@@ -21,10 +21,27 @@
 	Rollover FOS: <textarea id="rollover" rows="5"></textarea>
 	<button onclick="compute(2)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(2)">Clear</button><br/>
 	Ans: <textarea id="ans_txt" rows="5" style="width:300px"></textarea><div id="total"></div>
-  <button onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input(1)">Clear</button><br/>
+  <button onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input(3)">Clear</button><br/>
 </body>
 
 <script>
+
+String.prototype.replaceAll(str1 = "", str2 = "") {
+	var net = 0;
+	var result = this;
+	while (result.includes(str1) && net < 200) {
+		result = result.replace(str1, str2);
+		net++;
+	}
+	return result;
+}
+
+Array.prototype.unique = function() {
+    return this.filter(function (value, index, self) {
+      return self.indexOf(value) === index;
+    });
+}
+
 function clear_input (type = -1) {
 	if (type == 0) {
 		$("#outbound").val("");
@@ -32,14 +49,23 @@ function clear_input (type = -1) {
 		$("#inbound").val("");
 	} else if (type == 2) {
 		$("#rollover").val("");
+	} else if (type == 3) {
+		$("#ans_text").val("");
 	}
 }
 
-function new_id() {
-	var fam = get_fam_by_id(get_next_fam(parseInt($("#fam_id").val())));
+function new_id(id = -1) {
+	if (id == -1) { id = $("#fam_id").val(); }
+	
+	console.log(id);
+	
+	var fam = get_fam_by_id(get_next_fam(parseInt(id)));
+	
+	console.log(fam);
+	
 	if (fam !== null) {
 		$("#fam_id").val(fam[0]);
-		$("#wsc_link").attr("href", ("view-source:https://wsc.nmbe.ch/family/" + fam[0]));
+		$("#wsc_link").attr("href", ("https://wsc.nmbe.ch/family/" + fam[0]));
 		$("#wk_link").attr("href", ("https://en.wikipedia.org/w/index.php?title=List_of_" + fam[1] + "_species&action=edit"));
 	}
 }
@@ -58,6 +84,8 @@ function compute() {
 		var fidreg = /\/familydetail\/(\d+)\"/g;
 		$("#fam_id").val(fidreg.exec(wsc_html)[1]);
 	}
+	new_id();
+
 	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
 	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[4].replace("_"," ") + "}}\n" +
 		"This page lists all described [[species]] of the spider family '''" + fam[1] +
