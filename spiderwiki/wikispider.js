@@ -5,19 +5,6 @@ var gens = get_all_gens();
 function get_fam_by_id(id = -1) {
     id = parseInt(id);
     if (!fam_ids.includes(id)) { return null; }
-    var index = ((id >= fams.length) ? fams.length : id);
-
-    // Index should be close to id
-    while (index > 0 && index < fams.length) {
-        if (fams[index][0] == id) { return fams[index]; }
-        if (fams[index][0] > id) {
-            index--;
-        } else {
-            index++;
-        }
-    }
-
-    // Backup search (
     for(var i = 0; i < fams.length; i++) {
         if (fams[i][0] == id) { return fams[i]; }
     }
