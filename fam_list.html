@@ -54,15 +54,9 @@ function clear_input (type = -1) {
 	}
 }
 
-function new_id(id = -1) {
+function new_id(id = -1, next_fam = true) {
 	if (id == -1) { id = $("#fam_id").val(); }
-	
-	console.log(id);
-	
-	var fam = get_fam_by_id(get_next_fam(parseInt(id)));
-	
-	console.log(fam);
-	
+	var fam = get_fam_by_id(next_fam ? get_next_fam(parseInt(id)) : parseInt(id));
 	if (fam !== null) {
 		$("#fam_id").val(fam[0]);
 		$("#wsc_link").attr("href", ("https://wsc.nmbe.ch/family/" + fam[0]));
@@ -84,7 +78,7 @@ function compute() {
 		var fidreg = /\/familydetail\/(\d+)\"/g;
 		$("#fam_id").val(fidreg.exec(wsc_html)[1]);
 	}
-	new_id();
+	new_id($("#fam_id").val(), false);
 
 	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
 	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[4].replace("_"," ") + "}}\n" +
