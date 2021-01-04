@@ -2,11 +2,10 @@ var fam_ids = [1, 2, 3, 4, 136, 6, 7, 8, 9, 10, 120, 124, 11, 12, 13, 137, 14, 1
 var fams = get_all_fams();
 var gens = get_all_gens();
 
-function get_fam_by_id(id = -1) {
-    id = parseInt(id);
-    if (!fam_ids.includes(id)) { return null; }
+function get_fam_by_id(xid = -1) {
+    var id = parseInt(xid);
     for(var i = 0; i < fams.length; i++) {
-        if (fams[i][0] == id) { return fams[i]; }
+        if (fams[i][0] == id) { console.log(fams[i]);return fams[i]; }
     }
     return null;
 }
