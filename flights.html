@@ -136,11 +136,12 @@ function compute (type = -1) {
 		net++;
 	}
 	if (type == 0) {
-		var nf_list = ((new_list.length > 0) ? "NEW FLIGHTS\n" : "");
+		var nf_list = "";
 		for (var q = 0; q < new_list.length; q++) {
-			nf_list += "\n" + new_list[q][0] + "\t" + new_list[q][1] + "\t" + new_list[q][2];
+			nf_list += new_list[q][0] + "\t" + new_list[q][1] + "\t" + new_list[q][2] + "\n";
 		}
 		$("#rollover").val(nf_list);
+		$("#inbound").val((new_list.length > 0) ? "NEW FLIGHTS" : "");
 	} else if (type == 1) {
 		// Inbound
 		var total = 0;
