@@ -50,7 +50,7 @@ function clear_input (type = -1) {
 	} else if (type == 2) {
 		$("#rollover").val("");
 	} else if (type == 3) {
-		$("#ans_text").val("");
+		$("#ans_txt").val("");
 	}
 }
 
@@ -83,7 +83,7 @@ function compute() {
 	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
 	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[4].replace("_"," ") + "}}\n" +
 		"This page lists all described [[species]] of the spider family '''" + fam[1] +
-		"''' {{as of|" + ((month == 12) ? (today.getFullYear() - 1) : today.getFullYear()) +
+		"''' accepted by the [[World Spider Catalog]] {{as of|" + ((month == 12) ? (today.getFullYear() - 1) : today.getFullYear()) +
 	    	"|" + month + "|lc=y}}:<ref name=NMBE>{{cite web| title=";
 	var wsct_reg = /(Family\: [a-zA-Z]+)\<\/strong\>([^\<]+)\<span class\=\"lsid\"\>\[urn\:lsid/g;
 	var wsc_title = wsct_reg.exec(wsc_html);
@@ -119,53 +119,55 @@ function compute() {
 	}
 
 	// Fossils
-	var tmp_fos = fos_html.split('Fm.')[1];
-	if (tmp_fos.includes("Download this list of taxonomic names")) {
-		tmp_fos = fos_html.split("Download this list of taxonomic names")[0];
-	}
-	var fos_list = tmp_fos.split("\n");
-	var cur_subfamily = "";
-	var cur_genus = "";
-	for (var i = 1; i < fos_list.length; i++) {
-		var tmp_char = fos_list[i].charAt(0);
-		if (["†", "S", "G"].includes(tmp_char)) {
-			if (tmp_char.localeCompare("G") == 0) {
-				// Genus
-				var genreg = /G\.\s([^\s]+)\s([^\d]+)\s(\d{4})hide/g;
-        			var g_props = genreg.exec(fos_list[i]);
-				cur_genus = g_props[1].trim().substring(1);
-				if (gen_list[cur_genus] === undefined) {
-					// Not in WSC
-					gen_list[cur_genus] = {'auth':(g_props[2] + ", " + g_props[3]), 'id':null, 'img': [], 'link':cur_genus,
-							       'name':cur_genus, species:[], subfamily:cur_subfamily, 'extinct':true};
-				} else {
-					// In WSC
-					gen_list[cur_genus]['extinct'] = true;
-				}
-			} else if (tmp_char.localeCompare("†") == 0) {
-				// Species
-				var specreg = /([^\s]+)\s([^\s]+)\s([^\n]+)\s(\d{4})/g;
-        			var spec_props = specreg.exec(fos_list[i]);
-				var spec_name = spec_props[1].trim().substring(1) + " " + spec_props[2].trim();
-				var spec_in_list = false;
-				for (var j = 0; j < gen_list[cur_genus]['species'].length; j++) {
-					if (gen_list[cur_genus]['species'][j]['name'].localeCompare(spec_name) == 0) {
-						gen_list[cur_genus]['species'][j]['extinct'] = true;
-						spec_in_list = true;
+	if (fos_html.length > 0) {
+		var tmp_fos = fos_html.split('Fm.')[1];
+		if (tmp_fos.includes("Download this list of taxonomic names")) {
+			tmp_fos = fos_html.split("Download this list of taxonomic names")[0];
+		}
+		var fos_list = tmp_fos.split("\n");
+		var cur_subfamily = "";
+		var cur_genus = "";
+		for (var i = 1; i < fos_list.length; i++) {
+			var tmp_char = fos_list[i].charAt(0);
+			if (["†", "S", "G"].includes(tmp_char)) {
+				if (tmp_char.localeCompare("G") == 0) {
+					// Genus
+					var genreg = /G\.\s([^\s]+)\s([^\d]+)\s(\d{4})hide/g;
+					var g_props = genreg.exec(fos_list[i]);
+					cur_genus = g_props[1].trim().substring(1);
+					if (gen_list[cur_genus] === undefined) {
+						// Not in WSC
+						gen_list[cur_genus] = {'auth':(g_props[2] + ", " + g_props[3]), 'id':null, 'img': [], 'link':cur_genus,
+								       'name':cur_genus, species:[], subfamily:cur_subfamily, 'extinct':true};
+					} else {
+						// In WSC
+						gen_list[cur_genus]['extinct'] = true;
 					}
+				} else if (tmp_char.localeCompare("†") == 0) {
+					// Species
+					var specreg = /([^\s]+)\s([^\s]+)\s([^\n]+)\s(\d{4})/g;
+					var spec_props = specreg.exec(fos_list[i]);
+					var spec_name = spec_props[1].trim().substring(1) + " " + spec_props[2].trim();
+					var spec_in_list = false;
+					for (var j = 0; j < gen_list[cur_genus]['species'].length; j++) {
+						if (gen_list[cur_genus]['species'][j]['name'].localeCompare(spec_name) == 0) {
+							gen_list[cur_genus]['species'][j]['extinct'] = true;
+							spec_in_list = true;
+						}
+					}
+					if (!spec_in_list) {
+						// Species not in genus list
+						gen_list[cur_genus]['species'].push({
+							'name':spec_name, 'auth':(spec_props[3] + ", " + spec_props[4]),
+							'extinct':true, 'loc':"", 'type':false
+						});
+					}
+				} else if (tmp_char.localeCompare("S") == 0) {
+					// Subfamily
+					var sfreg = /Subfm\.\s([^\s]+)\s([^\n]+)\s(\d{4})hide/g;
+					var g_props = sfreg.exec(fos_list[i]);
+					cur_subfamily = g_props[1].trim();
 				}
-				if (!spec_in_list) {
-					// Species not in genus list
-					gen_list[cur_genus]['species'].push({
-						'name':spec_name, 'auth':(spec_props[3] + ", " + spec_props[4]),
-						'extinct':true, 'loc':"", 'type':false
-					});
-				}
-			} else if (tmp_char.localeCompare("S") == 0) {
-				// Subfamily
-				var sfreg = /Subfm\.\s([^\s]+)\s([^\n]+)\s(\d{4})hide/g;
-        			var g_props = sfreg.exec(fos_list[i]);
-				cur_subfamily = g_props[1].trim();
 			}
 		}
 	}
@@ -175,36 +177,38 @@ function compute() {
 	for(var i = 1; i < tmp_gens.length; i++) {
 		var genreg = /\'\'\[\[([^\]]+)\]\]\'\'\s*\<small\>([^\<]+)\<\/small\>([^\n]*)\n/g;
 		var g_props = genreg.exec(tmp_gens[i]);
-		var g_split = tmp_gens[i].split(g_props[0]);
-		if (g_props[1].includes("|")) {
-			g_props[1] = g_props[1].split("|")[1].trim();
-		}
-
-		// Images
-		var img_list = [];
-		var img_reg1 = /image\d*\s*\=\s*([^\n]+)\n\|\scaption\d*\s*\=\s*([^\n\}]+)[\n\}]/g;
-		net = 0;
-		while((result2 = img_reg1.exec(g_split[0])) !== null && net < 1000) {
-			if (result2[1].replace("'", "").replace('"',"").trim().length > 0 &&
-			   result2[2].replace("[","").replace("]","").replace("'","").replace('"',"").trim().length > 0) {
-				// Image and Caption are not empty
-				img_list.push({'img':result2[1], 'caption':result2[2]});
+		if (g_props != null) {
+			var g_split = tmp_gens[i].split(g_props[0]);
+			if (g_props[1].includes("|")) {
+				g_props[1] = g_props[1].split("|")[1].trim();
 			}
-			net++;
-		} net = 0;
-		var img_reg2 = /\[\[Image\:([^\|]+)\|[^\n]+\|([^\n]+)\]\]\n/g
-		while((result2 = img_reg2.exec(g_split[0])) !== null && net < 1000) {
-			img_list.push({'img':result2[1], 'caption':result2[2]});
-			net++;
-		}
 
-		// Compare to WSC
-		if (gen_list[g_props[1]] === undefined) {
-			// Not in WSC
-			errors.push('"' + g_props[1] + '" is not listed in the WSC');
-		} else {
-			gen_list[g_props[1]]['img'] = img_list;
-			gen_list[g_props[1]]['subfamily'] = g_props[3].replace("-", "").trim();
+			// Images
+			var img_list = [];
+			var img_reg1 = /image\d*\s*\=\s*([^\n]+)\n\|\scaption\d*\s*\=\s*([^\n\}]+)[\n\}]/g;
+			net = 0;
+			while((result2 = img_reg1.exec(g_split[0])) !== null && net < 1000) {
+				if (result2[1].replace("'", "").replace('"',"").trim().length > 0 &&
+				   result2[2].replace("[","").replace("]","").replace("'","").replace('"',"").trim().length > 0) {
+					// Image and Caption are not empty
+					img_list.push({'img':result2[1], 'caption':result2[2]});
+				}
+				net++;
+			} net = 0;
+			var img_reg2 = /\[\[Image\:([^\|]+)\|[^\n]+\|([^\n]+)\]\]\n/g
+			while((result2 = img_reg2.exec(g_split[0])) !== null && net < 1000) {
+				img_list.push({'img':result2[1], 'caption':result2[2]});
+				net++;
+			}
+
+			// Compare to WSC
+			if (gen_list[g_props[1]] === undefined) {
+				// Not in WSC
+				errors.push('"' + g_props[1] + '" is not listed in the WSC');
+			} else {
+				gen_list[g_props[1]]['img'] = img_list;
+				gen_list[g_props[1]]['subfamily'] = g_props[3].replace("-", "").trim();
+			}
 		}
 	}
 
@@ -227,10 +231,8 @@ function compute() {
 
 		var index1 = 0;
 		var alpha = "abcdefghijklmnopqrstuvwxyz";
-		var total = 0;
 		for (var i = 0; i < atoz.length; i++) {
-			total += atoz[i];
-			if (total >= 10) {
+			if (atoz[i] > 0) {
 				if (index1 != i) {
 					new_toc += "| " +  alpha[index1] + "=[[#" + alpha[index1].toUpperCase() +
 						"-" + alpha[i].toUpperCase() + "|" + alpha[index1].toUpperCase() +
@@ -243,7 +245,6 @@ function compute() {
 					gen_titles[index1] = alpha[index1].toUpperCase();
 				}
 				index1 = i + 1;
-				total = 0;
 			}
 		}
 		result = result.replace("{{TOC right}}", new_toc + "}}");
@@ -251,6 +252,7 @@ function compute() {
 
 	// Create genus and species part of list
 	var cur_index = -1;
+	var full_fossil_ref = true;
 	for(var x = 0; x < a_list.length; x++) {
 		var name = a_list[x];
 		var genus = gen_list[name];
@@ -279,8 +281,15 @@ function compute() {
 		}
 
 		// Species
-		result += "''[[" + genus['link'] + "]]'' <small>" + genus['auth'] + "</small>" +
-			((genus['subfamily'].length > 0) ? (" - " + genus['subfamily']) : "") + "\n";
+		result += ((genus['extinct']) ? "† " : "") + "''[[" + genus['link'] + "]]'' <small>" + genus['auth'] + "</small>";
+		if (genus['extinct']) {
+			result += (full_fossil_ref ? ("<ref name=fossil>{{cite web| last1=Behrensmeyer| first1=A. K.| first2=A.| last2=Turner| year=2013| " +
+				"title=Taxonomic occurrences of Suidae recorded in the Paleobiology Database| " + "accessdate=" + today.getFullYear() + "-" + 
+			 	((today.getMonth() < 9) ? ("0" + (today.getMonth() + 1)) : (today.getMonth() + 1)) + "-" + day +
+			 	"| publisher=Fossilworks| url=http://fossilworks.org}}</ref>") : "<ref name=fossil />");
+			}
+			result += ((genus['subfamily'].length > 0) ? (" - " + genus['subfamily']) : "") + "\n";
+			if (genus['extinct']) { full_fossil_ref = false; }
 		for (var k = 0; k < gen_list[name]['species'].length; k++) {
 			if (gen_list[name]['species'][k]['name'].split(" ").length == 3) {
 				// Subspecies
@@ -308,7 +317,6 @@ function compute() {
 		"}}\n\n[[Category:Lists of spider species by family|" + fam[1] + "]]\n[[Category:" + fam[1] + "| ]]";
 	$('#ans_txt').val(result);
 	
-	//console.log(errors);
-
+	if (errors.length > 0) { console.log(errors); }
 }
 </script>
