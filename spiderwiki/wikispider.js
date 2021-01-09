@@ -5,7 +5,7 @@ var gens = get_all_gens();
 function get_fam_by_id(xid = -1) {
     var id = parseInt(xid);
     for(var i = 0; i < fams.length; i++) {
-        if (fams[i][0] == id) { console.log(fams[i]);return fams[i]; }
+        //if (fams[i][0] == id) { console.log(fams[i]);return fams[i]; }
     }
     return null;
 }
