@@ -56,6 +56,9 @@ function clear_input (type = -1) {
 
 function new_id(id = -1, next_fam = true) {
 	if (id == -1) { id = $("#fam_id").val(); }
+	if (!next_fam) {
+		for (var i = 0; i < 4; i++) { clear_input(i); }
+	}
 	var fam = get_fam_by_id(next_fam ? get_next_fam(parseInt(id)) : parseInt(id));
 	if (fam !== null) {
 		$("#fam_id").val(fam[0]);
@@ -81,7 +84,7 @@ function compute() {
 	new_id($("#fam_id").val(), false);
 
 	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
-	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[4].replace("_"," ") + "}}\n" +
+	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[4].replaceAll("_"," ") + "}}\n" +
 		"This page lists all described [[species]] of the spider family '''" + fam[1] +
 		"''' accepted by the [[World Spider Catalog]] {{as of|" + ((month == 12) ? (today.getFullYear() - 1) : today.getFullYear()) +
 	    	"|" + month + "|lc=y}}:<ref name=NMBE>{{cite web| title=";
@@ -188,8 +191,8 @@ function compute() {
 			var img_reg1 = /image\d*\s*\=\s*([^\n]+)\n\|\scaption\d*\s*\=\s*([^\n\}]+)[\n\}]/g;
 			net = 0;
 			while((result2 = img_reg1.exec(g_split[0])) !== null && net < 1000) {
-				if (result2[1].replace("'", "").replace('"',"").trim().length > 0 &&
-				   result2[2].replace("[","").replace("]","").replace("'","").replace('"',"").trim().length > 0) {
+				if (result2[1].replaceAll("'", "").replaceAll('"',"").trim().length > 0 &&
+				   result2[2].replaceAll("[","").replaceAll("]","").replaceAll("'","").replaceAll('"',"").trim().length > 0) {
 					// Image and Caption are not empty
 					img_list.push({'img':result2[1], 'caption':result2[2]});
 				}
@@ -207,7 +210,7 @@ function compute() {
 				errors.push('"' + g_props[1] + '" is not listed in the WSC');
 			} else {
 				gen_list[g_props[1]]['img'] = img_list;
-				gen_list[g_props[1]]['subfamily'] = g_props[3].replace("-", "").trim();
+				gen_list[g_props[1]]['subfamily'] = g_props[3].replaceAll("-", "").trim();
 			}
 		}
 	}
