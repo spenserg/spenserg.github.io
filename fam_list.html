@@ -137,14 +137,16 @@ function compute() {
 					// Genus
 					var genreg = /G\.\s([^\s]+)\s([^\d]+)\s(\d{4})hide/g;
 					var g_props = genreg.exec(fos_list[i]);
-					cur_genus = g_props[1].trim().substring(1);
+					
+					// Extinct cross mark will be missing if there are still species alive in genus
+					cur_genus = g_props[1].trim().substring((("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(g_props[1].trim().substring(0,1))) ? 0 : 1));
 					if (gen_list[cur_genus] === undefined) {
 						// Not in WSC
 						gen_list[cur_genus] = {'auth':(g_props[2] + ", " + g_props[3]), 'id':null, 'img': [], 'link':cur_genus,
 								       'name':cur_genus, species:[], subfamily:cur_subfamily, 'extinct':true};
 					} else {
 						// In WSC
-						gen_list[cur_genus]['extinct'] = true;
+						gen_list[cur_genus]['extinct'] = false;
 					}
 				} else if (tmp_char.localeCompare("†") == 0) {
 					// Species
@@ -221,7 +223,7 @@ function compute() {
 		a_list.push(name);
 	}
 	a_list.sort();
-	
+
 	// Compact Table of Contents
 	var new_toc = "{{Compact ToC| right=yes| refs=yes";
 	var gen_titles = new Array(26).fill("");
@@ -256,6 +258,7 @@ function compute() {
 	// Create genus and species part of list
 	var cur_index = -1;
 	var full_fossil_ref = true;
+
 	for(var x = 0; x < a_list.length; x++) {
 		var name = a_list[x];
 		var genus = gen_list[name];
@@ -305,10 +308,11 @@ function compute() {
 					gn_split[0].charAt(0).toUpperCase() + ". " +
 					gn_split[1].charAt(0).toLowerCase() + ". " + gn_split[2].toLowerCase() + "''";
 			} else {
-				result += "* " + ((gen_list[name]['species'][k]['extinct']) ? "† " : "") +
-					"''[[" + gen_list[name]['species'][k]['name'] + "|" +
-					gen_list[name]['species'][k]['name'].split(" ")[0].charAt(0).toUpperCase() +
-					". " + gen_list[name]['species'][k]['name'].split(" ")[1] + "]]''";
+				result += "* " + ((gen_list[name]['species'][k]['extinct']) ? "† ''" : "''[[");
+				if (!gen_list[name]['species'][k]['extinct']) { result +=gen_list[name]['species'][k]['name'] + "|"; }
+				result += gen_list[name]['species'][k]['name'].split(" ")[0].charAt(0).toUpperCase() +
+					". " + gen_list[name]['species'][k]['name'].split(" ")[1] +
+					((gen_list[name]['species'][k]['extinct']) ? "" : "]]") + "''";
 			}
 			result += " <small>" + gen_list[name]['species'][k]['auth'] + "</small> " +
 				(gen_list[name]['species'][k]['type'] ? "([[Type species|type]]) " : "") +
