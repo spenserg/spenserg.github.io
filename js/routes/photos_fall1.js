@@ -44,7 +44,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	if (flags['old_mus_box'] == 0) {
 		// Music Box Dig
 		a.push({'desc':"Equip hoe", 'iid':get_npc_id("musbox"), 'red':(is_sunny == 0 || is_festival || (aff[maria_id] > 150 && aff[ann_id] > 200))});
-		a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'sel':(!["WED", "SAT", "SUN"].includes(dow) && is_sunny == 1 && !is_festival(d) && (aff[maria_id] < 150 || aff[ann_id] < 200))});
+		a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'sel':(d != 71 && !["WED", "SAT", "SUN"].includes(dow) && is_sunny == 1 && !is_festival(d) && (aff[maria_id] < 150 || aff[ann_id] < 200))});
 		if (flags['berry_farm'] == 0) {
 			a.push({'desc':"Dig a Berry", 'val':1, 'cid':'f_berry_farm', 'sr':true, 'sel':false});
 		}
@@ -199,13 +199,13 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					if (aff[maria_id] > 150) {
 						a.push({'desc':"NO MUSBOX FOR MARIA", 'iid':maria_id, 'red':true});
 					}
-					a.push({'desc':"Talk (MTN / CHUR)", 'cid':maria_id, 'val':1, 't2':"MusBox", 'sel':false, 'red':(aff[maria_id] == (_DREAM_EVENT_MIN - 1))});
+					a.push({'desc':"Talk (MTN / CHUR)", 'cid':maria_id, 'val':1, 't2':"MusBox", 'sel':false, 'red':(aff[maria_id] >= (_DREAM_EVENT_MIN - 3))});
 					if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
 						a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
 								'sel':false, 't2':"Talk (MTN / CHUR)"
 						});
 					}
-					if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - 2)) {
+					if (aff[maria_id] < (_DREAM_EVENT_MIN - 3)) {
 						a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':false});
 					}
 				}
@@ -389,7 +389,7 @@ function ranch_stuff_fall(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1
 		var cliff_id = get_npc_id('cliff');
 		var maria_id = get_npc_id('maria');
 
-		if (dow == "SUN" && is_sunny == 0 && aff[ann_id] >= _SICK_EVENT_MIN && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN) {
+		if (dow == "SUN" && d != 63 && is_sunny == 0 && aff[ann_id] >= _SICK_EVENT_MIN && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN) {
 			// ANN SICK EVENT
 			tmp_act.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1]});
 		} else if (aff[ann_id] < _PHOTO_MIN) {
