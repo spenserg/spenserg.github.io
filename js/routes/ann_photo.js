@@ -45,7 +45,9 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 	var a = [];
 	var ann_id = get_npc_id("ann");
 	var rick_id = get_npc_id("rick");
+	var mayor_id = get_npc_id("mayor");
 	var dow = get_day_of_week(d, true);
+	var farm_visitor = [38, 47, 53, 65].includes(d);
 
 	var ann_aff_total = aff[ann_id];
 	var total_g_needed = _PRICE_SEED_CORN; // + _PRICE_CAKE
@@ -64,6 +66,10 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 		} else if (d == 90) {
 			a.push({'desc':"RESET IF NOT SNOWY TOMORROW", 'imp':true});
 		}
+	}
+
+	if (farm_visitor) {
+		a.push({'desc':"Visitor on Farm", 'iid':mayor_id});	
 	}
 
 	if (flags['photo_ann'] == 1) {
@@ -92,6 +98,7 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 			if (aff[rick_id] < 4) { a.push({'desc':"Meet ", 'cid':rick_id, 'val':4, 't0':"Talk "}); }
 			a.push({'desc':"Talk ", 'cid':rick_id, 'val':3, 't3':"Talk ", 'sr':(aff[rick_id] < 4)});
 			a.push({'desc':"Gift ", 'cid':rick_id, 'val':3, 'sr':true,  'sel':true});
+			if (aff[rick_id] >= 30) { a.push({'desc':"No Gift Required", 'sr':true}); }
 
 			// ANN
 			if (aff[ann_id] == 0) { a.push({'desc':"Meet", 'cid':ann_id, 'val':4}); }
@@ -163,11 +170,15 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 			// RICK
 			if (is_sunny == 1) {
 				if (dow != "SAT" && flags['cutscene_rick'] == 0 && aff[rick_id] >= _CUTSCENE_RICK_ANN_MIN) {
-					a.push({'desc':"ENTER EXIT RICKS SHOP TO SKIP CUTSCENE", 'imp':true, 'iid':rick_id, 'cid':'f_cutscene_rick', 'val':1});
+					a.push({'desc':"ENTER EXIT RICKS SHOP TO SKIP CUTSCENE", 'imp':true, 'iid':rick_id, 'cid':'f_cutscene_rick', 'val':1, 'sel':([4, 25, 30].includes(d))});
+				}
+				if (farm_visitor) {
+					a.push({'desc':"Dig Box Before Talking", 'imp':true});
 				}
 				a.push({'desc':"Talk ", 'cid':rick_id, 'val':3, 'sel':([4, 25, 30].includes(d))});
 				a.push({'desc':"MusBox Fix", 'cid':['f_new_mus_box', 'f_old_mus_box'], 'val':[1, -1], 'sr':true, 'sel':([4, 25, 30].includes(d) && aff[rick_id] >= _RICK_FIX_MIN - 3)});
 				a.push({'desc':"Gift ", 'cid':rick_id, 'val':3, 'sr':true,  'sel':([4, 25, 30].includes(d) && aff[rick_id] < _RICK_FIX_MIN - 3)});
+				if (aff[rick_id] >= 30) { a.push({'desc':"No Gift Required", 'sr':true}); }
 			}
 		}
 	} else if (d > 31 && is_sunny == 1 && ["MON", "TUES", "THURS", "FRI", "SAT"].includes(dow) && !is_festival(d)) { // || (d == 31 && g < (total_g_needed))) {
@@ -211,7 +222,12 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 		if (flags['sick_ann'] == 1 && d != 31) {
 			// Rick first after sick event
 			if (dow != "SAT" && flags['cutscene_rick'] == 0 && aff[rick_id] >= _CUTSCENE_RICK_ANN_MIN) {
-				a.push({'desc':"ENTER EXIT RICKS SHOP TO SKIP CUTSCENE", 'imp':true, 'iid':rick_id, 'cid':'f_cutscene_rick', 'val':1});
+				a.push({'desc':"ENTER EXIT RICKS SHOP TO SKIP CUTSCENE", 'imp':true, 'iid':rick_id, 'cid':'f_cutscene_rick', 'val':1,
+				       	'sel':(d == 32 || (!["THURS", "SAT"].includes(dow) && done_with_rick == 0))
+				});
+			}
+			if (farm_visitor) {
+				a.push({'desc':"Dig Box Before Talking", 'imp':true});
 			}
 			a.push({'desc':"Talk ", 'cid':rick_id, 'val':3, 'sel':(d == 32 || (!["THURS", "SAT"].includes(dow) && done_with_rick == 0)), 'red':(dow == "SAT" || done_with_rick == 1)});
 			a.push({'desc':"MusBox Fix", 'cid':['f_new_mus_box', 'f_old_mus_box'], 'val':[1, -1], 'sr':true, 'sel':(!["THURS", "SAT"].includes(dow) && (aff[rick_id] >= (_RICK_FIX_MIN - 3)) && done_with_rick == 0)});
@@ -230,13 +246,15 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 /*
 			// Anns Birthday
 			// OBSOLETE [kept for reference]
+			// Birthday aff bonus only applies during very specific affections
 			if (d == 44) {
 				a.push({'desc':"Ann's BIRTHDAY", 'imp':true, 'iid':ann_id});
 				if (flags['cake_for_ann'] == 1 || g >= _PRICE_CAKE) {
 					a.push({'desc':"CAKE for Ann Today", 'sr':true});
 				}
 			}
-*/
+*/			if (d == 44) { a.push({'desc':"Ann's BIRTHDAY", 'imp':true, 'iid':ann_id}); }
+
 			//if (aff[ann_id] == 12) { a.push({'desc':"Meet", 'cid':ann_id, 'val':4}); }
 			a.push({'desc':("Talk (" + ((dow == "THURS") ? "MTNS / RICK SHOP)" : "Ranch)")),
 					't2':"Musbox", 'cid':ann_id, 'val':1, 'sel':(aff[ann_id] < _PHOTO_MIN && (aff[rick_id] < (_RICK_FIX_MIN - 3)) && (d == 32 || !["SAT", "THURS"].includes(dow))), 'red':(d != 32 && ["SAT", "THURS"].includes(dow) && aff_left > 0)
@@ -298,11 +316,17 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 		if (flags['sick_ann'] == 0 && d != 31) {
 			// Rick second before sick event
 			if (dow != "SAT" && flags['cutscene_rick'] == 0 && aff[rick_id] >= _CUTSCENE_RICK_ANN_MIN) {
-				a.push({'desc':"ENTER EXIT RICKS SHOP TO SKIP CUTSCENE", 'imp':true, 'iid':rick_id, 'cid':'f_cutscene_rick', 'val':1});
+				a.push({'desc':"ENTER/EXIT RICKS SHOP TO SKIP CUTSCENE", 'imp':true, 'iid':rick_id, 'cid':'f_cutscene_rick', 'val':1,
+				       'sel':((d == 32 || !["THURS", "SAT"].includes(dow)) && done_with_rick == 0)
+				});
+			}
+			if (farm_visitor) {
+				a.push({'desc':"Dig Box Before Talking", 'imp':true});
 			}
 			a.push({'desc':"Talk ", 'cid':rick_id, 'val':3, 'sel':((d == 32 || !["THURS", "SAT"].includes(dow)) && done_with_rick == 0), 'red':(dow == "SAT" || done_with_rick == 1)});
 			a.push({'desc':"MusBox Fix", 'cid':['f_new_mus_box', 'f_old_mus_box'], 'val':[1, -1], 'sr':true, 'sel':(!["THURS", "SAT"].includes(dow) && (aff[rick_id] >= (_RICK_FIX_MIN - 3)) && done_with_rick == 0)});
 			a.push({'desc':"Gift ", 'cid':rick_id, 'val':3, 'sr':true,  'sel':(((d == 32 || !["THURS", "SAT"].includes(dow)) && (aff[rick_id] < (_RICK_FIX_MIN - 3))) && done_with_rick == 0)});
+			if (aff[rick_id] >= 30) { a.push({'desc':"No Gift Required", 'sr':true}); }
 		}
 
 		// Corn
@@ -311,6 +335,9 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Plant Corn Seeds", 'val':1, 'cid':'f_potato_planted', 'sr':true});
 			a.push({'desc':"Equip Watering Can"});
 			a.push({'desc':"Water Corn", 'val':1, 'cid':'f_corn_waters', 'sel':false, 'sr':true});
+			if (vars['corn_waters'] < _CORN_GROW_DAYS) {
+				a.push({'desc':("(" + (_CORN_GROW_DAYS - vars['corn_waters']) + " Left)"), 'sr':true});
+			}
 		}
 	} else if (flags['sick_ann'] == 0 && is_sunny == 0 && aff[ann_id] >= _SICK_EVENT_MIN && dow == "SUN" && !is_festival(d)) {
 		// Sick Event
@@ -337,6 +364,9 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Water Corn", 'val':1, 'cid':'v_corn_waters', 'sr':true,
 				'sel':((vars['corn_waters'] < _CORN_GROW_DAYS) || (vars['corn_waters'] < (_CORN_GROW_DAYS + 5) && !["WED", "THURS", "SAT", "SUN"].includes(dow)))
 		});
+		if (vars['corn_waters'] < _CORN_GROW_DAYS) {
+			a.push({'desc':("(" + (_CORN_GROW_DAYS - vars['corn_waters']) + " Left)"), 'sr':true});
+		}
 	}
 	
 	a.push({'desc':("Aff Left: " + aff_left), 'iid':ann_id, 'dev':true});
