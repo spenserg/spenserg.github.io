@@ -56,8 +56,6 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 					((d < 73) ? 12 : 0) - ((d < 24) ? 12 : 0);
 	aff_left = ((aff_left < 0) ? 0 : aff_left);
 
-	//console.log("AFF LEFT: " + aff_left);
-
 	// Save scum sick event for Winter 1 if no sick event earlier
 	if (flags['sick_ann'] == 0) {
 		if (d == 89) {
@@ -66,6 +64,12 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 		} else if (d == 90) {
 			a.push({'desc':"RESET IF NOT SNOWY TOMORROW", 'imp':true});
 		}
+	}
+
+	// Dont save before Flower Fest in case Ann is selected
+	if (d == 22) {
+		dontsave = true;
+		a.push({'desc':"DONT SAVE TONIGHT", 'imp':true});
 	}
 
 	if (farm_visitor) {
@@ -88,6 +92,9 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 		} else {
 			a.push({'desc':"Start Timer on House-Farm loading screen", 'imp':true});
 			a.push({'desc':"Equip Watering Can, Fill Watering Can", 'imp':true});
+			if (flags['treasure_map'] == 0) {
+				a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1, 'sr':true});
+			}
 			a.push({'desc':"forage to goddess pond"});
 			a.push({'desc':"Enter Carp Screen 54 seconds after leaving house [9 AM]"});
 
@@ -123,7 +130,7 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 	} else if (d < 31) {
 		// Spring
 		if (dow == "THURS" && is_sunny == 1) {
-			a.push({'desc':"Start Timer on House-Farm loading screen", 'imp':true});
+			a.push({'desc':"Start Timer on House-Farm loading screen", 'imp':([4, 25].includes(d))});
 		}
 		if (is_sunny == 1 && d < 25 && ((_POTATO_GROW_DAYS - vars['potato_waters']) >= (25 - d)) && !(((_POTATO_GROW_DAYS - vars['potato_waters']) == (30 - d)))) {
 			a.push({'desc':"Water Top Middle Potato", 'imp':true});
@@ -131,17 +138,21 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 		if ((d < 30 && ((_POTATO_GROW_DAYS - vars['potato_waters']) == (30 - d))) || (dow == "THURS" && is_sunny == 1)) {
 			// Not enough rainy days left; must water potatoes OR sunny Thursday
 			a.push({'desc':"Equip Watering Can", 'imp':((_POTATO_GROW_DAYS - vars['potato_waters']) == (30 - d)), 'sel':((_POTATO_GROW_DAYS - vars['potato_waters']) == (30 - d))});
-			a.push({'desc':"Water Potatoes", 'cid':'v_potato_waters', 'val':1, 'sr':true, 'sel':([4, 25, 30].includes(d))});
+			a.push({'desc':"Water Potatoes", 'cid':'v_potato_waters', 'val':1, 'sr':true, 'sel':([4, 25, 30].includes(d) || ((_POTATO_GROW_DAYS - vars['potato_waters']) == (30 - d)))});
 			if (flags['treasure_map'] == 0 && d != 23) {
-				a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1, 'iid':get_npc_id("musbox"), 'sel':([4, 25, 30].includes(d))});
+				a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1});
+				a.push({'desc':"Fill Watering Can", 'sr':true});
 			}
-			a.push({'desc':"Fill Watering Can", 'sr':true});
 		} else if (d == 30) {
 			if (_POTATO_GROW_DAYS > vars['potato_waters']) {
 				a.push({'desc':"RESET IF NO POTATOES", 'red':true});
 			}
 			a.push({'desc':"Pocket 8 Potatoes", 'cid':['v_potatoes', 'f_potato_planted'], 'val':[8, (-1 * flags['potato_planted'])], 'imp':true});
 			a.push({'desc':"Sell 1 Potato", 'cid':'v_gold', 'val':80, 'sr':true, 'sel':false});
+			if (g < _PRICE_SEED_CORN) {
+				a.push({'desc':"Need " + (_PRICE_SEED_CORN - g) + "G more for Corn", 'red':true});
+			}
+			
 			if (d == 30 && is_sunny == 0) {
 				// TODO
 			} else {
@@ -153,13 +164,15 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 		if ((dow == "THURS" && is_sunny == 1) || (d == 30 && is_sunny == 0)) {
 			a.push({'desc':("Enter " + ((d == 30) ? "Barn" : "Carp Screen") + " 45 seconds after leaving house [9 AM]")});
 
+			if (d == 25 && is_sunny == 1) {
+				a.push({'desc':"POTATO to Ann", 'imp':true});
+			}
 			// ANN
 			if (aff[ann_id] == ((d > 23) ? 12 : 0)) { a.push({'desc':"Meet", 'cid':ann_id, 'val':4}); }
-			if (is_sunny == 0) {
-				a.push({'desc':"Talk (Barn)", 'sr':(aff[ann_id] == 0),  't2':"Musbox", 'cid':ann_id, 'val':1, 'sel':false});
-			} else {
-				a.push({'desc':"Talk (MTNS / RICK SHOP)", 'sr':(aff[ann_id] == 0),  't2':"Musbox", 'cid':ann_id, 'val':1, 'sel':([4, 25, 30].includes(d))});
-			}
+			a.push({'desc':((is_sunny == 0) ? "Talk (Barn)" : "Talk (MTNS / RICK SHOP)"),
+				'sr':(aff[ann_id] == 0),  't2':"Musbox", 'cid':ann_id, 'val':1,
+				'sel':(is_sunny && [4, 25].includes(d))
+			});
 			a.push({'desc':"Musbox", 'cid':[ann_id, 'f_new_musbox'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'], 'sel':false});
 			a.push({'desc':"Gift", 'cid':ann_id, 'val':1, 't2':"Potato", 'sr':true, 'sel':(d < 5)});
 			a.push({'desc':"Potato", 'sr':true, 'sel':([25, 30].includes(d)), 't2':"Gift", 'sr':true,
@@ -299,9 +312,9 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 		}
 */
 		// Corn
-		if (flags['potato_planted'] == 0 && g >= _PRICE_SEED_CORN) {
+		if (flags['potato_planted'] == 0) {
 			// Using "potato_planted" flag for both Corn and Potatoes
-			a.push({'desc':"Buy Corn", 'imp':true, 'iid':get_npc_id('lillia'), 'cid':'v_gold', 'val':(-1 * _PRICE_SEED_CORN)});
+			a.push({'desc':"Buy Corn", 'imp':true, 'iid':get_npc_id('lillia'), 'cid':'v_gold', 'val':(-1 * _PRICE_SEED_CORN), 'sel':(g >= _PRICE_SEED_CORN)});
 		}
 
 /*
@@ -334,7 +347,7 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Equip Corn Seeds"});
 			a.push({'desc':"Plant Corn Seeds", 'val':1, 'cid':'f_potato_planted', 'sr':true});
 			a.push({'desc':"Equip Watering Can"});
-			a.push({'desc':"Water Corn", 'val':1, 'cid':'f_corn_waters', 'sel':false, 'sr':true});
+			a.push({'desc':"Water Corn", 'val':1, 'cid':'f_corn_waters', 'sr':true});
 			if (vars['corn_waters'] < _CORN_GROW_DAYS) {
 				a.push({'desc':("(" + (_CORN_GROW_DAYS - vars['corn_waters']) + " Left)"), 'sr':true});
 			}
