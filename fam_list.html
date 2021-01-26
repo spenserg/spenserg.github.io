@@ -54,9 +54,9 @@ function clear_input (type = -1) {
 	}
 }
 
-function new_id(id = -1, next_fam = true) {
+function new_id(id = -1, next_fam = true, clear_fields = true) {
 	if (id == -1) { id = $("#fam_id").val(); }
-	if (!next_fam) {
+	if (!next_fam && clear_fields) {
 		for (var i = 0; i < 4; i++) { clear_input(i); }
 	}
 	var fam = get_fam_by_id(next_fam ? get_next_fam(parseInt(id)) : parseInt(id));
@@ -81,7 +81,7 @@ function compute() {
 		var fidreg = /\/familydetail\/(\d+)\"/g;
 		$("#fam_id").val(fidreg.exec(wsc_html)[1]);
 	}
-	new_id($("#fam_id").val(), false);
+	new_id($("#fam_id").val(), false, false);
 
 	var fam = get_fam_by_id(parseInt($("#fam_id").val()));
 	var result = "{{short description|Wikipedia list article}}\n{{TOC right}}\n{{main|" + fam[4].replaceAll("_"," ") + "}}\n" +
@@ -183,10 +183,8 @@ function compute() {
 		var genreg = /\'\'\[\[([^\]]+)\]\]\'\'\s*\<small\>([^\<]+)\<\/small\>([^\n]*)\n/g;
 		var g_props = genreg.exec(tmp_gens[i]);
 		if (g_props != null) {
+			if (g_props[1].includes("|")) { g_props[1] = g_props[1].split("|")[1].trim(); }
 			var g_split = tmp_gens[i].split(g_props[0]);
-			if (g_props[1].includes("|")) {
-				g_props[1] = g_props[1].split("|")[1].trim();
-			}
 
 			// Images
 			var img_list = [];
@@ -200,9 +198,14 @@ function compute() {
 				}
 				net++;
 			} net = 0;
-			var img_reg2 = /\[\[Image\:([^\|]+)\|[^\n]+\|([^\n]+)\]\]\n/g
+			var img_reg2 = /\[\[File\:([^\|]+)\|[\s\S]+\|([^\|]+)\]\]\n/g
 			while((result2 = img_reg2.exec(g_split[0])) !== null && net < 1000) {
-				img_list.push({'img':result2[1], 'caption':result2[2]});
+				img_list.push({'img':result2[1].trim(), 'caption':result2[2].trim()});
+				net++;
+			}
+			var img_reg3 = /\[\[Image\:([^\|]+)\|[\s\S]+\|([^\|]+)\]\]\n/g
+			while((result2 = img_reg3.exec(g_split[0])) !== null && net < 1000) {
+				img_list.push({'img':result2[1].trim(), 'caption':result2[2].trim()});
 				net++;
 			}
 
