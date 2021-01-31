@@ -64,7 +64,7 @@ function compute (type = -1) {
 	var list_ans = [];
 	ans = "";
 	if (type == 1) {
-		reg = /\n[A-Z]{3}([A-Z]{3})\n/g;
+		reg = /([^\n]+)\n[A-Z]+\n[A-Z]{3}([A-Z]{3})\nRDT/g;
 		ans = $("#inbound").val();
 	} else if (type == 0) {
 		ans = $("#outbound").val();
@@ -80,6 +80,14 @@ function compute (type = -1) {
 	while((result2 = reg.exec(ans)) !== null && net < 1000) {
 		if (type == 1) {
 			// Inbound
+			var tmp_dest = result2[2];
+			if (result2[1].length > 12) {
+				if (result2[1].substring(8,11).localeCompare(tmp_dest) != 0) {
+					tmp_dest = result2[1].substring(8,11);
+					console.log("DEST: " + result2[2] + "| MAIL:" + tmp_dest);
+				}
+			}
+			result2[1] = tmp_dest;
     			if (!(result2[1] in list_ans)) {
 				list_ans[result2[1]] = 0;
 			}
@@ -154,7 +162,11 @@ function compute (type = -1) {
 		result += "BULK\t";
 		if (sortable.length < 3) {
 			sortable.forEach(function(item, index) {
-				result += item[0] + "\t" + item[1] + "\n \t";
+				if (sortable.length == 1) {
+					result += item[0] + "\t" + item[1] + "\t \tPURE " + item[0] + "\n";
+				} else {
+					result += item[0] + "\t" + item[1] + "\n \t";
+				}
 			});
 		} else {
 			for (var i = 0; i < Math.floor(sortable.length / 2); i++) {
