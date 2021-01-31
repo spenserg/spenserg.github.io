@@ -14,6 +14,7 @@ function get_fam_by_id(xid = -1) {
 
 function get_gen_by_id(id = -1) {
     id = parseInt(id);
+    var gens = get_all_gens();
     for(var i = 0; i < gens.length; i++) {
         if (gens[i][0] == id) { return gens[i]; }
     }
@@ -170,7 +171,7 @@ function get_all_fams() {
 
 function get_all_gens() {
   return [
-[3984, "Atypoides", "Atypoides", "Gertsch, 1940"]
+[3984, "Atypoides", "Atypoides", "Gertsch, 1940"],
 [1, "Actinopus", "Actinopus", "Perty, 1833"],
 [2, "Missulena", "Missulena", "Walckenaer, 1805"],
 [3, "Plesiolena", "Plesiolena", "Goloboff & Platnick, 1987"],
