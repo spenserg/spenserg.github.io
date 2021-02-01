@@ -14,7 +14,6 @@ function get_fam_by_id(xid = -1) {
 
 function get_gen_by_id(id = -1) {
     id = parseInt(id);
-    var gens = get_all_gens();
     for(var i = 0; i < gens.length; i++) {
         if (gens[i][0] == id) { return gens[i]; }
     }
