@@ -153,9 +153,6 @@ function compute (type = -1) {
 		$("#inbound").val((new_list.length > 0) ? "NEW FLIGHTS" : "");
 	} else if (type == 1) {
 		// Inbound
-        
-        console.log(list_reps);
-        
 		var total = 0;
 		var sortable = [];
 		for (var dest in list_ans) {
@@ -176,51 +173,50 @@ function compute (type = -1) {
 			for (var i = 0; i < Math.floor(sortable.length / 2); i++) {
 				result += sortable[i][0] + "\t" + sortable[i][1] + "\t" +
 				sortable[i + Math.ceil(sortable.length / 2)][0] + "\t" + sortable[i + Math.ceil(sortable.length / 2)][1] + "\n \t";
-            }
+            		}
 			if (sortable.length % 2 == 1) {
 				result += sortable[Math.floor(sortable.length / 2)][0] + "\t" + sortable[Math.floor(sortable.length / 2)][1];
 			}
 		}
 
-        // Alt values
-        if (list_reps.length > 0) {
-            sortable = [];
-            for (var i = 0; i < list_reps.length; i++) {
-                list_ans[list_reps[i][0]]--;
-                if (!(list_reps[i][1] in list_ans)) {
+        	// Alt values
+		if (list_reps.length > 0) {
+            	sortable = [];
+            	for (var i = 0; i < list_reps.length; i++) {
+			list_ans[list_reps[i][0]]--;
+                	if (!(list_reps[i][1] in list_ans)) {
     		   	    list_ans[list_reps[i][1]] = 0;
-			    }
-			    list_ans[list_reps[i][1]]++;
-            }
-            for (var dest in list_ans) {
-                if (list_ans[dest] > 0) {
-		    	    sortable.push([dest, list_ans[dest]]);
-                }
-	        }
-            sortable.sort(function(a, b) { return b[1] - a[1]; } );
-    	    result_alt += "BULK\t";
-		    if (sortable.length < 3) {
-			    sortable.forEach(function(item, index) {
-				    if (sortable.length == 1) {
-					    result_alt += item[0] + "\t" + item[1] + "\t \tPURE " + item[0] + "\n";
-				    } else {
-					    result_alt += item[0] + "\t" + item[1] + "\n \t";
-				    }
-			    });
-		    } else {
-			    for (var i = 0; i < Math.floor(sortable.length / 2); i++) {
-				    result_alt += sortable[i][0] + "\t" + sortable[i][1] + "\t" +
-				    sortable[i + Math.ceil(sortable.length / 2)][0] + "\t" + sortable[i + Math.ceil(sortable.length / 2)][1] + "\n \t";
+			}
+			list_ans[list_reps[i][1]]++;
             	}
-			    if (sortable.length % 2 == 1) {
-				    result_alt += sortable[Math.floor(sortable.length / 2)][0] + "\t" + sortable[Math.floor(sortable.length / 2)][1];
-			    }
-		    }
-            $('#rollover').val(result_alt.trim());
+            	for (var dest in list_ans) {
+                	if (list_ans[dest] > 0) {
+		    	    sortable.push([dest, list_ans[dest]]);
+                	}
+	        }
+            	sortable.sort(function(a, b) { return b[1] - a[1]; } );
+    	    	result_alt += "BULK\t";
+		if (sortable.length < 3) {
+			sortable.forEach(function(item, index) {
+				if (sortable.length == 1) {
+					result_alt += item[0] + "\t" + item[1] + "\t \tPURE " + item[0] + "\n";
+				} else {
+					result_alt += item[0] + "\t" + item[1] + "\n \t";
+				}
+			    });
+		    	} else {
+				for (var i = 0; i < Math.floor(sortable.length / 2); i++) {
+				result_alt += sortable[i][0] + "\t" + sortable[i][1] + "\t" +
+				    sortable[i + Math.ceil(sortable.length / 2)][0] + "\t" + sortable[i + Math.ceil(sortable.length / 2)][1] + "\n \t";
+            		}
+			if (sortable.length % 2 == 1) {
+				result_alt += sortable[Math.floor(sortable.length / 2)][0] + "\t" + sortable[Math.floor(sortable.length / 2)][1];
+			}
 		}
-
-		$("#total").html("TOTAL: " + total);
-    } else if (type == 2) {
+		}
+	$('#rollover').val(result_alt.trim());
+	$("#total").html("TOTAL: " + total);
+   	 } else if (type == 2) {
 		// Rollover
 		for (var destx in list_ans) {
 			for (var date in list_ans[destx]) {
