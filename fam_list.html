@@ -137,7 +137,7 @@ function compute() {
 					// Genus
 					var genreg = /G\.\s([^\s]+)\s([^\d]+)\s(\d{4})hide/g;
 					var g_props = genreg.exec(fos_list[i]);
-					
+
 					// Extinct cross mark will be missing if there are still species alive in genus
 					cur_genus = g_props[1].trim().substring((("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(g_props[1].trim().substring(0,1))) ? 0 : 1));
 					if (gen_list[cur_genus] === undefined) {
@@ -151,6 +151,9 @@ function compute() {
 				} else if (tmp_char.localeCompare("†") == 0) {
 					// Species
 					var specreg = /([^\s]+)\s([^\s]+)\s([^\n]+)\s(\d{4})/g;
+					if (fos_list[i].includes("(")) {
+						specreg = /([^\s]+)\s\([^\)]+\)\s*([^\s]+)\s([^\n]+)\s(\d{4})/g
+					}
 					var spec_props = specreg.exec(fos_list[i]);
 					var spec_name = spec_props[1].trim().substring(1) + " " + spec_props[2].trim();
 					var spec_in_list = false;
@@ -168,10 +171,12 @@ function compute() {
 						});
 					}
 				} else if (tmp_char.localeCompare("S") == 0) {
-					// Subfamily
-					var sfreg = /Subfm\.\s([^\s]+)\s([^\n]+)\s(\d{4})hide/g;
-					var g_props = sfreg.exec(fos_list[i]);
-					cur_subfamily = g_props[1].trim();
+					if (fos_list[i].includes("Subfm.")) {
+						// Subfamily
+						var sfreg = /Subfm\.\s([^\s]+)\s([^\n]+)\s(\d{4})hide/g;
+						var g_props = sfreg.exec(fos_list[i]);
+						cur_subfamily = g_props[1].trim();
+					}
 				}
 			}
 		}
@@ -296,9 +301,9 @@ function compute() {
 				"title=Taxonomic occurrences of Suidae recorded in the Paleobiology Database| " + "accessdate=" + today.getFullYear() + "-" + 
 			 	((today.getMonth() < 9) ? ("0" + (today.getMonth() + 1)) : (today.getMonth() + 1)) + "-" + day +
 			 	"| publisher=Fossilworks| url=http://fossilworks.org}}</ref>") : "<ref name=fossil />");
-			}
-			result += ((genus['subfamily'].length > 0) ? (" - " + genus['subfamily']) : "") + "\n";
-			if (genus['extinct']) { full_fossil_ref = false; }
+		}
+		result += ((genus['subfamily'].length > 0) ? (" - " + genus['subfamily']) : "") + "\n";
+		if (genus['extinct']) { full_fossil_ref = false; }
 		for (var k = 0; k < gen_list[name]['species'].length; k++) {
 			if (gen_list[name]['species'][k]['name'].split(" ").length == 3) {
 				// Subspecies
@@ -312,7 +317,9 @@ function compute() {
 					gn_split[1].charAt(0).toLowerCase() + ". " + gn_split[2].toLowerCase() + "''";
 			} else {
 				result += "* " + ((gen_list[name]['species'][k]['extinct']) ? "† ''" : "''[[");
-				if (!gen_list[name]['species'][k]['extinct']) { result +=gen_list[name]['species'][k]['name'] + "|"; }
+				if (!gen_list[name]['species'][k]['extinct']) {
+					result += ((gen_list[name]['species'].length == 1) ? name : gen_list[name]['species'][k]['name']) + "|";
+				}
 				result += gen_list[name]['species'][k]['name'].split(" ")[0].charAt(0).toUpperCase() +
 					". " + gen_list[name]['species'][k]['name'].split(" ")[1] +
 					((gen_list[name]['species'][k]['extinct']) ? "" : "]]") + "''";
