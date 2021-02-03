@@ -135,9 +135,12 @@ function compute() {
 			if (["†", "S", "G"].includes(tmp_char)) {
 				if (tmp_char.localeCompare("G") == 0) {
 					// Genus
-					var genreg = /G\.\s([^\s]+)\s([^\d]+)\s(\d{4})hide/g;
+					var genreg = /G\.\s([^\s]+)\s([^\d]+)\s(\d{4})/g;
 					var g_props = genreg.exec(fos_list[i]);
 
+					console.log(fos_list[i]);
+					console.log(g_props);
+					
 					// Extinct cross mark will be missing if there are still species alive in genus
 					cur_genus = g_props[1].trim().substring((("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(g_props[1].trim().substring(0,1))) ? 0 : 1));
 					if (gen_list[cur_genus] === undefined) {
