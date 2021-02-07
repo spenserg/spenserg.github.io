@@ -11,66 +11,94 @@
 </head>
 
 <body>
-  <label for="now_month">Today:</label>
-  <select name="now_month" id="now_month">
-    <option value="1">January</option>
-    <option value="2">February</option>
-    <option value="3">March</option>
-    <option value="4">April</option>
-    <option value="5">May</option>
-    <option value="6">June</option>
-    <option value="7">July</option>
-    <option value="8">August</option>
-    <option value="9">September</option>
-    <option value="10">October</option>
-    <option value="11">November</option>
-    <option value="12">December</option>
-  </select>&nbsp;&nbsp;
-  <input type="number" id="now_day" name="now_day" val="1" onchange="check_vals()" />,&nbsp;&nbsp;
-  Year <input type="number" id="now_year" name="now_year" val="1" onchange="check_vals()" /><br />
+	Time: <input id="time_left" value="" /><br/>
+	<label for="now_month">Today:</label>
+	<select name="now_month" id="now_month">
+		<option value="0">March</option>
+		<option value="1">April</option>
+		<option value="2">May</option>
+		<option value="3">June</option>
+		<option value="4">July</option>
+		<option value="5">August</option>
+		<option value="6">September</option>
+		<option value="7">October</option>
+	</select>&nbsp;&nbsp;
+	<input type="number" id="now_day" name="now_day" val="1" onchange="check_vals()" />,&nbsp;&nbsp;
+	Year <input type="number" id="now_year" name="now_year" val="1" onchange="check_vals()" /><br />
 
-  <label for="end_month">End:</label>
-  <select name="end_month" id="end_month">
-    <option value="1">January</option>
-    <option value="2">February</option>
-    <option value="3">March</option>
-    <option value="4">April</option>
-    <option value="5">May</option>
-    <option value="6">June</option>
-    <option value="7">July</option>
-    <option value="8">August</option>
-    <option value="9">September</option>
-    <option value="10" selected>October</option>
-    <option value="11">November</option>
-    <option value="12">December</option>
-  </select>&nbsp;&nbsp;
-  <input type="number" id="end_day" name="end_day" val="31" onchange="check_vals()" />,&nbsp;&nbsp;
-  Year <input type="number" id="now_year" name="now_year" val="3" onchange="check_vals()" /><br />
-  <button onclick="calc()">Go</button>
+	<label for="end_month">End:</label>
+	<select name="end_month" id="end_month">
+		<option value="0">March</option>
+		<option value="1">April</option>
+		<option value="2">May</option>
+		<option value="3">June</option>
+		<option value="4">July</option>
+		<option value="5">August</option>
+		<option value="6">September</option>
+		<option value="7">October</option selected>
+	</select>&nbsp;&nbsp;
+	Year <input type="number" id="end_year" name="end_year" val="3" onchange="check_vals()" /><br />
+	<button onclick="calc()">Go</button>
 </body>
 
 <script>
+	var m_days = [31, 30, 31, 30, 31, 31, 30, 31];
 /*
   $(function(){
   });
 */
+	function calc() {
+		var days = 0;
+		if (!check_vals()) {
+			for (var y = 0; y <= $("#end_year").val()); y++) {
+				if (y >= $("#now_year").val()) {
+					for (var m = 0; m < m_days.length; m++) {
+						if (y > $("#now_year").val() || m >= $("#now_month").val()) {
+							days += m_days[m];
+							if (y == $("#now_year").val() && m == $("#now_month").val()) {
+								days -= (m_days[m] - $("#now_day").val());
+							}
+						}
+					}
+				}
+			}
+		}
 
-  function check_vals() {
-    var errors = false;
-    $('input').each(function(index) {
-      if ($(this).id.includes('year')) {
-        // Year
-        if ($(this).value < 1) {
-          errors = true;
-        }
-      } else {
-        // Day
-        
-        
-      }
-      $(this).css("border", (errors ? "2px solid red" : "1px solid gray"));
-    });
-    return errors;
-  }
+		// Time Calc
+		var s_total = days * 13;
+		var h = 0;
+		var m = 0;
 
+		// Hour
+		h = Math.floor(s_total / 3600);
+		s_total -= h * 3600
+
+		// Minute + Second
+		h = Math.floor(s_total / 60);
+		s_total -= h * 60
+
+		$("#time_left").val(((h > 0) ? (h + ":") : "") + ((m > 0) ? (m + ":") : "") + s_total);
+	}
+
+	function check_vals() {
+		// TODO start time < end time
+		var errors = false;
+		var this_error = false;
+		$('input').each(function(index) {
+			this_error = false;
+			if ($(this).value < 1) {
+				errors = true;
+				this_error = true;
+			}
+			if ($(this).id.includes('day')) {
+				// Day
+				if ($(this).value > m_days[$("#now_month).val()]) {
+					errors = true;
+					this_error = true;
+				}
+			}
+			$(this).css("border", (this_error ? "2px solid red" : "1px solid gray"));
+		});
+		return errors;
+	}
 </script>
