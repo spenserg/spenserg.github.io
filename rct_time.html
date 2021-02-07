@@ -42,21 +42,44 @@
 </body>
 
 <script>
-	var m_days = [31, 30, 31, 30, 31, 31, 30, 31];
 /*
   $(function(){
   });
 */
+	function check_vals() {
+		var m_days = [31, 30, 31, 30, 31, 31, 30, 31];
+		// TODO start time < end time
+		var errors = false;
+		var this_error = false;
+		$('input').each(function(index) {
+			this_error = false;
+			if (!this.id.includes('time') && this.value < 1) {
+				errors = true;
+				this_error = true;
+			}
+			if (this.id.includes('day')) {
+				// Day
+				if (this.value > m_days[$("#now_month").val()]) {
+					errors = true;
+					this_error = true;
+				}
+			}
+			$(this).css("border", (this_error ? "2px solid red" : "1px solid gray"));
+		});
+		return errors;
+	}
+
 	function calc() {
+		var m_days = [31, 30, 31, 30, 31, 31, 30, 31];
 		var days = 0;
 		if (!check_vals()) {
-			for (var y = 0; y <= $("#end_year").val()); y++) {
+			for (var y = 0; y <= $("#end_year").val(); y++) {
 				if (y >= $("#now_year").val()) {
 					for (var m = 0; m < m_days.length; m++) {
 						if (y > $("#now_year").val() || m >= $("#now_month").val()) {
 							days += m_days[m];
 							if (y == $("#now_year").val() && m == $("#now_month").val()) {
-								days -= (m_days[m] - $("#now_day").val());
+								days -= $("#now_day").val();
 							}
 						}
 					}
@@ -65,40 +88,16 @@
 		}
 
 		// Time Calc
-		var s_total = days * 13;
-		var h = 0;
-		var m = 0;
+		var s_total = (days + 1) * 13;
 
 		// Hour
-		h = Math.floor(s_total / 3600);
-		s_total -= h * 3600
+		var h = Math.floor(s_total / 3600);
+		s_total -= (h * 3600);
 
 		// Minute + Second
-		h = Math.floor(s_total / 60);
-		s_total -= h * 60
+		var m = Math.floor(s_total / 60);
+		s_total -= m * 60
 
-		$("#time_left").val(((h > 0) ? (h + ":") : "") + ((m > 0) ? (m + ":") : "") + s_total);
-	}
-
-	function check_vals() {
-		// TODO start time < end time
-		var errors = false;
-		var this_error = false;
-		$('input').each(function(index) {
-			this_error = false;
-			if ($(this).value < 1) {
-				errors = true;
-				this_error = true;
-			}
-			if ($(this).id.includes('day')) {
-				// Day
-				if ($(this).value > m_days[$("#now_month).val()]) {
-					errors = true;
-					this_error = true;
-				}
-			}
-			$(this).css("border", (this_error ? "2px solid red" : "1px solid gray"));
-		});
-		return errors;
+		$("#time_left").val(((h > 0) ? (h + ":") : "") + ((m < 10) ? ("0" + m) : m) + ":" + ((s_total < 10) ? ("0" + s_total) : s_total));
 	}
 </script>
