@@ -1,0 +1,76 @@
+<head>
+	<title>RCT Time</title>
+	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<meta charset="UTF-8">
+
+	<link href="css/bootstrap.min.css" rel="stylesheet" >
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <label for="now_month">Today:</label>
+  <select name="now_month" id="now_month">
+    <option value="1">January</option>
+    <option value="2">February</option>
+    <option value="3">March</option>
+    <option value="4">April</option>
+    <option value="5">May</option>
+    <option value="6">June</option>
+    <option value="7">July</option>
+    <option value="8">August</option>
+    <option value="9">September</option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+  </select>&nbsp;&nbsp;
+  <input type="number" id="now_day" name="now_day" val="1" onchange="check_vals()" />,&nbsp;&nbsp;
+  Year <input type="number" id="now_year" name="now_year" val="1" onchange="check_vals()" /><br />
+
+  <label for="end_month">End:</label>
+  <select name="end_month" id="end_month">
+    <option value="1">January</option>
+    <option value="2">February</option>
+    <option value="3">March</option>
+    <option value="4">April</option>
+    <option value="5">May</option>
+    <option value="6">June</option>
+    <option value="7">July</option>
+    <option value="8">August</option>
+    <option value="9">September</option>
+    <option value="10" selected>October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+  </select>&nbsp;&nbsp;
+  <input type="number" id="end_day" name="end_day" val="31" onchange="check_vals()" />,&nbsp;&nbsp;
+  Year <input type="number" id="now_year" name="now_year" val="3" onchange="check_vals()" /><br />
+  <button onclick="calc()">Go</button>
+</body>
+
+<script>
+/*
+  $(function(){
+  });
+*/
+
+  function check_vals() {
+    var errors = false;
+    $('input').each(function(index) {
+      if ($(this).id.includes('year')) {
+        // Year
+        if ($(this).value < 1) {
+          errors = true;
+        }
+      } else {
+        // Day
+        
+        
+      }
+      $(this).css("border", (errors ? "2px solid red" : "1px solid gray"));
+    });
+    return errors;
+  }
+
+</script>
