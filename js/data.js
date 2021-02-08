@@ -144,7 +144,12 @@ var route_affs = [
 	['cow'], // 16 - Cow Photo
 	[], // 17 - Swim Fest Photo
 	['dog'], // 18 - Dog Race Photo
-	[] // 19 - Placeholder for Party Photo ONLY
+	[], // 19 - Placeholder for Party Photo ONLY
+	[], // 20 - Hot Springs Photo
+	[], // 21 - All Festivals
+	[], // 22 - Baby Photo
+	[], // 23 - 100%
+	['maria', 'elli', 'ann', 'sprite', 'bartender'] // 24 - All Girl Photos
 ];
 var skip_to_list = [
 	[3, 17, 64], // Photos (Karen) [OBSOLETE]
@@ -168,7 +173,10 @@ var skip_to_list = [
 	[3], // 18 - Dog Race Photo
 	[3], // 19 - Placeholder for Party Photo ONLY
 	[3], // 20 - Hot Springs Photo
-	[3] // 21 - All Festivals
+	[3], // 21 - All Festivals
+	[3], // 22 - Baby Photo
+	[3], // 23 - 100%
+	[3], // 24 - All Girl Photos
 ];
 
 var recipe_flags = [
