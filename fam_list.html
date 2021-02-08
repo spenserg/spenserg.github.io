@@ -138,9 +138,6 @@ function compute() {
 					var genreg = /G\.\s([^\s]+)\s([^\d]+)\s(\d{4})/g;
 					var g_props = genreg.exec(fos_list[i]);
 
-					console.log(fos_list[i]);
-					console.log(g_props);
-					
 					// Extinct cross mark will be missing if there are still species alive in genus
 					cur_genus = g_props[1].trim().substring((("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(g_props[1].trim().substring(0,1))) ? 0 : 1));
 					if (gen_list[cur_genus] === undefined) {
@@ -238,15 +235,21 @@ function compute() {
 	// Compact Table of Contents
 	var new_toc = "{{Compact ToC| right=yes| refs=yes";
 	var gen_titles = new Array(26).fill("");
+	var alpha = "abcdefghijklmnopqrstuvwxyz";
 	if (a_list.length > 10) {
 		// Compact ToC
 		var atoz = new Array(26).fill(0);
 		for (var i = 0; i < a_list.length; i++) {
 			atoz[a_list[i].toLowerCase().charCodeAt(0) - 97]++;
 		}
-
+		for (var i = 0; i < atoz.length; i++) {
+			if (atoz[i] == 0) {
+				new_toc += "| " + alpha[i] + "=";
+			}
+		}
+		
+/* kept for reference
 		var index1 = 0;
-		var alpha = "abcdefghijklmnopqrstuvwxyz";
 		for (var i = 0; i < atoz.length; i++) {
 			if (atoz[i] > 0) {
 				if (index1 != i) {
@@ -263,6 +266,7 @@ function compute() {
 				index1 = i + 1;
 			}
 		}
+*/
 		result = result.replace("{{TOC right}}", new_toc + "}}");
 	}
 
@@ -276,9 +280,9 @@ function compute() {
 		if (a_list.length > 10 && cur_index < (name.toLowerCase().charCodeAt(0) - 97)) {
 			// New Genus Letter
 			cur_index = name.toLowerCase().charCodeAt(0) - 97;
-			if (gen_titles[cur_index].length > 0) {
-				result += "==" + gen_titles[cur_index] + "==\n";
-			}
+			//if (gen_titles[cur_index].length > 0) {
+				result += "==" + alpha[cur_index].toUpperCase() + "==\n";
+			//}
 		}
 
 		result += "==" + ((a_list.length > 10) ? "=" : "") + ((genus['extinct']) ? "† " : "") + "''" + name +
@@ -336,7 +340,7 @@ function compute() {
 	result += "==References==\n{{Reflist}}\n\n{{Araneae}}\n\n{{DEFAULTSORT:" + fam[1] +
 		"}}\n\n[[Category:Lists of spider species by family|" + fam[1] + "]]\n[[Category:" + fam[1] + "| ]]";
 	$('#ans_txt').val(result);
-	
+
 	if (errors.length > 0) { console.log(errors); }
 }
 </script>
