@@ -302,7 +302,7 @@ function compute() {
 		}
 
 		// Species
-		result += ((genus['extinct']) ? "† " : "") + "''[[" + genus['link'] + "]]'' <small>" + genus['auth'] + "</small>";
+		result += ((genus['extinct']) ? "† " : "") + "''[[" + genus['link'].replaceAll("_"," ") + "]]'' <small>" + genus['auth'] + "</small>";
 		if (genus['extinct']) {
 			result += (full_fossil_ref ? ("<ref name=fossil>{{cite web| last1=Behrensmeyer| first1=A. K.| first2=A.| last2=Turner| year=2013| " +
 				"title=Taxonomic occurrences of Suidae recorded in the Paleobiology Database| " + "accessdate=" + today.getFullYear() + "-" + 
