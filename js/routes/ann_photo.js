@@ -48,6 +48,7 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 	var mayor_id = get_npc_id("mayor");
 	var dow = get_day_of_week(d, true);
 	var farm_visitor = [38, 47, 53, 65].includes(d);
+	var dont_save = false;
 
 	var ann_aff_total = aff[ann_id];
 	var total_g_needed = _PRICE_SEED_CORN; // + _PRICE_CAKE
@@ -59,7 +60,7 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 	// Save scum sick event for Winter 1 if no sick event earlier
 	if (flags['sick_ann'] == 0) {
 		if (d == 89) {
-			dontsave = true;
+			dont_save = true;
 			a.push({'desc':"DONT SAVE TONIGHT", 'imp':true});
 		} else if (d == 90) {
 			a.push({'desc':"RESET IF NOT SNOWY TOMORROW", 'imp':true});
@@ -68,7 +69,7 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 
 	// Dont save before Flower Fest in case Ann is selected
 	if (d == 22) {
-		dontsave = true;
+		dont_save = true;
 		a.push({'desc':"DONT SAVE TONIGHT", 'imp':true});
 	}
 
@@ -392,5 +393,6 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Fireworks (Ranch)", 'cid':ann_id, 'val':5, 'sr':true});
 	}
 */
+	flags['dontsave'] = (dont_save ? 1 : 0);
 	return a;
 }
