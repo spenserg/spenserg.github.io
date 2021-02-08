@@ -121,7 +121,8 @@ var extensions = [
 var route_names = ["All Photos (Karen)", "Elli", "Karen", "Popuri", "Elli Photo",
 					"All Photos (Elli)", "All Berries", "Maria", "Ann Photo", "Karen Photo",
 					"All Recipes", "Maria Photo", "Ann", "Extensions Photo", "Balloon Photo",
-					"Horse Race", "Cow Photo", "Swim Photo", "Dog Race", "Party Photo"
+					"Horse Race", "Cow Photo", "Swim Photo", "Dog Race", "Party Photo",
+		   			"Hot Springs", "All Festivals", "Baby Photo", "100%", "All Girl Photos"
 ];
 var bet_colors = ["lightgray", "black", "red", "blue", "yellow", "green"];
 var route_affs = [
