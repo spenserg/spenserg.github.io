@@ -23,6 +23,7 @@
 * **21** - All Festivals
 * **22** - Baby Photo
 * **23** - 100%
+* **24** - All Girl Photos
 
 ## ACTION PROPERTIES
 * **"desc"** - (Description) Words that appear on the action button. REQUIRED
