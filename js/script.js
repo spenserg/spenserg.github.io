@@ -55,6 +55,7 @@ function get_actions(rid = null, d = vars['day'], g = vars['gold'], is_sunny = 1
 		if (rid == 9) { return get_actions_karen_photo(d, g, is_sunny); } // Karen PHOTO
 		if (rid == 10) { return get_actions_all_recipes(d, g, is_sunny); } // All Recipes
 		if (rid == 11) { return get_actions_cow_photo(d, g, is_sunny); } // Cow Photo
+		if (rid == 24) { return get_actions_girl_photos(d, g, is_sunny); } // All Girl Photos
 		if ([14, 15, 17, 18, 20].includes(rid)) { return get_actions_misc(d, g, is_sunny); } // Balloon Photo, Horse Photo, Swim Photo, Dog Race Photo
 	}
 	/* TODO:
