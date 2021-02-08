@@ -41,22 +41,22 @@ function load_game (slot = 0) {
 	
 }
 
-function get_actions(rid = null, d = vars['day'], g = vars['gold'], is_sunny = 1) {
+function get_actions(rid = null, d = vars['day'], g = vars['gold'], is_sunny = 1, a = []) {
 	if (reset == true) {
 		return [{'desc':"RESET"}];
 	} else {
-		if (rid == 1) { return get_actions_elli(d, g, is_sunny); } // Elli Marriage
-		if ([2, 22].includes(rid)) { return get_actions_karen(d, g, is_sunny); } // Karen Marriage
-		if (rid == 3) { return get_actions_popuri(d, g, is_sunny); } // Popuri Marriage
-		if (rid == 4) { return get_actions_elli_photo(d, g, is_sunny); } // Elli PHOTO
-		if (rid == 5) { return get_actions_photos(d, g, is_sunny); } // All Photos
-		if (rid == 7) { return get_actions_maria(d, g, is_sunny); } // Maria Marriage
-		if (rid == 8) { return get_actions_ann_photo(d, g, is_sunny); } // Ann PHOTO
-		if (rid == 9) { return get_actions_karen_photo(d, g, is_sunny); } // Karen PHOTO
-		if (rid == 10) { return get_actions_all_recipes(d, g, is_sunny); } // All Recipes
-		if (rid == 11) { return get_actions_cow_photo(d, g, is_sunny); } // Cow Photo
-		if (rid == 24) { return get_actions_girl_photos(d, g, is_sunny); } // All Girl Photos
-		if ([14, 15, 17, 18, 20].includes(rid)) { return get_actions_misc(d, g, is_sunny); } // Balloon Photo, Horse Photo, Swim Photo, Dog Race Photo
+		if (rid == 1) { return get_actions_elli([], d, g, is_sunny); } // Elli Marriage
+		if ([2, 22].includes(rid)) { return get_actions_karen(a, d, g, is_sunny); } // Karen Marriage
+		if (rid == 3) { return get_actions_popuri(a, d, g, is_sunny); } // Popuri Marriage
+		if (rid == 4) { return get_actions_elli_photo(a, d, g, is_sunny); } // Elli PHOTO
+		if (rid == 5) { return get_actions_photos(a, d, g, is_sunny); } // All Photos
+		if (rid == 7) { return get_actions_maria(a, d, g, is_sunny); } // Maria Marriage
+		if (rid == 8) { return get_actions_ann_photo(a, d, g, is_sunny); } // Ann PHOTO
+		if (rid == 9) { return get_actions_karen_photo(a, d, g, is_sunny); } // Karen PHOTO
+		if (rid == 10) { return get_actions_all_recipes(a, d, g, is_sunny); } // All Recipes
+		if (rid == 11) { return get_actions_cow_photo(a, d, g, is_sunny); } // Cow Photo
+		if (rid == 24) { return get_actions_girl_photos(a, d, g, is_sunny); } // All Girl Photos
+		if ([14, 15, 17, 18, 20].includes(rid)) { return get_actions_misc(a, d, g, is_sunny); } // Balloon Photo, Horse Photo, Swim Photo, Dog Race Photo
 	}
 	/* TODO:
 	 * 6 - All Berries
