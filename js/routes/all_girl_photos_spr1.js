@@ -12,7 +12,6 @@ get_actions_girl_photos_spr1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	var rick_id = get_npc_id('rick');
 	var sprite_id = get_npc_id('sprite');
 
-	var a = [];
 	var dow = get_dow(d, true);
 	var lumber_to_sprite = ((aff[sprite_id] >= _SPRITE_SPAM_MAX || d == 3) ? 0 : (((_SPRITE_SPAM_MAX - aff[sprite_id]) > 6) ? 6 : ((_SPRITE_SPAM_MAX - aff[sprite_id]))));
 	var reset = "";
