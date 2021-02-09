@@ -615,7 +615,7 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 	return a;
 }
 
-function new_game(rid = 5) {
+function new_game(rid = 24) {
 	route_id = rid;
 	reset_vars();
 	vars['day'] = 3;
