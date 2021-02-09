@@ -1,4 +1,4 @@
-get_actions_girl_photos = function (a = [], d = 3, g = 300, is_sunny = 1) {
+get_actions_girl_photos = function (d = 3, g = 300, is_sunny = 1) {
 	var ann_id = get_npc_id('ann');
 	var chicken_id = get_npc_id('chicken');
 	var dog_id = get_npc_id('dog');
