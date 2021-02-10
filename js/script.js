@@ -264,7 +264,7 @@ function next_day(jump = false) {
 		flags['yesterday_rain'] = 0;
 		if ($('.rainy').hasClass('selected')) {
 			flags['yesterday_rain'] = 1;
-			if ([0, 5, 8].includes(route_id)) {
+			if ([0, 5, 8, 24].includes(route_id)) {
 				if (get_month(vars['day']) == 0 && flags['potato_planted'] == 1) {
 					vars['potato_waters']++;
 				}
@@ -699,6 +699,10 @@ function new_game(rid = 24) {
 		flags['recipe_ellen'] = 0;
 	} else if (rid == 11) { // Cow Photo
 		
+	} else if (rid == 24) { // All Girl Photos
+		vars['potatoes_bought'] = 0;
+		flags['potato_planted'] = 0;
+		flags['corn_planted'] = 0;
 	}
 	next_day(true);
 }
