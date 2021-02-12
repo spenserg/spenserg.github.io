@@ -31,6 +31,10 @@ get_actions_girl_photos_sum1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 	}
 
+	if (d == 58) {
+		
+	}
+
 	// Music Box Dig
 	if (flags['old_mus_box'] == 0 && is_sunny == 1) {
 		if (d == 31) {
@@ -135,6 +139,128 @@ get_actions_girl_photos_sum1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					});
 				}
 			} // End of MTN Visit
-		}	
-	}
+
+			// CORN
+			if (d == 31) {
+				a.push({'desc':"Buy Corn", 'iid':get_npc_id('lillia'), 'imp':true});
+			}
+
+			// ELLI
+			// "Gift " <- one space
+			// "Talk " <- one space
+			// "Musbox " <- one space
+			if (dow != "MON") {
+				if (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0) {
+					a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1],
+						'red':(aff[elli_id] >= _PHOTO_MIN), 'sel':(aff[elli_id] < _PHOTO_MIN)    
+					});
+				} else if (dow != "SUN") {
+					a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk "), 'cid':elli_id,
+						'val':1, 'sel':(d > 31 && !["SUN", "WED"].includes(dow)), 't2':"MusBox "
+					});
+					a.push({'desc':"MusBox ", 'sel':false, 't2':a[a.length - 1]['desc'],
+						'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
+					});
+					a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
+						't2':((vars['chickens'] > 0) ? "Egg " : "M/L Fish"), 'sel':false
+					});
+					a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':(d > 31 && !["SAT", "WED"].includes(dow)),
+						'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
+						'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
+					});
+						/*
+						if (flags['dream_elli'] == 0 && aff[elli_id] >= _DREAM_EVENT_MIN && is_sunny == 1) {
+							a.push({'desc':"DREAM (Village)", 'cid':[elli_id, 'f_dream_elli'],
+									'val':[_DREAM_EVENT_AFF, 1], 'sel':(aff[elli_id] >= (_DREAM_EVENT_AFF - 3))});
+						}
+						if (flags['ankle_elli'] == 0 && aff[elli_id] >= (_ANKLE_EVENT_MIN - _MUS_BOX_AFF - 4)) {
+							a.push({'desc':"ANKLE (MTN)", 'cid':[elli_id, 'f_ankle_elli'], 'val':[_ANKLE_EVENT_AFF, 1], 'sr':true, 'sel':false});
+						}
+						*/
+				}
+			} // End of Elli
+			// ELLI DREAM ANKLE
+			if (is_sunny == 1 && flags['dream_elli'] == 0 && aff[elli_id] >= _DREAM_EVENT_MIN) {
+				a.push({'desc':"DREAM (Village)", 'cid':[elli_id, 'f_dream_elli'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':false});
+			}
+			if (flags['ankle_elli'] == 0 && aff[elli_id] >= (_ANKLE_EVENT_MIN - _MUS_BOX_AFF - 4)) {
+				a.push({'desc':"ANKLE (Mtn)", 'cid':[elli_id, 'f_ankle_elli'], 'val':[_ANKLE_EVENT_AFF, 1], 'sel':false, 'sr':(flags['dream_elli'] == 0)});
+			}
+
+			// RICK
+			// "Talk  " <- two spaces
+			if (is_sunny == 1) {
+				if (dow == "THURS") {
+					// ANN in Ricks shop
+					// " Gift" <- -1 spaces
+					// "Musbox  " <- 2 spaces
+					a.push({'desc':"Talk (Rick Shop)", 'cid':ann_id, 'val':1, 'sel':false, 't2':"MusBox  "});
+					a.push({'desc':"MusBox  ", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':false, 't2':a[a.length - 1]['desc']});
+					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false});
+					a.push({'desc':"Corn / Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 't2':" Gift", 'sel':false});
+				}
+				if (!["WED", "SUN"].includes(dow)) {
+					a.push({'desc':"Talk  ", 'cid':rick_id, 'val':3, 'sel':(dow != "SAT"), 't0':"Rick Fix"});
+					a.push({'desc':"Rick Fix", 'sr':true, 'sel':(dow != "SAT"), 't3':"Talk  ", 'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1]});
+					a.push({'desc':"Gift", 'sr':true, 'sel':false, 'cid':rick_id, 'val':3});
+				} else if (dow == "SUN") {
+					if (flags['new_mus_box'] == 1) {
+						a.push({'desc':"DONT TALK TO RICK WITH A FIXED MUSIC BOX!", 'imp':true, 'iid':rick_id});
+					}
+					a.push({'desc':"Talk (Town Square) ", 'cid':rick_id, 'val':3, 'sr':(aff[rick_id] == 0), 'sel':false, 't0':"Rick Fix"});
+					a.push({'desc':"Rick Fix", 'sr':true, 'sel':false, 't3':"Talk (Town Square) ", 'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1]});
+					a.push({'desc':"Gift", 'sr':true, 'sel':false, 'cid':rick_id, 'val':3});
+				}
+			}
+
+			// MARIA SICK EVENT
+			if (is_sunny == 0 && dow == "MON" && aff[maria_id] <  _PHOTO_MIN) {
+				a.push({'desc':"Sick Event", 'cid':[maria_id, 'f_sick_maria'], 'val':[_SICK_EVENT_AFF, 1]});
+			} else if (d > 40) {
+				// MARIA
+				a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 't2':"MusBox", 'sel':(dow == "SAT" || is_sunny == 0)});
+				a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
+						'sel':(dow != "SAT" && is_sunny == 1), 't2':a[a.length - 1]['desc']
+				});
+				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true});
+			}
+
+			if (d == 60 && aff[karen_id] < 200 && is_sunny == 1) {
+				a.push({'desc':"Dog Karen to 255 (Vineyard)", 'cid':karen_id, 'val':(255 - aff[karen_id]), 'imp':true});
+				a.push({'desc':"DONT SLEEP TONIGHT! STAY UP ALL NIGHT!", 'imp':true});
+				a.push({'desc':"Day Skipped", 'cid':'v_day', 'val':1, 'sr':true});
+			}
+
+			// RICK
+			// "Talk  " <- two spaces
+			if (is_sunny == 1) {
+				if (dow == "THURS") {
+					// ANN in Ricks shop
+					// " Gift" <- -1 spaces
+					// "Musbox  " <- 2 spaces
+					a.push({'desc':"Talk (Rick Shop)", 'cid':ann_id, 'val':1, 'sel':false, 't2':"MusBox  "});
+					a.push({'desc':"MusBox  ", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':false, 't2':a[a.length - 1]['desc']});
+					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false});
+					a.push({'desc':"Corn / Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 't2':" Gift", 'sel':false});
+				}
+				if (!["WED", "SUN"].includes(dow)) {
+					a.push({'desc':"Talk  ", 'cid':rick_id, 'val':3, 'sel':(dow != "SAT"), 't0':"Rick Fix"});
+					a.push({'desc':"Rick Fix", 'sr':true, 'sel':(dow != "SAT"), 't3':"Talk  ", 'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1]});
+					a.push({'desc':"Gift", 'sr':true, 'sel':false, 'cid':rick_id, 'val':3});
+				} else if (dow == "SUN") {
+					if (flags['new_mus_box'] == 1) {
+						a.push({'desc':"DONT TALK TO RICK WITH A FIXED MUSIC BOX!", 'imp':true, 'iid':rick_id});
+					}
+					a.push({'desc':"Talk (Town Square) ", 'cid':rick_id, 'val':3, 'sr':(aff[rick_id] == 0), 'sel':false, 't0':"Rick Fix"});
+					a.push({'desc':"Rick Fix", 'sr':true, 'sel':false, 't3':"Talk (Town Square) ", 'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1]});
+					a.push({'desc':"Gift", 'sr':true, 'sel':false, 'cid':rick_id, 'val':3});
+				}
+			}
+
+			// MARIA SICK EVENT
+			if (is_sunny == 0 && dow == "MON" && aff[maria_id] >= _SICK_EVENT_MIN && flags['sick_maria'] == 0)) {
+				a.push({'desc':"Sick Event", 'cid':[maria_id, 'f_sick_maria'], 'val':[_SICK_EVENT_AFF, 1]});
+			}
+		} // End of !festival
+	} // End of !Typhoon
 }
