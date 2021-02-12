@@ -35,8 +35,8 @@ get_actions_girl_photos_spr1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 		if (d == 4) { // Spring 4
 			a.push({'desc':"Equip axe", 'iid':get_npc_id('stump')});
-			a.push({'desc':"Chop One Stump", 'val':6, 'cid':'v_lumber', 'sr':true});
 			a.push({'desc':"Sell Fish", 'sr':true});
+			a.push({'desc':"Chop One Stump", 'val':6, 'cid':'v_lumber', 'sr':true});
 			
 			a.push({'desc':"Equip Watering Can"});
 			a.push({'desc':"Sell Herb", 'sr':true});
