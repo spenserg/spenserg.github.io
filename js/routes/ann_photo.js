@@ -47,7 +47,7 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 	var rick_id = get_npc_id("rick");
 	var mayor_id = get_npc_id("mayor");
 	var dow = get_day_of_week(d, true);
-	var farm_visitor = [38, 47, 53, 65].includes(d);
+	var farm_visitor = [38, 47, 53, 65, 79, 82].includes(d);
 	var dont_save = false;
 
 	var ann_aff_total = aff[ann_id];
@@ -82,7 +82,7 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 	} else if (d > 120) {
 		reset = true;
 	} else if (d > 90 && flags['photo_ann'] == 0) {
-		a.push({'desc':"Photo", 'cid':[ann_id, 'f_photo_ann'], 'val':[_PHOTO_EVENT_AFF, 1], 'sel':(aff[ann_id] >= _PHOTO_EVENT_AFF)});
+		a.push({'desc':"Photo", 'cid':[ann_id, 'f_photo_ann'], 'val':[_PHOTO_EVENT_AFF, 1], 'sel':(aff[ann_id] >= _PHOTO_EVENT_AFF && is_sunny == 1)});
 	} else if (d == 3) {
 		a.push({'desc':"Equip hoe - [Start Down A A Up A A B]"});
 		a.push({'desc':"Greet the Mayor", 'iid':get_npc_id("mayor")});
@@ -214,13 +214,17 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 			if (flags['new_mus_box'] == 0 && flags['old_mus_box'] == 0 && d < 33) {
 				a.push({'desc':"Equip HAMMER, Clear rocks to Music Box", 'imp':true});
 			}
-			a.push({'desc':"Equip hoe"});
-			if (flags['treasure_map'] == 0) {
-				a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1, 'iid':get_npc_id("musbox"), 'sr':true});
+			if (d == 32) {
+				a.push({'desc':"Equip Watering Can, Fill Watering Can", 'imp':true});
 			} else {
-				a[a.length - 1]['iid'] = get_npc_id("musbox");
+				a.push({'desc':"Equip hoe"});
+				if (flags['treasure_map'] == 0) {
+					a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1, 'iid':get_npc_id("musbox"), 'sr':true});
+				} else {
+					a[a.length - 1]['iid'] = get_npc_id("musbox");
+				}
+				a.push({'desc':"Dig Up Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':(flags['treasure_map'] == 1), 'iid':get_npc_id("musbox"), 'sel':(flags['old_mus_box'] == 0 && !["THURS", "SAT"].includes(dow) && done_with_rick == 0)});
 			}
-			a.push({'desc':"Dig Up Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':(flags['treasure_map'] == 1), 'iid':get_npc_id("musbox"), 'sel':(flags['old_mus_box'] == 0 && !["THURS", "SAT"].includes(dow) && done_with_rick == 0)});
 		}
 
 		// Corn
@@ -267,7 +271,8 @@ function get_actions_ann_photo (d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"CAKE for Ann Today", 'sr':true});
 				}
 			}
-*/			if (d == 44) { a.push({'desc':"Ann's BIRTHDAY", 'imp':true, 'iid':ann_id}); }
+*/			//if (d == 44) { a.push({'desc':"Ann's BIRTHDAY", 'imp':true, 'iid':ann_id}); }
+			a.push({'desc':"CORN / POTATO to Ann", 'imp':true, 'iid':ann_id});
 
 			//if (aff[ann_id] == 12) { a.push({'desc':"Meet", 'cid':ann_id, 'val':4}); }
 			a.push({'desc':("Talk (" + ((dow == "THURS") ? "MTNS / RICK SHOP)" : "Ranch)")),
