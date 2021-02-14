@@ -17,17 +17,20 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	if (d == 91) {
 		// Ridiculously long "borrowing cows" cutscene
 		a.push({'desc':"DONT GO OUTSIDE TODAY", 'imp':true});
+		flags['dontsave'] = true;
+	} else if (d == 92) {
+		a.push({'desc':"RESET IF SNOWY TODAY AND TOMORROW", 'imp':true});	
 	}
 	if (d > 94 && aff[maria_id] >= _DREAM_EVENT_MIN && d > 94 && !is_festival(d)) {
 		// Save the dream event for her summer photo
-		a.push({'desc':"DONT ENTER LIBRARY", 'imp':true});
+		a.push({'desc':"DONT ENTER LIBRARY", 'red':true});
 	}
 
 	if (flags['cow_steal_glitch'] > 0 && d == 112) {
 		a.push({'desc':"Cows mature today", 'iid':cow_id});
 	}
 	if (vars['day'] > 94 && vars['day'] < 115 && flags['cow_steal_glitch'] == 1) {
-		a.push({'desc':"DONT VISIT COWS YET", 'imp':true, 'sr':(flags['cow_steal_glitch'] > 0 && d == 112)});
+		a.push({'desc':"DONT VISIT COWS YET", 'red':true, 'sr':(flags['cow_steal_glitch'] > 0 && d == 112)});
 	}
 
 	if (flags['fishing_rod_stored'] == 0) {
@@ -90,7 +93,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	} else if (d > 91 && aff[ann_id] >= _PHOTO_EVENT_AFF && is_sunny == 1 && flags['photo_ann'] == 0) {
 		// Anns photo
 		// Manna cutscene & Cliff leaving scene have priority over before Ann arriving for photo
-		a.push({'desc':"Photo", 'cid':[ann_id, 'f_photo_ann', 'f_dontsave'], 'val':[_PHOTO_EVENT_AFF, 1, 1], 'imp':true});
+		a.push({'desc':"Photo", 'cid':[ann_id, 'f_photo_ann', 'f_dontsave'], 'val':[_PHOTO_EVENT_AFF, 1, 1], 'imp':(aff[ann_id] >= _PHOTO_MIN), 'sel':(aff[ann_id] >= _PHOTO_MIN)});
 		for (var z = 0; z < horse_action_ids.length; z++) {
 			a[horse_action_ids[z]]['sel'] = true;
 		}
@@ -304,7 +307,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		} else if (d < 94) {
 			// Before Cow Stealing
 			if (flags['new_mus_box'] == 1 && aff[maria_id] >= (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
-				a.push({'desc':"NO MUSBOX FOR MARIA", 'iid':maria_id, 'imp':true});
+				a.push({'desc':"NO MUSBOX FOR MARIA", 'iid':maria_id, 'red':true});
 			}
 			a.push({'desc':"Talk", 'cid':maria_id, 'val':1, 'sel':false, 'red':(aff[maria_id] >= 157)});
 			if (flags['new_mus_box'] == 1 || flags['old_mus_box'] == 1) {
