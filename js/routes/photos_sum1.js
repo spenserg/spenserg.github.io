@@ -100,7 +100,7 @@ actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			// Chicken
 			if (dow == "MON") {
 				if (flags['new_chick'] == 1) {
-					a.push({'desc':"LEAVE EGG ON FARM FOR INCUBATION", 'imp':true});
+					a.push({'desc':"SAVE EGG FOR INCUBATION", 'imp':true});
 				}
 				chicken_actions.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'), 'imp':true});
 				if (vars['feed'] < 4) {
@@ -191,7 +191,7 @@ actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					}
 
 					// SPRITE
-					a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sel':(aff[sprite_id] < 45), 'red':(aff[sprite_id] >= (_SPRITE_WINE_MIN - 1))});
+					a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sel':(!["SAT", "SUN"].includes(dow) && aff[sprite_id] < 45), 'red':(aff[sprite_id] >= (_SPRITE_WINE_MIN - 1))});
 					a.push({'desc':"Flower", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
 
 					// MARIA
@@ -220,16 +220,18 @@ actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					}
 					
 					// Cliff
-					if (["THURS", "FRI", "SAT", "SUN"].includes(dow)) {
+					if (!["TUES", "WED"].includes(dow)) {
 						var cliff_loc = " (Fish Tent) [50%]";
 						if (dow == "THURS") { cliff_loc = " (Carp House)"; }
 						if (dow == "SUN") { cliff_loc = " (Carp House) [50%]"; }
+						if (dow == "MON") { cliff_loc = " (Hot Springs)"; }
 						if (aff[cliff_id] == 5 || aff[cliff_id] == 0) {
 							// Cliff's intro gives affection to GRAY
-							a.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'iid':cliff_id, 'sel':false});
+							a.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'iid':cliff_id, 'sel':false, 'imp':true});
 						}
 						a.push({
-							'desc':("Talk" + cliff_loc), 'cid':cliff_id, 'val':2, 'sel':false, 'sr':(aff[cliff_id] == 5 || aff[cliff_id] == 0)
+							'desc':("Talk" + cliff_loc), 'cid':cliff_id, 'val':2, 'sel':false,
+							'sr':(aff[cliff_id] == 5 || aff[cliff_id] == 0), 'imp':(dow == "MON")
 						});
 						a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
 						a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
@@ -350,10 +352,9 @@ actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 
 				if (d == 60 && aff[karen_id] < 200 && is_sunny == 1) {
-					a.push({'desc':"Dog Karen to 255 (Vineyard)", 'cid':karen_id, 'val':(255 - aff[karen_id]), 'imp':true});
-					flags['dontsave'] = true;
-					a.push({'desc':"DONT SLEEP TONIGHT! STAY UP ALL NIGHT!", 'imp':true});
-					a.push({'desc':"Day Skipped", 'cid':'v_day', 'val':1, 'sr':true});
+					a.push({'desc':"Dog Karen to 255 (Vineyard)", 'cid':karen_id, 'val':(255 - aff[karen_id]), 'sel':false});
+					//a.push({'desc':"DONT SLEEP TONIGHT! STAY UP ALL NIGHT!", 'imp':true});
+					a.push({'desc':"Day Skipped", 'cid':['v_day', 'f_dontsave'], 'val':[1, 1], 'sr':true, 'sel':false});
 				}
 
 				if (d == 31) { // Fireworks Festival
