@@ -325,7 +325,7 @@ function compute() {
 			} else {
 				result += "* " + ((gen_list[name]['species'][k]['extinct']) ? "† ''" : "''[[");
 				if (!gen_list[name]['species'][k]['extinct']) {
-					result += ((gen_list[name]['species'].length == 1) ? name : gen_list[name]['species'][k]['name']) + "|";
+					result += ((gen_list[name]['species'].length == 1) ? (gen_list[name]['link'].split("|")[0]) : gen_list[name]['species'][k]['name']) + "|";
 				}
 				result += gen_list[name]['species'][k]['name'].split(" ")[0].charAt(0).toUpperCase() +
 					". " + gen_list[name]['species'][k]['name'].split(" ")[1] +
