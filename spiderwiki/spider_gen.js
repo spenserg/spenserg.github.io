@@ -13,7 +13,7 @@ parse_gen=function(str) {
 				result['fam_year'] = tmp_res[2].split(",")[1].trim();
 				result['fam_lsid'] = tmp_res[3].trim();
 				result['fam_nmbe_id'] = tmp_res[4].trim();
-			} else { console.log("ERROR: Fam Info Parse Failed"); }
+			} else { console.log("ERROR: Fam Info Parse Failed"); console.log(spec_split[0]); }
 
 			// Gen Info
 			var rx1 = /genusTitle\"\>Gen\.\s\<strong\>\<i\>([^\<]+)\<\/i\>\<\/strong\>([^\<]+)\<span\sclass\=\"lsid\"\>\[urn\:lsid\:nmbe\.ch\:spidergen\:(\d+)\]\<\/span\>\s*\<span\sclass\=\"lsid\"\>\<a\shref\=\"\/genusdetail\/(\d+)\"/g;
@@ -23,11 +23,11 @@ parse_gen=function(str) {
 				result['year'] = tmp_res[2].split(",")[1].trim();
 				result['lsid'] = tmp_res[3].trim();
 				result['nmbe_id'] = tmp_res[4].trim();
-			} else { console.log("ERROR: Gen Info Parse Failed"); }
+			} else { console.log("ERROR: Gen Info Parse Failed"); console.log(spec_split[0]); }
 
 			// Gen Transferred
 			if (spec_split[0].includes("Transferred to other")) {
-				rx1 = /\<i\>([^\<]+)\<\/i\>([^\<]+)\s--\ssee\s*\<a\shref\=\"\/genus\/(\d+)\/([^\"]+)\"/g;
+				rx1 = /\<i\>([^\<]+)\<\/i\>([^\<]+)\s--\ssee[\s\n]*\<a\shref\=\"\/genus\/(\d+)\/([^\"]+)\"/g;
 				var xfr = [];
 				var t_split = spec_split[0].split("Transferred to other genera:<br>")[1].split("In synonymy")[0].split("<br>");
 				for (var i = 0; i < (t_split.length - 1); i++) {
@@ -38,7 +38,7 @@ parse_gen=function(str) {
 							'xfer_to_name':tmp_res[4],
 							'xfer_to_nmbe_id':tmp_res[3]
 						});
-					} else { console.log("ERROR: Transferred Info Parse Failed"); }
+					} else { console.log("ERROR: Transferred Info Parse Failed"); console.log(t_split[i]); }
 				}
 				result['transferred'] = xfr;
 			}
@@ -58,10 +58,10 @@ parse_gen=function(str) {
 								'ref_id':tmp_res[4],
 								'ref_page':tmp_res[5]
 							});
-						} else { console.log("ERROR: Gen Synonym Info Parse Failed"); }
+						} else { console.log("ERROR: Gen Synonym Info Parse Failed"); console.log(t_syns[i]); }
 					}
 					result['synonyms'] = synonyms;
-				} else { console.log("ERROR: Gen Synonym Parse Failed"); }
+				} else { console.log("ERROR: Gen Synonym Parse Failed"); console.log(spec_split[0]); }
 			}
 		}
 		return result;
