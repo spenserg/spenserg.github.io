@@ -1,5 +1,5 @@
 <script>
-	function parse_gen (str) {
+	function parse_gen_nmbe (str) {
 		var result = {};
 		if (str.includes('familyTitle') && str.includes('scrollToTop')) {
 			str = str.split('ym-wbox')[1].split('scrollToTop')[0];
@@ -85,7 +85,16 @@
 					});
 				} else { console.log("ERROR: Spec Info Parse Failed"); console.log('"' + spec_split[i] + '"'); }
 			}
+
+			// Article
+			result['article'] = create_article(result);
 		}
+		return result;
+	}
+
+	function create_article(nmbe_info = [], wiki_info = []) {
+		var result = "{{Short description| " + ((nmbe_info['species'].length == 1) ? "Monotypic g" : "G") + "enus of spiders}}\n" +
+		    ((nmbe_info['species'].length == 1) ? "{{Species" : "{{Automatic taxo") + "box\n| taxon = " + nmbe_info['name'];
 		return result;
 	}
 </script>
