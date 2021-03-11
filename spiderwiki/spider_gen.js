@@ -29,6 +29,7 @@
 			} else { console.log("ERROR: Gen Info Parse Failed"); console.log('"' + spec_split[0] + '"'); }
 
 			// Gen Transferred
+			result['transferred'] = [];
 			if (spec_split[0].includes("Transferred to other")) {
 				rx1 = /\<i\>([^\<]+)\<\/i\>([^\<]+)\s--\ssee[\s\n]*\<a\shref\=\"\/genus\/(\d+)\/([^\"]+)\"/;
 				var xfr = [];
@@ -48,6 +49,7 @@
 			}
 
 			// Gen Synonyms
+			result['synonyms'] = [];
 			if (spec_split[0].includes("In synonymy")) {
 				var t_syns = spec_split[0].split("In synonymy:<br>")[1].split("genusTitle")[0].split("<br>");
 				if (t_syns) {
@@ -89,12 +91,6 @@
 			// Article
 			result['article'] = create_article(result);
 		}
-		return result;
-	}
-
-	function create_article(nmbe_info = [], wiki_info = []) {
-		var result = "{{Short description| " + ((nmbe_info['species'].length == 1) ? "Monotypic g" : "G") + "enus of spiders}}\n" +
-		    ((nmbe_info['species'].length == 1) ? "{{Species" : "{{Automatic taxo") + "box\n| taxon = " + nmbe_info['name'];
 		return result;
 	}
 </script>
