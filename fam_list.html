@@ -8,6 +8,12 @@
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+
+	<script src="/spiderwiki/spider_func.js"></script>
+	<script src="/spiderwiki/spider_data.js"></script>
+	<script src="/spiderwiki/spider_auth.js"></script>
+	<script src="/spiderwiki/spider_ref.js"></script>
+	<script src="/spiderwiki/spider_gen.js"></script>
 	<script src="/spiderwiki/wikispider.js"></script>
 </head>
 
@@ -25,22 +31,6 @@
 </body>
 
 <script>
-
-String.prototype.replaceAll = function(str1 = "", str2 = "") {
-	var net = 0;
-	var result = this;
-	while (result.includes(str1) && net < 200) {
-		result = result.replace(str1, str2);
-		net++;
-	}
-	return result;
-}
-
-Array.prototype.unique = function() {
-    return this.filter(function (value, index, self) {
-      return self.indexOf(value) === index;
-    });
-}
 
 function clear_input (type = -1) {
 	if (type == 0) {
@@ -247,26 +237,6 @@ function compute() {
 				new_toc += "| " + alpha[i] + "=";
 			}
 		}
-		
-/* kept for reference
-		var index1 = 0;
-		for (var i = 0; i < atoz.length; i++) {
-			if (atoz[i] > 0) {
-				if (index1 != i) {
-					new_toc += "| " +  alpha[index1] + "=[[#" + alpha[index1].toUpperCase() +
-						"-" + alpha[i].toUpperCase() + "|" + alpha[index1].toUpperCase() +
-						"-" + alpha[i].toUpperCase() + "]]";
-					gen_titles[index1] = alpha[index1].toUpperCase() + "-" + alpha[i].toUpperCase();
-					for (var j = (index1 + 1); j <= i; j++) {
-						new_toc += "| " + alpha[j] + "=";
-					}
-				} else {
-					gen_titles[index1] = alpha[index1].toUpperCase();
-				}
-				index1 = i + 1;
-			}
-		}
-*/
 		result = result.replace("{{TOC right}}", new_toc + "}}");
 	}
 
@@ -316,10 +286,7 @@ function compute() {
 				// Subspecies
 				var gn_split = gen_list[name]['species'][k]['name'].split(" ");
 				var prev_gen = gen_list[name]['species'][k - 1];
-				result += /*"** " + ((gen_list[name]['extinct']) ? "† ''" : "''") + gn_split[0].charAt(0).toUpperCase() + ". " +
-					gn_split[1].charAt(0).toLowerCase() + ". " + gn_split[1].toLowerCase() + "'' <small>" +
-					prev_gen['auth'] + "</small>\n" + */
-					"** " + ((gen_list[name]['extinct']) ? "† ''" : "''") +
+				result += "** " + ((gen_list[name]['extinct']) ? "† ''" : "''") +
 					gn_split[0].charAt(0).toUpperCase() + ". " +
 					gn_split[1].charAt(0).toLowerCase() + ". " + gn_split[2].toLowerCase() + "''";
 			} else {
