@@ -1,4 +1,4 @@
-<script>
+
 	function parse_auth (str) {
 		var result = [];
 		var z = str.split(/[\&\,]+/);
@@ -46,4 +46,3 @@
 		}
 		return result;
 	}
-</script>
