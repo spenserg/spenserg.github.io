@@ -1,4 +1,4 @@
-<script>
+
 	function parse_gen_nmbe (str) {
 		var result = {};
 		if (str.includes('familyTitle') && str.includes('scrollToTop')) {
@@ -93,4 +93,3 @@
 		}
 		return result;
 	}
-</script>
