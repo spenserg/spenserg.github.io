@@ -9,7 +9,10 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
+	<script src="spiderwiki/spider_func.js"></script>
+	<script src="spiderwiki/spider_data.js"></script>
 	<script src="spiderwiki/spider_ref.js"></script>
+	<script src="spiderwiki/spider_gen.js"></script>
 </head>
 
 <body>
@@ -17,121 +20,28 @@
 	<button onclick="compute_src">Go</button><br/>
 	Ref: <textarea name="ref" id="ref" rows="5"></textarea>
 	<button onclick="compute_ref">Go</button><br/>
-  	Ans: <textarea id="ans_txt" rows="5"></textarea>
+	<hr>
+	Taxobox: <textarea id="taxobox" rows="5"></textarea>
+	<a id="taxo_link" href="" class="button" target="_blank">Go</a>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
+	<div id="monotypic_div">
+		Spec: <textarea id="monotypic" rows="5"></textarea>
+		<a id="monotypic_link" href="" class="button" target="_blank">Go</a>&nbsp;&nbsp;<button onclick="clear_input(1)">Clear</button><br/>
+	</div>
+	<textarea id="gen_article" rows="5"></textarea>
+	<a id="gen_link" href="" class="button" target="_blank">Go</a>&nbsp;&nbsp;<button onclick="clear_input(2)">Clear</button><br/>
 </body>
 
 <script>
-	var loc_syns = {
-		"USA":"the United States",
-		"US":"the United States"
+	function clear_input (type = -1) {
+		if (type == 0) { $("#taxobox").val(""); }
+		else if (type == 1) { $("#monotypic").val(""); }
+		else if (type == 2) { $("#gen_article").val(""); }
 	}
-
-	var authors = {
-		"Dahl":"Friedrich Dahl",
-		"Emerton":"James Henry Emerton",
-		"Keyserling":"Eugen von Keyserling",
-		"C. L. Koch":"Ludwig Carl Christian Koch",
-		"L. Koch":"Ludwig Carl Christian Koch",
-		"Kulczyński":"Władysław Kulczyński",
-		"Kulczynski":"Władysław Kulczyński",
-		"Lehtinen":"Pekka T. Lehtinen",
-		"Marx":"George Marx",
-		"Menge":"Anton Menge",
-		"Millidge":"A. F. Millidge",
-		"F. O. Pickard-Cambridge":"Frederick Octavius Pickard-Cambridge", 
-		"O. Pickard-Cambridge":"Octavius Pickard-Cambridge",
-		"Perty":"Maximilian Perty",
-		"Platnick":"Norman I. Platnick",
-		"Pocock":"Reginald Innes Pocock",
-		"Prószyński":"Jerzy Prószyński",
-		"Proszynski":"Jerzy Prószyński",
-		"Roewer":"Carl Friedrich Roewer",
-		"Saaristo":"Michael Saaristo",
-		"Strand":"Embrik Strand",
-		"Simon":"Eugène Simon",
-		"Thorell":"Tamerlan Thorell"
-	};
-	var families = [
-		["Antrodiaetidae", "folding trapdoor spiders"],
-		["Atracidae","Australian funnel web spiders"],
-		["Atypidae","purseweb spiders"],
-		["Barychelidae","brushed trapdoor spiders"],
-		["Ctenizidae","trapdoor spiders"],
-		["Cyrtaucheniidae","wafer trapdoor spiders"],
-		["Dipluridae","curtain web spiders"],
-		["Idiopidae","armored trapdoor spiders"],
-		["Mecicobothriidae","dwarf tarantulas"],
-		["Migidae","tree trapdoor spiders"],
-		["Paratropididae","baldlegged spiders"],
-		["Theraphosidae","tarantulas"],
-		["Amaurobiidae","tangled nest spiders"],
-		["Anyphaenidae","anyphaenid sac spiders"],
-		["Araneidae","orb-weaver spiders"],
-		["Archaeidae","assassin spiders"],
-		["Clubionidae","sac spiders"],
-		["Corinnidae","corinnid sac spiders"],
-		["Ctenidae","wandering spiders"],
-		["Deinopidae","net-casting spiders"],
-		["Desidae","intertidal spiders"],
-		["Diguetidae","coneweb spiders"],
-		["Drymusidae","false violin spiders"],
-		["Dysderidae","woodlouse hunter spiders"],
-		["Eresidae","velvet spiders"],
-		["Filistatidae","crevice weavers"],
-		["Gnaphosidae","flat-bellied ground spiders"],
-		["Gradungulidae","large-clawed spiders"],
-		["Hahniidae","dwarf sheet spiders"],
-		["Hersiliidae","tree trunk spiders"],
-		["Hypochilidae","lampshade spiders"],
-		["Liocranidae","liocranid sac spiders"],
-		["Linyphiidae","dwarf spiders"],
-		["Lycosidae","wolf spiders"],
-		["Malkaridae","shield spiders"],
-		["Mimetidae","pirate spiders"],
-		["Miturgidae","long-legged sac spiders"],
-		["Mysmenidae","spurred orb-weavers"],
-		["Nesticidae","cave cobweb spiders"],
-		["Ochyroceratidae","midget ground weavers"],
-		["Oecobiidae","disc web spiders"],
-		["Oonopidae","goblin spiders"],
-		["Oxyopidae","lynx spiders"],
-		["Palpimanidae","palp-footed spiders"],
-		["Philodromidae","running crab spiders"],
-		["Pholcidae","cellar spiders"],
-		["Pisauridae","nursery web spiders"],
-		["Plectreuridae","plectreurid spiders"],
-		["Prodidomidae","long-spinneret ground spiders"],
-		["Salticidae","jumping spiders"],
-		["Scytodidae","spitting spiders"],
-		["Segestriidae","tube dwelling spiders"],
-		["Selenopidae","wall spiders"],
-		["Sicariidae","recluse spider"],
-		["Sparassidae","huntsman spiders"],
-		["Stiphidiidae","sheetweb spiders"],
-		["Symphytognathidae","dwarf orb-weavers"],
-		["Telemidae","long-legged cave spiders"],
-		["Tetragnathidae","long-jawed orb-weavers"],
-		["Theridiidae","tangle-web spiders"],
-		["Theridiosomatidae","ray spiders"],
-		["Thomisidae","crab spiders"],
-		["Uloboridae","cribellate orb-weavers"],
-		["Zodariidae","ant spiders"]
-	];
-
-	Array.prototype.unique = function() {
-    		return this.filter(function (value, index, self) { 
-      			return self.indexOf(value) === index;
-    		});
-  	}
-
-	function compute_ref() {
-    		$("#ref").val(parse_ref($("#ref").val());
-	}
-
-	function compute_src() {
-		$("#src").val(parse_src($("#src").val());
-	}
- 
+	
+	
+	
+	
+/*
 function ref (ref = "") {
   var result = {};
 	
@@ -326,5 +236,5 @@ function get_page_data(gen_num = null, str = "", img = "", img_cap = "") {
   result += "\n{{" + list['family'] + "-stub}}";
   return result;
 }
-	
+*/
 </script>
