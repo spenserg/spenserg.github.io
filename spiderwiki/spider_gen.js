@@ -87,9 +87,6 @@
 					});
 				} else { console.log("ERROR: Spec Info Parse Failed"); console.log('"' + spec_split[i] + '"'); }
 			}
-
-			// Article
-			result['article'] = create_article(result);
 		}
 		return result;
 	}
