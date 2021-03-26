@@ -25,3 +25,7 @@ String.prototype.contains = function(valueToFind, fromIndex = null) {
 	}
 	return this.includes(valueToFind, fromIndex);
 }
+
+function sanitize_custom(str = "") {
+	return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
