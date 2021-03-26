@@ -16,6 +16,7 @@
 </head>
 
 <body>
+	<div id="alert" hidden></div>
 	&nbsp;&nbsp;Wsc: <textarea name="src" id="src" rows="5"></textarea>
 	<button onclick="compute_src()">Go</button><br/>
 	&nbsp;&nbsp;Ref: <textarea name="ref" id="ref" rows="5"></textarea>
@@ -39,9 +40,32 @@
 	}
 
 	function compute_src() {
-		console.log(parse_gen_nmbe($("#src").val()));
+		$("#gen_article").val(wikify_gen(parse_gen_nmbe($("#src").val())));
 	}
-	
+
+	function wikify_gen(gen = []) {
+		if (gen['name'] === undefined) { return []; }
+		var monotypic = gen['species'].length == 1;
+		var result = [];
+		var article = "{{Short description| " + ((monotypic) ? "Monotypic g" : "G") +
+		    "enus of spiders}}\n{{" + ((monotypic) ? "Species" : "Automatic taxo") +
+		    "box\n| taxon = " + ((monotypic) ? gen['species'][0]['name'] : gen['name']) + "\n| authority = ";
+		if (gen['auth'].includes("(")) { article += "("; }
+
+		var auths = parse_auth(gen['auth']);
+		
+		console.log(auths);
+		
+		for (var i = 0; i < auths.length; i++) {
+			article += get_auth_link(auths[i][0]);
+			if (i < (auths.length - 1)) {
+				article += ((i < (auths.length - 2)) ? ", " : "& ");
+			}
+		}
+		if (gen['auth'].includes("(")) { article += ")"; }
+
+		return article;
+	}
 	
 /*
 function ref (ref = "") {
