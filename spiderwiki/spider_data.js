@@ -142,9 +142,59 @@ var auths = {
 	'Chamberlin':["Chamberlin", "Ralph Vary Chamberlin", "Ralph Vary Chamberlin", "NULL"],
 	'McCook':["McCook", "Henry Christopher McCook", "Henry Christopher McCook", "NULL"],
 	'Hyatt':["Hyatt", "Alpheus Hyatt", "Alpheus_Hyatt", "NULL"],
-	'B. Baehr':["B. Baehr", "Barbara Baehr", "Barbara_Baehr", "NULL"],
-	'M. Baehr':["M. Baehr", "Martin Baehr", "Martin_Baehr", "NULL"],
-	'Riechert, S. E.':["Riechert, S. E.", "Susan Riechert", "Susan_Riechert", "NULL"]
+	'B. Baehr':["B. Baehr", "Barbara Baehr", "Barbara Baehr", "NULL"],
+	'M. Baehr':["M. Baehr", "Martin Baehr", "Martin Baehr", "NULL"],
+	'S. E. Riechert':["S. E. Riechert", "Susan Riechert", "Susan Riechert", "NULL"],
+	'Riechert':["S. E. Riechert", "Susan Riechert", "Susan Riechert", "NULL"]
+}
+// Auth, Full Name, Wiki Link, Category
+function parse_auth(a = "", return_objects = true) {
+	// Returns array of Auth Strings OR Objects given a single auth string
+	var result = [];
+	var tmp = a.split(/[\&\,]+/);
+	for (var i = 0; i < tmp.length; i++) {
+		if (!(/\d/.test(tmp[i]))) {
+			result.push(tmp[i].trim().replace(/\(|\)/g, '').toLowerCase().ucfirst());
+		}
+	}
+	if (!return_objects) { return result.unique(); }
+	var result2 = [];
+	for (var i = 0; i < result.length; i++) {
+		var j = get_auth(result[i]);
+		result2.push((j !== null) ? j : [result[i], "NULL", "NULL", "NULL"]);
+	}
+	return result2;
+}
+
+function get_auth(a = "") {
+	// Returns an Auth Object given a single auth string
+	var result = [];
+	if (auths[a] !== undefined) { return auths[a]; }
+	var tmp1 = a.replace(/\(|\)/g, '').toLowerCase().ucfirst();
+	if (auths[tmp1] !== undefined) { return auths[tmp1]; }
+	var tmp2 = a.split(" ");
+	var tmp3 = "";
+	for (var i = 0; i < (tmp2.length - 1); i++) {
+		tmp3 += tmp2[i][0].toUpperCase() + ". ";
+	}
+	tmp3 += tmp2[tmp2.length - 1].toLowerCase().ucfirst();
+	if (auths[tmp3] !== undefined) { return auths[tmp3]; }
+	if (sanitize_custom(a) === a) { return null; }
+	return get_auth(sanitize_custom(a));
+}
+
+function get_auth_link(a = "", full_name = false) {
+	var auth = get_auth(a);
+	if (auth === null) { return a; }
+	var result = "[[" + auth[2];
+	if (full_name) {
+		// Full Name
+		result += ((auth[2].localeCompare(auth[1]) == 0) ? "]]" : ("|" + auth[1]));
+	} else {
+		// Auth name
+		result += ((auth[2].localeCompare(auth[0]) == 0) ? "]]" : ("|" + auth[0]));
+	}
+	return result + "]]";
 }
 
 // Family
