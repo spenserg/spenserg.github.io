@@ -2,8 +2,8 @@ var ucfirst = function (str) {
 	return str.toLowerCase().replace(/^\w/, c => c.toUpperCase());
 }
 
-String.prototype.ucfirst = function (str) {
-	return str.toLowerCase().replace(/^\w/, c => c.toUpperCase());
+String.prototype.ucfirst = function () {
+	return this.toLowerCase().replace(/^\w/, c => c.toUpperCase());
 }
 
 Array.prototype.unique = function() {
