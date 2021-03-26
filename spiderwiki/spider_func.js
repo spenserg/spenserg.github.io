@@ -2,6 +2,10 @@ var ucfirst = function (str) {
 	return str.toLowerCase().replace(/^\w/, c => c.toUpperCase());
 }
 
+String.prototype.ucfirst = function (str) {
+	return str.toLowerCase().replace(/^\w/, c => c.toUpperCase());
+}
+
 Array.prototype.unique = function() {
 	return this.filter(function (value, index, self) {
 			return self.indexOf(value) === index;
