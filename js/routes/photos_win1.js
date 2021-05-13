@@ -33,7 +33,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"DONT VISIT COWS YET", 'red':true, 'sr':(flags['cow_steal_glitch'] > 0 && d == 112)});
 	}
 
-	if (flags['fishing_rod_stored'] == 0) {
+	if (vars['day'] > 94 && flags['fishing_rod_stored'] == 0) {
 		a.push({'desc':(((flags['photo_horserace'] == 1) ? "Brush and " : "") + "Fishing rod to toolbox"),
 			'cid':'f_fishing_rod_stored', 'val':1, 'sr':false, 'sel':false
 		});
@@ -248,34 +248,43 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Talk (Church)", 'cid':mayor_id, 'val':3, 'sel':false, 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)});
 				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
 			}
-		}
+		} // End of After Dog Race
 
 		//  102, 103, 104, 105, 106
 		// THURS,FRI, SAT, SUN, MON
-		if (d >= 102 && d <= 106) {
-			for (var z = 0; z < horse_action_ids.length; z++) {
-				a[horse_action_ids[z]]['sel'] = true;
+		// OR Steal Cows on Win 4
+		if (d == 94 || (d >= 102 && d <= 106)) {
+			if (d == 94 || (d != 105 || vars['springs_days_worked'] == 2)) {
+				// Don't visit horse on day skipping hot springs work
+				for (var z = 0; z < horse_action_ids.length; z++) {
+					a[horse_action_ids[z]]['sel'] = true;
+				}
 			}
-			// Hot Springs
-			a.push({'desc':"Hot Springs Work", 'iid':mas_carp_id, 'sel':(d != 105 || vars['springs_days_worked'] == 2),
-				'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000], 'imp':(vars['springs_days_worked'] == (d - 103)),
-				'red':(d == 105 && vars['springs_days_worked'] == 3)
-			});
-			if (d == 106) {
-				// Hot Springs Photo
-				a[a.length - 1]['cid'].push('f_photo_springs');
-				a[a.length - 1]['val'].push(1);
+			if (d != 94) {
+				// Hot Springs
+				a.push({'desc':"Hot Springs Work", 'iid':mas_carp_id, 'sel':(d != 105 || vars['springs_days_worked'] == 2),
+					'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000], 'imp':(vars['springs_days_worked'] == (d - 103)),
+					'red':(d == 105 && vars['springs_days_worked'] == 3)
+				});
+				if (d == 106) {
+					// Hot Springs Photo
+					a[a.length - 1]['cid'].push('f_photo_springs');
+					a[a.length - 1]['val'].push(1);
+				}
 			}
 
 			// RICK
-			if (dow != "SUN" && aff[rick_id] < _PARTY_ATTEND_MIN && is_sunny == 1) {
-				a.push({'desc':"Talk", 'cid':rick_id, 'val':3, 'sel':false});
+			if (!["WED", "SUN"].includes(dow) && is_sunny == 1) {
+				a.push({'desc':"Talk", 'cid':rick_id, 'val':3, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN), 'red':(aff[rick_id] >= _PARTY_ATTEND_MIN)});
 				a.push({'desc':"Gift", 'cid':rick_id, 'val':3, 'sr':true, 'sel':false});
 			}
 
 			// MAYOR
-			if (aff[mayor_id] < _PARTY_ATTEND_MIN && is_sunny == 1) {
-				a.push({'desc':((dow == "SAT") ? "Talk (Rick Shop 50%)" : ((dow == "SUN") ? "Talk (Church)" : "Talk")), 'cid':mayor_id, 'val':3, 'sel':false});
+			if (is_sunny == 1 || d == 94) {
+				a.push({'desc':((dow == "SAT") ? "Talk (Rick Shop 50%)" : ((dow == "SUN") ? "Talk (Church)" : "Talk")),
+					'cid':mayor_id, 'val':3, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN), 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)
+				});
+				if (is_sunny != 1) { a[a.length - 1]['desc'] = "Talk (In House)"; }
 				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
 			}
 		} else if (d > 97 && (flags['cow_steal_glitch'] == 0 || d != 112)) { // Mine isnt open until Winter 8;
@@ -292,14 +301,14 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 				a.push({'desc':"Equip hoe, Visit Mine", 'iid':get_npc_id('carpenter_top'), 'imp':true});
 				a.push({'desc':"Dig a Berry", 'sr':true, 'sel':false, 'val':1, 'cid':'f_berry_mine'});
+				a.push({'desc':("(" + (-1 * tmp_gold_left) + "G Left)")});
 			}
 		}
 
 		if (d == 94 && flags['dream_maria'] == 0) {
 			// Steal the Cows
-			for (var z = 0; z < horse_action_ids.length; z++) {
-				a[horse_action_ids[z]]['sel'] = true;
-			}
+
+			// Maria
 			a.push({'desc':"Talk (CHURCH / HOUSE)", 'cid':maria_id, 'val':1, 't2':"MusBox", 'sel':(flags['new_mus_box'] == 0), 'imp':true});
 			a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':(flags['new_mus_box'] == 1), 't2':"Talk (CHURCH / HOUSE)"});
 			a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true});
