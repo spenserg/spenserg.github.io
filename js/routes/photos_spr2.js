@@ -33,10 +33,14 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Enter Horse Race
 	if (d == 136) {
-		var doug_id = get_npc_id('doug');
-		// Not enough money to make it worth it.
-		a.push({'desc':"Ignore Doug on the Farm", 'iid':doug_id, 'red':true});
-		a.push({'desc':"Enter Horse into Race", 'cid':[doug_id, 'f_horse_entered'], 'val':[3, 1], 'sel':false, 'sr':true});
+		// Horse Race Entry
+		if (flags['photo_horserace'] == 0) {
+			// Didnt win horse race Fall Y1
+			a.push({'desc':"Enter Horse", 'cid':['f_horse_entered', get_npc_id('doug')], 'val':[1, 3]});
+		} else {
+			// Not enough money to make it worth it.
+			a.push({'desc':"Ignore Doug on Farm", 'red':true, 'iid':get_npc_id('doug')});
+		}
 	}
 
 	// Horse Affection
