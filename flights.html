@@ -1,23 +1,26 @@
 <head>
-		<title>SHelper</title>
-		<meta name="viewport" content="user-scalable=no, width=device-width">
-		<meta charset="UTF-8">
+	<title>SHelper</title>
+	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<meta charset="UTF-8">
 
-		<link href="css/bootstrap.min.css" rel="stylesheet" >
-		<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" >
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-	Outbound List: <textarea id="outbound" rows="5"></textarea>
+	Outbound List: <textarea id="outbound" rows="5"></textarea>&nbsp;&nbsp;
 	<button onclick="compute(0)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
-	Inbound List: <textarea id="inbound" rows="5"></textarea>
+	Inbound DSN: <textarea id="dsn" rows="5"></textarea>&nbsp;&nbsp;<button onclick="clear_input(3)">Clear</button><br/>
+	Inbound List: <textarea id="inbound" rows="5"></textarea>&nbsp;&nbsp;
 	<button onclick="compute(1)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(1)">Clear</button><br/>
-	Rollover List: <textarea id="rollover" rows="5"></textarea>
+	Rollover List: <textarea id="rollover" rows="5"></textarea>&nbsp;&nbsp;
 	<button onclick="compute(2)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(2)">Clear</button><br/>
-	Ans: <textarea id="ans_txt" rows="5" style="width:300px"></textarea><div id="total"></div>
+	Ans: <textarea id="ans_txt" rows="5" style="width:300px"></textarea>
+	<div id="total"></div><br/>
+	<div id="total_wgt"></div>
 </body>
 
 <script>
@@ -34,7 +37,7 @@ function get_month_name(id = -1) {
 	if (id < 0 || id > 11) { return "NULL"; }
 	return ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][id];
 }
-	
+
 function today(report_date = true) {
 	var today = new Date();
 	if (report_date && today.getHours() > 15) {
@@ -51,6 +54,8 @@ function clear_input (type = -1) {
 		$("#inbound").val("");
 	} else if (type == 2) {
 		$("#rollover").val("");	
+	} else if (type == 3) {
+		$("#dsn").val("");	
 	}
 }
 
@@ -62,12 +67,14 @@ function compute (type = -1) {
 
     $("#total").html("");
     if (type != -1) {
-    var list_ans = [];
-	ans = "";
+    	var list_ans = [];
+	var ans = "";
 	if (type == 1) {
-		reg = /([^\n]+)\n([A-Z]+)\n[A-Z]{3}([A-Z]{3})\nRDT/g;
+		// Inbound
+		reg = /([^\n]+)\n([A-Z]+)\n[A-Z]{3}([A-Z]{3})\nRDT([^\n]+)/g;
 		ans = $("#inbound").val();
 	} else if (type == 0) {
+		// Outbound
 		ans = $("#outbound").val();
 		reg = /AA(\d+)\n[^\n]+\nDFW([A-Z]{3})[^\:]+\:\s(\d+)\:(\d+)\:[^\n]+\n[^\:]+\:\s([^\n]+)\nDFW\n\d/g;
 	} else {
@@ -78,14 +85,13 @@ function compute (type = -1) {
 	var net = 0;
     	var result2;
 	var list_ans = {};
+	var list_wgt = {};
+	var dsn_syns = {};
 	var list_reps = [];
     	var alt_found = false;
 	while((result2 = reg.exec(ans)) !== null && net < 1000) {
 		if (type == 1) {
-			if (!result2[2].toLowerCase().includes("eliver")) {
-				
-				console.log(result2[2]);
-				
+			if (!result2[2].toLowerCase().includes("eliver")) { // Not "Delivered"
 				// Inbound
 				var tmp_dest = result2[3];
 				if (result2[1].length > 12) {
