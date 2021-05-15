@@ -80,7 +80,7 @@ function compute (type = -1) {
 			var tmpres;
 			var tmpans = $("#dsn").val();
 			while((tmpres = reg.exec(tmpans)) !== null && net < 1000) {
-				dsns[tmpres[2].substring(0, 6) + tmpres[1]] = [tmpres[3], tmpres[4], "XXX", -1, 0];
+				dsns[tmpres[2].substring(6, 12) + tmpres[1]] = [parseInt(tmpres[3]), parseInt(tmpres[4]), "XXX", -1, 0];
 			}
 			net = 0;
 		}
@@ -121,7 +121,7 @@ function compute (type = -1) {
 				if ($("#dsn").val().length > 0) {
 					if (result2[1].length > 20) {
 						// International
-						var dsn_id = result2[1].substring(0, 6) + result2[1].substring(16, 20);
+						var dsn_id = result2[1].substring(6, 12) + result2[1].substring(16, 20);
 						if (dsns[dsn_id] !== undefined) {
 							dsns[dsn_id][2]	= result2[3];
 							dsns[dsn_id][3]	= result2[4].includes("Milit");
@@ -209,26 +209,30 @@ function compute (type = -1) {
 		var dsn_locs = {};
 		if ($("#dsn").val().length > 0) {
 			// DSN included
-			result = "DEST\tBAGS\tTOTAL\tMILITARY\tOTHER\n";
+			result = "DEST\tBAGS\tMILITARY\tOTHER\tTOTAL";
 			for (var item in dsns) {
 				if (dsn_locs[dsns[item][2]] === undefined) {
 					// [Military wgt, Other wgt]
 					dsn_locs[dsns[item][2]] = [0, 0];
 				}
-				dsn_locs[dsns[item][2]][((dsns[item][3]) ? 0 : 1)] += ((parseInt(dsns[item][1]) * dsns[item][4]) / parseInt(dsns[item][0]));
+				var tmp_wgt = Math.ceil((dsns[item][1] * dsns[item][4]) / dsns[item][0]);
+				
+				if (dsns[item][3]) {
+					// Military
+					dsn_locs[dsns[item][2]][0] += tmp_wgt;
+				} else {
+					// Other
+					dsn_locs[dsns[item][2]][1] += tmp_wgt;
+				}
 			}
 			
 			console.log(dsn_locs);
 			
-			
 			sortable.forEach(function(item, index) {
-				var tmp_total_wgt = (000 + dsn_locs[item[0]][0] + dsn_locs[item[0]][1]);
+				var tmp_total_wgt = dsn_locs[item[0]][0] + dsn_locs[item[0]][1];
 				result += "\n" + item[0] + "\t" + item[1] + "\t" +
-					dsn_locs[item[0]][0] + "\t" + dsn_locs[1] + "\t" + tmp_total_wgt;
-			});
-
-			//console.log(dsn_locs);
-				
+					dsn_locs[item[0]][0] + "\t" + dsn_locs[item[0]][1] + "\t" + tmp_total_wgt;
+			});	
 		} else {
 			// No DSN included
 			result += "BULK\t";
