@@ -80,11 +80,11 @@ function compute (type = -1) {
 			var tmpres;
 			var tmpans = $("#dsn").val();
 			while((tmpres = reg.exec(tmpans)) !== null && net < 1000) {
-				dsns[tmpres[2].substring(6, 12) + tmpres[1]] = [parseInt(tmpres[3]), parseInt(tmpres[4]), "XXX", -1, 0];
+				var tmp_index = ((tmpres[2].length < 7) ? (tmpres[2].substring(0, 6)) : (tmpres[2].substring(6, 12) + tmpres[1]));
+				dsns[tmp_index] = [parseInt(tmpres[3]), parseInt(tmpres[4]), "XXX", -1, 0];
 			}
 			net = 0;
 		}
-
 		reg = /([^\n]+)\n([A-Z]+)\n[A-Z]{3}([A-Z]{3})\nRDT([^\n]+)/g;
 		ans = $("#inbound").val();
 	} else if (type == 0) {
@@ -129,6 +129,12 @@ function compute (type = -1) {
 						}
 					} else {
 						// Domestic
+						var dsn_id = result2[0].split("\n")[2].trim();
+						if (dsns[dsn_id] !== undefined) {
+							dsns[dsn_id][2]	= result2[3];
+							dsns[dsn_id][3]	= result2[4].includes("Milit");
+							dsns[dsn_id][4]	= dsns[dsn_id][4] + 1;
+						}
 					}
 				}
 			}
@@ -183,9 +189,6 @@ function compute (type = -1) {
 		}
 		net++;
 	}
-	    
-	    console.log(dsns);
-	    
 	if (type == 0) {
 		var nf_list = "";
 		for (var q = 0; q < new_list.length; q++) {
@@ -194,9 +197,6 @@ function compute (type = -1) {
 		$("#rollover").val(nf_list);
 		$("#inbound").val((new_list.length > 0) ? "NEW FLIGHTS" : "");
 	} else if (type == 1) {
-		
-		console.log(list_ans);
-		
 		// Inbound
 		var total = 0;
 		var sortable = [];
@@ -209,14 +209,14 @@ function compute (type = -1) {
 		var dsn_locs = {};
 		if ($("#dsn").val().length > 0) {
 			// DSN included
-			result = "DEST\tBAGS\tMILITARY\tOTHER\tTOTAL";
+			//result = "DEST\tBAGS\tMILITARY\tOTHER\tTOTAL";
+			var tmp_totals = [0, 0, 0, 0];
 			for (var item in dsns) {
 				if (dsn_locs[dsns[item][2]] === undefined) {
 					// [Military wgt, Other wgt]
 					dsn_locs[dsns[item][2]] = [0, 0];
 				}
 				var tmp_wgt = Math.ceil((dsns[item][1] * dsns[item][4]) / dsns[item][0]);
-				
 				if (dsns[item][3]) {
 					// Military
 					dsn_locs[dsns[item][2]][0] += tmp_wgt;
@@ -229,10 +229,18 @@ function compute (type = -1) {
 			console.log(dsn_locs);
 			
 			sortable.forEach(function(item, index) {
+				
+				console.log(item);
+				
 				var tmp_total_wgt = dsn_locs[item[0]][0] + dsn_locs[item[0]][1];
 				result += "\n" + item[0] + "\t" + item[1] + "\t" +
 					dsn_locs[item[0]][0] + "\t" + dsn_locs[item[0]][1] + "\t" + tmp_total_wgt;
-			});	
+				tmp_totals[0] += item[1];
+				tmp_totals[1] += dsn_locs[item[0]][0];
+				tmp_totals[2] += dsn_locs[item[0]][1];
+				tmp_totals[3] += tmp_total_wgt;
+			});
+			result += "\nTOTAL\t" + tmp_totals[0] + "\t" + tmp_totals[1] + "\t" + tmp_totals[2] + "\t" + tmp_totals[3];
 		} else {
 			// No DSN included
 			result += "BULK\t";
@@ -306,7 +314,7 @@ function compute (type = -1) {
 			}
 		}
 	}
-	//$("#dsn").val("");
+	$("#dsn").val("");
     	$('#ans_txt').val(result.trim());
     }
 }
