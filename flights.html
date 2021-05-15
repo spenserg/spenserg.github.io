@@ -76,11 +76,11 @@ function compute (type = -1) {
 
 		// Check DSN
 		if ($("#dsn").val().length > 0) {
-			reg = 	/(\d+)\n([^\n]+)\nRcvd\s\:\s\d+\sBgs\n\|\n\d+\nManif\:(\d+)\sBgs\n\|\n(\d+)\n/g;
+			reg = /(\d+)\n([^\n]+)\nRcvd\s\:\s\d+\sBgs\n\|\n\d+\nManif\:(\d+)\sBgs\n\|\n(\d+)\n/g;
 			var tmpres;
 			var tmpans = $("#dsn").val();
 			while((tmpres = reg.exec(tmpans)) !== null && net < 1000) {
-				dsns[tmpres[1].substring(0, 6) + tmpres[2]] = [tmpres[3], tmpres[4], "XXX", -1, 0];
+				dsns[tmpres[2].substring(0, 6) + tmpres[1]] = [tmpres[3], tmpres[4], "XXX", -1, 0];
 			}
 			net = 0;
 		}
@@ -183,6 +183,9 @@ function compute (type = -1) {
 		}
 		net++;
 	}
+	    
+	    console.log(dsns);
+	    
 	if (type == 0) {
 		var nf_list = "";
 		for (var q = 0; q < new_list.length; q++) {
@@ -202,22 +205,49 @@ function compute (type = -1) {
 			sortable.push([dest, list_ans[dest]]);
 		}
 		sortable.sort(function(a, b) { return b[1] - a[1]; } );
-		result += "BULK\t";
-		if (sortable.length < 3) {
-			sortable.forEach(function(item, index) {
-				if (sortable.length == 1) {
-					result += item[0] + "\t" + item[1] + "\t \tPURE " + item[0] + "\n";
-				} else {
-					result += item[0] + "\t" + item[1] + "\n \t";
+
+		var dsn_locs = {};
+		if ($("#dsn").val().length > 0) {
+			// DSN included
+			result = "DEST\tBAGS\tTOTAL\tMILITARY\tOTHER\n";
+			for (var item in dsns) {
+				if (dsn_locs[dsns[item][2]] === undefined) {
+					// [Military wgt, Other wgt]
+					dsn_locs[dsns[item][2]] = [0, 0];
 				}
+				dsn_locs[dsns[item][2]][((dsns[item][3]) ? 0 : 1)] += ((parseInt(dsns[item][1]) * dsns[item][4]) / parseInt(dsns[item][0]));
+			}
+			
+			console.log(dsn_locs);
+			
+			
+			sortable.forEach(function(item, index) {
+				var tmp_total_wgt = (000 + dsn_locs[item[0]][0] + dsn_locs[item[0]][1]);
+				result += "\n" + item[0] + "\t" + item[1] + "\t" +
+					dsn_locs[item[0]][0] + "\t" + dsn_locs[1] + "\t" + tmp_total_wgt;
 			});
+
+			//console.log(dsn_locs);
+				
 		} else {
-			for (var i = 0; i < Math.floor(sortable.length / 2); i++) {
-				result += sortable[i][0] + "\t" + sortable[i][1] + "\t" +
-				sortable[i + Math.ceil(sortable.length / 2)][0] + "\t" + sortable[i + Math.ceil(sortable.length / 2)][1] + "\n \t";
-            		}
-			if (sortable.length % 2 == 1) {
-				result += sortable[Math.floor(sortable.length / 2)][0] + "\t" + sortable[Math.floor(sortable.length / 2)][1];
+			// No DSN included
+			result += "BULK\t";
+			if (sortable.length < 3) {
+				sortable.forEach(function(item, index) {
+					if (sortable.length == 1) {
+						result += item[0] + "\t" + item[1] + "\t \tPURE " + item[0] + "\n";
+					} else {
+						result += item[0] + "\t" + item[1] + "\n \t";
+					}
+				});
+			} else {
+				for (var i = 0; i < Math.floor(sortable.length / 2); i++) {
+					result += sortable[i][0] + "\t" + sortable[i][1] + "\t" +
+					sortable[i + Math.ceil(sortable.length / 2)][0] + "\t" + sortable[i + Math.ceil(sortable.length / 2)][1] + "\n \t";
+				}
+				if (sortable.length % 2 == 1) {
+					result += sortable[Math.floor(sortable.length / 2)][0] + "\t" + sortable[Math.floor(sortable.length / 2)][1];
+				}
 			}
 		}
 
@@ -272,7 +302,7 @@ function compute (type = -1) {
 			}
 		}
 	}
-	$("#dsn").val("");
+	//$("#dsn").val("");
     	$('#ans_txt').val(result.trim());
     }
 }
