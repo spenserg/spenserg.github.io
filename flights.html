@@ -225,13 +225,7 @@ function compute (type = -1) {
 					dsn_locs[dsns[item][2]][1] += tmp_wgt;
 				}
 			}
-			
-			console.log(dsn_locs);
-			
 			sortable.forEach(function(item, index) {
-				
-				console.log(item);
-				
 				var tmp_total_wgt = dsn_locs[item[0]][0] + dsn_locs[item[0]][1];
 				result += "\n" + item[0] + "\t" + item[1] + "\t" +
 					dsn_locs[item[0]][0] + "\t" + dsn_locs[item[0]][1] + "\t" + tmp_total_wgt;
