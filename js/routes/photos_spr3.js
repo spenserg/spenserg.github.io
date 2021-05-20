@@ -87,7 +87,7 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 		// Baby Spam
 		// If you already have a chicken, otherwise do it when you go to buy one
-		if (d > 265 is_sunny == true && dow != "THURS") {
+		if (d > 265 && is_sunny == true && dow != "THURS") {
 			if (aff[doug_id] < 100 && aff[gotz_id] < 100) {
 				a.push({'desc':"Clear Mailbox", 'imp':true});
 			}
