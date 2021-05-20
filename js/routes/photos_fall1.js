@@ -260,10 +260,10 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 						}
 						a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk "), 'cid':elli_id, 'val':1,
 								'imp':(elli_cutscene_plays && [67, 69].includes(d)),
-								'sel':((flags['new_mus_box'] == 0 && aff[elli_id] < ((route_id == 0) ? _PHOTO_MIN : 250) &&
+								'sel':(flags['new_mus_box'] == 0 && aff[elli_id] < ((route_id == 0) ? _PHOTO_MIN : 250) &&
 									(is_sunny == 1 || (elli_sick_event && dow == "WED")) ||
 										([67, 69].includes(d) && elli_cutscene_plays)),
-								'red':(aff[elli_id] >= ((route_id == 0) ? _PHOTO_MIN : 250) && !elli_cutscene_plays)
+								'red':(aff[elli_id] >= 250 && !elli_cutscene_plays)
 						});
 						a[a.length - 1]['t2'] = "MusBox ";
 						a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
@@ -467,11 +467,11 @@ function ranch_stuff_fall(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1
 				}
 				if (aff[cliff_id] == 5 || aff[cliff_id] == 0) {
 					// Cliff's intro gives affection to GRAY
-					tmp_act.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'sel':false, 'iid':cliff_id, 'red':(dow == "WED"))});
+					tmp_act.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'sel':false, 'iid':cliff_id, 'red':(dow == "WED")});
 				}
 				tmp_act.push({
 					'desc':("Talk (" + ((dow == "WED") ? "Ranch" : "Beach") + ")"),
-					'cid':cliff_id, 'val':2, 'sel':false, 'sr':(aff[cliff_id] == 5 || aff[cliff_id] == 0)
+					'cid':cliff_id, 'val':2, 'sel':false, 'sr':(aff[cliff_id] == 5 || aff[cliff_id] == 0),
 					'red':(dow == "WED" || aff[cliff_id] >= _PARTY_ATTEND_MIN),
 				});
 				tmp_act.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':(dow != "WED" && vars['chickens'] <= 1), 't2':"   Egg   ", 'sr':true});
