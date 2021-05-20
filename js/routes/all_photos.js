@@ -20,7 +20,7 @@
  *  - Work on Winter 16
  * 
  * DOG RACE
- *  - Win Dog Race on Winter 19
+ *  - Win Dog Race on Winter 19 (Y2)
  * 
  * ANN PHOTO
  *  - Ann at 200+ affection during Winter
@@ -37,7 +37,7 @@
  * KAREN PHOTO
  *  - Karen at 200+ affection on Fall 7
  *  - Restore the Vineyard
- * 		- Sprite at TODO affection
+ * 		- Sprite at 50 affection
  * 		- Wine from Bartender
  * 			- Bartender at 41 affection
  * 		- Talk to goddess at spring
@@ -81,24 +81,18 @@
  * 		- May (convo spam)
  * 		- Kent (chicken / baby spam)
  * 		- Doug (baby spam)
- * 		- Basil (for berry?)
- * 		- Cliff
+ *		- Gotz (baby spam)
+ * 		- Cliff / Kai
  * 		- Mayor
  */
 
 /* TODO
  * 
- * - Chicken cycling
- * - Dog and Horse Aff meters
  * - Happiness meters?
- * - Milk shipped counter?
- * - Horse small to big counter & brush / ride
  * 
  * Oddtom Photo Run:
- * Baby on Win 20
- * 
- * 
- * sick baby random during second stage
+ * Baby on Spr 25 Y3
+ *
  */
 
 function get_actions_photos(d = 3, g = 300, is_sunny = 1) {
