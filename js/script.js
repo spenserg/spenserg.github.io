@@ -128,7 +128,7 @@ function next_day(jump = false) {
 			vars['new_cow_days'] = "112112112";
 			vars['day']++;
 		}
-
+/*
 		// Cow Affection
 		// Normal = NX
 		// Happy = HX
@@ -146,14 +146,15 @@ function next_day(jump = false) {
 			// 0 <= aff <= 255
 			aff[47 + q] = ((aff[47 + q] > 255) ? 255 : ((aff[47 + q] < 0) ? 0 : (aff[47 + q])));
 		}
+*/
 
 		// Stumps
 		aff[get_npc_id('stump')] = vars['lumber'];
 
 		// All Photos
-		// Reset Happiness to zero just before Cow Fest
+		// Reset Happiness to zero just before Swim Fest/Marriage
 		// Cheaty way to account for hammering sick cows over and over
-		if (route_id == 0 && d == 183) {
+		if (route_id == 0 && d == 173) {
 			vars['happiness'] = 0;
 		}
 
@@ -200,7 +201,7 @@ function next_day(jump = false) {
 				aff[tmp_v] = (aff[tmp_v] < 0) ? 0 : aff[tmp_v];
 			}
 		}
-		
+
 		// Warp Dog Outside for Stairway and Baby Bed
 		if (flags['babybed'] == 2 || flags['stairway'] == 2) {
 			flags['dog_inside'] = 0;
@@ -239,9 +240,9 @@ function next_day(jump = false) {
 
 		// Married Affection
 		if (flags['photo_married'] == 1) {
-			aff[get_npc_id('karen')]--;
+			aff[get_npc_id('elli')]--;
 			vars['days_married']++;
-			if (vars['days_married'] >= 30 && flags['baby'] == 0 && flags['babybed'] == 1 && aff[get_npc_id('karen')] >= 250) {
+			if (vars['days_married'] >= 30 && flags['baby'] == 0 && flags['babybed'] == 1 && aff[get_npc_id('elli')] >= 250) {
 				flags['baby'] = (_BABY_BORN_DAYS + 2);
 			}
 		}
