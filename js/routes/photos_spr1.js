@@ -551,8 +551,8 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Dog Karen to Pink", 'cid':karen_id, 'val':(208 - aff[karen_id]), 'sel':false});
 			}
 
-			if (is_sunny == 1 && dow != "SUN") {
-				if (flags['berry_kappa'] == 0 && vars['chickens'] == 0) {
+			if (dow != "SUN") {
+				if (is_sunny == 1 && flags['berry_kappa'] == 0 && vars['chickens'] == 0) {
 					a.push({'desc':"Dock fishing, then bar"});
 					if (flags['berry_ocean'] == 0) {
 						a.push({'desc':"Ocean Berry", 'cid':'f_berry_ocean', 'val':1, 'sel':false, 'sr':true});
@@ -579,7 +579,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
 		a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':(!["WED", "SAT", "SUN"].includes(dow) && (!is_festival(d) || d == 8)) });
-		if (aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
+		if (aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]) && !get_horse) {
 			a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
 		}
 	}
@@ -672,7 +672,7 @@ function maria_spry1 (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
 			a.push({'desc':"Meet", 'cid':maria_id, 'val':4, 'red':(dow == "SUN" && d != 7), 'sel':(!["SAT", "SUN", "WED"].includes(dow))});
 		}
 		a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 'sr':(aff[maria_id] == 0), 'red':(dow == "SUN" && d != 7),
-			'sel':(is_sunny == 1 && flags['new_mus_box'] == 0 && (d == 6 || !["WED", "SAT", "SUN"].includes(dow)))
+			'sel':((is_sunny == 1 || d == 6) && flags['new_mus_box'] == 0 && (d == 6 || !["WED", "SAT", "SUN"].includes(dow)))
 		});
 		if (aff[rick_id] >= _RICK_FIX_MIN - 6) {
 			a[a.length - 1]['t2'] = "MusBox";
