@@ -633,22 +633,28 @@ function elli_spry1 (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
 	// ELLI
 	// "Gift " <- one space
 	// "Talk " <- one space
+	var elli_sick_event = (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0);
 	if (!["SUN", "MON"].includes(dow)) {
 		if (aff[elli_id] == 0) { a.push({'desc':"Meet", 'cid':elli_id, 'val':4}); }
 		a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk (Bakery)"), 'cid':elli_id, 'val':1,
 			'sr':(aff[elli_id] == 0), 't2':"MusBox ",
-			'sel':([6, 9].includes(d) || (d != 4 && !["WED", "SAT"].includes(dow) && is_sunny == 1 && aff[rick_id] < _RICK_FIX_MIN - 6))});
+			'sel':([6, 9].includes(d) || (elli_sick_event && dow == "WED" && flags['new_mus_box'] == 0) ||
+			       (d != 4 && !["WED", "SAT"].includes(dow) && is_sunny == 1 && aff[rick_id] < _RICK_FIX_MIN - 6))
+		});
 		a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
-			'sel':(is_sunny == 1 && (aff[rick_id] >= _RICK_FIX_MIN - 6) && (!["SAT", "WED", "SUN"].includes(dow))),
+			'sel':((elli_sick_event && dow == "WED" && flags['new_mus_box'] == 1) ||
+			       (is_sunny == 1 && aff[rick_id] >= (_RICK_FIX_MIN - 6) && !["SAT", "WED", "SUN"].includes(dow))),
 			't2':a[a.length - 1]['desc']});
 		a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
 			't2':((vars['chickens'] > 0) ? ["Egg", "M/L Fish"] : "M/L Fish"),
-			'sel':(d == 6 || (d != 4 && !["WED", "SAT"].includes(dow) && (is_sunny == 1 || d == 9) && ((vars['chickens'] < 1) || (d != 24 && (vars['chickens'] == 0 || flags['new_chick'] == 1 || d == 9)))))
+			'sel':(d == 6 || (elli_sick_event && dow == "WED" && vars['chickens'] == 0) ||
+			       (d != 4 && !["WED", "SAT"].includes(dow) && (is_sunny == 1 || d == 9) && ((vars['chickens'] < 1) || (d != 24 && (vars['chickens'] == 0 || flags['new_chick'] == 1 || d == 9)))))
 		});
 		a.push({
 			'desc':((vars['chickens'] > 0) ? "Egg" : "M/L Fish"), 'sr':true,
 			't2':((vars['chickens'] > 0) ? ["Gift ", "M/L Fish"] : "Gift "),
-			'sel':(d != 9 && is_sunny == 1 && !["WED", "SAT"].includes(dow) &&(d == 24 || (vars['chickens'] > 0 && flags['new_chick'] != 1))),
+			'sel':(d != 9 && ((is_sunny == 1 && !["WED", "SAT"].includes(dow)) || (elli_sick_event && dow == "WED" && vars['chickens'] > 0)) &&
+			       (d == 24 || (vars['chickens'] > 0 && flags['new_chick'] != 1))),
 			'cid':((vars['chickens'] > 0) ? ((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id) : [elli_id, 'v_happiness']),
 			'val':((vars['chickens'] > 0) ? ((flags['recipe_elli'] == 0) ? [1, 6] : 4) : [3, 1])
 		});
@@ -658,6 +664,11 @@ function elli_spry1 (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
 					'val':[3, 1], 'sel':false
 			});
 		}
+	}
+	if (elli_sick_event) {
+		a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1],
+			'red':(aff[elli_id] >= 250), 'sel':(aff[elli_id] < 250)
+		});
 	}
 	return a;
 }
