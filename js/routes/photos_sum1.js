@@ -177,6 +177,10 @@ actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 						a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
 						a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
 					}
+
+					// SPRITE
+					a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sel':false, 'red':(aff[sprite_id] >= (_SPRITE_WINE_MIN - 1))});
+					a.push({'desc':"Flower", 'cid':sprite_id, 'val':2, 'sel':false, 'sr':true});
 				} else {
 					// Library closed; Mountain Visit
 
@@ -250,7 +254,7 @@ actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				// "Musbox " <- one space
 				if (dow != "MON") {
 					var elli_sick_event = (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0);
-					if (dow != "SUN") {
+					if (dow != "SUN" && ((!elli_sick_event) || dow == "WED")) {
 						a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk "), 'cid':elli_id, 'val':1, 't2':"MusBox ",
 							'sel':(d == 31 || (is_sunny == 1 && (!["SAT", "SUN", "WED"].includes(dow) || (elli_sick_event && dow == "WED"))))
 						});
@@ -430,10 +434,7 @@ function ranch_stuff_sum(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1,
 		var elli_id = get_npc_id('elli');
 		var cliff_id = get_npc_id('cliff');
 
-		if (dow == "SUN" && is_sunny == 0 && aff[ann_id] >= _SICK_EVENT_MIN && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN) {
-			// ANN SICK EVENT
-			tmp_act.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1]});
-		} else if (aff[ann_id] < _PHOTO_MIN) {
+		if (aff[ann_id] < _PHOTO_MIN) {
 			// ANN
 			// " Talk" <- -1 spaces
 			// " Gift" <- -1 spaces
@@ -457,7 +458,11 @@ function ranch_stuff_sum(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1,
 				'val':[((vars['day'] == 44) ? 5 : 3), -1], 't2':" Gift",
 				'sel':(is_sunny == 1 && !["WED", "SAT", "SUN"].includes(dow) && (vars['potatoes'] > 0 || vars['corn_waters'] >= _CORN_GROW_DAYS))
 			});
-			
+			if (dow == "SUN" && is_sunny == 0 && aff[ann_id] >= _SICK_EVENT_MIN && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN) {
+				// ANN SICK EVENT
+				tmp_act.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1]});
+			}
+
 			// Cliff
 			if (["WED", "TUES"].includes(dow) && is_sunny == 1) {
 				var no_beach = (dow == "WED");
