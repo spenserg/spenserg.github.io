@@ -591,8 +591,13 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	}
 	a.push({'desc':"Feed Dog", 'cid':dog_id, 'val':2, 'sel':false, 'red':(vars['chickens'] == 0)});
 
-	if (d == 30 && is_sunny == 1) {
-		a.push({'desc':"Day Skipped", 'cid':['v_day', 'f_dontsave'], 'val':[1, 1], 'red':true, 'sel':false});
+	if (d == 30) {
+		if (flags['potato_planted']) {
+			a.push({'desc':"Pocket All Potatoes", 'imp':true});
+		}
+		if (is_sunny == 1) {
+			a.push({'desc':"Day Skipped", 'cid':['v_day', 'f_dontsave'], 'val':[1, 1], 'red':true, 'sel':false});
+		}
 	}
 	if (reset.length > 0) {
 		flags['dontsave'] = false;
