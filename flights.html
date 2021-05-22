@@ -65,6 +65,7 @@ function compute (type = -1) {
     var reg;
     var new_list = [];
     var dsns = {};
+    var is_priority = false;
 
     $("#total").html("");
     if (type != -1) {
@@ -107,6 +108,7 @@ function compute (type = -1) {
 			if (!result2[2].toLowerCase().includes("eliver")) { // Not "Delivered"
 				// Inbound
 				var tmp_dest = result2[3];
+				
 				if (result2[1].length > 20) {
 					if (result2[1].substring(8,11).localeCompare(tmp_dest) != 0) {
 						list_reps.push([tmp_dest, result2[1].substring(8,11)]);
@@ -116,6 +118,7 @@ function compute (type = -1) {
 			   		list_ans[result2[3]] = 0;
 				}
 				list_ans[result2[3]]++;
+				is_priority = (is_priority || result2[4].includes("Priority"));
 
 				// Update DSN
 				if ($("#dsn").val().length > 0) {
@@ -240,16 +243,23 @@ function compute (type = -1) {
 			result += "BULK\t";
 			if (sortable.length < 3) {
 				sortable.forEach(function(item, index) {
+					result += item[0] + "\t" + item[1] + "\t"
 					if (sortable.length == 1) {
-						result += item[0] + "\t" + item[1] + "\t \tPURE " + item[0] + "\n";
-					} else {
-						result += item[0] + "\t" + item[1] + "\n \t";
+						result += " \tPURE " + item[0] + "\t";
 					}
 				});
+				if (is_priority) {
+					result += "PRIORITY";
+				}
 			} else {
 				for (var i = 0; i < Math.floor(sortable.length / 2); i++) {
 					result += sortable[i][0] + "\t" + sortable[i][1] + "\t" +
-					sortable[i + Math.ceil(sortable.length / 2)][0] + "\t" + sortable[i + Math.ceil(sortable.length / 2)][1] + "\n \t";
+					sortable[i + Math.ceil(sortable.length / 2)][0] + "\t" + sortable[i + Math.ceil(sortable.length / 2)][1];
+					if (is_priority) {
+						result += "\tPRIORITY";
+						is_priority = false;
+					}
+					result += "\n \t";
 				}
 				if (sortable.length % 2 == 1) {
 					result += sortable[Math.floor(sortable.length / 2)][0] + "\t" + sortable[Math.floor(sortable.length / 2)][1];
