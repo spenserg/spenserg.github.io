@@ -26,6 +26,8 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		flags['dontsave'] = true;
 	} else if (d == 66 || d == 68) { // Fall 6 & 8
 		a.push({'desc':"Check Weather, RESET IF RAINY TOMORROW", 'imp':true});
+	} else if (flags['berry_strength'] == 0 && d >= 83 && d <= 87) {
+		a.push({'desc':"No Stamina Use for Strength Berry", 'imp':true});
 	} else if (d == 87) {
 		// Horse Race Entry
 		if (flags['photo_horserace'] == 0) {
@@ -173,9 +175,11 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			if ([65, 67].includes(d) && is_sunny == 1) {
 				// Wish for Weather
 				a.push({'desc':"Wish for Weather (Top)", 'iid':get_npc_id('goddess')});
-			} else if (vars['chickens'] > 0 && flags['berry_strength'] == 0 && is_sunny == 1) {
+			} else if (flags['berry_strength'] == 0) {
 				// Strength Wish Power Berry
-				a.push({'desc':"Wish for Strength (Middle)", 'cid':'f_berry_strength', 'val':1, 'iid':get_npc_id('goddess'), 'sel':false});
+				a.push({'desc':"Wish for Strength (Middle)", 'cid':'f_berry_strength', 'val':1,
+					'iid':get_npc_id('goddess'), 'sel':(d >= 83 && d <= 87), 'imp':(d >= 83 && d <= 87)
+				});
 			}
 		}
 
