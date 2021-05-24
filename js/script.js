@@ -537,6 +537,7 @@ function fish() {
 
 function betting_table(a = [], bet_type = 1) {
 	var tmp_medals_needed = (([0, 5].includes(route_id)) ? 1000 : 500);
+	a.push({'desc':"Races at 10 AM, 1 PM, and 4 PM"});
 	a.push({'desc':('<div class="ml-3">' + ((route_id == -1) ? 'MONEY:&nbsp;&nbsp;<input type="number" id="b_gold" onchange="calc_bets(' + bet_type + ')" style="margin-right:20px" value="6000" /></div><div class="ml-3">' : '') +
 			'NEED:&nbsp;&nbsp;<input type="number" id="b_need" onchange="calc_bets(' + bet_type + ')" style="margin-right:20px" value="' + tmp_medals_needed +
 			'" /></div>' + '<div class="ml-3">HAVE:&nbsp;&nbsp;<input type="number" id="b_have" onchange="calc_bets(' + bet_type + ')" value="' + vars['medals'] + '" /></div>')});
