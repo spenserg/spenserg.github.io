@@ -111,5 +111,10 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Whistle", 'val':1, 'sr':true});
 		}
 	}
+
+	// Cliff Wedding
+	if (flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
+		a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
+	}
 	return a;
 }
