@@ -470,8 +470,13 @@ function ranch_stuff_fall(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1
 		var cliff_id = get_npc_id('cliff');
 		var maria_id = get_npc_id('maria');
 		var d = vars['day'];
-		
+
 		var ann_sick_event = (dow == "SUN" && d != 63 && is_sunny == 0 && aff[ann_id] >= _SICK_EVENT_MIN && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN);
+
+		if (is_sunny == 1 && flags['cutscene_cliff_farm'] == 0 && aff[cliff_id] > 90) {
+			tmp_act.push({'desc':"RANCH CUTSCENE, Fast Text", 'imp':true, 'iid':cliff_id});
+			tmp_act.push({'desc':"Cliff Cutscene", 'val':1, 'cid':"f_cutscene_cliff", 'sr':true, 'sel':false});
+		}
 
 		if (aff[ann_id] < _PHOTO_MIN) {
 			// ANN
