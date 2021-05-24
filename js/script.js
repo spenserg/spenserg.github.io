@@ -684,6 +684,7 @@ function new_game(rid = 24) {
 		flags['potato_planted'] = 0;
 		flags['corn_planted'] = 0;
 		flags['cutscene_cliff_farm'] = 0;
+		flags['wedding_cliff'] = 0;
 	} else if (rid == 7) { // Maria Marriage
 		vars['cabbages'] = 0;
 		vars['cabbage_waters'] = 0;
@@ -1216,34 +1217,8 @@ function slow_calc(odds, buy_amt, recursive = false) {
 	}
 
 	if (left_odds.length > 0 && buy_amt > 0) {
-		/*
-		console.log('slow');
-
-		console.log("new:");
-		for (var v = 0; v < new_odds.length; v++) {
-			console.log("[" + new_odds[v][0] + ", " + new_odds[v][1] + ", " + new_odds[v][2] + ", " + new_odds[v][3] + "]");
-		}
-		console.log("left:");
-		for (var v = 0; v < left_odds.length; v++) {
-			console.log("[" + left_odds[v][0] + ", " + left_odds[v][1] + ", " + left_odds[v][2] + ", " + left_odds[v][3] + "]");
-		}
-		*/
-		
 		return new_odds.concat(slow_calc(left_odds, buy_amt, true));
 	} else {
-		/*
-		console.log('done');
-		
-		console.log("new:");
-		for (var v = 0; v < new_odds.length; v++) {
-			console.log("[" + new_odds[v][0] + ", " + new_odds[v][1] + ", " + new_odds[v][2] + ", " + new_odds[v][3] + "]");
-		}
-		console.log("left:");
-		for (var v = 0; v < left_odds.length; v++) {
-			console.log("[" + left_odds[v][0] + ", " + left_odds[v][1] + ", " + left_odds[v][2] + ", " + left_odds[v][3] + "]");
-		}
-		*/
-		
 		return new_odds.concat(left_odds);
 	}
 }
@@ -1292,9 +1267,9 @@ function calc_bets(bet_type = 1, use_leftover = false) {
 			$(this).val((Math.ceil(need / odds[i][0]) > 99) ? 99 : Math.ceil(need / odds[i][0]));
 			$("#bt_" + this.id.substring(3)).html(odds[i][0] * this.value);
 			
-			console.log(odds);
-			console.log(this.value);
-			console.log((Math.ceil(need / odds[i][0]) > 99) ? 99 : Math.ceil(need / odds[i][0]));
+			//console.log(odds);
+			//console.log(this.value);
+			//console.log((Math.ceil(need / odds[i][0]) > 99) ? 99 : Math.ceil(need / odds[i][0]));
 		});
 		return;
 	}
