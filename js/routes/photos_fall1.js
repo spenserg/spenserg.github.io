@@ -216,6 +216,11 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 			}
 		}
+		
+		if (flags['cutscene_watermelon'] == 0 && aff[ann_id] >= (_CUTSCENE_WATERMELON_MIN - 7) && aff[maria_id] >= (_CUTSCENE_WATERMELON_MIN - 8)) {
+			a.push({'desc':"WARNING: Cutscene plays at 2nd Village Screen", 'red':true});
+			a.push({'desc':"Watermelon Cutscene", 'val':1, 'cid':'f_cutscene_watermelon', 'sr':true, 'sel':false});
+		}
 
 		// MARIA
 		if (aff[maria_id] > 150) {
