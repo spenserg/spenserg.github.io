@@ -1,6 +1,7 @@
 actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var ann_id = get_npc_id('ann');
 	var basil_id = get_npc_id('basil');
+	var cliff_id = get_npc_id('cliff');
 	var cow_id = get_npc_id('cow');
 	var dog_id = get_npc_id('dog');
 	var elli_id = get_npc_id('elli');
@@ -98,6 +99,9 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					'val':[1, -1000], 'iid':get_npc_id('salesman'), 'sel':(vars['gold'] >= 1000)
 			});
 			a.push({'desc':"Talk", 'cid':rick_id,  'val':2, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN)});
+			if (aff[cliff_id] >= 50) {
+				a.push({'desc':"Talk", 'cid':cliff_id,  'val':2, 'sel':(aff[cliff_id] < _PARTY_ATTEND_MIN)});
+			}
 			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN)});
 			a.push({'desc':"Talk", 'cid':maria_id, 'val':2, 'imp':true});
 			a.push({'desc':"Dance",'cid':[maria_id, 'f_dontsave'], 'val':[10, 1], 't2':"Dance ", 'sr':true});
