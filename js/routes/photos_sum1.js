@@ -56,7 +56,7 @@ actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"NO MUSIC BOX DIG (Farm visitors all day)", 'imp':true});
 				// Strength Wish Power Berry
 				if (vars['chickens'] > 0 && flags['berry_strength'] == 0) {
-					a.push({'desc':"Wish for Strength (Middle)", 'cid':'f_berry_strength', 'val':1, 'iid':get_npc_id('goddess'), 'imp':true});
+					a.push({'desc':"Wish for Strength (Middle)", 'cid':'f_berry_strength', 'val':1, 'iid':get_npc_id('goddess'), 'sel':false});
 				}
 				// Blue Mist Flower
 				if (flags['photo_popuri'] == 0) {
