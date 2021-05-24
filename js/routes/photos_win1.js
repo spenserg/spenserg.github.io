@@ -90,15 +90,19 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a[horse_action_ids[z]]['sel'] = true;
 			}
 		}
-	} else if (d > 91 && aff[ann_id] >= _PHOTO_EVENT_AFF && is_sunny == 1 && flags['photo_ann'] == 0) {
-		// Anns photo
-		// Manna cutscene & Cliff leaving scene have priority over before Ann arriving for photo
-		a.push({'desc':"Photo", 'cid':[ann_id, 'f_photo_ann', 'f_dontsave'], 'val':[_PHOTO_EVENT_AFF, 1, 1], 'imp':(aff[ann_id] >= _PHOTO_MIN), 'sel':(aff[ann_id] >= _PHOTO_MIN)});
-		for (var z = 0; z < horse_action_ids.length; z++) {
-			a[horse_action_ids[z]]['sel'] = true;
-		}
 	} else {
-		// Not festival or Anns Photo
+		if (d > 91 && is_sunny == 1 && flags['photo_ann'] == 0) {
+			// Anns photo
+			// Manna cutscene & Cliff leaving scene have priority over before Ann arriving for photo
+			a.push({'desc':"Photo", 'cid':[ann_id, 'f_photo_ann', 'f_dontsave'], 'val':[_PHOTO_EVENT_AFF, 1, 1],
+				'sel':(aff[ann_id] >= _PHOTO_MIN), 'imp':(aff[ann_id] >= _PHOTO_MIN)
+			});
+			for (var z = 0; z < horse_action_ids.length; z++) {
+				a[horse_action_ids[z]]['sel'] = true;
+			}
+		}
+
+		// Not festival
 		if (d == 108) {
 			a.push({'desc':"Enter Dog", 'cid':['f_dog_entered',get_npc_id('doug')], 'val':[1, 3], 'sel':(vars['medals'] >= 1000), 'imp':(vars['medals'] >= 1000), 'red':(vars['medals'] < 1000)});
 			if (vars['medals'] >= 1000) {
@@ -332,7 +336,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	// Cow Stealing
 	if (d == 94 && flags['dream_maria'] == 0) {
 		// Steal the Cows
-		a.push({'desc':"Dock Fishing"});
+		a.push({'desc':"Hammer rocks on farm / Dock Fishing"});
 		a.push({'desc':"Ocean Berry", 'cid':"f_berry_ocean", 'val':1, 'sel':false, 'sr':true});
 		a.push({'desc':"Stay Up All Night", cid:'f_cow_steal_glitch', 'val':5, 'imp':true});
 	}
