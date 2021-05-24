@@ -434,6 +434,10 @@ function ranch_stuff_sum(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1,
 		var elli_id = get_npc_id('elli');
 		var cliff_id = get_npc_id('cliff');
 
+		if (is_sunny == 1 && flags['cutscene_cliff_farm'] == 0 && aff[cliff_id] > 90) {
+			tmp_act.push({'desc':"CLIFF CUTSCENE ON RANCH, Fast Text Glitch", 'imp':true, 'iid':cliff_id});
+		}
+
 		if (aff[ann_id] < _PHOTO_MIN) {
 			// ANN
 			// " Talk" <- -1 spaces
