@@ -683,6 +683,7 @@ function new_game(rid = 24) {
 		vars['potatoes_bought'] = 0;
 		flags['potato_planted'] = 0;
 		flags['corn_planted'] = 0;
+		flags['cutscene_cliff_farm'] = 0;
 	} else if (rid == 7) { // Maria Marriage
 		vars['cabbages'] = 0;
 		vars['cabbage_waters'] = 0;
