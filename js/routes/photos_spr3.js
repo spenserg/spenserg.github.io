@@ -134,5 +134,10 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	if (is_sunny == 1) {
 		a.push({'desc':"Scare birds", 'cid':'v_happiness', 'val':1, 'sel':false, 'sr':true});
 	}
+
+	// Cliff Wedding
+	if (flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
+		a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
+	}
 	return a;
 }
