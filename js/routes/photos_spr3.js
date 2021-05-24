@@ -31,6 +31,7 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 		if (d == 265) {
 			a.push({'desc':"Baby Born", 'iid':elli_id, 'cid':['f_dontsave', 'f_photo_baby', 'v_happiness', elli_id, midwife_id, pastor_id], 'val':[1, 1, 30, 8, 5, 5], 'imp':true});
+			a.push({'desc':"(3 PM or Later)", 'sr':true});
 		}
 	}
 
@@ -87,27 +88,25 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 		// Baby Spam
 		// If you already have a chicken, otherwise do it when you go to buy one
-		if (d > 265 && is_sunny == true && dow != "THURS") {
-			if (aff[doug_id] < 100 && aff[gotz_id] < 100) {
+		if (d > 265 && dow != "THURS") {
+			if (aff[doug_id] < 160 && aff[gotz_id] < 160) {
 				a.push({'desc':"Clear Mailbox", 'imp':true});
 			}
 
 			// DOUG
-			if (aff[doug_id] < 100) {
+			if (aff[doug_id] < 160) {
 				var tmp_doug_spam = Math.ceil((160 - aff[doug_id]) / 2);
 				a.push({'desc':("Spam Doug (Ranch) [" + tmp_doug_spam + " Times]"), 'cid':doug_id, 'val':200});
-				if (vars['chickens'] == 0) {
+				if (vars['chickens'] == 0 && g >= 1500) {
 					a.push({'desc':"Buy a Chicken", 'sr':true, 'cid':['v_chickens', 'v_gold'], 'val':[1, -1500]});
 				}
 			}
 
 			// GOTZ
-			if (aff[gotz_id] < 100) {
+			if (aff[gotz_id] < 160) {
 				var tmp_gotz_spam = Math.ceil((160 - aff[gotz_id]) / 2);
-				a.push({'desc':("Spam Gotz (Vineyard) [" + tmp_gotz_spam + " Times]"), 'cid':gotz_id, 'val':200});
-				if (flags['vineyard_cutscene'] == 0) {
-					a.push({'desc':"Vineyard Cutscene", 'val':1, 'cid':'f_cutscene_vineyard', 'sr':true});
-				}
+				var gotz_location = ((is_sunny == 1) ? "Vineyard" : "In House");
+				a.push({'desc':("Spam Gotz (" + gotz_location + ") [" + tmp_gotz_spam + " Times]"), 'cid':gotz_id, 'val':200});
 			}
 		}
 	}
