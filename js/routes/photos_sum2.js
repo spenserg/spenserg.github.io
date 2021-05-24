@@ -14,10 +14,6 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 	var horse_today = false;
 	var horse_action_ids = [];
 
-	if (flags['married'] == 1 && flags['wedding_cliff'] == 0) {
-		a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
-	}
-	
 	// Sell Cow + Blue Feather + Ankle
 	var sell_cow = (!is_festival(d) && (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") &&
 				(!["WED", "SAT", "SUN", "THURS"].includes(dow) && is_sunny == 1 && flags['blue_feather'] == 0 && dow != "SAT" &&
@@ -209,6 +205,11 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 			}
 			a.push({'desc':"Fireworks (Town Square)", 'cid':maria_id, 'val':5, 'sel':false, 'red':(aff[elli_id] < 240)});
 		}
+	}
+
+	// Cliff Wedding
+	if (flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
+		a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
 	}
 
 	if (horse_today) {
