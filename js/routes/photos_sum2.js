@@ -1,5 +1,6 @@
 actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 	var ann_id = get_npc_id('ann');
+	var cliff_id = get_npc_id('cliff');
 	var dog_id = get_npc_id('dog');
 	var elli_id = get_npc_id('elli');
 	var horse_id = get_npc_id('horse');
@@ -12,6 +13,10 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 	var dow = get_dow(d, true);
 	var horse_today = false;
 	var horse_action_ids = [];
+
+	if (flags['married'] == 1 && flags['wedding_cliff'] == 0) {
+		a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
+	}
 	
 	// Sell Cow + Blue Feather + Ankle
 	var sell_cow = (!is_festival(d) && (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") &&
