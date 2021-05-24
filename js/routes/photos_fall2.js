@@ -136,6 +136,11 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	// Feed Dog
 	a.push({'desc':"Feed Dog", 'cid':dog_id, 'val':2, 'sel':false, 'red':(aff[dog_id] > 250)});
 
+	// Cliff Wedding
+	if (flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
+		a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
+	}
+
 	if (horse_today) {
 		for (var z = 0; z < horse_action_ids.length; z++) {
 			a[horse_action_ids[z]]['sel'] = true;
