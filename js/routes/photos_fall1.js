@@ -64,7 +64,12 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		chicken_actions.push({'desc':"New Chick", 'iid':chicken_id, 'cid':["v_new_chicken_days", "f_new_chick"], 'sel':false,
 					'val':[d + _CHICK_GROW_SLEEPS, -1], 't0':"Incubate LAST", 'sr':(dow != "THURS" && vars['chickens'] > 0)
 		});
-		chicken_actions.push({'desc':"Incubate LAST", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1), 'sr':true, 'sel':false});
+		if (flags['incubate_last'] == 0) {
+			chicken_actions.push({'desc':"Incubate LAST", 'sr':true, 'sel':false,
+					      'cid':["f_new_chick", "f_incubate_last"],
+					      'val':[(_CHICK_BORN_SLEEPS + 1), 1]
+			});
+		}
 		chicken_actions.push({'desc':"Chick Outside", 'sr':true});
 	}
 
