@@ -246,11 +246,11 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				// Buy Chicken and get Horse
 				var doug_id = get_npc_id('doug');
 	
-				a.push({'desc':"Equip Hammer, clear path to music box"});
+				a.push({'desc':"Equip Hammer, clear path to music box, Grab 1 Rock", 'imp':true});
 	
 				// Get Horse
 				a.push({'desc':'Get Horse', 'cid':'f_horse', 'val':21, 'iid':horse_id, 'imp':true});
-				a.push({'desc':"Fast Text Glitch", 'sr':true, 'hov':true});
+				a.push({'desc':"Fast Text Glitch", 'sr':true});
 	
 				// ANN
 				// -1 sp " GIFT"
