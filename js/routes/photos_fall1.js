@@ -251,19 +251,19 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 		} else {
 			a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 't2':"MusBox",
-				'sel':((!["SAT", "SUN", "WED"].includes(dow) || (d == 66 && flags['vineyard_restored'] == 0)) &&
+				'sel':(((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)) &&
 				       d != 65 && aff[maria_id] < 156 && (flags['new_mus_box'] == 0 || aff[maria_id] >= 145)),
 				'red':(aff[maria_id] == (_DREAM_EVENT_MIN - 1))});
 			if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
 				a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
-					'sel':((!["SAT", "SUN", "WED"].includes(dow) || (d == 66 && flags['vineyard_restored'] == 0)) &&
+					'sel':(((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)) &&
 					       d != 65 && flags['new_mus_box'] == 1 && aff[maria_id] < 145),
 					't2':a[a.length - 1]['desc']
 				});
 			}
 			if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - 2)) {
 				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true,
-					'sel':((!["SAT", "SUN", "WED"].includes(dow) || (d == 66 && flags['vineyard_restored'] == 0)) && d != 65 && aff[maria_id] < 155)
+					'sel':(((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)) && d != 65 && aff[maria_id] < 155)
 				});
 			}
 			a.push({'desc':"Weed", 'cid':maria_id, 'val':-2, 'sr':true, 'sel':false});
@@ -274,7 +274,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		// "  Gift" <- -2 spaces
 		if (is_sunny == 1 && dow != "SUN") {
 			a.push({'desc':"Talk (Rick Shop 50%)", 'cid':mayor_id, 'val':3,
-				'sel':((!["SAT", "SUN", "WED"].includes(dow) || (d == 66 && flags['vineyard_restored'] == 0)) && d != 65),
+				'sel':(((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)) && d != 65),
 				'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)});
 			a.push({'desc':"  Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
 		}
@@ -293,17 +293,17 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 			a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk "), 'cid':elli_id, 'val':1,
 				'sel':(flags['new_mus_box'] == 0 && d != 65 &&
-				       (!["SAT", "SUN", "WED"].includes(dow) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0))),
+				       ((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0))),
 				'red':(aff[elli_id] >= 250 && !elli_cutscene_plays)
 			});
 			a[a.length - 1]['t2'] = "MusBox ";
 			a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
 				'sel':(flags['new_mus_box'] == 1 && aff[elli_id] < 250 && d != 65 &&
-				       (!["SAT", "SUN", "WED"].includes(dow) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0))),
+				       ((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0))),
 				't2':a[a.length - 1]['desc']
 			});
 			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"Egg ",
-				'sel':((!["SAT", "SUN", "WED"].includes(dow) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0)) &&
+				'sel':(((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0)) &&
 				       aff[elli_id] < 250 && d != 65 && vars['chickens'] == 0)
 			});
 			a.push({
@@ -311,7 +311,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
 				'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4),
 				'sel':(vars['chickens'] > 0 && d != 65 && aff[elli_id] < 250 &&
-				       (!["SAT", "SUN", "WED"].includes(dow) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0)))
+				       ((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0)))
 			});
 			if (is_sunny == 1) {
 				if (flags['dream_elli'] == 0 && aff[elli_id] >= (_DREAM_EVENT_MIN - _MUS_BOX_AFF - 4)) {
@@ -330,7 +330,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		// RICK
 		// "Gift    " <- 4 spaces
 		// "Talk    " <- 4 spaces
-		if (is_sunny == 1 && !["WED", "SUN"].includes(dow)) {
+		if (is_sunny == 1 && (!["SAT", "SUN", "WED"].includes(dow) || d == 69)) {
 			if (d >= 83 && flags['new_mus_box'] == 0 && (aff[maria_id] < (_DREAM_EVENT_MIN - 3))) {
 				a.push({'desc':"Need a Fixed Musbox for Cow Stealing", 'imp':true});
 			}
@@ -500,29 +500,44 @@ function ranch_stuff_fall(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1
 			tmp_act.push({
 				'desc':(" Talk (" + ((is_sunny == 0) ? "Barn)" : "Ranch)")),
 				'cid':ann_id, 'val':1, 'red':(dow == "SUN" && !ann_sick_event),
-				'sel':((ann_sick_event && flags['new_mus_box'] == 0) ||
-				       (is_sunny == 1 && d != 65 && (flags['new_mus_box'] == 0 && aff[maria_id] < 145) &&
-				       (!["WED", "SAT", "SUN"].includes(dow) || (d == 66 && flags['vineyard_restored'] == 0)))),
-				't2':" MusBox"
+				'sel':(aff[ann_id] < _PHOTO_MIN &&
+				 		((ann_sick_event && flags['new_mus_box'] == 0) ||
+							(is_sunny == 1 && d != 65 && flags['new_mus_box'] == 0 && aff[maria_id] < 145 &&
+				       			((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0))
+						)
+					)
+				),
+				't2':" MusBox", 'red':(aff[ann_id] >= _PHOTO_MIN)
 			});
 			tmp_act.push({
 				'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
-				'sel':((ann_sick_event && flags['new_mus_box'] == 1) ||
-					(is_sunny == 1 && d != 65 && (flags['new_mus_box'] == 1 || aff[maria_id] >= 145) &&
-				       (!["WED", "SAT", "SUN"].includes(dow) || (d == 66 && flags['vineyard_restored'] == 0)))),
+				'sel':(aff[ann_id] < _PHOTO_MIN &&
+				       ((ann_sick_event && flags['new_mus_box'] == 1) ||
+						(is_sunny == 1 && d != 65 && flags['new_mus_box'] == 1 && aff[maria_id] < 145 &&
+				       		((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)))
+					)
+				),
 				't2':tmp_act[tmp_act.length - 1]['desc']
 			});
 			tmp_act.push({
 				'desc':" Gift", 'cid':ann_id, 'sr':true,
 				'val':((vars['day'] == 44) ? 3 : 1), 't2':"Corn / Potato",
-				'sel':(ann_sick_event || (is_sunny == 1 && d != 65 && vars['potatoes'] <= 0 && vars['corn_waters'] < _CORN_GROW_DAYS &&
-				       (!["WED", "SAT", "SUN"].includes(dow) || (d == 66 && flags['vineyard_restored'] == 0))))
+				'sel':(aff[ann_id] < _PHOTO_MIN &&
+						((ann_sick_event && vars['potatoes'] <= 0 && vars['corn_waters'] < _CORN_GROW_DAYS) ||
+							(is_sunny == 1 && d != 65 && vars['potatoes'] <= 0 && vars['corn_waters'] < _CORN_GROW_DAYS &&
+				       			((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)))
+						)
+				)
 			}); 
 			tmp_act.push({
 				'desc':"Corn / Potato", 'cid':[ann_id, 'v_potatoes'], 'sr':true,
 				'val':[((vars['day'] == 44) ? 5 : 3), -1], 't2':" Gift",
-				'sel':(is_sunny == 1 && d != 65 && (!["WED", "SAT", "SUN"].includes(dow) || (d == 66 && flags['vineyard_restored'] == 0)) &&
-				       (vars['potatoes'] > 0 || vars['corn_waters'] >= _CORN_GROW_DAYS))
+				'sel':(aff[ann_id] < _PHOTO_MIN &&
+						((ann_sick_event && (vars['potatoes'] > 0 || vars['corn_waters'] >= _CORN_GROW_DAYS)) ||
+							(is_sunny == 1 && d != 65 && (vars['potatoes'] > 0 || vars['corn_waters'] >= _CORN_GROW_DAYS) &&
+				       			((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)))
+						)
+				)
 			});
 
 			// Cliff
