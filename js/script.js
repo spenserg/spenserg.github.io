@@ -1715,7 +1715,11 @@ function print_vars() {
 }
 
 function load_input() {
-	save_slots[0] = JSON.parse($('#load_input').val());
+	var str = $('#load_input').val();
+	if ('""'.localeCompare(str.slice(-1) + str.charAt(0)) == 0) {
+		str = str.substring(1, (str.length - 1));
+	}
+	save_slots[0] = JSON.parse(str);
 	load_save(0);
 }
 
