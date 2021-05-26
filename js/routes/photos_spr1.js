@@ -476,7 +476,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 				if (dow == "THURS") {
 					// ANN in RICKs shop
-					if (aff[ann_id] == 0 || (d > 23 && [2, 12].includes(aff[ann_id])) {
+					if (aff[ann_id] == 0 || (d > 23 && [2, 12].includes(aff[ann_id]))) {
 						a.push({'desc':"Meet", 'cid':ann_id, 'val':4, 'sel':false});
 					}
 					a.push({'desc':"Talk (Ricks Shop)", 'cid':ann_id, 'val':1, 'sr':(aff[ann_id] == 0), 'sel':false, 't2':" MusBox"});
@@ -505,7 +505,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (dow != "THURS" && vars['chickens'] > 1 && !is_festival(d)) {
 				// ANN
 				musbox_to_ann = (dow == "MON" && aff[rick_id] >= 30);
-				if (aff[ann_id] == 0 || (d > 23 && [2, 12].includes(aff[ann_id])) {
+				if (aff[ann_id] == 0 || (d > 23 && [2, 12].includes(aff[ann_id]))) {
 					a.push({'desc':"Meet", 'cid':ann_id, 'val':4, 'sel':false});
 				}
 				a.push({'desc':("Talk (" + ((is_sunny == 0) ? "Barn)" : "Ranch) ")), 'cid':ann_id, 'val':1, 'sel':(is_sunny == 1 && dow == "MON" && !musbox_to_ann), 'red':(dow != "MON"), 't2':" MusBox"});
