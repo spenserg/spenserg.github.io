@@ -100,6 +100,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Photo", 'cid':[ann_id, 'f_photo_ann', 'f_dontsave'], 'val':[_PHOTO_EVENT_AFF, 1, 1],
 				'sel':(aff[ann_id] >= _PHOTO_MIN), 'imp':(aff[ann_id] >= _PHOTO_MIN)
 			});
+			if (d >= 102 && d <= 106) { a[a.length - 1]['t2'] = "Hot Springs Work"; }
 			for (var z = 0; z < horse_action_ids.length; z++) {
 				a[horse_action_ids[z]]['sel'] = true;
 			}
@@ -120,9 +121,61 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 		}
 
+		//  102, 103, 104, 105, 106
+		// THURS,FRI, SAT, SUN, MON
+		// OR Steal Cows on Win 4
+		if (d == 94 || (d >= 102 && d <= 106)) {
+			if (d == 94 || (d != 105 || vars['springs_days_worked'] == 2)) {
+				// Don't visit horse on day skipping hot springs work
+				for (var z = 0; z < horse_action_ids.length; z++) {
+					a[horse_action_ids[z]]['sel'] = true;
+				}
+			}
+			if (d != 94) {
+				// Hot Springs
+				a.push({'desc':"Hot Springs Work", 'iid':mas_carp_id, 'sel':(d != 105 || vars['springs_days_worked'] == 2),
+					'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000], 'imp':(vars['springs_days_worked'] == (d - 103)),
+					'red':(d == 105 && vars['springs_days_worked'] == 3)
+				});
+				if (is_sunny == 1 && flags['photo_ann'] == 0) { a[a.length - 1]['t2'] = "Photo"; }
+				if (d == 106) {
+					// Hot Springs Photo
+					a[a.length - 1]['cid'].push('f_photo_springs');
+					a[a.length - 1]['val'].push(1);
+				}
+			}
+
+			// MAYOR
+			if (is_sunny == 1 || d == 94) {
+				a.push({'desc':((dow == "SAT") ? "Talk (Rick Shop 50%)" : ((dow == "SUN") ? "Talk (Church)" : "Talk")),
+					'cid':mayor_id, 'val':3, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN), 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)
+				});
+				if (is_sunny != 1) { a[a.length - 1]['desc'] = "Talk (In House)"; }
+				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
+			}
+		} else if (d > 97 && (flags['cow_steal_glitch'] == 0 || d != 112)) { // Mine isnt open until Winter 8;
+			// Mine Visit?
+			var tmp_gold_left = vars['gold'];
+			tmp_gold_left -= ((flags['kitchen'] == 0) ? 5000 : 0); // Kitchen
+			tmp_gold_left -= ((flags['babybed'] == 0) ? 1000 : 0); // Baby Bed
+			tmp_gold_left -= ((4 - ((3 * flags['cow_steal_glitch']) + vars['cows'] + (vars['new_cow_days'].length / 3))) * 6000); // Cows
+			tmp_gold_left -= (4 * 500); // 4 grass
+			tmp_gold_left -= ((1 - flags['milker']) * 1800);
+			if (tmp_gold_left < 0) {
+				for (var z = 0; z < horse_action_ids.length; z++) {
+					a[horse_action_ids[z]]['sel'] = true;
+				}
+				a.push({'desc':"Equip hoe, Visit Mine", 'iid':get_npc_id('carpenter_top'), 'imp':true});
+				a.push({'desc':"Dig a Berry", 'sr':true, 'sel':false, 'val':1, 'cid':'f_berry_mine'});
+				a.push({'desc':("(" + (-1 * tmp_gold_left) + "G Left)")});
+			}
+		}
+
 		// Pond Berry
 		if (flags['berry_pond'] == 0 && !is_festival(d)){
-			a.push({'desc':"Pond Rock Berry", 'cid':'f_berry_pond', 'val':1, 'sel':(flags['golden_hammer'] == 1), 'iid':get_npc_id('kappa')});
+			a.push({'desc':"Pond Rock Berry", 'cid':'f_berry_pond', 'val':1, 'iid':get_npc_id('kappa'),
+				'sel':(flags['golden_hammer'] == 1 && d > 101)
+			});
 			if (flags['golden_hammer'] == 0) {
 				a[a.length - 1]['t3'] = "Golden Hammer";
 				a.push({'desc':"Golden Hammer", 'cid':'f_golden_hammer', 'val':1, 't0':"Pond Rock Berry", 'sel':false, 'sr':true});
@@ -147,9 +200,6 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Corn / Potato", 'cid':ann_id, 'val':3, 'sr':true, 'sel':false, 't2':"Egg"});
 			}
 		} else if (vars['chickens'] > 0 && dow != "THURS"){
-			if (flags['new_chick'] == 0) {
-				a.push({'desc':"Incubate", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1), 'iid':chicken_id, 'imp':true});
-			}
 			a.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'), 'imp':true, 'sel':(d == 87)});
 			for (var z = 0; z < horse_action_ids.length; z++) {
 				a[horse_action_ids[z]]['sel'] = true;
@@ -168,6 +218,11 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Talk    ", 'cid':rick_id, 'val':3, 'sel':false});
 			a.push({'desc':"Gift    ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':false});
 			a.push({'desc':"Rick Fix", 'sr':true, 't3':"Talk    ", 'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1], 'sel':false});
+			if (dow != "SAT" && flags['milker'] == 0) {
+				a.push({'desc':"Buy a Milker", 'cid':['v_gold', 'f_milker'], 'val':[-1800, 1], 'sr':true,
+					'sel':(vars['new_cow_days'].length > 0), 'imp':(flags['cow_steal_glitch'] == 1 && vars['day'] == 113)
+				});
+			}
 
 			// ANN in Ricks Shop
 			// "Gift  " <- 2 spaces
@@ -231,86 +286,42 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 						'val':[-6000, d + _COW_GROW_SLEEPS]
 				});
 			}
+			
+			// RICK (before dog race)
+			// "Gift    " <- 4 spaces
+			// "Talk    " <- 4 spaces
+			if (is_sunny == 1 && !["WED", "SUN"].includes(dow)) {
+				a.push({'desc':"Talk    ", 'cid':rick_id, 'val':3, 'sel':false,
+					'red':(aff[rick_id] >= _PARTY_ATTEND_MIN && (dow == "SAT" || flags['milker'] == 1))
+				});
+				a.push({'desc':"Gift    ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':false});
+				a.push({'desc':"Rick Fix", 'sr':true, 't3':"Talk    ", 'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1], 'sel':false});
+				if (dow != "SAT" && flags['milker'] == 0) {
+					a.push({'desc':"Buy a Milker", 'cid':['v_gold', 'f_milker'], 'val':[-1800, 1], 'sr':true,
+						'sel':(vars['new_cow_days'].length > 0), 'imp':(flags['cow_steal_glitch'] == 1 && vars['day'] == 113)
+					});
+				}
+
+				// ANN in Ricks Shop
+				// "Gift  " <- 2 spaces
+				if (dow == "THURS") {
+					a.push({'desc':"Talk (Ricks Shop)", 'cid':ann_id, 'val':1, 't2':"MusBox", 'sel':false, 'red':(aff[ann_id] >= _PHOTO_MIN)});
+					a.push({'desc':"MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':"Talk (Ricks Shop)", 'sel':false});
+					a.push({'desc':"Gift  ", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Corn / Potato", 'sel':false});
+					a.push({'desc':"Corn / Potato", 'cid':ann_id, 'val':3, 'sr':true, 't2':"Gift  ", 'sel':false});
+				}
+			}
 
 			if (!["WED", "SUN"].includes(dow) && is_sunny == 1) {
 				// MAYOR
 				a.push({'desc':"Talk (Village 50%)", 'cid':mayor_id, 'val':3, 'sel':false, 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)});
 				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
-
-				// RICK
-				if (dow != "SAT" && flags['milker'] == 0) {
-					a.push({'desc':"Buy a Milker", 'cid':['v_gold', 'f_milker'], 'val':[-1800, 1], 'iid':rick_id,
-							'sel':(vars['new_cow_days'].length > 0), 'imp':(flags['cow_steal_glitch'] == 1 && vars['day'] == 113)
-					});
-				}
-				a.push({
-					'desc':"Talk", 'cid':rick_id, 'val':3,
-					'sel':(dow != "SAT" && flags['milker'] == 0 && aff[rick_id] < _PARTY_ATTEND_MIN),
-					'sr':(dow != "SAT" && flags['milker'] == 0),
-					'red':(aff[rick_id] >= _PARTY_ATTEND_MIN)
-				});
-				a.push({'desc':"Gift", 'cid':rick_id, 'val':3, 'sr':true, 'sel':false});
 			} else if (dow == "SUN") {
 				// MAYOR
 				a.push({'desc':"Talk (Church)", 'cid':mayor_id, 'val':3, 'sel':false, 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)});
 				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
 			}
 		} // End of After Dog Race
-
-		//  102, 103, 104, 105, 106
-		// THURS,FRI, SAT, SUN, MON
-		// OR Steal Cows on Win 4
-		if (d == 94 || (d >= 102 && d <= 106)) {
-			if (d == 94 || (d != 105 || vars['springs_days_worked'] == 2)) {
-				// Don't visit horse on day skipping hot springs work
-				for (var z = 0; z < horse_action_ids.length; z++) {
-					a[horse_action_ids[z]]['sel'] = true;
-				}
-			}
-			if (d != 94) {
-				// Hot Springs
-				a.push({'desc':"Hot Springs Work", 'iid':mas_carp_id, 'sel':(d != 105 || vars['springs_days_worked'] == 2),
-					'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000], 'imp':(vars['springs_days_worked'] == (d - 103)),
-					'red':(d == 105 && vars['springs_days_worked'] == 3)
-				});
-				if (d == 106) {
-					// Hot Springs Photo
-					a[a.length - 1]['cid'].push('f_photo_springs');
-					a[a.length - 1]['val'].push(1);
-				}
-			}
-
-			// RICK
-			if (!["WED", "SUN"].includes(dow) && is_sunny == 1) {
-				a.push({'desc':"Talk", 'cid':rick_id, 'val':3, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN), 'red':(aff[rick_id] >= _PARTY_ATTEND_MIN)});
-				a.push({'desc':"Gift", 'cid':rick_id, 'val':3, 'sr':true, 'sel':false});
-			}
-
-			// MAYOR
-			if (is_sunny == 1 || d == 94) {
-				a.push({'desc':((dow == "SAT") ? "Talk (Rick Shop 50%)" : ((dow == "SUN") ? "Talk (Church)" : "Talk")),
-					'cid':mayor_id, 'val':3, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN), 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)
-				});
-				if (is_sunny != 1) { a[a.length - 1]['desc'] = "Talk (In House)"; }
-				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
-			}
-		} else if (d > 97 && (flags['cow_steal_glitch'] == 0 || d != 112)) { // Mine isnt open until Winter 8;
-			// Mine Visit?
-			var tmp_gold_left = vars['gold'];
-			tmp_gold_left -= ((flags['kitchen'] == 0) ? 5000 : 0); // Kitchen
-			tmp_gold_left -= ((flags['babybed'] == 0) ? 1000 : 0); // Baby Bed
-			tmp_gold_left -= ((4 - ((3 * flags['cow_steal_glitch']) + vars['cows'] + (vars['new_cow_days'].length / 3))) * 6000); // Cows
-			tmp_gold_left -= (4 * 500); // 4 grass
-			tmp_gold_left -= ((1 - flags['milker']) * 1800);
-			if (tmp_gold_left < 0) {
-				for (var z = 0; z < horse_action_ids.length; z++) {
-					a[horse_action_ids[z]]['sel'] = true;
-				}
-				a.push({'desc':"Equip hoe, Visit Mine", 'iid':get_npc_id('carpenter_top'), 'imp':true});
-				a.push({'desc':"Dig a Berry", 'sr':true, 'sel':false, 'val':1, 'cid':'f_berry_mine'});
-				a.push({'desc':("(" + (-1 * tmp_gold_left) + "G Left)")});
-			}
-		}
 
 		if (d == 94 && flags['dream_maria'] == 0) {
 			// Steal the Cows
