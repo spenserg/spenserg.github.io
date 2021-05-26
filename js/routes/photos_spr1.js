@@ -250,7 +250,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	
 				// Get Horse
 				a.push({'desc':'Get Horse', 'cid':'f_horse', 'val':21, 'iid':horse_id, 'imp':true});
-				a.push({'desc':"Fast Text Glitch", 'sr':true});
+				a.push({'desc':"Rock Desc. for Fast Text Glitch", 'sr':true});
 	
 				// ANN
 				// -1 sp " GIFT"
