@@ -346,8 +346,9 @@ actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					if (aff[maria_id] >= (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
 						a.push({'desc':"NO MUSBOX FOR MARIA", 'iid':maria_id, 'imp':true});
 					}
-					a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 't2':"MusBox", 'sel':false, 'red':(aff[maria_id] == (_DREAM_EVENT_MIN - 1))});
+					a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 'sel':false, 'red':(aff[maria_id] == (_DREAM_EVENT_MIN - 1))});
 					if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
+						a[a.length - 1]['t2'] = "MusBox";
 						a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
 								'sel':false, 't2':a[a.length - 1]['desc']
 						});
