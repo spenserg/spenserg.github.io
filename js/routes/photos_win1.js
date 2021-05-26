@@ -75,11 +75,14 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	if (flags['cow_steal_glitch'] > 0 && d >= 112) {
 		a = cows(a, is_sunny);
 	}
-/*
-	if (vars['new_chicken_days'].length == 0 && flags['new_chick'] == 0) {
-		a.push({'desc':"Incubate Last Egg", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1), 'sel':false, 'imp':true, 'iid':chicken_id});
+
+	if (flags['incubate_last'] == 0 && vars['new_chicken_days'].length == 0 && flags['new_chick'] == 0) {
+		a.push({'desc':"Incubate LAST", 'sr':true, 'sel':false,
+			'cid':["f_new_chick", "f_incubate_last"],
+			'val':[(_CHICK_BORN_SLEEPS + 1), 1]
+		});
 	}
-*/
+
 	if (is_festival(d)) {
 		if (d == 109) {
 			// Dog Race, 500 LUM (Win 19)
