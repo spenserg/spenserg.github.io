@@ -402,7 +402,10 @@ actions_photos_sum_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		} else {
 			// Today is a Typhoon
 			if (vars['chickens'] > 0) {
-				a.push({'desc':"Chickens Outside?", 'val':[1, -1 * vars['chickens']], 'cid':['f_chicken_funeral', 'v_chickens'], 'sel':(flags['chicken_outside'] == 1), 'iid':chicken_id});
+				a.push({'desc':"Chickens Outside?",
+					'val':[1, -1 * vars['chickens']], 'cid':['f_chicken_funeral', 'v_chickens'],
+					'sel':(flags['chicken_outside'] == 1), 'iid':chicken_id
+				});
 			}
 		}
 	} // End of Not Chicken Funeral
