@@ -117,9 +117,6 @@ function next_day(jump = false) {
 				}
 			}
 		}
-		if (tmp_actions.length) {
-			actions_all[vars['day']] = [tmp_actions, flags];
-		}
 
 		// Cow Steal Glitch
 		if (flags['cow_steal_glitch'] > 1) {
@@ -361,6 +358,32 @@ function next_day(jump = false) {
 	if (vars['day'] == 61 && vars['new_chicken_days'].length > 0) {
 		flags['chicken_outside'] = 0;
 	}
+
+	// Store values for this day
+	var tmp_actstr = "[{";
+	var tmp_vararr = [];
+	for (var obj in vars) {
+		var tmp_tmp = '"' + obj + '":';
+		if (typeof vars[obj] === 'string') { tmp_tmp += '"'; }
+		tmp_tmp += vars[obj];
+		if (typeof vars[obj] === 'string') { tmp_tmp += '"'; }
+		tmp_vararr.push(tmp_tmp);
+	}
+	tmp_actstr += tmp_vararr.join() + "}, {";
+	tmp_vararr = [];
+	for (var obj in flags) {
+		var tmp_tmp = '"' + obj + '":';
+		if (typeof flags[obj] === 'string') { tmp_tmp += '"'; }
+		tmp_tmp += flags[obj];
+		if (typeof flags[obj] === 'string') { tmp_tmp += '"'; }
+		tmp_vararr.push(tmp_tmp);
+	}
+	tmp_actstr += tmp_vararr.join() + "}, {";
+	tmp_vararr = [];
+	for (var obj in aff) {
+		tmp_vararr.push('"' + obj + '":' + aff[obj]);
+	}
+	actions_all[vars['day']] = tmp_actstr + tmp_vararr.join() + "}]";
 
 	// Begin next day
 	update_day_gui(vars['day'], jump);
@@ -686,6 +709,7 @@ function new_game(rid = 24) {
 		flags['corn_planted'] = 0;
 		flags['cutscene_cliff_farm'] = 0;
 		flags['wedding_cliff'] = 0;
+		flags['incubate_last'] = 0;
 	} else if (rid == 7) { // Maria Marriage
 		vars['cabbages'] = 0;
 		vars['cabbage_waters'] = 0;
