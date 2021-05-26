@@ -86,7 +86,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 								// Stairway
 								horse_today = true;
 								a.push({'desc':"Buy a Stairway (2000 G)", 'iid':get_npc_id('mas_carpenter'),
-									'cid':['v_gold', 'v_lumber', 'f_stairway'],
+									'cid':['v_gold', 'v_lumber', 'f_stairway'], 'red':(is_sunny == 1),
 									'val':[-2000, -250, _BUILD_DAYS + 1], 'sel':(is_sunny == 0)
 								});
 								if (is_sunny == 1) {
@@ -191,20 +191,20 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 				}
 			}
 
+			if (d == 151) {
+				// Fireworks Festival
+				if (flags['dream_karen'] == 0) {
+					a.push({'desc':"DREAM WARP (Vineyard)", 'cid':[karen_id, 'f_dream_karen'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':false});
+				} else if (flags['photo_married'] == 0) {
+					a.push({'desc':"NIGHT WARP (Bakery)", 'cid':['v_happiness'], 'val':[10], 'sel':false, 'red':true, 'iid':elli_id});
+					a.push({'desc':"(Need 250 Aff for Elli)", 'sr':true});
+				}
+				a.push({'desc':"Fireworks (Town Square)", 'cid':maria_id, 'val':5, 'sel':false, 'red':true});
+			}
+
 			// Feed Dog
 			a.push({'desc':"Feed Dog", 'cid':dog_id, 'val':2, 'sel':false, 'red':(aff[dog_id] > 250)});
 		} // End of if (!typhoon)
-
-		if (d == 151) {
-			// Fireworks Festival
-			if (flags['dream_karen'] == 0) {
-				a.push({'desc':"DREAM WARP (Vineyard)", 'cid':[karen_id, 'f_dream_karen'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':false});
-			} else if (flags['photo_married'] == 0) {
-				a.push({'desc':"NIGHT WARP (Bakery)", 'cid':['v_happiness'], 'val':[10], 'sel':false, 'red':(aff[elli_id] < 240), 'iid':elli_id});
-				a.push({'desc':"(Need 250 Aff for Elli)", 'sr':true});
-			}
-			a.push({'desc':"Fireworks (Town Square)", 'cid':maria_id, 'val':5, 'sel':false, 'red':(aff[elli_id] < 240)});
-		}
 	}
 
 	// Cliff Wedding
