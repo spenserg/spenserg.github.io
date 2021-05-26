@@ -56,7 +56,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	// New Chicken
 	if (vars['new_chicken_days'].length > 0 && parseInt(vars['new_chicken_days'].substr(0,3)) == d) {
 		a.push({'desc':"Big Chicken", 'iid':chicken_id, 'imp':(d == 26)});
-		if (d == 26) { a.push({'desc':"BRING OUTSIDE", 'sr':true}); }
+		//if (d == 26) { a.push({'desc':"BRING OUTSIDE", 'sr':true}); }
 	}
 
 	// Bring Chicken Inside / Outside
