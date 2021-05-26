@@ -286,11 +286,6 @@ function next_day(jump = false) {
 		}
 		if ($('.typhoon').hasClass('selected')) {
 			flags['yesterday_rain'] = 1;
-
-			// Typhoon Chicken Death
-			if (vars['chickens'] > 0 && flags['chicken_outside'] == 1) {
-				flags['chicken_funeral'] = 1;
-			}
 		}
 
 		// Fix offset flags and vars
