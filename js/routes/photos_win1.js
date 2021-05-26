@@ -158,7 +158,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			var tmp_gold_left = vars['gold'];
 			tmp_gold_left -= ((flags['kitchen'] == 0) ? 5000 : 0); // Kitchen
 			tmp_gold_left -= ((flags['babybed'] == 0) ? 1000 : 0); // Baby Bed
-			tmp_gold_left -= ((4 - ((3 * flags['cow_steal_glitch']) + vars['cows'] + (vars['new_cow_days'].length / 3))) * 6000); // Cows
+			tmp_gold_left -= ((4 - (vars['cows'] + (vars['new_cow_days'].length / 3))) * 6000); // Cows
 			tmp_gold_left -= (4 * 500); // 4 grass
 			tmp_gold_left -= ((1 - flags['milker']) * 1800);
 			if (tmp_gold_left < 0) {
