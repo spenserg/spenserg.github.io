@@ -503,6 +503,11 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 
 			if (dow != "THURS" && vars['chickens'] > 1 && !is_festival(d)) {
+				if (is_sunny == 1 && flags['cutscene_cliff_farm'] == 0 && aff[cliff_id] > 90) {
+					a.push({'desc':"RANCH CUTSCENE, Fast Text", 'imp':true, 'iid':cliff_id});
+					a.push({'desc':"Cliff Cutscene", 'val':1, 'cid':"f_cutscene_cliff_farm", 'sr':true, 'sel':false});
+				}
+
 				// ANN
 				musbox_to_ann = (dow == "MON" && aff[rick_id] >= 30);
 				if (aff[ann_id] == 0 || (d > 23 && [2, 12].includes(aff[ann_id]))) {
