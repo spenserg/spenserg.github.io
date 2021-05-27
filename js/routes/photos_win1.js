@@ -17,7 +17,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	var tmp_gold_left = vars['gold'];
 	tmp_gold_left -= ((flags['kitchen'] == 0) ? 5000 : 0); // Kitchen
-	tmp_gold_left -= ((flags['babybed'] == 0) ? 1000 : 0); // Baby Bed
+	tmp_gold_left -= ((flags['bathroom'] == 0) ? 3000 : 0); // Bathroom
 	tmp_gold_left -= ((4 - (vars['cows'] + (vars['new_cow_days'].length / 3))) * 6000); // Cows
 	tmp_gold_left -= (4 * 500); // 4 grass
 	tmp_gold_left -= ((1 - flags['milker']) * 1800);
@@ -258,15 +258,15 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 							'val':[-5000, -450, _BUILD_DAYS + 1]
 					});
 					tmp_getext = true;
-				} else if (flags['kitchen'] == 1 && flags['babybed'] == 0 && vars['gold'] >= 1000) {
+				} else if (flags['kitchen'] == 1 && flags['bathroom'] == 0 && vars['gold'] >= 3000) {
 					if (flags['cow_steal_glitch'] > 0) {
 						a.push({'desc':"Hammer cows", 'iid':(get_npc_id('cow')), 'imp':true});
 					}
 
-					// Babybed
-					a.push({'desc':"Buy a Baby Bed (1000 G)", 'iid':mas_carp_id,
-							'cid':['v_gold', 'v_lumber', 'f_babybed'],
-							'val':[-1000, -150, _BUILD_DAYS - 1]
+					// Bathroom
+					a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
+						'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'imp':true,
+						'val':[-3000, -300, _BUILD_DAYS + 1]
 					});
 					tmp_getext = true;
 				}
