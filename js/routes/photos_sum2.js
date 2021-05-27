@@ -15,14 +15,14 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 	var horse_action_ids = [];
 
 	// Sell Cow + Blue Feather + Ankle
-	var sell_cow = (!is_festival(d) && (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") &&
+	var sell_cow = (vars['cows'] > 1 && !is_festival(d) && (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") &&
 				(!["WED", "SAT", "SUN", "THURS"].includes(dow) && is_sunny == 1 && flags['blue_feather'] == 0 && dow != "SAT" &&
 				 	flags['propose'] == 0 && flags['photo_married'] == 0 && flags['kitchen'] == 1 && 
 					(dow != "TUES" || (flags['bathroom'] != 0 && flags['babybed'] != 0))
 				));
 	// Sell Cow + Propose + Maria Dream + Maria Photo
-	sell_cow = (sell_cow || (d > 168 && !is_festival(d) && !["SUN", "MON", "THURS"].includes(dow) && is_sunny == 1 && flags['ankle_maria'] == 1));
-
+	sell_cow = (sell_cow || (vars['cows'] > 1 && d > 168 && !is_festival(d) && !["SUN", "MON", "THURS"].includes(dow) && is_sunny == 1 && flags['ankle_maria'] == 1));
+	
 	if (flags['propose'] == 1) {
 		a.push({'desc':"Wedding Day", 'iid':elli_id, 'cid':['f_photo_married', 'f_propose'], 'val':[1, -1], 'imp':true});
 	} else {
@@ -99,8 +99,8 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 								// Stairway
 								horse_today = true;
 								a.push({'desc':"Buy a Stairway (2000 G)", 'iid':get_npc_id('mas_carpenter'),
-									'cid':['v_gold', 'v_lumber', 'f_stairway'], 'red':(is_sunny == 1),
-									'val':[-2000, -250, _BUILD_DAYS + 1], 'sel':false, 'red':true
+									'cid':['v_gold', 'v_lumber', 'f_stairway'], 'red':(!sell_cow),
+									'val':[-2000, -250, _BUILD_DAYS + 1], 'sel':(sell_cow)
 								});
 							}
 						}
