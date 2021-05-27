@@ -149,6 +149,15 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				'imp':(d != 87 || vars['bridge_days_worked'] == 3 || aff[maria_id] > 156),
 				'sel':(d != 87 || vars['bridge_days_worked'] == 3 || aff[maria_id] > 156)
 			});
+
+			if (d == 87 && vars['bridge_days_worked'] == 4 && aff[kent_id] < 3) {
+				// Intro to Kent if doing all five bridge work days
+				if (aff[kent_id] == 0) { a.push({'desc':"Meet", 'cid':kent_id, 'val':3, 'sel':false, 'imp':true}); }
+				a.push({'desc':("Talk (" + ((is_sunny == 1) ? "By Bakery" : "Potion Shop") + ")"),
+					'cid':kent_id, 'val':3, 'sr':true, 'sel':false, 'imp':true
+				});
+				a.push({'desc':"(If doing all 5 work days)", 'sr':true, 'sel':false});
+			}
 		} else if (flags['new_mus_box'] == 1) {
 			a = ranch_stuff_fall(a, dow, is_sunny, chicken_actions, skip_to_bridge);
 		}
