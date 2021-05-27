@@ -41,20 +41,15 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	}
 
 	if (!is_festival(d)) {
-		if (d == 242) { // Spring 2
+		if (d == 243) { // Spring 3
 			a.push({'desc':"Equip hoe, Till 6 Rows down from Grass"});
-			a.push({'desc':("Buy 20 Grass Seeds"), 'cid':['v_grass', 'v_gold'], 'val':[20, (-500 * 20)], 'iid':get_npc_id('lillia')});
-			a.push({'desc':"Equip Grass"});
-			a.push({'desc':"Plant 8 Grass", 'sr':true, 'cid':['v_grass_planted', 'v_grass'], 'val':[8, -8]});
 		}
-
-		if (d == 262) {
-			a.push({'desc':"Equip hoe, Till 6 Rows left of Grass"});
-			a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, 6500], 'iid':doug_id, 'imp':true});
-			a.push({'desc':"Talk (Ranch)", 'cid':cliff_id, 'val':2, 'sel':false});
-			a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"Egg/Milk", 'sr':true});
-			a.push({'desc':"Egg/Milk", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
-			a.push({'desc':("Buy 20 Grass Seeds"), 'cid':['v_grass', 'v_gold'], 'val':[20, (-500 * 20)], 'iid':get_npc_id('lillia')});
+		if (![262, 242].includes(d) && vars['chickens'] > 0 && aff[kent_id] < 100 && is_sunny == 1 && !["SUN"].includes(dow)) {
+			a.push({'desc':"Equip hoe, Till 6 Rows down from Seeds"});
+			a.push({'desc':"Till 4 Squares in Corner"});
+			a.push({'desc':"Get Chicken", 'iid':chicken_id, 'cid':'f_chicken_outside', 'val':1});
+			a.push({'desc':"Equip Grass"});
+			a.push({'desc':"Plant 10 Grass", 'cid':['v_grass_planted', 'v_grass'], 'val':[10, -10], 'sr':true});
 		}
 
 		if (dow != "TUES" && !is_festival(d)) {
@@ -70,25 +65,47 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"WARNING: Cutscene plays at Carp House Screen", 'red':true});
 					a.push({'desc':"Bug in Karens Hair Cutscene", 'val':1, 'cid':'f_cutscene_bug', 'sr':true, 'sel':false});
 				}
-				a.push({'desc':("Buy " + extensions[add_ext_id][3] + "(" + extensions[add_ext_id][1] + " G)"),
+				a.push({'desc':("Buy " + extensions[add_ext_id][3] + " (" + extensions[add_ext_id][1] + " G)"),
 						'cid':['v_gold', 'v_lumber', ('f_' + extensions[add_ext_id][0])],
 						'val':[(-1 * extensions[add_ext_id][1]), (-1 * extensions[add_ext_id][2]), _BUILD_DAYS + 1],
-						'sel':(is_sunny == 0 || flags['cutscene_bug'] == 1 || d >= (269 - (_BUILD_DAYS + 1) * add_ext_id)),
-						'imp':(is_sunny == 0), 'iid':get_npc_id('mas_carpenter')
+						'sel':([262, 243].includes(d) || (vars['chickens'] > 0 && aff[kent_id] < 100 && is_sunny == 1 && !["SUN"].includes(dow)) || d >= (269 - (_BUILD_DAYS + 1) * add_ext_id)),
+						'iid':get_npc_id('mas_carpenter')
 				});
-				a.push({'desc':"(Opens 35 secs after leaving house)", 'sr':true});
+				a.push({'desc':"(Use Bridge to Skip Cutscenes)", 'sr':true});
 			}
 		}
 
-		// Spring 7
-		if (d > 246 && aff[kent_id] < 100 && is_sunny == 1 && !["SUN"].includes(dow)) {
-			a.push({'desc':"Equip hoe, Till 6 Rows down from Seeds"});
-			a.push({'desc':"Till 4 Squares in Corner"});
-			a.push({'desc':"Enter Coop, Equip Seeds", 'iid':chicken_id});
-			a.push({'desc':"Bring Chicken Outside", 'cid':'f_chicken_outside', 'val':1, 'sr':true});
-			a.push({'desc':"Plant 12 Grass", 'cid':['v_grass_planted', 'v_grass'], 'val':[12, -12]});
+		if (d == 243) { // Spring 3
+			a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, 6500], 'iid':doug_id, 'imp':true});
+
+			// Cliff
+			a.push({'desc':"Talk (Ranch)", 'cid':cliff_id, 'val':2, 'sel':false});
+			a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"Egg/Milk", 'sr':true});
+			a.push({'desc':"Egg/Milk", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+
+			a.push({'desc':("Buy 20 Grass Seeds"), 'cid':['v_grass', 'v_gold'], 'val':[20, (-500 * 20)], 'iid':get_npc_id('lillia')});
+			a.push({'desc':"Hatch Chick", 'iid':(get_npc_id('chicken')),
+				'cid':["v_new_chicken_days", "f_new_chick"],
+				'val':[d + _CHICK_GROW_SLEEPS, -1], 'imp':true
+			});
+			a.push({'desc':"Equip Grass"});
+			a.push({'desc':"Plant 8 Grass", 'sr':true, 'cid':['v_grass_planted', 'v_grass'], 'val':[8, -8]});
+		}
+
+		if (![262, 242].includes(d) && vars['chickens'] > 0 && aff[kent_id] < 100 && is_sunny == 1 && !["SUN"].includes(dow)) {
 			a.push({'desc':"Spam Kent with Chicken (In Church) [83 times]", 'imp':true, 'cid':kent_id, 'val':200});
 			a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id});
+		}
+
+		if (d == 262) { // Spring 22
+			a.push({'desc':"Equip hoe, Till 6 Rows left of Grass"});
+			if (vars['chickens'] > 0 && aff[kent_id] < 100 && is_sunny == 1 && !["SUN"].includes(dow)) {
+				a.push({'desc':"Spam Kent with Chicken (In Church) [83 times]", 'imp':true, 'cid':kent_id, 'val':200});
+				a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id});
+			}
+			a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, 6500], 'iid':doug_id, 'imp':true});
+			a.push({'desc':("Buy 20 Grass Seeds"), 'cid':['v_grass', 'v_gold'], 'val':[20, (-500 * 20)], 'iid':get_npc_id('lillia')});
+			a.push({'desc':"Plant 6 Grass", 'cid':['v_grass_planted', 'v_grass'], 'val':[6, -6]});
 		}
 
 		// Baby Spam
