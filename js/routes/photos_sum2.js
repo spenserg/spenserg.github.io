@@ -106,25 +106,6 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 					}
 				} // End of Buy Extensions
 
-				// ELLI
-				if (dow != "SUN" && flags['photo_married'] == 0) {
-					if (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0) {
-						a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1]});
-					} else {
-						a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : ((dow == "MON") ? "Talk (MTN)" : "Talk ")), 'cid':elli_id, 'val':1, 'sel':false, 't2':"MusBox ", 'red':(dow != "WED" && aff[elli_id] >= 250)});
-						a.push({'desc':"MusBox ", 'sel':false, 't2':a[a.length - 1]['desc'],
-							'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
-						});
-						a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
-							't2':"Egg ", 'sel':false
-						});
-						a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':false,
-							'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
-							'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
-						});
-					}
-				}
-
 				// RICK
 				if (is_sunny == 1 && !["WED", "SUN"].includes(dow)) {
 					a.push({
@@ -162,13 +143,32 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 					a.push({'desc':"(Reset to clear Invisible Wall)", 'sr':true});
 				}
 
-				if (is_sunny == 1 && d > 168) {
-					if (flags['photo_married'] == 0 && flags['propose'] == 0) {
+				// ELLI
+				if (dow != "SUN" && flags['photo_married'] == 0) {
+					if (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0) {
+						a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1]});
+					} else {
+						a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : ((dow == "MON") ? "Talk (MTN)" : "Talk ")), 'cid':elli_id, 'val':1, 'sel':false, 't2':"MusBox ", 'red':(dow != "WED" && aff[elli_id] >= 250)});
+						a.push({'desc':"MusBox ", 'sel':false, 't2':a[a.length - 1]['desc'],
+							'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
+						});
+						a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
+							't2':"Egg ", 'sel':false
+						});
+						a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':false,
+							'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
+							'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
+						});
+					}
+					if (d > 168 && flags['photo_married'] == 0 && flags['propose'] == 0) {
 						// Propose to Elli
 						a.push({'desc':"Propose at Bakery", 'cid':['f_blue_feather', 'f_propose'], 'val':[-1, (next_sunday(d + 1) - d + 1)],
 							'iid':elli_id, 'sel':(!["SUN", "MON"].includes(dow) && sell_cow), 'red':(["SUN", "MON"].includes(dow))});
 					}
+					
+				}
 
+				if (is_sunny == 1 && d > 168) {
 					// Maria Dream/Photo
 					if (flags['photo_maria'] == 0) {
 						// WARP TO PHOTO
