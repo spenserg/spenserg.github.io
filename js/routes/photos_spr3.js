@@ -13,6 +13,11 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	var dow = get_dow(d, true);
 
+	// Rainy on day before evaluation
+	if (d == 270 && is_sunny == 0 && vars['chickens'] > 0 && flags['chicken_outside'] == 1) {
+		a.push({'desc':"Chicken Inside / Feed", 'imp':true, 'iid':get_npc_id('chicken')});
+	}
+
 	// Married Affection
 	if (flags['photo_married'] == 1) {
 		a.push({'desc':" Talk", 'val':1, 'cid':elli_id, 't2':"Musbox", 'sel':(flags['new_mus_box'] == 0)});
