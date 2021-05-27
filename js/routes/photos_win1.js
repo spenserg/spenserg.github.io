@@ -1,6 +1,7 @@
 actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var ann_id = get_npc_id('ann');
 	var chicken_id = get_npc_id('chicken');
+	var cliff_id = get_npc_id('cliff');
 	var cow_id = get_npc_id('cow');
 	var dog_id = get_npc_id('dog');
 	var elli_id = get_npc_id('elli');
@@ -134,7 +135,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			if (d != 94) {
 				// Hot Springs
 				a.push({'desc':"Hot Springs Work", 'iid':mas_carp_id, 'sel':(d != 105 || vars['springs_days_worked'] == 2),
-					'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000], 'imp':(vars['springs_days_worked'] == (d - 103)),
+					'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000], 'imp':(d == 106 || vars['springs_days_worked'] == (d - 103)),
 					'red':(d == 105 && vars['springs_days_worked'] == 3)
 				});
 				if (is_sunny == 1 && flags['photo_ann'] == 0) { a[a.length - 1]['t2'] = "Photo"; }
@@ -170,6 +171,16 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':("(" + (-1 * tmp_gold_left) + "G Left)")});
 			}
 		}
+
+		// Cliff
+		var cliff_loc = "Fish Tent 50%";
+		if (dow == "MON") { cliff_loc = "Hot Springs"; }
+		if (dow == "TUES") { cliff_loc = "Beach"; }
+		if (dow == "WED") { cliff_loc = "Ranch"; }
+		if (dow == "THURS") { cliff_loc = "Carp House 50%"; }
+		a.push({'desc':("Talk (" + cliff_loc + ")"), 'cid':cliff_id, 'val':2, 'sel':false});
+		a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true}); // TODO Recipe Bonus
+		a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
 
 		// Pond Berry
 		if (flags['berry_pond'] == 0 && !is_festival(d)){
