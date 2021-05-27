@@ -17,7 +17,9 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 	// Sell Cow + Blue Feather + Ankle
 	var sell_cow = (!is_festival(d) && (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") &&
 				(!["WED", "SAT", "SUN", "THURS"].includes(dow) && is_sunny == 1 && flags['blue_feather'] == 0 && dow != "SAT" &&
-				 	flags['propose'] == 0 && flags['photo_married'] == 0 && flags['kitchen'] == 1));
+				 	flags['propose'] == 0 && flags['photo_married'] == 0 && flags['kitchen'] == 1 && 
+					(dow != "TUES" || (flags['bathroom'] != 0 && flags['babybed'] != 0))
+				));
 	// Sell Cow + Propose + Maria Dream + Maria Photo
 	sell_cow = (sell_cow || (d > 168 && !is_festival(d) && !["SUN", "MON", "THURS"].includes(dow) && is_sunny == 1 && flags['ankle_maria'] == 1));
 
@@ -74,24 +76,32 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 								'val':[-5000, -450, _BUILD_DAYS + 1]
 						});
 					} else if (flags['kitchen'] == 1) {
-						if (flags['babybed'] == 0 && g >= 1000) {
-							// Babybed
+						if (flags['bathroom'] == 0 && g >= 3000) {
+							// Bathroom
 							horse_today = true;
-							a.push({'desc':"Buy a Baby Bed (1000 G)", 'iid':get_npc_id('mas_carpenter'),
-								'cid':['v_gold', 'v_lumber', 'f_babybed'],
-								'val':[-1000, -150, _BUILD_DAYS + 1]
+							a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
+								'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'imp':true,
+								'val':[-3000, -300, _BUILD_DAYS + 1]
 							});
-						} else if (flags['babybed'] == 1) {
-							if (flags['stairway'] == 0 && g >= 2000) {
+						} else if (flags['bathroom'] == 1) {
+							if (flags['babybed'] == 0 && g >= 1000) {
+								// Baby Bed
+								horse_today = true;
+								a.push({'desc':"Buy a Baby Bed (1000 G)", 'iid':get_npc_id('mas_carpenter'),
+									'cid':['v_gold', 'v_lumber', 'f_babybed'],
+									'val':[-1000, -150, _BUILD_DAYS + 1],
+									'sel':(sell_cow || (is_sunny == 1 && d > 168) || d > 175)
+								});
+								if (is_sunny == 1 && d < 175) {
+									a.push({'desc':"(Wait for rain to skip cutscenes)", 'sr':true});
+								}
+							} else if (flags['babybed'] == 1 && flags['stairway'] == 0 && d > 175) {
 								// Stairway
 								horse_today = true;
 								a.push({'desc':"Buy a Stairway (2000 G)", 'iid':get_npc_id('mas_carpenter'),
 									'cid':['v_gold', 'v_lumber', 'f_stairway'], 'red':(is_sunny == 1),
-									'val':[-2000, -250, _BUILD_DAYS + 1], 'sel':(is_sunny == 0)
+									'val':[-2000, -250, _BUILD_DAYS + 1], 'sel':false, 'red':true
 								});
-								if (is_sunny == 1) {
-									a.push({'desc':"(Wait for rain to skip cutscenes)", 'sr':true});
-								}
 							}
 						}
 					}
@@ -155,7 +165,10 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 					if (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0) {
 						a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1]});
 					} else {
-						a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : ((dow == "MON") ? "Talk (MTN)" : "Talk ")), 'cid':elli_id, 'val':1, 'sel':false, 't2':"MusBox ", 'red':(dow != "WED" && aff[elli_id] >= 250)});
+						a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : ((dow == "MON") ? "Talk (MTN)" : "Talk ")),
+							'cid':elli_id, 'val':1, 't2':"MusBox ", 'red':(dow != "WED" && aff[elli_id] >= 250),
+							'sel':(d > 168 && flags['photo_married'] == 0 && flags['propose'] == 0),
+						});
 						a.push({'desc':"MusBox ", 'sel':false, 't2':a[a.length - 1]['desc'],
 							'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
 						});
@@ -169,7 +182,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 					}
 					if (d > 168 && flags['photo_married'] == 0 && flags['propose'] == 0) {
 						// Propose to Elli
-						a.push({'desc':"Propose at Bakery", 'cid':['f_blue_feather', 'f_propose'], 'val':[-1, (next_sunday(d + 1) - d + 1)],
+						a.push({'desc':("Propose at " + ((dow == "WED") ? "Flower Shop" : "Bakery")), 'cid':['f_blue_feather', 'f_propose'], 'val':[-1, (next_sunday(d + 1) - d + 1)],
 							'iid':elli_id, 'sel':(!["SUN", "MON"].includes(dow) && sell_cow), 'red':(["SUN", "MON"].includes(dow))});
 					}
 					
