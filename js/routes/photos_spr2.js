@@ -226,11 +226,11 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 						'val':[-5000, -450, _BUILD_DAYS + 1]
 				});
 				tmp_getext = true;
-			} else if (flags['kitchen'] == 1 && flags['babybed'] == 0 && vars['gold'] >= 1000) {
-				// Babybed
-				a.push({'desc':"Buy a Baby Bed (1000 G)", 'iid':mas_carp_id,
-						'cid':['v_gold', 'v_lumber', 'f_babybed'],
-						'val':[-1000, -150, _BUILD_DAYS - 1]
+			} else if (flags['kitchen'] == 1 && flags['bathroom'] == 0 && vars['gold'] >= 3000) {
+				// Bathroom
+				a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
+					'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'imp':true,
+					'val':[-3000, -300, _BUILD_DAYS + 1]
 				});
 				tmp_getext = true;
 			}
