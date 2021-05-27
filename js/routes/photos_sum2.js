@@ -104,6 +104,13 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 						});
 						a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':false});
 					}
+
+					if (is_sunny == 0) {
+						// Cliff in Carp House when its raining
+						a.push({'desc':"Talk (Carp House 50%)", 'cid':cliff_id, 'val':2, 'sel':false});
+						a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
+						a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+					}
 				} // End of Buy Extensions
 
 				// RICK
