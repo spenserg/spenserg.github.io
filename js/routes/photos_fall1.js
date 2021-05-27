@@ -86,9 +86,9 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		if (d == 72) { // Fall 12
 			// Harvest Festival
 			a.push({'desc':'Win Harvest King', 'iid':mayor_id, 'imp':true, 'val':[1, 5], 'cid':['f_harvest_king', 'v_happiness']});
-			if (aff[mayor_id] < _PARTY_ATTEND_MIN) { a.push({'desc':"Talk", 'cid':mayor_id, 'val':2}); }
-			if (aff[cliff_id] < _PARTY_ATTEND_MIN && aff[cliff_id] >= 100) { a.push({'desc':"Talk", 'cid':cliff_id, 'val':2}); }
-			a.push({'desc':"Dance with Ann", 'val':10, 'cid':ann_id, 'sel':(aff[ann_id] < _PHOTO_MIN)});
+			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2});
+			if (aff[cliff_id] >= 100) { a.push({'desc':"Talk", 'cid':cliff_id, 'val':2}); }
+			a.push({'desc':"Dance", 'val':10, 'cid':ann_id, 'sel':(aff[ann_id] < _PHOTO_MIN), 't2':["Dance ", " Dance"]});
 			a.push({'desc':"Talk", 'val':2, 'cid':ann_id, 'sr':true, 'red':(aff[maria_id] > 157)});
 
 			// Maria
@@ -99,13 +99,14 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"DONT DANCE WITH MARIA", 'imp':true});
 				}
 				a.push({
-					'desc':"Dance with Maria", 'val':10, 'cid':maria_id,
+					'desc':"Dance ", 'val':10, 'cid':maria_id,
 					'sel':(aff[ann_id] >= _PHOTO_MIN && aff[maria_id] < (_DREAM_EVENT_MIN - 12)),
-					'red':(aff[maria_id] >= (_DREAM_EVENT_MIN - 12))
+					'red':(aff[maria_id] >= (_DREAM_EVENT_MIN - 12)),
+					't2':["Dance", " Dance"]
 				});
 				a.push({'desc':"Talk", 'val':2, 'cid':maria_id, 'sr':true, 'sel':(aff[maria_id] < (_DREAM_EVENT_MIN - 6))});
 			}
-			a.push({'desc':"Dance with Elli", 'val':10, 'cid':elli_id, 'sel':(aff[ann_id] >= _PHOTO_MIN && aff[maria_id] >= _PHOTO_MIN)});
+			a.push({'desc':" Dance", 'val':10, 'cid':elli_id, 'sel':(aff[ann_id] >= _PHOTO_MIN && aff[maria_id] >= _PHOTO_MIN), 't2':["Dance", "Dance "]});
 			a.push({'desc':"Talk", 'val':2, 'cid':elli_id, 'sr':true});
 			a.push({'desc':"RESET IF NOT KING", 'imp':true});
 		} else if (d == 80 && flags['berry_ocean'] == 0) {
@@ -162,7 +163,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				if (dow == "THURS") { cliff_loc = " (Carp House)"; }
 				if (dow == "SUN") { cliff_loc = " (Carp House) [50%]"; }
 				if (dow == "MON") { cliff_loc = " (Hot Springs)"; }
-				a.push({'desc':("Talk" + cliff_loc), 'cid':cliff_id, 'val':2, 'sel':false, 'red':(aff[cliff_id] >= _PARTY_ATTEND_MIN)});
+				a.push({'desc':("Talk" + cliff_loc), 'cid':cliff_id, 'val':2, 'sel':false, 'red':(aff[cliff_id] >= 200)});
 				a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
 				a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
 			}
@@ -174,7 +175,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				if (d < 83) { a.push({'desc':"Wait for Bridge Work", 'sr':true}); }
 			}
 		} else {
-			a.push({'desc':"Talk (Carp House / Cave)", 'cid':cliff_id, 'val':2, 'sel':false, 'red':(aff[cliff_id] >= _PARTY_ATTEND_MIN)});
+			a.push({'desc':"Talk (Carp House / Cave)", 'cid':cliff_id, 'val':2, 'sel':false, 'red':(aff[cliff_id] >= 200)});
 			a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
 			a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
 		}
@@ -268,9 +269,9 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a[a.length - 1]['t2'] = "MusBox";
 				a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
 					'sel':(((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)) &&
-					       d != 65 && !skip_to_bridge && flags['new_mus_box'] == 1 && aff[maria_id] < 145),
-					't2':a[a.length - 1]['desc']
+					       d != 65 && !skip_to_bridge && flags['new_mus_box'] == 1 && aff[maria_id] < 145)
 				});
+				a[a.length - 1]['t2'] = a[a.length - 2]['desc'];
 			}
 			if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - 2)) {
 				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true,
