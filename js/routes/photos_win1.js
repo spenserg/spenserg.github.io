@@ -311,7 +311,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			// "Gift    " <- 4 spaces
 			// "Talk    " <- 4 spaces
 			if (is_sunny == 1 && !["WED", "SUN"].includes(dow)) {
-				a.push({'desc':"Talk    ", 'cid':rick_id, 'val':3, 'sel':false,
+				a.push({'desc':"Talk    ", 'cid':rick_id, 'val':3, 'sel':(dow != "SAT" && flags['milker'] == 0 && aff[rick_id] < _PARTY_ATTEND_MIN),
 					'red':(aff[rick_id] >= _PARTY_ATTEND_MIN && (dow == "SAT" || flags['milker'] == 1))
 				});
 				a.push({'desc':"Gift    ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':false});
