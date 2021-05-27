@@ -490,6 +490,8 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 			}
 
+			if ([19, 20, 21, 22]) { a.push({'desc':"Vote for Goddess", 'red':true, 'iid':get_npc_id('goddess')}); }
+
 			a = ((aff[may_id] > 50) ? elli_spry1(a, d, g, is_sunny) : maria_spry1(a, d, g, is_sunny));
 
 			// MAY
