@@ -13,6 +13,12 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var horse_action_ids = [];
 	var horse_today = false;
 
+	if ([205, 206, 207].includes(d)) {
+		a.push({'desc':"DONT ENTER BARN", 'red':true, 'iid':cow_id});
+	} else if (d == 208) {
+		a.push({'desc':"Enter Barn, New Cow Born", 'iid':cow_id, 'imp':true});
+	}
+
 	// Married Affection
 	if (flags['photo_married'] == 1) {
 		a.push({'desc':" Talk", 'val':1, 'cid':elli_id, 't2':"Musbox", 'sel':(flags['new_mus_box'] == 0)});
@@ -113,19 +119,19 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 			a.push({'desc':"Enter Cow", 'cid':'f_cow_entered', 'val':1, 'iid':get_npc_id('doug'), 'imp':true});
 			horse_today = true;
-			if (flags['bathroom'] == 0) {
-				a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
-						'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'imp':true,
-						'val':[-3000, -300, _BUILD_DAYS + 1]
+			if (flags['stairway'] == 0) {
+				// Stairway
+				a.push({'desc':"Buy a Stairway (2000 G)", 'iid':get_npc_id('mas_carpenter'),
+					'cid':['v_gold', 'v_lumber', 'f_stairway'],
+					'val':[-2000, -250, _BUILD_DAYS + 1]
 				});
 				a.push({'desc':"Chop 1 Stump", 'sr':true});
 			}
 		}
 
-		//if (d == 205) {
 		if (d == 205 || (vars['new_cow_days'].length > 0 && parseInt(vars['new_cow_days'].substr(0,3)) == d)) {
 			horse_today = true;
-			a.push({'desc':"New Cow Born", 'iid':cow_id});
+			//a.push({'desc':"New Cow Born", 'iid':cow_id});
 			a.push({'desc':"Equip Axe, Chop 3 stumps"});
 			a.push({'desc':"Buy Miracle Potion", 'cid':['f_miracle_potion', 'v_gold'], 'val':[1, (-1 * _PRICE_MIRACLE_POTION)], 'iid':doug_id});
 			a.push({'desc':"Use Potion", 'iid':cow_id, 'imp':true, 'cid':"v_new_cow_days", 'val':"227"});
