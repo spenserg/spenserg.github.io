@@ -15,6 +15,18 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var dow = get_dow(d, true);
 	var horse_action_ids = [];
 
+	var tmp_gold_left = vars['gold'];
+	tmp_gold_left -= ((flags['kitchen'] == 0) ? 5000 : 0); // Kitchen
+	tmp_gold_left -= ((flags['babybed'] == 0) ? 1000 : 0); // Baby Bed
+	tmp_gold_left -= ((4 - (vars['cows'] + (vars['new_cow_days'].length / 3))) * 6000); // Cows
+	tmp_gold_left -= (4 * 500); // 4 grass
+	tmp_gold_left -= ((1 - flags['milker']) * 1800);
+	if (d < 102) { tmp_gold_left += 5000;
+	} else if (d < 107) {
+		// Hot Springs Work
+		tmp_gold_left += ((107 - d) * 1000);
+	}
+
 	if (d == 91) {
 		// Ridiculously long "borrowing cows" cutscene
 		a.push({'desc':"DONT GO OUTSIDE TODAY", 'imp':true});
@@ -95,6 +107,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 		}
 	} else {
+		// Not festival
 		if (d > 91 && is_sunny == 1 && flags['photo_ann'] == 0) {
 			// Anns photo
 			// Manna cutscene & Cliff leaving scene have priority over before Ann arriving for photo
@@ -107,7 +120,6 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 		}
 
-		// Not festival
 		if (d == 108) {
 			a.push({'desc':"Enter Dog", 'cid':['f_dog_entered',get_npc_id('doug')], 'val':[1, 3], 'sel':(vars['medals'] >= 1000), 'imp':(vars['medals'] >= 1000), 'red':(vars['medals'] < 1000)});
 			if (vars['medals'] >= 1000) {
@@ -134,15 +146,21 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 			if (d != 94) {
 				// Hot Springs
-				a.push({'desc':"Hot Springs Work", 'iid':mas_carp_id, 'sel':(d != 105 || vars['springs_days_worked'] == 2),
-					'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000], 'imp':(d == 106 || vars['springs_days_worked'] == (d - 103)),
-					'red':(d == 105 && vars['springs_days_worked'] == 3)
+				a.push({'desc':"Hot Springs Work", 'iid':mas_carp_id, 'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000],
+					'sel':(tmp_gold_left < 1000 || d != 105 || vars['springs_days_worked'] == 2),
+					'imp':(d == 106 || vars['springs_days_worked'] == (d - 103)),
+					'red':(d == 105 && vars['springs_days_worked'] == 3 && tmp_gold_left >= 1000)
 				});
 				if (is_sunny == 1 && flags['photo_ann'] == 0) { a[a.length - 1]['t2'] = "Photo"; }
 				if (d == 106) {
 					// Hot Springs Photo
 					a[a.length - 1]['cid'].push('f_photo_springs');
 					a[a.length - 1]['val'].push(1);
+				}
+				if (tmp_gold_left < ((d == 106 || vars['springs_days_worked'] == (d - 103)) ? 0 : 1000)) {
+				    	var tmp_need = ((d == 106 || vars['springs_days_worked'] == (d - 103)) ? 0 : 1000) - tmp_gold_left;
+					a.push({'desc':("Mine after work for $$ (need " + tmp_need + "G => " + (g + tmp_need) + "G Total)"),
+						'imp':true, 'iid':get_npc_id('carpenter_top')});
 				}
 			}
 
@@ -153,22 +171,6 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 				if (is_sunny != 1) { a[a.length - 1]['desc'] = "Talk (In House)"; }
 				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
-			}
-		} else if (d > 97 && (flags['cow_steal_glitch'] == 0 || d != 112)) { // Mine isnt open until Winter 8;
-			// Mine Visit?
-			var tmp_gold_left = vars['gold'];
-			tmp_gold_left -= ((flags['kitchen'] == 0) ? 5000 : 0); // Kitchen
-			tmp_gold_left -= ((flags['babybed'] == 0) ? 1000 : 0); // Baby Bed
-			tmp_gold_left -= ((4 - (vars['cows'] + (vars['new_cow_days'].length / 3))) * 6000); // Cows
-			tmp_gold_left -= (4 * 500); // 4 grass
-			tmp_gold_left -= ((1 - flags['milker']) * 1800);
-			if (tmp_gold_left < 0) {
-				for (var z = 0; z < horse_action_ids.length; z++) {
-					a[horse_action_ids[z]]['sel'] = true;
-				}
-				a.push({'desc':"Equip hoe, Visit Mine", 'iid':get_npc_id('carpenter_top'), 'imp':true});
-				a.push({'desc':"Dig a Berry", 'sr':true, 'sel':false, 'val':1, 'cid':'f_berry_mine'});
-				a.push({'desc':("(" + (-1 * tmp_gold_left) + "G Left)")});
 			}
 		}
 
@@ -371,6 +373,16 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Hammer rocks on farm / Dock Fishing"});
 		a.push({'desc':"Ocean Berry", 'cid':"f_berry_ocean", 'val':1, 'sel':false, 'sr':true});
 		a.push({'desc':"Stay Up All Night", cid:'f_cow_steal_glitch', 'val':5, 'imp':true});
+	}
+
+	if (tmp_gold_left < 0 && d > 97 && (d < 102 || d > 106)) { // Mine isnt open until Winter 8; Ignore hot springs work days
+		// Mine Visit?
+		for (var z = 0; z < horse_action_ids.length; z++) {
+			a[horse_action_ids[z]]['sel'] = true;
+		}
+		a.push({'desc':"Equip hoe, Visit Mine", 'iid':get_npc_id('carpenter_top'), 'imp':true});
+		a.push({'desc':"Dig a Berry", 'sr':true, 'sel':false, 'val':1, 'cid':'f_berry_mine'});
+		a.push({'desc':("(" + (-1 * tmp_gold_left) + "G Left)"), 'sr':true});
 	}
 
 	a.push({'desc':"Feed Dog", 'cid':dog_id, 'val':2, 'sel':false});
