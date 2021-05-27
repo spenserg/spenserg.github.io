@@ -55,7 +55,7 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		if (dow != "TUES" && !is_festival(d)) {
 			var add_ext_id = -1;
 			for (var i = 0; i < extensions.length; i++) {
-				if (flags[extensions[i][0]] == 0 && vars['gold'] >= extensions[i][1] && (i == (extensions.length - 1) || flags[extensions[i + 1][0]] == 1)) {
+				if (flags[extensions[i][0]] == 0 && (i == (extensions.length - 1) || flags[extensions[i + 1][0]] == 1)) {
 					add_ext_id = i;
 				}
 			}
