@@ -82,7 +82,7 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 		// Horse Race
 		if (d == 208) {
-			a = betting_table(a);
+			a = betting_table(a, 1, d);
 			if (flags['horse_entered'] == 1) {
 				// 2 boosts per 10 affection
 				a.push({'desc':"Win Horse Race", 'cid':'f_photo_horserace','val':1, 'iid':get_npc_id('doug'), 'imp':true});
