@@ -31,14 +31,9 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Cows
 	//a = cows(a, is_sunny);
-	if ([227, 240].includes(d) || (vars['new_cow_days'].length > 0 && parseInt(vars['new_cow_days'].substr(0,3)) == d)) {
+	if (d == 227 || (vars['new_cow_days'].length > 0 && parseInt(vars['new_cow_days'].substr(0,3)) == d)) {
 		if (d == 227) { a.push({'desc':"New Cow Born", 'iid':cow_id}); }
 		a.push({'desc':"Equip Axe, Chop 3 stumps"});
-		if (d == 240) {
-			a.push({'desc':"Hatch Chick (Leave Inside)", 'iid':(get_npc_id('chicken')), 'cid':["v_new_chicken_days", "f_new_chick"],
-				'val':[d + _CHICK_GROW_SLEEPS, -1], 'imp':true
-			});
-		}
 		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, ((d == 227) ? 8500 : 6500)], 'iid':doug_id, 'imp':true});
 	}
 
