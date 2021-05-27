@@ -569,6 +569,7 @@ function betting_table(a = [], bet_type = 1, d = 109) {
 }
 
 function cows(a = [], is_sunny = 1, sell_cow = false) {
+	var ann_id = get_npc_id('ann');
 	var cow_id = get_npc_id('cow');
 	var doug_id = get_npc_id('doug');
 	var maria_id = get_npc_id('maria');
@@ -611,7 +612,7 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 	}
 
 	// Selling a cow
-	if (d > 120 && d < 184 && get_dow(vars['day'], true) != "THURS" && !is_festival(vars['day']) && vars['cows'] > 1) {
+	if (d > 120 && d < 184 &&dow != "THURS" && !is_festival(vars['day']) && vars['cows'] > 1) {
 		var tmp_t3 = [];
 		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, ((d < 184) ? 7500 : 6500)], 'iid':doug_id, 'sel':(sell_cow)});
 		// Blue Feather
@@ -630,6 +631,10 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 			});
 		} else if (tmp_t3.length > 0) {
 			a[a.length - 1]['t3'] = tmp_t3;
+		}
+		// Ann Sick Event
+		if (dow == "SUN" && is_sunny == 0 && flags['sick_ann'] == 0 && aff[ann_id] >= _SICK_EVENT_MIN) {
+			a.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1], 'sel':false});
 		}
 	}
 	return a;
