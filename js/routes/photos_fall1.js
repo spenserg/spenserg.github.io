@@ -393,7 +393,9 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Beach Cutscene", 'sr':true, 'sel':false, 'cid':'f_cutscene_beach', 'val':1});
 			}
 			a.push({'desc':("Dog Karen to Pink " + karen_loc + ((["MON", "THURS", "FRI", "SAT"].includes(dow)) ? " / (BAR)" : "")),
-				'cid':karen_id, 'val':(205 - aff[karen_id]), 'imp':(d == 67), 'sel':(d == 67)
+				'cid':((d == 67) ? [karen_id, 'f_dog_inside'] : karen_id),
+				'val':((d == 67) ? (205 - aff[karen_id]) : ([(205 - aff[karen_id]), (0 - flags['dog_inside'])])),
+				'imp':(d == 67), 'sel':(d == 67)
 			});
 		}
 
