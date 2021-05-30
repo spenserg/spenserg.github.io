@@ -40,7 +40,27 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 	}
 
-	if (!is_festival(d)) {
+	if (is_festival(d)) {
+		// Planting (Spr 8), Horse Race (Spr 17), Flower Fest (Spr 23)
+		
+		// TODO HORSE RACE
+		
+		// Flower Fest
+		if (d == 263 && flags['berry_flowerfest'] == 0 && (flags['berry_ocean'] + flags['berry_mine'] + flags['berry_farm']) < 2) { // Flower Fest
+			a.push({'desc':"Go to Town Square", 'iid':mayor_id, 'cid':'v_happiness', 'val':5, 'imp':true});
+			a.push({'desc':"Buy a Power Nut", 'cid':['f_berry_flowerfest','v_gold'],
+					'val':[1, -1000], 'iid':get_npc_id('salesman'), 'imp':true
+			});
+			a.push({'desc':"Talk", 'cid':rick_id, 'val':2, 'sel':(aff[rick_id] < 160), 'red':(aff[rick_id] >= 160)});
+			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2, 'sel':(aff[mayor_id] < 160), 'red':(aff[mayor_id] >= 160)});
+			a.push({'desc':"Talk", 'cid':maria_id, 'val':2, 'sel':false, 'red':true});
+			a.push({'desc':"Dance",'cid':[maria_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance ", "Dance  "], 'sel':false, 'sr':true});
+			a.push({'desc':"Talk", 'cid':elli_id, 'val':2});
+			a.push({'desc':"Dance ",'cid':[elli_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance", "Dance  "], 'sr':true});
+			a.push({'desc':"Talk", 'cid':ann_id, 'val':2, 'sel':false, 'red':true});
+			a.push({'desc':"Dance  ",'cid':[ann_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance", "Dance "], 'sel':false, 'sr':true});
+		}
+	} else {
 		if (d == 243) { // Spring 3
 			a.push({'desc':"Equip hoe, Till 6 Rows down from Grass"});
 		}
