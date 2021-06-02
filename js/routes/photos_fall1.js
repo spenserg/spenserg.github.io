@@ -46,6 +46,10 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	// Dog Affection
 	if (flags['dog_inside'] == 1) {
 		a.push({'desc':"Whistle / Pick up Dog", 'cid':dog_id, 'val':2});
+	} else {
+		a.push({'desc':"Whistle", 'cid':dog_id, 'val':1});
+		a.push({'desc':"Pick Up", 'cid':dog_id, 'val':1, 'sr':true, 'sel':false});
+		a.push({'desc':"Bring Dog Inside", 'cid':'f_dog_inside', 'val':1, 'iid':dog_id, 'sr':true, 'sel':false});
 	}
 
 	if (flags['old_mus_box'] == 0) {
