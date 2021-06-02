@@ -174,6 +174,21 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 		}
 
+		// ELLI
+		a.push({'desc':("Talk" + ((dow == "MON") ? " (MTN)" : "")), 'cid':elli_id, 'val':1, 'sel':false});
+		a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':[" Egg", "M/L Fish"], 'sel':false});
+		a.push({'desc':" Egg", 'sr':true, 't2':["Gift ", "M/L Fish"], 'sel':false, 'cid':elli_id, 'val':4});
+		a.push({'desc':"M/L Fish", 'sr':true, 't2':["Gift ", " Egg"], 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':false});
+
+		// MAYOR
+		if (is_sunny == 1 || d == 94) {
+			a.push({'desc':((dow == "SAT") ? "Talk (Rick Shop 50%)" : ((dow == "SUN") ? "Talk (Church)" : "Talk")),
+				'cid':mayor_id, 'val':3, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN), 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)
+			});
+			if (is_sunny != 1) { a[a.length - 1]['desc'] = "Talk (In House)"; }
+			a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
+		}
+
 		// Cliff
 		var cliff_loc = "Fish Tent 50%";
 		if (dow == "MON") { cliff_loc = "Hot Springs"; }
@@ -223,12 +238,6 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1],
 					'sel':(aff[ann_id] < _PHOTO_EVENT_AFF), 'sr':(aff[ann_id] < _PHOTO_EVENT_AFF && flags['photo_ann'] == 0)});
 		}
-
-		// ELLI
-		a.push({'desc':("Talk" + ((dow == "MON") ? " (MTN)" : "")), 'cid':elli_id, 'val':1, 'sel':false});
-		a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':[" Egg", "M/L Fish"], 'sel':false});
-		a.push({'desc':" Egg", 'sr':true, 't2':["Gift ", "M/L Fish"], 'sel':false, 'cid':elli_id, 'val':4});
-		a.push({'desc':"M/L Fish", 'sr':true, 't2':["Gift ", " Egg"], 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':false});
 
 		// RICK (before dog race)
 		// "Gift    " <- 4 spaces
