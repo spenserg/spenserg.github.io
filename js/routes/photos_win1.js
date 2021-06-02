@@ -209,8 +209,8 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			if (!["THURS", "SUN"].includes(dow)) {
 				a.push({'desc':("Talk (" + ((is_sunny == 0) ? "Barn)" : "Ranch)")), 'cid':ann_id, 'val':1, 'sel':(flags['new_mus_box'] == 0)});
 				a.push({'desc':"MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':(flags['new_mus_box'] == 1), 't2':a[a.length - 1]['desc']});
-				a.push({'desc':"Egg", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Corn / Potato"});
-				a.push({'desc':"Corn / Potato", 'cid':ann_id, 'val':3, 'sr':true, 'sel':false, 't2':"Egg"});
+				a.push({'desc':" Gift  ", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Corn / Potato"});
+				a.push({'desc':"Corn / Potato", 'cid':ann_id, 'val':3, 'sr':true, 'sel':false, 't2':" Gift  "});
 			}
 		} else if (vars['chickens'] > 0 && dow != "THURS"){
 			a.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'), 'imp':true, 'sel':(d == 87)});
@@ -223,6 +223,12 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1],
 					'sel':(aff[ann_id] < _PHOTO_EVENT_AFF), 'sr':(aff[ann_id] < _PHOTO_EVENT_AFF && flags['photo_ann'] == 0)});
 		}
+
+		// ELLI
+		a.push({'desc':("Talk" + ((dow == "MON") ? " (MTN)" : "")), 'cid':elli_id, 'val':1, 'sel':false});
+		a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':[" Egg", "M/L Fish"], 'sel':false});
+		a.push({'desc':" Egg", 'sr':true, 't2':["Gift ", "M/L Fish"], 'sel':false, 'cid':elli_id, 'val':4});
+		a.push({'desc':"M/L Fish", 'sr':true, 't2':["Gift ", " Egg"], 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':false});
 
 		// RICK (before dog race)
 		// "Gift    " <- 4 spaces
@@ -307,7 +313,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 			}
 			
-			// RICK (before dog race)
+			// RICK (after dog race)
 			// "Gift    " <- 4 spaces
 			// "Talk    " <- 4 spaces
 			if (is_sunny == 1 && !["WED", "SUN"].includes(dow)) {
