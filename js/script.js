@@ -15,7 +15,7 @@ function reset_vars() {
 			"horse" : 0, "horse_brush" : 0, "sustaining_carrot" : 0, "horse_entered" : 0,
 			"cows_outside" : 0, "cow_entered" : 0, "milker" : 0, "miracle_potion" : 0,
 			"new_chick" : 0, "chicken_funeral" : 0, "chicken_outside" : 0,
-			"recipe_basil" : 0, "recipe_sprite" : 0, "golden_hammer" : 0, "recipe_duke" : 0,
+			"recipe_basil" : 0, "recipe_sprite" : 0, "golden_hammer" : 0, "recipe_duke" : 0, "recipe_rick" : 0,
 			"ankle_maria" : 0, "dream_maria" : 0, "sick_maria" : 0, "recipe_maria" : 0, "photo_maria" : 0,
 			"ankle_elli" : 0, "dream_elli" : 0, "sick_elli" : 0, "recipe_elli" : 0, "photo_elli" : 0,
 			"ankle_karen" : 0, "dream_karen" : 0, "sick_karen" : 0, "photo_karen" : 0, "blue_feather" : 0, "propose" : 0,
