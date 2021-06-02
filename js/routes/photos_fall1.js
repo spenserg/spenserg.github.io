@@ -503,6 +503,7 @@ function ranch_stuff_fall(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1
 		var ann_id = get_npc_id('ann');
 		var elli_id = get_npc_id('elli');
 		var cliff_id = get_npc_id('cliff');
+		var grey_id = get_npc_id('grey');
 		var maria_id = get_npc_id('maria');
 		var d = vars['day'];
 
@@ -570,7 +571,10 @@ function ranch_stuff_fall(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1
 				}
 				if (aff[cliff_id] == 5 || aff[cliff_id] == 0) {
 					// Cliff's intro gives affection to GRAY
-					tmp_act.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'sel':false, 'iid':cliff_id, 'red':(dow == "TUES" && beach_cutscene)});
+					tmp_act.push({'desc':"Meet", 'cid':grey_id, 'val':4,
+						      'sel':(d == 66 && flags['vineyard_restored'] == 0 && !skip_to_bridge),
+						      'iid':cliff_id, 'red':(dow == "TUES" && beach_cutscene)
+					});
 				}
 				tmp_act.push({
 					'desc':("Talk (" + ((dow == "WED") ? "Ranch" : "Beach") + ")"),
