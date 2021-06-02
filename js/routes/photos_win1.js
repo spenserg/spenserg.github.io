@@ -101,7 +101,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			// Dog Race, 500 LUM (Win 19)
 			a.push({'desc':"Buy 1000 Lumber at Dog Race", 'cid':['v_lumber', 'v_medals'], 'val':[999, -1000], 'iid':get_npc_id('mayor'), 'imp':true});
 			if (flags['dog_entered'] == 1) { a.push({'desc':"Win Dog Race", 'cid':'f_photo_dograce', 'val':1, 'sel':false, 'sr':true}); }
-			a = betting_table(a);
+			a = betting_table(a, 1, d);
 			for (var z = 0; z < horse_action_ids.length; z++) {
 				a[horse_action_ids[z]]['sel'] = true;
 			}
