@@ -43,13 +43,14 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 		}
 
 		// Dog Affection
-		if (flags['dog_inside'] == 0) {
-			if (is_sunny != -1) {
-				a.push({'desc':"Bring Dog Inside", 'cid':['f_dog_inside', dog_id], 'val':[1, 1], 'imp':true});
-			}
-			a.push({'desc':"Whistle", 'cid':dog_id, 'val':1, 'sr':(is_sunny != -1)});
-		} else {
+		if (flags['dog_inside'] == 1) {
 			a.push({'desc':"Whistle / Pick up Dog", 'cid':dog_id, 'val':2});
+		} else {
+			a.push({'desc':"Whistle", 'cid':dog_id, 'val':1});
+			a.push({'desc':"Pick Up", 'cid':dog_id, 'val':1, 'sr':true, 'sel':false});
+			if (is_sunny != -1) {
+				a.push({'desc':"Bring Dog Inside", 'cid':'f_dog_inside', 'val':1, 'iid':dog_id, 'sr':true, 'sel':false});
+			}
 		}
 
 		if (is_sunny != -1) {
