@@ -89,7 +89,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"DONT ATTEND HORSE RACE", 'red':true, 'iid':mayor_id});
 				a = cows(a);
 			}
-			a = betting_table(a);
+			a = betting_table(a, 1, d);
 		} else if (d == 143 && vars['gold'] >= 1000 && flags['berry_flowerfest'] == 0) {
 			// Flower Festival (Spring 23)
 			horse_today = true;
