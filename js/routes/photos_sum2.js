@@ -14,6 +14,9 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 	var horse_today = false;
 	var horse_action_ids = [];
 
+	// Maria needs more affection if < 182 in Sum Y2
+	var maria_too_low = (aff[maria_id] < (_PHOTO_MIN - (((flags['ankle_maria'] == 0) ? _ANKLE_EVENT_AFF : 0) + ((flags['dream_maria'] == 0) ? _DREAM_EVENT_AFF : 0))));
+
 	// Sell Cow + Blue Feather + Ankle
 	var sell_cow = (vars['cows'] > 1 && !is_festival(d) && (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") &&
 				(!["WED", "SAT", "SUN", "THURS"].includes(dow) && is_sunny == 1 && flags['blue_feather'] == 0 && dow != "SAT" &&
@@ -35,8 +38,8 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 		if (flags['photo_married'] == 1) {
 			a.push({'desc':" Talk", 'val':1, 'cid':elli_id, 't2':"Musbox", 'sel':(flags['new_mus_box'] == 0)});
 			a.push({'desc':"Musbox", 'val':[6, -1], 'cid':[elli_id, 'f_new_mus_box'], 'sel':(flags['new_mus_box'] == 1), 'sr':true, 't2':a[a.length - 1]['desc']})
-			a.push({'desc':"  Gift  ", 'val':1, 'cid':elli_id, 'sr':true, 'sel':false, 't2':"Milk"});
-			a.push({'desc':"Milk", 'val':4, 'cid':elli_id, 'sr':true, 't2':"  Gift  ", 'sel':(aff[elli_id] < 250 && vars['cows'] > 0)})
+			a.push({'desc':"  Gift  ", 'val':1, 'cid':elli_id, 'sr':true, 'sel':false, 't2':"Egg/Milk"});
+			a.push({'desc':"Egg/Milk", 'val':4, 'cid':elli_id, 'sr':true, 't2':"  Gift  ", 'sel':(aff[elli_id] < 250 && vars['cows'] > 0)})
 		}
 
 		// Dog Affection
@@ -106,15 +109,6 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 						}
 					}
 
-					if (is_sunny == 1 && (dow == "MON" || d < 160)) {
-						// MARIA
-						a.push({'desc':"Talk (MTN / CHUR)", 'cid':maria_id, 'val':1, 'sel':false, 't2':"MusBox", 'red':(aff[maria_id] >= 180)});
-						a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
-								'sel':false, 't2':"MusBox"
-						});
-						a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':false});
-					}
-
 					if (is_sunny == 0) {
 						// Cliff in Carp House when its raining
 						a.push({'desc':"Talk (Carp House 50%)", 'cid':cliff_id, 'val':2, 'sel':false});
@@ -123,6 +117,25 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 					}
 				} // End of Buy Extensions
 
+				// Maria Sum 1-10
+				if (flags['photo_maria'] == 0) {
+					if (is_sunny == 0 && dow == "MON" && aff[maria_id] >= _SICK_EVENT_MIN && flags['sick_maria'] == 0) {
+						// Sick Event
+						a.push({'desc':"Sick Event", 'cid':[maria_id, 'f_sick_maria'], 'val':[_SICK_EVENT_AFF, 1], 'sel':maria_too_low, 'red':(!maria_too_low)});
+						a.push({'desc':"Talk", 'cid':mayor_id, 'val':3, 'sel':maria_too_low});
+						a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(aff[mayor_id] < aff[rick_id], 'sel':maria_too_low)});
+					} else if (dow == "MON" || d < 161) {
+						// Library Closed
+						a.push({'desc':("Talk (" + ((d < 161) ? "Carp House / Goddess Pond" : "MTN / CHURCH") + ")"),
+							'cid':maria_id, 'val':1, 'sel':maria_too_low, 't2':"MusBox", 'red':(!maria_too_low)
+						});
+						a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
+								'sel':false, 't2':"MusBox"
+						});
+						a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':maria_too_low});
+					}
+				}
+
 				// RICK
 				if (is_sunny == 1 && !["WED", "SUN"].includes(dow)) {
 					a.push({
@@ -130,7 +143,11 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 						'sel':(dow != "SAT" && aff[rick_id] < _PARTY_ATTEND_MIN),
 						'red':(aff[rick_id] >= _PARTY_ATTEND_MIN && (dow == "SAT" || flags['blue_feather'] == 1 || flags['propose'] > 0 || flags['photo_married'] == 1))
 					});
-					a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN)});
+					a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN), 't2':"Milk  "});
+					a.push({'desc':"Milk  ", 'sel':false, 'sr':true, 't2':"Gift  "
+						'cid':((flags['recipe_rick'] == 0) ? [rick_id, 'f_recipe_rick'] : rick_id),
+						'val':((flags['recipe_rick'] == 0) ? [8, 1], 6)
+					});
 					a.push({'desc':"Rick Fix", 'sel':false, 'sr':true,
 						'cid':['f_old_mus_box', 'f_new_mus_box', rick_id], 'val':[-1, 1, 3], 't3':"Talk  "
 					});
@@ -155,7 +172,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 				}
 
 				// Maria Ankle
-				if (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") {
+				if (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON" && flags['photo_maria'] == 0) {
 					a.push({'desc':"Ankle", 'cid':[maria_id, 'f_ankle_maria'], 'val':[_ANKLE_EVENT_AFF, 1], 'sel':sell_cow});
 					a.push({'desc':"(Reset to clear Invisible Wall)", 'sr':true});
 				}
