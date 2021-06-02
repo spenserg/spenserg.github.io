@@ -122,8 +122,8 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 					if (is_sunny == 0 && dow == "MON" && aff[maria_id] >= _SICK_EVENT_MIN && flags['sick_maria'] == 0) {
 						// Sick Event
 						a.push({'desc':"Sick Event", 'cid':[maria_id, 'f_sick_maria'], 'val':[_SICK_EVENT_AFF, 1], 'sel':maria_too_low, 'red':(!maria_too_low)});
-						a.push({'desc':"Talk", 'cid':mayor_id, 'val':3, 'sel':maria_too_low});
-						a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(aff[mayor_id] < aff[rick_id], 'sel':maria_too_low)});
+						a.push({'desc':"Talk", 'cid':mayor_id, 'val':3, 'sel':(maria_too_low && aff[mayor_id] < 160)});
+						a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(maria_too_low && aff[mayor_id] < 160)});
 					} else if (dow == "MON" || d < 161) {
 						// Library Closed
 						a.push({'desc':("Talk (" + ((d < 161) ? "Carp House / Goddess Pond" : "MTN / CHURCH") + ")"),
@@ -144,9 +144,9 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 						'red':(aff[rick_id] >= _PARTY_ATTEND_MIN && (dow == "SAT" || flags['blue_feather'] == 1 || flags['propose'] > 0 || flags['photo_married'] == 1))
 					});
 					a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN), 't2':"Milk  "});
-					a.push({'desc':"Milk  ", 'sel':false, 'sr':true, 't2':"Gift  "
+					a.push({'desc':"Milk  ", 'sel':false, 'sr':true, 't2':"Gift  ",
 						'cid':((flags['recipe_rick'] == 0) ? [rick_id, 'f_recipe_rick'] : rick_id),
-						'val':((flags['recipe_rick'] == 0) ? [8, 1], 6)
+						'val':((flags['recipe_rick'] == 0) ? [8, 1] : 6)
 					});
 					a.push({'desc':"Rick Fix", 'sel':false, 'sr':true,
 						'cid':['f_old_mus_box', 'f_new_mus_box', rick_id], 'val':[-1, 1, 3], 't3':"Talk  "
