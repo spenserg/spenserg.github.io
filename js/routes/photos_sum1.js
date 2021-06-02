@@ -437,6 +437,7 @@ function ranch_stuff_sum(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1,
 		var ann_id = get_npc_id('ann');
 		var elli_id = get_npc_id('elli');
 		var cliff_id = get_npc_id('cliff');
+		var grey_id = get_npc_id('grey');
 
 		if (is_sunny == 1 && flags['cutscene_cliff_farm'] == 0 && aff[cliff_id] > 90) {
 			tmp_act.push({'desc':"RANCH CUTSCENE, Fast Text", 'imp':true, 'iid':cliff_id});
@@ -482,7 +483,7 @@ function ranch_stuff_sum(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1,
 				}
 				if (aff[cliff_id] == 5 || aff[cliff_id] == 0) {
 					// Cliff's intro gives affection to GRAY
-					tmp_act.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'sel':false, 'iid':cliff_id, 'red':no_beach});
+					tmp_act.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'sel':(!no_beach && vars['day'] < 41), 'iid':cliff_id, 'red':no_beach});
 				}
 				tmp_act.push({
 					'desc':("Talk (" + ((dow == "WED") ? "Ranch" : "Beach") + ")"), 'red':(no_beach && dow != "WED"),
