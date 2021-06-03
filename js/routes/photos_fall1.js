@@ -399,7 +399,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 			a.push({'desc':("Dog Karen to Pink " + karen_loc + ((["MON", "THURS", "FRI", "SAT"].includes(dow)) ? " / (BAR)" : "")),
 				'cid':((d == 67) ? [karen_id, 'f_dog_inside'] : karen_id),
-				'val':((d == 67) ? (205 - aff[karen_id]) : ([(205 - aff[karen_id]), (0 - flags['dog_inside'])])),
+				'val':((d == 67) ? ([(205 - aff[karen_id]), (0 - flags['dog_inside'])]) : (205 - aff[karen_id])),
 				'imp':(d == 67), 'sel':(d == 67)
 			});
 		}
