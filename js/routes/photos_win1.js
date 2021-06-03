@@ -148,7 +148,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				// Hot Springs
 				a.push({'desc':"Hot Springs Work", 'iid':mas_carp_id, 'cid':['v_springs_days_worked', 'v_gold'], 'val':[1, 1000],
 					'sel':(tmp_gold_left < 1000 || d != 105 || vars['springs_days_worked'] == 2),
-					'imp':(d == 106 || vars['springs_days_worked'] == (d - 103)),
+					'imp':(d == 106 || vars['springs_days_worked'] == (d - 103) || tmp_gold_left < 1000),
 					'red':(d == 105 && vars['springs_days_worked'] == 3 && tmp_gold_left >= 1000)
 				});
 				if (is_sunny == 1 && flags['photo_ann'] == 0) { a[a.length - 1]['t2'] = "Photo"; }
