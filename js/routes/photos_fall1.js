@@ -34,7 +34,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	} else if (d == 87) {
 		// Horse Race Entry
 		if (flags['photo_horserace'] == 0) {
-			a.push({'desc':"Enter Horse", 'cid':['f_horse_entered', get_npc_id('doug')], 'val':[1, 3]});
+			a.push({'desc':"Enter Horse", 'cid':['f_horse_entered', get_npc_id('doug')], 'val':[1, 3], 'imp':true});
 		} else {
 			a.push({'desc':"Ignore Doug on Farm", 'imp':true, 'iid':get_npc_id('doug')});
 		}
@@ -150,8 +150,8 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Bridge Work", 'iid':mas_carp_id,
 				'cid':[mas_carp_id, get_npc_id('carpenter_top'), get_npc_id('carpenter_bot'), 'v_bridge_days_worked', 'v_gold'],
 				'val':[5, 5, 5, 1, 1000],
-				'imp':(d != 87 || vars['bridge_days_worked'] == 3 || aff[maria_id] > 156),
-				'sel':(d != 87 || vars['bridge_days_worked'] == 3 || aff[maria_id] > 156)
+				'imp':(d != 84 || aff[maria_id] > 156),
+				'sel':(d != 84 || aff[maria_id] > 156)
 			});
 
 			if (d == 87 && vars['bridge_days_worked'] == 4 && aff[kent_id] < 3) {
@@ -160,7 +160,6 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':("Talk (" + ((is_sunny == 1) ? "By Bakery" : "Potion Shop") + ")"),
 					'cid':kent_id, 'val':3, 'sr':true, 'sel':false, 'imp':true
 				});
-				a.push({'desc':"(If doing all 5 work days)", 'sr':true, 'sel':false});
 			}
 		} else if (flags['new_mus_box'] == 1) {
 			a = ranch_stuff_fall(a, dow, is_sunny, chicken_actions, skip_to_bridge);
