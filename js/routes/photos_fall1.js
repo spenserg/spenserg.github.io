@@ -65,9 +65,11 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Chickens
 	if (dow != "THURS" && vars['chickens'] > 0) {
+		var need_to_sell = (vars['chickens'] == (91 - d) || (d < 88 && (vars['chickens'] == (90 - d)));
 		chicken_actions.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'),
-					'sel':((!["SAT", "SUN", "WED"].includes(dow) || (d == 66 && flags['vineyard_restored'] == 0)) && d != 65 && !skip_to_bridge &&
-					       (vars['chickens'] > 2 || (aff[maria_id] > 150 && aff[ann_id] > 180)))
+					'sel':(need_to_sell || ((!["SAT", "SUN", "WED"].includes(dow) || (d == 66 && flags['vineyard_restored'] == 0)) && d != 65 && !skip_to_bridge &&
+					       (vars['chickens'] > 2 || (aff[maria_id] > 150 && aff[ann_id] > 180)))),
+					'imp':need_to_sell
 		});
 		chicken_actions.push({'desc':"New Chick", 'iid':chicken_id, 'cid':["v_new_chicken_days", "f_new_chick"], 'sel':false,
 					'val':[d + _CHICK_GROW_SLEEPS, -1], 'sr':(dow != "THURS" && vars['chickens'] > 0)
