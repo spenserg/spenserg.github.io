@@ -278,14 +278,14 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1,
 				'sel':(((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)) &&
 				       d != 65 && !skip_to_bridge && aff[maria_id] < 156 && (flags['new_mus_box'] == 0 || aff[maria_id] >= 145)),
-				'red':(aff[maria_id] == (_DREAM_EVENT_MIN - 1))});
+				'red':(aff[maria_id] == (_DREAM_EVENT_MIN - 1)
+			)});
 			if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
 				a[a.length - 1]['t2'] = "MusBox";
-				a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
+				a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':"Talk (Library)",
 					'sel':(((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)) &&
-					       d != 65 && !skip_to_bridge && flags['new_mus_box'] == 1 && aff[maria_id] < 145)
+					       d != 65 && !skip_to_bridge && flags['new_mus_box'] == 1 && aff[maria_id] < 145),
 				});
-				a[a.length - 1]['t2'] = a[a.length - 2]['desc'];
 			}
 			if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - 2)) {
 				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true,
@@ -354,7 +354,7 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		// RICK
 		// "Gift    " <- 4 spaces
 		// "Talk    " <- 4 spaces
-		if (is_sunny == 1 && (!["SAT", "SUN", "WED"].includes(dow) || d == 69)) {
+		if (is_sunny == 1 && (!["SUN", "WED"].includes(dow) || d == 69)) {
 			if (d >= 83 && flags['new_mus_box'] == 0 && (aff[maria_id] < (_DREAM_EVENT_MIN - 3))) {
 				a.push({'desc':"Need a Fixed Musbox for Cow Stealing", 'imp':true});
 			}
@@ -373,8 +373,8 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			// ANN in Ricks Shop
 			// "Gift  " <- 2 spaces
 			if (dow == "THURS") {
-				a.push({'desc':"Talk (Ricks Shop)", 'cid':ann_id, 'val':1, 't2':"MusBox", 'sel':false, 'red':(aff[ann_id] >= _PHOTO_MIN)});
-				a.push({'desc':"MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':"Talk (Ricks Shop)", 'sel':false});
+				a.push({'desc':"Talk (Ricks Shop)", 'cid':ann_id, 'val':1, 't2':"  MusBox", 'sel':false, 'red':(aff[ann_id] >= _PHOTO_MIN)});
+				a.push({'desc':"  MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':"Talk (Ricks Shop)", 'sel':false});
 				a.push({'desc':"Gift  ", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Corn / Potato", 'sel':false});
 				a.push({'desc':"Corn / Potato", 'cid':ann_id, 'val':3, 'sr':true, 't2':"Gift  ", 'sel':false});
 			}
