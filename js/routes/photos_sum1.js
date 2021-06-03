@@ -533,6 +533,7 @@ function ranch_stuff_sum(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1,
 }
 
 function visit_bar(tmp_act = [], dow = get_dow(vars['day'], true), is_sunny = 1, imp_visit = true) {
+	var cliff_id = get_npc_id('cliff');
 	var duke_id = get_npc_id('bartender');
 	var duke_exists = false;
 	var karen_id = get_npc_id('karen');
@@ -551,6 +552,7 @@ function visit_bar(tmp_act = [], dow = get_dow(vars['day'], true), is_sunny = 1,
 		if (aff[duke_id] < 33) {
 			tmp_act.push({'desc':("(" + Math.round((33 - aff[duke_id]) / 6) + " visits left)"), 'sr':true});
 		}
+		tmp_act.push({'desc':"Talk (In Bar)", 'cid':cliff_id, 'val':1, 'sel':false});
 	}
 	return tmp_act;
 }
