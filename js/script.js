@@ -98,6 +98,7 @@ function next_day(jump = false) {
 
 		// Update variables
 		var tmp_actions = [];
+		var worked_today = false;
 		for (var i = 0; i < actions.length; i++) {
 			if ($("#ab_" + i).length != 0) {
 				//element exists
@@ -108,6 +109,10 @@ function next_day(jump = false) {
 					} else {
 						for (var j = 0; j < actions[i]['cid'].length; j++) {
 							var new_row = {};
+							if(actions[i]['desc'].includes(" Work")) {
+								// For calculating NPC Work Affection
+								worked_today = true;
+							}
 							for (key in actions[i]) {
 								new_row[key] = (Array.isArray(actions[i][key])) ? actions[i][key][j] : actions[i][key];
 							}
@@ -125,25 +130,6 @@ function next_day(jump = false) {
 			vars['new_cow_days'] = "112112112";
 			vars['day']++;
 		}
-/*
-		// Cow Affection
-		// Normal = NX
-		// Happy = HX
-		// Mad = MX
-		// Sick = S0-S1-S2-S3-S4-S5-S6... S7 = dead
-		for (var q = 0; q < 6; q++) {
-			if (q < vars['cows']) {
-				var tmp_cs = vars['cow_status'].substring(q * 2, q * 2 + 2);
-				if (["M", "S"].includes(tmp_cs.substring(0, 1))) {
-					// Mad or Sick
-					// Unfed Cows gain +2 affection if mad / sick
-					aff[47 + q] += 2;
-				}
-			}
-			// 0 <= aff <= 255
-			aff[47 + q] = ((aff[47 + q] > 255) ? 255 : ((aff[47 + q] < 0) ? 0 : (aff[47 + q])));
-		}
-*/
 
 		// Stumps
 		aff[get_npc_id('stump')] = vars['lumber'];
@@ -180,8 +166,8 @@ function next_day(jump = false) {
 		sell_stuff = (sell_amt > 0);
 
 		// Affection from 4 days bridge work or hot springs work
-		if ((vars['day'] == 87 && vars['bridge_days_worked'] == 4) ||
-			(vars['day'] == 106 && vars['springs_days_worked'] == 4)) {
+		if (worked_today && ((vars['day'] == 87 && vars['bridge_days_worked'] == 4) ||
+			(vars['day'] == 106 && vars['springs_days_worked'] == 4))) {
 			for (var i = 0; i < npcs.length; i++) {
 				if (aff[i] !== undefined && !not_villagers.includes(i)) {
 					aff[i] = ((aff[i] >= 253) ? 255 : (aff[i] + 3));
