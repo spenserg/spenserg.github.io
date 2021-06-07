@@ -95,11 +95,11 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 		}
 
-		if (d == 243) { // Spring 3
+		if (d == 243) { // Spring 3 (Friday)
 			a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, 6500], 'iid':doug_id, 'imp':true});
 
 			// Cliff
-			a.push({'desc':"Talk (Ranch)", 'cid':cliff_id, 'val':2, 'sel':false});
+			a.push({'desc':"Talk (Fish Tent) [50%]", 'cid':cliff_id, 'val':2, 'sel':false});
 			a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"Egg/Milk", 'sr':true});
 			a.push({'desc':"Egg/Milk", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
 
