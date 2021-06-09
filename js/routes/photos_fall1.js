@@ -492,9 +492,10 @@ Need ~4000 G (3800 ish)
 	}
 
 	// Money Needed going into Winter
-	var tmp_gl = 3800;
-	if ((g - (vars['bridge_days_worked'] * 1000)) < tmp_gl) {
-		a.push({'desc':((tmp_gl - (g - (vars['bridge_days_worked'] * 1000))) + " G Needed"), 'red':true });
+	var tmp_gl = (g - (vars['bridge_days_worked'] * 1000)) + 5000 + 4000; // Bridge + Hot Springs Work
+	tmp_gl -= (6000 + 5000 + 3000 + 2000 + 1800); // Cow, Kitchen, Bathroom, 4 Grass, Milker
+	if (tmp_gl < 0) {
+		a.push({'desc':((-1 * tmp_gl) + " G Needed"), 'red':true });
 	}
 
 	// If no new music box, enacting music box for one girl will deactivate all other music boxes
