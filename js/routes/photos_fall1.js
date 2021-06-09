@@ -25,6 +25,17 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var skip_to_bridge = ((d < 83 && aff[ann_id] >= _DREAM_EVENT_MIN && aff[maria_id] >= 145) ||
 			      (d > 88 && flags['new_mus_box'] == 1 && flags['old_mus_box'] == 1 && aff[ann_id] > 180 && aff[maria_id] > 150));
 
+	var tmp_gold_left = vars['gold'];
+	tmp_gold_left -= ((flags['kitchen'] == 0) ? 5000 : 0); // Kitchen
+	tmp_gold_left -= ((flags['bathroom'] == 0) ? 3000 : 0); // Bathroom
+	tmp_gold_left -= ((4 - (vars['cows'] + (vars['new_cow_days'].length / 3))) * 6000); // Cows
+	tmp_gold_left -= (4 * 500); // 4 grass
+	tmp_gold_left -= ((1 - flags['milker']) * 1800);
+	tmp_gold_left -= 5000; // Hot Springs Work
+	// Bridge Work
+	if (d <= 83) { tmp_gold_left -= 4000; 
+	} else { tmp_gold_left += (1000 * (87 - d)); }
+
 	if (d == 65 || d == 71) { // Fall 5 & 11
 		flags['dontsave'] = true;
 	} else if (d == 66 || d == 68) { // Fall 6 & 8
@@ -478,6 +489,8 @@ actions_photos_fall_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		flags['dontsave'] = false;
 		a = [{'desc':"RESET", 'red':true}, {'desc':("REASON: " + reset)}];
 	}
+
+	a.push({'desc':(tmp_gold_left + " G Needed"), 'imp':(tmp_gold_left < 0), 'red':(tmp_gold_left >= 0) });
 
 	// If no new music box, enacting music box for one girl will deactivate all other music boxes
 	if (flags['new_mus_box'] == 0 && aff[rick_id] >= _RICK_FIX_MIN - 6) {
