@@ -239,6 +239,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				tmp_getext = true;
 			}
 			if (tmp_getext) {
+				var mas_carp_id = get_npc_id('master carpenter');
 				a.push({'desc':"(Opens 35 secs after leaving house)", 'sr':true});
 				if (aff[mas_carp_id] <= 25) {
 					a.push({'desc':"Meet", 'cid':mas_carp_id, 'val':4, 'sr':false, 'sel':false, 'red':true});
