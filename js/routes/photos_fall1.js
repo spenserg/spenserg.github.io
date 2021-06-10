@@ -146,7 +146,7 @@ Need ~4000 G (3800 ish)
 			// Horse Race
 			a = betting_table(a, 1, d);
 			if (flags['horse_entered'] == 1) {
-				a.push({'desc':"Win Horse Race", 'cid':'f_photo_horserace','val':1, 'iid':get_npc_id('doug'), 'imp':true, 'sel':false});
+				a.push({'desc':"Win Horse Race", 'cid':'f_photo_horserace','val':1, 'iid':get_npc_id('doug'), 'imp':true});
 			}
 		}
 	} else { // Not a festival
@@ -519,7 +519,7 @@ Need ~4000 G (3800 ish)
 	return a;
 }
 
-function ranch_stuff_fall(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1, chicken_actions = [], skip_to_bridge = false) {
+function ranch_stuff_fall (tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1, chicken_actions = [], skip_to_bridge = false) {
 	if (dow != "THURS") {
 		var ann_id = get_npc_id('ann');
 		var elli_id = get_npc_id('elli');
@@ -535,7 +535,7 @@ function ranch_stuff_fall(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1
 			tmp_act.push({'desc':"Cliff Cutscene", 'val':1, 'cid':"f_cutscene_cliff_farm", 'sr':true, 'sel':false});
 		}
 
-		if (aff[ann_id] < _PHOTO_MIN) {
+		//if (aff[ann_id] < _PHOTO_MIN) {
 			// ANN
 			// " Talk" <- -1 spaces
 			// " Gift" <- -1 spaces
@@ -612,7 +612,7 @@ function ranch_stuff_fall(tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1
 						     (dow != "WED" || (d == 66 && flags['vineyard_restored'] == 0)) && vars['chickens'] > 1)
 				});
 			}
-		}
+		//}
 		if (ann_sick_event) {
 			// ANN SICK EVENT
 			tmp_act.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1]});
