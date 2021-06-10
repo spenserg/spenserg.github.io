@@ -163,19 +163,11 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 						'imp':true, 'iid':get_npc_id('carpenter_top')});
 				}
 			}
-
-			// MAYOR
-			if (is_sunny == 1 || d == 94) {
-				a.push({'desc':((dow == "SAT") ? "Talk (Rick Shop 50%)" : ((dow == "SUN") ? "Talk (Church)" : "Talk")),
-					'cid':mayor_id, 'val':3, 'sel':false, 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)
-				});
-				if (is_sunny != 1) { a[a.length - 1]['desc'] = "Talk (In House)"; }
-				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
-			}
 		}
 
 		// ELLI
-		a.push({'desc':("Talk" + ((dow == "MON") ? " (MTN)" : "")), 'cid':elli_id, 'val':1, 'sel':false});
+		a.push({'desc':("Talk" + ((dow == "MON") ? " (MTN)" : "")), 'cid':elli_id, 'val':1, 'sel':false, 't2':"MusBox "});
+		a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':false, 't2':a[a.length - 1]['desc'] });
 		a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':[" Egg", "M/L Fish"], 'sel':false});
 		a.push({'desc':" Egg", 'sr':true, 't2':["Gift ", "M/L Fish"], 'sel':false, 'cid':elli_id, 'val':4});
 		a.push({'desc':"M/L Fish", 'sr':true, 't2':["Gift ", " Egg"], 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':false});
@@ -190,14 +182,16 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 
 		// Cliff
-		var cliff_loc = "Fish Tent 50%";
-		if (dow == "MON") { cliff_loc = "Hot Springs"; }
-		if (dow == "TUES") { cliff_loc = "Beach"; }
-		if (dow == "WED") { cliff_loc = "Ranch"; }
-		if (dow == "THURS") { cliff_loc = "Carp House 50%"; }
-		a.push({'desc':("Talk (" + cliff_loc + ")"), 'cid':cliff_id, 'val':2, 'sel':false});
-		a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true}); // TODO Recipe Bonus
-		a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+		if (is_sunny == 1) {
+			var cliff_loc = "Fish Tent 50%";
+			if (dow == "MON") { cliff_loc = "Hot Springs"; }
+			if (dow == "TUES") { cliff_loc = "Beach"; }
+			if (dow == "WED") { cliff_loc = "Ranch"; }
+			if (dow == "THURS") { cliff_loc = "Carp House 50%"; }
+			a.push({'desc':("Talk (" + cliff_loc + ")"), 'cid':cliff_id, 'val':2, 'sel':false});
+			a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true}); // TODO Recipe Bonus
+			a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+		}
 
 		// Pond Berry
 		if (flags['berry_pond'] == 0 && !is_festival(d)){
