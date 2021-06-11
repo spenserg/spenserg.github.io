@@ -105,7 +105,7 @@ function compute (type = -1) {
     	var alt_found = false;
 	while((result2 = reg.exec(ans)) !== null && net < 1000) {
 		if (type == 1) {
-			if (!result2[2].toLowerCase().includes("eliver")) { // Not "Delivered"
+			if (!result2[2].toLowerCase().includes("eliver") && result2[3].localeCompare("XXX") != 0) { // Not "Delivered" or "XXX" destination
 				// Inbound
 				var tmp_dest = result2[3];
 				
