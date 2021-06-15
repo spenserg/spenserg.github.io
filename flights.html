@@ -199,8 +199,14 @@ function compute (type = -1) {
 			// Inbound List
 			// [whole str, flt, day, time, A (Arrived) / S (Scheduled) / E (Estimated), Airport Codes]
 			if (parseInt(day) == parseInt(result2[2])) {
-				var tmp_loc = result2[5].replaceAll("DFW", "").substring(0, 3);
-				list_reps.push(result2[1] + "\t" + tmp_loc + "\t" + result2[3].replaceAll(":", ""));
+				var tmp_net = 0
+				while (result2[5].includes("DFW") && tmp_net < 1000) {
+					result2[5] = result2[5].replace("DFW", "");
+					tmp_net++;
+				}
+				var tmp_time_split = result2[3].split(":");
+				if (tmp_time_split[0].length == 1) { tmp_time_split = ("0" + tmp_time_split); }
+				list_reps.push(result2[1] + "\t" + result2[5].substring(0, 3) + "\t" + tmp_time_split.join(""));
 			}
 		}
 		net++;
