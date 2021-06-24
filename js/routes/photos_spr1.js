@@ -42,7 +42,7 @@ actions_photos_spr_y1 = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	}
 
 	if (d == 3) { // Spring 3
-		a.push({'desc':"Equip hammer, Scythe to toolbox <b>[RT A DWN DWN A RT RT A UP A]/b>"}); // <b>[A UP A RT A DWN DWN A]</b>
+		a.push({'desc':"Equip hammer, Scythe to toolbox <b>[RT A DWN DWN A RT RT A UP A]</b>"}); // <b>[A UP A RT A DWN DWN A]</b>
 		a.push({'desc':"Greet the Mayor", 'iid':mayor_id});
 		a.push({'desc':"Till 3 x 3 square"});
 	}
