@@ -470,7 +470,7 @@ actions_photos_spr_y1a = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 			}
 
-			a = ((aff[may_id] < 50) ? elli_spry1(a, d, g, is_sunny) : maria_spry1(a, d, g, is_sunny));
+			a = ((aff[may_id] < 50) ? elli_spry1a(a, d, g, is_sunny) : maria_spry1a(a, d, g, is_sunny));
 
 			// MAYOR
 			if (is_sunny == 1 && dow != "SUN") {
@@ -519,7 +519,7 @@ actions_photos_spr_y1a = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			if ([19, 20, 21, 22].includes(d)) { a.push({'desc':"Vote for Goddess", 'red':true, 'iid':get_npc_id('goddess')}); }
 
-			a = ((aff[may_id] > 50) ? elli_spry1(a, d, g, is_sunny) : maria_spry1(a, d, g, is_sunny));
+			a = ((aff[may_id] > 50) ? elli_spry1a(a, d, g, is_sunny) : maria_spry1a(a, d, g, is_sunny));
 
 			// MAY
 			if (aff[may_id] < 100 && is_sunny == 1 && dow == "SAT") {
@@ -661,7 +661,7 @@ actions_photos_spr_y1a = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	return a;
 }
 
-function elli_spry1 (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
+function elli_spry1a (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
 	var elli_id = get_npc_id('elli');
 	var rick_id = get_npc_id('rick');
 	var dow = get_dow(d, true); 
@@ -709,7 +709,7 @@ function elli_spry1 (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
 	return a;
 }
 
-function maria_spry1 (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
+function maria_spry1a (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
 	var dow = get_dow(d, true);
 	var maria_id = get_npc_id('maria');
 	var rick_id = get_npc_id('rick');
