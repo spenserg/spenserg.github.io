@@ -547,7 +547,7 @@ function betting_table(a = [], bet_type = 1, d = 109) {
 			'" /></div>' + '<div class="ml-3">HAVE:&nbsp;&nbsp;<input type="number" id="b_have" onchange="calc_bets(' + bet_type + ')" value="' + vars['medals'] + '" /></div>')});
 	for (var i = 0; i < 6; i++) {
 		a.push({'desc':'odds', 'b_table':true, 'b_id':i});
-	}	
+	}
 	if (route_id == -1) {
 		a.push({'desc':'<select name="bet_type" id="bet_type" onchange="set_type(this.value)"><option value="1">Marriage (Type 1)</option><option value="2">Marriage (Type 2)</option><option value="3">Photos</option></select>'});
 	}
@@ -1064,7 +1064,9 @@ function to_html(a = actions, show_red = true) {
 					html += '<span class="dogracex" style="width:30px;height:30px;margin:3px;">X</span>';
 					html += '<span style="border:3px solid ' + bet_colors[a[i]['b_id']];
 					html += ';width:30px;height:30px;margin:5px;text-align:center">' + (parseInt(a[i]['b_id']) + 1) + '</span>';
-					html += 'x&nbsp;<input class="oddsInput" type="number" id="b_' + a[i]['b_id'] + '" value="1" onchange="calc_bets()" />';
+					html += 'x&nbsp;<input class="oddsInput" type="number" id="b_' + a[i]['b_id'] + '" value="'
+					html += ((route_id == 5) ? "0" : "1");
+					html += '" onchange="calc_bets()" />';
 					html += '<input id="bg_' + a[i]['b_id'] + '" value="';
 					html += Math.floor(vars['gold'] / (6 * 50));
 					html += '" disabled=true style="border:1px solid black"/>';
@@ -1186,6 +1188,7 @@ function slow_calc(odds, buy_amt, recursive = false) {
 	 * 3 - actual
 	 * ]
 	 */
+
 	odds.sort(function(a,b) {
 		return ((a[0] > b[0]) ? 1 : 0);
 	});
@@ -1194,7 +1197,9 @@ function slow_calc(odds, buy_amt, recursive = false) {
 		if (!recursive) {
 			odds[i][3] = 0;
 		}
-		sum += (odds[odds.length - 1][0] / odds[i][0]);
+		if (odds[i][0] != 0) {
+			sum += (odds[odds.length - 1][0] / odds[i][0]);
+		}
 	}
 
 	var new_odds = [];
@@ -1266,10 +1271,11 @@ function calc_bets(bet_type = 1, use_leftover = false) {
 
 	var max_required = 0;
 	for (var i = 0; i < 6; i++) {
-		var cur_need = Math.ceil(need / parseInt($('#b_' + i).val()));
+		var tmp_curodds = ((parseInt($('#b_' + i).val()) == 0) ? 9999 : parseInt($('#b_' + i).val()));
+		var cur_need = Math.ceil(need / tmp_curodds);
 		max_required += (cur_need > 99) ? 99 : cur_need;
 		// [odd amt, original order, bets needed, bets actual]
-		odds[i] = [parseInt($('#b_' + i).val()), i, cur_need, 0];
+		odds[i] = [tmp_curodds, i, cur_need, 0];
 	}
 
 	// If you can afford it, minimum required medals to achieve goal for all
@@ -1277,10 +1283,6 @@ function calc_bets(bet_type = 1, use_leftover = false) {
 		$("input[id^='bg_']").each(function(i) {
 			$(this).val((Math.ceil(need / odds[i][0]) > 99) ? 99 : Math.ceil(need / odds[i][0]));
 			$("#bt_" + this.id.substring(3)).html(odds[i][0] * this.value);
-			
-			//console.log(odds);
-			//console.log(this.value);
-			//console.log((Math.ceil(need / odds[i][0]) > 99) ? 99 : Math.ceil(need / odds[i][0]));
 		});
 		return;
 	}
@@ -1532,26 +1534,11 @@ function set_affections (rid = 0) {
 	var tx = route_affs[rid];
 	if ([0, 5].includes(rid)) {
 		var tmp_day = get_day(vars['day']);
-		tx = [];
-
-		if (flags['photo_maria'] == 0) { tx.push('maria'); }
-		if (aff[get_npc_id('rick')] < _RICK_FIX_MIN) { tx.push('rick'); }
-		if (flags['photo_elli'] == 0) { tx.push('elli'); }
-		if (flags['wine_from_duke'] == 0 && aff[get_npc_id('bartender')] < _DUKE_WINE_MIN) { tx.push('bartender'); }
-		if (tx.length < 4 && aff[get_npc_id('sprite')] < _SPRITE_WINE_MIN) { tx.push('sprite'); }
-		if (tx.length < 4 && flags['photo_ann'] == 0) { tx.push('ann'); }
-		if (tx.length < 4 && ((vars['day'] % 120) > 14) && ((vars['day'] % 120) < 63)) { tx.push('basil'); }
-		if (tx.length < 4 && vars['day'] > 17) { tx.push('cliff'); }
-		if (tx.length < 4) { tx.push('mayor'); }
-		if (tx.length < 4) { tx.push('rick'); }
+		tx = ['elli', 'ann', 'maria', 'bartender', 'sprite']
 	}
 	for (var i = 0; i < tx.length; i++) {
 		tmp_html += '<div class="p-1 display_main">';
-		//if ([0, 5].includes(rid)) { // All Photos
-			tmp_html += get_npc_img(get_npc_id(tx[i]), true);
-		//} else {
-		//	tmp_html += npcs[get_npc_id(tx[i])].toUpperCase() + ': ';
-		//}
+		tmp_html += get_npc_img(get_npc_id(tx[i]), true);
 		tmp_html += '<span id="npc_' + get_npc_id(tx[i]) + '">' + aff[tx[i]] + '</span></div>';
 	}
 	return tmp_html;
