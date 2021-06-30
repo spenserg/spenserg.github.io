@@ -109,7 +109,7 @@ function get_actions_photos(d = 3, g = 300, is_sunny = 1) {
 	}
 
 	if (d <= 30) { // Spring Y1
-		a = actions_photos_spr_y1(a, d, g, is_sunny);
+		a = actions_photos_spr_y1b(a, d, g, is_sunny);
 	}
 	
 	if (d > 30 && d <= 60) { // Summer Y1
