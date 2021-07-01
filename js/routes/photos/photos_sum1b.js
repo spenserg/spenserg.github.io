@@ -61,14 +61,14 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				// -1 sp " GIFT"
 				// -1 sp " MUSBOX"
 				a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id, 'val':1,
-					'sel':(!["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
+					'sel':(flags['new_mus_box'] == 0 && !["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
 				});
 				a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'],
 					'sel':(flags['new_mus_box'] == 1 && !["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
 				});
 				a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
 				a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 't2':" Gift",
-					'sel':(flags['new_mus_box'] == 0 && !["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
+					'sel':(!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1)
 				});
 				if (flags['recipe_ann'] == 0) {
 					a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes'];
@@ -150,21 +150,23 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"ed, flower, walnut, Fish for Elli", 'imp':true});
 			}
 
+			if (dow == "MON" || d < 61) {
 			// MARIA
-			if (aff[maria_id] >= (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
-				a.push({'desc':"NO MUSBOX FOR MARIA", 'iid':maria_id, 'red':true});
-			}
-			a.push({'desc':"Talk (MTN / CHUR)", 'cid':maria_id, 'val':1, 't2':"MusBox",
-				'sel':(aff[maria_id] < (_DREAM_EVENT_MIN - 1) && !["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1),
-				'red':(aff[maria_id] >= (_DREAM_EVENT_MIN - 1))});
-			if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
-				a[a.length - 1]['t2'] = "MusBox";
-				a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
-					'sel':false, 't2':a[a.length - 1]['desc']
-				});
-			}
-			if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - 2)) {
-				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':(!["SAT", "SUN", "WED"].includes(dow))});
+				if (aff[maria_id] >= (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
+					a.push({'desc':"NO MUSBOX FOR MARIA", 'iid':maria_id, 'red':true});
+				}
+				a.push({'desc':"Talk (MTN / CHUR)", 'cid':maria_id, 'val':1, 't2':"MusBox",
+					'sel':(aff[maria_id] < (_DREAM_EVENT_MIN - 1) && !["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1),
+					'red':(aff[maria_id] >= (_DREAM_EVENT_MIN - 1))});
+				if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
+					a[a.length - 1]['t2'] = "MusBox";
+					a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
+						'sel':false, 't2':a[a.length - 1]['desc']
+					});
+				}
+				if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - 2)) {
+					a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':(!["SAT", "SUN", "WED"].includes(dow))});
+				}
 			}
 
 			// ELLI
@@ -288,20 +290,20 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':("(" + Math.round((33 - aff[duke_id]) / 6) + " visits left)"), 'sr':true});
 				}
 			}
-
-			// Horse Affection
-			if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
-				a.push({'desc':"Equip Brush", 'iid':horse_id});
-			}
-			a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
-			a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
-			if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
-				a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
-			}
-
-			// Feed dog
-			a.push({'desc':"Feed Dog", 'cid':dog_id, 'val':2, 'sel':false});
 		} // End !festival
+
+		// Horse Affection
+		if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
+			a.push({'desc':"Equip Brush", 'iid':horse_id});
+		}
+		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
+		a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
+		if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
+			a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
+		}
+
+		// Feed dog
+		a.push({'desc':"Feed Dog", 'cid':dog_id, 'val':2, 'sel':false});
 	} // End !typhoon
 
 	// If no new music box, enacting music box for one girl will deactivate all other music boxes
