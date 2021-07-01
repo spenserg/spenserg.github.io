@@ -80,7 +80,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				has_opener = true;
 				a.push({'desc':"Equip hoe", 'iid':musbox_id, 'red':(is_sunny == 0 || ["WED", "SAT", "SUN"].includes(dow))});
 				a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'iid':musbox_id,
-					'sel':(is_sunny == 1 && !["WED", "SAT", "SUN"].includes(dow))
+					'sel':(is_sunny == 1 && !["WED", "SAT", "SUN"].includes(dow) && d > 9)
 				});
 				if (flags['berry_farm'] == 0) {
 					a.push({'desc':"Dig a Berry", 'val':1, 'cid':'f_berry_farm', 'sr':true, 'sel':false});
@@ -228,17 +228,16 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 
 			a.push({'desc':"ed, ber, flower, Fish for Elli", 'imp':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow))}); // Quick gifts for villagers
-/*
+
 			// KAI
-			if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':(is_sunny == 1 && !["MON", "SAT", "SUN", "WED"].includes(dow)), 'red':(dow == "MON")}); }
-			a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sr':(aff[kai_id] == 0), 'sel':(is_sunny == 1 && !["MON", "SAT", "SUN", "WED"].includes(dow))});
-			a.push({'desc':"Berry", 'sr':true, 'sel':(is_sunny == 1 && !["MON", "SAT", "SUN", "WED"].includes(dow)), 't2':"  Gift ", 'red':(dow == "MON"),
+			if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':false}); }
+			a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sr':(aff[kai_id] == 0), 'sel':false});
+			a.push({'desc':"Berry", 'sr':true, 'sel':false, 't2':"  Gift ", 'red':(dow == "MON"),
 				'cid':((flags['recipe_kai'] == 0) ? [kai_id, 'f_recipe_kai'] : kai_id),
 				'val':((flags['recipe_kai'] == 0) ? [5, 1] : 6),
 			});
 			a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Berry"});
-*/
-			
+		
 			elli_spry1b(a, d, g, is_sunny);
 
 			// MAYOR
@@ -313,16 +312,9 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				if (aff[duke_id] == 0) { a.push({'desc':"Meet", 'cid':duke_id, 'val':3, 'sel':((d == 30 || dow == "MON") && is_sunny == 1)}); }
 				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'sel':((d == 30 || dow == "MON") && is_sunny == 1)});
 				a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(a[a.length - 1]['sel']), 'sr':true});
-/*
+
 				// KAI
-				if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow)), 'red':(dow != "MON")}); }
-				a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sr':(aff[kai_id] == 0), 'sel':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow))});
-				a.push({'desc':"Berry", 'sr':true, 'sel':(is_sunny == 1 && !["MON", "SAT", "SUN", "WED"].includes(dow)), 't2':"  Gift ", 'red':(dow != "MON"),
-					'cid':((flags['recipe_kai'] == 0) ? [kai_id, 'f_recipe_kai'] : kai_id),
-					'val':((flags['recipe_kai'] == 0) ? [5, 1] : 6),
-				});
-				a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Berry"});
-*/
+				a.push({'desc':"Talk (In Bar)", 'cid':kai_id, 'val':2, 'sel':false});
 			}
 		} // End of if (d > 8)
 	}
