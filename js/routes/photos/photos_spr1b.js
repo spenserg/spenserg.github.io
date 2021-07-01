@@ -108,11 +108,6 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Get Potato for Ann", 'iid':ann_id});
 		}
 
-		// Dog Karen on Spr 30?
-		if (d == 30) {
-			a.push({'desc':"Dog Karen to Pink (Beach / Carp House) [50%] [10 AM]", 'cid':karen_id, 'val':(208 - aff[karen_id]), 'sel':false});	
-		}
-
 		// Fishing Rod
 		if (flags['fishing_rod'] == 0) {
 			a.push({'desc':"Get Fishing Rod", 'val':1, 'cid':'f_fishing_rod', 'iid':get_npc_id('fisherman'),
@@ -158,6 +153,11 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes'];
 					a[a.length - 1]['val'] = [1, 6, -1];
 				}
+			}
+
+			// Dog Karen on Spr 30?
+			if (d == 30) {
+				a.push({'desc':"Dog Karen to Pink (Beach / Carp House) [50%] [10 AM]", 'cid':karen_id, 'val':(208 - aff[karen_id]), 'imp':true});	
 			}
 
 			// Kappa Berry
@@ -210,7 +210,9 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			// Lumber for Sprites
 			if ((d == 30 || dow == "MON") && tmp_spr_aff < _SPRITE_SPAM_MAX && d > 3) {
-				a.push({'desc':"Equip Axe, Chop One Stump", 'imp':true, 'val':6, 'cid':'v_lumber', 'iid':get_npc_id('stump')});
+				a.push({'desc':"Equip Axe, Chop One Stump", 'val':6, 'cid':'v_lumber', 'iid':get_npc_id('stump'),
+					'sel':(is_sunny == 1), 'imp':(is_sunny == 1), 'red':(is_sunny == 0)
+				});
 			}
 
 			if (dow == "MON" && is_sunny == 1) {
@@ -252,7 +254,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Berry"});
 */
 			
-			a = ((aff[may_id] < 50) ? elli_spry1b(a, d, g, is_sunny) : maria_spry1b(a, d, g, is_sunny));
+			elli_spry1b(a, d, g, is_sunny);
 
 			// MAYOR
 			if (is_sunny == 1 && dow != "SUN") {
@@ -301,10 +303,10 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			if ([19, 20, 21, 22].includes(d)) { a.push({'desc':"Vote for Goddess", 'red':true, 'iid':get_npc_id('goddess')}); }
 
-			a = ((aff[may_id] > 50) ? elli_spry1b(a, d, g, is_sunny) : maria_spry1b(a, d, g, is_sunny));
+			a = maria_spry1b(a, d, g, is_sunny);
 
 			// MAY
-			if (aff[may_id < 100) { a.push({'desc':"Spam May [83 Talks]", 'cid':may_id, 'val':255, 'sel':false}); }
+			if (aff[may_id] < 100) { a.push({'desc':"Spam May [83 Talks]", 'cid':may_id, 'val':255, 'sel':false}); }
 
 			// POTATOES
 			if (vars['potatoes_bought'] == 0) {
@@ -360,12 +362,12 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 	if (d == 30) {
 		if (flags['potato_planted']) {
-			a.push({'desc':"Plant or Pocket All Potatoes", 'imp':true});
+			a.push({'desc':"Plant All Potatoes", 'imp':true});
 		}
 		if (is_sunny == 0 && flags['sick_karen'] == 0) {
 			a.push({'desc':"Sick Event", 'cid':[karen_id, 'f_sick_karen'], 'val':[_SICK_EVENT_AFF, 1]});
 		}
-		a.push({'desc':"Day Skipped", 'cid':['v_day', 'f_dontsave'], 'val':[1, 1], 'red':true, 'sel':false});
+		a.push({'desc':"Day Skipped", 'cid':['v_day', 'f_dontsave'], 'val':[1, 1]});
 	}
 	if (reset.length > 0) {
 		flags['dontsave'] = false;
