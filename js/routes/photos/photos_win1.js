@@ -27,6 +27,10 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		tmp_gold_left += ((107 - d) * 1000);
 	}
 
+	if (d > 16 && flags['photo_ann'] == 0) {
+		a.push({'desc':"ANN PHOTO BEFORE WINTER 19", 'imp':true, 'iid':ann_id});	
+	}
+
 	if (d == 91) {
 		// Ridiculously long "borrowing cows" cutscene
 		a.push({'desc':"DONT GO OUTSIDE TODAY", 'imp':true});
