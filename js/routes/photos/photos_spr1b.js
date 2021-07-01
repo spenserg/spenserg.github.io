@@ -304,7 +304,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a = ((aff[may_id] > 50) ? elli_spry1b(a, d, g, is_sunny) : maria_spry1b(a, d, g, is_sunny));
 
 			// MAY
-			a.push({'desc':"Spam May [83 Talks]", 'cid':may_id, 'val':255, 'sel':false});
+			if (aff[may_id < 100) { a.push({'desc':"Spam May [83 Talks]", 'cid':may_id, 'val':255, 'sel':false}); }
 
 			// POTATOES
 			if (vars['potatoes_bought'] == 0) {
