@@ -4,6 +4,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var duke_id = get_npc_id('bartender');
 	var elli_id = get_npc_id('elli');
 	var horse_id = get_npc_id('horse');
+	var kai_id = get_npc_id('kai');
 	var karen_id = get_npc_id('karen');
 	var kent_id = get_npc_id('kent');
 	var maria_id = get_npc_id('maria');
@@ -194,6 +195,14 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 			}
 		}
+
+		// KAI
+		a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sel':false});
+		a.push({'desc':"Mango/Grapes", 'sr':true, 'sel':false, 't2':"  Gift ", 'red':(dow == "MON"),
+			'cid':((flags['recipe_kai'] == 0) ? [kai_id, 'f_recipe_kai'] : kai_id),
+			'val':((flags['recipe_kai'] == 0) ? [5, 1] : 6),
+		});
+		a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Mango/Grapes"});
 	
 		if (flags['cutscene_watermelon'] == 0 && aff[ann_id] >= (_CUTSCENE_WATERMELON_MIN - 7) && aff[maria_id] >= (_CUTSCENE_WATERMELON_MIN - 8)) {
 			a.push({'desc':"WARNING: Cutscene plays at 2nd Village Screen", 'red':true});
@@ -356,6 +365,9 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 						'val':((flags['recipe_duke'] == 0) ? [7, 1] : 5)
 					});
 					a.push({'desc':"Get Wine", 'cid':'f_wine_from_duke', 'val':1, 'sr':true, 'sel':(is_sunny == 1)});
+	
+					// KAI
+					a.push({'desc':"Talk (In Bar)", 'cid':kai_id, 'val':2, 'sel':false});
 				}
 			} else if ([67, 69].includes(d)) {
 				if (aff[karen_id] >= _DREAM_EVENT_MIN && flags['dream_karen'] == 0) {
