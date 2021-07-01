@@ -172,9 +172,9 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		if (dow == "MON" && is_sunny == 1) {
 			a.push({'desc':"Talk (MTNS)", 'cid':elli_id, 'val':1, 'sel':(flags['new_mus_box'] == 0 && !skip_to_bridge), 't2':"MusBox "});
 			a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
-				'sel':(aff[elli_id] < 250 && !skip_to_bridge), 't2':a[a.length - 1]['desc']
+				'sel':(flags['new_mus_box'] == 1 && aff[elli_id] < 250 && !skip_to_bridge), 't2':a[a.length - 1]['desc']
 			});
-            a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':elli_id, 'val':3, 'sel':(aff[elli_id] < 250 && !skip_to_bridge)});
+            	a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':elli_id, 'val':3, 'sel':(aff[elli_id] < 250 && !skip_to_bridge)});
 			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"Egg ", 'sel':false});
 		}
 
