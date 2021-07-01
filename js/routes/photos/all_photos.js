@@ -118,7 +118,7 @@ function get_actions_photos(d = 3, g = 300, is_sunny = 1) {
 	} // End of Summer Y1
 	
 	if (d > 60 && d <= 90) { // Fall Y1
-		a = actions_photos_fall_y1(a, d, g, is_sunny);
+		a = actions_photos_fall_y1b(a, d, g, is_sunny);
 	} // End of Fall Y1
 	
 	if (d > 90 && d <= 120) { // Winter Y1
