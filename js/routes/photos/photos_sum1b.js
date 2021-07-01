@@ -150,6 +150,15 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"ed, flower, walnut, Fish for Elli", 'imp':true});
 			}
 
+			// KAI
+			if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':false}); }
+			a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sr':(aff[kai_id] == 0), 'sel':false});
+			a.push({'desc':"Berry/Mango", 'sr':true, 'sel':false, 't2':"  Gift ", 'red':(dow == "MON"),
+				'cid':((flags['recipe_kai'] == 0) ? [kai_id, 'f_recipe_kai'] : kai_id),
+				'val':((flags['recipe_kai'] == 0) ? [5, 1] : 6),
+			});
+			a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Berry/Mango"});
+
 			if (dow == "MON" || d < 61) {
 			// MARIA
 				if (aff[maria_id] >= (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
@@ -289,6 +298,8 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				if (aff[duke_id] < 33) {
 					a.push({'desc':("(" + Math.round((33 - aff[duke_id]) / 6) + " visits left)"), 'sr':true});
 				}
+
+				a.push({'desc':"Talk (In Bar)", 'cid':kai_id, 'val':2, 'sel':false});
 			}
 		} // End !festival
 
