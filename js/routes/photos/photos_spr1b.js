@@ -43,14 +43,6 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	} else if (d > 3 && d < 9 && is_sunny == 1) { // Spring 4 - 8
 		a.push({'desc':"Equip Watering Can", 'imp':true});
 		a.push({'desc':"Water 3 Potatoes", 'sr':true,'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
-	} else if (d > 9 && is_sunny == 1 && aff[sprite_id] == 0 && vars['lumber'] == 0) {
-		has_opener = true;
-		a.push({'desc':"Equip axe", 'iid':get_npc_id('stump'),
-			'imp':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow))
-		});
-		a.push({'desc':"Chop One Stump", 'val':6, 'cid':'v_lumber', 'sr':true,
-			'sel':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow))
-		});
 	}
 
 	if ([15, 19].includes(d)) { a.push({'desc':"Ignore Basil on the Farm", 'iid':basil_id}); }
@@ -120,8 +112,8 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Buy Potato Seeds", 'cid':['v_gold', 'v_potatoes_bought'], 'val':[-200, 1], 'iid':get_npc_id('lillia'), 'imp':true});
 			a.push({'desc':"Meet", 'cid':elli_id, 'val':4});
 			a.push({'desc':"Talk (Flower Shop)", 'cid':elli_id, 'val':1, 'sr':true});
-			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 't2':"M/L Fish", 'sr':true, 'sel':false});
-			a.push({'desc':"M/L Fish", 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sr':true});
+			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 't2':"M/L Fish", 'sr':true});
+			a.push({'desc':"M/L Fish", 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sr':true, 'sel':false});
 			a.push({'desc':"Equip Seeds + berry, Sell berry", 'imp':true});
 			a.push({'desc':"Plant Potatoes", 'sr':true, 'cid':'f_potato_planted', 'val':1});
 			a.push({'desc':"Water 3 Potatoes", 'sr':true, 'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
@@ -206,13 +198,6 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (flags['photo_popuri'] == 0) {
 				a.push({'desc':"Water Flower by Pond", 'iid':popuri_id, 'red':(d < 30 || dow != "MON" || is_sunny == 0)});
 				a.push({'desc':"Blue Mist Flower Glitch", 'cid':'f_photo_popuri', 'val':1, 'sel':false, 'sr':true});
-			}
-
-			// Lumber for Sprites
-			if ((d == 30 || dow == "MON") && tmp_spr_aff < _SPRITE_SPAM_MAX && d > 3) {
-				a.push({'desc':"Equip Axe, Chop One Stump", 'val':6, 'cid':'v_lumber', 'iid':get_npc_id('stump'),
-					'sel':(is_sunny == 1), 'imp':(is_sunny == 1), 'red':(is_sunny == 0)
-				});
 			}
 
 			if (dow == "MON" && is_sunny == 1) {
