@@ -240,6 +240,8 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		
 			elli_spry1b(a, d, g, is_sunny);
 
+			a.push({'desc':"Buy Potato Seeds", 'cid':['v_gold', 'v_potatoes_bought'], 'val':[-200, 1], 'iid':get_npc_id('lillia'), 'sel':false});
+
 			// MAYOR
 			if (is_sunny == 1 && dow != "SUN") {
 				if (aff[mayor_id] == 0) { a.push({'desc':"Meet", 'cid':mayor_id, 'val':4, 'sel':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow))}); }
