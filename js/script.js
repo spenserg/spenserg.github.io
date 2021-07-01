@@ -775,10 +775,11 @@ function update_day_gui(d = vars['day'], jump = false) {
 	if (vars['chickens'] > 0) { // Eggs
 		tmp_cs.push(crops.indexOf('egg'));
 	}
-	if (flags['fishing_rod_stored'] == 0) { //Fish
-		var x = crops.indexOf('Fish S');
-		tmp_cs = tmp_cs.concat([x, x + 1, x + 2]);
-	}
+
+	//Fish
+	var x = crops.indexOf('Fish S');
+	tmp_cs = tmp_cs.concat([x, x + 1, x + 2]);
+
 	if (vars['cows'] > 0) { // Milk
 		var x = crops.indexOf('milk s');
 		tmp_cs = tmp_cs.concat([x, x + 1, x + 2]);
