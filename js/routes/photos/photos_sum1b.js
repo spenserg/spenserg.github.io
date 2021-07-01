@@ -150,6 +150,10 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"ed, flower, walnut, Fish for Elli", 'imp':true});
 			}
 
+			// Decline Ankle
+			if (flags['ankle_karen'] == 0 && aff[karen_id] > 180 && is_sunny == 1) {
+				a.push({'desc':"Decline Ankle (Vineyard)", 'sel':false, 'cid':[karen_id, kai_id, 'f_ankle_karen'], 'val':[-30, 20, 1]});
+			}
 			// KAI
 			if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':false}); }
 			a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sr':(aff[kai_id] == 0), 'sel':false});
@@ -159,8 +163,8 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			});
 			a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Berry/Mango"});
 
-			if (dow == "MON" || d < 61) {
-			// MARIA
+			if (dow == "MON" || d < 41) {
+				// MARIA
 				if (aff[maria_id] >= (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
 					a.push({'desc':"NO MUSBOX FOR MARIA", 'iid':maria_id, 'red':true});
 				}
@@ -280,7 +284,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				if (aff[may_id] < 100 && is_sunny == 0) {
 					a.push({'desc':"Spam May (Library) [83 Talks]", 'cid':may_id, 'val':255, 'sel':false});
 				}
-			} else if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && !flags["sick_maria"]) {
+			} else if (dow == "MON" && is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && !flags["sick_maria"]) {
 				// Sick Event
 				a.push({'desc':"Sick Event", 'cid':[maria_id, "f_sick_maria"], 'val':[_SICK_EVENT_AFF, 1]});
 				a.push({'desc':"Talk", 'cid':mayor_id, 'val':3});
