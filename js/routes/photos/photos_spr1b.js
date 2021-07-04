@@ -10,6 +10,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	var horse_id = get_npc_id('horse');
 	var kai_id = get_npc_id('kai');
 	var karen_id = get_npc_id('karen');
+	var kent_id = get_npc_id('kent');
 	var maria_id = get_npc_id('maria');
 	var may_id = get_npc_id('may');
 	var mayor_id = get_npc_id('mayor');
@@ -57,6 +58,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Talk", 'cid':rick_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':maria_id, 'val':2});
+			a.push({'desc':"Talk", 'cid':kent_id, 'val':2});
 			a.push({'desc':"Dance",'cid':[maria_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance ", "Dance  "], 'sr':true});
 			a.push({'desc':"Talk", 'cid':elli_id, 'val':2});
 			a.push({'desc':"Dance ",'cid':[elli_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance", "Dance  "], 'sel':false, 'sr':true});
@@ -103,7 +105,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		// Fishing Rod
 		if (flags['fishing_rod'] == 0) {
 			a.push({'desc':"Get Fishing Rod", 'val':1, 'cid':'f_fishing_rod', 'iid':get_npc_id('fisherman'),
-				'sel':((d == 3 || d > 8) && is_sunny == 1), 'red':(d != 3 && d <= 8 || is_sunny == 0)
+				'sel':(d > 8 && is_sunny == 1), 'red':(d != 3 && d <= 8 || is_sunny == 0)
 			});
 			if (d == 3) { a.push({'desc':"Catch Fish for Elli", 'sr':true}); }
 		}
@@ -112,7 +114,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Buy Potato Seeds", 'cid':['v_gold', 'v_potatoes_bought'], 'val':[-200, 1], 'iid':get_npc_id('lillia'), 'imp':true});
 			a.push({'desc':"Meet", 'cid':elli_id, 'val':4});
 			a.push({'desc':"Talk (Flower Shop)", 'cid':elli_id, 'val':1, 'sr':true});
-			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 't2':"M/L Fish", 'sr':true});
+			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 't2':"M/L Fish", 'sr':true, 'sel':false});
 			a.push({'desc':"M/L Fish", 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sr':true, 'sel':false});
 			a.push({'desc':"Equip Seeds + berry, Sell berry", 'imp':true});
 			a.push({'desc':"Plant Potatoes", 'sr':true, 'cid':'f_potato_planted', 'val':1});
@@ -163,14 +165,12 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				var lum_desc = "";
 				if (aff[sprite_id] < (21 - 6)) {
 					a.push({'desc':"Flower", 'cid':sprite_id, 'val':1,
-						'sel':(d == 30 || (dow == "MON" && is_sunny == 1)),
-						'red':(d != 30 && (dow != "MON" || is_sunny == 0))
+						'sel':([9, 30].includes(d) || (dow == "MON" && is_sunny == 1))
 					 });
 				}
-				a.push({'desc':(lumber_to_sprite + " Lumber to Inner Sprite (Right Side)"), 'sr':(aff[sprite_id] < (21 - 6)),
+				a.push({'desc':(lumber_to_sprite + " Gifts to Inner Sprite (Right Side)"), 'sr':(aff[sprite_id] < (21 - 6)),
 					'cid':[sprite_id, 'v_lumber'], 'val':[lumber_to_sprite, -1 * lumber_to_sprite],
-					'sel':(d == 30 || (dow == "MON" && is_sunny == 1)),
-					'red':(d != 30 && (dow != "MON" || is_sunny == 0))
+					'sel':([9, 30].includes(d) || (dow == "MON" && is_sunny == 1))
 				});
 				if (tmp_spr_aff >= 18) { a.push({'desc':"INNER SPRITE FIRST!", 'sr':true}); }
 				tmp_spr_aff += lumber_to_sprite;
@@ -311,8 +311,8 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (dow != "SUN") {
 				// BAR
 				var duke_id = get_npc_id('bartender');
-				if (aff[duke_id] == 0) { a.push({'desc':"Meet", 'cid':duke_id, 'val':3, 'sel':((d == 30 || dow == "MON") && is_sunny == 1)}); }
-				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'sel':((d == 30 || dow == "MON") && is_sunny == 1)});
+				if (aff[duke_id] == 0) { a.push({'desc':"Meet", 'cid':duke_id, 'val':3, 'sel':(([9, 30].includes(d) || dow == "MON") && is_sunny == 1)}); }
+				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'sel':(([9, 30].includes(d) || dow == "MON") && is_sunny == 1)});
 				a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(a[a.length - 1]['sel']), 'sr':true});
 
 				// KAI
@@ -409,8 +409,6 @@ function maria_spry1b (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) 
 	var dow = get_dow(d, true);
 	var maria_id = get_npc_id('maria');
 	var rick_id = get_npc_id('rick');
-
-	if (d == 9) { a.push({'desc':"MARIA FIRST", 'imp':true}); }
 
 	// MARIA
 	// " Talk" -1 spaces
