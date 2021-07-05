@@ -16,7 +16,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var horse_action_ids = [];
 
 	var tmp_gold_left = vars['gold'];
-	tmp_gold_left -= ((flags['kitchen'] == 0) ? 5000 : 0); // Kitchen
+	//tmp_gold_left -= ((flags['kitchen'] == 0) ? 5000 : 0); // Kitchen
 	//tmp_gold_left -= ((flags['bathroom'] == 0) ? 3000 : 0); // Bathroom
 	tmp_gold_left -= ((4 - (vars['cows'] + (vars['new_cow_days'].length / 3))) * 6000); // Cows
 	tmp_gold_left -= (4 * 500); // 4 grass
@@ -43,11 +43,15 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"DONT ENTER LIBRARY", 'red':true});
 	}
 
-	if (flags['cow_steal_glitch'] > 0 && d == 112) {
-		a.push({'desc':"Cows mature today", 'iid':cow_id});
-	}
-	if (vars['day'] > 94 && vars['day'] < 115 && flags['cow_steal_glitch'] == 1) {
-		a.push({'desc':"DONT VISIT COWS YET", 'red':true, 'sr':(flags['cow_steal_glitch'] > 0 && d == 112)});
+	if (flags['cow_steal_glitch'] > 0) {
+		if (d == 112) { a.push({'desc':"Cows mature today", 'iid':cow_id}); }
+		if (flags['cow_steal_glitch'] == 1) {
+			if (vars['day'] > 94 && vars['day'] < 115) {
+				a.push({'desc':"DONT VISIT COWS YET", 'red':true, 'sr':(d == 112)});
+			} else if (flags['cows_hammered'] == 0 && d >= 115) {
+				a.push({'desc':"Hammer cows", 'cid':'f_cows_hammered', 'val':1, 'iid':(get_npc_id('cow')), 'imp':true});
+			}
+		}
 	}
 
 	if (vars['day'] > 94 && flags['fishing_rod_stored'] == 0) {
@@ -93,7 +97,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a = cows(a, is_sunny);
 	}
 
-	if (flags['incubate_last'] == 0 && vars['new_chicken_days'].length == 0 && flags['new_chick'] == 0) {
+	if (aff[cliff_id] > 50 && flags['incubate_last'] == 0 && vars['new_chicken_days'].length == 0 && flags['new_chick'] == 0) {
 		a.push({'desc':"Incubate LAST", 'sr':true, 'sel':false,
 			'cid':["f_new_chick", "f_incubate_last"],
 			'val':[(_CHICK_BORN_SLEEPS + 1), 1]
@@ -186,7 +190,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 
 		// Cliff
-		if (is_sunny == 1) {
+		if (is_sunny == 1 && aff[cliff_id] > 50) {
 			var cliff_loc = "Fish Tent 50%";
 			if (dow == "MON") { cliff_loc = "Hot Springs"; }
 			if (dow == "TUES") { cliff_loc = "Beach"; }
@@ -210,12 +214,15 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 		// ANN
 		if (aff[ann_id] < _PHOTO_EVENT_AFF && flags['photo_ann'] == 0) {
-			if (flags['chicken_outside'] == 1) {
+			if (flags['chicken_outside'] == 1 && vars['chickens'] > 0) {
 				a.push({'desc':"Bring Chicken Inside", 'val':-1, 'cid':'f_chicken_outside', 'imp':true});
 				a.push({'desc':"Feed Chicken", 'cid':'v_feed', 'val':-1, 'sr':true});
 			}
-			for (var z = 0; z < horse_action_ids.length; z++) {
-				a[horse_action_ids[z]]['sel'] = true;
+
+			if (aff[cliff_id] > 50) {
+				for (var z = 0; z < horse_action_ids.length; z++) {
+					a[horse_action_ids[z]]['sel'] = true;
+				}
 			}
 
 			// Corn or Egg to Ann
@@ -268,18 +275,14 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					// Kitchen
 					a.push({'desc':"Buy a Kitchen (5000 G)", 'iid':mas_carp_id,
 							'cid':['v_gold', 'v_lumber', 'f_kitchen'],
-							'val':[-5000, -450, _BUILD_DAYS + 1]
+							'val':[-5000, -450, _BUILD_DAYS + 1], 'sel':false
 					});
 					tmp_getext = true;
 				} else if (flags['kitchen'] == 1 && flags['bathroom'] == 0 && vars['gold'] >= 3000) {
-					if (flags['cow_steal_glitch'] > 0) {
-						a.push({'desc':"Hammer cows", 'iid':(get_npc_id('cow')), 'imp':true});
-					}
-
 					// Bathroom
 					a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
 						'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'imp':true,
-						'val':[-3000, -300, _BUILD_DAYS + 1]
+						'val':[-3000, -300, _BUILD_DAYS + 1], 'sel':false
 					});
 					tmp_getext = true;
 				}
