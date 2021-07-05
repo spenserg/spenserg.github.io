@@ -696,6 +696,7 @@ function new_game(rid = 24) {
 		flags['cutscene_cliff_farm'] = 0;
 		flags['wedding_cliff'] = 0;
 		flags['incubate_last'] = 0;
+		flags['cows_hammered'] = 0;
 	} else if (rid == 7) { // Maria Marriage
 		vars['cabbages'] = 0;
 		vars['cabbage_waters'] = 0;
