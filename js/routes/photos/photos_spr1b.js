@@ -435,7 +435,11 @@ function maria_spry1b (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) 
 				'sel':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow) && aff[rick_id] >= (_RICK_FIX_MIN - 6))
 			});
 		}
-		a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':((is_sunny == 1 || d == 30) && !["SAT", "SUN", "WED"].includes(dow))});
+		a.push({'desc':" Gift  ", 'cid':maria_id, 'val':2, 'sr':true, 'sel':((is_sunny == 1 || d == 30) && !["SAT", "SUN", "WED"].includes(dow)), 't2':"Cabbage"});
+		a.push({'desc':"Cabbage", 'sel':false, 't2':" Gift  ", 'sr':true,
+			'cid':((flags['recipe_maria'] == 0) ? [maria_id, 'f_recipe_maria'] : maria_id),
+			'val':((flags['recipe_maria'] == 0) ? [5, 1] : 3)
+		});
 
 		var may_id = get_npc_id('may');
 		// MAY
