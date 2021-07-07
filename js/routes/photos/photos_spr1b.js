@@ -57,8 +57,9 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			});
 			a.push({'desc':"Talk", 'cid':rick_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2});
-			a.push({'desc':"Talk", 'cid':maria_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':kent_id, 'val':2});
+			a.push({'desc':"Talk", 'cid':kai_id, 'val':2});
+			a.push({'desc':"Talk", 'cid':maria_id, 'val':2});
 			a.push({'desc':"Dance",'cid':[maria_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance ", "Dance  "], 'sr':true});
 			a.push({'desc':"Talk", 'cid':elli_id, 'val':2});
 			a.push({'desc':"Dance ",'cid':[elli_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance", "Dance  "], 'sel':false, 'sr':true});
