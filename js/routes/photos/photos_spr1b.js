@@ -224,7 +224,11 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 						'sel':(flags['new_mus_box'] == 1), 't2':a[a.length - 1]['desc']
 					});
 				}
-				a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true});
+				a.push({'desc':" Gift  ", 'cid':maria_id, 'val':2, 'sr':true, 't2':"Cabbage"});
+				a.push({'desc':"Cabbage", 'sel':false, 't2':" Gift  ", 'sr':true,
+					'cid':((flags['recipe_maria'] == 0) ? [maria_id, 'f_recipe_maria'] : maria_id),
+					'val':((flags['recipe_maria'] == 0) ? [5, 1] : 3)
+				});
 			}
 
 			a.push({'desc':"ed, ber, flower, Fish for Elli", 'imp':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow))}); // Quick gifts for villagers
