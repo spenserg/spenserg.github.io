@@ -63,14 +63,14 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				var ann_sick_event = (dow == "SUN" && is_sunny == 0 && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN && d != 63 && 
 						      aff[ann_id] >= (_SICK_EVENT_MIN - (4 + 1 + 5 * flags['new_mus_box'])));
 				a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id, 'val':1,
-					'sel':(flags['new_mus_box'] == 0 && !["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
+					'sel':(flags['new_mus_box'] == 0 && (ann_sick_event || (!["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))))
 				});
 				a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'],
-					'sel':(flags['new_mus_box'] == 1 && !["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
+					'sel':(flags['new_mus_box'] == 1 && (ann_sick_event || (!["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))))
 				});
 				a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
 				a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 't2':" Gift",
-					'sel':(!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1)
+					'sel':(ann_sick_event || (!["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30)))
 				});
 				if (flags['recipe_ann'] == 0) {
 					a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes'];
@@ -196,7 +196,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			// ELLI
 			// "Gift " <- one space
 			// "Talk " <- one space
-			var elli_sick_event = (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0);
+			var elli_sick_event = (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0 && dow != "MON");
 			if (!["SUN", "MON"].includes(dow)) {
 				a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk (Bakery)"), 'cid':elli_id, 'val':1, 't2':"MusBox ",
 					'sel':((elli_sick_event && dow == "WED" && flags['new_mus_box'] == 0) || (!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1))
