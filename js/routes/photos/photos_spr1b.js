@@ -40,7 +40,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Hammer Rocks, Till 3 x 3 square"});
 		a.push({'desc':"Equip Watering Can, Fill Watering Can"});
 		a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1, 'sr':true});
-		a.push({'desc':"ed, ber, flower, Fish for Elli"});
+		a.push({'desc':"ed, ber, flower"});
 	} else if (d > 3 && d < 9 && is_sunny == 1) { // Spring 4 - 8
 		a.push({'desc':"Equip Watering Can", 'imp':true});
 		a.push({'desc':"Water 3 Potatoes", 'sr':true,'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
@@ -108,15 +108,15 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Get Fishing Rod", 'val':1, 'cid':'f_fishing_rod', 'iid':get_npc_id('fisherman'),
 				'sel':(d > 8 && is_sunny == 1), 'red':(d != 3 && d <= 8 || is_sunny == 0)
 			});
-			if (d == 3) { a.push({'desc':"Catch Fish for Elli", 'sr':true}); }
+			if (d == 3) { a.push({'desc':"Catch/Sell Large Fish", 'sr':true}); }
 		}
 
 		if (d == 3) {
 			a.push({'desc':"Buy Potato Seeds", 'cid':['v_gold', 'v_potatoes_bought'], 'val':[-200, 1], 'iid':get_npc_id('lillia'), 'imp':true});
 			a.push({'desc':"Meet", 'cid':elli_id, 'val':4});
 			a.push({'desc':"Talk (Flower Shop)", 'cid':elli_id, 'val':1, 'sr':true});
-			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 't2':"M/L Fish", 'sr':true, 'sel':false});
-			a.push({'desc':"M/L Fish", 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sr':true, 'sel':false});
+			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 't2':"M/L Fish", 'sr':true});
+			a.push({'desc':"M/L Fish", 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'sel':false , 'val':[3, 1], 'sr':true});
 			a.push({'desc':"Equip Seeds + berry, Sell berry", 'imp':true});
 			a.push({'desc':"Plant Potatoes", 'sr':true, 'cid':'f_potato_planted', 'val':1});
 			a.push({'desc':"Water 3 Potatoes", 'sr':true, 'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
