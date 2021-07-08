@@ -464,11 +464,12 @@ function ranch_stuff_fallb (tmp_act = [], dow = get_dow(vars['day']), is_sunny =
 		var maria_id = get_npc_id('maria');
 		var d = vars['day'];
 
-		var ann_sick_event = (dow == "SUN" && d != 63 && is_sunny == 0 && aff[ann_id] >= _SICK_EVENT_MIN && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN);
 			// ANN
 			// " Talk" <- -1 spaces
 			// " Gift" <- -1 spaces
 			// " Musbox" <- -1 spaces
+			var ann_sick_event = (dow == "SUN" && is_sunny == 0 && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN && d != 63 && 
+						      aff[ann_id] >= (_SICK_EVENT_MIN - (4 + 1 + 5 * flags['new_mus_box'])));
 			tmp_act.push({
 				'desc':(" Talk (" + ((is_sunny == 0) ? "Barn)" : "Ranch)")),
 				'cid':ann_id, 'val':1, 'red':(dow == "SUN" && !ann_sick_event),
@@ -511,10 +512,10 @@ function ranch_stuff_fallb (tmp_act = [], dow = get_dow(vars['day']), is_sunny =
 						)
 				)
 			});
-		if (ann_sick_event) {
-			// ANN SICK EVENT
-			tmp_act.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1]});
-		}
+			if (ann_sick_event) {
+				// ANN SICK EVENT
+				tmp_act.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1]});
+			}
 	}
 	return tmp_act;
 }
