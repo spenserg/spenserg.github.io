@@ -19,11 +19,13 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var dow = get_dow(d, true);
 	var reset = "";
 
-	var skip_to_bridge = ((d < 83 && aff[ann_id] >= _DREAM_EVENT_MIN && aff[maria_id] >= 145) ||
+	var skip_to_bridge = ((d < 83 && aff[ann_id] >= _DREAM_EVENT_MIN && aff[maria_id] >= 145) || d == 82 ||
 			      (d > 88 && flags['new_mus_box'] == 1 && flags['old_mus_box'] == 1 && aff[ann_id] > 180 && aff[maria_id] > 150));
 
-	if (d == 65 || d == 71) { // Fall 5 & 11
+	if (d == 65 || d == 71 || (d == 82 && flags['sick_ann'] == 0)) { // Fall 5 & 11
 		flags['dontsave'] = true;
+	} else if (d == 83 && flags['sick_ann'] == 0) {
+		a.push({'desc':"Check Weather, RESET IF SUNNY TOMORROW [Ann Sick Event]", 'imp':true, 'iid':ann_id});
 	} else if (d == 66 || d == 68) { // Fall 6 & 8
 		a.push({'desc':"Check Weather, RESET IF RAINY TOMORROW", 'imp':true});
 	} else if (flags['berry_strength'] == 0 && d >= 83 && d <= 87) {
@@ -52,7 +54,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		// Music Box Dig
 		a.push({'desc':"Equip hoe", 'iid':musbox_id, 'red':(is_sunny == 0 || (is_festival(d) && d != 88)), 'imp':(d == 88)});
 		a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true,
-			'sel':(![65, 71].includes(d) && (!["WED", "SAT", "SUN"].includes(dow) || d == 69) && !skip_to_bridge &&
+			'sel':(![65, 71, 82].includes(d) && (!["WED", "SAT", "SUN"].includes(dow) || d == 69) && !skip_to_bridge &&
 			       is_sunny == 1 && (!is_festival(d) || d == 88))});
 		if (flags['berry_farm'] == 0) {
 			a.push({'desc':"Dig a Berry", 'val':1, 'cid':'f_berry_farm', 'sr':true, 'sel':false});
@@ -433,14 +435,6 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		flags['dontsave'] = false;
 		a = [{'desc':"RESET", 'red':true}, {'desc':("REASON: " + reset)}];
 	}
-/*
-	// Money Needed going into Winter
-	var tmp_gl = (g - (vars['bridge_days_worked'] * 1000)) + 4000 + 4000; // Bridge + Hot Springs Work
-	tmp_gl -= (6000 + 5000 + 2000 + 1800); // Cow, Kitchen, 4 Grass, Milker
-	if (tmp_gl < 0) {
-		a.push({'desc':((-1 * tmp_gl) + " G Needed"), 'red':true });
-	}
-*/
 
 	// If no new music box, enacting music box for one girl will deactivate all other music boxes
 	if (flags['new_mus_box'] == 0 && aff[rick_id] >= _RICK_FIX_MIN - 6) {
