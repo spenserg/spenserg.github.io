@@ -58,7 +58,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Talk", 'cid':rick_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':kent_id, 'val':2});
-			a.push({'desc':"Talk", 'cid':kai_id, 'val':2});
+			a.push({'desc':"Talk", 'cid':kai_id, 'val':2, 'sel':(aff[kai_id] >= 50)});
 			a.push({'desc':"Talk", 'cid':maria_id, 'val':2});
 			a.push({'desc':"Dance",'cid':[maria_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance ", "Dance  "], 'sr':true});
 			a.push({'desc':"Talk", 'cid':elli_id, 'val':2});
@@ -68,9 +68,6 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 	} else { // Not a Festival
 		if (d > 8) {
-			if (lumber_to_sprite > 0 && dow == "MON" && is_sunny == 1) {
-				a.push({'desc':("Get " + lumber_to_sprite + " Lumber from Bin"), 'imp':true, 'iid':get_npc_id('stump')});
-			}
 			if (!flags['treasure_map']) {
 				a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1,
 					'sr':(lumber_to_sprite > 0 && dow == "MON" && is_sunny == 1),
@@ -106,7 +103,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		// Fishing Rod
 		if (flags['fishing_rod'] == 0) {
 			a.push({'desc':"Get Fishing Rod", 'val':1, 'cid':'f_fishing_rod', 'iid':get_npc_id('fisherman'),
-				'sel':(d > 8 && is_sunny == 1), 'red':(d != 3 && d <= 8 || is_sunny == 0)
+				'sel':((d == 3 || d > 8) && is_sunny == 1), 'red':(d != 3 && d <= 8 || is_sunny == 0)
 			});
 			if (d == 3) { a.push({'desc':"Catch/Sell Large Fish", 'sr':true}); }
 		}
@@ -123,7 +120,10 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		} else if (d > 8 && !is_festival(d)) { // Skip days until Potatoes come in
 			// Get Horse
 			if (flags['horse'] == 0 && is_sunny == 1) {
-				a.push({'desc':'Get Horse', 'cid':'f_horse', 'val':21, 'iid':horse_id, 'sel':(!["SAT", "SUN", "WED"].includes(dow))});
+				a.push({'desc':'Get Horse', 'cid':'f_horse', 'val':21, 'iid':horse_id,
+					'sel':(d == 9 || (!is_festival(d) && !["SAT", "SUN", "WED", "THURS"].includes(dow))),
+					'imp':(!is_festival(d) && !["SAT", "SUN", "WED", "THURS"].includes(dow))
+				});
 				a.push({'desc':"Fast Text Glitch", 'sr':true});
 			}
 
@@ -162,7 +162,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			// Kappa Berry
 			if (!flags['berry_kappa']) {
-				a.push({'desc':"Large fish to Kappa", 'cid':'f_berry_kappa', 'val':1, 'iid':get_npc_id('kappa'), 'sel':false, 'red':(is_sunny == 0)});
+				a.push({'desc':"Large fish to Kappa", 'cid':'f_berry_kappa', 'val':1, 'iid':get_npc_id('kappa'), 'sel':false, 'red':true});
 			}
 
 			var tmp_spr_aff = aff[sprite_id];
@@ -171,12 +171,12 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				var lum_desc = "";
 				if (aff[sprite_id] < (21 - 6)) {
 					a.push({'desc':"Flower", 'cid':sprite_id, 'val':1,
-						'sel':([9, 30].includes(d) || (dow == "MON" && is_sunny == 1))
+						'sel':(d == 30 || ((dow == "MON" || d == 9) && is_sunny == 1))
 					 });
 				}
 				a.push({'desc':(lumber_to_sprite + " Gifts to Inner Sprite (Right Side)"), 'sr':(aff[sprite_id] < (21 - 6)),
 					'cid':[sprite_id, 'v_lumber'], 'val':[lumber_to_sprite, -1 * lumber_to_sprite],
-					'sel':([9, 30].includes(d) || (dow == "MON" && is_sunny == 1))
+					'sel':(d == 30 || ((dow == "MON" || d == 9) && is_sunny == 1))
 				});
 				if (tmp_spr_aff >= 18) { a.push({'desc':"INNER SPRITE FIRST!", 'sr':true}); }
 				tmp_spr_aff += lumber_to_sprite;
@@ -202,7 +202,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			// Blue Mist Flower
 			if (flags['photo_popuri'] == 0) {
-				a.push({'desc':"Water Flower by Pond", 'iid':popuri_id, 'red':(d < 30 || dow != "MON" || is_sunny == 0)});
+				a.push({'desc':"Water Flower by Pond", 'iid':popuri_id});
 				a.push({'desc':"Blue Mist Flower Glitch", 'cid':'f_photo_popuri', 'val':1, 'sel':false, 'sr':true});
 			}
 
@@ -302,7 +302,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a = maria_spry1b(a, d, g, is_sunny);
 
 			// MAY
-			if (aff[may_id] < 100) { a.push({'desc':"Spam May [83 Talks]", 'cid':may_id, 'val':255, 'sel':false}); }
+			if (aff[may_id] < 100 && is_sunny == 1) { a.push({'desc':"Spam May [83 Talks]", 'cid':may_id, 'val':255, 'sel':false}); }
 
 			// POTATOES
 			if (vars['potatoes_bought'] == 0) {
@@ -331,15 +331,15 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		} // End of if (d > 8)
 	}
 
-	if (flags['horse'] > 0 || d == 9) {
-		if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
-			a.push({'desc':"Equip Brush", 'iid':horse_id});
-		}
-		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
-		a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':(!["WED", "SAT", "SUN"].includes(dow) && (!is_festival(d) || d == 8)) });
-		if (aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
-			a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
-		}
+	if (flags['horse'] > 0 || (d >= 9 && is_sunny == 1 && !is_festival(d))) {
+		if (flags['horse_brush'] == 1) { a.push({'desc':"Equip Brush", 'iid':horse_id}); }
+		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1),
+			'sel':(flags['horse'] > 0 || (!["WED", "SAT", "SUN", "THURS"].includes(dow) && !is_festival(d) && is_sunny == 1))
+		});
+		a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':horse_id, 'sr':true,
+			'sel':(!["WED", "SAT", "SUN"].includes(dow) && !is_festival(d) && is_sunny == 1 && (flags['horse'] > 0 || dow != "THURS"))
+		});
+		a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
 	}
 
 	// Dog
