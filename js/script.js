@@ -577,7 +577,9 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 			// Calc Money Left Until End
 			var g_left = vars['gold'];
 			g_left -= ((vars['day'] < 184 && flags['miracle_potion'] == 0) ? _PRICE_MIRACLE_POTION : 0);
-			g_left += ((vars['cows'] * 7500) + ((vars['cows'] > 0 && vars['day'] < 228) ? 1000 : 0));
+			if (vars['day'] < 241) {
+				g_left += ((vars['cows'] * 7500) + ((vars['cows'] > 0 && vars['day'] < 228) ? 1000 : 0));
+			}
 			g_left -= (((flags['log_terrace'] > 0) ? 0 : 1) * 7000);
 			g_left -= (((flags['greenhouse'] > 0) ? 0 : 1) * 30000);
 			g_left -= (((flags['stairway'] > 0) ? 0 : 1) * 2000);
@@ -586,9 +588,10 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 			g_left -= (((flags['kitchen'] > 0) ? 0 : 1) * 5000);
 			g_left -= (((flags['bathroom'] > 0) ? 0 : 1) * 3000);
 			g_left -= ((44 - (vars['grass'] + vars['grass_planted'])) * 500);
+			g_left -= ((vars['chickens'] > 0 || flags['incubate_last'] == 1) ? 0 : 1500);
 			g_left -= ((vars['day'] > 183 && vars['day'] < 206 && flags['miracle_potion'] == 0) ? _PRICE_MIRACLE_POTION : 0);
-			g_left += ((vars['day'] < 240) ? 6500 : 0);
-			g_left += ((vars['day'] < 262) ? 6500 : 0);
+			g_left += ((vars['day'] < 243) ? 6500 : 0);
+			g_left += ((vars['day'] < 264) ? 6500 : 0);
 
 			// Stolen cows grown or enough GRASS
 			a.push({'desc':"Equip Milker", 'iid':cow_id, 'red':(g_left >= 0)});
