@@ -23,6 +23,9 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	var has_opener = false;
 	var lumber_to_sprite = ((aff[sprite_id] >= _SPRITE_SPAM_MAX) ? 0 : (((_SPRITE_SPAM_MAX - aff[sprite_id]) > 6) ? 6 : ((_SPRITE_SPAM_MAX - aff[sprite_id]))));
 	var reset = "";
+	
+	var musboxes = musbox_count (aff[maria_id], aff[ann_id], aff[elli_id], d);
+	console.log(musboxes);
 
 	if (d == 29) {
 		a.push({'desc':"Check Weather, if rainy tomorrow,", 'imp':true, 'iid':karen_id});
@@ -153,6 +156,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				if (ann_sick_event) {
 					a.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1], 'imp':true});
 				}
+				a.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
 			}
 
 			// Dog Karen on Spr 30?
@@ -211,6 +215,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':false});
 				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1]});
+				a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
 
 				// MARIA
 				if (aff[maria_id] == 0) { a.push({'desc':"Meet", 'cid':maria_id, 'val':4}); }
@@ -228,6 +233,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					'cid':((flags['recipe_maria'] == 0) ? [maria_id, 'f_recipe_maria'] : maria_id),
 					'val':((flags['recipe_maria'] == 0) ? [5, 1] : 3)
 				});
+				a.push({'desc':("(" + musboxes[0] + " Musboxes Left)"), 'sr':true});
 			}
 
 			a.push({'desc':"ed, ber, flower, Fish for Elli", 'imp':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow))}); // Quick gifts for villagers
@@ -241,7 +247,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			});
 			a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Berry"});
 		
-			elli_spry1b(a, d, g, is_sunny);
+			elli_spry1b(a, d, g, is_sunny, musboxes[2]);
 
 			a.push({'desc':"Buy Potato Seeds", 'cid':['v_gold', 'v_potatoes_bought'], 'val':[-200, 1], 'iid':get_npc_id('lillia'), 'sel':false});
 
@@ -281,18 +287,19 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					}
 					a.push({'desc':"Talk (Ricks Shop)", 'cid':ann_id, 'val':1, 'sr':(aff[ann_id] == 0), 'sel':false, 't2':" MusBox"});
 					a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':false, 't2':a[a.length - 1]['desc']});
-					a.push({'desc':" Gift  ", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
-					a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 'sel':false, 't2':" Gift  "});
+					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
+					a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 'sel':false, 't2':" Gift"});
 					if (flags['recipe_ann'] == 0) {
 						a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes'];
 						a[a.length - 1]['val'] = [1, 6, -1];
 					}
+					a.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
 				}
 			}
 
 			if ([19, 20, 21, 22].includes(d)) { a.push({'desc':"Vote for Goddess", 'red':true, 'iid':get_npc_id('goddess')}); }
 
-			a = maria_spry1b(a, d, g, is_sunny);
+			a = maria_spry1b(a, d, g, is_sunny, musboxes[0]);
 
 			// MAY
 			if (aff[may_id] < 100 && is_sunny == 1) { a.push({'desc':"Spam May [83 Talks]", 'cid':may_id, 'val':255, 'sel':false}); }
@@ -380,7 +387,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	return a;
 }
 
-function elli_spry1b (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
+function elli_spry1b (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1, musboxes) {
 	var elli_id = get_npc_id('elli');
 	var rick_id = get_npc_id('rick');
 	var dow = get_dow(d, true); 
@@ -402,6 +409,7 @@ function elli_spry1b (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
 		a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1],
 			'sel':(is_sunny == 1 && !["WED", "SAT"].includes(dow)),
 		});
+		a.push({'desc':("(" + musboxes + " Musboxes Left)"), 'sr':true});
 	}
 	if (elli_sick_event) {
 		a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1],
@@ -411,7 +419,7 @@ function elli_spry1b (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
 	return a;
 }
 
-function maria_spry1b (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) {
+function maria_spry1b (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1, musboxes = 0) {
 	var dow = get_dow(d, true);
 	var maria_id = get_npc_id('maria');
 	var rick_id = get_npc_id('rick');
@@ -442,6 +450,7 @@ function maria_spry1b (a = [], d = vars['day'], g = vars['gold'], is_sunny = 1) 
 			'cid':((flags['recipe_maria'] == 0) ? [maria_id, 'f_recipe_maria'] : maria_id),
 			'val':((flags['recipe_maria'] == 0) ? [5, 1] : 3)
 		});
+		a.push({'desc':("(" + musboxes + " Musboxes Left)"), 'sr':true});
 
 		var may_id = get_npc_id('may');
 		// MAY
