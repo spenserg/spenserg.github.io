@@ -31,8 +31,8 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Cows
 	//a = cows(a, is_sunny);
-	if (d == 227 || (vars['new_cow_days'].length > 0 && parseInt(vars['new_cow_days'].substr(0,3)) == d)) {
-		if (d == 227) { a.push({'desc':"New Cow Born", 'iid':cow_id}); }
+	//if (d == 227 || (vars['new_cow_days'].length > 0 && parseInt(vars['new_cow_days'].substr(0,3)) == d)) {
+	if (d == 230) {
 		a.push({'desc':"Equip Axe, Chop 3 stumps"});
 		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, ((d == 227) ? 8500 : 6500)], 'iid':doug_id, 'imp':true});
 	}
@@ -50,7 +50,7 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':("Buy " + extensions[add_ext_id][3] + " (" + extensions[add_ext_id][1] + " G)"),
 						'cid':['v_gold', 'v_lumber', ('f_' + extensions[add_ext_id][0])],
 						'val':[(-1 * extensions[add_ext_id][1]), (-1 * extensions[add_ext_id][2]), _BUILD_DAYS + 1],
-						'sel':(dow != "TUES"), 'iid':get_npc_id('mas_carpenter'), 'imp':true
+						'sel':(add_ext_id != 0), 'iid':get_npc_id('mas_carpenter'), 'imp':(add_ext_id != 0)
 				});
 				a.push({'desc':"(Opens 35 secs after leaving house)", 'sr':true});
 			}
@@ -79,6 +79,8 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	if (d == 229) {
 		// Dog Race, 500 LUM (Win 19)
+		a.push({'desc':"New Cow Born, Enter Barn", 'iid':cow_id, 'imp':true});
+		a.push({'desc':"Feed Cow / Cow Outside", 'iid':cow_id, 'imp':true});
 		a.push({'desc':"Buy 1000 Lumber at Dog Race", 'cid':['v_lumber', 'v_medals'], 'val':[999, -1000], 'iid':mayor_id, 'imp':true});
 		if (flags['dog_entered'] == 1) { a.push({'desc':"Win Dog Race", 'cid':'f_photo_dograce', 'val':1, 'imp':true, 'iid':dog_id}); }
 		a = betting_table(a, 1, d);
