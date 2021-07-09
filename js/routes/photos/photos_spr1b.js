@@ -170,27 +170,20 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (lumber_to_sprite > 0) {
 				var lum_desc = "";
 				if (aff[sprite_id] < (21 - 6)) {
-					a.push({'desc':"Flower", 'cid':sprite_id, 'val':1,
-						'sel':(d == 30 || ((dow == "MON" || d == 9) && is_sunny == 1))
-					 });
+					a.push({'desc':"Flower", 'cid':sprite_id, 'val':1, 'sel':(d == 9 && is_sunny == 1)});
 				}
 				a.push({'desc':(lumber_to_sprite + " Gifts to Inner Sprite (Right Side)"), 'sr':(aff[sprite_id] < (21 - 6)),
-					'cid':[sprite_id, 'v_lumber'], 'val':[lumber_to_sprite, -1 * lumber_to_sprite],
-					'sel':(d == 30 || ((dow == "MON" || d == 9) && is_sunny == 1))
+					'cid':sprite_id, 'val':lumber_to_sprite, 'sel':(d == 9 && is_sunny == 1)
 				});
 				if (tmp_spr_aff >= 18) { a.push({'desc':"INNER SPRITE FIRST!", 'sr':true}); }
 				tmp_spr_aff += lumber_to_sprite;
 			}
 			if (aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35) {
-				a.push({'desc':"Meet", 'cid':sprite_id, 'val':5,
-					'sel':(tmp_spr_aff > 18 && (d == 30 || dow == "MON") && is_sunny == 1),
-					'red':(tmp_spr_aff < 18 || !(d == 30 || dow == "MON") || is_sunny == 0)
-				});
+				a.push({'desc':"Meet", 'cid':sprite_id, 'val':5, 'sel':false, 'red':(tmp_spr_aff < 18 || is_sunny == 0)});
 				if (tmp_spr_aff > 18) { tmp_spr_aff += 5 };
 			}
 			a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':(aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35),
-					'sel':(tmp_spr_aff > 18 && (d == 30 || dow == "MON") && is_sunny == 1),
-					'red':(aff[sprite_id] >= _SPRITE_WINE_MIN || !(d == 30 || dow == "MON") || is_sunny == 0)
+					'sel':false, 'red':(aff[sprite_id] >= _SPRITE_WINE_MIN)
 			});
 			a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
 			if (tmp_spr_aff > 18) { tmp_spr_aff += 3; }
@@ -318,12 +311,15 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 			}
 
-			if (dow != "SUN") {
+			if (dow != "SUN" && flags['wine_from_duke'] == 0) {
 				// BAR
 				var duke_id = get_npc_id('bartender');
 				if (aff[duke_id] == 0) { a.push({'desc':"Meet", 'cid':duke_id, 'val':3, 'sel':(([9, 30].includes(d) || dow == "MON") && is_sunny == 1)}); }
 				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'sel':(([9, 30].includes(d) || dow == "MON") && is_sunny == 1)});
 				a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(a[a.length - 1]['sel']), 'sr':true});
+				if (aff[duke_id] < 40) {
+					a.push({'desc':("(" + Math.ceil((40 - aff[duke_id]) / 6) + " visit" + ((Math.ceil((34 - aff[duke_id]) / 6) == 1) ? "" : "s") + " left)"), 'sr':true});
+				}
 
 				// KAI
 				a.push({'desc':"Talk (In Bar)", 'cid':kai_id, 'val':2, 'sel':false});
