@@ -6,12 +6,15 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var doug_id = get_npc_id('doug');
 	var elli_id = get_npc_id('elli');
 	var gotz_id = get_npc_id('gotz');
+	var kai_id = get_npc_id('kai');
 	var karen_id = get_npc_id('karen');
 	var kent_id = get_npc_id('kent');
 	var midwife_id = get_npc_id('midwife');
 	var pastor_id = get_npc_id('pastor');
 
 	var dow = get_dow(d, true);
+
+	var kent_spam = (d > 246 && is_sunny == 1 && !is_festival(d) && !["THURS", "SUN"].includes(dow) && aff[kent_id] < 100);
 
 	// Rainy on day before evaluation
 	if (d == 270 && is_sunny == 0 && vars['chickens'] > 0 && flags['chicken_outside'] == 1) {
@@ -27,7 +30,7 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	}
 
 	if (d >= 265) { // Baby Born and After
-		if (vars['grass'] > 0 || vars['grass_planted'] < 43) {
+		if (vars['grass'] > 0 && vars['grass_planted'] < 43) {
 			a.push({'desc':"Equip hoe, Clear Field & Plant Grass", 'imp':(d > 268)});
 			a.push({'desc':"Plant All Grass", 'sel':false, 'sr':true, 'cid':['v_grass_planted', 'v_grass'], 'val':[vars['grass'], -1 * vars['grass']]});
 			if (flags['berry_farm'] == 0) {
@@ -61,15 +64,26 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Dance  ",'cid':[ann_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance", "Dance "], 'sel':false, 'sr':true});
 		}
 	} else {
-		if (d == 243) { // Spring 3
+		// Strength Wish Power Berry
+		if (flags['berry_strength'] == 0) {
+			a.push({'desc':"Wish for Strength (Middle)", 'cid':'f_berry_strength', 'val':1, 'iid':get_npc_id('goddess'), 'sel':false, 'imp':(d > 268)});
+		}
+
+		// Kappa Berry
+		if (!flags['berry_kappa']) {
+			a.push({'desc':"Large fish to Kappa", 'cid':'f_berry_kappa', 'val':1, 'iid':get_npc_id('kappa'), 'sel':false, 'imp':(d > 268)});
+		}
+
+		if (d == 243 || kent_spam) { // Spring 3
 			a.push({'desc':"Equip hoe, Till 6 Rows down from Grass"});
 		}
-		if (![262, 242].includes(d) && vars['chickens'] > 0 && aff[kent_id] < 100 && is_sunny == 1 && !["SUN"].includes(dow)) {
-			a.push({'desc':"Equip hoe, Till 6 Rows down from Seeds"});
-			a.push({'desc':"Till 4 Squares in Corner"});
-			a.push({'desc':"Get Chicken", 'iid':chicken_id, 'cid':'f_chicken_outside', 'val':1});
+		if (kent_spam) {
+			if (vars['chickens'] == 0) {
+				a.push({'desc':"Buy a Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[1, -1500], 'iid':doug_id, 'imp':true});
+			}
 			a.push({'desc':"Equip Grass"});
-			a.push({'desc':"Plant 10 Grass", 'cid':['v_grass_planted', 'v_grass'], 'val':[10, -10], 'sr':true});
+			a.push({'desc':"Plant 8 Grass", 'sr':true, 'cid':['v_grass_planted', 'v_grass'], 'val':[8, -8]});
+			a.push({'desc':"Get Chicken", 'iid':chicken_id, 'cid':'f_chicken_outside', 'val':1});
 		}
 
 		if (dow != "TUES" && !is_festival(d)) {
@@ -98,34 +112,44 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		if (d == 243) { // Spring 3 (Friday)
 			a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, 6500], 'iid':doug_id, 'imp':true});
 
-			// Cliff
-			a.push({'desc':"Talk (Fish Tent) [50%]", 'cid':cliff_id, 'val':2, 'sel':false});
-			a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"Egg/Milk", 'sr':true});
-			a.push({'desc':"Egg/Milk", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+			// Cliff | Kai
+			if (aff[cliff_id] > 50) {
+				a.push({'desc':"Talk (Fish Tent) [50%]", 'cid':cliff_id, 'val':2, 'sel':false, 'red':(aff[cliff_id] >= 160)});
+				a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"Egg/Milk", 'sr':true});
+				a.push({'desc':"Egg/Milk", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+			} else if (aff[kai_id] > 50) {
+				// KAI
+				a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sel':false, 'red':(aff[kai_id] >= 160) });
+				a.push({'desc':"Berry", 'cid':kai_id, 'val':6, 'sr':true, 'sel':false, 't2':"  Gift "});
+				a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Berry"});
+			}
 
-			a.push({'desc':("Buy 20 Grass Seeds"), 'cid':['v_grass', 'v_gold'], 'val':[20, (-500 * 20)], 'iid':get_npc_id('lillia')});
-			a.push({'desc':"Hatch Chick", 'iid':(get_npc_id('chicken')),
-				'cid':["v_new_chicken_days", "f_new_chick"],
-				'val':[d + _CHICK_GROW_SLEEPS, -1], 'imp':true
-			});
+			a.push({'desc':"Buy 20 Grass Seeds", 'cid':['v_grass', 'v_gold'], 'val':[20, (-500 * 20)], 'iid':get_npc_id('lillia')});
+			if (flags['incubate_last'] == 1) {
+				a.push({'desc':"Hatch Chick", 'iid':(get_npc_id('chicken')),
+					'cid':["v_new_chicken_days", "f_new_chick"],
+					'val':[d + _CHICK_GROW_SLEEPS, -1], 'imp':true
+				});
+			}
 			a.push({'desc':"Equip Grass"});
 			a.push({'desc':"Plant 8 Grass", 'sr':true, 'cid':['v_grass_planted', 'v_grass'], 'val':[8, -8]});
 		}
 
-		if (![262, 242].includes(d) && vars['chickens'] > 0 && aff[kent_id] < 100 && is_sunny == 1 && !["SUN"].includes(dow)) {
+		if (kent_spam) {
 			a.push({'desc':"Spam Kent with Chicken (In Church) [83 times]", 'imp':true, 'cid':kent_id, 'val':200});
 			a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id});
 		}
 
-		if (d == 262) { // Spring 22
-			a.push({'desc':"Equip hoe, Till 6 Rows left of Grass"});
+		if (d == 264) { // Spring 24
+			a.push({'desc':"Till 4 Squares in Corner"});
+			a.push({'desc':"Equip Grass"});
+			a.push({'desc':"Plant 4 Grass", 'cid':['v_grass_planted', 'v_grass'], 'val':[10, -10], 'sr':true});
 			if (vars['chickens'] > 0 && aff[kent_id] < 100 && is_sunny == 1 && !["SUN"].includes(dow)) {
 				a.push({'desc':"Spam Kent with Chicken (In Church) [83 times]", 'imp':true, 'cid':kent_id, 'val':200});
 				a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id});
 			}
 			a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, 6500], 'iid':doug_id, 'imp':true});
-			a.push({'desc':("Buy 20 Grass Seeds"), 'cid':['v_grass', 'v_gold'], 'val':[20, (-500 * 20)], 'iid':get_npc_id('lillia')});
-			a.push({'desc':"Plant 6 Grass", 'cid':['v_grass_planted', 'v_grass'], 'val':[6, -6]});
+			a.push({'desc':"Buy 20 Grass Seeds", 'cid':['v_grass', 'v_gold'], 'val':[20, (-500 * 20)], 'iid':get_npc_id('lillia'), 'imp':true});
 		}
 
 		// Baby Spam
@@ -175,6 +199,11 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	}
 	if (is_sunny == 1) {
 		a.push({'desc':"Scare birds", 'cid':'v_happiness', 'val':1, 'sel':false, 'sr':true});
+	}
+
+	// Ocean Berry
+	if (vars['grass_planted'] > 40 && flags['berry_ocean'] == 0 && flags['berry_farm'] == 0) {
+		a.push({'desc':"Ocean Berry", 'cid':"f_berry_ocean", 'val':1, 'sel':false, 'imp':(d > 268)});
 	}
 
 	// Cliff Wedding
