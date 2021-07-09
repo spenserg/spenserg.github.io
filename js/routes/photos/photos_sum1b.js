@@ -218,8 +218,8 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1],
 					'sel':((is_sunny == 1 && !["WED", "SAT"].includes(dow)) || (dow == "WED" && elli_sick_event)),
 				});
+				a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
 			}
-			a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
 			if (elli_sick_event) {
 				a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1],
 					'red':(aff[elli_id] >= 250), 'sel':(aff[elli_id] < 250)
