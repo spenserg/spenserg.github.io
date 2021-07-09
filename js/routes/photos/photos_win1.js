@@ -104,6 +104,12 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		});
 	}
 
+	// ANN ANKLE
+	if (flags['ankle_ann'] == 0 && aff[ann_id] >= (_ANKLE_EVENT_MIN - 10) && is_sunny == 1) {
+		// ANKLE EVENT
+		a.push({'desc':"ANKLE (Crossroads)", 'cid':[ann_id, 'f_ankle_ann'], 'val':[_ANKLE_EVENT_AFF, 1], 'sel':false});
+	}
+
 	if (is_festival(d)) {
 		if (d == 109) {
 			// Dog Race, 500 LUM (Win 19)
@@ -116,16 +122,36 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 	} else {
 		// Not festival
+
+		// ANN
+		if (dow != "THURS") {
+			// ANN
+			// -1 sp " GIFT"
+			// -1 sp " MUSBOX"
+			var ann_sick_event = (dow == "SUN" && is_sunny == 0 && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN &&
+						aff[ann_id] >= (_SICK_EVENT_MIN - (4 + 1 + 5 * flags['new_mus_box'])));
+			a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id,
+				'sel':(ann_sick_event && flags['musbox'] == 0 || (d >= 102 && d <= 106 && d != 105)), 'val':1, 't2':" MusBox"
+			});
+			a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1],
+				'sel':(ann_sick_event && flags['musbox'] == 1), 'sr':true, 't2':a[a.length - 1]['desc']
+			});
+			a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
+			a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 't2':" Gift", 'sel':(ann_sick_event || (d >= 102 && d <= 106 && d != 105))});
+			if (ann_sick_event) {
+				a.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1], 'imp':true});
+			}
+		}
 		if (d > 91 && is_sunny == 1 && flags['photo_ann'] == 0) {
 			// Anns photo
 			// Manna cutscene & Cliff leaving scene have priority over before Ann arriving for photo
 			a.push({'desc':"Photo", 'cid':[ann_id, 'f_photo_ann', 'f_dontsave'], 'val':[_PHOTO_EVENT_AFF, 1, 1],
 				'sel':(aff[ann_id] >= _PHOTO_MIN), 'imp':(aff[ann_id] >= _PHOTO_MIN)
 			});
-			if (d >= 102 && d <= 106) { a[a.length - 1]['t2'] = "Hot Springs Work"; }
-			for (var z = 0; z < horse_action_ids.length; z++) {
-				a[horse_action_ids[z]]['sel'] = true;
-			}
+			//if (d >= 102 && d <= 106) { a[a.length - 1]['t2'] = "Hot Springs Work"; }
+			//for (var z = 0; z < horse_action_ids.length; z++) {
+				//a[horse_action_ids[z]]['sel'] = true;
+			//}
 		}
 
 		if (d == 108) {
@@ -159,7 +185,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					'imp':(d == 106 || vars['springs_days_worked'] == (d - 103) || tmp_gold_left < 1000),
 					'red':(d == 105 && vars['springs_days_worked'] == 3 && tmp_gold_left >= 1000)
 				});
-				if (is_sunny == 1 && flags['photo_ann'] == 0) { a[a.length - 1]['t2'] = "Photo"; }
+				//if (is_sunny == 1 && flags['photo_ann'] == 0) { a[a.length - 1]['t2'] = "Photo"; }
 				if (d == 106) {
 					// Hot Springs Photo
 					a[a.length - 1]['cid'].push('f_photo_springs');
@@ -247,23 +273,21 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		// RICK (before dog race)
 		// "Gift    " <- 4 spaces
 		// "Talk    " <- 4 spaces
-		if (d < 109 && is_sunny == 1 && !["WED", "SUN"].includes(dow) && flags['old_mus_box'] == 1) {
+		if (d < 109 && is_sunny == 1 && !["WED", "SUN"].includes(dow)) {
 			a.push({'desc':"Talk    ", 'cid':rick_id, 'val':3, 'sel':false});
 			a.push({'desc':"Gift    ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':false});
 			a.push({'desc':"Rick Fix", 'sr':true, 't3':"Talk    ", 'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1], 'sel':false});
 			if (dow != "SAT" && flags['milker'] == 0) {
-				a.push({'desc':"Buy a Milker", 'cid':['v_gold', 'f_milker'], 'val':[-1800, 1], 'sr':true,
-					'sel':(vars['new_cow_days'].length > 0), 'imp':(flags['cow_steal_glitch'] == 1 && vars['day'] == 113)
-				});
+				a.push({'desc':"Buy a Milker", 'cid':['v_gold', 'f_milker'], 'val':[-1800, 1], 'sr':true, 'sel':false});
 			}
 
 			// ANN in Ricks Shop
 			// "Gift  " <- 2 spaces
 			if (dow == "THURS") {
-				a.push({'desc':"Talk (Ricks Shop)", 'cid':ann_id, 'val':1, 't2':"MusBox", 'sel':false, 'red':(aff[ann_id] >= _PHOTO_MIN)});
+				a.push({'desc':"Talk (Ricks Shop)", 'cid':ann_id, 'val':1, 't2':"MusBox", 'sel':(d == 102), 'red':(aff[ann_id] >= _PHOTO_MIN)});
 				a.push({'desc':"MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':"Talk (Ricks Shop)", 'sel':false});
 				a.push({'desc':"Gift  ", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Corn / Potato", 'sel':false});
-				a.push({'desc':"Corn / Potato", 'cid':ann_id, 'val':3, 'sr':true, 't2':"Gift  ", 'sel':false});
+				a.push({'desc':"Corn / Potato", 'cid':ann_id, 'val':3, 'sr':true, 't2':"Gift  ", 'sel':(d == 102)});
 			}
 		}
 
@@ -278,21 +302,22 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 							'val':[-5000, -450, _BUILD_DAYS + 1], 'sel':false
 					});
 					tmp_getext = true;
-				} else if (flags['kitchen'] == 1 && flags['bathroom'] == 0 && vars['gold'] >= 3000) {
+				}
+				if (flags['bathroom'] == 0 && vars['gold'] >= 3000) {
+					a[a.length - 1]['t2'] = "Buy a Bathroom (3000 G)";
 					// Bathroom
 					a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
 						'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'imp':true,
-						'val':[-3000, -300, _BUILD_DAYS + 1], 'sel':false
+						'val':[-3000, -300, _BUILD_DAYS + 1], 'sel':false,
+						'sr':(flags['kitchen'] == 0)
 					});
+					if (flags['kitchen'] == 0) {
+						a[a.length - 1]['t2'] = "Buy a Kitchen (5000 G)";
+					}
 					tmp_getext = true;
 				}
 				if (tmp_getext) {
 					a.push({'desc':"(Opens 35 secs after leaving house)", 'sr':true});
-					if (d != 117) {
-						for (var z = 0; z < horse_action_ids.length; z++) {
-							a[horse_action_ids[z]]['sel'] = true;
-						}
-					}
 					if (aff[mas_carp_id] <= 25) {
 						a.push({'desc':"Meet", 'cid':mas_carp_id, 'val':4, 'sr':false, 'sel':false, 'red':true});
 					}
@@ -300,7 +325,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Gift", 'cid':mas_carp_id, 'val':3, 'sr':true, 'sel':false});
 				}
 
-				if (is_sunny == 0) {
+				if (is_sunny == 0 && aff[cliff_id] > 50) {
 					// Cliff in Carp House when its snowing
 					a.push({'desc':"Talk (Carp House 50%)", 'cid':cliff_id, 'val':2, 'sel':false, 'red':(aff[cliff_id] >= 200)});
 					a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
@@ -393,9 +418,9 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	if (tmp_gold_left < 0 && d > 97 && (d < 102 || d > 106)) { // Mine isnt open until Winter 8; Ignore hot springs work days
 		// Mine Visit?
-		for (var z = 0; z < horse_action_ids.length; z++) {
-			a[horse_action_ids[z]]['sel'] = true;
-		}
+		//for (var z = 0; z < horse_action_ids.length; z++) {
+			//a[horse_action_ids[z]]['sel'] = true;
+		//}
 		a.push({'desc':"Equip hoe, Visit Mine", 'iid':get_npc_id('carpenter_top'), 'imp':true});
 		a.push({'desc':"Dig a Berry", 'sr':true, 'sel':false, 'val':1, 'cid':'f_berry_mine'});
 		a.push({'desc':("(" + (-1 * tmp_gold_left) + "G Left)"), 'sr':true});
