@@ -4,6 +4,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 	var dog_id = get_npc_id('dog');
 	var elli_id = get_npc_id('elli');
 	var horse_id = get_npc_id('horse');
+	var kai_id = get_npc_id('kai');
 	var karen_id = get_npc_id('karen');
 	var rick_id = get_npc_id('rick');
 	var maria_id = get_npc_id('maria');
@@ -19,13 +20,20 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 
 	// Sell Cow + Blue Feather + Ankle
 	var sell_cow = (vars['cows'] > 1 && !is_festival(d) && (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") &&
-				(!["WED", "SAT", "SUN", "THURS"].includes(dow) && is_sunny == 1 && flags['blue_feather'] == 0 && dow != "SAT" &&
+				(((!["WED", "SAT", "SUN", "THURS"].includes(dow) && is_sunny == 1) || d == 173) && flags['blue_feather'] == 0 && dow != "SAT" &&
 				 	flags['propose'] == 0 && flags['photo_married'] == 0 && flags['kitchen'] == 1 && 
 					(dow != "TUES" || (flags['bathroom'] != 0 && flags['babybed'] != 0))
 				));
 	// Sell Cow + Propose + Maria Dream + Maria Photo
 	sell_cow = (sell_cow || (vars['cows'] > 1 && d > 168 && !is_festival(d) && !["SUN", "MON", "THURS"].includes(dow) && is_sunny == 1 && flags['ankle_maria'] == 1));
-	
+
+	if (flags['ankle_maria'] == 0) {
+		if (d == 164) { flags['dontsave'] = true; }
+		if (d == 165) {
+			a.push({'desc':"Check Weather, RESET if rainy tomorrow,", 'imp':true, 'iid':maria_id});
+		}
+	}
+
 	if (flags['propose'] == 1) {
 		a.push({'desc':"Wedding Day", 'iid':elli_id, 'cid':['f_photo_married', 'f_propose'], 'val':[1, -1], 'imp':true});
 	} else {
@@ -39,7 +47,10 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 			a.push({'desc':" Talk", 'val':1, 'cid':elli_id, 't2':"Musbox", 'sel':(flags['new_mus_box'] == 0)});
 			a.push({'desc':"Musbox", 'val':[6, -1], 'cid':[elli_id, 'f_new_mus_box'], 'sel':(flags['new_mus_box'] == 1), 'sr':true, 't2':a[a.length - 1]['desc']})
 			a.push({'desc':"  Gift  ", 'val':1, 'cid':elli_id, 'sr':true, 'sel':false, 't2':"Egg/Milk"});
-			a.push({'desc':"Egg/Milk", 'val':4, 'cid':elli_id, 'sr':true, 't2':"  Gift  ", 'sel':(aff[elli_id] < 250 && vars['cows'] > 0)})
+			a.push({'desc':"Egg/Milk", 'sr':true, 't2':"  Gift  ", 'sel':(aff[elli_id] < 250 && vars['cows'] > 0),
+				'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
+				'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
+			})
 		}
 
 		// Dog Affection
@@ -94,7 +105,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 								a.push({'desc':"Buy a Baby Bed (1000 G)", 'iid':get_npc_id('mas_carpenter'),
 									'cid':['v_gold', 'v_lumber', 'f_babybed'],
 									'val':[-1000, -150, _BUILD_DAYS + 1],
-									'sel':(sell_cow || (is_sunny == 1 && d > 168) || d > 175)
+									'sel':((d == 173 && flags['ankle_maria'] == 0) || sell_cow || (is_sunny == 1 && d > 168 && (!["MON", "THURS"].includes(dow) && (dow != "WED" || (flags['blue_feather'] == 1 || flags['propose'] != 0)))) || d > 175)
 								});
 								if (is_sunny == 1 && d < 175) {
 									a.push({'desc':"(Wait for rain to skip cutscenes)", 'sr':true});
@@ -110,7 +121,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 						}
 					}
 
-					if (is_sunny == 0) {
+					if (is_sunny == 0 && aff[cliff_id] > 50) {
 						// Cliff in Carp House when its raining
 						a.push({'desc':"Talk (Carp House 50%)", 'cid':cliff_id, 'val':2, 'sel':false});
 						a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
@@ -174,7 +185,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 
 				// Maria Ankle
 				if (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON" && flags['photo_maria'] == 0) {
-					a.push({'desc':"Ankle", 'cid':[maria_id, 'f_ankle_maria'], 'val':[_ANKLE_EVENT_AFF, 1], 'sel':sell_cow});
+					a.push({'desc':"Ankle", 'cid':[maria_id, 'f_ankle_maria'], 'val':[_ANKLE_EVENT_AFF, 1], 'sel':(sell_cow || d == 173), 'imp':(d == 173)});
 					a.push({'desc':"(Reset to clear Invisible Wall)", 'sr':true});
 				}
 
@@ -184,16 +195,15 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 						a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1]});
 					} else {
 						a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : ((dow == "MON") ? "Talk (MTN)" : "Talk ")),
-							'cid':elli_id, 'val':1, 't2':"MusBox ", 'red':(dow != "WED" && aff[elli_id] >= 250),
-							'sel':(d > 168 && flags['photo_married'] == 0 && flags['propose'] == 0),
+							'cid':elli_id, 'val':1, 't2':"MusBox ", 'red':(dow != "WED" && aff[elli_id] >= 250), 'sel':false
 						});
 						a.push({'desc':"MusBox ", 'sel':false, 't2':a[a.length - 1]['desc'],
 							'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
 						});
 						a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true,
-							't2':"Egg ", 'sel':false
+							't2':"Egg/Milk", 'sel':false
 						});
-						a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':false,
+						a.push({'desc':"Egg/Milk", 'sr':true, 't2':"Gift ", 'sel':false,
 							'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
 							'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
 						});
@@ -245,9 +255,14 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 		} // End of if (!typhoon)
 	}
 
-	// Cliff Wedding
+	// Wedding
 	if (flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
-		a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
+		if (aff[cliff_id] > 50) {
+			a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
+		}
+		if (aff[kai_id] > 50) {
+			a.push({'desc':"Kai Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':kai_id});
+		}
 	}
 
 	if (horse_today) {
