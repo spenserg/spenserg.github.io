@@ -130,14 +130,16 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 		}
 
-		if (d == 205 || (vars['new_cow_days'].length > 0 && parseInt(vars['new_cow_days'].substr(0,3)) == d)) {
+		//if (d == 205 || (vars['new_cow_days'].length > 0 && parseInt(vars['new_cow_days'].substr(0,3)) == d)) {
+		if (d == 207) {
 			horse_today = true;
 			//a.push({'desc':"New Cow Born", 'iid':cow_id});
 			a.push({'desc':"Equip Axe, Chop 3 stumps"});
-			a.push({'desc':"Buy Miracle Potion", 'cid':['f_miracle_potion', 'v_gold'], 'val':[1, (-1 * _PRICE_MIRACLE_POTION)], 'iid':doug_id});
-			a.push({'desc':"Use Potion", 'iid':cow_id, 'imp':true, 'cid':"v_new_cow_days", 'val':"227"});
+			if (flags['miracle_potion'] == 0) {
+				a.push({'desc':"Buy Miracle Potion", 'cid':['f_miracle_potion', 'v_gold'], 'val':[1, (-1 * _PRICE_MIRACLE_POTION)], 'iid':doug_id, 'imp':(d == 207)});
+			}
+			a.push({'desc':"Use Potion", 'iid':cow_id, 'imp':true, 'cid':"v_new_cow_days", 'val':"227", 'imp':(d == 207)});
 		}
-
 	}
 
 	// Feed Dog
