@@ -1549,6 +1549,53 @@ function set_affections (rid = 0) {
 	return tmp_html;
 }
 
+function musbox_count (maria, ann, elli, d = vars['day']) {
+	var npc_affs = [maria, ann, elli];
+	var aff_reqs = [140, 120, 180];
+	var mus_boxes = [0, 0, 0];
+	var net = 0;
+	if (d < 83) {
+		if (d < 73) {
+			// Harvest Festival
+			npc_affs[0] += 2;
+			npc_affs[1] += 12;
+			npc_affs[2] += 2;
+		}
+		while ((npc_affs[0] < aff_reqs[0] || npc_affs[1] < aff_reqs[1] || npc_affs[2] < aff_reqs[2]) && net < 100) {
+			var lowest = [-1, -1]; // [id, val]
+			npc_affs[0] += 3; // Maria (gift + talk)
+			npc_affs[1] += 4; // Ann (potato + talk)
+			npc_affs[2] += 4; // Elli (fish + talk)
+			for (var i = 0; i < npc_affs.length; i++) {
+				var tmp_low = aff_reqs[i] - npc_affs[i];
+				if (tmp_low > lowest[1]) {
+					lowest[1] = tmp_low;
+					lowest[0] = i;
+				}
+			}
+			npc_affs[lowest[0]] += 5;
+			mus_boxes[lowest[0]] += 1;
+			net++;
+		}
+
+		// Keep Maria below 160
+		net = 0;
+		while(npc_affs[0] > 160 && mus_boxes[0] > 1 && net < 100) {
+			npc_affs[0] -= 5;
+			mus_boxes[0]--;
+			if ((aff_reqs[1] - npc_affs[1]) > (aff_reqs[2] - npc_affs[2])) {
+				mus_boxes[1]++;
+				npc_affs[1] += 4;
+			} else {
+				mus_boxes[2]++;
+				npc_affs[2] += 4;
+			}
+			net++;
+		}
+	}
+	return mus_boxes;
+}
+
 function forage(need = 0, g = vars['gold'], d = vars['day']) {
 	var f_amt = need - g;
 	var m = get_month(d);
