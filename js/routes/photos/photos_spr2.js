@@ -5,9 +5,11 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var cow_id = get_npc_id('cow');
 	var dog_id = get_npc_id('dog');
 	var elli_id = get_npc_id('elli');
+	var kai_id = get_npc_id('kai');
 	var karen_id = get_npc_id('karen');
 	var rick_id = get_npc_id('rick');
 	var maria_id = get_npc_id('maria');
+	var mas_carp_id = get_npc_id('mas_carpenter');
 	var may_id = get_npc_id('may');
 	var mayor_id = get_npc_id('mayor');
 
@@ -83,7 +85,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			horse_today = true;
 			a.push({'desc':"Go to Town Square", 'iid':mayor_id, 'cid':['v_happiness', 'f_dontsave'], 'val':[5, 1], 'imp':true});
 			a.push({'desc':"Ride with Maria", 'val':[1, 8, -1], 'cid':['f_photo_harvest', maria_id, 'f_harvest_king'], 't2':"Ride with Elli", 'imp':true});
-			a.push({'desc':"Ride with Elli", 'val':[1, 8, -1], 'cid':['f_photo_harvest', elli_id, 'f_harvest_king'], 'sel':false, 't2':"Ride with Maria"});
+			a.push({'desc':"Ride with Elli", 'val':[1, 8, -1], 'cid':['f_photo_harvest', elli_id, 'f_harvest_king'], 'sel':false, 't2':"Ride with Maria", 'red':true});
 		} else if (d == 137) {
 			// Horse Race (Spring 17)
 			if (flags['horse_entered'] == 1) {
@@ -104,7 +106,10 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			});
 			a.push({'desc':"Talk", 'cid':rick_id,  'val':2, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN)});
 			if (aff[cliff_id] >= 50) {
-				a.push({'desc':"Talk", 'cid':cliff_id,  'val':2, 'sel':(aff[cliff_id] < 200)});
+				a.push({'desc':"Talk", 'cid':cliff_id,  'val':2, 'sel':(aff[cliff_id] < 160)});
+			}
+			if (aff[kai_id] >= 50) {
+				a.push({'desc':"Talk", 'cid':kai_id,  'val':2, 'sel':(aff[kai_id] < 160)});
 			}
 			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN)});
 			a.push({'desc':"Talk", 'cid':maria_id, 'val':2, 'imp':true});
@@ -149,11 +154,16 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"MusBox ", 'sel':false, 't2':a[a.length - 1]['desc'],
 						'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
 					});
-					a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"Egg ", 'sel':(vars['grass_planted'] < 4 && aff[elli_id] < 250)});
-					a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':false,
-						'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
-						'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
-					});
+					a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':false});
+					a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':false});
+					if (aff[cliff_id] > 50) {
+						a[a.length - 1]['t2'] = ["Gift ", "Egg "];
+						a[a.length - 2]['t2'] = ["M/L Fish", "Egg "];
+						a.push({'desc':"Egg ", 'sr':true, 't2':"Gift ", 'sel':false, 't2':["M/L Fish", "Gift "],
+							'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
+							'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
+						});
+					}
 				}
 			}
 
@@ -221,25 +231,24 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			horse_today = true;
 
 			// Extensions on rainy days to avoid cutscenes
-			var leftover_g = vars['gold'] - (980 - 980 * flags['blue_feather']) - (1800 - 1800 * flags['milker']) - (5000 - 5000 * ((flags['kitchen'] > 0) ? 1 : 0));
+			var leftover_g = vars['gold'] - (1800 - 1800 * flags['milker']) - (2000 - 500 * (4 - vars['grass_planted'])) - (5000 - 5000 * ((flags['kitchen'] > 0) ? 1 : 0));
 			var tmp_getext = false;
 			if (flags['kitchen'] == 0) {
 				// Kitchen
 				a.push({'desc':"Buy a Kitchen (5000 G)", 'iid':mas_carp_id,
 						'cid':['v_gold', 'v_lumber', 'f_kitchen'],
-						'val':[-5000, -450, _BUILD_DAYS + 1]
+						'val':[-5000, -450, _BUILD_DAYS + 1], 'sel':(leftover_g >= 5000)
 				});
 				tmp_getext = true;
 			} else if (flags['kitchen'] == 1 && flags['bathroom'] == 0 && vars['gold'] >= 3000) {
 				// Bathroom
-				a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
+				a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':mas_carp_id,
 					'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'imp':true,
-					'val':[-3000, -300, _BUILD_DAYS + 1]
+					'val':[-3000, -300, _BUILD_DAYS + 1], 'sel':false
 				});
 				tmp_getext = true;
 			}
 			if (tmp_getext) {
-				var mas_carp_id = get_npc_id('master carpenter');
 				a.push({'desc':"(Opens 35 secs after leaving house)", 'sr':true});
 				if (aff[mas_carp_id] <= 25) {
 					a.push({'desc':"Meet", 'cid':mas_carp_id, 'val':4, 'sr':false, 'sel':false, 'red':true});
@@ -248,7 +257,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Gift", 'cid':mas_carp_id, 'val':3, 'sr':true, 'sel':false});
 			}
 
-			if (is_sunny == 0) {
+			if (is_sunny == 0 && aff[cliff_id] > 50) {
 				// Cliff in Carp House when its snowing
 				a.push({'desc':"Talk (Carp House 50%)", 'cid':cliff_id, 'val':2, 'sel':false, 'red':(aff[cliff_id] >= 200)});
 				a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
