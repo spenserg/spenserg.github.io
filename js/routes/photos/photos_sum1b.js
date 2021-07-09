@@ -21,6 +21,8 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var mtn_visit = ((d < 41 || dow == "MON") && aff[maria_id] < (_DREAM_EVENT_MIN - 1) && is_sunny); // DONT TRIGGER DREAM EVENT
 	var photo_maria_disp = false;
 	var lumber_to_sprite = ((aff[sprite_id] >= _SPRITE_SPAM_MAX) ? 0 : (((_SPRITE_SPAM_MAX - aff[sprite_id]) > 6) ? 6 : ((_SPRITE_SPAM_MAX - aff[sprite_id]))));
+	var musboxes = musbox_count (aff[maria_id], aff[ann_id], aff[elli_id], d);
+	console.log(musboxes);
 
 	// Dog Affection
 	if (flags['dog_inside'] == 1) {
@@ -79,6 +81,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				if (ann_sick_event) {
 					a.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1], 'imp':true});
 				}
+				a.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
 			}
 
 			if (is_sunny == 1 && dow == "MON") {
@@ -96,6 +99,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':elli_id, 'val':3});
 				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':false});
+				a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
 			}
 
 			// Kappa Berry
@@ -196,6 +200,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 						'val':((flags['recipe_maria'] == 0) ? [5, 1] : 3)
 					});
 				}
+				a.push({'desc':("(" + musboxes[0] + " Musboxes Left)"), 'sr':true});
 			}
 
 			// ELLI
@@ -214,6 +219,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					'sel':((is_sunny == 1 && !["WED", "SAT"].includes(dow)) || (dow == "WED" && elli_sick_event)),
 				});
 			}
+			a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
 			if (elli_sick_event) {
 				a.push({'desc':"Sick Event (Bakery)", 'cid':[elli_id, 'f_sick_elli'], 'val':[_SICK_EVENT_AFF, 1],
 					'red':(aff[elli_id] >= 250), 'sel':(aff[elli_id] < 250)
@@ -271,6 +277,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 						a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes'];
 						a[a.length - 1]['val'] = [1, 6, -1];
 					}
+					a.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
 				}
 			}
 
@@ -301,6 +308,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					'cid':((flags['recipe_maria'] == 0) ? [maria_id, 'f_recipe_maria'] : maria_id),
 					'val':((flags['recipe_maria'] == 0) ? [5, 1] : 3)
 				});
+				a.push({'desc':("(" + musboxes[0] + " Musboxes Left)"), 'sr':true});
 
 				var may_id = get_npc_id('may');
 				// MAY
