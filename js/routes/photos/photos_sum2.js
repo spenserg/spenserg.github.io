@@ -88,14 +88,14 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 						horse_today = true;
 						a.push({'desc':"Buy a Kitchen (5000 G)", 'iid':get_npc_id('mas_carpenter'),
 								'cid':['v_gold', 'v_lumber', 'f_kitchen'],
-								'val':[-5000, -450, _BUILD_DAYS + 1]
+								'val':[-5000, -450, _BUILD_DAYS + 1], 'imp':(d >= 168)
 						});
 					} else if (flags['kitchen'] == 1) {
 						if (flags['bathroom'] == 0 && g >= 3000) {
 							// Bathroom
 							horse_today = true;
 							a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
-								'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'imp':true,
+								'cid':['v_gold', 'v_lumber', 'f_bathroom'],
 								'val':[-3000, -300, _BUILD_DAYS + 1]
 							});
 						} else if (flags['bathroom'] == 1) {
