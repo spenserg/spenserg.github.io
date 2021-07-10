@@ -136,7 +136,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			});
 		}
 
-		a = ranch_stuff_fallb(a, dow, is_sunny, skip_to_bridge);
+		a = ranch_stuff_fallb(a, dow, is_sunny, skip_to_bridge, musboxes);
 
 		if (is_sunny == 1) {
 			a.push({'desc':"Mushroom, edible herb"});
@@ -456,7 +456,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	return a;
 }
 
-function ranch_stuff_fallb (tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1, skip_to_bridge = false) {
+function ranch_stuff_fallb (tmp_act = [], dow = get_dow(vars['day']), is_sunny = 1, skip_to_bridge = false, musboxes) {
 	if (dow != "THURS") {
 		var ann_id = get_npc_id('ann');
 		var elli_id = get_npc_id('elli');
