@@ -19,6 +19,11 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var dow = get_dow(d, true);
 	var reset = "";
 
+	if (d < 70) {
+		var musboxes = musbox_count (aff[maria_id], aff[ann_id], aff[elli_id], d);
+		console.log(musboxes);
+	}
+
 	var skip_to_bridge = ((d < 83 && aff[ann_id] >= 120 && aff[maria_id] >= 136) || d == 82 ||
 			      (d > 88 && flags['new_mus_box'] == 1 && flags['old_mus_box'] == 1 && aff[ann_id] > 170 && aff[maria_id] > 150));
 
@@ -166,6 +171,9 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':false, 't2':a[a.length - 1]['desc']});
             		a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':elli_id, 'val':3, 'sel':(aff[elli_id] < 250 && !skip_to_bridge && is_sunny == 1 && d != 85)});
 			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':false});
+			if (d < 70) {
+				a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
+			}
 		}
 
 		if (dow == "MON") {
@@ -220,6 +228,9 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Gift", 'cid':maria_id, 'val':2, 'sr':true, 'sel':(d != 85)});
 				}
 				a.push({'desc':"Weed", 'cid':maria_id, 'val':-2, 'sr':true, 'sel':false});
+				if (d < 70) {
+					a.push({'desc':("(" + musboxes[0] + " Musboxes Left)"), 'sr':true});
+				}
 			}
 		} else {
 			a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1,
@@ -237,6 +248,9 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 			}
 			a.push({'desc':"Weed", 'cid':maria_id, 'val':-2, 'sr':true, 'sel':false});
+			if (d < 70) {
+				a.push({'desc':("(" + musboxes[0] + " Musboxes Left)"), 'sr':true});
+			}
 		}
 
 		// MAYOR
@@ -274,6 +288,9 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					       (((!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1) || d == 69) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0)))
 				});
 				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':false});
+				if (d < 70) {
+					a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
+				}
 			}
 			if (is_sunny == 1) {
 				if (flags['dream_elli'] == 0 && aff[elli_id] >= (_DREAM_EVENT_MIN - _MUS_BOX_AFF - 4)) {
@@ -315,6 +332,9 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"  MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':"Talk (Ricks Shop)", 'sel':false});
 				a.push({'desc':"Gift  ", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Potato", 'sel':false});
 				a.push({'desc':"Potato", 'cid':ann_id, 'val':3, 'sr':true, 't2':"Gift  ", 'sel':false});
+				if (d < 70) {
+					a.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
+				}
 			}
 		}
 
@@ -476,6 +496,9 @@ function ranch_stuff_fallb (tmp_act = [], dow = get_dow(vars['day']), is_sunny =
 				)
 			)
 		});
+		if (d < 70) {
+			tmp_act.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
+		}
 		if (ann_sick_event) {
 			// ANN SICK EVENT
 			tmp_act.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1]});
