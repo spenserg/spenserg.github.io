@@ -1550,7 +1550,7 @@ function set_affections (rid = 0) {
 	return tmp_html;
 }
 
-function musbox_count (maria, ann, elli, d = vars['day']) {
+function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 	var npc_affs = [maria, ann, elli];
 	var aff_reqs = [140, 120, 180];
 	var mus_boxes = [0, 0, 0];
@@ -1566,7 +1566,7 @@ function musbox_count (maria, ann, elli, d = vars['day']) {
 			var lowest = [-1, -1]; // [id, val]
 			npc_affs[0] += 3; // Maria (gift + talk)
 			npc_affs[1] += 4; // Ann (potato + talk)
-			npc_affs[2] += 4; // Elli (fish + talk)
+			npc_affs[2] += ((chickens == 0) ? 4 : 5); // Elli (fish/egg + talk)
 			for (var i = 0; i < npc_affs.length; i++) {
 				var tmp_low = aff_reqs[i] - npc_affs[i];
 				if (tmp_low > lowest[1]) {
@@ -1589,7 +1589,7 @@ function musbox_count (maria, ann, elli, d = vars['day']) {
 				npc_affs[1] += 4;
 			} else {
 				mus_boxes[2]++;
-				npc_affs[2] += 4;
+				npc_affs[2] += ((chickens == 0) ? 4 : 5);
 			}
 			net++;
 		}
