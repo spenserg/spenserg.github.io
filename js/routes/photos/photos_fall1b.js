@@ -20,8 +20,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var reset = "";
 
 	if (d < 70) {
-		var musboxes = musbox_count (aff[maria_id], aff[ann_id], aff[elli_id], d);
-		console.log(musboxes);
+		var musboxes = musbox_count (aff[maria_id], aff[ann_id], aff[elli_id], d, flags['chicken_route']);
 	}
 
 	var skip_to_bridge = ((d < 83 && aff[ann_id] >= 120 && aff[maria_id] >= 136) || d == 82 ||
@@ -169,8 +168,19 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		if (dow == "MON" && is_sunny == 1) {
 			a.push({'desc':"Talk (MTNS)", 'cid':elli_id, 'val':1, 'sel':(!skip_to_bridge && is_sunny == 1 && d != 85), 't2':"MusBox "});
 			a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':false, 't2':a[a.length - 1]['desc']});
-            		a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':elli_id, 'val':3, 'sel':(aff[elli_id] < 250 && !skip_to_bridge && is_sunny == 1 && d != 85)});
-			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':false});
+			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish",
+				'sel':(flags['chicken_route'] == 0 && aff[elli_id] < 250 && !skip_to_bridge && is_sunny == 1 && d != 85)
+			});
+            		a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':elli_id, 'val':3, 'sel':false});
+			if (flags['chicken_route'] == 1) {
+				a[a.length - 1]['t2'] = ["Egg", "Gift "];
+				a[a.length - 2]['t2'] = ["Egg", "M/L Fish"];
+				a.push({'desc':"Egg", 'sr':true, 't2':["M/L Fish", "Gift "],
+					'sel':(aff[elli_id] < 250 && !skip_to_bridge && is_sunny == 1 && d != 85),
+					'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
+					'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
+				});
+			}
 			if (d < 70) {
 				a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
 			}
@@ -283,11 +293,21 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 				a[a.length - 1]['t2'] = "MusBox ";
 				a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':false, 't2':a[a.length - 1]['desc']});
-				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':elli_id, 'val':3,
-					'sel':(d != 65 && aff[elli_id] < 250 && !skip_to_bridge && (d < 83 || d > 87) &&
+				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish",
+					'sel':(flags['chicken_route'] == 0 && d != 65 && aff[elli_id] < 250 && !skip_to_bridge && (d < 83 || d > 87) &&
 					       (((!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1) || d == 69) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0)))
 				});
-				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':false});
+				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':elli_id, 'val':3, 'sel':false});
+				if (flags['chicken_route'] == 1) {
+					a[a.length - 1]['t2'] = ["Egg", "Gift "];
+					a[a.length - 2]['t2'] = ["Egg", "M/L Fish"];
+					a.push({'desc':"Egg", 'sr':true, 't2':["M/L Fish", "Gift "],
+						'sel':(d != 65 && aff[elli_id] < 250 && !skip_to_bridge && (d < 83 || d > 87) &&
+					       (((!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1) || d == 69) || (elli_sick_event && dow == "WED") || (d == 66 && flags['vineyard_restored'] == 0))),
+						'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
+						'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
+					});
+				}
 				if (d < 70) {
 					a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
 				}
