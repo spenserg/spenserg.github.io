@@ -542,7 +542,7 @@ actions_photos_spr_y1a = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				if (aff[ann_id] == 0 || (d > 23 && [2, 12].includes(aff[ann_id]))) {
 					a.push({'desc':"Meet", 'cid':ann_id, 'val':4, 'sel':false});
 				}
-				a.push({'desc':("Talk (" + ((is_sunny == 0) ? "Barn)" : "Ranch) ")), 'cid':ann_id, 'val':1, 'sel':(is_sunny == 1 && dow == "MON" && !musbox_to_ann), 't2':" MusBox"});
+				a.push({'desc':("Talk (" + ((is_sunny == 0) ? "Barn)" : "Ranch) ")), 'cid':ann_id, 'val':1, 'sel':(is_sunny == 1 && dow == "MON" && !musbox_to_ann), 't2':" MusBox", 'sr':(aff[ann_id] == 0 || (d > 23 && [2, 12].includes(aff[ann_id])))});
 				a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sel':(is_sunny == 1 && dow == "MON" && musbox_to_ann), 'sr':true, 't2':a[a.length - 1]['desc']});
 				a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':(dow == "MON" && is_sunny == 1 && vars['potatoes'] <= 0), 't2':"Potato"});
 				a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 'sel':(dow == "MON" && is_sunny == 1 && vars['potatoes'] > 0), 't2':" Gift"});
