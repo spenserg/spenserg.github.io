@@ -21,8 +21,16 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var mtn_visit = ((d < 41 || dow == "MON") && aff[maria_id] < (_DREAM_EVENT_MIN - 1) && is_sunny); // DONT TRIGGER DREAM EVENT
 	var photo_maria_disp = false;
 	var lumber_to_sprite = ((aff[sprite_id] >= _SPRITE_SPAM_MAX) ? 0 : (((_SPRITE_SPAM_MAX - aff[sprite_id]) > 6) ? 6 : ((_SPRITE_SPAM_MAX - aff[sprite_id]))));
-	var musboxes = musbox_count (aff[maria_id], aff[ann_id], aff[elli_id], d);
-	console.log(musboxes);
+	var musboxes = musbox_count (aff[maria_id], aff[ann_id], aff[elli_id], d, flags['chicken_route']);
+	var weather_check = (!is_festival(d + 1) && (["MON", "TUES", "FRI"].includes(dow) || (dow == "THURS" && ![16, 30].includes(d))));
+
+	// Weather Check
+	if (flags['chicken_route'] == 1) {
+		a.push({'desc':(((!weather_check) ? "DONT " : "") + "Check Weather"),
+			'imp':weather_check, 'red':(!weather_check)
+		});
+		if (!weather_check && !is_festival(d + 1)) { flags['dontsave'] = 1; }
+	}
 
 	// Dog Affection
 	if (flags['dog_inside'] == 1) {
@@ -97,8 +105,16 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Talk (Beach)", 'cid':elli_id, 'val':1, 't2':"MusBox "});
 					a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':false, 't2':a[a.length - 1]['desc']});
 				}
-				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':elli_id, 'val':3});
 				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':false});
+				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':elli_id, 'val':3, 'sel':false});
+				if (flags['chicken_route'] == 1) {
+					a[a.length - 1]['t2'] = ["Egg", "Gift "];
+					a[a.length - 2]['t2'] = ["Egg", "M/L Fish"];
+					a.push({'desc':"Egg", 'sr':true, 't2':["M/L Fish", "Gift "],
+						'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
+						'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
+					});
+				}
 				a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
 			}
 
@@ -215,9 +231,16 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					'sel':(elli_sick_event && dow == "WED" && flags['new_mus_box'] == 1), 't2':a[a.length - 1]['desc']
 				});
 				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':false});
-				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1],
-					'sel':((is_sunny == 1 && !["WED", "SAT"].includes(dow)) || (dow == "WED" && elli_sick_event)),
-				});
+				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':false});
+				if (flags['chicken_route'] == 1) {
+					a[a.length - 1]['t2'] = ["Egg", "Gift "];
+					a[a.length - 2]['t2'] = ["Egg", "M/L Fish"];
+					a.push({'desc':"Egg", 'sr':true, 't2':["M/L Fish", "Gift "],
+						'sel':((is_sunny == 1 && !["WED", "SAT"].includes(dow)) || (dow == "WED" && elli_sick_event)),
+						'cid':((flags['recipe_elli'] == 0) ? ['f_recipe_elli', elli_id] : elli_id),
+						'val':((flags['recipe_elli'] == 0) ? [1, 6] : 4)
+					});
+				}
 				a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
 			}
 			if (elli_sick_event) {
