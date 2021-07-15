@@ -31,10 +31,14 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	}
 
 	if (d == 3) {
-		flags['chicken_route'] = 1;
+		flags['chicken_route'] = 0;
 		a.push({'desc':"Chicken Route:", 'iid':chicken_id});
-		a.push({'desc':"Yes", 'sr':true, 'sel':(flags['chicken_route'] == 1), 't1':"No", 't2':"No", 'cid':'f_chicken_route', 'val':(1 - flags['chicken_route'])});
-		a.push({'desc':"No", 'sr':true, 'sel':(flags['chicken_route'] != 1), 't1':"Yes", 't2':"Yes", 'cid':'f_chicken_route', 'val':(0 - flags['chicken_route'])});
+		a.push({'desc':"Yes", 'sr':true, 'sel':(flags['chicken_route'] == 1), 'cid':'f_chicken_route', 'val':(1 - flags['chicken_route']),
+			't1':"No", 't2':"No"
+		});
+		a.push({'desc':"No", 'sr':true, 'sel':(flags['chicken_route'] != 1), 'cid':'f_chicken_route', 'val':(0 - flags['chicken_route']),
+			't1':"Yes", 't2':"Yes"
+		});
 	}
 	if (d == 29) {
 		a.push({'desc':"Check Weather, if rainy tomorrow,", 'imp':true, 'iid':karen_id});
@@ -176,7 +180,11 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			// Dog Karen on Spr 30?
 			if (d == 30) {
-				a.push({'desc':"Dog Karen to Pink (Beach / Carp House) [50%] [10 AM]", 'cid':karen_id, 'val':(208 - aff[karen_id]), 'imp':true});	
+				if (is_sunny == 1) {
+					a.push({'desc':"Dog Karen to Pink (Beach / Carp House) [50%] [10 AM]", 'cid':karen_id, 'val':(208 - aff[karen_id]), 'imp':true});
+				} else {
+					a.push({'desc':"Sick Event", 'cid':[karen_id, 'f_sick_karen'], 'val':[_SICK_EVENT_AFF, 1], 'imp':true});
+				}
 			}
 
 			// Kappa Berry
@@ -262,7 +270,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"ed, ber, flower, Fish/\ for Elli"}); // Quick gifts for villagers
 
 			// KAI
-			if (d == 30) { a.push({'desc':"DONT VISIT VINEYARD, KAREN ANKLE", 'red':true, 'iid':karen_id}); }
+			if (d == 30 && is_sunny == 1) { a.push({'desc':"DONT VISIT VINEYARD, KAREN ANKLE", 'red':true, 'iid':karen_id}); }
 			if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':false}); }
 			a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sr':(aff[kai_id] == 0), 'sel':false, 'red':(d == 30)});
 			a.push({'desc':"Berry", 'sr':true, 'sel':false, 't2':"  Gift ",
@@ -361,8 +369,8 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				// Maria in library
 				if (aff[maria_id] == 0) {
 					a.push({'desc':"Meet", 'cid':maria_id, 'val':4,
-						'sel':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow)),
-						'red':(is_sunny == 0 || ["SAT", "SUN", "WED"].includes(dow))
+						'sel':((is_sunny == 1 || d == 30) && !["SAT", "SUN", "WED"].includes(dow)),
+						'red':((is_sunny == 0 && d != 30) || ["SAT", "SUN", "WED"].includes(dow))
 					});
 				}
 				a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 'sr':(aff[maria_id] == 0),
