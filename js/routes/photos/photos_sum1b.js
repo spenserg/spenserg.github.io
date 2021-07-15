@@ -22,7 +22,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var photo_maria_disp = false;
 	var lumber_to_sprite = ((aff[sprite_id] >= _SPRITE_SPAM_MAX) ? 0 : (((_SPRITE_SPAM_MAX - aff[sprite_id]) > 6) ? 6 : ((_SPRITE_SPAM_MAX - aff[sprite_id]))));
 	var musboxes = musbox_count (aff[maria_id], aff[ann_id], aff[elli_id], d, flags['chicken_route']);
-	var weather_check = (!is_festival(d + 1) && (["MON", "TUES", "FRI"].includes(dow) || (dow == "THURS" && ![16, 30].includes(d))));
+	var weather_check = (!is_festival(d + 1) && (d == 55 || ["MON", "TUES", "FRI"].includes(dow) || (dow == "THURS" && ![16, 30].includes(d))));
 
 	// Weather Check
 	if (flags['chicken_route'] == 1) {
