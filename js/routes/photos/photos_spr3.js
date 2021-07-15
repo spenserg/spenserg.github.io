@@ -1,4 +1,5 @@
 actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
+	var ann_id = get_npc_id('ann');
 	var chicken_id = get_npc_id('chicken');
 	var cliff_id = get_npc_id('cliff');
 	var cow_id = get_npc_id('cow');
@@ -9,16 +10,21 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var kai_id = get_npc_id('kai');
 	var karen_id = get_npc_id('karen');
 	var kent_id = get_npc_id('kent');
+	var maria_id = get_npc_id('maria');
+	var mayor_id = get_npc_id('mayor');
 	var midwife_id = get_npc_id('midwife');
 	var pastor_id = get_npc_id('pastor');
+	var rick_id = get_npc_id('rick');
 
 	var dow = get_dow(d, true);
 
 	var kent_spam = (d > 246 && is_sunny == 1 && !is_festival(d) && !["THURS", "SUN"].includes(dow) && aff[kent_id] < 100);
 
 	// Rainy on day before evaluation
+	if (d == 269) { flags['dontsave'] = 1; }
 	if (d == 270 && is_sunny == 0 && vars['chickens'] > 0 && flags['chicken_outside'] == 1) {
-		a.push({'desc':"Chicken Inside / Feed", 'imp':true, 'iid':get_npc_id('chicken')});
+		a.push({'desc':"RESET IF NO FEED- RANCH IS CLOSED", 'red':true});
+		a.push({'desc':"Chicken Inside / Feed", 'imp':true, 'iid':chicken_id});
 	}
 
 	// Married Affection
@@ -43,10 +49,18 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 	}
 
+	if (d == 256 && flags['photo_horserace'] == 0) {
+		a.push({'desc':"Enter Horse", 'cid':['f_horse_entered', doug_id], 'val':[1, 3], 'imp':true});
+	}
+
 	if (is_festival(d)) {
 		// Planting (Spr 8), Horse Race (Spr 17), Flower Fest (Spr 23)
 		
-		// TODO HORSE RACE
+		if (d == 257 && flags['horse_entered'] == 1) {
+			// Horse Race
+			a.push({'desc':"Go to Town Square", 'iid':mayor_id, 'imp':true});
+			a.push({'desc':"Win Horse Race", 'cid':'f_photo_horserace','val':1, 'iid':doug_id, 'imp':true});
+		}
 		
 		// Flower Fest
 		if (d == 263 && flags['berry_flowerfest'] == 0 && (flags['berry_ocean'] + flags['berry_mine'] + flags['berry_farm']) < 2) { // Flower Fest
@@ -126,7 +140,7 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 			a.push({'desc':"Buy 20 Grass Seeds", 'cid':['v_grass', 'v_gold'], 'val':[20, (-500 * 20)], 'iid':get_npc_id('lillia')});
 			if (flags['incubate_last'] == 1) {
-				a.push({'desc':"Hatch Chick", 'iid':(get_npc_id('chicken')),
+				a.push({'desc':"Hatch Chick", 'iid':chicken_id,
 					'cid':["v_new_chicken_days", "f_new_chick"],
 					'val':[d + _CHICK_GROW_SLEEPS, -1], 'imp':true
 				});
