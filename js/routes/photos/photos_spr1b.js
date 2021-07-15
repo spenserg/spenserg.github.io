@@ -262,14 +262,15 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"ed, ber, flower, Fish/\ for Elli"}); // Quick gifts for villagers
 
 			// KAI
+			if (d == 30) { a.push({'desc':"DONT VISIT VINEYARD, KAREN ANKLE", 'red':true, 'iid':karen_id}); }
 			if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':false}); }
-			a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sr':(aff[kai_id] == 0), 'sel':false});
-			a.push({'desc':"Berry", 'sr':true, 'sel':false, 't2':"  Gift ", 'red':(dow == "MON"),
+			a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sr':(aff[kai_id] == 0), 'sel':false, 'red':(d == 30)});
+			a.push({'desc':"Berry", 'sr':true, 'sel':false, 't2':"  Gift ",
 				'cid':((flags['recipe_kai'] == 0) ? [kai_id, 'f_recipe_kai'] : kai_id),
-				'val':((flags['recipe_kai'] == 0) ? [5, 1] : 6),
+				'val':((flags['recipe_kai'] == 0) ? [5, 1] : 6)
 			});
 			a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Berry"});
-		
+
 			// ELLI
 			// "Gift " <- one space
 			// "Talk " <- one space
