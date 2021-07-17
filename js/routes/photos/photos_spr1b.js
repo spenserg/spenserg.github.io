@@ -61,7 +61,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Equip Watering Can", 'imp':true});
 		a.push({'desc':"Water 3 Potatoes", 'sr':true,'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
 	}
-	if (d == 5 && is_sunny == 0) { reset = "No Rain on Spr 5"; }
+	if (flags['chicken_route'] == 1 && d == 5 && is_sunny == 0) { reset = "No Rain on Spr 5"; }
 
 	if ([15, 19].includes(d)) { a.push({'desc':"Ignore Basil on the Farm", 'iid':basil_id}); }
 
@@ -197,10 +197,10 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (lumber_to_sprite > 0) {
 				var lum_desc = "";
 				if (aff[sprite_id] < (21 - 6)) {
-					a.push({'desc':"Flower", 'cid':sprite_id, 'val':1, 'sel':(d == 9 && is_sunny == 1)});
+					a.push({'desc':"Flower", 'cid':sprite_id, 'val':1, 'sel':false});
 				}
 				a.push({'desc':(lumber_to_sprite + " Gifts to Inner Sprite (Right Side)"), 'sr':(aff[sprite_id] < (21 - 6)),
-					'cid':sprite_id, 'val':lumber_to_sprite, 'sel':(d == 9 && is_sunny == 1)
+					'cid':sprite_id, 'val':lumber_to_sprite, 'sel':false
 				});
 				if (tmp_spr_aff >= 18) { a.push({'desc':"INNER SPRITE FIRST!", 'sr':true}); }
 				tmp_spr_aff += lumber_to_sprite;
