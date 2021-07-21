@@ -77,9 +77,9 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Talk", 'cid':kent_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':kai_id, 'val':2, 'sel':(aff[kai_id] >= 50)});
 			a.push({'desc':"Talk", 'cid':maria_id, 'val':2});
-			a.push({'desc':"Dance",'cid':[maria_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance ", "Dance  "], 'sr':true});
+			a.push({'desc':"Dance",'cid':[maria_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance ", "Dance  "]});
 			a.push({'desc':"Talk", 'cid':elli_id, 'val':2});
-			a.push({'desc':"Dance ",'cid':[elli_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance", "Dance  "], 'sel':false, 'sr':true});
+			a.push({'desc':"Dance ",'cid':[elli_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance", "Dance  "], 'sel':false, 'sr':true, 'sel':true});
 			a.push({'desc':"Talk", 'cid':ann_id, 'val':2});
 			a.push({'desc':"Dance  ",'cid':[ann_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance", "Dance "], 'sel':false, 'sr':true});
 		}
@@ -161,12 +161,10 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id, 'val':1,
 					'sr':(aff[ann_id] == 0), 'sel':(!["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
 				});
-				a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'],
-					'sel':(flags['new_mus_box'] == 1 && !["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
-				});
+				a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'], 'sel':false});
 				a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
 				a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 't2':" Gift",
-					'sel':(flags['new_mus_box'] == 0 && !["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
+					'sel':(!["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
 				});
 				if (flags['recipe_ann'] == 0) {
 					a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes'];
@@ -286,14 +284,13 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (!["SUN", "MON"].includes(dow)) {
 				if (aff[elli_id] == 0) { a.push({'desc':"Meet", 'cid':elli_id, 'val':4, 'sel':(!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1)}); }
 				a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk (Bakery)"), 'cid':elli_id, 'val':1,
-					'sr':(aff[elli_id] == 0), 't2':"MusBox ",
-					'sel':((elli_sick_event && dow == "WED" && flags['new_mus_box'] == 0) || (!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1))
+					'sr':(aff[elli_id] == 0), 't2':"MusBox ", 'sel':(elli_sick_event && dow == "WED" && flags['new_mus_box'] == 0)
 				});
-				a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true,
-					'sel':(elli_sick_event && dow == "WED" && flags['new_mus_box'] == 1), 't2':a[a.length - 1]['desc']
+				a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'],
+					'sel':((is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow) && aff[rick_id] >= _RICK_FIX_MIN) || (elli_sick_event && dow == "WED" && flags['new_mus_box'] == 1)),
 				});
 				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish",
-					'sel':((flags['chicken_route'] == 0 || d < 12) && is_sunny == 1 && !["WED", "SAT"].includes(dow))
+					'sel':(flags['chicken_route'] == 0 && is_sunny == 1 && !["WED", "SAT"].includes(dow))
 				});
 				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':false});
 				if (flags['chicken_route'] == 1) {
@@ -374,14 +371,14 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					});
 				}
 				a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 'sr':(aff[maria_id] == 0),
-					'sel':((is_sunny == 1 || d == 30) && !["SAT", "SUN", "WED"].includes(dow) && aff[rick_id] < (_RICK_FIX_MIN - 6)),
+					'sel':((is_sunny == 1 || d == 30) && !["SAT", "SUN", "WED"].includes(dow) && flags['new_mus_box'] == 0),
 					'red':((is_sunny == 0 && d != 30) || ["SAT", "SUN", "WED"].includes(dow))
 				});
 				if (aff[rick_id] >= _RICK_FIX_MIN - 6) {
 					a[a.length - 1]['t2'] = "MusBox";
 					a.push({'desc':"MusBox", 'cid':[maria_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1],
 						'sr':true, 't2':a[a.length - 1]['desc'],
-						'sel':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow) && aff[rick_id] >= (_RICK_FIX_MIN - 6))
+						'sel':(flags['new_mus_box'] == 1 && aff[rick_id] >= (_RICK_FIX_MIN - 6))
 					});
 				}
 				a.push({'desc':" Gift  ", 'cid':maria_id, 'val':2, 'sr':true, 'sel':((is_sunny == 1 || d == 30) && !["SAT", "SUN", "WED"].includes(dow)), 't2':"Cabbage"});
@@ -421,8 +418,8 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (dow != "SUN" && flags['wine_from_duke'] == 0) {
 				// BAR
 				var duke_id = get_npc_id('bartender');
-				if (aff[duke_id] == 0) { a.push({'desc':"Meet", 'cid':duke_id, 'val':3, 'sel':(([9, 30].includes(d) || dow == "MON") && is_sunny == 1)}); }
-				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'sel':(([9, 30].includes(d) || dow == "MON") && is_sunny == 1)});
+				if (aff[duke_id] == 0) { a.push({'desc':"Meet", 'cid':duke_id, 'val':3, 'sel':(d == 30)}); }
+				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'sel':(d == 30)});
 				a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(a[a.length - 1]['sel']), 'sr':true});
 				if (aff[duke_id] < 40) {
 					a.push({'desc':("(" + Math.ceil((40 - aff[duke_id]) / 6) + " visit" + ((Math.ceil((34 - aff[duke_id]) / 6) == 1) ? "" : "s") + " left)"), 'sr':true});
