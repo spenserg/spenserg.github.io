@@ -31,7 +31,7 @@ function reset_vars() {
 			"cutscene_beach" : 0, "cutscene_rabbit" : 0, "cutscene_watermelon" : 0,
 			"cutscene_bug" : 0, "cutscene_cookfish" : 0, "cutscene_vineyard" : 0,
 			"cutscene_rick" : 0, "cutscene_kent" : 0, "cutscene_elli" : 0,
-			"fishing_rod_stored" : 0, "cow_steal_glitch":0, "grass_ready":0 };
+			"fishing_rod_stored" : 0, "cow_steal_glitch":0, "grass_ready":0, "completion":6.25};
 	aff = {};
 	checklist = [];
 	names_eng = ['Momoko', 'Moiti', 'Mota', "A", "5"];
@@ -1714,7 +1714,7 @@ function forage(need = 0, g = vars['gold'], d = vars['day']) {
 
 function add_time(t = []) {
 	var tmp_date = new Date();
-	var tmp_timestamp = [vars['day'], tmp_date.getTime()];
+	var tmp_timestamp = [vars['day'], get_completion(), tmp_date.getTime()];
 	var rel_time = ((t.length > 0) ? ((tmp_date - t[0][1]) / 1000) : 0);
 	tmp_timestamp.push(rel_time);
 
@@ -1727,6 +1727,56 @@ function add_time(t = []) {
 	tmp_timestamp.push(timestr + fmtMSS(rel_time));
 	t.push(tmp_timestamp);
 	return t;
+}
+
+function get_completion() {
+	var result = 6.25; // Grandpa
+	var temp_res = 0;
+
+	// Balloon
+	temp_res = 0;
+	if (flags['photo_harvest'] == 1) { result += 6.25;
+	} else {
+		// Coin
+		temp_res += ((6.25 / 2) * ((flags['harvest_king'] == 0) ? 0 : 1));
+	}
+
+	// Horse
+	result += (6.25 * ((flags['photo_horserace'] == 0) ? 0 : 1));
+
+	// Cow
+	var cow_id = get_npc_id('cow');
+	if (flags['photo_cowfest'] == 1) { result+= 6.25;
+	} else {
+		result += (6.25 * ((aff[cow_id] >= 60) ? 1 : (aff[cow_id] / 60)));
+	}
+
+	// Swim
+	result += (6.25 * ((flags['photo_swimming'] == 0) ? 0 : 1));
+
+	// Hot Springs
+	
+	// Married
+	
+	// Dog
+	
+	// Baby
+	
+	// Maria
+	
+	// Popuri
+	
+	// Elli
+	
+	// Ann
+	
+	// Karen
+	
+	// Extensions
+	
+	// Party
+	
+	return result;
 }
 
 function print_time() {
