@@ -6,6 +6,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var dog_id = get_npc_id('dog');
 	var elli_id = get_npc_id('elli');
 	var horse_id = get_npc_id('horse');
+	var jeff_id = get_npc_id('jeff');
 	var karen_id = get_npc_id('karen');
 	var maria_id = get_npc_id('maria');
 	var mas_carp_id = get_npc_id('mas_carpenter');
@@ -207,6 +208,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"M/L Fish", 'sr':true, 't2':["Gift ", " Egg"], 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':false});
 
 		// MAYOR
+/*
 		if (is_sunny == 1 || d == 94) {
 			a.push({'desc':((dow == "SAT") ? "Talk (Rick Shop 50%)" : ((dow == "SUN") ? "Talk (Church)" : "Talk")),
 				'cid':mayor_id, 'val':3, 'sel':false, 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)
@@ -214,6 +216,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			if (is_sunny != 1) { a[a.length - 1]['desc'] = "Talk (In House)"; }
 			a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
 		}
+*/
 
 		// Cliff
 		if (is_sunny == 1 && aff[cliff_id] > 50) {
@@ -372,7 +375,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Corn / Potato", 'cid':ann_id, 'val':3, 'sr':true, 't2':"Gift  ", 'sel':false});
 				}
 			}
-
+/*
 			if (!["WED", "SUN"].includes(dow) && is_sunny == 1) {
 				// MAYOR
 				a.push({'desc':"Talk (Village 50%)", 'cid':mayor_id, 'val':3, 'sel':false, 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)});
@@ -382,6 +385,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Talk (Church)", 'cid':mayor_id, 'val':3, 'sel':false, 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)});
 				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
 			}
+*/
 		} // End of After Dog Race
 
 		if (d == 94 && flags['dream_maria'] == 0) {
@@ -410,6 +414,9 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Cow Stealing
 	if (d == 94 && flags['dream_maria'] == 0) {
+		// Jeff Spam
+		a.push({'desc':"Jeff Spam (Bar) [21 talks]", 'cid':jeff_id, 'val':(21 * 8), 'imp':true});
+
 		// Steal the Cows
 		a.push({'desc':"Hammer rocks on farm / Dock Fishing"});
 		a.push({'desc':"Ocean Berry", 'cid':"f_berry_ocean", 'val':1, 'sel':false, 'sr':true});
