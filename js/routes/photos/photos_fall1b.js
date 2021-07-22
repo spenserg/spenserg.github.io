@@ -73,7 +73,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		if (d == 72) { // Fall 12
 			// Harvest Festival
 			a.push({'desc':'Win Harvest King', 'iid':mayor_id, 'imp':true, 'val':[1, 5], 'cid':['f_harvest_king', 'v_happiness']});
-			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2});
+			// a.push({'desc':"Talk", 'cid':mayor_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':kai_id, 'val':2, 'sel':(aff[kai_id] > 50 && aff[kai_id] < 152)});
 			a.push({'desc':"Dance", 'val':10, 'cid':ann_id, 'sel':(aff[ann_id] < _PHOTO_MIN), 't2':["Dance ", " Dance"]});
 			a.push({'desc':"Talk", 'val':2, 'cid':ann_id, 'sr':true, 'red':(aff[maria_id] > 157)});
@@ -110,7 +110,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Talk", 'val':2, 'cid':maria_id, 'sel':false, 'red':(aff[maria_id] >= (_DREAM_EVENT_MIN - 5))});
 			a.push({'desc':"Talk", 'val':2, 'cid':ann_id, 'sel':false});
 			a.push({'desc':"Talk", 'val':2, 'cid':rick_id, 'sel':false});
-			a.push({'desc':"Talk", 'val':2, 'cid':mayor_id, 'sel':false});
+			// a.push({'desc':"Talk", 'val':2, 'cid':mayor_id, 'sel':false});
 		} else if (d == 88 && (flags['horse_entered'] == 1 || vars['medals'] < 600)) { // Fall 28
 			// Horse Race
 			a = betting_table(a, 1, d);
@@ -224,8 +224,8 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			// MARIA SICK EVENT
 			if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && flags['sick_maria'] == 0 && aff[maria_id] < (_DREAM_EVENT_MIN - _SICK_EVENT_AFF)) {
 				a.push({'desc':"Sick Event", 'cid':[maria_id, 'f_sick_maria'], 'val':[_SICK_EVENT_AFF, 1]});
-				a.push({'desc':"Talk", 'cid':mayor_id, 'val':3, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN)});
-				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN)});
+				// a.push({'desc':"Talk", 'cid':mayor_id, 'val':3, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN)});
+				// a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN)});
 			} else {
 				a.push({'desc':"Talk (MTN / CHURCH)", 'cid':maria_id, 'val':1, 'sel':(d != 85), 'red':(aff[maria_id] >= (_DREAM_EVENT_MIN - 3))});
 				if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
@@ -266,12 +266,14 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		// MAYOR
 		// "  Talk" <- -2 spaces
 		// "  Gift" <- -2 spaces
+/*
 		if (is_sunny == 1 && dow != "SUN") {
 			a.push({'desc':"Talk (Rick Shop 50%)", 'cid':mayor_id, 'val':3,
 				'sel':(((!["SAT", "SUN", "WED"].includes(dow) || d == 69) || (d == 66 && flags['vineyard_restored'] == 0)) && d != 65 && !skip_to_bridge && aff[mayor_id] < _PARTY_ATTEND_MIN),
 				'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)});
 			a.push({'desc':"  Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
 		}
+*/
 
 		// ELLI
 		// "Gift " <- one space
