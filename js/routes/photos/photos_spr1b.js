@@ -73,7 +73,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					'val':[1, -1000], 'iid':get_npc_id('salesman'), 'sel':false, 'red':true
 			});
 			a.push({'desc':"Talk", 'cid':rick_id, 'val':2});
-			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2});
+			// a.push({'desc':"Talk", 'cid':mayor_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':kent_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':kai_id, 'val':2, 'sel':(aff[kai_id] >= 50)});
 			a.push({'desc':"Talk", 'cid':maria_id, 'val':2});
@@ -311,14 +311,14 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 
 			a.push({'desc':"Buy Potato Seeds", 'cid':['v_gold', 'v_potatoes_bought'], 'val':[-200, 1], 'iid':get_npc_id('lillia'), 'sel':false});
-
+/*
 			// MAYOR
 			if (is_sunny == 1 && dow != "SUN") {
 				if (aff[mayor_id] == 0) { a.push({'desc':"Meet", 'cid':mayor_id, 'val':4, 'sel':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow))}); }
 				a.push({'desc':((dow == "SAT") ? "Talk (Lib 50%)" : "Talk"), 'cid':mayor_id, 'val':3, 'sr':(aff[mayor_id] == 0), 'sel':(d == 6 || !["WED", "SAT"].includes(dow))});
 				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(!["WED", "SAT"].includes(dow) && is_sunny == 1)});
 			}
-
+*/
 			// RICK (NO NEW BOX IN INVENTORY)
 			// "Talk  " - 2 spaces
 			// "Gift  " - 2 spaces
