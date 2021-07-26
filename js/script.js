@@ -1746,10 +1746,6 @@ function get_completion() {
 	];
 
 	for (var i = 0; i < photo_flags.length; i++) {
-		
-		console.log(result);
-		console.log("+" + photo_flags[i]);
-		
 		if (flags['photo_' + photo_flags[i]] == 1) { result += 6.25; } else {
 			if (i == 0) { // Swimming
 				var xday = 54;
@@ -1879,8 +1875,6 @@ function get_completion() {
 				];
 
 				for (var j = 0; j < tmp_reqs.length; j++) {
-					console.log(j);
-					console.log(result);
 					result += ((6.25 / 26) * (((tmp_reqs[j][0] > tmp_reqs[j][1]) ? tmp_reqs[j][1] : tmp_reqs[j][0]) / tmp_reqs[j][1]));
 				}
 			}
