@@ -1730,52 +1730,178 @@ function add_time(t = []) {
 }
 
 function get_completion() {
-	var result = 6.25; // Grandpa
-	var temp_res = 0;
+	var ann_id = get_npc_id('ann');
+	var elli_id = get_npc_id('elli');
+	var karen_id = get_npc_id('karen');
+	var maria_id = get_npc_id('maria');
 
-	// Balloon
-	temp_res = 0;
-	if (flags['photo_harvest'] == 1) { result += 6.25;
-	} else {
-		// Coin
-		temp_res += ((6.25 / 2) * ((flags['harvest_king'] == 0) ? 0 : 1));
+	var result = 6.25; // Grandpa Photo
+	var d = vars['day'];
+	var photo_flags = [
+		'swimming', 'extensions', 'harvest', 'horserace',
+		'dograce', 'married', 'baby', 'cowfest',
+		'springs', 'maria', 'elli', 'karen',
+		'ann', 'popuri', 'party'
+	];
+
+	for (var i = 0; i < photo_flags.length; i++) {
+		
+		console.log(result);
+		console.log("+" + photo_flags[i]);
+		
+		if (flags['photo_' + photo_flags[i]] == 1) { result += 6.25; } else {
+			if (i == 0) { // Swimming
+				var xday = 54;
+				var yday = (((d % 120) > xday) ? ((120 - d) + xday) : ((120 - xday) + d));
+				result += (6.25 * (yday / 120));	
+			}
+
+			if (i == 1) { // Extensions
+				for (var j = 0; j < extensions.length; j++) {
+					result += (6.25 * ((1 / 6) + (1 / 26)) * ((flags[extensions[j][0]] == 0) ? 0 : (1 / flags[extensions[j][0]])));
+				}
+			}
+
+			if (i == 2) { // Harvest Fest | Balloon
+				result += ((6.25 / 2) * ((flags['harvest_king'] == 0) ? 0 : 1));
+				if (((d % 120) > 8) && (((d % 120) < 73) || flags['harvest_king'] != 0)) {
+					var xday = 8;
+					var yday = (((d % 120) > xday) ? ((120 - d) + xday) : ((120 - xday) + d));
+					result += ((6.25 / 2) * (yday / 120));
+				}
+			}
+
+			if (i == 3) { // Horse Race
+				/*
+				var xday = 88;
+				var yday = (((d % 120) > xday) ? ((120 - d) + xday) : ((120 - xday) + d));
+				result += (6.25 * (yday / 120));
+				*/
+			}
+
+			if (i == 4) { // Dog Race
+				if (d < 230) { result += (6.25 * (d / 229)); }
+			}
+
+			if (i == 5) { // Married
+				result += (6.25 * ((1 / 4) + (1 / 26)) * (((aff[elli_id] > 220) ? 220 : aff[elli_id]) / 220));
+				result += (6.25 * ((1 / 4) + (1 / 26)) * ((flags['kitchen'] == 0) ? 0 : (1 / flags['kitchen'])));
+				result += (6.25 * ((1 / 4) + (1 / 26)) * ((flags['propose'] == 0 && flags['blue_feather'] == 0) ? 0 : 1));
+				if  (d < 176) {
+					result += (6.25 * ((1 / 4) + (1 / 26)) * (d / 175));
+				}
+			}
+
+			if (i == 6) { // Baby
+				var tmp_baby_vars = ['married', 'babybed', 'baby'];
+				for (var j = 0; j < tmp_baby_vars; j++) {
+					result += (6.25 * ((1 / 4) + (1 / 26)) * ((flags[tmp_baby_vars[j]] == 0) ? 0 : (1 / flags[tmp_baby_vars[j]])));
+				}
+				if (d < 266) {
+					result += (6.25 * ((1 / 4) + (1 / 26)) * (d / 265));
+				}
+			}
+
+			if (i == 7) { // Cow Fest
+				var cow_id = get_npc_id('cow');
+				if (aff[cow_id] > 0 && vars['cows'] > 0) {
+					var xday = 64;
+					var yday = (((d % 120) > xday) ? ((120 - d) + xday) : ((120 - xday) + d));
+					result += (6.25 * (yday / 120));
+				}
+				result += ((6.25 / 2) * (((aff[cow_id] > 60) ? 60 : aff[cow_id]) / 60));
+			}
+
+			if (i == 8) { // Hot Springs
+				if (d < 107) { result += (6.25 * (d / 106)); }
+			}
+
+			if (i == 9) { // Maria
+				result += (6.25 * (((aff[maria_id] > 200) ? 200 : aff[maria_id]) / 200));
+			}
+
+			if (i == 10) { // Elli
+				if (d < 70) { result += ((6.25 / 2) * (d / 69)) }
+				result += ((6.25 / 2) * (((aff[elli_id] > 200) ? 200 : aff[elli_id]) / 200));
+			}
+
+			if (i == 11) { // Karen
+				var sprite_id = get_npc_id('sprite');
+				var duke_id = get_npc_id('bartender');
+				if (d < 68) { result += ((6.25 / 4) * (d / 67)) }
+				result += ((6.25 / 4) * (((aff[karen_id] > 200) ? 200 : aff[karen_id]) / 200));
+				if (flags['wine_from_duke'] > 0) { result += (6.25 / 4); }
+				else {
+					result += ((6.25 / 4) * (((aff[duke_id] > 38) ? 38 : aff[duke_id]) / 38));
+				}
+				if (flags['vineyard_restored'] > 0) { result += (6.25 / 4); }
+				else {
+					result += ((6.25 / 4) * (((aff[sprite_id] > 50) ? 50 : aff[sprite_id]) / 50));
+				}	
+			}
+
+			if (i == 12) { // Ann
+				result += (6.25 * (((aff[ann_id] > 200) ? 200 : aff[ann_id]) / 200));
+			}
+
+			if (i == 13) {} // Popuri (no flags for progress)
+
+			if (i == 14) { // Party
+				// Stamina (1), Happiness (2), Dog aff (3), Wife aff (4), GAT (5),
+				// Married (6), Baby (7), Party1-10 (8-17), chicken (18),
+				// Extensions (19-24), Grass (25), Day (26)
+				// NOTE: Married | Baby | Extensions taken care of in respective other photos
+
+				var jeff_id = get_npc_id('jeff');
+				var mayor_id = get_npc_id('mayor');
+				var cliff_id = get_npc_id('cliff');
+				var kai_id = get_npc_id('kai');
+				var tmp_reqs = [
+					[get_stamina(), 190],
+					[vars['happiness'], 250],
+					[aff[get_npc_id('dog')], 200],
+					[aff[elli_id], 250],
+					[get_gat(), 2494],
+					[aff[ann_id], 160],
+					[aff[karen_id], 160],
+					[aff[maria_id], 160],
+					[aff[get_npc_id('kent')], 160],
+					[aff[get_npc_id('may')], 160],
+					[aff[get_npc_id('gotz')], 160],
+					[aff[get_npc_id('doug')], 160],
+					[aff[get_npc_id('rick')], 160],
+					[((aff[jeff_id] > aff[mayor_id]) ? aff[jeff_id] : aff[mayor_id]), 160],
+					[((aff[cliff_id] > aff[kai_id]) ? aff[cliff_id] : aff[kai_id]), 160],
+					[vars['chickens'], 1],
+					[vars['grass_planted'], 43],
+					[d, 270]
+				];
+
+				for (var j = 0; j < tmp_reqs.length; j++) {
+					console.log(j);
+					console.log(result);
+					result += ((6.25 / 26) * (((tmp_reqs[j][0] > tmp_reqs[j][1]) ? tmp_reqs[j][1] : tmp_reqs[j][0]) / tmp_reqs[j][1]));
+				}
+			}
+		}
 	}
+	return result;
+}
 
-	// Horse
-	result += (6.25 * ((flags['photo_horserace'] == 0) ? 0 : 1));
-
-	// Cow
-	var cow_id = get_npc_id('cow');
-	if (flags['photo_cowfest'] == 1) { result+= 6.25;
-	} else {
-		result += (6.25 * ((aff[cow_id] >= 60) ? 1 : (aff[cow_id] / 60)));
+function get_gat() {
+	var result = 0;
+	for (var i = 0; i < 37; i++) {
+		result += aff[i];
 	}
+	return result;
+}
 
-	// Swim
-	result += (6.25 * ((flags['photo_swimming'] == 0) ? 0 : 1));
-
-	// Hot Springs
-	
-	// Married
-	
-	// Dog
-	
-	// Baby
-	
-	// Maria
-	
-	// Popuri
-	
-	// Elli
-	
-	// Ann
-	
-	// Karen
-	
-	// Extensions
-	
-	// Party
-	
+function get_stamina() {
+	var tmp_berries = ['basil', 'eggfest', 'farm', 'flowerfest', 'kappa', 'mine', 'ocean', 'pond', 'strength', 'stu'];
+	var result = 100;
+	for (var i = 0; i < tmp_berries.length; i++) {
+		result += ((flags[('berry_' + tmp_berries[i])] == 0 || flags[('berry_' + tmp_berries[i])] == undefined) ? 0 : 15);
+	}
 	return result;
 }
 
