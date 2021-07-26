@@ -25,20 +25,14 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	var reset = "";
 
 	var musboxes = musbox_count (aff[maria_id], aff[ann_id], aff[elli_id], d, flags['chicken_route']);
-	
-	if (d > 3 && d < 7 && flags['chicken_route'] == 1) {
-		return actions_photos_spr_y1a(a, d, g, is_sunny);
-	}
 
 	if (d == 3) {
-		flags['chicken_route'] = 0;
+		flags['chicken_route'] = 1;
 		a.push({'desc':"Chicken Route:", 'iid':chicken_id});
 		a.push({'desc':"Yes", 'sr':true, 'sel':(flags['chicken_route'] == 1), 'cid':'f_chicken_route', 'val':(1 - flags['chicken_route']),
 			't1':"No", 't2':"No"
 		});
-		a.push({'desc':"No", 'sr':true, 'sel':(flags['chicken_route'] != 1), 'cid':'f_chicken_route', 'val':(0 - flags['chicken_route']),
-			't1':"Yes", 't2':"Yes"
-		});
+		a.push({'desc':"No", 'sr':true, 'sel':(flags['chicken_route'] != 1), 'cid':'f_chicken_route', 'val':(0 - flags['chicken_route']), 't1':"Yes", 't2':"Yes"});
 	}
 	if (d == 29) {
 		a.push({'desc':"Check Weather, if rainy tomorrow,", 'imp':true, 'iid':karen_id});
@@ -54,14 +48,27 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Equip hammer, Scythe to toolbox <b>[RT A DWN DWN A RT RT A UP A]</b>"}); // <b>[A UP A RT A DWN DWN A]</b>
 		a.push({'desc':"Greet the Mayor", 'iid':mayor_id});
 		a.push({'desc':"Hammer Rocks, Till 3 x 3 square"});
-		a.push({'desc':"Equip Watering Can, Fill Watering Can"});
+		a.push({'desc':"Equip Watering Can"});
+		a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':30, 'sr':true});
 		a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1, 'sr':true});
 		a.push({'desc':"ed, ber, flower"});
-	} else if (d > 3 && d < 9 && is_sunny == 1) { // Spring 4 - 8
-		a.push({'desc':"Equip Watering Can", 'imp':true});
-		a.push({'desc':"Water 3 Potatoes", 'sr':true,'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
+	} else if (d > 3 && d < 9) { // Spring 4 - 8
+		if (d < 7 && flags['chicken_route'] == 1) {
+			if (vars['watering_can_fill'] == 0) {
+				a.push({'desc':"Equip Watering Can", 'imp':true});
+				a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':30, 'sr':true});
+			}
+			// a.push({'desc':"Equip Hammer, clear 3x3 plot / Path to Musbox"});
+			if (d == 4) {
+				
+			} else if (d == 5) {
+				if (is_sunny == 0) { reset = "No Rain on Spr 5"; }
+			}
+		} else if (is_sunny == 1) {
+			a.push({'desc':"Equip Watering Can", 'imp':true});
+			a.push({'desc':"Water 3 Potatoes", 'sr':true,'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
+		}
 	}
-	if (flags['chicken_route'] == 1 && d == 5 && is_sunny == 0) { reset = "No Rain on Spr 5"; }
 
 	if ([15, 19].includes(d)) { a.push({'desc':"Ignore Basil on the Farm", 'iid':basil_id}); }
 
@@ -84,7 +91,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Dance  ",'cid':[ann_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance", "Dance "], 'sel':false, 'sr':true});
 		}
 	} else { // Not a Festival
-		if (d > 8) {
+		if (d > 8 || (flags['chicken_route'] == 1 && d > 3)) {
 			if (!flags['treasure_map']) {
 				a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1,
 					'sr':(lumber_to_sprite > 0 && dow == "MON" && is_sunny == 1),
@@ -93,7 +100,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 
 			// Music Box Dig
-			if (flags['old_mus_box'] == 0 && !has_opener) {
+			if (flags['old_mus_box'] == 0 && d > 8) {
 				has_opener = true;
 				a.push({'desc':"Equip hoe", 'iid':musbox_id, 'red':(is_sunny == 0 || ["WED", "SAT", "SUN"].includes(dow))});
 				a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'iid':musbox_id,
@@ -106,8 +113,8 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			if (flags['potato_planted'] > 0 && is_sunny == 1) {
 				a.push({'desc':"Equip Watering Can"});
-				a.push({'desc':"Water Potatoes", 'sr':true, 'sel':false,
-					'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10],
+				a.push({'desc':"Water Potatoes", 'sr':true, 'sel':(flags['chicken_route'] == 1 && d < 7),
+					'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10], 'imp':(flags['chicken_route'] == 1 && d < 7)
 				});
 			}
 		}
@@ -134,9 +141,9 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Equip Seeds + berry, Sell berry", 'imp':true});
 			a.push({'desc':"Plant Potatoes", 'sr':true, 'cid':'f_potato_planted', 'val':1});
 			a.push({'desc':"Water 3 Potatoes", 'sr':true, 'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
-		} else if (d > 8 && !is_festival(d)) { // Skip days until Potatoes come in
+		} else if ((d > 8 || (flags['chicken_route'] == 1 && d < 7)) && !is_festival(d)) { // Skip days until Potatoes come in
 			// Get Horse
-			if (flags['horse'] == 0 && is_sunny == 1) {
+			if (flags['horse'] == 0 && is_sunny == 1 && d > 8) {
 				a.push({'desc':'Get Horse', 'cid':'f_horse', 'val':21, 'iid':horse_id,
 					'sel':(d == 9 || (!is_festival(d) && !["SAT", "SUN", "WED", "THURS"].includes(dow))),
 					'imp':(!is_festival(d) && !["SAT", "SUN", "WED", "THURS"].includes(dow))
@@ -156,15 +163,15 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				var ann_sick_event = (dow == "SUN" && is_sunny == 0 && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN && d != 63 && 
 						      aff[ann_id] >= (_SICK_EVENT_MIN - (4 + 1 + 5 * flags['new_mus_box'])));
 				if (aff[ann_id] == 0) {
-					a.push({'desc':"Meet", 'cid':ann_id, 'val':4,'sel':(!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1)});
+					a.push({'desc':"Meet", 'cid':ann_id, 'val':4, 'sel':(["MON", "TUES", "FRI"].includes(dow) && is_sunny == 1 && d > 8)});
 				}
 				a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id, 'val':1,
-					'sr':(aff[ann_id] == 0), 'sel':(!["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
+					'sr':(aff[ann_id] == 0), 'sel':(["MON", "TUES", "FRI"].includes(dow) && d > 8 && (is_sunny == 1 || d == 30))
 				});
 				a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'], 'sel':false});
 				a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
 				a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 't2':" Gift",
-					'sel':(!["SAT", "SUN", "WED"].includes(dow) && (is_sunny == 1 || d == 30))
+					'sel':(["MON", "TUES", "FRI"].includes(dow) && d > 8 && (is_sunny == 1 || d == 30))
 				});
 				if (flags['recipe_ann'] == 0) {
 					a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes'];
@@ -175,13 +182,16 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 				a.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
 			}
-
+			
 			// Dog Karen on Spr 30?
-			if (d == 30) {
+			if (d == 30 && flags['dream_karen'] == 0) {
 				if (is_sunny == 1) {
-					a.push({'desc':"Dog Karen to Pink (Beach / Carp House) [50%] [10 AM]", 'cid':karen_id, 'val':(208 - aff[karen_id]), 'imp':true});
+					a.push({'desc':"Dog Karen to 240 (Beach / Carp House) [50%] [10 AM]", 'sel':(flags['chicken_route'] == 0),
+						'cid':karen_id, 'val':(240 - aff[karen_id]), 'imp':(flags['chicken_route'] == 0), 'red':(flags['chicken_route'] == 1)
+					});
 				} else {
-					a.push({'desc':"Sick Event", 'cid':[karen_id, 'f_sick_karen'], 'val':[_SICK_EVENT_AFF, 1], 'imp':true});
+					a.push({'desc':"Sick Event", 'cid':[karen_id, 'f_sick_karen'], 'val':[_SICK_EVENT_AFF, 1],
+						'sel':(flags['chicken_route'] == 0), 'imp':(flags['chicken_route'] == 0);
 				}
 			}
 
