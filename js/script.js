@@ -694,6 +694,7 @@ function new_game(rid = 24) {
 		vars['moondrop_waters'] = 0;
 	} else if (rid == 5) { // All Photos
 		vars['potatoes_bought'] = 0;
+		vars['potato_gifts'] = 0;
 		flags['chicken_route'] = 1;
 		flags['potato_planted'] = 0;
 		flags['corn_planted'] = 0;
