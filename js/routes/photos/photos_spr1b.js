@@ -54,16 +54,19 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"ed, ber, flower"});
 	} else if (d < 9) { // Spring 4 - 8
 		if (flags['chicken_route'] == 1 && [4, 5].includes(d) && is_sunny == 0) { reset = ("No Rain on Spr " + d); }
-		if (is_sunny == 1 && (flags['chicken_route'] == 0 || d > 6)) {
-			a.push({'desc':"Equip Watering Can", 'imp':true});
-			a.push({'desc':"Water 3 Potatoes", 'sr':true,'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
-		}
 	}
 
 	if ([15, 19].includes(d)) { a.push({'desc':"Ignore Basil on the Farm", 'iid':basil_id}); }
 
 	if (is_festival(d)) {
 		// Planting (Spr 8), Horse Race (Spr 17), Flower Fest (Spr 23)
+		if (d == 8) { // Planting Fest
+			if (flags['potato_planted'] > 0 && is_sunny == 1) {
+				a.push({'desc':"Equip Watering Can", 'imp':true});
+				a.push({'desc':"Water Potatoes", 'sr':true, 'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
+				a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':(30 - vars['watering_can_fill']), 'sr':true, 'sel':false});
+			}
+		}
 		if (d == 23) { // Flower Fest
 			a.push({'desc':"Go to Town Square", 'iid':mayor_id, 'cid':'v_happiness', 'val':5, 'imp':true});
 			a.push({'desc':"Buy a Power Nut", 'cid':['f_berry_flowerfest','v_gold'],
@@ -91,7 +94,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			if (flags['chicken_route'] == 1 && vars['chickens'] > 0 && ([12, 15].includes(d) || (dow == "MON" && d > 15))) {
 				a.push({'desc':"Equip Watering Can"});
-				a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':30, 'sr':true});
+				a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':(30 - vars['watering_can_fill']), 'sr':true, 'sel':(vars['watering_can_fill'] < 20)});
 				if (d > 12) {
 					a.push({'desc':"New Chick", 'iid':chicken_id, 'cid':["v_new_chicken_days", "f_new_chick"],
 							'val':[d + _CHICK_GROW_SLEEPS, -1], 't0':"Incubate", 'imp':true, 'iid':get_npc_id('chicken')
@@ -113,12 +116,14 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 			}
 
-			if (flags['chicken_route'] == 0 && flags['potato_planted'] > 0 && is_sunny == 1) {
-				a.push({'desc':"Equip Watering Can", 'imp':(flags['chicken_route'] == 1 && d < 7)});
-				a.push({'desc':"Water Potatoes", 'sr':true, 'sel':(flags['chicken_route'] == 1 && d < 7),
-					'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10], 'imp':(flags['chicken_route'] == 1 && d < 7)
-				});
-				a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':30, 'sr':true, 'sel':false});
+			if (flags['potato_planted'] > 0 && is_sunny == 1) {
+				if (!(flags['chicken_route'] == 1 && vars['chickens'] > 0 && ([12, 15].includes(d) || (dow == "MON" && d > 15)))) {
+					a.push({'desc':"Equip Watering Can", 'imp':(d < 9)});
+					a.push({'desc':"Water Potatoes", 'sr':true, 'sel':(d < 9),
+						'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]
+					});
+					a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':(30 - vars['watering_can_fill']), 'sr':true, 'sel':false});
+				}
 			}
 		}
 
@@ -149,7 +154,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Equip Seeds + Fish, Sell Fish", 'imp':true});
 			a.push({'desc':"Plant Potatoes", 'sr':true, 'cid':'f_potato_planted', 'val':1});
 			a.push({'desc':"Equip Watering Can"});
-			a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':30, 'sr':true});
+			a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':(30 - vars['watering_can_fill']), 'sr':true});
 			a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1, 'sr':true});
 			a.push({'desc':"Get 6 Lumber for Sprites", 'imp':true, 'iid':stump_id});
 			a.push({'desc':"Water 3 Potatoes", 'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
@@ -199,7 +204,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
 
 				if (flags['chicken_route'] == 1 && vars['chickens'] > 0) {
-					a.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'), 'sel':(dow == "MON" && d > 15)
+					a.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'), 'sel':(dow == "MON" && d > 15)});
 				}
 			}
 			
@@ -226,7 +231,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 
 			// Blue Mist Flower
-			if (flags['photo_popuri'] == 0) {
+			if (d != 4 && flags['photo_popuri'] == 0) {
 				a.push({'desc':"Water Flower by Pond", 'iid':popuri_id});
 				a.push({'desc':"Blue Mist Flower Glitch", 'cid':'f_photo_popuri', 'val':1, 'sr':true,
 					'sel':(flags['chicken_route'] == 1 && d == 6), 'imp':(flags['chicken_route'] == 1 && d == 6)
@@ -259,6 +264,14 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (tmp_spr_aff > 18) { tmp_spr_aff += 3; }
 			if (aff[sprite_id] > 20) {
 				a.push({'desc':("(" + Math.ceil((50 - aff[sprite_id]) / 3) + " Visits Left)"), 'sr':true})
+			}
+
+			// Blue Mist Flower
+			if (d == 4 && flags['photo_popuri'] == 0) {
+				a.push({'desc':"Water Flower by Pond", 'iid':popuri_id});
+				a.push({'desc':"Blue Mist Flower Glitch", 'cid':'f_photo_popuri', 'val':1, 'sr':true,
+					'sel':(flags['chicken_route'] == 1 && d == 6), 'imp':(flags['chicken_route'] == 1 && d == 6)
+				});
 			}
 
 			if (dow == "MON" && is_sunny == 1) {
