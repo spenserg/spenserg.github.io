@@ -1572,10 +1572,13 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 		}
 		if (chickens == 1) {
 			for (var i = vars['potato_gifts']; i < 18; i++) {
-				npc_affs[0] += 3;
-				npc_affs[1] += 9;
-				npc_affs[2] += 5;
-				mus_boxes[1]++;
+				if (npc_affs[1] < aff_reqs[1]) {
+					npc_affs[0] += 3;
+					npc_affs[1] += 9;
+					npc_affs[2] += 5;
+					mus_boxes[1]++;
+					potatoes_left--;
+				}
 			}
 		}
 
@@ -1584,6 +1587,10 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 			npc_affs[0] += 3; // Maria (gift + talk)
 			npc_affs[1] += ((chickens == 0) ? 4 : 2); // Ann (potato + talk in chickenless / no potatoes left with chickens)
 			npc_affs[2] += ((chickens == 0) ? 4 : 5); // Elli (fish/egg + talk)
+			if (potatoes_left > 0 && chickens == 1) {
+				npc_affs[1] += 2;
+				potatoes_left--;
+			}
 			for (var i = 0; i < npc_affs.length; i++) {
 				var tmp_low = aff_reqs[i] - npc_affs[i];
 				if (tmp_low > lowest[1]) {
