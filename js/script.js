@@ -1057,7 +1057,7 @@ function to_html(a = actions, show_red = true) {
 				if (a[i]['imp'] == true) {
 					html += ' background-color:yellow;';
 				} else if (a[i]['red'] == true) {
-					html += ' background-color:pink;';
+					html += ' background-color:#fd9fb0;';
 				}
 				html += '">';
 			}
