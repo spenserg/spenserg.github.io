@@ -7,9 +7,13 @@ get_actions_elli_photo = function (d = 3, g = 300, is_sunny = 1) {
 	var elli_mon_loc = (get_month(d) == 1) ? "BEACH" : "MTN";
 	var dow = get_day_of_week(d, true);
 
-	var elli_sick_event = (is_sunny == 0 && aff[elli_id] >= _SICK_EVENT_MIN && flags['sick_elli'] == 0);
+	var elli_sick_event = (is_sunny == 0 && flags['sick_elli'] == 0 &&
+		(aff[elli_id] >= (_SICK_EVENT_MIN - 1 - 3 - 5 * (1 - flags['new_mus_box']))));
 	var elli_loc = ((dow == "MON") ? ((d > 30 && d < 61) ? " (Beach)" : " (MTNS)") : "");
-	var skip = (is_sunny != 1 || ["WED", "SAT", "SUN"].includes(dow));
+	var skip = (is_sunny != 1 || (["WED", "SAT", "SUN"].includes(dow) && d != 69) || aff[elli_id] >= (200 - ((d == 69) ? 0 : 9)));
+	var no_more_boxes = (aff[elli_id] >= 200 || (aff[elli_id] >= (200 - 9) && (flags['old_mus_box'] == 1 || flags['new_mus_box'] == 1)))
+	var rick_skip = (aff[elli_id] >= (200 - 4 - 5 * (flags['new_mus_box'])));
+	var fish_required = (d == 69 && aff[elli_id] < (200 - 7));
 
 	// Boxes Left
 	var tmp_aff_left = 200 - aff[elli_id];
@@ -23,30 +27,58 @@ get_actions_elli_photo = function (d = 3, g = 300, is_sunny = 1) {
 	if (d == 68) { // Fall 8
 		a.push({'desc':"Check Weather, RESET IF RAINY TOMORROW", 'imp':true});
 	}
+	if (d == 69) {
+		if (aff[elli_id] < (200 - 4) && flags['new_mus_box'] == 0) {
+			a.push({'desc':"RESET IF NO RICK, NEED FIXED BOX", 'iid':rick_id, 'imp':true});	
+		}
+	}
 
 	if (d == 3) { // Spring 3
 		a.push({'desc':"Greet the Mayor", 'iid':mayor_id});
 	}
 
-	if (is_sunny != -1 && !is_festival(d)) {
-		if ((d % 120) == 23) {
-			// Flower Festival, Spring 23
-			a.push({'desc':"Go to Town Square", 'iid':mayor_id, 'imp':(d == 23)});
-			a.push({'desc':"Talk", 'cid':rick_id, 'val':2, 'sel':(aff[rick_id] < _RICK_FIX_MIN)});
-			a.push({'desc':"Talk", 'cid':elli_id, 'val':2});
-			a.push({'desc':"Dance", 'cid':elli_id, 'val':10, 'sr':true});
-		} else if (dow != "SUN") {
+	if ((d % 120) == 23) {
+		// Flower Festival, Spring 23
+		a.push({'desc':"Go to Town Square", 'iid':mayor_id, 'imp':(d == 23)});
+		a.push({'desc':"Talk", 'cid':rick_id, 'val':2, 'sel':(aff[rick_id] < _RICK_FIX_MIN)});
+		a.push({'desc':"Talk", 'cid':elli_id, 'val':2});
+		a.push({'desc':"Dance", 'cid':elli_id, 'val':10, 'sr':true});
+	} 
+
+	if (aff[elli_id] >= (200 - 9) && d < 69) {
+		a.push({'desc':("Sleep to Fall 9 (" + (69 - d) + " days left)"), 'iid':elli_id, 'imp':true});
+	} else {
+		if (is_sunny != -1 && !is_festival(d) && dow != "SUN") {
 			// Music Box Dig
 			if (d > 3 && flags['old_mus_box'] == 0) {
-				a.push({'desc':"Equip hoe", 'iid':musbox_id, 'red':(skip)});
-				a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'iid':musbox_id,
-					'sel':(!skip && aff[rick_id] >= (_RICK_FIX_MIN - 6))
-				});
+				a.push({'desc':"Equip hoe", 'iid':musbox_id, 'red':no_more_boxes});
+				a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'iid':musbox_id, 'sel':(!skip && !no_more_boxes)});
 			}
 
 			// Fishing Rod
 			if (d > 3 && flags['fishing_rod'] == 0) {
 				a.push({'desc':"Get Fishing Rod", 'val':1, 'cid':'f_fishing_rod', 'iid':get_npc_id('fisherman'), 'sel':(!skip), 'red':skip});
+			}
+
+			if (aff[rick_id] >= (_RICK_FIX_MIN - 6) && flags['new_mus_box'] == 0) {
+				if (is_sunny == 1 && dow != "WED") {
+					// RICK
+					if (aff[rick_id] > 38 && flags['cutscene_rick'] == 0 && dow != "SAT") {
+						a.push({'desc':"Enter / Exit to clear Rick / Ann cutscene", 'iid':rick_id, 'imp':true});
+					}
+					if (aff[rick_id] == 0) { a.push({'desc':"Meet", 'cid':rick_id, 'val':4, 'sel':(!skip), 't3':"Talk  "}); }
+					a.push({'desc':"Talk  ", 'sel':(!skip && !rick_skip), 'sr':(aff[rick_id] == 0), 'red':(skip || rick_skip),
+						'cid':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [rick_id, 'f_cutscene_rick'] : rick_id),
+						'val':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [3, 1] : 3)
+					});
+					a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(!skip && !rick_skip && aff[rick_id] < _RICK_FIX_MIN)});
+					if (aff[rick_id] >= (_RICK_FIX_MIN - 6)) {
+						a.push({'desc':"Rick Fix", 'sr':true, 'sel':(!rick_skip && !skip),
+							'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1], 't3':"Talk  "
+						});
+					}
+					a.push({'desc':"Weed  ", 'cid':rick_id, 'val':-2, 'sr':true, 'sel':false});
+				}
 			}
 
 			// ELLI
@@ -61,9 +93,10 @@ get_actions_elli_photo = function (d = 3, g = 300, is_sunny = 1) {
 					'sel':(!skip || (elli_sick_event && dow == "WED" && flags['new_mus_box'] == 1))
 				});
 			}
-			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':(!skip || (elli_sick_event && dow == "WED"))});
-			a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':false});
-			a.push({'desc':("(" + musboxes + " Boxes Left)"), 'sr':true});
+			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish", 'sel':(!fish_required && (!skip || (elli_sick_event && dow == "WED")))});
+			a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':fish_required});
+			if (fish_required) { a.push({'desc':"FISH REQUIRED", 'sr':true}); }
+			else { a.push({'desc':("(" + musboxes + " Boxes Left)"), 'sr':true}); }
 
 			if (is_sunny == 1) {
 				if (flags['dream_elli'] == 0 && aff[elli_id] >= (_DREAM_EVENT_MIN - _MUS_BOX_AFF - 4)) {
@@ -80,30 +113,32 @@ get_actions_elli_photo = function (d = 3, g = 300, is_sunny = 1) {
 				});
 			}
 
-			if (is_sunny == 1 && dow != "WED") {
-				// RICK
-				if (aff[rick_id] > 38 && flags['cutscene_rick'] == 0 && dow != "SAT") {
-					a.push({'desc':"Enter / Exit to clear Rick / Ann cutscene", 'iid':rick_id, 'imp':true});
-				}
-				if (aff[rick_id] == 0) { a.push({'desc':"Meet", 'cid':rick_id, 'val':4, 'sel':(!skip), 't3':"Talk  "}); }
-				a.push({'desc':"Talk  ", 'sel':(!skip), 'sr':(aff[rick_id] == 0),
-					'cid':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [rick_id, 'f_cutscene_rick'] : rick_id),
-					'val':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [3, 1] : 3)
-				});
-				a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(!skip)});
-				if (aff[rick_id] >= (_RICK_FIX_MIN - 6)) {
-					a.push({'desc':"Rick Fix", 'sr':true, 'sel':(!skip),
-						'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1], 't3':"Talk  "
+			if (aff[rick_id] < (_RICK_FIX_MIN - 6) || flags['new_mus_box'] == 1) {
+				if (is_sunny == 1 && dow != "WED") {
+					// RICK
+					if (aff[rick_id] > 38 && flags['cutscene_rick'] == 0 && dow != "SAT") {
+						a.push({'desc':"Enter / Exit to clear Rick / Ann cutscene", 'iid':rick_id, 'imp':true});
+					}
+					if (aff[rick_id] == 0) { a.push({'desc':"Meet", 'cid':rick_id, 'val':4, 'sel':(!rick_skip && !skip), 't3':"Talk  "}); }
+					a.push({'desc':"Talk  ", 'sel':(!rick_skip && !skip), 'sr':(aff[rick_id] == 0), 'red':(skip || rick_skip),
+						'cid':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [rick_id, 'f_cutscene_rick'] : rick_id),
+						'val':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [3, 1] : 3)
 					});
+					a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(!rick_skip && !skip && aff[rick_id] < _RICK_FIX_MIN)});
+					if (aff[rick_id] >= (_RICK_FIX_MIN - 6)) {
+						a.push({'desc':"Rick Fix", 'sr':true, 'sel':(!rick_skip && !skip),
+							'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1], 't3':"Talk  "
+						});
+					}
+					a.push({'desc':"Weed  ", 'cid':rick_id, 'val':-2, 'sr':true, 'sel':false});
 				}
-				a.push({'desc':"Weed  ", 'cid':rick_id, 'val':-2, 'sr':true, 'sel':false});
 			}
 		}
 	}
 
 	// Photo
 	if (d == 69) {
-		a.push({'desc':'Elli Photo (6PM)', 'cid':[elli_id, 'f_photo_elli'], 'val':[_PHOTO_EVENT_AFF, 1], 'imp':true});
+		a.push({'desc':'Elli Photo (6 PM)', 'cid':[elli_id, 'f_photo_elli'], 'val':[_PHOTO_EVENT_AFF, 1], 'imp':true});
 	}
 
 	return a;
