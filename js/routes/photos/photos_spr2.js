@@ -51,7 +51,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	}
 
 	// Horse Affection
-	if (flags['photo_horserace'] == 0 && d != 137 && flags['horse_entered'] == 1) {
+	if (flags['photo_horserace'] == 0 && d != 137 && flags['horse_entered'] == 0) {
 		if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
 			a.push({'desc':"Equip Brush", 'iid':horse_id});
 		}
@@ -106,10 +106,10 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			});
 			a.push({'desc':"Talk", 'cid':rick_id,  'val':2, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN)});
 			if (aff[cliff_id] >= 50) {
-				a.push({'desc':"Talk", 'cid':cliff_id,  'val':2, 'sel':(aff[cliff_id] < 160)});
+				a.push({'desc':"Talk", 'cid':cliff_id,  'val':2, 'sel':(aff[cliff_id] < (160 - 8))});
 			}
 			if (aff[kai_id] >= 50) {
-				a.push({'desc':"Talk", 'cid':kai_id,  'val':2, 'sel':(aff[kai_id] < 160)});
+				a.push({'desc':"Talk", 'cid':kai_id,  'val':2, 'sel':(aff[kai_id] < (160 - 8))});
 			}
 			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN)});
 			a.push({'desc':"Talk", 'cid':maria_id, 'val':2, 'imp':true});
@@ -119,6 +119,13 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 	} else { // Not a festival
 		horse_today = true;
+
+		// Kappa Berry
+		if (!flags['berry_kappa']) {
+			a.push({'desc':"Large fish to Kappa", 'cid':'f_berry_kappa', 'val':1,
+				'iid':get_npc_id('kappa'), 'sel':false, 'red':true});
+		}
+
 		if (vars['grass_planted'] < 3 && vars['grass'] == 0 && is_sunny == 1) {
 			a.push({'desc':"Equip hoe"});
 			a.push({'desc':"Till four 3x3 squares by barn"});
