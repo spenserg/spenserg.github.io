@@ -59,69 +59,70 @@ function get_actions_karen_photo (d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Fill Watering Can", 'sr':true});
 			a.push({'desc':"Water Turnips", 'cid':'v_turnip_waters', 'val':1, 'sr':true});
 		}
+	}
 
+	if (aff[sprite_id] < ((d > 29) ? 36 : 33) && d < 61) {
+		// Plant Turnips
+		if (d > 3 && flags['turnips_planted'] == 0) {
+			a.push({'desc':"Equip Turnip Seeds"});
+			a.push({'desc':"Plant Turnip Seeds", 'cid':'f_turnips_planted', 'val':1, 'sr':true});
+		}
+
+		// Bring Dog to Karen
+		if (aff[karen_id] < 100 && is_sunny == 1 && d > 3) {
+			a.push({'desc':("Dog to " + ((d == 4) ? "CROSSROADS" : "MTNS")), 'iid':dog_id, 'imp':(d == 4)});
+		}
+		
 		// Mountain Visit Days
-		if ((aff[sprite_id] < 33 || (d <= 30 && vars['turnip_waters'] >= _TURNIP_GROW_DAYS && vars['turnip_waters'] < 90)) && ((["TUES", "WED", "FRI", "SAT"].includes(dow) && is_sunny == 1) || (aff[karen_id] >= 100 || d == 4))) {
+		//if ((aff[sprite_id] < 36 || (d <= 30 && vars['turnip_waters'] >= _TURNIP_GROW_DAYS && vars['turnip_waters'] < 90)) && ((["TUES", "WED", "FRI", "SAT"].includes(dow) && is_sunny == 1) || (aff[karen_id] >= 100 || d == 4))) {
 
-			// Plant Turnips
-			if (d > 3 && flags['turnips_planted'] == 0) {
-				a.push({'desc':"Equip Turnip Seeds"});
-				a.push({'desc':"Plant Turnip Seeds", 'cid':'f_turnips_planted', 'val':1, 'sr':true});
+		// SPRITE
+		if (d == 3) {
+			a.push({'desc':"6 Lumber to Inner Sprite + ed ber", 'val':8, 'cid':sprite_id});
+			a.push({'desc':"2 Clovers to Inner Sprite", 'val':2, 'cid':sprite_id, 'imp':true});
+			a.push({'desc':"Goddess Pond + MTN Gifts to Inner Sprite [9]", 'val':9, 'cid':sprite_id});
+			a.push({'desc':"Meet", 'cid':sprite_id, 'val':5});
+			a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':true});
+			a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true});
+		} else if (aff[sprite_id] < 36 || (vars['turnip_waters'] >= _TURNIP_GROW_DAYS) || (d == 30 && aff[sprite_id] == 30)) {
+			// Combine Gathering turnips and last sprite visit
+			if ((is_sunny == 0 && ((_TURNIP_GROW_DAYS - vars['turnip_waters']) == 1)) || (d == 30)) {
+				a.push({'desc':"Gather Turnips", 'imp':true, 'cid':'v_turnip_waters', 'val':99});
 			}
+			a.push({'desc':"Enter cave 35 seconds after leaving house"});
+			a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':(d == 3)});
+			a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true});
+		}
 
-			// Bring Dog to Karen
-			if (aff[karen_id] < 100 && is_sunny == 1 && d > 3) {
-				a.push({'desc':("Dog to " + ((d == 4) ? "CROSSROADS" : "MTNS")), 'iid':dog_id, 'imp':(d == 4)});
+		if (aff[karen_id] < 170 && d > 3) {
+			if (d == 4) {
+				a.push({'desc':"Dog Karen (Vineyard)", 'cid':karen_id, 'val':183});
+				a.push({'desc':"ANKLE", 'cid':[karen_id, 'f_ankle_karen'], 'val':[_ANKLE_EVENT_AFF, 1], 'sr':true});
+			} else if (d > 4) {
+				a.push({'desc':"Dog Karen (MTN) 50% [10 AM]", 'cid':karen_id, 'val':183, 'sel':false});
 			}
+			a.push({'desc':"25 Talks after Yellow Heart", 'iid':karen_id, 'imp':true});
+		}
 
-			// SPRITE
-			if (d == 3) {
-				a.push({'desc':"6 Lumber to Inner Sprite + ed ber", 'val':8, 'cid':sprite_id});
-				a.push({'desc':"2 Clovers to Inner Sprite", 'val':2, 'cid':sprite_id, 'imp':true});
-				a.push({'desc':"Goddess Pond + MTN Gifts to Inner Sprite [9]", 'val':9, 'cid':sprite_id});
-				a.push({'desc':"Meet", 'cid':sprite_id, 'val':5});
-				a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':true});
-				a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true});
-			} else if (aff[sprite_id] < 30 || (vars['turnip_waters'] >= _TURNIP_GROW_DAYS) || (d == 30 && aff[sprite_id] == 30)) {
-				// Combine Gathering turnips and last sprite visit
-				if ((is_sunny == 0 && ((_TURNIP_GROW_DAYS - vars['turnip_waters']) == 1)) || (d == 30)) {
-					a.push({'desc':"Gather Turnips", 'imp':true, 'cid':'v_turnip_waters', 'val':99});
-				}
-				a.push({'desc':"Enter cave 35 seconds after leaving house"});
-				a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':(d == 3)});
-				a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true});
-			}
+		// First Day after Mountain
+		if (d == 3) {
+			a.push({'desc':"Gift for Bartender", 'imp':true, 'iid':duke_id});
+			a.push({'desc':"Buy Turnip Seeds", 'iid':get_npc_id('lillia')});
+		}
 
-			if (aff[karen_id] < 170 && d > 3) {
-				if (d == 4) {
-					a.push({'desc':"Dog Karen (Vineyard)", 'cid':karen_id, 'val':183});
-					a.push({'desc':"ANKLE", 'cid':[karen_id, 'f_ankle_karen'], 'val':[_ANKLE_EVENT_AFF, 1], 'sr':true});
-				} else if (d > 4) {
-					a.push({'desc':"Dog Karen (MTN) 50% [10 AM]", 'cid':karen_id, 'val':183, 'sel':false});
-				}
-				a.push({'desc':"25 Talks after Yellow Heart", 'iid':karen_id, 'imp':true});
+		// DUKE
+		if (aff[duke_id] < 16) {
+			if (d > 4 && aff[karen_id] > 160 && aff[karen_id] < 190 && flags['ankle_karen'] == 0) {
+				a.push({'desc':"ANKLE", 'cid':[karen_id, 'f_ankle_karen'], 'val':[_ANKLE_EVENT_AFF, 1]});
 			}
-
-			// First Day after Mountain
-			if (d == 3) {
-				a.push({'desc':"Gift for Bartender", 'imp':true, 'iid':duke_id});
-				a.push({'desc':"Buy Turnip Seeds", 'iid':get_npc_id('lillia')});
-			}
-
-			// DUKE
-			if (aff[duke_id] < 16) {
-				if (d > 4 && aff[karen_id] > 160 && aff[karen_id] < 190 && flags['ankle_karen'] == 0) {
-					a.push({'desc':"ANKLE", 'cid':[karen_id, 'f_ankle_karen'], 'val':[_ANKLE_EVENT_AFF, 1]});
-				}
-				if (d == 3) { a.push({'desc':"Meet", 'cid':duke_id, 'val':4}); }
-				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(d == 3)});
-				a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sr':true});
-			}
-			if (d == 3) {
-				// Dont plant seeds the first day
-				a.push({'desc':"Equip Turnip Seeds", 'sr':true});
-				a.push({'desc':"Plant Turnip Seeds", 'cid':'f_turnips_planted', 'val':1, 'sel':false});
-			}
+			if (d == 3) { a.push({'desc':"Meet", 'cid':duke_id, 'val':4}); }
+			a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(d == 3)});
+			a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sr':true});
+		}
+		if (d == 3) {
+			// Dont plant seeds the first day
+			a.push({'desc':"Equip Turnip Seeds", 'sr':true});
+			a.push({'desc':"Plant Turnip Seeds", 'cid':'f_turnips_planted', 'val':1, 'sel':false});
 		}
 	} else if ([61, 62, 65, 66].includes(d)) {
 		// Soonest before Photo Event that you can clear the mailbox without time loss
