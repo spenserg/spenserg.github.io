@@ -56,9 +56,14 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	}
 
 	if (vars['day'] > 94 && flags['fishing_rod_stored'] == 0) {
-		a.push({'desc':(((flags['photo_horserace'] == 1) ? "Brush and " : "") + "Fishing rod to toolbox"),
-			'cid':'f_fishing_rod_stored', 'val':1, 'sr':false, 'sel':false
-		});
+		var toolbox_items = [];
+		if (flags['photo_horserace'] == 1) { toolbox_items.push("Brush"); }
+		if (flags['berry_kappa'] == 1) { toolbox_items.push("Fishing rod"); }
+		if (toolbox_items.length > 0) {
+			a.push({'desc':(toolbox_items.join(" and ") + " to toolbox"),
+				'cid':'f_fishing_rod_stored', 'val':1, 'sr':false, 'sel':false
+			});
+		}
 	}
 
 	if (d == 94 && flags['dream_maria'] == 0 && aff[maria_id] >= (_DREAM_EVENT_MIN - 3 - ((flags['new_mus_box'] == 1) ? _MUS_BOX_AFF : 0))) {
@@ -186,7 +191,9 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					'imp':(d == 106 || vars['springs_days_worked'] == (d - 103) || tmp_gold_left < 1000),
 					'red':(d == 105 && vars['springs_days_worked'] == 3 && tmp_gold_left >= 1000)
 				});
-				//if (is_sunny == 1 && flags['photo_ann'] == 0) { a[a.length - 1]['t2'] = "Photo"; }
+				if (d != 105 && aff[jeff_id] < 100) {
+					a.push({'desc':"Jeff Spam (Bar) [21 talks]", 'cid':jeff_id, 'val':(21 * 8), 'imp':true});
+				}
 				if (d == 106) {
 					// Hot Springs Photo
 					a[a.length - 1]['cid'].push('f_photo_springs');
@@ -413,9 +420,10 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	}
 
 	// Cow Stealing
-	if (d == 94 && flags['dream_maria'] == 0) {
+	if (d == 94 && flags['dream_maria'] == 0 && aff[jeff_id] < 100) {
 		// Jeff Spam
 		a.push({'desc':"Jeff Spam (Bar) [21 talks]", 'cid':jeff_id, 'val':(21 * 8), 'imp':true});
+		a.push({'desc':"(Use Hot Springs days if not here)", 'sr':true});
 
 		// Steal the Cows
 		a.push({'desc':"Hammer rocks on farm / Dock Fishing"});
