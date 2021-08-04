@@ -67,6 +67,8 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"[RELEASE STICK OR YOU CANT MOVE AT FESTIVAL]", 'sr':true});
 			a.push({'desc':"Talk", 'cid':rick_id, 'val':2, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN)});
 			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN)});
+			if (aff[cliff_id] > 50) { a.push({'desc':"Talk", 'cid':cliff_id, 'val':2, 'sel':(aff[cliff_id] < _PARTY_ATTEND_MIN)}); }
+			if (aff[kai_id] > 50) { a.push({'desc':"Talk", 'cid':kai_id, 'val':2, 'sel':(aff[kai_id] < _PARTY_ATTEND_MIN)}); }
 			a.push({'desc':"Win Cow Festival", 'iid':get_npc_id('doug'), 'imp':true,
 					'cid':['v_happiness', get_npc_id('ann'), get_npc_id('grey'),
 						get_npc_id('doug'), get_npc_id('kent'), karen_id, get_npc_id('elli'),
@@ -155,7 +157,7 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 	}
 
-	if (horse_today) {
+	if (horse_today && (d != 208 || flags['horse_entered'] == 0)) {
 		for (var z = 0; z < horse_action_ids.length; z++) {
 			a[horse_action_ids[z]]['sel'] = true;
 		}
