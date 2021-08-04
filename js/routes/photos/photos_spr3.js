@@ -60,6 +60,7 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			// Horse Race
 			a.push({'desc':"Go to Town Square", 'iid':mayor_id, 'imp':true});
 			a.push({'desc':"Win Horse Race", 'cid':'f_photo_horserace','val':1, 'iid':doug_id, 'imp':true});
+			a.push({'desc':"Races at 10 AM, 1 PM, and 4 PM"});
 		}
 		
 		// Flower Fest
