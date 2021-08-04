@@ -19,13 +19,15 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 	var maria_too_low = (aff[maria_id] < (_PHOTO_MIN - (((flags['ankle_maria'] == 0) ? _ANKLE_EVENT_AFF : 0) + ((flags['dream_maria'] == 0) ? _DREAM_EVENT_AFF : 0))));
 
 	// Sell Cow + Blue Feather + Ankle
-	var sell_cow = (vars['cows'] > 1 && !is_festival(d) && (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") &&
-				(((!["WED", "SAT", "SUN", "THURS"].includes(dow) && is_sunny == 1) || d == 173) && flags['blue_feather'] == 0 && dow != "SAT" &&
-				 	flags['propose'] == 0 && flags['photo_married'] == 0 && flags['kitchen'] == 1 && 
-					(dow != "TUES" || (flags['bathroom'] != 0 && flags['babybed'] != 0))
-				));
-	// Sell Cow + Propose + Maria Dream + Maria Photo
-	sell_cow = (sell_cow || (vars['cows'] > 1 && d > 168 && !is_festival(d) && !["SUN", "MON", "THURS"].includes(dow) && is_sunny == 1 && flags['ankle_maria'] == 1));
+	var sell_cow = (vars['cows'] > 1 && !is_festival(d) && dow != "THURS" && (
+			(flags['ankle_maria'] == 0 && d > 160 && aff[maria_id] >= _ANKLE_EVENT_MIN && dow != "MON") || // Maria Ankle
+			(!["MON", "SUN"].includes(dow) && flags['propose'] == 0 && flags['blue_feather'] == 1 && flags['ankle_maria'] == 1 && d > 168) || // Propose
+			 (flags['blue_feather'] == 0 && !["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1) || // Blue Feather
+			(flags['photo_maria'] == 0 && is_sunny == 1 && d > 168 && flags['ankle_maria'] == 1 && dow != "MON") // Maria Dream/Photo
+	));
+	if (flags['ankle_maria'] == 1 && flags['photo_maria'] == 1 && flags['propose'] != 0 && d != 175) {
+		sell_cow = (vars['cows'] > 1 && !is_festival(d) && dow != "THURS");
+	}
 
 	if (flags['ankle_maria'] == 0) {
 		if (d == 164) { flags['dontsave'] = true; }
@@ -216,17 +218,15 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 					
 				}
 
-				if (is_sunny == 1 && d > 168) {
+				if (is_sunny == 1 && d > 168 && flags['photo_maria'] == 0 && dow != "MON") {
 					// Maria Dream/Photo
-					if (flags['photo_maria'] == 0) {
-						// WARP TO PHOTO
-						if (flags['dream_maria'] == 0) {
-							a.push({'desc':"DREAM (Library)", 'cid':[maria_id, 'f_dream_maria'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':sell_cow, 'red':(["SUN", "MON"].includes(dow))});
-						} else if (flags['dream_karen'] == 0) {
-							a.push({'desc':"DREAM (Vineyard)", 'cid':[karen_id, 'f_dream_karen'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':sell_cow});
-						}
-						a.push({'desc':"PHOTO at 6 PM", 'cid':[maria_id, 'f_photo_maria'], 'val':[_PHOTO_EVENT_AFF, 1], 'sel':sell_cow});
+					// WARP TO PHOTO
+					if (flags['dream_maria'] == 0) {
+						a.push({'desc':"DREAM (Library)", 'cid':[maria_id, 'f_dream_maria'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':sell_cow, 'red':(["SUN", "MON"].includes(dow))});
+					} else if (flags['dream_karen'] == 0) {
+						a.push({'desc':"DREAM (Vineyard)", 'cid':[karen_id, 'f_dream_karen'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':sell_cow});
 					}
+					a.push({'desc':"PHOTO at 6 PM", 'cid':[maria_id, 'f_photo_maria'], 'val':[_PHOTO_EVENT_AFF, 1], 'sel':sell_cow});
 				}
 			} // End of if (!festival)
 
