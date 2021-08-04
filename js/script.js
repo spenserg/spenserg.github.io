@@ -616,7 +616,7 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 			tmp_t3.push("Buy Miracle Potion");
 			a[a.length - 1]['t3'] = tmp_t3;
 			a.push({'desc':"Buy Miracle Potion", 'cid':['f_miracle_potion', 'v_gold'], 'val':[1, (-1 * _PRICE_MIRACLE_POTION)], 'sr':true,
-				'sel':(d > 151 && flags['babybed'] == 1 && flags['stairway'] == 0 && vars['gold'] >= 2000 && is_sunny == 0)
+				'sel':(d > 175 && flags['babybed'] == 1 && flags['stairway'] == 0 && vars['gold'] >= 2000 && is_sunny == 0)
 			});
 		} else if (tmp_t3.length > 0) {
 			a[a.length - 1]['t3'] = tmp_t3;
