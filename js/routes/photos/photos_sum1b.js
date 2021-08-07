@@ -25,7 +25,8 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var musboxes = musbox_count (aff[maria_id], aff[ann_id], aff[elli_id], d, flags['chicken_route']);
 	var kai_maxed = (aff[kai_id] >= (160 - (((flags['ankle_karen'] == 0) ? 20 : 0) + ((d < 55) ? 8 : 0) + 8 + 3))); // Two Swims and a Cow Win (other festival talks too, so there's a buffer)
 	var kai_visits = Math.ceil((160 - (((flags['ankle_karen'] == 0) ? 20 : 0) + 16 + 3 + aff[kai_id])) / 8);
-	var weather_check = (!is_festival(d + 1) && (d == 55 || ["MON", "TUES", "FRI"].includes(dow) || (dow == "THURS" && ![16, 30].includes(d))));
+	kai_visits = ((kai_visits < 0) ? 0 : kai_visits);
+	var weather_check = (!is_festival(d + 1) && (d == 55 || ["MON", "TUES", "FRI"].includes(dow) || (dow == "THURS" && ![46, 60].includes(d))));
 
 	var elli_sick_event = (is_sunny == 0 && aff[elli_id] >= (_SICK_EVENT_MIN - ((dow == "WED") ? ((flags['chicken_route'] == 0) ? 2 : 5) : 0)) && flags['sick_elli'] == 0 && dow != "MON");
 	var maria_sick_event = (dow == "MON" && is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && flags['sick_maria'] == 0);
@@ -38,7 +39,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':(((!weather_check) ? "DONT " : "") + "Check Weather"),
 			'imp':weather_check, 'red':(!weather_check)
 		});
-		flags['dontsave'] = ((!weather_check && !is_festival(d + 1)) ? true : false);
+		flags['dontsave'] = ((!weather_check && !is_festival(d + 1) && ![46, 60].includes(d)) ? true : false);
 	}
 
 	// Dog Affection
@@ -189,12 +190,6 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					'sel':(elli_sick_event || ann_sick_event || maria_sick_event),
 					'imp':(elli_sick_event || ann_sick_event || maria_sick_event),
 					'red':(!elli_sick_event && !ann_sick_event && !maria_sick_event)
-				});
-			}
-			if (flags['vineyard_restored'] == 0 && flags['wine_from_duke'] == 1) {
-				// Restore the Vineyard
-				a.push({'desc':"Restore the Vineyard", 'iid':get_npc_id('goddess'), 'sel':false,
-					'cid':['f_vineyard_restored', 'f_dontsave'], 'val':[1, 1], 'sr':(flags['berry_strength'] == 0) 
 				});
 			}
 
@@ -390,6 +385,30 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 */
 			}
 
+			// Dog Karen to Pink
+			if (aff[karen_id] < _PHOTO_MIN && is_sunny == 1) {
+				var karen_loc = "(Carp House / Beach) [50%]";
+				if (dow == "SUN") { karen_loc = "(Beach)"; }
+				if (["MON", "THURS"].includes(dow)) {
+					karen_loc = "(Vineyard / BAR)";
+				} else if (aff[elli_id] >= _CUTSCENE_BEACH_MIN && flags['cutscene_beach'] == 0) {
+					a.push({'desc':"WARNING: Cutscene plays at Beach", 'red':true});
+					a.push({'desc':"Beach Cutscene", 'sr':true, 'sel':false, 'cid':'f_cutscene_beach', 'val':1});
+				}
+				a.push({'desc':("Dog Karen " + karen_loc + ((["FRI", "SAT"].includes(dow)) ? " / (BAR)" : "")),
+					'imp':(d == 60), 'sel':(d == 60), 'red':(d != 60), 'iid':karen_id
+				});
+				a.push({'desc':"158", 'cid':karen_id, 'val':((aff[karen_id] < 158) ? (158 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["208", "240"]});
+				a.push({'desc':"208", 'cid':karen_id, 'val':((aff[karen_id] < 208) ? (208 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["240", "158"]});
+				a.push({'desc':"240", 'cid':karen_id, 'val':((aff[karen_id] < 240) ? (240 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["208", "158"]});
+			}
+			if (flags['ankle_karen'] == 0) {
+				a.push({'desc':"Ankle to Kai", 'sel':false, 'red':(d != 60),
+					'cid':[karen_id, kai_id, 'f_ankle_karen'],
+					'val':[-30, 20, 1]
+				});
+			}
+
 			if (flags['new_mus_box'] == 0 && flags['chicken_route'] == 1) {
 				// ANN
 				if (dow != "THURS") {
@@ -448,8 +467,14 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 			}
 
+			// Restore the Vineyard
+			if (flags['vineyard_restored'] == 0 && flags['wine_from_duke'] == 1 && aff[sprite_id] >= (_SPRITE_WINE_MIN - 6)) {
+				// Restore the Vineyard
+				a.push({'desc':"Restore the Vineyard", 'cid':['f_vineyard_restored', 'f_dontsave'], 'val':[1, 1], 'iid':get_npc_id('goddess'), 'sel':false});
+			}
+
+			// BAR
 			if (dow != "SUN" && flags['wine_from_duke'] == 0) {
-				// BAR
 				var duke_id = get_npc_id('bartender');
 				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'sel':(d == 30) });
 				a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(a[a.length - 1]['sel']), 'sr':true});
