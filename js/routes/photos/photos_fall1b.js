@@ -34,6 +34,8 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Check Weather, RESET IF RAINY TOMORROW", 'imp':true});
 	} else if (flags['berry_strength'] == 0 && d >= 83 && d <= 87) {
 		a.push({'desc':"No Stamina Use for Strength Berry", 'imp':true});
+	} else if (d == 70) {
+		a.push({'desc':"Put Dog Outside for Manip", 'iid':dog_id, 'imp':true});
 	} else if (d == 87) {
 		// Horse Race Entry
 		if (flags['photo_horserace'] == 0) {
