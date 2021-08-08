@@ -448,10 +448,9 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 				a.push({'desc':("(" + musboxes[0] + " Musboxes Left)"), 'sr':true});
 
-				var may_id = get_npc_id('may');
 				// MAY
 				if (aff[may_id] < 100 && is_sunny == 0) {
-					a.push({'desc':"Spam May (Library) [83 Talks]", 'cid':may_id, 'val':(255 - aff[may_id]), 'sel':false});
+					a.push({'desc':"Spam May (Library) [55 Talks]", 'cid':may_id, 'val':(255 - aff[may_id]), 'sel':false});
 				}
 			} else if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && !flags["sick_maria"]) {
 				// Sick Event
@@ -498,7 +497,9 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 
 			// MAY
-			if (aff[may_id] < 100 && is_sunny == 1) { a.push({'desc':"Spam May [83 Talks]", 'cid':may_id, 'val':(255 - aff[may_id]), 'sel':false}); }
+			if (aff[may_id] < 100 && is_sunny == 1) {
+				a.push({'desc':"Spam May [55 Talks]", 'cid':may_id, 'val':(255 - aff[may_id]), 'sel':false});
+			}
 
 			// POTATOES
 			if (vars['potatoes_bought'] == 0) {
