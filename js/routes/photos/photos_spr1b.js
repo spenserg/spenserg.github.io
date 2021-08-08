@@ -148,9 +148,9 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Talk (Flower Shop)", 'cid':elli_id, 'val':1, 'sr':true});
 			a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 't2':"M/L Fish", 'sr':true});
 			a.push({'desc':"M/L Fish", 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'sel':false , 'val':[3, 1], 'sr':true});
-			a.push({'desc':"Meet", 'cid':maria_id, 'val':4});
-			a.push({'desc':"Talk", 'cid':maria_id, 'val':1, 'sr':true});
-			a.push({'desc':"Flower", 'cid':maria_id, 'val':2, 'sr':true});
+			a.push({'desc':"Meet", 'cid':maria_id, 'val':4, 'sel':false, 'red':true});
+			a.push({'desc':"Talk", 'cid':maria_id, 'val':1, 'sr':true, 'sel':false});
+			a.push({'desc':"Flower", 'cid':maria_id, 'val':2, 'sr':true, 'sel':false});
 			a.push({'desc':"Equip Seeds + Fish, Sell Fish", 'imp':true});
 			a.push({'desc':"Plant Potatoes", 'sr':true, 'cid':'f_potato_planted', 'val':1});
 			a.push({'desc':"Equip Watering Can"});
@@ -450,7 +450,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 				// MAY
 				if (aff[may_id] < 100 && is_sunny == 0) {
-					a.push({'desc':"Spam May (Library) [55 Talks]", 'cid':may_id, 'val':(255 - aff[may_id]), 'sel':false});
+					a.push({'desc':"Spam May (Library) [55 Talks]", 'cid':may_id, 'val':(160 - aff[may_id]), 'sel':false});
 				}
 			} else if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && !flags["sick_maria"]) {
 				// Sick Event
@@ -498,7 +498,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			// MAY
 			if (aff[may_id] < 100 && is_sunny == 1) {
-				a.push({'desc':"Spam May [55 Talks]", 'cid':may_id, 'val':(255 - aff[may_id]), 'sel':false});
+				a.push({'desc':"Spam May [55 Talks]", 'cid':may_id, 'val':(160 - aff[may_id]), 'sel':false});
 			}
 
 			// POTATOES
