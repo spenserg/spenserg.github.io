@@ -1553,23 +1553,28 @@ function set_affections (rid = 0) {
 
 function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 	var npc_affs = [maria, ann, elli];
-	var aff_reqs = [140, (chickens ? 160 : 120), 180];
+	var aff_reqs = [(chickens ? 150 : 140), (chickens ? 160 : 120), (chickens ? 200 : 180)];
 	var mus_boxes = [0, 0, 0];
-	var potatoes_left = (18 - vars['potato_gifts']);
+	//var potatoes_left = (18 - vars['potato_gifts']);
 	var net = 0;
 	if (d < 83) {
 		if (d < 24) {
 			// Flower Festival
-			npc_affs[0] += 2;
-			npc_affs[1] += (2 + ((chickens == 0) ? 10 : 0));
-			npc_affs[2] += (2 + ((chickens == 1) ? 10 : 0));
+			npc_affs[0] += (chickens ? (((aff_reqs[0] - npc_affs[0]) > (aff_reqs[1] - npc_affs[1])) ? 12 : 2) : 2);
+			npc_affs[1] += (chickens ? (((aff_reqs[0] - npc_affs[0]) <= (aff_reqs[1] - npc_affs[1])) ? 2 : 12) : 2);
+			npc_affs[2] += (chickens ? 2 : 12);
 		}
 		if (d < 73) {
 			// Harvest Festival
-			npc_affs[0] += 2;
-			npc_affs[1] += 12;
+			npc_affs[0] += ((npc_affs[0] < (160 - 12) && ((aff_reqs[0] - npc_affs[0]) > (aff_reqs[1] - npc_affs[1]))) ? 12 : 2)
+			npc_affs[1] += ((npc_affs[0] >= (160 - 12) || ((aff_reqs[0] - npc_affs[0]) < (aff_reqs[1] - npc_affs[1]))) ? 12 : 2)
 			npc_affs[2] += 0; // Too late for Elli aff; Photo is Fall 9
 		}
+		npc_affs[1] += ((flags['dream_ann'] == 0) ? _DREAM_EVENT_AFF : 0);
+		npc_affs[1] += ((flags['ankle_ann'] == 0) ? _ANKLE_EVENT_AFF : 0);
+		npc_affs[2] += ((flags['dream_elli'] == 0) ? _DREAM_EVENT_AFF : 0);
+		npc_affs[2] += ((flags['ankle_elli'] == 0) ? _ANKLE_EVENT_AFF : 0);
+/*
 		if (chickens == 1) {
 			for (var i = vars['potato_gifts']; i < 18; i++) {
 				if (npc_affs[1] < aff_reqs[1]) {
@@ -1581,16 +1586,19 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 				}
 			}
 		}
+*/
 
 		while ((npc_affs[0] < aff_reqs[0] || npc_affs[1] < aff_reqs[1] || npc_affs[2] < aff_reqs[2]) && net < 100) {
 			var lowest = [-1, -1]; // [id, val]
 			npc_affs[0] += 3; // Maria (gift + talk)
-			npc_affs[1] += ((chickens == 0) ? 4 : 2); // Ann (potato + talk in chickenless / no potatoes left with chickens)
+			npc_affs[1] += 4; // Ann (potato + talk)
 			npc_affs[2] += ((chickens == 0) ? 4 : 5); // Elli (fish/egg + talk)
+/*
 			if (potatoes_left > 0 && chickens == 1) {
 				npc_affs[1] += 2;
 				potatoes_left--;
 			}
+*/
 			for (var i = 0; i < npc_affs.length; i++) {
 				var tmp_low = aff_reqs[i] - npc_affs[i];
 				if (tmp_low > lowest[1]) {
