@@ -19,6 +19,7 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	} else if (d == 208) {
 		a.push({'desc':"Enter Barn, New Cow Born", 'iid':cow_id, 'imp':true});
 	}
+	if (flags['babybed'] == 0) { a.push({'desc':"NEED BABY BED BEFORE FALL 25", 'imp':true}); }
 
 	// Married Affection
 	if (flags['photo_married'] == 1) {
@@ -122,7 +123,17 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 			a.push({'desc':"Enter Cow", 'cid':'f_cow_entered', 'val':1, 'iid':get_npc_id('doug'), 'imp':true});
 			horse_today = true;
-			if (flags['stairway'] == 0) {
+			if (flags['babybed'] == 0 && g >= 1000) {
+				// Baby Bed
+				horse_today = true;
+				a.push({'desc':"Buy a Baby Bed (1000 G)", 'iid':get_npc_id('mas_carpenter'),
+					'cid':['v_gold', 'v_lumber', 'f_babybed'],
+					'val':[-1000, -150, _BUILD_DAYS + 1], 'imp':true
+				});
+				if (is_sunny == 1 && d < 175) {
+					a.push({'desc':"(Wait for rain to skip cutscenes)", 'sr':true});
+				}
+			} else if (flags['stairway'] == 0) {
 				// Stairway
 				a.push({'desc':"Buy a Stairway (2000 G)", 'iid':get_npc_id('mas_carpenter'),
 					'cid':['v_gold', 'v_lumber', 'f_stairway'],
