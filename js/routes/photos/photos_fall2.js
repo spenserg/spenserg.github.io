@@ -39,15 +39,12 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Horse Affection
 	if (flags['photo_horserace'] == 0) {
-		if (is_sunny != -1 && flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
-			a.push({'desc':"Equip Brush", 'iid':horse_id});
-		}
 		if (flags['horse'] != 0) {
-			a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
+			a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id});
 			a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
 			horse_action_ids.push(a.length - 1);
 		}
-		if (flags['horse_brush'] == 1 && is_sunny != -1) {
+		if (is_sunny != -1) {
 			a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
 			if (aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
 				horse_action_ids.push(a.length - 1);
@@ -70,9 +67,9 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Talk", 'cid':mayor_id, 'val':2, 'sel':(aff[mayor_id] < _PARTY_ATTEND_MIN)});
 			if (aff[cliff_id] > 50) { a.push({'desc':"Talk", 'cid':cliff_id, 'val':2, 'sel':(aff[cliff_id] < _PARTY_ATTEND_MIN)}); }
 			if (aff[kai_id] > 50) { a.push({'desc':"Talk", 'cid':kai_id, 'val':2, 'sel':(aff[kai_id] < _PARTY_ATTEND_MIN)}); }
-			a.push({'desc':"Win Cow Festival", 'iid':get_npc_id('doug'), 'imp':true,
+			a.push({'desc':"Win Cow Festival", 'iid':doug_id, 'imp':true,
 					'cid':['v_happiness', get_npc_id('ann'), get_npc_id('grey'),
-						get_npc_id('doug'), get_npc_id('kent'), karen_id, get_npc_id('elli'),
+						doug_id, get_npc_id('kent'), karen_id, get_npc_id('elli'),
 						get_npc_id('popuri'), get_npc_id('maria'), get_npc_id('kai'), get_npc_id('jeff'),
 						cliff_id, get_npc_id('harris'), get_npc_id('potion master'), rick_id,
 						mayor_id, get_npc_id('judge'), 'f_dontsave'],
@@ -85,8 +82,13 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		if (d == 200 && (flags['berry_ocean'] + flags['berry_farm'] + flags['berry_basil'] + flags['berry_eggfest']) < 2) {
 			a.push({'desc':"Go to Village Screen", 'imp':true});
 			a.push({'desc':"Egg Festival Berry", 'cid':["f_berry_eggfest", mayor_id, 'v_happiness'], 'val':[1, 2, 5], 'imp':true});
-			a.push({'desc':"Talk", 'cid':rick_id, 'val':2, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN)});
-			a.push({'desc':"Talk", 'cid':cliff_id, 'val':2, 'sel':(aff[cliff_id] < _PARTY_ATTEND_MIN)});
+			a.push({'desc':"Talk", 'cid':rick_id, 'val':2, 'sel':(aff[rick_id] < _PARTY_ATTEND_MIN), 'red':(aff[rick_id] >= _PARTY_ATTEND_MIN)});
+			if (aff[cliff_id] > 50) {
+				a.push({'desc':"Talk", 'cid':cliff_id, 'val':2, 'sel':(aff[cliff_id] < _PARTY_ATTEND_MIN), 'red':(aff[cliff_id] >= _PARTY_ATTEND_MIN)});
+			}
+			if (aff[kai_id] > 50) {
+				a.push({'desc':"Talk", 'cid':kai_id, 'val':2, 'sel':(aff[kai_id] < _PARTY_ATTEND_MIN), 'red':(aff[kai_id] >= _PARTY_ATTEND_MIN)});
+			}
 			horse_today = true;
 		}
 
@@ -95,7 +97,7 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a = betting_table(a, 1, d);
 			if (flags['horse_entered'] == 1) {
 				// 2 boosts per 10 affection
-				a.push({'desc':"Win Horse Race", 'cid':'f_photo_horserace','val':1, 'iid':get_npc_id('doug'), 'imp':true});
+				a.push({'desc':"Win Horse Race", 'cid':'f_photo_horserace','val':1, 'iid':doug_id, 'imp':true});
 				a.push({'desc':(2 * Math.floor(aff[horse_id] / 10) + " Boosts")});
 			}
 			horse_today = true;
@@ -111,7 +113,7 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		// Enter Horse
 		if (d == 207) {
 			if (flags['photo_horserace'] == 0) {
-				a.push({'desc':"Enter Horse", 'cid':['f_horse_entered', get_npc_id('doug')], 'val':[1, 3], 'imp':true});
+				a.push({'desc':"Enter Horse", 'cid':['f_horse_entered', doug_id], 'val':[1, 3], 'imp':true});
 				horse_today = true
 			}
 		}
@@ -121,7 +123,7 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			if (flags['miracle_potion'] == 1) {
 				a.push({'desc':"Use Potion", 'iid':cow_id, 'imp':true, 'cid':"v_new_cow_days", 'val':"205"});
 			}
-			a.push({'desc':"Enter Cow", 'cid':'f_cow_entered', 'val':1, 'iid':get_npc_id('doug'), 'imp':true});
+			a.push({'desc':"Enter Cow", 'cid':'f_cow_entered', 'val':1, 'iid':doug_id, 'imp':true});
 			horse_today = true;
 			if (flags['babybed'] == 0 && g >= 1000) {
 				// Baby Bed
@@ -143,15 +145,29 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 		}
 
-		//if (d == 205 || (vars['new_cow_days'].length > 0 && parseInt(vars['new_cow_days'].substr(0,3)) == d)) {
-		if ([206, 207].includes(d)) { // WED/THURS
-			horse_today = true;
-			//a.push({'desc':"New Cow Born", 'iid':cow_id});
-			if (d == 206 && flags['miracle_potion'] == 0) {
-				a.push({'desc':"Equip Axe, Chop 3 stumps"});
-				a.push({'desc':"Buy Miracle Potion", 'cid':['f_miracle_potion', 'v_gold'], 'val':[1, (-1 * _PRICE_MIRACLE_POTION)], 'iid':doug_id, 'imp':true});
-			} else if (d == 207) {
-				a.push({'desc':"Use Potion", 'iid':cow_id, 'imp':true, 'cid':"v_new_cow_days", 'val':"227", 'imp':true});
+		if (d > 207 && vars['cows'] > 1 && dow != "THURS") {
+			if (flags['stairway'] == 0 || flags['bathroom'] == 0) {
+				a.push({'desc':"Wait for Winter or Rain", 'red':true});	
+			}
+			a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, ((d < 184) ? 7500 : 6500)], 'iid':doug_id,
+				'sel':((dow != "TUES" && is_sunny == 0) || (flags['stairway'] > 0 && flags['bathroom'] > 0)),
+				'red':((dow == "TUES" || is_sunny == 1) && (flags['stairway'] == 0 && flags['bathroom'] == 0))
+			});
+			if (flags['bathroom'] == 0 && g >= 3000 && dow != "TUES") {
+				// Bathroom
+				a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
+					'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'sel':(is_sunny == 0),
+					'val':[-3000, -300, _BUILD_DAYS + 1], 'red':(is_sunny == 1)
+				});
+				a.push({'desc':"Chop 1 Stump", 'sr':true});
+			}
+			if (flags['stairway'] == 0) {
+				// Stairway
+				a.push({'desc':"Buy a Stairway (2000 G)", 'iid':get_npc_id('mas_carpenter'),
+					'cid':['v_gold', 'v_lumber', 'f_stairway'], 'sel':(is_sunny == 0),
+					'val':[-2000, -250, _BUILD_DAYS + 1], 'red':(is_sunny == 1)
+				});
+				a.push({'desc':"Chop 1 Stump", 'sr':true});
 			}
 		}
 	}
