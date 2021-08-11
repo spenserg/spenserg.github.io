@@ -547,9 +547,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1),
 			'sel':(flags['horse'] > 0 || (!["WED", "SAT", "SUN", "THURS"].includes(dow) && !is_festival(d) && is_sunny == 1))
 		});
-		a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':horse_id, 'sr':true,
-			'sel':(!["WED", "SAT", "SUN"].includes(dow) && !is_festival(d) && is_sunny == 1 && (flags['horse'] > 0 || dow != "THURS"))
-		});
+		a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':horse_id, 'sr':true, 'sel':false});
 		a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
 	}
 
