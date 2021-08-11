@@ -5,6 +5,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var cow_id = get_npc_id('cow');
 	var dog_id = get_npc_id('dog');
 	var elli_id = get_npc_id('elli');
+	var horse_id = get_npc_id('horse');
 	var kai_id = get_npc_id('kai');
 	var karen_id = get_npc_id('karen');
 	var rick_id = get_npc_id('rick');
