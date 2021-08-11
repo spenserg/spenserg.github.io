@@ -66,6 +66,17 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 			}
 		}
 
+		// Horse Affection
+		if (flags['photo_horserace'] == 0 && d != 137 && flags['horse_entered'] == 0) {
+			a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id});
+			a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
+			horse_action_ids.push(a.length - 1);
+			if (aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
+				a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
+				horse_action_ids.push(a.length - 1);
+			}
+		}
+
 		if (is_sunny != -1) {
 			// Not a Typhoon
 			a = cows(a, is_sunny, sell_cow);
