@@ -131,14 +131,16 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			// -1 sp " MUSBOX"
 			var ann_sick_event = (dow == "SUN" && is_sunny == 0 && flags['sick_ann'] == 0 && aff[ann_id] < _PHOTO_MIN &&
 						aff[ann_id] >= (_SICK_EVENT_MIN - (4 + 1 + 5 * flags['new_mus_box'])));
-			a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id,
-				'sel':(ann_sick_event && flags['musbox'] == 0 || (d >= 102 && d <= 106 && d != 105)), 'val':1, 't2':" MusBox"
+			a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id, 'val':1, 't2':" MusBox",
+				'sel':(flags['photo_ann'] == 0 && ((ann_sick_event && flags['musbox'] == 0) || (d >= 102 && d <= 106 && d != 105))),
 			});
 			a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1],
-				'sel':(ann_sick_event && flags['musbox'] == 1), 'sr':true, 't2':a[a.length - 1]['desc']
+				'sel':(flags['photo_ann'] == 0 && ann_sick_event && flags['musbox'] == 1), 'sr':true, 't2':a[a.length - 1]['desc']
 			});
 			a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
-			a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 't2':" Gift", 'sel':(ann_sick_event || (d >= 102 && d <= 106 && d != 105))});
+			a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes'], 'val':[3, -1], 'sr':true, 't2':" Gift",
+				'sel':(flags['photo_ann'] == 0 && (ann_sick_event || (d >= 102 && d <= 106 && d != 105)))
+			});
 			if (ann_sick_event) {
 				a.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1], 'imp':true});
 			}
