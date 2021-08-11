@@ -82,15 +82,10 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Horse Affection
 	if (flags['photo_horserace'] == 0) {
-		if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
-			a.push({'desc':"Equip Brush", 'iid':horse_id});
-		}
-		if (flags['horse'] != 0) {
-			a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
-			a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
-			horse_action_ids.push(a.length - 1);
-		}
-		if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
+		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
+		a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
+		horse_action_ids.push(a.length - 1);
+		if (aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
 			a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
 			horse_action_ids.push(a.length - 1);
 		}
@@ -103,7 +98,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a = cows(a, is_sunny);
 	}
 
-	if (aff[cliff_id] > 50 && flags['incubate_last'] == 0 && vars['new_chicken_days'].length == 0 && flags['new_chick'] == 0) {
+	if (flags['chicken_route'] == 1 && flags['incubate_last'] == 0 && vars['new_chicken_days'].length == 0 && flags['new_chick'] == 0) {
 		a.push({'desc':"Incubate LAST", 'sr':true, 'sel':false,
 			'cid':["f_new_chick", "f_incubate_last"],
 			'val':[(_CHICK_BORN_SLEEPS + 1), 1]
@@ -247,7 +242,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Golden Hammer", 'cid':'f_golden_hammer', 'val':1, 't0':"Pond Rock Berry", 'sel':false, 'sr':true});
 			}
 		}
-
+/*
 		// ANN
 		if (aff[ann_id] < _PHOTO_EVENT_AFF && flags['photo_ann'] == 0) {
 			if (flags['chicken_outside'] == 1 && vars['chickens'] > 0) {
@@ -255,10 +250,8 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Feed Chicken", 'cid':'v_feed', 'val':-1, 'sr':true});
 			}
 
-			if (aff[cliff_id] > 50) {
-				for (var z = 0; z < horse_action_ids.length; z++) {
-					a[horse_action_ids[z]]['sel'] = true;
-				}
+			for (var z = 0; z < horse_action_ids.length; z++) {
+				a[horse_action_ids[z]]['sel'] = true;
 			}
 
 			// Corn or Egg to Ann
@@ -274,6 +267,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a[horse_action_ids[z]]['sel'] = true;
 			}
 		}
+*/
 		// ANN SICK
 		if (dow == "SUN" && is_sunny == 0 && flags['sick_ann'] == 0) {
 			a.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1],
@@ -301,29 +295,39 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 		}
 
-		if (d > 109) { // After Dog Race
+		// After Dog Race
+		if (d > 109 && [1,0].includes(flags['babybed']) && [1,0].includes(flags['bathroom']) && [1,0].includes(flags['kitchen'])) {
 			// Extensions
 			if (dow != "TUES") {
 				var tmp_getext = false;
-				if (flags['kitchen'] == 0) {
-					// Kitchen
-					a.push({'desc':"Buy a Kitchen (5000 G)", 'iid':mas_carp_id,
-							'cid':['v_gold', 'v_lumber', 'f_kitchen'],
-							'val':[-5000, -450, _BUILD_DAYS + 1], 'sel':false
+				if (flags['babybed'] == 0) {
+					a.push({'desc':"Buy Baby Bed (1000)", 'iid':mas_carp_id,
+						'cid':['v_gold', 'v_lumber', 'f_babybed'],
+						'val':[-1000, -150, _BUILD_DAYS + 1], 'imp':true,
+						'sel':(d == 109 && g > (6000 + 2000 + 980) && g < (6000 + 2000 + 980 + 3000)),
+						't2':["Buy Bathroom (3000)", "Buy Kitchen (5000)"]
+					});
+				}
+				if (flags['bathroom'] == 0) {
+					// Bathroom
+					a.push({'desc':"Buy Bathroom (3000)", 'iid':mas_carp_id,
+						'cid':['v_gold', 'v_lumber', 'f_bathroom'],
+						'val':[-3000, -300, _BUILD_DAYS + 1], 'imp':true,
+						'sel':(d == 109 && g >= (6000 + 2000 + 980 + 3000) && g < (6000 + 2000 + 980 + 5000))
+						'sr':(flags['babybed'] == 0),
+						't2':["Buy Baby Bed (1000)", "Buy Kitchen (5000)"]
 					});
 					tmp_getext = true;
 				}
-				if (flags['bathroom'] == 0 && vars['gold'] >= 3000) {
-					a[a.length - 1]['t2'] = "Buy a Bathroom (3000 G)";
-					// Bathroom
-					a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
-						'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'imp':true,
-						'val':[-3000, -300, _BUILD_DAYS + 1], 'sel':false,
-						'sr':(flags['kitchen'] == 0)
+				if (flags['kitchen'] == 0) {
+					// Kitchen
+					a.push({'desc':"Buy Kitchen (5000)", 'iid':mas_carp_id,
+						'sr':(flags['babybed'] == 0 || (flags['bathroom'] == 0),
+						'cid':['v_gold', 'v_lumber', 'f_kitchen'],
+						'val':[-5000, -450, _BUILD_DAYS + 1], 'imp':true,
+						'sel':(d == 109 && g >= (6000 + 2000 + 980 + 5000)),
+						't2':["Buy Baby Bed (1000)", "Buy Bathroom (3000)"]
 					});
-					if (flags['kitchen'] == 0) {
-						a[a.length - 1]['t2'] = "Buy a Kitchen (5000 G)";
-					}
 					tmp_getext = true;
 				}
 				if (tmp_getext) {
