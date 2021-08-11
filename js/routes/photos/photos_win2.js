@@ -20,24 +20,14 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Milk", 'val':4, 'cid':elli_id, 'sr':true, 't2':"  Gift  ", 'sel':(aff[elli_id] < 250 && vars['cows'] > 0)})
 	}
 
-/*
-	if (is_sunny == 1) {
-		a.push({'desc':"Scare birds", 'cid':'v_happiness', 'val':1, 'sel':false});
-	}
-*/
 	if (d == 228 && flags['photo_dograce'] == 0) {
 		a.push({'desc':"Enter Dog", 'cid':['f_dog_entered',doug_id], 'val':[1, 3], 'imp':true});
 	}
 
-	// Cows
-	//a = cows(a, is_sunny);
-	//if (d == 227 || (vars['new_cow_days'].length > 0 && parseInt(vars['new_cow_days'].substr(0,3)) == d)) {
-	if (d == 230) {
-		a.push({'desc':"Equip Axe, Chop 3 stumps"});
-		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, ((d == 227) ? 8500 : 6500)], 'iid':doug_id, 'imp':true});
-	}
-
 	if (!is_festival(d)) {
+		if (vars['cows'] > 1) {
+			a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, 8500], 'iid':doug_id});
+		}
 		// Extensions
 		if (dow != "TUES" && !is_festival(d)) {
 			var add_ext_id = -1;
@@ -79,8 +69,6 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	if (d == 229) {
 		// Dog Race, 500 LUM (Win 19)
-		a.push({'desc':"New Cow Born, Enter Barn", 'iid':cow_id, 'imp':true});
-		a.push({'desc':"Feed Cow / Cow Outside", 'iid':cow_id, 'imp':true});
 		a.push({'desc':"Buy 1000 Lumber at Dog Race", 'cid':['v_lumber', 'v_medals'], 'val':[999, -1000], 'iid':mayor_id, 'imp':true});
 		if (flags['dog_entered'] == 1) { a.push({'desc':"Win Dog Race", 'cid':'f_photo_dograce', 'val':1, 'imp':true, 'iid':dog_id}); }
 		a = betting_table(a, 1, d);
@@ -108,10 +96,15 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Whistle", 'val':1, 'sr':true});
 		}
 	}
+	if (is_sunny == 1) {
+		a.push({'desc':"Scare birds", 'cid':'v_happiness', 'val':1, 'sel':false, 'sr':(d != 229 || flags['dog_entered'] == 0)});
+	}
 
 	// Cliff Wedding
+/*
 	if (flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
 		a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
 	}
+*/
 	return a;
 }
