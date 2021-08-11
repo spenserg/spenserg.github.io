@@ -437,16 +437,11 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Horse Affection
 	if (flags['photo_horserace'] == 0) {
-		if ((d != 88 || flags['horse_entered'] == 0) && flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
-			a.push({'desc':"Equip Brush", 'iid':horse_id, 'sel':false});
+		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id});
+		if (d != 88 || flags['horse_entered'] == 0) {
+			a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
 		}
-		if (flags['horse'] != 0) {
-			a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':((d != 88 || flags['horse_entered'] == 0) && flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
-			if (d != 88 || flags['horse_entered'] == 0) {
-				a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
-			}
-		}
-		if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
+		if (aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
 			if (d != 88 || flags['horse_entered'] == 0) {
 				a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
 			}
