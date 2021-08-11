@@ -43,8 +43,8 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	if (d == 136) {
 		// Horse Race Entry
 		if (flags['photo_horserace'] == 0) {
-			// Didnt win horse race Fall Y1
-			a.push({'desc':"Enter Horse", 'cid':['f_horse_entered', get_npc_id('doug')], 'val':[1, 3]});
+			// Y2 Horse Race - Use Fall
+			a.push({'desc':"Enter Horse", 'cid':['f_horse_entered', get_npc_id('doug')], 'val':[1, 3], 'sel':false});
 		} else {
 			// Not enough money to make it worth it.
 			a.push({'desc':"Ignore Doug on Farm", 'red':true, 'iid':get_npc_id('doug')});
@@ -53,15 +53,10 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Horse Affection
 	if (flags['photo_horserace'] == 0 && d != 137 && flags['horse_entered'] == 0) {
-		if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
-			a.push({'desc':"Equip Brush", 'iid':horse_id});
-		}
-		if (flags['horse'] != 0) {
-			a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
-			a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
-			horse_action_ids.push(a.length - 1);
-		}
-		if (flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
+		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
+		a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
+		horse_action_ids.push(a.length - 1);
+		if (aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
 			a.push({'desc':"Brush", 'val':2, 'cid':horse_id, 'sr':true, 'sel':false});
 			horse_action_ids.push(a.length - 1);
 		}
@@ -193,7 +188,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Buy Milker", 'cid':['f_milker', 'v_gold'], 'val':[1, -1800], 'sr':true});	
 				}
 			}
-
+/*
 			// MAYOR
 			// "  Talk" <- -2 spaces
 			// "  Gift" <- -2 spaces
@@ -207,7 +202,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Watermelon Cutscene", 'val':1, 'cid':'f_cutscene_watermelon', 'sr':true, 'sel':false});
 				}
 			}
-
+*/
 			if (dow != "MON") {
 				// Maria in library
 				// Dont go to screen if watermelon cutscene hasnt triggered
@@ -239,7 +234,7 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			horse_today = true;
 
 			// Extensions on rainy days to avoid cutscenes
-			var leftover_g = vars['gold'] - (1800 - 1800 * flags['milker']) - (2000 - 500 * (4 - vars['grass_planted'])) - (5000 - 5000 * ((flags['kitchen'] > 0) ? 1 : 0));
+			var leftover_g = vars['gold'] - ((1800 - 1800 * flags['milker']) + (2000 - 500 * (4 - vars['grass_planted'])));
 			var tmp_getext = false;
 			if (flags['kitchen'] == 0) {
 				// Kitchen
