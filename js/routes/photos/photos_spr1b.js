@@ -51,6 +51,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Equip hammer, Scythe to toolbox <b>[RT A DWN DWN A RT RT A UP A UP DWN A LEFT A]</b>"}); // <b>[A UP A RT A DWN DWN A]</b>
 		a.push({'desc':"Greet the Mayor", 'iid':mayor_id});
 		a.push({'desc':"Hammer Rocks, Till 3 x 3 square"});
+		a.push({'desc':"Equip axe, chop 1 stump", 'iid':get_npc_id('stump'), 'imp':true});
 		a.push({'desc':"ed, ber, flower"});
 	} else if (d < 9) { // Spring 4 - 8
 		if (flags['chicken_route'] == 1 && [4, 5].includes(d) && is_sunny == 0) { reset = ("No Rain on Spr " + d); }
