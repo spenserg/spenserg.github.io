@@ -315,7 +315,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Buy Bathroom (3000)", 'iid':mas_carp_id,
 						'cid':['v_gold', 'v_lumber', 'f_bathroom'],
 						'val':[-3000, -300, _BUILD_DAYS + 1], 'imp':true,
-						'sel':(d == 109 && g >= (6000 + 2000 + 980 + 3000) && g < (6000 + 2000 + 980 + 5000))
+						'sel':(d == 109 && g >= (6000 + 2000 + 980 + 3000) && g < (6000 + 2000 + 980 + 5000)),
 						'sr':(flags['babybed'] == 0),
 						't2':["Buy Baby Bed (1000)", "Buy Kitchen (5000)"]
 					});
@@ -324,7 +324,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				if (flags['kitchen'] == 0) {
 					// Kitchen
 					a.push({'desc':"Buy Kitchen (5000)", 'iid':mas_carp_id,
-						'sr':(flags['babybed'] == 0 || (flags['bathroom'] == 0),
+						'sr':(flags['babybed'] == 0 || (flags['bathroom'] == 0)),
 						'cid':['v_gold', 'v_lumber', 'f_kitchen'],
 						'val':[-5000, -450, _BUILD_DAYS + 1], 'imp':true,
 						'sel':(d == 109 && g >= (6000 + 2000 + 980 + 5000)),
