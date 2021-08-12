@@ -142,7 +142,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 		if (d == 3) {
 			var stump_id = get_npc_id('stump');
-			a.push({'desc':"Equip Axe, Cross Bridge, Chop 1 Stump, Grab Flower", 'imp':true, 'iid':stump_id});
+			//a.push({'desc':"Equip Axe, Cross Bridge, Chop 1 Stump, Grab Flower", 'imp':true, 'iid':stump_id});
 			a.push({'desc':"Buy Potato Seeds", 'cid':['v_gold', 'v_potatoes_bought'], 'val':[-200, 1], 'iid':get_npc_id('lillia')});
 			a.push({'desc':"Meet", 'cid':elli_id, 'val':4});
 			a.push({'desc':"Talk (Flower Shop)", 'cid':elli_id, 'val':1, 'sr':true});
