@@ -1552,7 +1552,7 @@ function set_affections (rid = 0) {
 
 function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 	var npc_affs = [maria, ann, elli];
-	var aff_reqs = [(chickens ? 150 : 140), (chickens ? 160 : 120), (chickens ? 200 : 180)];
+	var aff_reqs = [140, 120, 180];
 	var mus_boxes = [0, 0, 0];
 	//var potatoes_left = (18 - vars['potato_gifts']);
 	var net = 0;
