@@ -82,7 +82,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 	// Horse Affection
 	if (flags['photo_horserace'] == 0) {
-		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id, 'sr':(flags['horse_brush'] == 1 && aff[horse_id] < (255 - 4 - flags["sustaining_carrot"]))});
+		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id});
 		a.push({'desc':((flags['horse'] == 1) ? "Ride": "Talk"), 'val':1, 'cid':a[a.length - 1]['cid'], 'sr':true, 'sel':false});
 		horse_action_ids.push(a.length - 1);
 		if (aff[horse_id] < (255 - 4 - flags["sustaining_carrot"])) {
