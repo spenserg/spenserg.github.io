@@ -127,6 +127,13 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 			}
 		}
+		if (flags['potato_planted'] > 0 && is_sunny == 1 && d < 9) {
+			a.push({'desc':"Equip Watering Can", 'imp':(d < 9)});
+			a.push({'desc':"Water Potatoes", 'sr':true, 'sel':(d < 9),
+				'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]
+			});
+			a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':(30 - vars['watering_can_fill']), 'sr':true, 'sel':false});
+		}
 
 		// Supports multiple potato plots
 		if (vars['potato_waters'] >= _POTATO_GROW_DAYS) {
