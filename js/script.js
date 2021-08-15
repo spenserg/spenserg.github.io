@@ -56,6 +56,7 @@ function get_actions(rid = null, d = vars['day'], g = vars['gold'], is_sunny = 1
 		if (rid == 10) { return get_actions_all_recipes(d, g, is_sunny); } // All Recipes
 		if (rid == 11) { return get_actions_cow_photo(d, g, is_sunny); } // Cow Photo
 		if (rid == 24) { return get_actions_girl_photos(d, g, is_sunny); } // All Girl Photos
+		if (rid == 25) { return get_actions_photos_aff(d, g, is_sunny); } // All Photos Aff Only
 		if ([14, 15, 17, 18, 20].includes(rid)) { return get_actions_misc(d, g, is_sunny); } // Balloon Photo, Horse Photo, Swim Photo, Dog Race Photo
 	}
 	/* TODO:
@@ -628,7 +629,7 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 	return a;
 }
 
-function new_game(rid = 24) {
+function new_game(rid = 25) {
 	route_id = rid;
 	reset_vars();
 	vars['day'] = 3;
@@ -658,7 +659,7 @@ function new_game(rid = 24) {
 	$("input[id^='for_']").val(0);
 
 	// Set affection of included characters to 0
-	if ([0, 5].includes(rid)) {
+	if ([0, 5, 25].includes(rid)) {
 		for (var i = 0; i < 40; i++) { aff[i] = 0; }
 		for (var i = 0; i < 6; i++) { aff[47 + i] = 0; }
 	} else {
