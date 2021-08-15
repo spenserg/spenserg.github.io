@@ -24,7 +24,7 @@
 * **22** - Baby Photo
 * **23** - 100%
 * **24** - All Girl Photos
-* **24** - Ame Request: All Photos Aff Only
+* **25** - Ame Request: All Photos Aff Only
 
 ## ACTION PROPERTIES
 * **"desc"** - (Description) Words that appear on the action button. REQUIRED
