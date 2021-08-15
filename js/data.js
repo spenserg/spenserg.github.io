@@ -122,7 +122,8 @@ var route_names = ["All Photos (Karen)", "Elli", "Karen", "Popuri", "Elli Photo"
 					"All Photos (Elli)", "All Berries", "Maria", "Ann Photo", "Karen Photo",
 					"All Recipes", "Maria Photo", "Ann", "Extensions Photo", "Balloon Photo",
 					"Horse Race", "Cow Photo", "Swim Photo", "Dog Race", "Party Photo",
-		   			"Hot Springs", "All Festivals", "Baby Photo", "100%", "All Girl Photos"
+		   			"Hot Springs", "All Festivals", "Baby Photo", "100%", "All Girl Photos",
+		   			"All Photos Aff Only"
 ];
 var bet_colors = ["lightgray", "black", "red", "blue", "yellow", "green"];
 var route_affs = [
@@ -151,6 +152,7 @@ var route_affs = [
 	[], // 22 - Baby Photo
 	[], // 23 - 100%
 	['maria', 'elli', 'ann', 'sprite', 'bartender', 'karen'] // 24 - All Girl Photos
+	['elli', 'maria', 'ann', 'rick'] // 25 - All Photos Aff Only
 ];
 var skip_to_list = [
 	[3, 17, 64], // Photos (Karen) [OBSOLETE]
@@ -178,6 +180,7 @@ var skip_to_list = [
 	[3], // 22 - Baby Photo
 	[3], // 23 - 100%
 	[3], // 24 - All Girl Photos
+	[3]  // 25 - All Photos Aff Only
 ];
 
 var recipe_flags = [
