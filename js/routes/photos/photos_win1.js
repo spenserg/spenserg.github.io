@@ -17,8 +17,6 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var horse_action_ids = [];
 
 	var tmp_gold_left = vars['gold'];
-	//tmp_gold_left -= ((flags['kitchen'] == 0) ? 5000 : 0); // Kitchen
-	//tmp_gold_left -= ((flags['bathroom'] == 0) ? 3000 : 0); // Bathroom
 	tmp_gold_left -= ((4 - (vars['cows'] + (vars['new_cow_days'].length / 3))) * 6000); // Cows
 	tmp_gold_left -= (4 * 500); // 4 grass
 	tmp_gold_left -= ((1 - flags['milker']) * 1800);
@@ -306,7 +304,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Buy Baby Bed (1000)", 'iid':mas_carp_id,
 						'cid':['v_gold', 'v_lumber', 'f_babybed'],
 						'val':[-1000, -150, _BUILD_DAYS + 1], 'imp':true,
-						'sel':(d == 109 && g > (6000 + 2000 + 980) && g < (6000 + 2000 + 980 + 3000)),
+						'sel':(d == 110 && g > (6000 + (5 * 500) + _PRICE_MILKER) && g < (6000 + (5 * 500) + _PRICE_MILKER + 3000)),
 						't2':["Buy Bathroom (3000)", "Buy Kitchen (5000)"]
 					});
 				}
@@ -315,7 +313,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Buy Bathroom (3000)", 'iid':mas_carp_id,
 						'cid':['v_gold', 'v_lumber', 'f_bathroom'],
 						'val':[-3000, -300, _BUILD_DAYS + 1], 'imp':true,
-						'sel':(d == 109 && g >= (6000 + 2000 + 980 + 3000) && g < (6000 + 2000 + 980 + 5000)),
+						'sel':(d == 110 && g >= (6000 + (5 * 500) + _PRICE_MILKER + 3000) && g < (6000 + (5 * 500) + _PRICE_MILKER + 5000)),
 						'sr':(flags['babybed'] == 0),
 						't2':["Buy Baby Bed (1000)", "Buy Kitchen (5000)"]
 					});
@@ -327,7 +325,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 						'sr':(flags['babybed'] == 0 || (flags['bathroom'] == 0)),
 						'cid':['v_gold', 'v_lumber', 'f_kitchen'],
 						'val':[-5000, -450, _BUILD_DAYS + 1], 'imp':true,
-						'sel':(d == 109 && g >= (6000 + 2000 + 980 + 5000)),
+						'sel':(d == 110 && g >= (6000 + (5 * 500) + _PRICE_MILKER + 5000)),
 						't2':["Buy Baby Bed (1000)", "Buy Bathroom (3000)"]
 					});
 					tmp_getext = true;
