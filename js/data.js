@@ -152,7 +152,7 @@ var route_affs = [
 	[], // 22 - Baby Photo
 	[], // 23 - 100%
 	['maria', 'elli', 'ann', 'sprite', 'bartender', 'karen'], // 24 - All Girl Photos
-	['elli', 'maria', 'ann', 'rick'] // 25 - All Photos Aff Only
+	['elli', 'maria', 'ann', 'kai'] // 25 - All Photos Aff Only
 ];
 var skip_to_list = [
 	[3, 17, 64], // Photos (Karen) [OBSOLETE]
