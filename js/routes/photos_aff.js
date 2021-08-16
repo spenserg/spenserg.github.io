@@ -18,6 +18,8 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 	var mas_carp_id = get_npc_id('mas_carpenter');
 	var may_id = get_npc_id('may');
 	var mayor_id = get_npc_id('mayor');
+	var midwife_id = get_npc_id('midwife');
+	var pastor_id = get_npc_id('pastor');
 	var popuri_id = get_npc_id('popuri');
 	var rick_id = get_npc_id('rick');
 	var sprite_id = get_npc_id('sprite');
@@ -32,6 +34,13 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 	var elli_done = (d > 90 || d == 71 || aff[elli_id] > 190);
 	var ann_done = ((d > 90 && (d < 102 || d > 106)) || d == 71 || (aff[ann_id] > ((d > 101) ? 196 : 150)));
 	var rick_done = (d == 71 || aff[rick_id] >= _PARTY_ATTEND_MIN);
+
+	if (d == 265) {
+		a.push({'desc':"Baby Born", 'iid':elli_id, 'imp':true, 'val':[1, 1, 30, 8, 5, 5],
+			'cid':['f_dontsave', 'f_photo_baby', 'v_happiness', elli_id, midwife_id, pastor_id]
+		});
+		a.push({'desc':"(3 PM or Later)", 'sr':true});
+	}
 
 	if (d >= 195 && is_sunny == 1) {
 		a.push({'desc':"Scare birb", 'cid':'v_happiness', 'val':1, 'sel':false});
@@ -238,6 +247,46 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 				a[a.length - 1]['cid'].push('f_photo_springs');
 				a[a.length - 1]['val'].push(1);
 			}
+		}
+
+		// After Baby Born
+		if (d > 265) {
+			if (dow != "THURS") {
+				if (aff[doug_id] < 160 && aff[gotz_id] < 160) {
+					a.push({'desc':"Clear Mailbox", 'imp':true});
+				}
+
+				// DOUG
+				if (aff[doug_id] < 160) {
+					var tmp_doug_spam = Math.ceil((_PARTY_ATTEND_MIN - aff[doug_id]) / 2);
+					a.push({'desc':("Spam Doug (Ranch) [" + tmp_doug_spam + " Times]"), 'cid':doug_id, 'val':200});
+					if (g >= 1500) {
+						a.push({'desc':"Buy a Chicken", 'sr':true, 'cid':['v_chickens', 'v_gold'], 'val':[1, -1500]});
+					}
+				}
+
+				// GOTZ
+				if (aff[gotz_id] < 160) {
+					var tmp_gotz_spam = Math.ceil((_PARTY_ATTEND_MIN - aff[gotz_id]) / 2);
+					var gotz_location = ((is_sunny == 1) ? "Vineyard" : "In House");
+					a.push({'desc':("Spam Gotz (" + gotz_location + ") [" + tmp_gotz_spam + " Times]"), 'cid':gotz_id, 'val':200});
+				}
+			}
+			if (vars['happiness'] < 250) {
+				// Bathroom for Happiness
+				var tmp_bathroom_uses = Math.ceil((250 - vars['happiness']) / 2);
+				a.push({'desc':("Use Bathroom " + tmp_bathroom_uses + " Times"), 'imp':(d > 268),
+					'cid':'v_happiness', 'val':(2 * tmp_bathroom_uses), 'sel':false
+				});
+			}
+		}
+
+		if (d > 240 && aff[kent_id] < _PARTY_ATTEND_MIN && is_sunny == 1) {
+			var kent_loc = "(Church / Outside Bakery)";
+			if (dow == "SAT") { kent_loc = "(Fish Tent / Fountain)"; }
+			if (dow == "SUN") { kent_loc = "(Library / Carp House)"; }
+			a.push({'desc':("Spam Kent with Chicken " + kent_loc + " [55 times]"), 'imp':true, 'cid':kent_id, 'val':(_PARTY_ATTEND_MIN - aff[kent_id])});
+			a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id});
 		}
 
 		if (dow != "THURS" && flags['photo_ann'] == 0) {
