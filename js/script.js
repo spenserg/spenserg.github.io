@@ -575,7 +575,7 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 
 	if (d >= 131 && flags['milker'] == 1 || (!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1 && vars['gold'] >= _PRICE_MILKER)) {
 		// Have or can afford Milker
-		if (vars['day'] < 185 && ((vars['day'] == 112 && flags['cow_steal_glitch'] == 1) || flags['grass_ready'] == 1)) {
+		if (vars['day'] < 210 && ((vars['day'] == 112 && flags['cow_steal_glitch'] == 1) || flags['grass_ready'] == 1)) {
 			// Calc Money Left Until End
 			var g_left = vars['gold'];
 			g_left -= ((vars['day'] < 184 && flags['miracle_potion'] == 0) ? _PRICE_MIRACLE_POTION : 0);
@@ -585,7 +585,6 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 			g_left -= (((flags['bathroom'] > 0) ? 0 : 1) * 3000);
 			g_left -= (((flags['baby_bed'] > 0) ? 0 : 1) * 1000);
 			g_left -= (((flags['kitchen'] > 0) ? 0 : 1) * 5000);
-			g_left -= (((flags['bathroom'] > 0) ? 0 : 1) * 3000);
 			g_left -= ((44 - (vars['grass'] + vars['grass_planted'])) * 500);
 			g_left -= ((vars['chickens'] > 0 || flags['incubate_last'] == 1) ? 0 : 1500);
 			if (flags['photo_married'] == 0 && flags['propose'] == 0 && flags['blue_feather'] == 0) {
