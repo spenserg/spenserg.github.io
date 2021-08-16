@@ -37,7 +37,7 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 	}
 
 	if (flags['propose'] == 1) {
-		a.push({'desc':"Wedding Day", 'iid':elli_id, 'cid':['f_photo_married', 'f_propose'], 'val':[1, -1], 'imp':true});
+		a.push({'desc':"Wedding Day", 'iid':elli_id, 'cid':['f_photo_married', 'f_propose', 'v_happiness'], 'val':[1, -1, 30], 'imp':true});
 	} else {
 		// Save dream warp for photo event
 		if (!is_festival && aff[maria_id] >= _DREAM_EVENT_MIN && aff['maria_id'] < (_PHOTO_MIN - _MUS_BOX_AFF - 1) && flags['dream_maria'] == 0) {
