@@ -543,6 +543,7 @@ function fish() {
 function betting_table(a = [], bet_type = 1, d = 109) {
 	var tmp_medals_needed = (([0, 5, 25].includes(route_id)) ? ((d > 120) ? 1000 : 2000) : 500);
 	a.push({'desc':"Races at 10 AM, 1 PM, and 4 PM"});
+	a.push({'desc':"Type '0' to ignore odds", 'imp':true});
 	a.push({'desc':('<div class="ml-3">' + ((route_id == -1) ? 'MONEY:&nbsp;&nbsp;<input type="number" id="b_gold" onchange="calc_bets(' + bet_type + ')" style="margin-right:20px" value="6000" /></div><div class="ml-3">' : '') +
 			'NEED:&nbsp;&nbsp;<input type="number" id="b_need" onchange="calc_bets(' + bet_type + ')" style="margin-right:20px" value="' + tmp_medals_needed +
 			'" /></div>' + '<div class="ml-3">HAVE:&nbsp;&nbsp;<input type="number" id="b_have" onchange="calc_bets(' + bet_type + ')" value="' + vars['medals'] + '" /></div>')});
@@ -1296,7 +1297,7 @@ function calc_bets(bet_type = 1, use_leftover = false) {
 	var buy_amt = Math.floor(g / 50);
 	odds.sort(function(a, b){ return b[0] - a[0] });
 
-	if ([0, 5].includes(route_id) || bet_type == 3) {
+	if ([0, 5, 25].includes(route_id) || bet_type == 3) {
 		// Photos
 		odds = slow_calc(odds, buy_amt);
 	} else {
