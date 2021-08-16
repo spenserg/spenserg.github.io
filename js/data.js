@@ -151,7 +151,7 @@ var route_affs = [
 	[], // 21 - All Festivals
 	[], // 22 - Baby Photo
 	[], // 23 - 100%
-	['maria', 'elli', 'ann', 'sprite', 'bartender', 'karen'] // 24 - All Girl Photos
+	['maria', 'elli', 'ann', 'sprite', 'bartender', 'karen'], // 24 - All Girl Photos
 	['elli', 'maria', 'ann', 'rick'] // 25 - All Photos Aff Only
 ];
 var skip_to_list = [
