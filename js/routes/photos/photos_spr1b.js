@@ -58,6 +58,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	}
 
 	if ([15, 19].includes(d)) { a.push({'desc':"Ignore Basil on the Farm", 'iid':basil_id}); }
+	if (d == 18) { a.push({'desc':"Food to Cliff", 'cid':cliff_id, 'val':5, 'sel':false}); }
 
 	if (is_festival(d)) {
 		// Planting (Spr 8), Horse Race (Spr 17), Flower Fest (Spr 23)
@@ -76,7 +77,12 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Talk", 'cid':rick_id, 'val':2});
 			// a.push({'desc':"Talk", 'cid':mayor_id, 'val':2});
 			a.push({'desc':"Talk", 'cid':kent_id, 'val':2});
-			a.push({'desc':"Talk", 'cid':kai_id, 'val':2, 'sel':(aff[kai_id] >= 50)});
+			if (aff[kai_id] > 20) {
+				a.push({'desc':"Talk", 'cid':kai_id, 'val':2, 'sel':(aff[kai_id] >= 50)});
+			}
+			if (aff[cliff_id] > 20) {
+				a.push({'desc':"Talk", 'cid':cliff_id, 'val':2, 'sel':(aff[cliff_id] >= 50)});
+			}
 			a.push({'desc':"Talk", 'cid':maria_id, 'val':2});
 			a.push({'desc':"Dance",'cid':[maria_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance ", "Dance  "], 'sr':true, 'sel':false});
 			a.push({'desc':"Talk", 'cid':elli_id, 'val':2});
@@ -182,6 +188,11 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 
 			if (dow != "THURS") {
+				if (is_sunny == 1 && flags['cutscene_cliff_farm'] == 0 && aff[cliff_id] > 90) {
+					a.push({'desc':"RANCH CUTSCENE, Fast Text", 'imp':true, 'iid':cliff_id});
+					a.push({'desc':"Cliff Cutscene", 'val':1, 'cid':"f_cutscene_cliff_farm", 'sr':true, 'sel':false});
+				}
+
 				// ANN
 				// -1 sp " GIFT"
 				// -1 sp " MUSBOX"
@@ -213,6 +224,20 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 				if (flags['chicken_route'] == 1 && vars['chickens'] > 0) {
 					a.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'), 'sel':(dow == "MON" && d > 15)});
+				}
+
+				// Cliff
+				if (d > 17 && ["WED", "TUES"].includes(dow) && is_sunny == 1) {
+					if (aff[cliff_id] == 5 || aff[cliff_id] == 0) {
+						// Cliff's intro gives affection to GRAY
+						a.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'sel':false, 'iid':cliff_id});
+					}
+					a.push({
+						'desc':("Talk (" + ((dow == "WED") ? "Ranch" : "Beach") + ")"),
+						'cid':cliff_id, 'val':2, 'sel':false, 'sr':([0, 5].includes(aff[cliff_id]))
+					});
+					a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
+					a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
 				}
 			}
 			
@@ -282,7 +307,34 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 			}
 
+			// Cliff
+			if (d > 17 && ["THURS", "FRI", "SAT", "SUN"].includes(dow) && is_sunny == 1) {
+				var cliff_loc = " (Fish Tent) [50%]";
+				if (dow == "THURS") { cliff_loc = " (Carp House)"; }
+				if (dow == "SUN") { cliff_loc = " (Carp House) [50%]"; }
+				if (aff[cliff_id] == 5 || aff[cliff_id] == 0) {
+					// Cliff's intro gives affection to GRAY
+					a.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'iid':cliff_id, 'sel':false});
+				}
+				a.push({
+					'desc':("Talk" + cliff_loc), 'cid':cliff_id, 'val':2, 'sel':false, 'sr':(aff[cliff_id] == 5 || aff[cliff_id] == 0)
+				});
+				a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
+				a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+			}
+
 			if (dow == "MON" && is_sunny == 1) {
+				// Cliff
+				if (d > 17) {
+					if (aff[cliff_id] == 5 || aff[cliff_id] == 0) {
+						// Cliff's intro gives affection to GRAY
+						a.push({'desc':"Meet", 'cid':grey_id, 'val':4, 'iid':cliff_id, 'sel':false});
+					}
+					a.push({'desc':"Talk (Hot Springs)", 'cid':cliff_id, 'val':2, 'sel':false, 'sr':(aff[cliff_id] == 5 || aff[cliff_id] == 0)});
+					a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
+					a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+				}
+
 				// ELLI (in Mtns)
 				if (aff[elli_id] == 0) { a.push({'desc':"Meet", 'cid':elli_id, 'val':4}); }
 				a.push({'desc':"Talk (MTN)", 'cid':elli_id, 'val':1, 'sr':(aff[elli_id] == 0)});
@@ -546,6 +598,10 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 				// KAI
 				a.push({'desc':"Talk (In Bar)", 'cid':kai_id, 'val':2, 'sel':false});
+
+				// Cliff
+				if (d >= 18) { a.push({'desc':"Talk (In Bar)", 'cid':cliff_id, 'val':1, 'sel':false}); }
+				if (d == 16) { a.push({'desc':"Keep food for Cliff", 'imp':(aff[kai_id] < 20), 'iid':cliff_id}); }
 			}
 		} // End of if (d > 8)
 	}
