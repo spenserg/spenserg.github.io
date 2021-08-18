@@ -89,6 +89,27 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"ANKLE (Crossroads)", 'cid':[ann_id, 'f_ankle_ann'], 'val':[_ANKLE_EVENT_AFF, 1], 'sel':false});
 			}
 			if (flags['new_mus_box'] == 1 || flags['chicken_route'] == 0) {
+				if (is_sunny == 1 && flags['cutscene_cliff_farm'] == 0 && aff[cliff_id] > 90) {
+					a.push({'desc':"RANCH CUTSCENE, Fast Text", 'imp':true, 'iid':cliff_id});
+					a.push({'desc':"Cliff Cutscene", 'val':1, 'cid':"f_cutscene_cliff_farm", 'sr':true, 'sel':false});
+				}
+
+				// Cliff
+				if (aff[cliff_id] > 20) {
+					if (["TUES", "WED"].includes(dow) && is_sunny == 1) {
+						if (dow == "TUES" && aff[elli_id] >= _CUTSCENE_BEACH_MIN && flags['cutscene_beach'] == 0) {
+							a.push({'desc':"WARNING: Cutscene plays at Beach", 'red':true});
+							a.push({'desc':"Beach Cutscene", 'sr':true, 'sel':false, 'cid':'f_cutscene_beach', 'val':1});
+						}
+						a.push({
+							'desc':("Talk (" + ((dow == "WED") ? "Ranch" : "Beach") + ")"), 'cid':cliff_id, 'val':2, 'sel':false,
+							'red':(dow == "TUES" && aff[elli_id] >= _CUTSCENE_BEACH_MIN && flags['cutscene_beach'] == 0),
+						});
+						a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':(vars['day'] < 41 && !no_beach && vars['chickens'] <= 1), 't2':"   Egg   ", 'sr':true});
+						a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':(vars['day'] < 41 && !no_beach && vars['chickens'] > 1), 't2':"   Gift   ", 'sr':true});
+					}
+				}
+
 				// ANN
 				if (dow != "THURS") {
 					// ANN
@@ -208,24 +229,39 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"ed, flower, walnut, Fish for Elli", 'imp':true});
 			}
 
-			// Decline Ankle
-			if (flags['ankle_karen'] == 0 && aff[karen_id] > 180 && is_sunny == 1) {
-				a.push({'desc':"Decline Ankle (Vineyard)", 'sel':false, 'cid':[karen_id, kai_id, 'f_ankle_karen'], 'val':[-30, 20, 1]});
+			// Cliff
+			if (aff[cliff_id] > 20) {
+				if (!["TUES", "WED"].includes(dow)) {
+					var cliff_loc = " (Fish Tent) [50%]";
+					if (dow == "THURS") { cliff_loc = " (Carp House)"; }
+					if (dow == "SUN") { cliff_loc = " (Carp House) [50%]"; }
+					if (dow == "MON") { cliff_loc = " (Hot Springs)"; }
+					a.push({'desc':("Talk" + cliff_loc), 'cid':cliff_id, 'val':2, 'sel':false});
+					a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
+					a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+				}
 			}
-			// KAI
-			if (is_sunny == 1 || aff[karen_id] < 160 || flags['ankle_karen'] != 0) {
-				if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':false}); }
-				a.push({'desc':("Talk (" + ((is_sunny == 1) ? "Vineyard" : "Wine Cellar") + ")"), 'cid':kai_id, 'val':2,
-					'sr':(aff[kai_id] == 0), 'sel':false, 'red':kai_maxed});
-				a.push({'desc':"Berry/Mango", 'sr':true, 'sel':false, 't2':"  Gift ", 'red':(dow == "MON"),
-					'cid':((flags['recipe_kai'] == 0) ? [kai_id, 'f_recipe_kai'] : kai_id),
-					'val':((flags['recipe_kai'] == 0) ? [5, 1] : 6),
-				});
-				a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Berry/Mango"});
-				a.push({'desc':("(" + kai_visits + " Visits Left)"), 'sr':true});
-			} else {
-				a.push({'desc':"WINE CELLAR ACTIVATES KARENS DREAM", 'red':true, 'iid':kai_id});
-				a.push({'desc':"Karen Dream", 'cid':[karen_id, 'f_dream_karen'], 'val':[_DREAM_EVENT_AFF, 1], 'sr':true, 'sel':false});
+
+			if (aff[kai_id] > 20) {
+				// Decline Ankle
+				if (flags['ankle_karen'] == 0 && aff[karen_id] > 180 && is_sunny == 1) {
+					a.push({'desc':"Decline Ankle (Vineyard)", 'sel':false, 'cid':[karen_id, kai_id, 'f_ankle_karen'], 'val':[-30, 20, 1]});
+				}
+				// KAI
+				if (is_sunny == 1 || aff[karen_id] < 160 || flags['ankle_karen'] != 0) {
+					if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':false}); }
+					a.push({'desc':("Talk (" + ((is_sunny == 1) ? "Vineyard" : "Wine Cellar") + ")"), 'cid':kai_id, 'val':2,
+						'sr':(aff[kai_id] == 0), 'sel':false, 'red':kai_maxed});
+					a.push({'desc':"Berry/Mango", 'sr':true, 'sel':false, 't2':"  Gift ", 'red':(dow == "MON"),
+						'cid':((flags['recipe_kai'] == 0) ? [kai_id, 'f_recipe_kai'] : kai_id),
+						'val':((flags['recipe_kai'] == 0) ? [5, 1] : 6),
+					});
+					a.push({'desc':"  Gift ", 'cid':kai_id, 'val':3, 'sr':true, 'sel':false, 't2':"Berry/Mango"});
+					a.push({'desc':("(" + kai_visits + " Visits Left)"), 'sr':true});
+				} else {
+					a.push({'desc':"WINE CELLAR ACTIVATES KARENS DREAM", 'red':true, 'iid':kai_id});
+					a.push({'desc':"Karen Dream", 'cid':[karen_id, 'f_dream_karen'], 'val':[_DREAM_EVENT_AFF, 1], 'sr':true, 'sel':false});
+				}
 			}
 
 			if (dow == "MON" || d < 41) {
@@ -402,7 +438,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"208", 'cid':karen_id, 'val':((aff[karen_id] < 208) ? (208 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["240", "158"]});
 				a.push({'desc':"240", 'cid':karen_id, 'val':((aff[karen_id] < 240) ? (240 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["208", "158"]});
 			}
-			if (flags['ankle_karen'] == 0) {
+			if (flags['ankle_karen'] == 0 && aff[kai_id] > 20) {
 				a.push({'desc':"Ankle to Kai", 'sel':false, 'red':(d != 60),
 					'cid':[karen_id, kai_id, 'f_ankle_karen'],
 					'val':[-30, 20, 1]
@@ -483,7 +519,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':("(" + Math.ceil((40 - aff[duke_id]) / 6) + " visit" + ((Math.ceil((34 - aff[duke_id]) / 6) == 1) ? "" : "s") + " left)"), 'sr':true});
 				}
 
-				a.push({'desc':"Talk (In Bar)", 'cid':kai_id, 'val':2, 'sel':false});
+				if (aff[kai_id] > 20) { a.push({'desc':"Talk (In Bar)", 'cid':kai_id, 'val':2, 'sel':false}); }
 			}
 		} // End !festival
 
