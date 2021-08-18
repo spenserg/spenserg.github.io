@@ -53,8 +53,12 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Hammer Rocks, Till 3 x 3 square"});
 		a.push({'desc':"Equip axe, chop 1 stump", 'iid':get_npc_id('stump'), 'imp':true});
 		a.push({'desc':"ed, ber, flower"});
-	} else if (d < 9) { // Spring 4 - 8
-		if (flags['chicken_route'] == 1 && [4, 5].includes(d) && is_sunny == 0) { reset = ("No Rain on Spr " + d); }
+	} else if (d < 8) { // Spring 4 - 8
+		if (flags['chicken_route'] == 1 && [4, 5].includes(d) && is_sunny == 0 && g < 1500) { reset = ("No Rain on Spr " + d); }
+		if (g > 1500 && is_sunny == 1) {
+			a.push({'desc':"Equip Watering Can", 'imp':true});
+			a.push({'desc':"Water Potatoes", 'sr':true, 'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
+		}
 	}
 
 	if ([15, 19].includes(d)) { a.push({'desc':"Ignore Basil on the Farm", 'iid':basil_id}); }
@@ -91,7 +95,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Dance  ",'cid':[ann_id, 'f_dontsave'], 'val':[10, 1], 't2':["Dance", "Dance "], 'sel':(flags['chicken_route'] == 1), 'sr':true});
 		}
 	} else { // Not a Festival
-		if (d > 8 || (flags['chicken_route'] == 1 && d > 3)) {
+		if (d > 8 || (flags['chicken_route'] == 1 && d > 3 && g < 1500)) {
 			if (!flags['treasure_map']) {
 				a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1,
 					'sr':(lumber_to_sprite > 0 && dow == "MON" && is_sunny == 1),
@@ -172,7 +176,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Treasure Map", 'cid':'f_treasure_map', 'val':1, 'sr':true});
 			a.push({'desc':"Get 6 Lumber for Sprites", 'imp':true, 'iid':stump_id});
 			a.push({'desc':"Water 3 Potatoes", 'cid':['v_potato_waters', 'v_watering_can_fill'], 'val':[1, -10]});
-		} else if ((d > 8 || (flags['chicken_route'] == 1 && d < 7)) && !is_festival(d)) { // Skip days until Potatoes come in
+		} else if ((d > 8 || (flags['chicken_route'] == 1 && d < 7 && g < 1500)) && !is_festival(d)) { // Skip days until Potatoes come in
 			// Get Horse
 			if (flags['horse'] == 0 && is_sunny == 1 && d > 8) {
 				a.push({'desc':'Get Horse', 'cid':'f_horse', 'val':21, 'iid':horse_id,
