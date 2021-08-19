@@ -364,7 +364,8 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 			if (aff[rick_id] >= _RICK_FIX_MIN - 6) {
 				a.push({'desc':"MusBox", 'cid':maria_id, 'val':_MUS_BOX_AFF, 'sr':(aff[maria_id] == 0), 'sel':false, 't2':"Talk (MTN / CHUR)" });
 			}
-			a.push({'desc':"Talk (MTN / CHUR)", 'cid':maria_id, 'val':1, 'sr':(aff[maria_id] == 0 || aff[rick_id] >= _RICK_FIX_MIN - 6),
+			a.push({'desc':("Talk (MTN" + ((d % 120 > 30 && d % 120 < 41) ? "" : " / CHUR") + ")"),
+				'cid':maria_id, 'val':1, 'sr':(aff[maria_id] == 0 || aff[rick_id] >= _RICK_FIX_MIN - 6),
 				'sel':(!maria_done && is_sunny == 1 && !["WED", "SAT", "SUN"].includes(dow))
 			});
 			if (aff[rick_id] >= _RICK_FIX_MIN - 6) {
