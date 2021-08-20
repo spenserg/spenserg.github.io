@@ -7,6 +7,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 	var dog_id = get_npc_id('dog');
 	var doug_id = get_npc_id('doug');
 	var elli_id = get_npc_id('elli');
+	var gotz_id = get_npc_id('gotz');
 	var grey_id = get_npc_id('grey');
 	var harris_id = get_npc_id('harris');
 	var horse_id = get_npc_id('horse');
