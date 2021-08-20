@@ -89,7 +89,7 @@ function get_checklist(rid = null) {
 	return [];
 }
 
-function next_day(jump = false) {
+function next_day (jump = false) {
 	timestamps = add_time(timestamps);
 	if (!jump) {
 		flags['good_weather'] = 1;
@@ -226,7 +226,7 @@ function next_day(jump = false) {
 		if (flags['photo_married'] == 1) {
 			aff[get_npc_id('elli')]--;
 			vars['days_married']++;
-			if (vars['days_married'] >= 30 && flags['baby'] == 0 && flags['babybed'] == 1 && aff[get_npc_id('elli')] >= 250) {
+			if (route_id != 25 && vars['days_married'] >= 30 && flags['baby'] == 0 && flags['babybed'] == 1 && aff[get_npc_id('elli')] >= 250) {
 				flags['baby'] = (_BABY_BORN_DAYS + 2);
 			}
 		}
