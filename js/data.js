@@ -255,7 +255,7 @@ var aff = {};
 var checklist = [];
 var cur_slot = 0;
 
-var route_id = 5;
+var route_id = 25;
 var reset = false;
 var sell_stuff = false;
 var names_eng = ['Momoko', 'Moiti', 'Mota', "A", "5"];
