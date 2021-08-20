@@ -289,7 +289,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 				'cid':kent_id, 'sel':(d == 270), 'imp':(d == 270),
 				'val':(_PARTY_ATTEND_MIN - aff[kent_id])
 			});
-			a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id});
+			a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id, 'sel':(d == 270)});
 		}
 
 		if (dow != "THURS" && flags['photo_ann'] == 0) {
