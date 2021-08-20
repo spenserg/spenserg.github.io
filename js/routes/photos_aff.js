@@ -42,7 +42,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 		a.push({'desc':"(3 PM or Later)", 'sr':true});
 	}
 
-	if (d >= 195 && is_sunny == 1) {
+	if (d >= 120 && is_sunny == 1) {
 		a.push({'desc':"Scare birb", 'cid':'v_happiness', 'val':1, 'sel':false});
 	}
 
@@ -216,7 +216,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 			}
 		}
 
-		if (flags['ankle_ann'] == 0 && aff[ann_id] >= (_ANKLE_EVENT_MIN - 10) && is_sunny == 1 && flags['photo_ann'] == 0) {
+		if (flags['ankle_ann'] == 0 && aff[ann_id] >= (_ANKLE_EVENT_MIN - 10) && is_sunny == 1 && flags['photo_ann'] == 0 && flags['married'] == 0) {
 			// ANKLE EVENT
 			a.push({'desc':"ANKLE (Crossroads)", 'cid':[ann_id, 'f_ankle_ann'], 'val':[_ANKLE_EVENT_AFF, 1], 'sel':false});
 		}
@@ -285,7 +285,10 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 			var kent_loc = "(Church / Outside Bakery)";
 			if (dow == "SAT") { kent_loc = "(Fish Tent / Fountain)"; }
 			if (dow == "SUN") { kent_loc = "(Library / Carp House)"; }
-			a.push({'desc':("Spam Kent with Chicken " + kent_loc + " [55 times]"), 'imp':true, 'cid':kent_id, 'val':(_PARTY_ATTEND_MIN - aff[kent_id])});
+			a.push({'desc':("Spam Kent with Chicken " + kent_loc + " [" + Math.ceil((_PARTY_ATTEND_MIN - aff[kent_id]) / 3) + " times]"),
+				'cid':kent_id, 'sel':(d == 270), 'imp':(d == 270),
+				'val':(_PARTY_ATTEND_MIN - aff[kent_id])
+			});
 			a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id});
 		}
 
@@ -414,10 +417,10 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 				});
 			}
 			// ELLI DREAM ANKLE
-			if (flags['dream_elli'] == 0 && aff[elli_id] >= _DREAM_EVENT_MIN) {
+			if (flags['dream_elli'] == 0 && aff[elli_id] >= _DREAM_EVENT_MIN && flags['married'] == 0) {
 				a.push({'desc':"DREAM (Village)", 'cid':[elli_id, 'f_dream_elli'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':false});
 			}
-			if (flags['ankle_elli'] == 0 && aff[elli_id] >= (_ANKLE_EVENT_MIN - _MUS_BOX_AFF - 4)) {
+			if (flags['ankle_elli'] == 0 && aff[elli_id] >= (_ANKLE_EVENT_MIN - _MUS_BOX_AFF - 4) && flags['married'] == 0) {
 				a.push({'desc':"ANKLE (Mtn)", 'cid':[elli_id, 'f_ankle_elli'], 'val':[_ANKLE_EVENT_AFF, 1], 'sel':false,
 						'sr':(flags['dream_elli'] == 0 && aff[elli_id] >= _DREAM_EVENT_MIN
 				)});
@@ -480,7 +483,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 						'cid':((flags['recipe_maria'] == 0) ? [maria_id, 'f_recipe_maria'] : maria_id),
 						'val':((flags['recipe_maria'] == 0) ? [5, 1] : 3)
 					});
-				} else if (d > 160) {
+				} else if (d > 160 && flags['married'] == 0) {
 					if (flags['ankle_maria'] == 0) {
 						a.push({'desc':"Ankle", 'cid':[maria_id, 'f_ankle_maria'], 'val':[_ANKLE_EVENT_AFF, 1], 'sel':false, 'imp':(d == 173)});
 						a.push({'desc':"(Reset to clear Invisible Wall)", 'sr':true});
@@ -495,7 +498,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 					if (flags['ankle_maria'] == 0) { a[a.length - 1]['t2'] = "Ankle"; }
 					a.push({'desc':"PHOTO at 6 PM", 'cid':[maria_id, 'f_photo_maria'], 'val':[_PHOTO_EVENT_AFF, 1], 'sel':false});
 				}
-			} else if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && flags["sick_maria"] == 0) {
+			} else if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && flags["sick_maria"] == 0 && flags['married'] == 0) {
 				// Sick Event
 				a.push({'desc':"Sick Event", 'cid':[maria_id, "f_sick_maria"], 'val':[_SICK_EVENT_AFF, 1], 'imp':true});
 			}
@@ -522,7 +525,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 		}
 
 		// Decline Ankle
-		if (flags['ankle_karen'] == 0 && d > 29 && is_sunny == 1) {
+		if (flags['ankle_karen'] == 0 && d > 29 && is_sunny == 1 && flags['married'] == 0) {
 			a.push({'desc':"Decline Ankle (Vineyard)", 'sel':false, 'cid':[karen_id, kai_id, 'f_ankle_karen'], 'val':[-30, 20, 1], 'red':(d == 30)});
 		}
 
