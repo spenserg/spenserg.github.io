@@ -49,9 +49,17 @@ get_actions_elli_photo = function (d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':("Sleep to Fall 9 (" + (69 - d) + " days left)"), 'iid':elli_id, 'imp':true});
 	} else {
 		if (is_sunny != -1 && !is_festival(d) && dow != "SUN") {
+			// Timer for Fishing
+			if (d > 4) {
+				a.push({'desc':"Leave the river 35 secs after leaving the house"});
+			}
+
 			// Music Box Dig
 			if (d > 3 && flags['old_mus_box'] == 0) {
 				a.push({'desc':"Equip hoe", 'iid':musbox_id, 'red':no_more_boxes});
+				if (flags['treasure_map'] == 0) {
+					a.push({'desc':'Treasure Map', 'sr':true, 'val':1, 'cid':'f_treasure_map'});	
+				}
 				a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'iid':musbox_id, 'sel':(!skip && !no_more_boxes)});
 			}
 
