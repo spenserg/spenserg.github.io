@@ -105,8 +105,8 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 							'desc':("Talk (" + ((dow == "WED") ? "Ranch" : "Beach") + ")"), 'cid':cliff_id, 'val':2, 'sel':false,
 							'red':(dow == "TUES" && aff[elli_id] >= _CUTSCENE_BEACH_MIN && flags['cutscene_beach'] == 0),
 						});
-						a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':(vars['day'] < 41 && !no_beach && vars['chickens'] <= 1), 't2':"   Egg   ", 'sr':true});
-						a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':(vars['day'] < 41 && !no_beach && vars['chickens'] > 1), 't2':"   Gift   ", 'sr':true});
+						a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':(vars['day'] < 41 && vars['chickens'] <= 1), 't2':"   Egg   ", 'sr':true});
+						a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':(vars['day'] < 41 && vars['chickens'] > 1), 't2':"   Gift   ", 'sr':true});
 					}
 				}
 
