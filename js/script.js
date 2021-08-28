@@ -5,10 +5,10 @@ function reset_vars() {
 	reset = false;
 	sell_stuff = false;
 
-	vars = { "chickens" : 0, "gold":300, "lumber" : 0, "day" : 3, "medals" : 0,
-			"feed" : 0, "fodder" : 0, "bridge_days_worked" : 0, "springs_days_worked" : 0,
+	vars = { "cows" : 0, "chickens" : 0, "medals" : 0, "day" : 3, "feed" : 0, "lumber" : 0,
+			"gold"  : 300, "fodder" : 0, "bridge_days_worked" : 0, "springs_days_worked" : 0,
 			"potatoes" : 0, "potato_waters" : 0, "watering_can_fill" : 0, "corn_waters" : 0,
-			"new_chicken_days" : "", "new_cow_days" : "", "cows" : 0, "cow_status":"",
+			"new_chicken_days" : "", "new_cow_days" : "", "cow_status":"",
 			"grass" : 0, "grass_planted" : 0, "happiness" : 0, "days_married" : 0, "alcohol_tolerance" : 0};
 	flags = { "treasure_map" : 0, "new_mus_box" : 0, "old_mus_box" : 0,
 			"fishing_rod" : 0, "dog_inside" : 0, "dog_entered" : 0,
@@ -596,21 +596,17 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 			// Stolen cows grown or enough GRASS
 			a.push({'desc':"Equip Milker", 'iid':cow_id, 'red':(g_left >= 0)});
 			a.push({'desc':"Milk Cows", 'sr':true});
-			a.push({'desc':("(" + (-1 * g_left) + " G LEFT)"), 'sr':true});
+			a.push({'desc':("(" + (-1 * g_left) + " G LEFT) [" + Math.ceil(g_left / -300) + "L | " + Math.ceil(g_left / -500) + "G]"), 'sr':true});
 		}
 	}
 
 	// Selling a cow
-	if (d > 120 && d < 184 &&dow != "THURS" && !is_festival(vars['day']) && vars['cows'] > 1) {
+	if (d > 120 && d < 184 && dow != "THURS" && !is_festival(vars['day']) && vars['cows'] > 1) {
 		var tmp_t3 = [];
 		a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, ((d < 184) ? 7500 : 6500)], 'iid':doug_id, 'sel':(sell_cow)});
 		// Blue Feather
 		if (is_sunny == 1 && flags['blue_feather'] == 0 && !["SUN", "SAT", "WED"].includes(dow) && flags['propose'] == 0 && flags['photo_married'] == 0 && flags['kitchen'] == 1) {
 			tmp_t3.push("Buy Blue Feather");
-		}
-		// Maria Ankle
-		if (d > 160 && flags['ankle_maria'] == 0 && aff[maria_id] >= 180 && dow != "MON") {
-			tmp_t3.push("Ankle");
 		}
 		if (d < 183 && flags['miracle_potion'] == 0) {
 			tmp_t3.push("Buy Miracle Potion");
@@ -620,10 +616,6 @@ function cows(a = [], is_sunny = 1, sell_cow = false) {
 			});
 		} else if (tmp_t3.length > 0) {
 			a[a.length - 1]['t3'] = tmp_t3;
-		}
-		// Ann Sick Event
-		if (dow == "SUN" && is_sunny == 0 && flags['sick_ann'] == 0 && aff[ann_id] >= _SICK_EVENT_MIN) {
-			a.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1], 'sel':false});
 		}
 	}
 	return a;
