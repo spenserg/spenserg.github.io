@@ -125,64 +125,53 @@ actions_photos_fall_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 			a.push({'desc':"Enter Cow", 'cid':'f_cow_entered', 'val':1, 'iid':doug_id, 'imp':true});
 			horse_today = true;
-			if (flags['babybed'] == 0 && g >= 1000) {
-				// Baby Bed
-				horse_today = true;
-				a.push({'desc':"Buy a Baby Bed (1000 G)", 'iid':get_npc_id('mas_carpenter'),
-					'cid':['v_gold', 'v_lumber', 'f_babybed'],
-					'val':[-1000, -150, _BUILD_DAYS + 1], 'imp':true
-				});
-				if (is_sunny == 1 && d < 175) {
-					a.push({'desc':"(Wait for rain to skip cutscenes)", 'sr':true});
-				}
-			} else if (flags['stairway'] == 0) {
-				// Stairway
-				a.push({'desc':"Buy a Stairway (2000 G)", 'iid':get_npc_id('mas_carpenter'),
-					'cid':['v_gold', 'v_lumber', 'f_stairway'],
-					'val':[-2000, -250, _BUILD_DAYS + 1]
-				});
-				a.push({'desc':"Chop 1 Stump", 'sr':true});
-			}
 		}
 
-		if (d > 207 && vars['cows'] > 1 && dow != "THURS") {
-			if (flags['stairway'] == 0 || flags['bathroom'] == 0) {
-				a.push({'desc':"Wait for Winter or Rain", 'red':true});	
+		if (dow != "TUES" && !is_festival(d)) {
+			var tmp_ext = [];
+			var tmp_ext_names = [];
+			var ext_in_progress = false;
+			for (var i = ((d > 229) ? 0 : 2); i < extensions.length; i++) {
+				if (flags[extensions[i][0]] == 0) {
+					tmp_ext.push(extensions[i]);
+					tmp_ext_names.push(extensions[i][3]);
+				} else if (flags[extensions[i][0]] != 1) {
+					ext_in_progress = true;
+				}
 			}
+			if (tmp_ext.length > 0) {
+				if (tmp_ext.length == 1 && d < 209) {
+					a.push({'desc':"Wait until after Horse Race", 'red':true, 'iid':get_npc_id('mas_carpenter')});
+				}
+				a.push({'desc':"Buy:", 'iid':get_npc_id('mas_carpenter'), 'red':(ext_in_progress || (tmp_ext.length == 1 && d < 209))});
+				for (var i = 0; i < tmp_ext.length; i++) {
+					a.push({'desc':tmp_ext[i][3], 'sel':false, 'sr':true,
+						'cid':['v_gold', 'v_lumber', ('f_' + tmp_ext[i][0])],
+						'val':[(-1 * tmp_ext[i][1]), (-1 * tmp_ext[i][2]), (_BUILD_DAYS + 1)]
+					});
+					if (tmp_ext.length > 1) {
+						a[a.length - 1]['t2'] = tmp_ext_names.filter(function(value, index){ return index != i; });
+					}
+				}
+				a.push({'desc':"Chop 1 Stump", 'sr':(tmp_ext.length < 3)});
+			}
+		}
+		if (vars['cows'] > 1) {
 			a.push({'desc':"Sell Cow", 'cid':['v_cows', 'v_gold'], 'val':[-1, ((d < 184) ? 7500 : 6500)], 'iid':doug_id,
-				'sel':((dow != "TUES" && is_sunny == 0) || (flags['stairway'] > 0 && flags['bathroom'] > 0)),
-				'red':((dow == "TUES" || is_sunny == 1) && (flags['stairway'] == 0 && flags['bathroom'] == 0))
+				'sel':false, 'red':(dow == "TUES" && (flags['stairway'] == 0 || flags['bathroom'] == 0))
 			});
-			if (flags['bathroom'] == 0 && g >= 3000 && dow != "TUES") {
-				// Bathroom
-				a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':get_npc_id('mas_carpenter'),
-					'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'sel':(is_sunny == 0),
-					'val':[-3000, -300, _BUILD_DAYS + 1], 'red':(is_sunny == 1)
-				});
-				a.push({'desc':"Chop 1 Stump", 'sr':true});
-			}
-			if (flags['stairway'] == 0) {
-				// Stairway
-				a.push({'desc':"Buy a Stairway (2000 G)", 'iid':get_npc_id('mas_carpenter'),
-					'cid':['v_gold', 'v_lumber', 'f_stairway'], 'sel':(is_sunny == 0),
-					'val':[-2000, -250, _BUILD_DAYS + 1], 'red':(is_sunny == 1)
-				});
-				a.push({'desc':"Chop 1 Stump", 'sr':true});
-			}
 		}
 	}
 
 	// Feed Dog
 	a.push({'desc':"Feed Dog", 'cid':dog_id, 'val':2, 'sel':false, 'red':(aff[dog_id] > 250)});
 
-	// Wedding
-	if (flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
-		if (aff[cliff_id] > 50) {
-			a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
-		}
-		if (aff[kai_id] > 50) {
-			a.push({'desc':"Kai Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':kai_id});
-		}
+	// Cliff / Kai Wedding
+	if (!is_festival(d) && flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
+		a.push({'desc':(((aff[cliff_id] > aff[kai_id]) ? "Cliff" : "Kai") + " Wedding"),
+			'iid':((aff[cliff_id] > aff[kai_id]) ? cliff_id : kai_id),
+			'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false
+		});
 	}
 
 	if (horse_today && (d != 208 || flags['horse_entered'] == 0)) {
