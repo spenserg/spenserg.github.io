@@ -1,10 +1,12 @@
 actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var ann_id = get_npc_id('ann');
+	var cliff_id = get_npc_id('cliff');
 	var cow_id = get_npc_id('cow');
 	var dog_id = get_npc_id('dog');
 	var doug_id = get_npc_id('doug');
 	var elli_id = get_npc_id('elli');
 	var horse_id = get_npc_id('horse');
+	var kai_id = get_npc_id('kai');
 	var karen_id = get_npc_id('karen');
 	var mayor_id = get_npc_id('mayor');
 	var rick_id = get_npc_id('rick');
@@ -30,39 +32,40 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		}
 		// Extensions
 		if (dow != "TUES" && !is_festival(d)) {
-			var add_ext_id = -1;
-			for (var i = 0; i < extensions.length; i++) {
-				if (flags[extensions[i][0]] == 0 && vars['gold'] >= extensions[i][1] && (i == (extensions.length - 1) || flags[extensions[i + 1][0]] == 1)) {
-					add_ext_id = i;
+			var tmp_ext = [];
+			var tmp_ext_names = [];
+			for (var i = ((d > 229) ? 0 : 2); i < extensions.length; i++) {
+				if (flags[extensions[i][0]] == 0) {
+					tmp_ext.push(extensions[i]);
+					tmp_ext_names.push(extensions[i][3]);
 				}
 			}
-			if (add_ext_id != -1 && (add_ext_id > 1 || d >= 229)) {
-				a.push({'desc':("Buy " + extensions[add_ext_id][3] + " (" + extensions[add_ext_id][1] + " G)"),
-						'cid':['v_gold', 'v_lumber', ('f_' + extensions[add_ext_id][0])],
-						'val':[(-1 * extensions[add_ext_id][1]), (-1 * extensions[add_ext_id][2]), _BUILD_DAYS + 1],
-						'sel':(add_ext_id != 0), 'iid':get_npc_id('mas_carpenter'), 'imp':(add_ext_id != 0)
-				});
-				a.push({'desc':"(Opens 35 secs after leaving house)", 'sr':true});
+			if (tmp_ext.length > 0) {
+				a.push({'desc':"Buy:", 'iid':get_npc_id('mas_carpenter')});
+				for (var i = 0; i < tmp_ext.length; i++) {
+					a.push({'desc':tmp_ext[i][3], 'sel':false, 'sr':true,
+						'cid':['v_gold', 'v_lumber', ('f_' + tmp_ext[i][0])],
+						'val':[(-1 * tmp_ext[i][1]), (-1 * tmp_ext[i][2]), (_BUILD_DAYS + 1)]
+					});
+					if (tmp_ext.length > 1) {
+						a[a.length - 1]['t2'] = tmp_ext_names.filter(function(value, index){ return index != i; });
+					}
+				}
+				a.push({'desc':"(Opens 35 secs after leaving house)", 'sr':(tmp_ext.length < 3)});
 			}
 		}
 
 		if (aff[rick_id] < _PARTY_ATTEND_MIN && ["MON", "TUES", "THURS", "FRI"].includes(dow)) {
 			// RICK
-			a.push({'desc':"Talk", 'cid':rick_id, 'val':3});
+			a.push({'desc':"Talk", 'cid':rick_id, 'val':3, 'sel':false});
 			a.push({'desc':"Gift", 'cid':rick_id, 'val':3, 'sr':true, 'sel':false});
 		}
 
-		if (aff[mayor_id] < _PARTY_ATTEND_MIN && dow != "SUN" && is_sunny == 1) {
+		if (aff[mayor_id] > 50 && aff[mayor_id] < _PARTY_ATTEND_MIN && dow != "SUN" && is_sunny == 1) {
 			// MAYOR
 			// "  Talk" <- -2 spaces
 			// "  Gift" <- -2 spaces
-			if (flags['cutscene_watermelon'] == 0 && aff[ann_id] >= 153) {
-				// When Ann aff >= 153, Watermelon cutscene occurs with Maria on second village screen
-				// 118 < trigger < 154
-				a.push({'desc':"WARNING: Cutscene plays at 2nd Village Screen", 'imp':true});
-				a.push({'desc':"Watermelon Cutscene", 'val':1, 'cid':'f_cutscene_watermelon', 'sr':true, 'sel':false});
-			}
-			a.push({'desc':"Talk (Rick Shop 50%)", 'cid':mayor_id, 'val':3, 'sel':false, 'red':(aff[mayor_id] >= _PARTY_ATTEND_MIN)});
+			a.push({'desc':"Talk (Rick Shop 50%)", 'cid':mayor_id, 'val':3, 'sel':false, 'red':(aff[mayor_id] < 50 || aff[mayor_id] >= _PARTY_ATTEND_MIN)});
 			a.push({'desc':"  Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':false});
 		}
 	}
@@ -75,10 +78,9 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	} else if (flags['berry_pond'] == 0){
 		// Get Frozen Pond Berry
 		if (flags['golden_hammer'] == 0) {
-			a.push({'desc':"Equip hammer, Clear rocks on farm"});
-			a.push({'desc':"Golden Hammer", 'cid':'f_golden_hammer', 'val':1, 'sr':true, 't0':"Pond Rock Berry", 'sel':false});
+			a.push({'desc':"Golden Hammer", 'cid':'f_golden_hammer', 'val':1, 't0':"Pond Rock Berry", 'sel':false, 'iid':get_npc_id('kappa')});
 		}
-		a.push({'desc':"Pond Rock Berry", 'cid':'f_berry_pond', 'val':1, 'sel':(flags['golden_hammer'] == 1), 'iid':get_npc_id('kappa')});
+		a.push({'desc':"Pond Rock Berry", 'cid':'f_berry_pond', 'val':1, 'sel':false, 'iid':get_npc_id('kappa'), 'sr':(flags['golden_hammer'] == 0)});
 		if (flags['golden_hammer'] == 0) { a[a.length - 1]['t3'] = "Golden Hammer"; }
 	}
 
@@ -100,11 +102,12 @@ actions_photos_win_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Scare birds", 'cid':'v_happiness', 'val':1, 'sel':false, 'sr':(d != 229 || flags['dog_entered'] == 0)});
 	}
 
-	// Cliff Wedding
-/*
+	// Cliff / Kai Wedding
 	if (flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
-		a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
+		a.push({'desc':(((aff[cliff_id] > aff[kai_id]) ? "Cliff" : "Kai") + " Wedding"),
+			'iid':((aff[cliff_id] > aff[kai_id]) ? cliff_id : kai_id),
+			'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false
+		});
 	}
-*/
 	return a;
 }
