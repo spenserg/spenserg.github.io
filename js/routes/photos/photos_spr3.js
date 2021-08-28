@@ -102,7 +102,7 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Equip Grass"});
 			a.push({'desc':"Plant 8 + 4 Grass", 'sr':true, 'cid':['v_grass_planted', 'v_grass'], 'val':[12, -12]});
 			a.push({'desc':"Buy 20 Grass Seeds", 'cid':['v_grass', 'v_gold'], 'val':[20, (-500 * 20)], 'iid':get_npc_id('lillia'), 'imp':true});
-			a.push({'desc':"Spam Kent with Chicken (In Church) [83 times]", 'imp':true, 'cid':kent_id, 'val':200});
+			a.push({'desc':"Spam Kent with Chicken (In Church) [" + Math.ceil((160 - aff[kent_id]) / 3) + " times]", 'imp':true, 'cid':kent_id, 'val':(160 - aff[kent_id])});
 			a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id});
 		}
 
