@@ -21,7 +21,7 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	var kent_spam = (d > 246 && is_sunny == 1 && !is_festival(d) && !["THURS", "SUN"].includes(dow) && aff[kent_id] < 100);
 
 	// Rainy on day before evaluation
-	if (d == 269) { flags['dontsave'] = 1; }
+	if (d > 268) { flags['dontsave'] = 1; }
 	if (d == 270 && is_sunny == 0 && vars['chickens'] > 0 && flags['chicken_outside'] == 1) {
 		a.push({'desc':"RESET IF NO FEED- RANCH IS CLOSED", 'red':true});
 		a.push({'desc':"Chicken Inside / Feed", 'imp':true, 'iid':chicken_id});
@@ -106,26 +106,37 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id});
 		}
 
+		// Extensions
 		if (dow != "TUES" && !is_festival(d)) {
-			var add_ext_id = -1;
-			for (var i = 0; i < extensions.length; i++) {
-				if (flags[extensions[i][0]] == 0 && (i == (extensions.length - 1) || flags[extensions[i + 1][0]] == 1)) {
-					add_ext_id = i;
+			var tmp_ext = [];
+			var tmp_ext_names = [];
+			var ext_in_progress = false;
+			for (var i = ((d > 229) ? 0 : 2); i < extensions.length; i++) {
+				if (flags[extensions[i][0]] == 0) {
+					tmp_ext.push(extensions[i]);
+					tmp_ext_names.push(extensions[i][3]);
+				} else if (flags[extensions[i][0]] != 1) {
+					ext_in_progress = true;
 				}
 			}
-			if (add_ext_id != -1) {
+			if (tmp_ext.length > 0) {
 				if (is_sunny == 1 && flags['cutscene_bug'] == 0) {
 					// Cutscene will play between Maria and Karen (Spring Only)
 					a.push({'desc':"WARNING: Cutscene plays at Carp House Screen", 'red':true});
 					a.push({'desc':"Bug in Karens Hair Cutscene", 'val':1, 'cid':'f_cutscene_bug', 'sr':true, 'sel':false});
 				}
-				a.push({'desc':("Buy " + extensions[add_ext_id][3] + " (" + extensions[add_ext_id][1] + " G)"),
-						'cid':['v_gold', 'v_lumber', ('f_' + extensions[add_ext_id][0])],
-						'val':[(-1 * extensions[add_ext_id][1]), (-1 * extensions[add_ext_id][2]), _BUILD_DAYS + 1],
-						'sel':([262, 243].includes(d) || (vars['chickens'] > 0 && aff[kent_id] < 100 && is_sunny == 1 && !["SUN"].includes(dow)) || d >= (269 - (_BUILD_DAYS + 1) * add_ext_id)),
-						'iid':get_npc_id('mas_carpenter')
-				});
-				a.push({'desc':"(Use Bridge to Skip Cutscenes)", 'sr':true});
+				a.push({'desc':"Buy:", 'iid':get_npc_id('mas_carpenter'), 'red':ext_in_progress});
+				for (var i = 0; i < tmp_ext.length; i++) {
+					a.push({'desc':tmp_ext[i][3], 'sel':false, 'sr':true,
+						'cid':['v_gold', 'v_lumber', ('f_' + tmp_ext[i][0])],
+						'val':[(-1 * tmp_ext[i][1]), (-1 * tmp_ext[i][2]), (_BUILD_DAYS + 1)]
+					});
+					if (tmp_ext.length > 1) {
+						a[a.length - 1]['t2'] = tmp_ext_names.filter(function(value, index){ return index != i; });
+					}
+				}
+				a.push({'desc':"(Opens 35 secs after leaving house)", 'sr':(tmp_ext.length < 3)});
+				a.push({'desc':"(Use Bridge to Skip Cutscenes)"});
 			}
 		}
 
@@ -153,11 +164,6 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 			a.push({'desc':"Equip Grass"});
 			a.push({'desc':"Plant 8 Grass", 'sr':true, 'cid':['v_grass_planted', 'v_grass'], 'val':[8, -8]});
-		}
-
-		if (kent_spam) {
-			a.push({'desc':"Spam Kent with Chicken (In Church) [83 times]", 'imp':true, 'cid':kent_id, 'val':200});
-			a.push({'desc':"Puppies Cutscene", 'cid':['f_cutscene_puppies', 'v_happiness'], 'val':[1, 20], 'iid':kent_id});
 		}
 
 		// Baby Spam
@@ -214,9 +220,12 @@ actions_photos_spr_y3 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Ocean Berry", 'cid':"f_berry_ocean", 'val':1, 'sel':false, 'imp':(d > 268)});
 	}
 
-	// Cliff Wedding
-	if (flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
-		a.push({'desc':"Cliff Wedding", 'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false, 'iid':cliff_id});
+	// Cliff / Kai Wedding
+	if (!is_festival(d) && flags['photo_married'] == 1 && flags['wedding_cliff'] == 0) {
+		a.push({'desc':(((aff[cliff_id] > aff[kai_id]) ? "Cliff" : "Kai") + " Wedding"),
+			'iid':((aff[cliff_id] > aff[kai_id]) ? cliff_id : kai_id),
+			'cid':['v_happiness', 'f_wedding_cliff'], 'val':[30, 1], 'sel':false
+		});
 	}
 	return a;
 }
