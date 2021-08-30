@@ -206,15 +206,11 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 
 		// Steal Cows
 		if (d == 94) { a.push({'desc':"Cow Stealing Glitch", 'imp':true}); }
-		if (flags['cow_steal_glitch'] > 0) {
-			if (d == 112) { a.push({'desc':"Cows mature today", 'iid':cow_id}); vars['cows'] = 4; }
-			if (flags['cow_steal_glitch'] == 1) {
-				if (vars['day'] > 94 && vars['day'] < 115) {
-					a.push({'desc':"DONT VISIT COWS YET", 'red':true, 'sr':(d == 112)});
-				} else if (flags['cows_hammered'] == 0 && d >= 115) {
-					a.push({'desc':"Hammer cows", 'cid':'f_cows_hammered', 'val':1, 'iid':cow_id, 'imp':true});
-				}
-			}
+		if (d == 112) { a.push({'desc':"Cows mature today", 'iid':cow_id}); vars['cows'] = 4; }
+		if (vars['day'] > 94 && vars['day'] < 115) {
+			a.push({'desc':"DONT VISIT COWS YET", 'red':true, 'sr':(d == 112)});
+		} else if (flags['cows_hammered'] == 0 && d >= 115) {
+			a.push({'desc':"Hammer cows", 'cid':'f_cows_hammered', 'val':1, 'iid':cow_id, 'imp':true});
 		}
 
 		if (flags['ankle_ann'] == 0 && aff[ann_id] >= (_ANKLE_EVENT_MIN - 10) && is_sunny == 1 && flags['photo_ann'] == 0 && flags['married'] == 0) {
