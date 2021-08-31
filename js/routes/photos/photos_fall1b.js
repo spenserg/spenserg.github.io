@@ -197,7 +197,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 			}
 			if (d < 70) {
-				a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
+				a.push({'desc':("(" + musboxes[2] + " Musboxes Left) [" + ((aff[elli_id] > 200) ? 0 : (200 - aff[elli_id])) + " Aff]"), 'sr':true});
 			}
 		}
 
@@ -256,7 +256,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 				a.push({'desc':"Weed", 'cid':maria_id, 'val':-2, 'sr':true, 'sel':false});
 				if (d < 70) {
-					a.push({'desc':("(" + musboxes[0] + " Musboxes Left)"), 'sr':true});
+					a.push({'desc':("(" + musboxes[0] + " Musboxes Left) [" + ((aff[maria_id] > 141) ? 0 : (141 - aff[maria_id])) + " Aff]"), 'sr':true});
 				}
 			}
 		} else {
@@ -276,7 +276,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 			a.push({'desc':"Weed", 'cid':maria_id, 'val':-2, 'sr':true, 'sel':false});
 			if (d < 70) {
-				a.push({'desc':("(" + musboxes[0] + " Musboxes Left)"), 'sr':true});
+				a.push({'desc':("(" + musboxes[0] + " Musboxes Left) [" + ((aff[maria_id] > 141) ? 0 : (141 - aff[maria_id])) + " Aff]"), 'sr':true});
 			}
 		}
 
@@ -328,7 +328,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					});
 				}
 				if (d < 70) {
-					a.push({'desc':("(" + musboxes[2] + " Musboxes Left)"), 'sr':true});
+					a.push({'desc':("(" + musboxes[2] + " Musboxes Left) [" + ((aff[elli_id] > 200) ? 0 : (200 - aff[elli_id])) + " Aff]"), 'sr':true});
 				}
 			}
 			if (is_sunny == 1) {
@@ -374,7 +374,7 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Gift  ", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Potato", 'sel':false});
 				a.push({'desc':"Potato", 'cid':ann_id, 'val':3, 'sr':true, 't2':"Gift  ", 'sel':false});
 				if (d < 70) {
-					a.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
+					a.push({'desc':("(" + musboxes[1] + " Musboxes Left) [" + ((aff[ann_id] > 136) ? 0 : (136 - aff[ann_id])) + " Aff]"), 'sr':true});
 				}
 			}
 		}
@@ -539,7 +539,7 @@ ranch_stuff_fallb = function (tmp_act = [], dow = get_dow(vars['day']), is_sunny
 			)
 		});
 		if (d < 70) {
-			tmp_act.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
+			tmp_act.push({'desc':("(" + musboxes[1] + " Musboxes Left) [" + ((aff[ann_id] > 136) ? 0 : (136 - aff[ann_id])) + " Aff]"), 'sr':true});
 		}
 		if (ann_sick_event) {
 			// ANN SICK EVENT
