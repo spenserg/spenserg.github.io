@@ -229,44 +229,48 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Equip Grass Seeds", 'imp':true});
 				a.push({'desc':("Plant " + tmp_grass + " Grass"), 'cid':['v_grass', 'v_grass_planted'], 'val':[-1 * tmp_grass, tmp_grass], 'sr':true});
 			}
-		} else if (dow != "TUES" && is_sunny == 0) {
-			// Horse affection
-			horse_today = true;
-
-			// Extensions on rainy days to avoid cutscenes
-			var leftover_g = vars['gold'] - ((1800 - 1800 * flags['milker']) + (2000 - 500 * (4 - vars['grass_planted'])));
-			var tmp_getext = false;
-			if (flags['kitchen'] == 0) {
-				// Kitchen
-				a.push({'desc':"Buy a Kitchen (5000 G)", 'iid':mas_carp_id,
-						'cid':['v_gold', 'v_lumber', 'f_kitchen'],
-						'val':[-5000, -450, _BUILD_DAYS + 1], 'sel':(leftover_g >= 5000)
-				});
-				tmp_getext = true;
-			} else if (flags['kitchen'] == 1 && flags['bathroom'] == 0 && vars['gold'] >= 3000) {
-				// Bathroom
-				a.push({'desc':"Buy a Bathroom (3000 G)", 'iid':mas_carp_id,
-					'cid':['v_gold', 'v_lumber', 'f_bathroom'], 'imp':true,
-					'val':[-3000, -300, _BUILD_DAYS + 1], 'sel':false
-				});
-				tmp_getext = true;
-			}
-			if (tmp_getext) {
-				a.push({'desc':"(Opens 35 secs after leaving house)", 'sr':true});
-				if (aff[mas_carp_id] <= 25) {
-					a.push({'desc':"Meet", 'cid':mas_carp_id, 'val':4, 'sr':false, 'sel':false, 'red':true});
+		} else if (dow != "TUES" && !is_festival(d)) {
+			// Extensions
+			// var leftover_g = vars['gold'] - ((1800 - 1800 * flags['milker']) + (2000 - 500 * (4 - vars['grass_planted'])));
+			var tmp_ext = [];
+			var tmp_ext_names = [];
+			var ext_in_progress = false;
+			for (var i = (extensions.length - 1); i > 1; i--) {
+				if (flags[extensions[i][0]] == 0) {
+					tmp_ext.push(extensions[i]);
+					tmp_ext_names.push(extensions[i][3]);
+				} else if (flags[extensions[i][0]] != 1) {
+					ext_in_progress = true;
 				}
-				a.push({'desc':"Talk", 'cid':mas_carp_id, 'val':3, 'sr':true, 'sel':false});
-				a.push({'desc':"Gift", 'cid':mas_carp_id, 'val':3, 'sr':true, 'sel':false});
 			}
+			if (tmp_ext.length > 0) {
+				if (is_sunny == 1 && flags['kitchen'] != 0 && flags['babybed'] != 0) {
+					a.push({'desc':"Wait for Rainy Day", 'red':true, 'iid':get_npc_id('mas_carpenter')});
+				}
+				a.push({'desc':"Buy:", 'iid':get_npc_id('mas_carpenter'), 'red':(ext_in_progress || (is_sunny == 1 && flags['kitchen'] != 0 && flags['babybed'] != 0))});
+				for (var i = 0; i < tmp_ext.length; i++) {
+					a.push({'desc':tmp_ext[i][3], 'sr':true, 'sel':false,
+						'cid':['v_gold', 'v_lumber', ('f_' + tmp_ext[i][0])],
+						'val':[(-1 * tmp_ext[i][1]), (-1 * tmp_ext[i][2]), (_BUILD_DAYS + 1)]
+					});
+					if (tmp_ext.length > 1) {
+						a[a.length - 1]['t2'] = tmp_ext_names.filter(function(value, index){ return index != i; });
+					}
+					if (!ext_in_progress && is_sunny == 0 && i == 0) {
+						horse_today = true;
+						a[a.length - 1]['sel'] = true;
+					}
+				}
+				a.push({'desc':"(Opens 35 secs after leaving house)", 'sr':(tmp_ext.length < 3)});
 
-			if (is_sunny == 0 && aff[cliff_id] > 50) {
-				// Cliff in Carp House when its snowing
-				a.push({'desc':"Talk (Carp House 50%)", 'cid':cliff_id, 'val':2, 'sel':false, 'red':(aff[cliff_id] >= 200)});
-				a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
-				a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+				if (is_sunny == 0 && aff[cliff_id] > 50) {
+					// Cliff in Carp House when its raining
+					a.push({'desc':"Talk (Carp House 50%)", 'cid':cliff_id, 'val':2, 'sel':false});
+					a.push({'desc':"   Gift   ", 'cid':cliff_id, 'val':4, 'sel':false, 't2':"   Egg   ", 'sr':true});
+					a.push({'desc':"   Egg   ", 'cid':cliff_id, 'val':8, 'sel':false, 't2':"   Gift   ", 'sr':true});
+				}
 			}
-		}
+		} // End of Buy Extensions
 		a = cows(a, is_sunny);
 	}
 
