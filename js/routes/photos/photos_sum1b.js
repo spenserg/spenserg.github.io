@@ -50,7 +50,11 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Bring Dog Inside", 'cid':[dog_id, 'f_dog_inside'], 'val':[1, 1], 'iid':dog_id, 'sr':true, 'sel':false});
 	}
 
-	if (is_sunny != -1) { // No Typhoon
+	if (is_sunny == -1) {
+		// Horse Affection
+		a.push({'desc':"Whistle Horse", 'val':1, 'cid':horse_id});
+	} else {
+		// No Typhoon
 		if (is_festival(d)) {
 			// 9 / 39 -  Veg Fest
 			// 24 / 54 - Sea Fest
@@ -504,7 +508,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 
 			// Restore the Vineyard
-			if (flags['vineyard_restored'] == 0 && flags['wine_from_duke'] == 1 && aff[sprite_id] >= (_SPRITE_WINE_MIN - 6)) {
+			if (flags['vineyard_restored'] == 0 && flags['wine_from_duke'] != 0) {
 				// Restore the Vineyard
 				a.push({'desc':"Restore the Vineyard", 'cid':['f_vineyard_restored', 'f_dontsave'], 'val':[1, 1], 'iid':get_npc_id('goddess'), 'sel':false});
 			}
