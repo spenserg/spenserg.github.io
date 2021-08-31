@@ -75,12 +75,12 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 			}
 
-			if (flags['chicken_route'] == 1 && vars['chickens'] > 0 && dow == "MON" && flags['incubate_last'] == 0) {
+			if (vars['chickens'] > 0 && flags['incubate_last'] == 0) {
 				a.push({'desc':"New Chick", 'iid':chicken_id, 'cid':["v_new_chicken_days", "f_new_chick"],
-					'val':[d + _CHICK_GROW_SLEEPS, -1], 't0':"Incubate", 'imp':true
+					'val':[d + _CHICK_GROW_SLEEPS, -1], 't0':"Incubate", 'sel':false
 				});
 				a.push({'desc':"Incubate", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1), 'sr':true, 'sel':false, 't2':"Incubate LAST"});
-				a.push({'desc':"Incubate LAST", 'cid':["f_new_chick", "f_incubate_last"], 'val':[(_CHICK_BORN_SLEEPS + 1), 1], 'sr':true, 't2':"Incubate"});
+				a.push({'desc':"Incubate LAST", 'cid':["f_new_chick", "f_incubate_last"], 'val':[(_CHICK_BORN_SLEEPS + 1), 1], 'sr':true, 't2':"Incubate", 'sel':false});
 			}
 
 			// ANN ANKLE
@@ -118,9 +118,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id, 'val':1, 't2':" MusBox",
 						'sel':(((!["WED", "SAT", "SUN"].includes(dow) && is_sunny == 1 && aff[ann_id] < 160) || ann_sick_event) && flags['new_mus_box'] == 0 && flags['chicken_route'] == 0)
 					});
-					a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'],
-						'sel':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow) && flags['new_mus_box'] == 1 && aff[ann_id] < 160)
-					});
+					a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'], 'sel':false});
 					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
 					a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes', 'v_potato_gifts'], 'val':[3, -1, 1], 'sr':true, 't2':" Gift",
 						'sel':(ann_sick_event || (!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1 && aff[ann_id] < 160))
@@ -434,9 +432,15 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':("Dog Karen " + karen_loc + ((["FRI", "SAT"].includes(dow)) ? " / (BAR)" : "")),
 					'imp':(d == 60), 'sel':(d == 60), 'red':(d != 60), 'iid':karen_id
 				});
-				a.push({'desc':"158", 'cid':karen_id, 'val':((aff[karen_id] < 158) ? (158 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["208", "240"]});
-				a.push({'desc':"208", 'cid':karen_id, 'val':((aff[karen_id] < 208) ? (208 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["240", "158"]});
-				a.push({'desc':"240", 'cid':karen_id, 'val':((aff[karen_id] < 240) ? (240 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["208", "158"]});
+				if (aff[karen_id] < 158) {
+					a.push({'desc':"158", 'cid':karen_id, 'val':((aff[karen_id] < 158) ? (158 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["208", "240"]});
+				}
+				a.push({'desc':"208", 'cid':karen_id, 'val':((aff[karen_id] < 208) ? (208 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["240"]});
+				a.push({'desc':"240", 'cid':karen_id, 'val':((aff[karen_id] < 240) ? (240 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["208"]});
+				if (aff[karen_id] < 158) {
+					a[a.length - 1]['t2'].push("158");
+					a[a.length - 2]['t2'].push("158");
+				}
 			}
 			if (flags['ankle_karen'] == 0 && aff[kai_id] > 20) {
 				a.push({'desc':"Ankle to Kai", 'sel':false, 'red':(d != 60),
@@ -452,9 +456,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					// -1 sp " GIFT"
 					// -1 sp " MUSBOX"
 					a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id, 'val':1, 't2':" MusBox", 'sel':ann_sick_event});
-					a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'],
-						'sel':(is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow) && aff[ann_id] < 160)
-					});
+					a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'], 'sel':false});
 					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
 					a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes', 'v_potato_gifts'], 'val':[3, -1, 1], 'sr':true, 't2':" Gift",
 						'sel':(ann_sick_event || (!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1 && aff[ann_id] < 160))
@@ -468,10 +470,8 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					}
 					a.push({'desc':("(" + musboxes[1] + " Musboxes Left)"), 'sr':true});
 
-					if (flags['chicken_route'] == 1 && vars['chickens'] > 0) {
-						a.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'),
-							'sel':(dow == "MON" && vars['chickens'] > 1), 'red':(vars['chickens'] == 1)
-						});
+					if (vars['chickens'] > 0) {
+						a.push({'desc':"Sell Chicken", 'cid':['v_chickens', 'v_gold'], 'val':[-1, 500], 'iid':get_npc_id('doug'), 'sel':false});
 					}
 				}
 
