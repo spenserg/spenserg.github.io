@@ -1568,7 +1568,7 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 
 	while ((npc_affs[0] < aff_reqs[0] || npc_affs[1] < aff_reqs[1] || npc_affs[2] < aff_reqs[2]) && net < 100) {
 		var lowest = [-1, -1]; // [id, val]
-		npc_aff[0] += 3; // Maria (gift + talk)
+		npc_affs[0] += 3; // Maria (gift + talk)
 			npc_affs[1] += 4; // Ann (potato + talk)
 		npc_affs[2] += ((chickens == 0) ? 4 : 5); // Elli (fish/egg + talk)
 			for (var i = 0; i < npc_affs.length; i++) {
