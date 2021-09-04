@@ -36,6 +36,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 	var ann_done = ((d > 90 && (d < 102 || d > 106)) || d == 71 || (aff[ann_id] > ((d > 101) ? 196 : 150)));
 	var rick_done = (d == 71 || aff[rick_id] >= _PARTY_ATTEND_MIN);
 
+	if (d == 3) { a.push({'desc':"Updated 9/3/2021 19:23"}); } 
 	if (d == 265) {
 		a.push({'desc':"Baby Born", 'iid':elli_id, 'imp':true, 'val':[1, 1, 30, 8, 5, 5],
 			'cid':['f_dontsave', 'f_photo_baby', 'v_happiness', elli_id, midwife_id, pastor_id]
@@ -415,7 +416,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 				});
 			}
 			// ELLI DREAM ANKLE
-			if (flags['dream_elli'] == 0 && aff[elli_id] >= _DREAM_EVENT_MIN && flags['married'] == 0) {
+			if (flags['dream_elli'] == 0 && aff[elli_id] >= _DREAM_EVENT_MIN && flags['photo_married'] == 0) {
 				a.push({'desc':"DREAM (Village)", 'cid':[elli_id, 'f_dream_elli'], 'val':[_DREAM_EVENT_AFF, 1], 'sel':false});
 			}
 			if (flags['ankle_elli'] == 0 && aff[elli_id] >= (_ANKLE_EVENT_MIN - _MUS_BOX_AFF - 4) && flags['photo_married'] == 0) {
@@ -496,7 +497,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 					if (flags['ankle_maria'] == 0) { a[a.length - 1]['t2'] = "Ankle"; }
 					a.push({'desc':"PHOTO at 6 PM", 'cid':[maria_id, 'f_photo_maria'], 'val':[_PHOTO_EVENT_AFF, 1], 'sel':false});
 				}
-			} else if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && flags["sick_maria"] == 0 && flags['married'] == 0) {
+			} else if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && flags["sick_maria"] == 0 && flags['photo_married'] == 0) {
 				// Sick Event
 				a.push({'desc':"Sick Event", 'cid':[maria_id, "f_sick_maria"], 'val':[_SICK_EVENT_AFF, 1], 'imp':true});
 			}
@@ -523,7 +524,7 @@ get_actions_photos_aff = function (d = 3, g = 300, is_sunny = 1, a = []) {
 		}
 
 		// Decline Ankle
-		if (flags['ankle_karen'] == 0 && d > 29 && is_sunny == 1 && flags['married'] == 0) {
+		if (flags['ankle_karen'] == 0 && d > 29 && is_sunny == 1 && flags['photo_married'] == 0) {
 			a.push({'desc':"Decline Ankle (Vineyard)", 'sel':false, 'cid':[karen_id, kai_id, 'f_ankle_karen'], 'val':[-30, 20, 1], 'red':(d == 30)});
 		}
 
