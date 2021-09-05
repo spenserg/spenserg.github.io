@@ -103,15 +103,18 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 			}
 
-			if (flags['chicken_route'] == 1 && vars['chickens'] > 0 && ([12, 15].includes(d) || (dow == "MON" && d > 15))) {
-				a.push({'desc':"Equip Watering Can"});
-				a.push({'desc':"Fill Watering Can", 'cid':'v_watering_can_fill', 'val':(30 - vars['watering_can_fill']), 'sr':true, 'sel':(vars['watering_can_fill'] < 20)});
-				if (d > 12) {
-					a.push({'desc':"New Chick", 'iid':chicken_id, 'cid':["v_new_chicken_days", "f_new_chick"],
-							'val':[d + _CHICK_GROW_SLEEPS, -1], 't0':"Incubate", 'imp':true, 'iid':get_npc_id('chicken')
+			if (vars['chickens'] > 0 && flags['new_chick'] < 2) {
+				if (flags['new_chick'] == 1) {
+					a.push({'desc':"New Chick", 'iid':chicken_id, 't0':"Incubate", 'iid':chicken_id,
+						'cid':["v_new_chicken_days", "f_new_chick"], 'val':[d + _CHICK_GROW_SLEEPS, -1], 'sel':false,
+						'imp':(is_sunny == 1 && vars['chickens'] < 3 && ["MON", "TUES", "THURS", "FRI"].includes(dow))
 					});
 				}
-				a.push({'desc':"Incubate", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1), 'sr':(d > 12), 'imp':true, 'iid':get_npc_id('chicken')});
+				a.push({'desc':"Incubate", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1),
+					'sr':(flags['new_chick'] == 1), 'iid':chicken_id, 'red':(d == 10),
+					'sel':(d == 11 && vars['new_chicken_days'].length == 0),
+					'imp':(d == 11 && vars['new_chicken_days'].length == 0)
+				});
 			}
 
 			// Music Box Dig
@@ -592,12 +595,15 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 						'sel':((flags['chicken_route'] == 0 && d == 30) || (flags['chicken_route'] == 1 && d < 7))
 					});
 				}
-				a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'imp':(flags['chicken_route'] == 1 && d < 7),
-					'sel':((flags['chicken_route'] == 0 && d == 30) || (flags['chicken_route'] == 1 && d < 7))
-				});
-				a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(a[a.length - 1]['sel']), 'sr':true});
-				if (aff[duke_id] < 40) {
-					a.push({'desc':("(" + Math.ceil((40 - aff[duke_id]) / 6) + " visit" + ((Math.ceil((34 - aff[duke_id]) / 6) == 1) ? "" : "s") + " left)"), 'sr':true});
+				if (flags['wine_from_duke'] == 0) {
+					a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'imp':(flags['chicken_route'] == 1 && d < 7),
+						'sel':((flags['chicken_route'] == 0 && d == 30) || (flags['chicken_route'] == 1 && d < 7))
+					});
+					a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(a[a.length - 1]['sel']), 'sr':true});
+					a.push({'desc':"Get Wine", 'cid':'f_wine_from_duke', 'val':1, 'sr':true, 'sel':false});
+					if (aff[duke_id] < 40) {
+						a.push({'desc':("(" + Math.ceil((40 - aff[duke_id]) / 6) + " visit" + ((Math.ceil((34 - aff[duke_id]) / 6) == 1) ? "" : "s") + " left)"), 'sr':true});
+					}
 				}
 
 				// KAI
