@@ -272,7 +272,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"NO MUSBOX FOR MARIA", 'iid':maria_id, 'red':true});
 				}
 				a.push({'desc':("Talk (" + ((is_sunny == 1) ? "MTN / CHUR" : "In House") + ")"), 'cid':maria_id, 'val':1, 't2':"MusBox",
-					'sel':(aff[maria_id] < (_DREAM_EVENT_MIN - 1) && !["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1),
+					'sel':(d > 40 && aff[maria_id] < (_DREAM_EVENT_MIN - 1) && !["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1),
 					'red':(aff[maria_id] >= (_DREAM_EVENT_MIN - 1))
 				});
 				if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - _MUS_BOX_AFF)) {
@@ -284,7 +284,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				}
 				if (aff[maria_id] < (_DREAM_EVENT_MIN - 1 - 2)) {
 					a.push({'desc':" Gift  ", 'cid':maria_id, 'val':2, 'sr':true, 't2':"Cabbage",
-						'sel':(aff[maria_id] < (_DREAM_EVENT_MIN - 2) && !["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1)
+						'sel':(d > 40 && aff[maria_id] < (_DREAM_EVENT_MIN - 2) && !["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1)
 					});
 					a.push({'desc':"Cabbage", 'sel':false, 't2':" Gift  ", 'sr':true,
 						'cid':((flags['recipe_maria'] == 0) ? [maria_id, 'f_recipe_maria'] : maria_id),
