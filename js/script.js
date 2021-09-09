@@ -1548,6 +1548,9 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 	var aff_reqs = [141, 136, 200];
 	var mus_boxes = [0, 0, 0];
 	var net = 0;
+	
+	console.log(npc_affs);
+	console.log(mus_boxes);
 
 	if (d < 24) {
 		// Flower Festival
@@ -1555,6 +1558,7 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 		npc_affs[1] += (chickens ? (((aff_reqs[0] - npc_affs[0]) <= (aff_reqs[1] - npc_affs[1])) ? 2 : 12) : 2);
 		npc_affs[2] += (chickens ? 2 : 12);
 	}
+/*
 	if (d < 73) {
 		// Harvest Festival
 		npc_affs[0] += ((npc_affs[0] < (160 - 12) && ((aff_reqs[0] - npc_affs[0]) > (aff_reqs[1] - npc_affs[1]))) ? 12 : 2)
@@ -1563,16 +1567,21 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 	}
 	npc_affs[1] += ((flags['dream_ann'] == 0) ? _DREAM_EVENT_AFF : 0);
 	npc_affs[1] += ((flags['ankle_ann'] == 0) ? _ANKLE_EVENT_AFF : 0);
+*/
 	npc_affs[2] += ((flags['dream_elli'] == 0) ? _DREAM_EVENT_AFF : 0);
 	npc_affs[2] += ((flags['ankle_elli'] == 0) ? _ANKLE_EVENT_AFF : 0);
+	
+	console.log(npc_affs);
+	console.log(mus_boxes);
 
-	while ((npc_affs[0] < aff_reqs[0] || npc_affs[1] < aff_reqs[1] || npc_affs[2] < aff_reqs[2]) && net < 100) {
+	while (((npc_affs[0] < (aff_reqs[0] - 3)) || (npc_affs[1] < (aff_reqs[1] - 4)) || (npc_affs[2] < (aff_reqs[2] - ((chickens == 0) ? 4 : 5)))) && net < 100) {
 		var lowest = [-1, -1]; // [id, val]
 		npc_affs[0] += 3; // Maria (gift + talk)
-			npc_affs[1] += 4; // Ann (potato + talk)
+		npc_affs[1] += 4; // Ann (potato + talk)
 		npc_affs[2] += ((chickens == 0) ? 4 : 5); // Elli (fish/egg + talk)
-			for (var i = 0; i < npc_affs.length; i++) {
+		for (var i = 0; i < npc_affs.length; i++) {
 			var tmp_low = aff_reqs[i] - npc_affs[i];
+			if (tmp_low < 0) { tmp_low = 0; }
 			if (tmp_low > lowest[1]) {
 				lowest[1] = tmp_low;
 				lowest[0] = i;
@@ -1583,6 +1592,9 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 		net++;
 	}
 
+	console.log(npc_affs);
+	console.log(mus_boxes);
+	
 	// Keep Maria below 160
 	net = 0;
 	while(npc_affs[0] > 160 && mus_boxes[0] > 1 && net < 100) {
