@@ -187,7 +187,8 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					'red':(d == 105 && vars['springs_days_worked'] == 3 && tmp_gold_left >= 1000)
 				});
 				if (d != 105 && aff[jeff_id] < 100) {
-					a.push({'desc':"Jeff Spam (Bar) [21 talks]", 'cid':jeff_id, 'val':(21 * 8), 'imp':true});
+					var jeff_spam_req = Math.ceil((160 - aff[jeff_id] - 8) / 7);
+					a.push({'desc':("Jeff Spam (Bar) [" + jeff_spam_req + " talks]"), 'cid':jeff_id, 'val':(jeff_spam_req * 8), 'imp':true, 'sel':false});
 				}
 				if (d == 106) {
 					// Hot Springs Photo
@@ -380,7 +381,7 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				// ANN in Ricks Shop
 				// "Gift  " <- 2 spaces
 				if (dow == "THURS") {
-					a.push({'desc':"Talk (Ricks Shop)", 'cid':ann_id, 'val':1, 't2':"MusBox", 'sel':false, 'red':(aff[ann_id] >= _PHOTO_MIN)});
+					a.push({'desc':"Talk (Ricks Shop)", 'cid':ann_id, 'val':1, 't2':"MusBox", 'sel':false, 'red':(flags['photo_ann'] == 1 || aff[ann_id] >= _PHOTO_MIN)});
 					a.push({'desc':"MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':"Talk (Ricks Shop)", 'sel':false});
 					a.push({'desc':"Gift  ", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Corn / Potato", 'sel':false});
 					a.push({'desc':"Corn / Potato", 'cid':ann_id, 'val':3, 'sr':true, 't2':"Gift  ", 'sel':false});
@@ -426,7 +427,8 @@ actions_photos_win_y1 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	// Cow Stealing
 	if (d == 94 && flags['dream_maria'] == 0 && aff[jeff_id] < 100) {
 		// Jeff Spam
-		a.push({'desc':"Jeff Spam (Bar) [21 talks]", 'cid':jeff_id, 'val':(21 * 8), 'imp':true});
+		var jeff_spam_req = Math.ceil((160 - aff[jeff_id] - 8) / 7);
+		a.push({'desc':("Jeff Spam (Bar) [" + jeff_spam_req + " talks]"), 'cid':jeff_id, 'val':(jeff_spam_req * 8), 'imp':true, 'sel':false});
 		a.push({'desc':"(Use Hot Springs days if not here)", 'sr':true});
 
 		// Steal the Cows
