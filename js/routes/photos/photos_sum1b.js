@@ -171,35 +171,37 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 
 			var tmp_spr_aff = aff[sprite_id];
 			// SPRITE
-			if (lumber_to_sprite > 0) {
-				var lum_desc = "";
-				if (aff[sprite_id] < (21 - 6)) {
-					a.push({'desc':"Flower", 'cid':sprite_id, 'val':1, 'sel':false, 'red':(is_sunny == 0)});
+			if (flags['vineyard_restored'] == 0) {
+				if (lumber_to_sprite > 0) {
+					var lum_desc = "";
+					if (aff[sprite_id] < (21 - 6)) {
+						a.push({'desc':"Flower", 'cid':sprite_id, 'val':1, 'sel':false, 'red':(is_sunny == 0)});
+					}
+					a.push({'desc':(lumber_to_sprite + " Gifts to Inner Sprite (Right Side)"), 'sr':(aff[sprite_id] < (21 - 6)),
+						'cid':sprite_id, 'val':lumber_to_sprite, 'sel':false, 'red':(is_sunny == 0)
+					});
+					if (tmp_spr_aff >= 18) { a.push({'desc':"INNER SPRITE FIRST!", 'sr':true}); }
+					tmp_spr_aff += lumber_to_sprite;
 				}
-				a.push({'desc':(lumber_to_sprite + " Gifts to Inner Sprite (Right Side)"), 'sr':(aff[sprite_id] < (21 - 6)),
-					'cid':sprite_id, 'val':lumber_to_sprite, 'sel':false, 'red':(is_sunny == 0)
-				});
-				if (tmp_spr_aff >= 18) { a.push({'desc':"INNER SPRITE FIRST!", 'sr':true}); }
-				tmp_spr_aff += lumber_to_sprite;
-			}
-			if (aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35) {
-				a.push({'desc':"Meet", 'cid':sprite_id, 'val':5,
-					'sel':(tmp_spr_aff > 18 && ((dow == "MON" || [4, 5].includes(d)) && is_sunny == 1)),
-					'red':(tmp_spr_aff < 18 && ((dow != "MON" && ![4, 5].includes(d)) || is_sunny == 0))
-				});
-				if (tmp_spr_aff > 18) { tmp_spr_aff += 5 };
-			}
-			a.push({'desc':"   Talk ", 'cid':sprite_id, 'val':1, 'sr':(aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35), 'sel':false,
-				'red':(aff[sprite_id] >= (_SPRITE_WINE_MIN - 5) && (flags['vineyard_restored'] == 1 || flags['wine_from_duke'] == 0))
-			});
-			a.push({'desc':"   Gift ", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
-			if (tmp_spr_aff > 18) { tmp_spr_aff += 3; }
-			var sprite_visits_left = 0;
-			if (aff[sprite_id] > 20) {
-				if (aff[sprite_id] < 45) {
-					sprite_visits_left = Math.ceil((45 - aff[sprite_id]) / 3);
+				if (aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35) {
+					a.push({'desc':"Meet", 'cid':sprite_id, 'val':5,
+						'sel':(tmp_spr_aff > 18 && ((dow == "MON" || [4, 5].includes(d)) && is_sunny == 1)),
+						'red':(tmp_spr_aff < 18 && ((dow != "MON" && ![4, 5].includes(d)) || is_sunny == 0))
+					});
+					if (tmp_spr_aff > 18) { tmp_spr_aff += 5 };
 				}
-				a.push({'desc':("(" + sprite_visits_left + " visits left)"), 'sr':true});
+				a.push({'desc':"   Talk ", 'cid':sprite_id, 'val':1, 'sr':(aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35), 'sel':false,
+					'red':(aff[sprite_id] >= (_SPRITE_WINE_MIN - 5) && (flags['vineyard_restored'] == 1 || flags['wine_from_duke'] == 0))
+				});
+				a.push({'desc':"   Gift ", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
+				if (tmp_spr_aff > 18) { tmp_spr_aff += 3; }
+				var sprite_visits_left = 0;
+				if (aff[sprite_id] > 20) {
+					if (aff[sprite_id] < 45) {
+						sprite_visits_left = Math.ceil((45 - aff[sprite_id]) / 3);
+					}
+					a.push({'desc':("(" + sprite_visits_left + " visits left)"), 'sr':true});
+				}
 			}
 			// ANN DREAM
 			if (flags['dream_ann'] == 0 && aff[ann_id] >= (_DREAM_EVENT_MIN - 9) && is_sunny == 1) {
