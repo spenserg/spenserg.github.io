@@ -71,7 +71,6 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		if (d == 121) {
 			// New Years Festival
 			a = cows(a);
-			horse_today = true;
 			a.push({'desc':"Drink", 'iid':maria_id, 'red':true});
 			a.push({'desc':'1', 'cid':maria_id, 'val':2, 'sel':false, 'sr':true, 't2':'1'});
 			a.push({'desc':'2', 'cid':maria_id, 'val':4, 'sel':false, 'sr':true, 't2':'2'});
@@ -114,8 +113,6 @@ actions_photos_spr_y2 = function(a = [], d = 3, g = 300, is_sunny = 1) {
 			a.push({'desc':"Dance ",'cid':[elli_id, 'f_dontsave'], 'val':[10, 1], 't2':"Dance", 'sel':false, 'sr':true});
 		}
 	} else { // Not a festival
-		horse_today = true;
-
 		// Kappa Berry
 		if (!flags['berry_kappa']) {
 			a.push({'desc':"Large fish to Kappa", 'cid':'f_berry_kappa', 'val':1,
