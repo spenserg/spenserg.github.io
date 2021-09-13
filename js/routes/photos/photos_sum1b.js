@@ -340,11 +340,12 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':((dow == "SAT") ? "Talk (Lib 50%)" : "Talk"), 'cid':mayor_id, 'val':3, 'sr':(aff[mayor_id] == 0), 'sel':(d == 6 || !["WED", "SAT"].includes(dow))});
 				a.push({'desc':"Gift", 'cid':mayor_id, 'val':3, 'sr':true, 'sel':(!["WED", "SAT"].includes(dow) && is_sunny == 1)});
 			}
-*/	
-			// RICK (NO NEW BOX IN INVENTORY)
+*/
+			// RICK
 			// "Talk  " - 2 spaces
 			// "Gift  " - 2 spaces
 			if (is_sunny == 1 && !["WED", "SUN"].includes(dow)) {
+				var num_rick_fixes = musboxes.reduce((a, b) => a + b, 0);
 				if (aff[rick_id] > 38 && flags['cutscene_rick'] == 0 && dow != "SAT") {
 					a.push({'desc':"Enter / Exit to clear Rick / Ann cutscene", 'iid':rick_id, 'imp':true});
 				}
@@ -353,7 +354,9 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					'cid':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [rick_id, 'f_cutscene_rick'] : rick_id),
 					'val':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [3, 1] : 3)
 				});
-				a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(dow != "SAT")});
+				a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true,
+					'sel':(dow != "SAT" && ((aff[rick_id] + (num_rick_fixes * 3)) < 160))
+				});
 				if (aff[rick_id] >= (_RICK_FIX_MIN - 6)) {
 					a.push({'desc':"Rick Fix", 'sr':true, 'sel':(dow != "SAT"),
 						'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1], 't3':"Talk  "
