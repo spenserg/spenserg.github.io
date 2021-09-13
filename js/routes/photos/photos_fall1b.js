@@ -33,6 +33,8 @@ actions_photos_fall_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Check Weather, RESET IF SUNNY TOMORROW [Ann Sick Event]", 'imp':true, 'iid':ann_id});
 	} else if (d == 66 || d == 68) { // Fall 6 & 8
 		a.push({'desc':"Check Weather, RESET IF RAINY TOMORROW", 'imp':true});
+	} else if ((d == 67 || d == 69) && is_sunny == 0) {
+		return [{'desc':"RESET: No Rain on Photo Day", 'red':true, 'iid':((d == 69) ? elli_id : karen_id)}];
 	} else if (flags['berry_strength'] == 0 && d >= 83 && d <= 87) {
 		a.push({'desc':"No Stamina Use for Strength Berry", 'imp':true});
 	} else if (d == 70) {
