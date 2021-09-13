@@ -596,14 +596,14 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					});
 				}
 				if (flags['wine_from_duke'] == 0) {
+					var duke_visits_left = Math.ceil((40 - aff[duke_id]) / 6);
+					if (duke_visits_left < 0) { duke_visits_left = 0; }
 					a.push({'desc':"Talk", 'cid':duke_id, 'val':3, 'sr':(aff[duke_id] == 0), 'imp':(flags['chicken_route'] == 1 && d < 7),
-						'sel':((flags['chicken_route'] == 0 && d == 30) || (flags['chicken_route'] == 1 && d < 7))
+						'sel':(d == 30 || (flags['chicken_route'] == 1 && d < 7)), 'red':(duke_visits_left < 2 && d < 30)
 					});
 					a.push({'desc':"Gift", 'cid':duke_id, 'val':3, 'sel':(a[a.length - 1]['sel']), 'sr':true});
 					a.push({'desc':"Get Wine", 'cid':'f_wine_from_duke', 'val':1, 'sr':true, 'sel':false});
-					if (aff[duke_id] < 40) {
-						a.push({'desc':("(" + Math.ceil((40 - aff[duke_id]) / 6) + " visit" + ((Math.ceil((34 - aff[duke_id]) / 6) == 1) ? "" : "s") + " left)"), 'sr':true});
-					}
+					a.push({'desc':("(" + duke_visits_left + " visit" + ((Math.ceil((34 - aff[duke_id]) / 6) == 1) ? "" : "s") + " left)"), 'sr':true});
 				}
 
 				// KAI
