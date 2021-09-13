@@ -6,6 +6,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 	var dog_id = get_npc_id('dog');
 	var doug_id = get_npc_id('doug');
 	var elli_id = get_npc_id('elli');
+	var goddess_id = get_npc_id('goddess');
 	var grey_id = get_npc_id('grey');
 	var horse_id = get_npc_id('horse');
 	var kai_id = get_npc_id('kai');
@@ -37,6 +38,8 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 		});
 		a.push({'desc':"No", 'sr':true, 'sel':(flags['chicken_route'] != 1), 'cid':'f_chicken_route', 'val':(0 - flags['chicken_route']), 't1':"Yes", 't2':"Yes"});
 	}
+	if (d == 10 && vars['chickens'] > 0) { a.push({'desc':"Grab 1 Egg", 'iid':chicken_id, 'imp':true}); }
+	if (d == 11 && vars['chickens'] > 0) { a.push({'desc':"No Work Before Strength Berry", 'iid':goddess_id, 'imp':true}); }
 	if (d == 29 && flags['chicken_route'] == 0) {
 		a.push({'desc':"Check Weather, if rainy tomorrow,", 'imp':true, 'iid':karen_id});
 		a.push({'desc':"Dog Karen to YELLOW (Vineyard)", 'cid':karen_id, 'val':(150 - aff[karen_id]), 'sel':false, 'sr':true});
@@ -263,18 +266,23 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			// Kappa Berry
 			if (!flags['berry_kappa']) {
-				a.push({'desc':"Large fish to Kappa", 'cid':'f_berry_kappa', 'val':1, 'iid':get_npc_id('kappa'), 'sel':false, 'red':true});
+				a.push({'desc':"Large fish to Kappa", 'cid':'f_berry_kappa', 'val':1, 'iid':get_npc_id('kappa'), 'sel':false, 'red':(flags['chicken_route'] == 1 && vars['chickens'] == 0)});
 			}
 			// Strength Wish Power Berry
+			var str_berry = (flags['berry_strength'] == 0 && vars['chickens'] > 0 && aff[rick_id] < _RICK_FIX_MIN && d > 10 && is_sunny == 1 && !["WED", "SAT", "SUN"].includes(dow))
 			if (flags['berry_strength'] == 0 && (vars['chickens'] > 0 || vars['potato_waters'] >= _POTATO_GROW_DAYS)) {
-				a.push({'desc':"Wish for Strength (Middle)", 'cid':'f_berry_strength', 'val':1, 'iid':get_npc_id('goddess'), 'sel':false, 'red':true});
+				a.push({'desc':"Wish for Strength (Middle)", 'cid':'f_berry_strength', 'val':1, 'iid':goddess_id,
+					'sel':(vars['chickens'] > 0 && aff[rick_id] < _RICK_FIX_MIN && d > 10 && is_sunny == 1 && !["WED", "SAT", "SUN"].includes(dow)),
+					'imp':(vars['chickens'] > 0 && aff[rick_id] < _RICK_FIX_MIN && d > 10 && is_sunny == 1 && !["WED", "SAT", "SUN"].includes(dow)),
+					'red':(aff[rick_id] >= _RICK_FIX_MIN || flags['chicken_route'] == 0 || d <= 10)
+				});
 			}
 
 			// Blue Mist Flower
 			if (d != 4 && flags['photo_popuri'] == 0) {
-				a.push({'desc':"Water Flower by Pond", 'iid':popuri_id});
+				a.push({'desc':"Water Flower by Pond", 'iid':popuri_id, 'red':str_berry, 'imp':(!str_berry && flags['chicken_route'] == 1 && d == 6)});
 				a.push({'desc':"Blue Mist Flower Glitch", 'cid':'f_photo_popuri', 'val':1, 'sr':true,
-					'sel':(flags['chicken_route'] == 1 && d == 6), 'imp':(flags['chicken_route'] == 1 && d == 6)
+					'sel':(flags['chicken_route'] == 1 && d == 6 && !str_berry),
 				});
 			}
 
@@ -298,7 +306,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				if (tmp_spr_aff > 18) { tmp_spr_aff += 5 };
 			}
 			a.push({'desc':"Talk", 'cid':sprite_id, 'val':1, 'sr':(aff[sprite_id] % 7 == 0 && aff[sprite_id] < 35),
-					'sel':(flags['chicken_route'] == 1 && d == 6), 'red':(aff[sprite_id] >= _SPRITE_WINE_MIN)
+					'sel':(str_berry || (flags['chicken_route'] == 1 && d == 6)), 'red':(aff[sprite_id] >= _SPRITE_WINE_MIN)
 			});
 			a.push({'desc':"Gift", 'cid':sprite_id, 'val':2, 'sr':true, 'sel':(a[a.length - 1]['sel'])});
 			if (tmp_spr_aff > 18) { tmp_spr_aff += 3; }
@@ -306,12 +314,10 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':("(" + Math.ceil((50 - aff[sprite_id]) / 3) + " Visits Left)"), 'sr':true})
 			}
 
-			// Blue Mist Flower
+			// Flower
 			if (d == 4 && flags['photo_popuri'] == 0) {
 				a.push({'desc':"Water Flower by Pond", 'iid':popuri_id});
-				a.push({'desc':"Blue Mist Flower Glitch", 'cid':'f_photo_popuri', 'val':1, 'sr':true,
-					'sel':(flags['chicken_route'] == 1 && d == 6), 'imp':(flags['chicken_route'] == 1 && d == 6)
-				});
+				a.push({'desc':"Blue Mist Flower Glitch", 'cid':'f_photo_popuri', 'val':1, 'sr':true, 'sel':false});
 			}
 
 			// Cliff
@@ -386,10 +392,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			if (flags['karen_ankle'] == 0 && flags['chicken_route'] == 0 && d == 30 && is_sunny == 1) {
 				a.push({'desc':"DONT VISIT VINEYARD, KAREN ANKLE", 'red':true, 'iid':karen_id});
 			}
-			if (d > 3 && d < 7 && flags['chicken_route'] == 1) {
-				a.push({'desc':"DONT VISIT - WAIT FOR BAR [50%]", 'red':true, 'iid':kai_id});
-			}
-			if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':false, 'red':(d < 7 && flags['chicken_route'] == 1)}); }
+			if (aff[kai_id] == 0) { a.push({'desc':"Meet", 'cid':kai_id, 'val':8, 'sel':false, 'red':([5, 6].includes(d) && flags['chicken_route'] == 1)}); }
 			a.push({'desc':"Talk (Vineyard)", 'cid':kai_id, 'val':2, 'sr':(aff[kai_id] == 0), 'sel':false, 'red':(kai_maxed || (d == 30 && flags['chicken_route'] == 0))});
 			a.push({'desc':"Berry", 'sr':true, 'sel':false, 't2':"  Gift ",
 				'cid':((flags['recipe_kai'] == 0) ? [kai_id, 'f_recipe_kai'] : kai_id),
@@ -517,7 +520,10 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 				// MAY
 				if (aff[may_id] < 100 && is_sunny == 0) {
-					a.push({'desc':"Spam May (Library) [55 Talks]", 'cid':may_id, 'val':(160 - aff[may_id]), 'sel':false});
+					var may_spam_count = Math.ceil((160 - ((aff[may_id] == 0) ? 7 : 3)) / 3);
+					a.push({'desc':"Spam May (Library) [" + may_spam_count + " Talks]",
+						'cid':may_id, 'val':(may_spam_count * 3), 'sel':false, 'red':true
+					});
 				}
 			} else if (is_sunny == 0 && aff[maria_id] >= _SICK_EVENT_MIN && !flags["sick_maria"]) {
 				// Sick Event
@@ -565,7 +571,11 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 
 			// MAY
 			if (aff[may_id] < 100 && is_sunny == 1) {
-				a.push({'desc':"Spam May [55 Talks]", 'cid':may_id, 'val':(160 - aff[may_id]), 'sel':false});
+				var may_spam_count = Math.ceil((160 - (aff[may_id] + ((aff[may_id] == 0) ? 7 : 3))) / 3);
+				var may_loc = ((dow == "SAT") ? "By Library" : "Church");
+				a.push({'desc':"Spam May (" + may_loc + ") [" + may_spam_count + " Talks]",
+					'cid':may_id, 'val':(may_spam_count * 3), 'sel':false, 'red':(dow != "SAT")
+				});
 			}
 
 			// POTATOES
