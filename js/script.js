@@ -1548,9 +1548,6 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 	var aff_reqs = [141, 136, 200];
 	var mus_boxes = [0, 0, 0];
 	var net = 0;
-	
-	console.log(npc_affs);
-	console.log(mus_boxes);
 
 	if (d < 24) {
 		// Flower Festival
@@ -1570,9 +1567,6 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 */
 	npc_affs[2] += ((flags['dream_elli'] == 0) ? _DREAM_EVENT_AFF : 0);
 	npc_affs[2] += ((flags['ankle_elli'] == 0) ? _ANKLE_EVENT_AFF : 0);
-	
-	console.log(npc_affs);
-	console.log(mus_boxes);
 
 	while (((npc_affs[0] < (aff_reqs[0] - 3)) || (npc_affs[1] < (aff_reqs[1] - 4)) || (npc_affs[2] < (aff_reqs[2] - ((chickens == 0) ? 4 : 5)))) && net < 100) {
 		var lowest = [-1, -1]; // [id, val]
@@ -1591,9 +1585,6 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 		mus_boxes[lowest[0]] += 1;
 		net++;
 	}
-
-	console.log(npc_affs);
-	console.log(mus_boxes);
 	
 	// Keep Maria below 160
 	net = 0;
