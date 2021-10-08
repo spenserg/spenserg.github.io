@@ -225,7 +225,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				});
 				if (flags['recipe_ann'] == 0) {
 					a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes', 'v_potato_gifts'];
-					a[a.length - 1]['val'] = [1, 6, -1, 1];
+					a[a.length - 1]['val'] = [1, 5, -1, 1];
 				}
 				if (ann_sick_event) {
 					a.push({'desc':"Sick Event", 'cid':[ann_id, 'f_sick_ann'], 'val':[_SICK_EVENT_AFF, 1], 'imp':true});
