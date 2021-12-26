@@ -11,6 +11,16 @@
 </head>
 
 <body>
-  Jquery ID: <textarea id="jqid" rows="5">$("#bingo").html()</textarea><br/>
-	Html: <textarea id="jq_html" rows="5"></textarea>
+	Jquery ID: <input value="$('#bingo').html()" /><br/>
+	Html:<br/>
+	<textarea id="jq_html" rows="5"></textarea><br/>
+	<button onclick="compute()">Go</button><br/>
+	Ans:<br/>
+	<textarea id="jq_html" rows="5"></textarea><br/>
 </body>
+
+<script>
+	function compute() {
+		reg = /font\-size\:\s*100\%\;\"\>\s*([^\s][^\<]+[^\s])\s*\<\/div/g;
+	}
+</script>
