@@ -11,20 +11,133 @@
 </head>
 
 <body>
+	ID: <input type="number" name="cur_id" id="cur_id" value="0" /><br/>
 	Text: <textarea id="bg"></textarea><br/>
+	G: <input type="number" name="count_geode" id="count_geode" value="0" /><br/>
+	F: <input type="number" name="count_frozen" id="count_frozen" value="0" /><br/>
+	M: <input type="number" name="count_magma" id="count_magma" value="0" /><br/>
+	O: <input type="number" name="count_omni" id="count_omni" value="0" /><br/>
+	A: <input type="number" name="count_artifact" id="count_artifact" value="0" /><br/>
+	C: <input type="number" name="count_coconut" id="count_coconut" value="0" /><br/>
 	<button onclick="compute()">Go</button><br/>
 	<hr>
 	<textarea id="result"></textarea>
 </body>
 
 <script>
+	var items = {
+"Prismatic Shard": 6000,
+"Treasure Chest": 5000,
+"Iridium Ore": 4100,
+"Coal": 4015,
+"Golden Pumpkin": 4012,
+"Iron Ore": 4010,
+"Gold Ore": 3025,
+"Pearl": 2500,
+"Ancient Seed": 2005,
+"Copper Ore": 1005,
+"Golden Mask": 500,
+"Star Shards": 500,
+"Helvite": 450,
+"Neptunite": 400,
+"Fire Opal": 350,
+"Bixite": 300,
+"Dolomite": 300,
+"Ornamental Fan": 300,
+"Rare Disc": 300,
+"Tigerseye": 275,
+"Fairy Stone": 250,
+"Golden Relic": 250,
+"Kyanite": 250,
+"Ocean Stone": 220,
+"Dwarf Gadget": 200,
+"Elvish Jewelry": 200,
+"Fluorapatite": 200,
+"Ghost Crystal": 200,
+"Lemon Stone": 200,
+"Lunarite": 200,
+"Obsidian": 200,
+"Basalt": 175,
+"Alamite": 150,
+"Geminite": 150,
+"Hematite": 150,
+"Jamborite": 150,
+"Jasper": 150,
+"Opal": 150,
+"Aerinite": 125,
+"Celestine": 125,
+"Petrified Slime": 120,
+"Pyrite": 120,
+"Soapstone": 120,
+"Jagoite": 115,
+"Marble": 110,
+"Anchor": 100,
+"Ancient Drum": 100,
+"Ancient Sword": 100,
+"Bone Flute": 100,
+"Dwarvish Helm": 100,
+"Esperite": 100,
+"Fire Quartz": 100,
+"Malachite": 100,
+"Thunder Egg": 100,
+"Slate": 85,
+"Nekoite": 80,
+"Orpiment": 80,
+"Calcite": 75,
+"Frozen Tear": 75,
+"Granite": 75,
+"Ancient Doll": 60,
+"Sandstone": 60,
+"Baryte": 50,
+"Chewing Stick": 50,
+"Chicken Statue": 50,
+"Earth Crystal": 50,
+"Prehistoric Handaxe": 50,
+"Prehistoric Tool": 50,
+"Arrowhead": 40,
+"Chipped Amphora": 40,
+"Dried Starfish": 40,
+"Mudstone": 25,
+"Rusty Cog": 25,
+"Rusty Spoon": 25,
+"Rusty Spur": 25,
+"Clay": 20,
+"Glass Shards": 20,
+"Limestone": 15,
+"Stone": 2,
+"Mango Sapling": 0,
+"Fossilized Skull": 0,
+"Taro Tuber": 0,
+"Mahogany Seed": 0,
+"Pineapple Seeds": 0
+};
+
 	var compute = function() {
-		var r = /(\d+)\t([^\t]+)\t(\d+)\t([^\t]+)\t(\d+)\t([^\t]+)\t(\d+)\t([^\t]+)\t(\d+)\t([^\t]+)\t(\d+)\t([^\t]+)\t(\d+)\n/
-		var z;
+		var r = new RegExp(/(\d+)\t([^\t]+)\t\d+\t([^\t]+)\t\d+\t([^\t]+)\t\d+\t([^\t]+)\t\d+\t([^\t]+)\t\d+\t([^\t]+)\t\d+\n/g);
 		var counter = 0;
+		var z;
+		var list = {};
+		var types = ["G", "F", "M", "O", "A", "C"];
 		while ((z = r.exec($("#bg").val())) != null && counter < 100) {
-			console.log(z);
+			var row = {"id" : z[1]};
+			for (var i = 0; i < types.length; i++) {
+				var needs_donated = (z[i + 2].indexOf(" Need to Donate") >= 0);
+				z[i + 2] = z[i + 2].replace(" Need to Donate", "");
+				z[i + 2] = z[i + 2].replace(" Could be Qi Beans", "");
+				z[i + 2] = z[i + 2].replace(" Could be Golden Helmet", "");
+
+				// [Name, Value, Need_to_donate, is_selected]
+				if (items[z[i + 2]] === undefined) {
+					console.log('Item not found: "' + z[i + 2] + '"');
+					row[types[i]] = ["NULL", -1, false, 0];
+				} else {
+					row[types[i]] = [z[i + 2], items[z[i + 2]], needs_donated, 0];
+				}
+			}
+			list[z[1]] = row;
 			counter++;
 		}
+
+		console.log(list);
 	}
 </script>
