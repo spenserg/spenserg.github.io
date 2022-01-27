@@ -23,28 +23,28 @@
 		<div class="row">
 			<div class="col">G:</div>
 			<div class="col">
-				<input type="number" name="count_geode" id="count_geode" value="0" />
+				<input type="number" name="count_G" id="count_G" value="0" />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">F:</div>
-			<div class="col"><input type="number" name="count_frozen" id="count_frozen" value="0" /></div>
+			<div class="col"><input type="number" name="count_F" id="count_F" value="0" /></div>
 		</div>
 		<div class="row">
 			<div class="col">M:</div>
-			<div class="col"><input type="number" name="count_magma" id="count_magma" value="0" /></div>
+			<div class="col"><input type="number" name="count_M" id="count_M" value="0" /></div>
 		</div>
 		<div class="row">
 			<div class="col">O:</div>
-			<div class="col"><input type="number" name="count_omni" id="count_omni" value="0" /></div>
+			<div class="col"><input type="number" name="count_O" id="count_O" value="0" /></div>
 		</div>
 		<div class="row">
 			<div class="col">A:</div>
-			<div class="col"><input type="number" name="count_artifact" id="count_artifact" value="0" /></div>
+			<div class="col"><input type="number" name="count_A" id="count_A" value="0" /></div>
 		</div>
 		<div class="row">
 			<div class="col">C:</div>
-			<div class="col"><input type="number" name="count_coconut" id="count_coconut" value="0" /></div>
+			<div class="col"><input type="number" name="count_C" id="count_C" value="0" /></div>
 		</div>
 		<div class="row">
 			<div class="col"><button onclick="compute()">Go</button></div>
@@ -150,6 +150,10 @@
 		var z;
 		var list = {};
 		var types = ["G", "F", "M", "O", "A", "C"];
+
+		
+
+		// [name, value, needs donated, type_used]
 		while ((z = r.exec($("#bg").val())) != null && counter < 100) {
 			var row = {"id" : z[1]};
 			for (var i = 0; i < types.length; i++) {
