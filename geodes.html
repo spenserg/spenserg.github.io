@@ -11,17 +11,49 @@
 </head>
 
 <body>
-	ID: <input type="number" name="cur_id" id="cur_id" value="0" /><br/>
-	Text: <textarea id="bg"></textarea><br/>
-	G: <input type="number" name="count_geode" id="count_geode" value="0" /><br/>
-	F: <input type="number" name="count_frozen" id="count_frozen" value="0" /><br/>
-	M: <input type="number" name="count_magma" id="count_magma" value="0" /><br/>
-	O: <input type="number" name="count_omni" id="count_omni" value="0" /><br/>
-	A: <input type="number" name="count_artifact" id="count_artifact" value="0" /><br/>
-	C: <input type="number" name="count_coconut" id="count_coconut" value="0" /><br/>
-	<button onclick="compute()">Go</button><br/>
-	<hr>
-	<textarea id="result"></textarea>
+	<div class="container">
+		<div class="row">
+			<div class="col">ID:</div>
+			<div class="col"><input type="number" name="cur_id" id="cur_id" value="0" /></div>
+		</div>
+		<div class="row">
+			<div class="col">Text:</div>
+			<div class="col"><textarea id="bg"></textarea></div>
+		</div>
+		<div class="row">
+			<div class="col">G:</div>
+			<div class="col">
+				<input type="number" name="count_geode" id="count_geode" value="0" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">F:</div>
+			<div class="col"><input type="number" name="count_frozen" id="count_frozen" value="0" /></div>
+		</div>
+		<div class="row">
+			<div class="col">M:</div>
+			<div class="col"><input type="number" name="count_magma" id="count_magma" value="0" /></div>
+		</div>
+		<div class="row">
+			<div class="col">O:</div>
+			<div class="col"><input type="number" name="count_omni" id="count_omni" value="0" /></div>
+		</div>
+		<div class="row">
+			<div class="col">A:</div>
+			<div class="col"><input type="number" name="count_artifact" id="count_artifact" value="0" /></div>
+		</div>
+		<div class="row">
+			<div class="col">C:</div>
+			<div class="col"><input type="number" name="count_coconut" id="count_coconut" value="0" /></div>
+		</div>
+		<div class="row">
+			<div class="col"><button onclick="compute()">Go</button></div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col"><textarea id="result"></textarea></div>
+		</div>
+	</div>
 </body>
 
 <script>
