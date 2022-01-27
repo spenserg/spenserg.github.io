@@ -13,45 +13,39 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-1">ID:</div>
-			<div class="col-1"><input type="number" name="cur_id" id="cur_id" value="0" /></div>
+			<div class="col-2">ID:</div>
+			<div class="col-2"><input type="number" name="cur_id" id="cur_id" value="0" /></div>
 		</div>
 		<div class="row">
-			<div class="col">Text:</div>
-			<div class="col"><textarea id="bg"></textarea></div>
+			<div class="col-2">Text:</div>
+			<div class="col-2"><textarea id="bg"></textarea></div>
 		</div>
 		<div class="row">
-			<div class="col">G:</div>
-			<div class="col">
-				<input type="number" name="count_G" id="count_G" value="0" />
-			</div>
+			<div class="col-2">G:</div>
+			<div class="col-2"><input type="number" name="count_G" id="count_G" value="0" /></div>
 		</div>
 		<div class="row">
-			<div class="col">F:</div>
-			<div class="col"><input type="number" name="count_F" id="count_F" value="0" /></div>
+			<div class="col-2">F:</div>
+			<div class="col-2"><input type="number" name="count_F" id="count_F" value="0" /></div>
 		</div>
 		<div class="row">
-			<div class="col">M:</div>
-			<div class="col"><input type="number" name="count_M" id="count_M" value="0" /></div>
+			<div class="col-2">M:</div>
+			<div class="col-2"><input type="number" name="count_M" id="count_M" value="0" /></div>
 		</div>
 		<div class="row">
-			<div class="col">O:</div>
-			<div class="col"><input type="number" name="count_O" id="count_O" value="0" /></div>
+			<div class="col-2">O:</div>
+			<div class="col-2"><input type="number" name="count_O" id="count_O" value="0" /></div>
 		</div>
 		<div class="row">
-			<div class="col">A:</div>
-			<div class="col"><input type="number" name="count_A" id="count_A" value="0" /></div>
+			<div class="col-2">A:</div>
+			<div class="col-2"><input type="number" name="count_A" id="count_A" value="0" /></div>
 		</div>
 		<div class="row">
-			<div class="col">C:</div>
-			<div class="col"><input type="number" name="count_C" id="count_C" value="0" /></div>
+			<div class="col-2">C:</div>
+			<div class="col-2"><input type="number" name="count_C" id="count_C" value="0" /></div>
 		</div>
 		<div class="row">
 			<div class="col"><button onclick="compute()">Go</button></div>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="col"><textarea id="result"></textarea></div>
 		</div>
 	</div>
 </body>
@@ -151,7 +145,15 @@
 		var list = {};
 		var types = ["G", "F", "M", "O", "A", "C"];
 
+		var total = 0;
+		for (var i = 0; i < types.length; i++) {
+			if ((parseInt($("#count_" + types[i]).val()) == NaN) || (parseInt($("#count_" + types[i]).val()) < 0)} {
+				$("#count_" + types[i]).val(0);
+			}
+			total += parseInt($("#count_" + types[i]).val());
+		}
 		
+		console.log("Total: " + total);
 
 		// [name, value, needs donated, type_used]
 		while ((z = r.exec($("#bg").val())) != null && counter < 100) {
