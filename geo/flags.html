@@ -24,6 +24,8 @@
 		<h3>Geoguessr map</h3>
 		<p>You can find the map to test your knowledge about the locations <a href="" target="_blank">here</a>.</p> -->
 
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Map_of_USA_with_state_and_territory_names_2.png/800px-Map_of_USA_with_state_and_territory_names_2.png" class="noZoomGen" onclick="enlarge_pic(this)" />
+
 		<div class="headerText" id="NA">North America</div>
 		<div class="inside">
 			<div class="bollard">
@@ -359,5 +361,18 @@
 				<p class="country">the United States Virgin Islands</p>
 			</div>
 		</div>
+
+		<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+			<span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+			<div class="w3-modal-content">
+				<img id="img01" style="width:100%">
+			</div>
+		</div>
+		<script>
+			function enlarge_pic(element) {
+				document.getElementById("img01").src = element.src;
+				document.getElementById("modal01").style.display = "block";
+			}
+		</script>
 	</body>
 </html>
