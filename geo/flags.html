@@ -591,7 +591,7 @@
 			.mouseover(
 				function() {
 					var img_id = $(this)[0]['id'].split("_")[0];
-					var img_url = "/geo/img/flags/flag_" + img_id + "_geo.png";
+					var img_url = "/geo/img/flags/geo/flag_" + img_id + "_geo.png";
 					if (img_id.length > 0) {
 						$.get(img_url).fail(function() {
 							img_url = "/geo/img/wanted.png";
@@ -605,14 +605,14 @@
 			).mouseout(
 				function() {
 					var img_id = $(this)[0]['id'].split("_")[0];
-					var img_url = "/geo/img/flags/flag_" + img_id + ".png";
+					var img_url = "/geo/img/flags/wiki/flag_" + img_id + ".png";
 					if (img_id.length > 0) {
 						$.get(img_url).fail(function() {
 							img_url = "/geo/img/wanted.png";
 						});
-						$(this).fadeOut(250, function(){
+						$(this).fadeOut(200, function(){
 							$(this).attr("src", img_url);
-							$(this).fadeIn(200);
+							$(this).fadeIn(150);
 						});
 					}
 				}
