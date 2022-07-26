@@ -593,7 +593,9 @@
 					var img_id = $(this)[0]['id'].split("_")[0];
 					var img_url = "/geo/img/flags/flag_" + img_id + "_geo.png";
 					if (img_id.length > 0) {
-						var img_url = $.get(img_url).done(function() { return img_url }).fail(function() { return "/geo/img/wanted.png" });
+						$.get(img_url).fail(function() {
+							img_url = "/geo/img/wanted.png";
+						});
 						$(this).fadeOut(function(){
 							$(this).attr("src", img_url);
 							$(this).fadeIn();
@@ -605,8 +607,11 @@
 					var img_id = $(this)[0]['id'].split("_")[0];
 					var img_url = "/geo/img/flags/flag_" + img_id + ".png";
 					if (img_id.length > 0) {
+						$.get(img_url).fail(function() {
+							img_url = "/geo/img/wanted.png";
+						});
 						$(this).fadeOut(function(){
-							var img_url = $.get(img_url).done(function() { return img_url }).fail(function() { return "/geo/img/wanted.png" });
+							$(this).attr("src", img_url);
 							$(this).fadeIn();
 						});
 					}
