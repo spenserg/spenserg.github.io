@@ -596,9 +596,9 @@
 						$.get(img_url).fail(function() {
 							img_url = "/geo/img/wanted.png";
 						});
-						$(this).fadeOut(function(){
+						$(this).fadeOut(250, function(){
 							$(this).attr("src", img_url);
-							$(this).fadeIn();
+							$(this).fadeIn(200);
 						});
 					}
 				}
@@ -610,9 +610,9 @@
 						$.get(img_url).fail(function() {
 							img_url = "/geo/img/wanted.png";
 						});
-						$(this).fadeOut(function(){
+						$(this).fadeOut(250, function(){
 							$(this).attr("src", img_url);
-							$(this).fadeIn();
+							$(this).fadeIn(200);
 						});
 					}
 				}
