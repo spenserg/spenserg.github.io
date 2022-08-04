@@ -3,33 +3,36 @@
 	<head>
 		<title>Flags</title>
 		<meta charset="utf-8">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-		<link href="/geo/css/bollards.css" rel="stylesheet" type="text/css" />
-		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="/geo/css/bollards.css" type="text/css" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="/geo/main.html">Geohints</a>
-		  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Jump to
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#S">States</a>
-							<a class="dropdown-item" href="#T">Territories</a>
-							<a class="dropdown-item" href="#C">Cities</a>
-						</div>
-					</li>
-				</ul>
+		<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #212121; color: white;">
+			<a class="navbar-brand" href="/geo/main.html">
+				<img class="logo" src="/geo/img/logo/geohints.png" />
+			</a>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span style="margin:auto">Known colors:</span>
+					<button class="btn btn-geo-nav" id="r_nav" type="button" style="color:black; border:2px solid red">Red</button>
+					<button class="btn btn-geo-nav" id="y_nav" type="button" style="color:black; border:2px solid yellow">Yellow</button>
+					<button class="btn btn-geo-nav" id="g_nav" type="button" style="color:black; border:2px solid green">Green</button>
+					<button class="btn btn-geo-nav" id="b_nav" type="button" style="color:black; border:2px solid blue">Blue</button>
+					<button class="btn btn-geo-nav" id="k_nav" type="button" style="color:black; border:2px solid grey">Black</button>
+					<button class="btn btn-geo-nav" id="aa_nav" type="button">Show All</button>
+				</div>
 			</div>
 		</nav>
 
-		<h3>Geoguessr map</h3>
+		<span class="geoh3" style="margin-top:150px">Geoguessr map</span>
+
+		<h3 style="padding-left:15px;">Geoguessr map</h3>
 		<p>You can find the map to test your knowledge about the locations <a href="https://www.geoguessr.com/maps/604d69c76cd398000142d6ea" target="_blank">here</a>.</p>
 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/United_States_with_territory_states_and_DC_flags_new2.png/800px-United_States_with_territory_states_and_DC_flags_new2.png" class="noZoomGen" onclick="enlarge_pic(this)" />
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/United_States_with_territory_states_and_DC_flags_new2.png/800px-United_States_with_territory_states_and_DC_flags_new2.png" class="noZoomGen" onclick="enlarge_pic(this)" />
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Map_of_USA_with_state_and_territory_names_2.png/800px-Map_of_USA_with_state_and_territory_names_2.png" class="noZoomGen" onclick="enlarge_pic(this)" />
 
 		<div class="headerText" id="S">States</div>
@@ -590,41 +593,145 @@
 				<img id="img01" style="width:100%">
 			</div>
 		</div>
-		<script>
-			function enlarge_pic(element) {
-				document.getElementById("img01").src = element.src;
-				document.getElementById("modal01").style.display = "block";
-			}
-			$(".zoomA")
-			.mouseover(
-				function() {
-					var img_id = $(this)[0]['id'].split("_")[0];
-					var img_url = "/geo/img/flags/geo/flag_" + img_id + "_geo.png";
-					if (img_id.length > 0) {
-						$.get(img_url).fail(function() {
-							img_url = "/geo/img/wanted.png";
-						});
-						$(this).fadeOut(200, function(){
-							$(this).attr("src", img_url);
-							$(this).fadeIn(150);
-						});
-					}
-				}
-			).mouseout(
-				function() {
-					var img_id = $(this)[0]['id'].split("_")[0];
-					var img_url = "/geo/img/flags/wiki/flag_" + img_id + ".png";
-					if (img_id.length > 0) {
-						$.get(img_url).fail(function() {
-							img_url = "/geo/img/wanted.png";
-						});
-						$(this).fadeOut(150, function(){
-							$(this).attr("src", img_url);
-							$(this).fadeIn(200);
-						});
-					}
-				}
-			);
-		</script>
 	</body>
+	<script>
+		var originalColors = [];
+		var colors_shown = [];
+		var used_colors = {
+			'r':"#f59b9b",
+			'b':"#65acf9",
+			'g':"#7cef96",
+			'y':"#ffe595",
+			'k':"#706f6f"
+		};
+		$(function() {
+			$(".btn-geo-nav").hover(function(){
+				originalColors[$(this).index('.btn-geo-nav')] = $(this).css('background-color');
+				$(this).css('background-color', '#aaa');
+			},
+			function(){
+				$(this).css('background-color', originalColors[$(this).index('.btn-geo-nav')]);
+			});
+			$(".btn-geo-nav").each(function() {
+				var tmp_id = $(this).attr("id").split("_nav")[0];
+				if (tmp_id.length == 1) {
+					colors_shown[tmp_id] = 0;
+				}
+			});
+		});
+
+		function enlarge_pic(element) {
+			document.getElementById("img01").src = element.src;
+			document.getElementById("modal01").style.display = "block";
+		}
+
+		$(".zoomA").mouseover(function() {
+			var img_id = $(this)[0]['id'].split("_")[0];
+			var img_url = "/geo/img/flags/geo/flag_" + img_id + "_geo.png";
+			if (img_id.length > 0) {
+				$.get(img_url).fail(function() {
+					img_url = "/geo/img/wanted.png";
+				});
+				$(this).fadeOut(200, function(){
+					$(this).attr("src", img_url);
+					$(this).fadeIn(150);
+				});
+			}
+		}).mouseout(function() {
+			var img_id = $(this)[0]['id'].split("_")[0];
+			var img_url = "/geo/img/flags/wiki/flag_" + img_id + ".png";
+			if (img_id.length > 0) {
+				$.get(img_url).fail(function() {
+					img_url = "/geo/img/wanted.png";
+				});
+				$(this).fadeOut(150, function(){
+					$(this).attr("src", img_url);
+					$(this).fadeIn(200);
+				});
+			}
+		});
+
+		var originalColors = [];
+		var colors_shown = [];
+		var used_colors = {
+			'r':"#f59b9b",
+			'b':"#65acf9",
+			'g':"#7cef96",
+			'y':"#ffe595",
+			'k':"#706f6f"
+		};
+		$(function() {
+			$(".btn-geo-nav").hover(function(){
+				originalColors[$(this).index('.btn-geo-nav')] = $(this).css('background-color');
+				$(this).css('background-color', '#aaa');
+			},
+			function(){
+				$(this).css('background-color', originalColors[$(this).index('.btn-geo-nav')]);
+			});
+			$(".btn-geo-nav").each(function() {
+				var tmp_id = $(this).attr("id").split("_nav")[0];
+				if (tmp_id.length == 1) {
+					colors_shown[tmp_id] = 0;
+				}
+			});
+		});
+
+		$(".btn-geo-nav").click(function(){
+			var tmp_id = $(this).attr("id").split("_nav")[0];
+			if (tmp_id.length == 1) {
+				if ($(this).css("font-weight") == 400) {
+					originalColors[$(this).index('.btn-geo-nav')] = used_colors[tmp_id];
+					toggle_colors(tmp_id, 1);
+				} else {
+					originalColors[$(this).index('.btn-geo-nav')] = "white";
+					toggle_colors(tmp_id, 0);
+				}
+				if ($(this).css("font-weight") == 700) {
+					$(this).css("font-weight", 400);
+				} else { $(this).css("font-weight", 700); }
+			} else { // Show All
+				$(".bollard").show();
+				$(".btn-geo-nav").each(function() {
+					$(this).css("font-weight", 400);
+					$(this).css("background-color", "white");
+				});
+				for (var key in colors_shown) {
+					colors_shown[key] = 0;
+				}
+			}
+		});
+
+		function toggle_colors(c, t) {
+			colors_shown[c] = t;
+			if (t == 0) {
+				var tmp_cs = [];
+				for (var key in colors_shown) {
+					if (colors_shown[key] == 1) {
+						tmp_cs.push(key);
+					}
+				}
+				$(".bollard").each(function() {
+					if( $(this).is(":hidden")) {
+						var show_this = true;
+						for (var i = 0; i < tmp_cs.length; i++) {
+							if (!($(this).attr("data-color").includes(tmp_cs[i]))) {
+								show_this = false;
+								break;
+							}
+						}
+						if (show_this) { $(this).show(); }
+					}
+				});
+			}
+			if (t == 1) {
+				$(".bollard").each(function(){
+					if($(this).is(":visible")) {
+						if (!($(this).attr("data-color").includes(c))) {
+							$(this).hide();
+						}
+					}
+				});
+			}
+		}
+	</script>
 </html>
