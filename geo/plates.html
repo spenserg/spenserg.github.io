@@ -3,36 +3,36 @@
 	<head>
 		<title>License plates</title>
 		<meta charset="utf-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="/geo/css/bollards.css" type="text/css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #212121; color: white;">
-      <a class="navbar-brand" href="/geo/main.html">
-        <img class="logo" src="/geo/img/logo/geohints.png" />
-      </a>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span style="margin:auto">Known colors:</span>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #212121; color: white;">
+			<a class="navbar-brand" href="/geo/main.html">
+				<img class="logo" src="/geo/img/logo/geohints.png" />
+			</a>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span style="margin:auto">Known colors:</span>
 					<button class="btn btn-geo-nav" id="r_nav" type="button" style="color:black; border:2px solid red">Red</button>
-          <button class="btn btn-geo-nav" id="o_nav" type="button" style="color:black; border:2px solid orange">Orange</button>
-          <button class="btn btn-geo-nav" id="y_nav" type="button" style="color:black; border:2px solid yellow">Yellow</button>
-          <button class="btn btn-geo-nav" id="g_nav" type="button" style="color:black; border:2px solid green">Green</button>
-          <button class="btn btn-geo-nav" id="b_nav" type="button" style="color:black; border:2px solid blue">Blue/Purple</button>
-          <button class="btn btn-geo-nav" id="k_nav" type="button" style="color:black; border:2px solid grey">Brown/Black</button>
-          <button class="btn btn-geo-nav" id="aa_nav" type="button">Show All</button>
-        </div>
-      </div>
-    </nav>
+					<button class="btn btn-geo-nav" id="o_nav" type="button" style="color:black; border:2px solid orange">Orange</button>
+					<button class="btn btn-geo-nav" id="y_nav" type="button" style="color:black; border:2px solid yellow">Yellow</button>
+					<button class="btn btn-geo-nav" id="g_nav" type="button" style="color:black; border:2px solid green">Green</button>
+					<button class="btn btn-geo-nav" id="b_nav" type="button" style="color:black; border:2px solid blue">Blue/Purple</button>
+					<button class="btn btn-geo-nav" id="k_nav" type="button" style="color:black; border:2px solid grey">Brown/Black</button>
+					<button class="btn btn-geo-nav" id="aa_nav" type="button">Show All</button>
+				</div>
+			</div>
+		</nav>
 
-    <span class="geoh3" style="margin-top:150px">Geoguessr map</span>
-    <!-- No map exists
+		<span class="geoh3" style="margin-top:150px">Geoguessr map</span>
+		<!-- No map exists
 		<p>You can find the map to test your knowledge about the locations <a href="" target="_blank">here</a>.</p> -->
 
-    <div class="headerText" id="R">Red / Orange / Red-White</div>
+		<div class="headerText" id="R">Red / Orange / Red-White</div>
 		<div class="section">
 <!-- Solid Red -->
 			<div class="headerText">Solid Red, Red-White</div>
@@ -61,13 +61,13 @@
 					</a>
 					<p class="country">California (1994 - 2012)</p>
 				</div>
-        <div class="bollard" data-color="rk"> <!-- Louisiana plate 2005 -->
+				<div class="bollard" data-color="rk"> <!-- Louisiana plate 2005 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_LA_2005.jpg" alt="Louisiana rk plate (2005 - Present)" id="LA_2005" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Louisiana (2005 - Present)</p>
 				</div>
-        <div class="bollard" data-color="ry"> <!-- Maryland plate 2016 -->
+				<div class="bollard" data-color="ry"> <!-- Maryland plate 2016 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_MD_2016.jpg" alt="Maryland ry plate (2016 - Present)" id="MD_2016" class="zoomA" loading="lazy" />
 					</a>
@@ -90,55 +90,55 @@
 					</a>
 					<p class="country">Idaho (1997 - Present)</p>
 				</div>
-        <div class="bollard" data-color="rbk"> <!-- Texas plate 2009 -->
+				<div class="bollard" data-color="rbk"> <!-- Texas plate 2009 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_TX_2009.jpg" alt="Texas rb plate (2009 - 2012)" id="TX_2009" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Texas (2009 - 2012)</p>
 				</div>
-        <div class="bollard" data-color="rb"> <!-- North Carolina plate 1982 -->
+				<div class="bollard" data-color="rb"> <!-- North Carolina plate 1982 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_NC_1982.jpg" alt="North Carolina rb plate (1982 - Present)" id="NC_1982" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">North Carolina (1982 - Present)</p>
 				</div>
-        <div class="bollard" data-color="rob"> <!-- Alabama plate 2009 -->
+				<div class="bollard" data-color="rob"> <!-- Alabama plate 2009 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_AL_2009.jpg" alt="Alabama rb plate (2009 - 2013)" id="AL_2009" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Alabama (2009 - 2013)</p>
 				</div>
-        <div class="bollard" data-color="royb"> <!-- Ohio plate 2009 -->
+				<div class="bollard" data-color="royb"> <!-- Ohio plate 2009 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_OH_2009.jpg" alt="Ohio ryb plate (2009 - 2013)" id="OH_2009" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Ohio (2009 - 2013)</p>
 				</div>
-        <div class="bollard" data-color="rgb"> <!-- Georgia plate 2012a -->
+				<div class="bollard" data-color="rgb"> <!-- Georgia plate 2012a -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_GA_2012a.jpg" alt="Georgia rgb plate (2012 - Present)" id="GA_2012a" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Georgia (2012 - Present)</p>
 				</div>
-        <div class="bollard" data-color="robk"> <!-- South Carolina plate 2008 -->
+				<div class="bollard" data-color="robk"> <!-- South Carolina plate 2008 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_SC_2008.jpg" alt="South Carolina rbk plate (2008 - 2016)" id="SC_2008" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">South Carolina (2008 - 2016)</p>
 				</div>
-        <div class="bollard" data-color="oyb"> <!-- Michigan plate 2014 -->
+				<div class="bollard" data-color="oyb"> <!-- Michigan plate 2014 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_MI_2014.jpg" alt="Michigan ryb plate (2014 - Present)" id="MI_2014" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Michigan (2014 - Present)</p>
 				</div>
-        <div class="bollard" data-color="roybk"> <!-- Alaska plate 2008 -->
+				<div class="bollard" data-color="roybk"> <!-- Alaska plate 2008 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_AK_2008.jpg" alt="Alaska ryb plate (2008)" id="AK_2008" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Alaska (2008)</p>
 				</div>
-        <div class="bollard" data-color="rob"> <!-- Alaska plate 2015 -->
+				<div class="bollard" data-color="rob"> <!-- Alaska plate 2015 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_AK_2015.jpg" alt="Alaska rb plate (2015 - Present)" id="AK_2015" class="zoomA" loading="lazy" />
 					</a>
@@ -156,55 +156,55 @@
 					</a>
 					<p class="country">Georgia (2012 - Present)</p>
 				</div>
-        <div class="bollard" data-color="rb"> <!-- Maryland plate 2010 -->
+				<div class="bollard" data-color="rb"> <!-- Maryland plate 2010 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_MD_2010.jpg" alt="Maryland rb plate (2010 - 2016)" id="MD_2010" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Maryland (2010 - 2016)</p>
 				</div>
-        <div class="bollard" data-color="rb"> <!-- Indiana plate 2012 -->
+				<div class="bollard" data-color="rb"> <!-- Indiana plate 2012 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_IN_2012.jpg" alt="Indiana rb plate (2012 - Present)" id="IN_2012" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Indiana (2012 - Present)</p>
 				</div>
-        <div class="bollard" data-color="ry"> <!-- Maryland plate 2016 -->
+				<div class="bollard" data-color="ry"> <!-- Maryland plate 2016 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_MD_2016.jpg" alt="Maryland ry plate (2016 - Present)" id="MD_2016" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Maryland (2016 - Present)</p>
 				</div>
-        <div class="bollard" data-color="ryb"> <!-- Nevada plate 2016 -->
+				<div class="bollard" data-color="ryb"> <!-- Nevada plate 2016 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_NV_2016.jpg" alt="Nevada ryb plate (2016 - Present)" id="NV_2016" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Nevada (2016 - Present)</p>
 				</div>
-        <div class="bollard" data-color="oyb"> <!-- North Dakota plate 2015 -->
+				<div class="bollard" data-color="oyb"> <!-- North Dakota plate 2015 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_ND_2015.jpg" alt="North Dakota ryb plate (2015 - Present)" id="ND_2015" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">North Dakota (2015 - Present)</p>
 				</div>
-        <div class="bollard" data-color="oyb"> <!-- Utah plate 2007a -->
+				<div class="bollard" data-color="oyb"> <!-- Utah plate 2007a -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_UT_2007a.jpg" alt="Utah rb plate (2007 - Present)" id="UT_2007a" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">Utah (2007 - Present)</p>
 				</div>
-        <div class="bollard" data-color="oy"> <!-- New Mexico plate 1999 -->
+				<div class="bollard" data-color="oy"> <!-- New Mexico plate 1999 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_NM_1999.jpg" alt="New Mexico ry plate (1999 - Present)" id="NM_1999" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">New Mexico (1999 - Present)</p>
 				</div>
-        <div class="bollard" data-color="ry"> <!-- New Mexico plate 1990 -->
+				<div class="bollard" data-color="ry"> <!-- New Mexico plate 1990 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_NM_1990.jpg" alt="New Mexico ry plate (1990 - Present)" id="NM_1990" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">New Mexico (1990 - Present)</p>
 				</div>
-      </div>
+			</div>
     </div>
 
     <div class="headerText" id="R">Blue / Purple / Blue-white</div>
@@ -218,31 +218,31 @@
   					</a>
   					<p class="country">Montana (2010 - Present)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Michigan plate 1983 -->
+				<div class="bollard" data-color="b"> <!-- Michigan plate 1983 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_MI_1983.jpg" alt="Michigan b plate (1983 - 2007)" id="MI_1983" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">Michigan (1983 - 2007)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Indiana plate 2008 -->
+				<div class="bollard" data-color="b"> <!-- Indiana plate 2008 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_IN_2008.jpg" alt="Indiana b plate (2008 - 2013)" id="IN_2008" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">Indiana (2008 - 2013)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Tennessee plate 2022 -->
+				<div class="bollard" data-color="b"> <!-- Tennessee plate 2022 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_TN_2022.jpg" alt="Tennessee b plate (2022 - Present)" id="TN_2022" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">Tennessee (2022 - Present)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Alaska plate 2018b -->
+				<div class="bollard" data-color="b"> <!-- Alaska plate 2018b -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_AK_2018b.jpg" alt="Alaska b plate (2018 - Present)" id="AK_2018b" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">Alaska (2018 - Present)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Kansas plate 2007 -->
+				<div class="bollard" data-color="b"> <!-- Kansas plate 2007 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_KS_2007.jpg" alt="Kansas b plate (2007 - Present)" id="KS_2007" class="zoomA" loading="lazy" />
   					</a>
@@ -254,37 +254,37 @@
   					</a>
   					<p class="country">Oklahoma (2017 - Present)</p>
   				</div>
-          <div class="bollard" data-color="bk"> <!-- Rhode Island plate 1996 -->
+				<div class="bollard" data-color="bk"> <!-- Rhode Island plate 1996 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_RI_1996.jpg" alt="Rhode Island bk plate (1996 - Present)" id="RI_1996" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">Rhode Island (1996 - Present)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Illinois plate 2017 -->
-            <a href="" class="imglink" target="_blank">
-              <img src="/geo/img/plates/plate_IL_2017.jpg" alt="Illinois b plate (2017 - Present)" id="IL_2017" class="zoomA" loading="lazy" />
-            </a>
-            <p class="country">Illinois (2017 - Present)</p>
-          </div>
-          <div class="bollard" data-color="b"> <!-- Iowa plate 1997 -->
-            <a href="" class="imglink" target="_blank">
-              <img src="/geo/img/plates/plate_IA_1997.jpg" alt="Iowa b plate (1998 - 2018)" id="IA_1997" class="zoomA" loading="lazy" />
-            </a>
-            <p class="country">Iowa (1998 - 2018)</p>
-          </div>
-          <div class="bollard" data-color="b"> <!-- Connecticut plate 2000 -->
+				<div class="bollard" data-color="b"> <!-- Illinois plate 2017 -->
+					<a href="" class="imglink" target="_blank">
+						<img src="/geo/img/plates/plate_IL_2017.jpg" alt="Illinois b plate (2017 - Present)" id="IL_2017" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Illinois (2017 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Iowa plate 1997 -->
+					<a href="" class="imglink" target="_blank">
+						<img src="/geo/img/plates/plate_IA_1997.jpg" alt="Iowa b plate (1998 - 2018)" id="IA_1997" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Iowa (1998 - 2018)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Connecticut plate 2000 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_CT_2000.jpg" alt="Connecticut b plate (2000 - Present)" id="CT_2000" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">Connecticut (2000 - Present)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Arkansas plate 2006 -->
+				<div class="bollard" data-color="b"> <!-- Arkansas plate 2006 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_AR_2006.jpg" alt="Arkansas b plate (2006 - Present)" id="AR_2006" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">Arkansas (2006 - Present)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Mississippi plate 2012 -->
+				<div class="bollard" data-color="b"> <!-- Mississippi plate 2012 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_MS_2012.jpg" alt="Mississippi b plate (2012 - 2019)" id="MS_2012" class="zoomA" loading="lazy" />
   					</a>
@@ -296,19 +296,19 @@
   					</a>
   					<p class="country">Virginia (2008 - Present)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Missouri plate 2008 -->
+				<div class="bollard" data-color="b"> <!-- Missouri plate 2008 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_MO_2008.jpg" alt="Missouri b plate (2008 - 2018)" id="MO_2008" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">Missouri (2008 - 2018)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Washington plate 1998 -->
+				<div class="bollard" data-color="b"> <!-- Washington plate 1998 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_WA_1998.jpg" alt="Washington b plate (1998 - Present)" id="WA_1998" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">Washington (1998 - Present)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Kentucky plate 2005 -->
+				<div class="bollard" data-color="b"> <!-- Kentucky plate 2005 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_KY_2005.jpg" alt="Kentucky b plate (2005 - Present)" id="KY_2005" class="zoomA" loading="lazy" />
   					</a>
@@ -326,13 +326,13 @@
   					</a>
   					<p class="country">Michigan (2013 - Present)</p>
   				</div>
-          <div class="bollard" data-color="bk"> <!-- South Carolina plate 2016 -->
+				<div class="bollard" data-color="bk"> <!-- South Carolina plate 2016 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_SC_2016.jpg" alt="South Carolina bk plate (2016 - Present)" id="SC_2016" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">South Carolina (2016 - Present)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- New York plate 2001 -->
+				<div class="bollard" data-color="b"> <!-- New York plate 2001 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_NY_2001.jpg" alt="New York b plate (2001 - 2010)" id="NY_2001" class="zoomA" loading="lazy" />
   					</a>
@@ -344,41 +344,41 @@
   					</a>
   					<p class="country">Michigan (2007 - 2013)</p>
   				</div>
-          <div class="bollard" data-color="b"> <!-- Massachusetts plate 1993 -->
+				<div class="bollard" data-color="b"> <!-- Massachusetts plate 1993 -->
   					<a href="" class="imglink" target="_blank">
   						<img src="/geo/img/plates/plate_MA_1993.jpg" alt="Massachusetts b plate (1993 - Present)" id="MA_1993" class="zoomA" loading="lazy" />
   					</a>
   					<p class="country">Massachusetts (1993 - Present)</p>
   				</div>
-        </div>
+		</div>
 <!-- Blue Combinations -->
-      <div class="headerText">Blue Combinations</div>
-      <div class="inside">
-        <div class="bollard" data-color="gb"> <!-- New Mexico plate 2016 -->
+		<div class="headerText">Blue Combinations</div>
+		<div class="inside">
+			<div class="bollard" data-color="gb"> <!-- New Mexico plate 2016 -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_NM_2016.jpg" alt="New Mexico gb plate (2016 - Present)" id="NM_2016" class="zoomA" loading="lazy" />
 					</a>
 					<p class="country">New Mexico (2016 - Present)</p>
 				</div>
-        <div class="bollard" data-color="gb"> <!-- Alaska plate 2018a -->
-					<a href="" class="imglink" target="_blank">
-						<img src="/geo/img/plates/plate_AK_2018a.jpg" alt="Alaska gb plate (2018 - Present)" id="AK_2018a" class="zoomA" loading="lazy" />
-					</a>
-					<p class="country">Alaska (2018 - Present)</p>
-				</div>
-        <div class="bollard" data-color="gb"> <!-- Oregon plate 1989 -->
-					<a href="" class="imglink" target="_blank">
-						<img src="/geo/img/plates/plate_OR_1989.jpg" alt="Oregon gb plate (1989 - Present)" id="OR_1989" class="zoomA" loading="lazy" />
-					</a>
-					<p class="country">Oregon (1989 - Present)</p>
-				</div>
-        <div class="bollard" data-color="bg"> <!-- Minnesota plate 1987 -->
-					<a href="" class="imglink" target="_blank">
-						<img src="/geo/img/plates/plate_MN_1987.jpg" alt="Minnesota bg plate (1987 - Present)" id="MN_1987" class="zoomA" loading="lazy" />
-					</a>
-					<p class="country">Minnesota (1987 - Present)</p>
-				</div>
-        <div class="bollard" data-color="gb"> <!-- Michigan plate 2007b -->
+			<div class="bollard" data-color="gb"> <!-- Alaska plate 2018a -->
+				<a href="" class="imglink" target="_blank">
+					<img src="/geo/img/plates/plate_AK_2018a.jpg" alt="Alaska gb plate (2018 - Present)" id="AK_2018a" class="zoomA" loading="lazy" />
+				</a>
+				<p class="country">Alaska (2018 - Present)</p>
+			</div>
+			<div class="bollard" data-color="gb"> <!-- Oregon plate 1989 -->
+				<a href="" class="imglink" target="_blank">
+					<img src="/geo/img/plates/plate_OR_1989.jpg" alt="Oregon gb plate (1989 - Present)" id="OR_1989" class="zoomA" loading="lazy" />
+				</a>
+				<p class="country">Oregon (1989 - Present)</p>
+			</div>
+			<div class="bollard" data-color="bg"> <!-- Minnesota plate 1987 -->
+				<a href="" class="imglink" target="_blank">
+					<img src="/geo/img/plates/plate_MN_1987.jpg" alt="Minnesota bg plate (1987 - Present)" id="MN_1987" class="zoomA" loading="lazy" />
+				</a>
+				<p class="country">Minnesota (1987 - Present)</p>
+			</div>
+			<div class="bollard" data-color="gb"> <!-- Michigan plate 2007b -->
 					<a href="" class="imglink" target="_blank">
 						<img src="/geo/img/plates/plate_MI_2007b.jpg" alt="Michigan gb plate (2007 - 2021)" id="MI_2007b" class="zoomA" loading="lazy" />
 					</a>
