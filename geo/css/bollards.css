@@ -1,11 +1,23 @@
 body {
 	background-color: #212121;
 	margin: 0;
-	padding: 0;
+	padding-top: 150px;
 	color: white;
 }
 
 h1{ color:#fff; }
+
+.geoh3 {
+	padding-left: 15px;
+	display: block;
+	font-size: 1.17em;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+	font-family: none;
+}
 
 a{ color:#fff; }
 a:link { text-decoration: none; }
@@ -24,6 +36,21 @@ table.sortable:after { content: " \25B4\25BE" }
 table.sortable tbody tr:nth-child(2n+1) td { background: #444444; border: 1px solid black; }
 table.sortable tbody tr:nth-child(2n) td { background: #212121; border: 1px solid black; }
 table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { content: "\s\25B4\25BE" }
+
+.vl {
+  border-left: 6px solid green;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+
+.btn-geo-nav {
+	background-color: white;
+	background-image:none;
+	margin: 5px;
+}
 
 .pad{ padding: 10px; }
 
