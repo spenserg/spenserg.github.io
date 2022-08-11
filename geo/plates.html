@@ -9,7 +9,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<style>
-			.zoomA { cursor:pointer }
+		.zoomA { cursor:pointer }
 		</style>
 	</head>
 	<body>
@@ -37,7 +37,7 @@
 			</div>
 		</nav>
 
-    <span class="geoh3">Geoguessr map</span>
+    <span class="geoh3" style="margin-top: 100px;">Geoguessr map</span>
     <!-- No map exists
 		<p>You can find the map to test your knowledge about the locations <a href="" target="_blank">here</a>.</p> -->
 
@@ -414,107 +414,109 @@
 					<p class="country">Montana (2012 - Present)</p>
 				</div>
 			</div>
-    </div>
-    <script>
-  		var originalColors = [];
-  		var colors_shown = [];
-  		var used_colors = {
-  			'r':"#f59b9b",
-        'o':"#ffc107",
-  			'b':"#65acf9",
-  			'g':"#7cef96",
-  			'y':"#ffe595",
-  			'k':"#706f6f"
-  		};
-  		$(function() {
-  			$(".btn-geo-nav").hover(function(){
-  				originalColors[$(this).index('.btn-geo-nav')] = $(this).css('background-color');
-  				$(this).css('background-color', '#aaa');
-  			},
-  			function(){
-  				$(this).css('background-color', originalColors[$(this).index('.btn-geo-nav')]);
-  			});
-  			$(".btn-geo-nav").each(function() {
-  				var tmp_id = $(this).attr("id").split("_nav")[0];
-  				if (tmp_id.length == 1) {
-  					colors_shown[tmp_id] = 0;
-  				}
-  			});
-  		});
+		</div>
+		<script>
+			var originalColors = [];
+			var colors_shown = [];
+			var used_colors = {
+				'r':"#f59b9b",
+				'o':"#ffc107",
+				'b':"#65acf9",
+				'g':"#7cef96",
+				'y':"#ffe595",
+				'k':"#706f6f"
+			};
+			$(function() {
+				$(".btn-geo-nav").hover(function(){
+					originalColors[$(this).index('.btn-geo-nav')] = $(this).css('background-color');
+					$(this).css('background-color', '#aaa');
+				},
+				function(){
+					$(this).css('background-color', originalColors[$(this).index('.btn-geo-nav')]);
+				});
+				$(".btn-geo-nav").each(function() {
+					var tmp_id = $(this).attr("id").split("_nav")[0];
+					if (tmp_id.length == 1) {
+						colors_shown[tmp_id] = 0;
+					}
+				});
+			});
 
-  		function enlarge_pic(element) {
-  			document.getElementById("img01").src = element.src;
-  			document.getElementById("modal01").style.display = "block";
-  		}
+			function enlarge_pic(element) {
+				document.getElementById("img01").src = element.src;
+				document.getElementById("modal01").style.display = "block";
+			}
 
 			function toggle_geo_view() {
-				var suffix = (($("#geo_switch").is(':checked')) ? "_geo.png" : ".jpg");
+				var suffix = (($("#geo_switch").is(':checked')) ? "_geo.jpg" : ".jpg");
 				$("img").each(function() {
-					$(this).attr('src',"/geo/img/plates/plate_" + $(this)[0]['id'] + suffix);
+					if ($(this).attr('src').includes("plate_")) {
+						$(this).attr('src',"/geo/img/plates/plate_" + $(this)[0]['id'] + suffix);
+					}
 				});
 			}
 			$(".zoomA").click(function() {
-				var suffix = (($(this).attr('src').includes("_geo")) ? ".jpg" : "_geo.png");
+				var suffix = (($(this).attr('src').includes("_geo")) ? ".jpg" : "_geo.jpg");
 				$(this).attr('src',"/geo/img/plates/plate_" + $(this)[0]['id'] + suffix);
 			});
 
-  		$(".btn-geo-nav").click(function(){
-  			var tmp_id = $(this).attr("id").split("_nav")[0];
-  			if (tmp_id.length == 1) {
-  				if ($(this).css("font-weight") == 400) {
-  					originalColors[$(this).index('.btn-geo-nav')] = used_colors[tmp_id];
-  					toggle_colors(tmp_id, 1);
-  				} else {
-  					originalColors[$(this).index('.btn-geo-nav')] = "white";
-  					toggle_colors(tmp_id, 0);
-  				}
-  				if ($(this).css("font-weight") == 700) {
-  					$(this).css("font-weight", 400);
-  				} else { $(this).css("font-weight", 700); }
-  			} else { // Show All
-  				$(".bollard").show();
-  				$(".btn-geo-nav").each(function() {
-  					$(this).css("font-weight", 400);
-  					$(this).css("background-color", "white");
-  				});
-  				for (var key in colors_shown) {
-  					colors_shown[key] = 0;
-  				}
-  			}
-  		});
+	  		$(".btn-geo-nav").click(function(){
+	  			var tmp_id = $(this).attr("id").split("_nav")[0];
+	  			if (tmp_id.length == 1) {
+	  				if ($(this).css("font-weight") == 400) {
+	  					originalColors[$(this).index('.btn-geo-nav')] = used_colors[tmp_id];
+	  					toggle_colors(tmp_id, 1);
+	  				} else {
+	  					originalColors[$(this).index('.btn-geo-nav')] = "white";
+	  					toggle_colors(tmp_id, 0);
+	  				}
+	  				if ($(this).css("font-weight") == 700) {
+	  					$(this).css("font-weight", 400);
+	  				} else { $(this).css("font-weight", 700); }
+	  			} else { // Show All
+	  				$(".bollard").show();
+	  				$(".btn-geo-nav").each(function() {
+	  					$(this).css("font-weight", 400);
+	  					$(this).css("background-color", "white");
+	  				});
+	  				for (var key in colors_shown) {
+	  					colors_shown[key] = 0;
+	  				}
+	  			}
+	  		});
 
-  		function toggle_colors(c, t) {
-  			colors_shown[c] = t;
-  			if (t == 0) {
-  				var tmp_cs = [];
-  				for (var key in colors_shown) {
-  					if (colors_shown[key] == 1) {
-  						tmp_cs.push(key);
-  					}
-  				}
-  				$(".bollard").each(function() {
-  					if( $(this).is(":hidden")) {
-  						var show_this = true;
-  						for (var i = 0; i < tmp_cs.length; i++) {
-  							if (!($(this).attr("data-color").includes(tmp_cs[i]))) {
-  								show_this = false;
-  								break;
-  							}
-  						}
-  						if (show_this) { $(this).show(); }
-  					}
-  				});
-  			}
-  			if (t == 1) {
-  				$(".bollard").each(function(){
-  					if($(this).is(":visible")) {
-  						if (!($(this).attr("data-color").includes(c))) {
-  							$(this).hide();
-  						}
-  					}
-  				});
-  			}
-  		}
+	  		function toggle_colors(c, t) {
+	  			colors_shown[c] = t;
+	  			if (t == 0) {
+	  				var tmp_cs = [];
+	  				for (var key in colors_shown) {
+	  					if (colors_shown[key] == 1) {
+	  						tmp_cs.push(key);
+	  					}
+	  				}
+	  				$(".bollard").each(function() {
+	  					if( $(this).is(":hidden")) {
+	  						var show_this = true;
+	  						for (var i = 0; i < tmp_cs.length; i++) {
+	  							if (!($(this).attr("data-color").includes(tmp_cs[i]))) {
+	  								show_this = false;
+	  								break;
+	  							}
+	  						}
+	  						if (show_this) { $(this).show(); }
+	  					}
+	  				});
+	  			}
+	  			if (t == 1) {
+	  				$(".bollard").each(function(){
+	  					if($(this).is(":visible")) {
+	  						if (!($(this).attr("data-color").includes(c))) {
+	  							$(this).hide();
+	  						}
+	  					}
+	  				});
+	  			}
+	  		}
 
 			/* OBSOLETE but kept for reference:
 			 * Fades image into geo image on mouse-over
@@ -546,6 +548,7 @@
 			  			}
 			  		});
 			*/
-  	</script>
-  </body>
+
+		</script>
+	</body>
 </html>
