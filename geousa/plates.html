@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>License plates</title>
+		<meta charset="utf-8">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="/geousa/css/bollards.css" type="text/css" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<style>
+		.zoomA { cursor:pointer }
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #212121; color: white;">
+			<a class="navbar-brand" href="/geousa/main.html">
+				<img class="logo" src="/geousa/img/logo/geohints.png" />
+			</a>
+			<div class="input-group mb-3" style="border:2px solid grey">
+				<div class="input-group-prepend" style="margin:2px">
+					<span style="margin:auto">Known colors:</span>
+					<button class="btn btn-geo-nav" id="r_nav" type="button" style="color:black; border:2px solid red">Red</button>
+					<button class="btn btn-geo-nav" id="o_nav" type="button" style="color:black; border:2px solid orange">Orange</button>
+					<button class="btn btn-geo-nav" id="y_nav" type="button" style="color:black; border:2px solid yellow">Yellow</button>
+					<button class="btn btn-geo-nav" id="g_nav" type="button" style="color:black; border:2px solid green">Green</button>
+					<button class="btn btn-geo-nav" id="b_nav" type="button" style="color:black; border:2px solid blue">Blue</button>
+					<button class="btn btn-geo-nav" id="k_nav" type="button" style="color:black; border:2px solid grey">Black</button>
+					<button class="btn btn-geo-nav" id="aa_nav" type="button">Show All</button>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="geo_switch" onchange="toggle_geo_view()">
+					<label class="form-check-label" for="geo_switch">Geo View</label>
+				</div>
+			</div>
+		</nav>
+
+    <span class="geoh3" style="margin-top: 250px;">Geoguessr map</span>
+    <!-- No map exists
+		<p>You can find the map to test your knowledge about the locations <a href="" target="_blank">here</a>.</p> -->
+
+    <div class="headerText">Solid / One Dominant Color</div>
+		<div class="section">
+			<div class="headerText">Red</div>
+			<div class="inside">
+				<div class="bollard" data-color="rk"> <!-- Utah plate 2007 - Present -->
+					<img src="/geousa/img/plates/plate_UT_2007b.jpg" alt="Utah rk plate" id="UT_2007b" class="zoomA" loading="lazy" />
+					<p class="country">Utah (2007 - Present)</p>
+				</div>
+				<div class="bollard" data-color="r"> <!-- Ohio plate 2013 - 2021 -->
+					<img src="/geousa/img/plates/plate_OH_2013.jpg" alt="Ohio r plate" id="OH_2013" class="zoomA" loading="lazy" />
+					<p class="country">Ohio (2013 - 2021)</p>
+				</div>
+				<div class="bollard" data-color="r"> <!-- Wisconsin plate 2000 - Present -->
+					<img src="/geousa/img/plates/plate_WI_2000.jpg" alt="Wisconsin r plate" id="WI_2000" class="zoomA" loading="lazy" />
+					<p class="country">Wisconsin (2000 - Present)</p>
+				</div>
+				<div class="bollard" data-color="r"> <!-- California plate 1994 - 2012 -->
+					<img src="/geousa/img/plates/plate_CA_1994.jpg" alt="California r plate" id="CA_1994" class="zoomA" loading="lazy" />
+					<p class="country">California (1994 - 2012)</p>
+				</div>
+				<div class="bollard" data-color="rk"> <!-- Louisiana plate 2005 - Present -->
+					<img src="/geousa/img/plates/plate_LA_2005.jpg" alt="Louisiana rk plate" id="LA_2005" class="zoomA" loading="lazy" />
+					<p class="country">Louisiana (2005 - Present)</p>
+				</div>
+				<div class="bollard" data-color="yok"> <!-- Mississippi plate 2019 - Present -->
+					<img src="/geousa/img/plates/plate_MS_2019.jpg" alt="Mississippi yok plate" id="MS_2019" class="zoomA" loading="lazy" />
+					<p class="country">Mississippi (2019 - Present)</p>
+				</div>
+				<div class="bollard" data-color="o"> <!-- Georgia plate 2012 - Present -->
+					<img src="/geousa/img/plates/plate_GA_2012b.jpg" alt="Georgia o plate" id="GA_2012b" class="zoomA" loading="lazy" />
+					<p class="country">Georgia (2012 - Present)</p>
+				</div>
+				<div class="bollard" data-color="og"> <!-- Florida plate 2003 - Present -->
+					<img src="/geousa/img/plates/plate_FL_2003.jpg" alt="Florida og plate" id="FL_2003" class="zoomA" loading="lazy" />
+					<p class="country">Florida (2003 - Present)</p>
+				</div>
+				<div class="bollard" data-color="rob"> <!-- Alaska plate 2015 - Present -->
+					<img src="/geousa/img/plates/plate_AK_2015.jpg" alt="Alaska rob plate" id="AK_2015" class="zoomA" loading="lazy" />
+					<p class="country">Alaska (2015 - Present)</p>
+				</div>
+				<div class="headerText">Orange / Yellow</div>
+				<div class="bollard" data-color="royb"> <!-- Alaska plate 2008 -->
+					<img src="/geousa/img/plates/plate_AK_2008.jpg" alt="Alaska royb plate" id="AK_2008" class="zoomA" loading="lazy" />
+					<p class="country">Alaska (2008)</p>
+				</div>
+				<div class="bollard" data-color="rob"> <!-- Michigan plate 2014 - Present -->
+					<img src="/geousa/img/plates/plate_MI_2014.jpg" alt="Michigan rob plate" id="MI_2014" class="zoomA" loading="lazy" />
+					<p class="country">Michigan (2014 - Present)</p>
+				</div>
+				<div class="bollard" data-color="oy"> <!-- New Mexico plate 1999 - Present -->
+					<img src="/geousa/img/plates/plate_NM_1999.jpg" alt="New Mexico oy plate" id="NM_1999" class="zoomA" loading="lazy" />
+					<p class="country">New Mexico (1999 - Present)</p>
+				</div>
+				<div class="bollard" data-color="ok"> <!-- New York plate 2010 - 2020 -->
+					<img src="/geousa/img/plates/plate_NY_2010.jpg" alt="New York ok plate" id="NY_2010" class="zoomA" loading="lazy" />
+					<p class="country">New York (2010 - 2020)</p>
+				</div>
+				<div class="bollard" data-color="oy"> <!-- Alaska plate 2004 - Present -->
+					<img src="/geousa/img/plates/plate_AK_2004.jpg" alt="Alaska oy plate" id="AK_2004" class="zoomA" loading="lazy" />
+					<p class="country">Alaska (2004 - Present)</p>
+				</div>
+				<div class="bollard" data-color="ry"> <!-- New Mexico plate 1990 - Present -->
+					<img src="/geousa/img/plates/plate_NM_1990.jpg" alt="New Mexico ry plate" id="NM_1990" class="zoomA" loading="lazy" />
+					<p class="country">New Mexico (1990 - Present)</p>
+				</div>
+				<div class="bollard" data-color="y"> <!-- New Jersey plate 1992 - Present -->
+					<img src="/geousa/img/plates/plate_NJ_1992.jpg" alt="New Jersey y plate" id="NJ_1992" class="zoomA" loading="lazy" />
+					<p class="country">New Jersey (1992 - Present)</p>
+				</div>
+				<div class="bollard" data-color="oy"> <!-- Nebraska plate 2011 - 2016 -->
+					<img src="/geousa/img/plates/plate_NE_2011.jpg" alt="Nebraska oy plate" id="NE_2011" class="zoomA" loading="lazy" />
+					<p class="country">Nebraska (2011 - 2016)</p>
+				</div>
+				<div class="bollard" data-color="yb"> <!-- Indiana plate 2013 - 2017 -->
+					<img src="/geousa/img/plates/plate_IN_2013.jpg" alt="Indiana yb plate" id="IN_2013" class="zoomA" loading="lazy" />
+					<p class="country">Indiana (2013 - 2017)</p>
+				</div>
+				<div class="headerText">Green</div>
+				<div class="bollard" data-color="g"> <!-- Tennessee plate 2006 - 2022 -->
+					<img src="/geousa/img/plates/plate_TN_2006.jpg" alt="Tennessee g plate" id="TN_2006" class="zoomA" loading="lazy" />
+					<p class="country">Tennessee (2006 - 2022)</p>
+				</div>
+				<div class="bollard" data-color="g"> <!-- Maine plate 1999 - Present -->
+					<img src="/geousa/img/plates/plate_ME_1999.jpg" alt="Maine g plate" id="ME_1999" class="zoomA" loading="lazy" />
+					<p class="country">Maine (1999 - Present)</p>
+				</div>
+				<div class="bollard" data-color="bgr"> <!-- Indiana plate 2017 - Present -->
+					<img src="/geousa/img/plates/plate_IN_2017.jpg" alt="Indiana bgr plate" id="IN_2017" class="zoomA" loading="lazy" />
+					<p class="country">Indiana (2017 - Present)</p>
+				</div>
+				<div class="bollard" data-color="gb"> <!-- Oregon plate 1989 - Present -->
+					<img src="/geousa/img/plates/plate_OR_1989.jpg" alt="Oregon gb plate" id="OR_1989" class="zoomA" loading="lazy" />
+					<p class="country">Oregon (1989 - Present)</p>
+				</div>
+				<div class="bollard" data-color="g"> <!-- New Hampshire plate 1999 - Present -->
+					<img src="/geousa/img/plates/plate_NH_1999.jpg" alt="New Hampshire g plate" id="NH_1999" class="zoomA" loading="lazy" />
+					<p class="country">New Hampshire (1999 - Present)</p>
+				</div>
+				<div class="bollard" data-color="gb"> <!-- Alaska plate 2018 - Present -->
+					<img src="/geousa/img/plates/plate_AK_2018a.jpg" alt="Alaska gb plate" id="AK_2018a" class="zoomA" loading="lazy" />
+					<p class="country">Alaska (2018 - Present)</p>
+				</div>
+				<div class="bollard" data-color="g"> <!-- Vermont plate 1985 - Present -->
+					<img src="/geousa/img/plates/plate_VT_1990.jpg" alt="Vermont g plate" id="VT_1990" class="zoomA" loading="lazy" />
+					<p class="country">Vermont (1985 - Present)</p>
+				</div>
+				<div class="bollard" data-color="g"> <!-- Colorado plate 1992 - 1999 -->
+					<img src="/geousa/img/plates/plate_CO_1992.jpg" alt="Colorado g plate" id="CO_1992" class="zoomA" loading="lazy" />
+					<p class="country">Colorado (1992 - 1999)</p>
+				</div>
+				<div class="bollard" data-color="gb"> <!-- Michigan plate 2007 - 2021 -->
+					<img src="/geousa/img/plates/plate_MI_2007b.jpg" alt="Michigan gb plate" id="MI_2007b" class="zoomA" loading="lazy" />
+					<p class="country">Michigan (2007 - 2021)</p>
+				</div>
+				<div class="bollard" data-color="bg"> <!-- Missouri plate 1997 - 2018 -->
+					<img src="/geousa/img/plates/plate_MO_1997.jpg" alt="Missouri bg plate" id="MO_1997" class="zoomA" loading="lazy" />
+					<p class="country">Missouri (1997 - 2018)</p>
+				</div>
+				<div class="headerText">Blue</div>
+				<div class="bollard" data-color="gb"> <!-- New Mexico plate 2016 - Present -->
+					<img src="/geousa/img/plates/plate_NM_2016.jpg" alt="New Mexico gb plate" id="NM_2016" class="zoomA" loading="lazy" />
+					<p class="country">New Mexico (2016 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Tennessee plate 2022 - Present -->
+					<img src="/geousa/img/plates/plate_TN_2022.jpg" alt="Tennessee b plate" id="TN_2022" class="zoomA" loading="lazy" />
+					<p class="country">Tennessee (2022 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Montana plate 2010 - Present -->
+					<img src="/geousa/img/plates/plate_MT_2010.jpg" alt="Montana b plate" id="MT_2010" class="zoomA" loading="lazy" />
+					<p class="country">Montana (2010 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Indiana plate 2008 - 2013 -->
+					<img src="/geousa/img/plates/plate_IN_2008.jpg" alt="Indiana b plate" id="IN_2008" class="zoomA" loading="lazy" />
+					<p class="country">Indiana (2008 - 2013)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Michigan plate 1983 - 2007 -->
+					<img src="/geousa/img/plates/plate_MI_1983.jpg" alt="Michigan b plate" id="MI_1983" class="zoomA" loading="lazy" />
+					<p class="country">Michigan (1983 - 2007)</p>
+				</div>
+				<div class="bollard" data-color="bg"> <!-- Minnesota plate 1987 - Present -->
+					<img src="/geousa/img/plates/plate_MN_1987.jpg" alt="Minnesota bg plate" id="MN_1987" class="zoomA" loading="lazy" />
+					<p class="country">Minnesota (1987 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- New York plate 2001 - 2010 -->
+					<img src="/geousa/img/plates/plate_NY_2001.jpg" alt="New York b plate" id="NY_2001" class="zoomA" loading="lazy" />
+					<p class="country">New York (2001 - 2010)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Massachusetts plate 1993 - Present -->
+					<img src="/geousa/img/plates/plate_MA_1993.jpg" alt="Massachusetts b plate" id="MA_1993" class="zoomA" loading="lazy" />
+					<p class="country">Massachusetts (1993 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Oklahoma plate 2017 - Present -->
+					<img src="/geousa/img/plates/plate_OK_2017.jpg" alt="Oklahoma b plate" id="OK_2017" class="zoomA" loading="lazy" />
+					<p class="country">Oklahoma (2017 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Alaska plate 2018 - Present -->
+					<img src="/geousa/img/plates/plate_AK_2018b.jpg" alt="Alaska b plate" id="AK_2018b" class="zoomA" loading="lazy" />
+					<p class="country">Alaska (2018 - Present)</p>
+				</div>
+				<div class="bollard" data-color="bk"> <!-- Rhode Island plate 1996 - Present -->
+					<img src="/geousa/img/plates/plate_RI_1996.jpg" alt="Rhode Island bk plate" id="RI_1996" class="zoomA" loading="lazy" />
+					<p class="country">Rhode Island (1996 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Kansas plate 2007 - Present -->
+					<img src="/geousa/img/plates/plate_KS_2007.jpg" alt="Kansas b plate" id="KS_2007" class="zoomA" loading="lazy" />
+					<p class="country">Kansas (2007 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Illinois plate 2017 - Present -->
+					<img src="/geousa/img/plates/plate_IL_2017.jpg" alt="Illinois b plate" id="IL_2017" class="zoomA" loading="lazy" />
+					<p class="country">Illinois (2017 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Iowa plate 1998 - 2018 -->
+					<img src="/geousa/img/plates/plate_IA_1997.jpg" alt="Iowa b plate" id="IA_1997" class="zoomA" loading="lazy" />
+					<p class="country">Iowa (1998 - 2018)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Connecticut plate 2000 - Present -->
+					<img src="/geousa/img/plates/plate_CT_2000.jpg" alt="Connecticut b plate" id="CT_2000" class="zoomA" loading="lazy" />
+					<p class="country">Connecticut (2000 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Arkansas plate 2006 - Present -->
+					<img src="/geousa/img/plates/plate_AR_2006.jpg" alt="Arkansas b plate" id="AR_2006" class="zoomA" loading="lazy" />
+					<p class="country">Arkansas (2006 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Virginia plate 2008 - Present -->
+					<img src="/geousa/img/plates/plate_VA_2008.jpg" alt="Virginia b plate" id="VA_2008" class="zoomA" loading="lazy" />
+					<p class="country">Virginia (2008 - Present)</p>
+				</div>
+				<div class="bollard" data-color="br"> <!-- North Carolina plate 1982 - Present -->
+					<img src="/geousa/img/plates/plate_NC_1982.jpg" alt="North Carolina br plate" id="NC_1982" class="zoomA" loading="lazy" />
+					<p class="country">North Carolina (1982 - Present)</p>
+				</div>
+				<div class="bollard" data-color="by"> <!-- Nebraska plate 2017 - Present -->
+					<img src="/geousa/img/plates/plate_NE_2017.jpg" alt="Nebraska by plate" id="NE_2017" class="zoomA" loading="lazy" />
+					<p class="country">Nebraska (2017 - Present)</p>
+				</div>
+				<div class="bollard" data-color="kby"> <!-- West Virginia plate 1995 - Present -->
+					<img src="/geousa/img/plates/plate_WV_1995.jpg" alt="West Virginia kby plate" id="WV_1995" class="zoomA" loading="lazy" />
+					<p class="country">West Virginia (1995 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Michigan plate 2007 - 2013 -->
+					<img src="/geousa/img/plates/plate_MI_2007a.jpg" alt="Michigan b plate" id="MI_2007a" class="zoomA" loading="lazy" />
+					<p class="country">Michigan (2007 - 2013)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Mississippi plate 2012 - 2019 -->
+					<img src="/geousa/img/plates/plate_MS_2012.jpg" alt="Mississippi b plate" id="MS_2012" class="zoomA" loading="lazy" />
+					<p class="country">Mississippi (2012 - 2019)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Missouri plate 2008 - 2018 -->
+					<img src="/geousa/img/plates/plate_MO_2008.jpg" alt="Missouri b plate" id="MO_2008" class="zoomA" loading="lazy" />
+					<p class="country">Missouri (2008 - 2018)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Washington plate 1998 - Present -->
+					<img src="/geousa/img/plates/plate_WA_1998.jpg" alt="Washington b plate" id="WA_1998" class="zoomA" loading="lazy" />
+					<p class="country">Washington (1998 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Kentucky plate 2005 - Present -->
+					<img src="/geousa/img/plates/plate_KY_2005.jpg" alt="Kentucky b plate" id="KY_2005" class="zoomA" loading="lazy" />
+					<p class="country">Kentucky (2005 - Present)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Illinois plate 2001 - 2016 -->
+					<img src="/geousa/img/plates/plate_IL_2001.jpg" alt="Illinois b plate" id="IL_2001" class="zoomA" loading="lazy" />
+					<p class="country">Illinois (2001 - 2016)</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Michigan plate 2013 - Present -->
+					<img src="/geousa/img/plates/plate_MI_2013.jpg" alt="Michigan b plate" id="MI_2013" class="zoomA" loading="lazy" />
+					<p class="country">Michigan (2013 - Present)</p>
+				</div>
+				<div class="bollard" data-color="bk"> <!-- South Carolina plate 2016 - Present -->
+					<img src="/geousa/img/plates/plate_SC_2016.jpg" alt="South Carolina bk plate" id="SC_2016" class="zoomA" loading="lazy" />
+					<p class="country">South Carolina (2016 - Present)</p>
+				</div>
+				<div class="headerText">Black / White</div>
+				<div class="bollard" data-color="yk"> <!-- Delaware plate 1969 - Present -->
+					<img src="/geousa/img/plates/plate_DE_1969.jpg" alt="Delaware yk plate" id="DE_1969" class="zoomA" loading="lazy" />
+					<p class="country">Delaware (1969 - Present)</p>
+				</div>
+				<div class="bollard" data-color="yk"> <!-- New Mexico plate 2017 - Present -->
+					<img src="/geousa/img/plates/plate_NM_2017.jpg" alt="New Mexico yk plate" id="NM_2017" class="zoomA" loading="lazy" />
+					<p class="country">New Mexico (2017 - Present)</p>
+				</div>
+				<div class="bollard" data-color="k"> <!-- Colorado plate 2000 - Present -->
+					<img src="/geousa/img/plates/plate_CO_2000.jpg" alt="Colorado k plate" id="CO_2000" class="zoomA" loading="lazy" />
+					<p class="country">Colorado (2000 - Present)</p>
+				</div>
+				<div class="bollard" data-color="k"> <!-- Hawaii plate 1991 - Present -->
+					<img src="/geousa/img/plates/plate_HI_1991.jpg" alt="Hawaii k plate" id="HI_1991" class="zoomA" loading="lazy" />
+					<p class="country">Hawaii (1991 - Present)</p>
+				</div>
+				<div class="bollard" data-color="w"> <!-- DC plate 1984 - Present -->
+					<img src="/geousa/img/plates/plate_DC_1984.jpg" alt="DC w plate" id="DC_1984" class="zoomA" loading="lazy" />
+					<p class="country">DC (1984 - Present)</p>
+				</div>
+				<div class="bollard" data-color="k"> <!-- Texas plate 2012 - Present -->
+					<img src="/geousa/img/plates/plate_TX_2012.jpg" alt="Texas k plate" id="TX_2012" class="zoomA" loading="lazy" />
+					<p class="country">Texas (2012 - Present)</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Multiple Colors</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="ygb"> <!-- Alabama plate 2014 - 2022 -->
+					<img src="/geousa/img/plates/plate_AL_2014.jpg" alt="Alabama ygb plate" id="AL_2014" class="zoomA" loading="lazy" />
+					<p class="country">Alabama (2014 - 2022)</p>
+				</div>
+				<div class="bollard" data-color="yob"> <!-- Nevada plate 2001 - 2017 -->
+					<img src="/geousa/img/plates/plate_NV_2001.jpg" alt="Nevada yob plate" id="NV_2001" class="zoomA" loading="lazy" />
+					<p class="country">Nevada (2001 - 2017)</p>
+				</div>
+				<div class="bollard" data-color="oyb"> <!-- Alabama plate 2009 - 2013 -->
+					<img src="/geousa/img/plates/plate_AL_2009.jpg" alt="Alabama oyb plate" id="AL_2009" class="zoomA" loading="lazy" />
+					<p class="country">Alabama (2009 - 2013)</p>
+				</div>
+				<div class="bollard" data-color="rbk"> <!-- Idaho plate 1997 - Present -->
+					<img src="/geousa/img/plates/plate_ID_1997.jpg" alt="Idaho rbk plate" id="ID_1997" class="zoomA" loading="lazy" />
+					<p class="country">Idaho (1997 - Present)</p>
+				</div>
+				<div class="bollard" data-color="rb"> <!-- Ohio plate 2001 - 2010 -->
+					<img src="/geousa/img/plates/plate_OH_2001.jpg" alt="Ohio rb plate" id="OH_2001" class="zoomA" loading="lazy" />
+					<p class="country">Ohio (2001 - 2010)</p>
+				</div>
+				<div class="bollard" data-color="br"> <!-- North Carolina plate 1982 - Present -->
+					<img src="/geousa/img/plates/plate_NC_1982.jpg" alt="North Carolina br plate" id="NC_1982" class="zoomA" loading="lazy" />
+					<p class="country">North Carolina (1982 - Present)</p>
+				</div>
+				<div class="bollard" data-color="br"> <!-- Indiana plate 2012 - Present -->
+					<img src="/geousa/img/plates/plate_IN_2012.jpg" alt="Indiana br plate" id="IN_2012" class="zoomA" loading="lazy" />
+					<p class="country">Indiana (2012 - Present)</p>
+				</div>
+				<div class="bollard" data-color="rbk"> <!-- Texas plate 2009 - 2012 -->
+					<img src="/geousa/img/plates/plate_TX_2009.jpg" alt="Texas rbk plate" id="TX_2009" class="zoomA" loading="lazy" />
+					<p class="country">Texas (2009 - 2012)</p>
+				</div>
+				<div class="bollard" data-color="rb"> <!-- Maryland plate 2010 - 2016 -->
+					<img src="/geousa/img/plates/plate_MD_2010.jpg" alt="Maryland rb plate" id="MD_2010" class="zoomA" loading="lazy" />
+					<p class="country">Maryland (2010 - 2016)</p>
+				</div>
+				<div class="bollard" data-color="rob"> <!-- Alaska plate 2015 - Present -->
+					<img src="/geousa/img/plates/plate_AK_2015.jpg" alt="Alaska rob plate" id="AK_2015" class="zoomA" loading="lazy" />
+					<p class="country">Alaska (2015 - Present)</p>
+				</div>
+				<div class="bollard" data-color="og"> <!-- Florida plate 2003 - Present -->
+					<img src="/geousa/img/plates/plate_FL_2003.jpg" alt="Florida og plate" id="FL_2003" class="zoomA" loading="lazy" />
+					<p class="country">Florida (2003 - Present)</p>
+				</div>
+				<div class="bollard" data-color="borg"> <!-- Georgia plate 2012 - Present -->
+					<img src="/geousa/img/plates/plate_GA_2012a.jpg" alt="Georgia borg plate" id="GA_2012a" class="zoomA" loading="lazy" />
+					<p class="country">Georgia (2012 - Present)</p>
+				</div>
+				<div class="bollard" data-color="boyk"> <!-- South Carolina plate 2008 - 2016 -->
+					<img src="/geousa/img/plates/plate_SC_2008.jpg" alt="South Carolina boyk plate" id="SC_2008" class="zoomA" loading="lazy" />
+					<p class="country">South Carolina (2008 - 2016)</p>
+				</div>
+				<div class="bollard" data-color="bor"> <!-- Utah plate 2007 - Present -->
+					<img src="/geousa/img/plates/plate_UT_2007a.jpg" alt="Utah bor plate" id="UT_2007a" class="zoomA" loading="lazy" />
+					<p class="country">Utah (2007 - Present)</p>
+				</div>
+				<div class="bollard" data-color="boy"> <!-- Ohio plate 2009 - 2013 -->
+					<img src="/geousa/img/plates/plate_OH_2009.jpg" alt="Ohio boy plate" id="OH_2009" class="zoomA" loading="lazy" />
+					<p class="country">Ohio (2009 - 2013)</p>
+				</div>
+				<div class="bollard" data-color="bk"> <!-- South Dakota plate 2006 - Present -->
+					<img src="/geousa/img/plates/plate_SD_2006.jpg" alt="South Dakota bk plate" id="SD_2006" class="zoomA" loading="lazy" />
+					<p class="country">South Dakota (2006 - Present)</p>
+				</div>
+				<div class="bollard" data-color="roybk"> <!-- Wyoming plate 2016 - Present -->
+					<img src="/geousa/img/plates/plate_WY_2016.jpg" alt="Wyoming roybk plate" id="WY_2016" class="zoomA" loading="lazy" />
+					<p class="country">Wyoming (2016 - Present)</p>
+				</div>
+				<div class="bollard" data-color="rob"> <!-- North Dakota plate 2015 - Present -->
+					<img src="/geousa/img/plates/plate_ND_2015.jpg" alt="North Dakota rob plate" id="ND_2015" class="zoomA" loading="lazy" />
+					<p class="country">North Dakota (2015 - Present)</p>
+				</div>
+				<div class="bollard" data-color="by"> <!-- North Dakota plate 1993 - 2015 -->
+					<img src="/geousa/img/plates/plate_ND_1993.jpg" alt="North Dakota by plate" id="ND_1993" class="zoomA" loading="lazy" />
+					<p class="country">North Dakota (1993 - 2015)</p>
+				</div>
+				<div class="bollard" data-color="bk"> <!-- Kansas plate 2001 - 2007 -->
+					<img src="/geousa/img/plates/plate_KS_2001.jpg" alt="Kansas bk plate" id="KS_2001" class="zoomA" loading="lazy" />
+					<p class="country">Kansas (2001 - 2007)</p>
+				</div>
+				<div class="bollard" data-color="boy"> <!-- Nevada plate 2016 - Present -->
+					<img src="/geousa/img/plates/plate_NV_2016.jpg" alt="Nevada boy plate" id="NV_2016" class="zoomA" loading="lazy" />
+					<p class="country">Nevada (2016 - Present)</p>
+				</div>
+				<div class="bollard" data-color="ry"> <!-- Maryland plate 2016 - Present -->
+					<img src="/geousa/img/plates/plate_MD_2016.jpg" alt="Maryland ry plate" id="MD_2016" class="zoomA" loading="lazy" />
+					<p class="country">Maryland (2016 - Present)</p>
+				</div>
+				<div class="bollard" data-color="by"> <!-- Iowa plate 2018 - Present -->
+					<img src="/geousa/img/plates/plate_IA_2018.jpg" alt="Iowa by plate" id="IA_2018" class="zoomA" loading="lazy" />
+					<p class="country">Iowa (2018 - Present)</p>
+				</div>
+				<div class="bollard" data-color="by"> <!-- Pennsylvania plate 1999 - Present -->
+					<img src="/geousa/img/plates/plate_PA_2004.jpg" alt="Pennsylvania by plate" id="PA_2004" class="zoomA" loading="lazy" />
+					<p class="country">Pennsylvania (1999 - Present)</p>
+				</div>
+				<div class="bollard" data-color="yb"> <!-- Alaska plate 1997 - 2004 -->
+					<img src="/geousa/img/plates/plate_AK_1997.jpg" alt="Alaska yb plate" id="AK_1997" class="zoomA" loading="lazy" />
+					<p class="country">Alaska (1997 - 2004)</p>
+				</div>
+				<div class="bollard" data-color="bgoy"> <!-- Arizona plate 2008 - 2020 -->
+					<img src="/geousa/img/plates/plate_AZ_1996.jpg" alt="Arizona bgoy plate" id="AZ_1996" class="zoomA" loading="lazy" />
+					<p class="country">Arizona (2008 - 2020)</p>
+				</div>
+				<div class="bollard" data-color="bgk"> <!-- Montana plate 2012 - Present -->
+					<img src="/geousa/img/plates/plate_MT_2006.jpg" alt="Montana bgk plate" id="MT_2006" class="zoomA" loading="lazy" />
+					<p class="country">Montana (2012 - Present)</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			var originalColors = [];
+			var colors_shown = [];
+			var used_colors = {
+				'r':"#f59b9b",
+				'o':"#ffc107",
+				'b':"#65acf9",
+				'g':"#7cef96",
+				'y':"#ffe595",
+				'k':"#706f6f"
+			};
+			$(function() {
+				$(".btn-geo-nav").hover(function(){
+					originalColors[$(this).index('.btn-geo-nav')] = $(this).css('background-color');
+					$(this).css('background-color', '#aaa');
+				},
+				function(){
+					$(this).css('background-color', originalColors[$(this).index('.btn-geo-nav')]);
+				});
+				$(".btn-geo-nav").each(function() {
+					var tmp_id = $(this).attr("id").split("_nav")[0];
+					if (tmp_id.length == 1) {
+						colors_shown[tmp_id] = 0;
+					}
+				});
+			});
+
+			function enlarge_pic(element) {
+				document.getElementById("img01").src = element.src;
+				document.getElementById("modal01").style.display = "block";
+			}
+
+			function toggle_geo_view() {
+				var suffix = (($("#geo_switch").is(':checked')) ? "_geo.jpg" : ".jpg");
+				$("img").each(function() {
+					if ($(this).attr('src').includes("plate_")) {
+						$(this).attr('src',"/geousa/img/plates/plate_" + $(this)[0]['id'] + suffix);
+					}
+				});
+			}
+			$(".zoomA").click(function() {
+				var suffix = (($(this).attr('src').includes("_geo")) ? ".jpg" : "_geo.jpg");
+				$(this).attr('src',"/geousa/img/plates/plate_" + $(this)[0]['id'] + suffix);
+			});
+
+	  		$(".btn-geo-nav").click(function(){
+	  			var tmp_id = $(this).attr("id").split("_nav")[0];
+	  			if (tmp_id.length == 1) {
+	  				if ($(this).css("font-weight") == 400) {
+	  					originalColors[$(this).index('.btn-geo-nav')] = used_colors[tmp_id];
+	  					toggle_colors(tmp_id, 1);
+	  				} else {
+	  					originalColors[$(this).index('.btn-geo-nav')] = "white";
+	  					toggle_colors(tmp_id, 0);
+	  				}
+	  				if ($(this).css("font-weight") == 700) {
+	  					$(this).css("font-weight", 400);
+	  				} else { $(this).css("font-weight", 700); }
+	  			} else { // Show All
+	  				$(".bollard").show();
+	  				$(".btn-geo-nav").each(function() {
+	  					$(this).css("font-weight", 400);
+	  					$(this).css("background-color", "white");
+	  				});
+	  				for (var key in colors_shown) {
+	  					colors_shown[key] = 0;
+	  				}
+	  			}
+	  		});
+
+	  		function toggle_colors(c, t) {
+	  			colors_shown[c] = t;
+	  			if (t == 0) {
+	  				var tmp_cs = [];
+	  				for (var key in colors_shown) {
+	  					if (colors_shown[key] == 1) {
+	  						tmp_cs.push(key);
+	  					}
+	  				}
+	  				$(".bollard").each(function() {
+	  					if( $(this).is(":hidden")) {
+	  						var show_this = true;
+	  						for (var i = 0; i < tmp_cs.length; i++) {
+	  							if (!($(this).attr("data-color").includes(tmp_cs[i]))) {
+	  								show_this = false;
+	  								break;
+	  							}
+	  						}
+	  						if (show_this) { $(this).show(); }
+	  					}
+	  				});
+	  			}
+	  			if (t == 1) {
+	  				$(".bollard").each(function(){
+	  					if($(this).is(":visible")) {
+	  						if (!($(this).attr("data-color").includes(c))) {
+	  							$(this).hide();
+	  						}
+	  					}
+	  				});
+	  			}
+	  		}
+
+			/* OBSOLETE but kept for reference:
+			 * Fades image into geo image on mouse-over
+			 * and back to clear image on mouse-out
+
+			  		$(".zoomA").mouseover(function() {
+			  			var img_id = $(this)[0]['id'];
+			  			var img_url = "/geousa/img/plates/plate_" + img_id + "_geo.png";
+			  			if (img_id.length > 0) {
+			  				$.get(img_url).fail(function() {
+			  					img_url = "/geousa/img/wanted.png";
+			  				});
+			  				$(this).fadeOut(200, function(){
+			  					$(this).attr("src", img_url);
+			  					$(this).fadeIn(150);
+			  				});
+			  			}
+			  		}).mouseout(function() {
+			  			var img_id = $(this)[0]['id'];
+			  			var img_url = "/geousa/img/plates/plate_" + img_id + ".jpg";
+			  			if (img_id.length > 0) {
+			  				$.get(img_url).fail(function() {
+			  					img_url = "/geousa/img/wanted.png";
+			  				});
+			  				$(this).fadeOut(150, function(){
+			  					$(this).attr("src", img_url);
+			  					$(this).fadeIn(200);
+			  				});
+			  			}
+			  		});
+			*/
+
+		</script>
+	</body>
+</html>
