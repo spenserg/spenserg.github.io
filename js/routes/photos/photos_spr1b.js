@@ -123,7 +123,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 			// Music Box Dig
 			if (flags['old_mus_box'] == 0 && d > 8) {
 				has_opener = true;
-				if (d == 9 && flags['chicken_route'] == 1 && is_sunny == 1) { a.push({'desc':"Equip Hammer, Clear Path to Musbox"}); }
+				if (d == 9 && flags['chicken_route'] == 1 && is_sunny == 1) { a.push({'desc':"Equip Hammer, Clear Path to Musbox", 'imp':true}); }
 				a.push({'desc':"Equip hoe", 'iid':musbox_id, 'red':(is_sunny == 0 || ["WED", "SAT", "SUN"].includes(dow))});
 				a.push({'desc':"Dig Music Box", 'cid':'f_old_mus_box', 'val':1, 'sr':true, 'iid':musbox_id,
 					'sel':(is_sunny == 1 && !["WED", "SAT", "SUN"].includes(dow))
@@ -409,15 +409,15 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				if (aff[elli_id] == 0) { a.push({'desc':"Meet", 'cid':elli_id, 'val':4, 'sel':(!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1)}); }
 				a.push({'desc':((dow == "WED") ? "Talk (Flower Shop)" : "Talk (Bakery)"), 'cid':elli_id, 'val':1,
 					'sr':(aff[elli_id] == 0), 't2':"MusBox ",
-					'sel':((elli_sick_event && dow == "WED" && flags['new_mus_box'] == 0) ||
-						(flags['chicken_route'] == 1 && (d == 6 || (is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow)))))
+					'sel':(d != 9 && ((elli_sick_event && dow == "WED" && flags['new_mus_box'] == 0) ||
+						(flags['chicken_route'] == 1 && (d == 6 || (is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow))))))
 				});
 				a.push({'desc':"MusBox ", 'cid':[elli_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'],
 					'sel':((flags['chicken_route'] == 0 && is_sunny == 1 && !["SAT", "WED"].includes(dow) && aff[rick_id] >= _RICK_FIX_MIN) ||
 						(flags['chicken_route'] == 0 && elli_sick_event && dow == "WED" && flags['new_mus_box'] == 1)),
 				});
 				a.push({'desc':"Gift ", 'cid':elli_id, 'val':1, 'sr':true, 't2':"M/L Fish",
-					'sel':((flags['chicken_route'] == 0 || vars['chickens'] == 0) && (d == 6 || (is_sunny == 1 && !["WED", "SAT"].includes(dow))))
+					'sel':(d != 9 && (flags['chicken_route'] == 0 || vars['chickens'] == 0) && (d == 6 || (is_sunny == 1 && !["WED", "SAT"].includes(dow))))
 				});
 				a.push({'desc':"M/L Fish", 'sr':true, 't2':"Gift ", 'cid':[elli_id, 'v_happiness'], 'val':[3, 1], 'sel':false});
 				if (flags['chicken_route'] == 1) {
@@ -495,12 +495,12 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 				// Maria in library
 				if (aff[maria_id] == 0) {
 					a.push({'desc':"Meet", 'cid':maria_id, 'val':4,
-						'sel':((is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow)) || (d == 30 && flags['chicken_route'] == 0 && flags['sick_karen'] == 0 && is_sunny == 0) || d == 6),
+						'sel':(d != 9 && ((is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow)) || (d == 30 && flags['chicken_route'] == 0 && flags['sick_karen'] == 0 && is_sunny == 0) || d == 6)),
 						'red':((is_sunny == 0 || ["SAT", "SUN", "WED"].includes(dow)) && (d != 30 || flags['chicken_route'] == 1 || flags['sick_karen'] == 1) && d != 6)
 					});
 				}
 				a.push({'desc':"Talk (Library)", 'cid':maria_id, 'val':1, 'sr':(aff[maria_id] == 0),
-					'sel':((is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow)) || (d == 30 && flags['chicken_route'] == 0 && flags['sick_karen'] == 0 && is_sunny == 0) || d == 6),
+					'sel':(d != 9 && ((is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow)) || (d == 30 && flags['chicken_route'] == 0 && flags['sick_karen'] == 0 && is_sunny == 0) || d == 6)),
 					'red':((is_sunny == 0 || ["SAT", "SUN", "WED"].includes(dow)) && (d != 30 || flags['chicken_route'] == 1 || flags['sick_karen'] == 1) && d != 6)
 				});
 				if (aff[rick_id] >= _RICK_FIX_MIN - 6) {
@@ -510,7 +510,7 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					});
 				}
 				a.push({'desc':" Gift  ", 'cid':maria_id, 'val':2, 'sr':true, 't2':"Cabbage",
-					'sel':((is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow)) || (d == 30 && flags['chicken_route'] == 0 && flags['sick_karen'] == 0 && is_sunny == 0) || d == 6)
+					'sel':(d != 9 && ((is_sunny == 1 && !["SAT", "SUN", "WED"].includes(dow)) || (d == 30 && flags['chicken_route'] == 0 && flags['sick_karen'] == 0 && is_sunny == 0) || d == 6))
 				});
 				a.push({'desc':"Cabbage", 'sel':false, 't2':" Gift  ", 'sr':true,
 					'cid':((flags['recipe_maria'] == 0) ? [maria_id, 'f_recipe_maria'] : maria_id),
@@ -538,13 +538,13 @@ actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"Enter / Exit to clear Rick / Ann cutscene", 'iid':rick_id, 'imp':true});
 				}
 				if (aff[rick_id] == 0) { a.push({'desc':"Meet", 'cid':rick_id, 'val':4, 'sel':(dow != "SAT"), 't3':"Talk  "}); }
-				a.push({'desc':"Talk  ", 'sel':(dow != "SAT"), 'sr':(aff[rick_id] == 0),
+				a.push({'desc':"Talk  ", 'sel':(dow != "SAT" && d != 9), 'sr':(aff[rick_id] == 0),
 					'cid':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [rick_id, 'f_cutscene_rick'] : rick_id),
 					'val':((aff[rick_id] > 38 && flags['cutscene_rick'] == 0) ? [3, 1] : 3)
 				});
-				a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(dow != "SAT")});
+				a.push({'desc':"Gift  ", 'cid':rick_id, 'val':3, 'sr':true, 'sel':(dow != "SAT" && d != 9)});
 				if (aff[rick_id] >= (_RICK_FIX_MIN - 6)) {
-					a.push({'desc':"Rick Fix", 'sr':true, 'sel':(dow != "SAT"),
+					a.push({'desc':"Rick Fix", 'sr':true, 'sel':(dow != "SAT" && d != 9),
 						'cid':['f_old_mus_box', 'f_new_mus_box'], 'val':[-1, 1], 't3':"Talk  "
 					});
 				}
