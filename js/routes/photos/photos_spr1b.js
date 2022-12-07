@@ -1,4 +1,4 @@
-actions_photos_spr_y1b = function (a = [], d = 3, g = 300, is_sunny = 1) {
+function actions_photos_spr_y1b (a = [], d = 3, g = 300, is_sunny = 1) {
 	var ann_id = get_npc_id('ann');
 	var basil_id = get_npc_id('basil');
 	var cliff_id = get_npc_id('cliff');
