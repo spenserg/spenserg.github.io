@@ -35,12 +35,16 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 	weather_check = (weather_check || elli_sick_event || maria_sick_event || ann_sick_event);
 
 	// Weather Check
-	if (flags['chicken_route'] == 1 && is_sunny != -1) {
+	if (d == 59 && flags['corn_planted'] != 0 && aff[karen_id] < _DREAM_EVENT_MIN) {
+		a.push({'desc': "Check Weather", 'imp':true});
+		a.push({'desc':"RESET if tomorrow isnt sunny", 'imp':true, 'iid':karen_id});
+	} else if (flags['chicken_route'] == 1 && is_sunny != -1) {
 		a.push({'desc':(((!weather_check) ? "DONT " : "") + "Check Weather"),
 			'imp':weather_check, 'red':(!weather_check)
 		});
 		flags['dontsave'] = ((!weather_check && !is_festival(d + 1) && ![46, 60].includes(d)) ? true : false);
 	}
+	if (flags['corn_planted'] != 0 && d == 58) { flags['dontsave'] = true; }
 
 	// Dog Affection
 	if (flags['dog_inside'] == 1) {
@@ -87,7 +91,7 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Incubate LAST", 'cid':["f_new_chick", "f_incubate_last"], 'val':[(_CHICK_BORN_SLEEPS + 1), 1], 'sr':true, 't2':"Incubate", 'sel':false});
 			}
 
-			if (is_sunny == 1 && flags['corn_planted'] != 0) {
+			if (is_sunny == 1 && flags['corn_planted'] != 0 && ((d - 30) <= _CORN_GROW_DAYS)) {
 				a.push({'desc':"Equip Watering Can", 'imp':true});
 				a.push({'desc':"Water Corn", 'sr':true});
 			}
@@ -128,10 +132,10 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'],
 						'sel':(((!["WED", "SAT", "SUN"].includes(dow) && is_sunny == 1 && aff[ann_id] < 160) || ann_sick_event) && flags['new_mus_box'] == 1 && musboxes[1] > 0)
 					});
-					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Potato",
+					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Potato/Corn",
 						'sel':(((!["WED", "SAT", "SUN"].includes(dow) && is_sunny == 1 && aff[ann_id] < 160) || ann_sick_event) && flags['new_mus_box'] == 1 && musboxes[1] > 0)
 					});
-					a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes', 'v_potato_gifts'], 'val':[3, -1, 1], 'sr':true, 't2':" Gift", 'sel':false});
+					a.push({'desc':"Potato/Corn", 'cid':[ann_id, 'v_potatoes', 'v_potato_gifts'], 'val':[3, -1, 1], 'sr':true, 't2':" Gift", 'sel':false});
 					if (flags['recipe_ann'] == 0) {
 						a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes', 'v_potato_gifts'];
 						a[a.length - 1]['val'] = [1, 6, -1, 1];
@@ -384,8 +388,8 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					}
 					a.push({'desc':"Talk (Ricks Shop)", 'cid':ann_id, 'val':1, 'sr':(aff[ann_id] == 0), 'sel':false, 't2':" MusBox"});
 					a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 'sel':false, 't2':a[a.length - 1]['desc']});
-					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
-					a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes', 'v_potato_gifts'], 'val':[3, -1, 1], 'sr':true, 'sel':false, 't2':" Gift"});
+					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato/Corn"});
+					a.push({'desc':"Potato/Corn", 'cid':[ann_id, 'v_potatoes', 'v_potato_gifts'], 'val':[3, -1, 1], 'sr':true, 'sel':false, 't2':" Gift"});
 					if (flags['recipe_ann'] == 0) {
 						a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes', 'v_potato_gifts'];
 						a[a.length - 1]['val'] = [1, 6, -1, 1];
@@ -454,7 +458,9 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					a.push({'desc':"158", 'cid':karen_id, 'val':((aff[karen_id] < 158) ? (158 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["208", "240"]});
 				}
 				a.push({'desc':"208", 'cid':karen_id, 'val':((aff[karen_id] < 208) ? (208 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["240"]});
-				a.push({'desc':"240", 'cid':karen_id, 'val':((aff[karen_id] < 240) ? (240 - aff[karen_id]) : 0), 'sr':true, 'sel':false, 't2':["208"]});
+				a.push({'desc':"240", 'cid':karen_id, 'val':((aff[karen_id] < 240) ? (240 - aff[karen_id]) : 0), 'sr':true,
+					'sel':(d == 60 && flags['corn_planted'] != 0), 't2':["208"]
+				});
 				if (aff[karen_id] < 158) {
 					a[a.length - 1]['t2'].push("158");
 					a[a.length - 2]['t2'].push("158");
@@ -571,6 +577,18 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 		// Feed dog
 		a.push({'desc':"Feed Dog", 'cid':dog_id, 'val':2, 'sel':false});
 	} // End !typhoon
+
+	if (flags['corn_planted'] != 0 && d == 58 && aff[karen_id] < _DREAM_EVENT_MIN) {
+		a.push({'desc':"Weather SUNNY on Sum 30 to Skip Fall 1", 'imp':true, 'iid':karen_id});	
+	}
+
+	if (d == 60 && is_sunny != -1) {
+		a.push({'desc':"Day Skipped", 'cid':['v_day', 'f_dontsave'], 'val':[1, 1],
+			'sel':(flags['corn_planted'] == 1 && flags['dream_karen'] == 0),
+			'imp':(flags['corn_planted'] == 1 && flags['dream_karen'] == 0),
+			'red':(flags['corn_planted'] == 0 || flags['dream_karen'] == 1)
+		});
+	}
 
 	// If no new music box, enacting music box for one girl will deactivate all other music boxes
 	if (flags['new_mus_box'] == 0 && aff[rick_id] >= _RICK_FIX_MIN - 6) {
