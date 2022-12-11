@@ -87,6 +87,11 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 				a.push({'desc':"Incubate LAST", 'cid':["f_new_chick", "f_incubate_last"], 'val':[(_CHICK_BORN_SLEEPS + 1), 1], 'sr':true, 't2':"Incubate", 'sel':false});
 			}
 
+			if (is_sunny == 1 && flags['corn_planted'] != 0) {
+				a.push({'desc':"Equip Watering Can", 'imp':true});
+				a.push({'desc':"Water Corn", 'sr':true});
+			}
+
 			// ANN ANKLE
 			if (flags['ankle_ann'] == 0 && aff[ann_id] >= (_ANKLE_EVENT_MIN - 10) && is_sunny == 1) {
 				// ANKLE EVENT
@@ -119,14 +124,14 @@ actions_photos_sum_y1b = function(a = [], d = 3, g = 300, is_sunny = 1) {
 					// ANN
 					// -1 sp " GIFT"
 					// -1 sp " MUSBOX"
-					a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id, 'val':1, 't2':" MusBox",
-						'sel':(((!["WED", "SAT", "SUN"].includes(dow) && is_sunny == 1 && aff[ann_id] < 160) || ann_sick_event) && flags['new_mus_box'] == 0 && flags['chicken_route'] == 0)
+					a.push({'desc':((dow == "SUN") ? "Talk (Ranch 50%)" : "Talk (Ranch)"), 'cid':ann_id, 'val':1, 't2':" MusBox", 'sel':false});
+					a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'],
+						'sel':(((!["WED", "SAT", "SUN"].includes(dow) && is_sunny == 1 && aff[ann_id] < 160) || ann_sick_event) && flags['new_mus_box'] == 1 && musboxes[1] > 0)
 					});
-					a.push({'desc':" MusBox", 'cid':[ann_id, 'f_new_mus_box'], 'val':[_MUS_BOX_AFF, -1], 'sr':true, 't2':a[a.length - 1]['desc'], 'sel':false});
-					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 'sel':false, 't2':"Potato"});
-					a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes', 'v_potato_gifts'], 'val':[3, -1, 1], 'sr':true, 't2':" Gift",
-						'sel':(ann_sick_event || (!["SAT", "SUN", "WED"].includes(dow) && is_sunny == 1 && aff[ann_id] < 160))
+					a.push({'desc':" Gift", 'cid':ann_id, 'val':1, 'sr':true, 't2':"Potato",
+						'sel':(((!["WED", "SAT", "SUN"].includes(dow) && is_sunny == 1 && aff[ann_id] < 160) || ann_sick_event) && flags['new_mus_box'] == 1 && musboxes[1] > 0)
 					});
+					a.push({'desc':"Potato", 'cid':[ann_id, 'v_potatoes', 'v_potato_gifts'], 'val':[3, -1, 1], 'sr':true, 't2':" Gift", 'sel':false});
 					if (flags['recipe_ann'] == 0) {
 						a[a.length - 1]['cid'] = ['f_recipe_ann', ann_id, 'v_potatoes', 'v_potato_gifts'];
 						a[a.length - 1]['val'] = [1, 6, -1, 1];
