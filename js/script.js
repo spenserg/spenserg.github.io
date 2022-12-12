@@ -1549,6 +1549,12 @@ function musbox_count (maria, ann, elli, d = vars['day'], chickens = 0) {
 	var mus_boxes = [0, 0, 0];
 	var net = 0;
 
+	// Aff adjustments
+	if (d > 69 && d < 72) { aff_reqs = [143, 148, 202]; }
+	if (d > 72 && d <= 84) { aff_reqs = [146, 152, 202]; }
+	if (d == 85) { aff_reqs = [146, 152, 202]; }
+	if (d == 86) { aff_reqs = [149, 160, 202]; }
+
 	if (d < 24) {
 		// Flower Festival
 		npc_affs[0] += (chickens ? (((aff_reqs[0] - npc_affs[0]) > (aff_reqs[1] - npc_affs[1])) ? 12 : 2) : 2);
