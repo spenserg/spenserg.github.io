@@ -112,7 +112,8 @@ actions_photos_sum_y2 = function(a, d, g, is_sunny) {
 						}
 						a.push({'desc':"Buy:", 'iid':get_npc_id('mas_carpenter'), 'red':(ext_in_progress || (is_sunny == 1 && flags['kitchen'] != 0 && flags['babybed'] != 0))});
 						for (var i = 0; i < tmp_ext.length; i++) {
-							a.push({'desc':tmp_ext[i][3], 'sr':true, 'sel':(!ext_in_progress && is_sunny == 0 && i == (tmp_ext.length - 1)),
+							a.push({'desc':tmp_ext[i][3], 'sr':true,
+								'sel':(!ext_in_progress && is_sunny == 0 && i == (tmp_ext.length - 1) && g >= tmp_ext[i][1]),
 								'cid':['v_gold', 'v_lumber', ('f_' + tmp_ext[i][0])],
 								'val':[(-1 * tmp_ext[i][1]), (-1 * tmp_ext[i][2]), (_BUILD_DAYS + 1)]
 							});
