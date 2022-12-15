@@ -1,4 +1,4 @@
-function actions_photos_spr_y1b (a = [], d = 3, g = 300, is_sunny = 1) {
+actions_photos_spr_y1b=function (a = [], d = 3, g = 300, is_sunny = 1) {
 	var ann_id = get_npc_id('ann');
 	var basil_id = get_npc_id('basil');
 	var cliff_id = get_npc_id('cliff');
@@ -115,14 +115,14 @@ function actions_photos_spr_y1b (a = [], d = 3, g = 300, is_sunny = 1) {
 				//	chk_imp = (is_sunny == 1 && vars['chickens'] < 3 && ["MON", "TUES", "THURS", "FRI"].includes(dow));
 				//}
 				if (flags['new_chick'] == 1) {
-					a.push({'desc':"New Chick", 'iid':chicken_id, 't0':"Incubate", 'iid':chicken_id, 'imp':chk_imp,
-						'cid':["v_new_chicken_days", "f_new_chick"], 'val':[d + _CHICK_GROW_SLEEPS, -1], 'sel':false,
+					a.push({'desc':"New Chick", 'iid':chicken_id, 't0':"Incubate", 'iid':chicken_id,
+						'imp':chk_imp, 'red':(!chk_imp), 'sel':chk_imp,
+						'cid':["v_new_chicken_days", "f_new_chick"], 'val':[d + _CHICK_GROW_SLEEPS, -1]
 					});
 				}
 				a.push({'desc':"Incubate", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1),
-					'sr':(flags['new_chick'] == 1), 'iid':chicken_id, 'red':(d == 10),
-					'sel':(d == 11 && vars['new_chicken_days'].length == 0),
-					'imp':(d == 11 && vars['new_chicken_days'].length == 0)
+					'sr':(flags['new_chick'] == 1), 'iid':chicken_id,
+					'imp':chk_imp, 'red':(!chk_imp), 'sel':chk_imp
 				});
 			}
 
