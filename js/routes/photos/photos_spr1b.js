@@ -24,6 +24,7 @@ function actions_photos_spr_y1b (a = [], d = 3, g = 300, is_sunny = 1) {
 	var has_opener = false;
 	var lumber_to_sprite = ((aff[sprite_id] >= _SPRITE_SPAM_MAX) ? 0 : (((_SPRITE_SPAM_MAX - aff[sprite_id]) > 6) ? 6 : ((_SPRITE_SPAM_MAX - aff[sprite_id]))));
 	var reset = "";
+	var chicken_on_schedule = true;
 
 	var kai_maxed = (aff[kai_id] >= (160 - (((flags['ankle_karen'] == 0) ? 20 : 0) + 16 + 3))); // Two Swims and a Cow Win (other festival talks too, so there's a buffer)
 	var kai_visits = Math.ceil((160 - (((flags['ankle_karen'] == 0) ? 20 : 0) + 16 + 3 + aff[kai_id])) / 8);
@@ -107,10 +108,15 @@ function actions_photos_spr_y1b (a = [], d = 3, g = 300, is_sunny = 1) {
 			}
 
 			if (vars['chickens'] > 0 && flags['new_chick'] < 2) {
+				var chk_imp = false;
+				//if (chicken_on_schedule) {
+					chk_imp = [15, 18, 22, 29].includes(d);
+				//} else {
+				//	chk_imp = (is_sunny == 1 && vars['chickens'] < 3 && ["MON", "TUES", "THURS", "FRI"].includes(dow));
+				//}
 				if (flags['new_chick'] == 1) {
-					a.push({'desc':"New Chick", 'iid':chicken_id, 't0':"Incubate", 'iid':chicken_id,
+					a.push({'desc':"New Chick", 'iid':chicken_id, 't0':"Incubate", 'iid':chicken_id, 'imp':chk_imp,
 						'cid':["v_new_chicken_days", "f_new_chick"], 'val':[d + _CHICK_GROW_SLEEPS, -1], 'sel':false,
-						'imp':(is_sunny == 1 && vars['chickens'] < 3 && ["MON", "TUES", "THURS", "FRI"].includes(dow))
 					});
 				}
 				a.push({'desc':"Incubate", 'cid':"f_new_chick", 'val':(_CHICK_BORN_SLEEPS + 1),
