@@ -57,6 +57,7 @@ function get_actions(rid = null, d = vars['day'], g = vars['gold'], is_sunny = 1
 		if (rid == 11) { return get_actions_cow_photo(d, g, is_sunny); } // Cow Photo
 		if (rid == 24) { return get_actions_girl_photos(d, g, is_sunny); } // All Girl Photos
 		if (rid == 25) { return get_actions_photos_aff(d, g, is_sunny); } // All Photos Aff Only
+		if (rid == 26) { return get_actions_randomizer(d, g, is_sunny); } // Randomizer
 		if ([14, 15, 17, 18, 20].includes(rid)) { return get_actions_misc(d, g, is_sunny); } // Balloon Photo, Horse Photo, Swim Photo, Dog Race Photo
 	}
 	/* TODO:
@@ -95,7 +96,7 @@ function next_day (jump = false) {
 		flags['good_weather'] = 1;
 
 		// Change Karen Marriage route to Baby Photo route if continuing
-		if (route_id == 2 && vars['day'] == 119) { route_id = 22; }
+		if (route_id == 2 && vars['day'] == 119) { route_id = 2; }
 
 		// Update variables
 		var tmp_actions = [];
