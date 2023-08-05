@@ -11,27 +11,27 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script src="js/sorttable.js"></script>
-    <style>
+		<style>
 			.text_link { color:#007bff; }
 			.text_link:hover { text-decoration:underline; cursor: pointer; }
 			.headerText { font-size:36px; }
 			.inside { margin-top:15px; }
-      .state_click { cursor: pointer; }
-      .state_click:hover { color: black; background-color:white; }
+			.state_click { cursor: pointer; }
+			.state_click:hover { color: black; background-color:white; }
 			.state_click_disabled { color:grey }
 			.notes { border:none; }
 			.noZoomScenery { cursor: pointer; }
-      .noZoomScenery.flag { height:266px;width:auto;cursor:default; }
+			.noZoomScenery.flag { height:266px;width:auto;cursor:default; }
 			.noZoomScenery.plate { height:100px;width:auto;cursor:default; }
 			.noZoomScenery.sign { height:250px;width:auto;cursor:default; }
 			.noZoomScenery.reg { height:198px;width:auto;cursor:default; }
-      @media only screen and (max-width: 885px) {
-        .noZoomScenery.flag { height:auto;width:48%; }
+			@media only screen and (max-width: 885px) {
+				.noZoomScenery.flag { height:auto;width:48%; }
 				.noZoomScenery.plate { height:auto;width:24%; }
 				.noZoomScenery.sign { height:auto;width:31%; }
 				.noZoomScenery.reg { height:auto;width:31%; }
-      }
-    </style>
+			}
+		</style>
 	</head>
 	<body style="padding-top:75px">
 		<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #212121; color: white;">
@@ -40,25 +40,25 @@
 			</a>
 		</nav>
 
-    <div class="section notes">
+		<div class="section notes">
 			<i class="bi-exclamation-triangle" style="color:yellow"></i>
 			<span style="color:yellow">This page is still in early stages of development. Only select states are currently available</span>
 			<i class="bi-exclamation-triangle" style="color:yellow"></i><br/>
 			<span class="state_click" id="st_AL">Alabama</span> · <span class="state_click" id="st_AK">Alaska</span> · <span class="state_click" id="st_AZ">Arizona</span> · <span class="state_click" id="st_AR">Arkansas</span> · <span class="state_click" id="st_CA">California</span> · <span class="state_click" id="st_CO">Colorado</span> · <span class="state_click" id="st_CT">Connecticut</span> · <span class="state_click" id="st_DE">Delaware</span> · <span class="state_click" id="st_DC">DC</span> · <span class="state_click" id="st_FL">Florida</span> · <span class="state_click" id="st_GA">Georgia</span> · <span class="state_click" id="st_HI">Hawaii</span> · <span class="state_click" id="st_ID">Idaho</span> · <span class="state_click" id="st_IL">Illinois</span> · <span class="state_click" id="st_IN">Indiana</span> · <span class="state_click" id="st_IA">Iowa</span> · <span class="state_click" id="st_KS">Kansas</span> · <span class="state_click" id="st_KY">Kentucky</span> · <span class="state_click" id="st_LA">Louisiana</span> · <span class="state_click" id="st_ME">Maine</span> · <span class="state_click" id="st_MD">Maryland</span> · <span class="state_click" id="st_MA">Massachusetts</span> · <span class="state_click" id="st_MI">Michigan</span> · <span class="state_click" id="st_MN">Minnesota</span> · <span class="state_click" id="st_MS">Mississippi</span> · <span class="state_click" id="st_MO">Missouri</span> · <span class="state_click" id="st_MT">Montana</span> · <span class="state_click" id="st_NE">Nebraska</span> · <span class="state_click" id="st_NV">Nevada</span> · <span class="state_click" id="st_NH">New Hampshire</span> · <span class="state_click" id="st_NJ">New Jersey</span> · <span class="state_click" id="st_NM">New Mexico</span> · <span class="state_click" id="st_NY">New York</span> · <span class="state_click" id="st_NC">North Carolina</span> · <span class="state_click" id="st_ND">North Dakota</span> · <span class="state_click" id="st_OH">Ohio</span> · <span class="state_click" id="st_OK">Oklahoma</span> · <span class="state_click" id="st_OR">Oregon</span> · <span class="state_click" id="st_PA">Pennsylvania</span> · <span class="state_click" id="st_RI">Rhode Island</span> · <span class="state_click" id="st_SC">South Carolina</span> · <span class="state_click" id="st_SD">South Dakota</span> · <span class="state_click" id="st_TN">Tennessee</span> · <span class="state_click" id="st_TX">Texas</span> · <span class="state_click" id="st_UT">Utah</span> · <span class="state_click" id="st_VT">Vermont</span> · <span class="state_click" id="st_VA">Virginia</span> · <span class="state_click" id="st_WA">Washington</span> · <span class="state_click" id="st_WV">West Virginia</span> · <span class="state_click" id="st_WI">Wisconsin</span> · <span class="state_click" id="st_WY">Wyoming</span>
 		</div>
 
-    <div id="quickref">
-      <div class="headerText" id="qr_header">Quick Reference</div>
+		<div id="quickref">
+			<div class="headerText" id="qr_header">Quick Reference</div>
 			<div id="geomap"></div>
-      <div class="section">
-        <div style="padding-top:15px;margin-left:15px;">
-          <div class="bollard">
-            <img src="img/map/states/st_AL.png" id="usmap" alt="Map of Alabama" class="noZoomScenery flag" />
-            <img src="img/flags/flag_AL.jpg" id="flag" alt="Flag of Alabama" class="noZoomScenery flag" style="cursor: pointer;" />
-          </div>
+			<div class="section">
+				<div style="padding-top:15px;margin-left:15px;">
+					<div class="bollard">
+						<img src="img/map/states/st_AL.png" id="usmap" alt="Map of Alabama" class="noZoomScenery flag" />
+						<img src="img/flags/flag_AL.jpg" id="flag" alt="Flag of Alabama" class="noZoomScenery flag" style="cursor: pointer;" />
+					</div>
 				</div>
-        <div style="margin-left:15px;margin-right:15px">
-          <span id="st_qr">Front plate required: N<br/>Area Codes: 205, 251, 256, 334</span>
+				<div style="margin-left:15px;margin-right:15px">
+					<span id="st_qr">Front plate required: N<br/>Area Codes: 205, 251, 256, 334</span>
 					<br/><br/><b>Most Common Plates:</b><br/>
 					<img src="img/plates/plate_AL_2014.jpg" id="plate0" alt="Alabama license plate" class="noZoomScenery plate" />
 					<img src="img/plates/plate_AL_2022.jpg" id="plate1" alt="Alabama license plate" class="noZoomScenery plate" />
@@ -81,8 +81,8 @@
 					<img src="img/highwaySigns/hwy_NULL.jpg" id="hwy_sign_2" alt="" class="noZoomScenery sign" style="cursor:default" />
 					<img src="img/highwaySigns/hwy_NULL.jpg" id="hwy_sign_3" alt="" class="noZoomScenery sign" style="cursor:default" />
 				</div>
-      </div>
-    </div>
+			</div>
+		</div>
 
 <!-- zz Alabama -->
 <!-- [AL1] General -->
