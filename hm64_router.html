@@ -78,18 +78,17 @@
         				</a>
         				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
         					<span class="dropdown-item" onclick="new_game(2)"><img src="/img/npc/karen.png" style="height:30px"/> Karen Mar <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
-							<span class="dropdown-item" onclick="new_game(1)"><img src="/img/npc/elli.png" style="height:30px"/> Elli Mar <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
-							<span class="dropdown-item" onclick="new_game(7)"><img src="/img/npc/maria.png" style="height:30px"/> Maria Mar <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
-							<span class="dropdown-item" onclick="new_game(3)"><img src="/img/npc/popuri.png" style="height:30px"/> Popuri Mar  <img src="/img/under-construction.png" style="height:30px"/></span>
-							<div class="dropdown-divider"></div>
-							<span class="dropdown-item" onclick="new_game(8)"><img src="/img/npc/ann.png" style="height:30px"/>Ann Photo <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
-							<span class="dropdown-item" onclick="new_game(4)"><img src="/img/npc/elli.png" style="height:30px"/>Elli Photo <img src="/img/under-construction.png" style="height:30px"/></span>
-							<span class="dropdown-item" onclick="new_game(9)"><img src="/img/npc/karen.png" style="height:30px"/>Karen Photo <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
-							<div class="dropdown-divider"></div>
-							<span class="dropdown-item" onclick="new_game(24)"><img src="/img/npc/rick.png" style="height:30px"/>All Girl Photos <img src="/img/under-construction.png" style="height:30px"/></span>
+						<span class="dropdown-item" onclick="new_game(1)"><img src="/img/npc/elli.png" style="height:30px"/> Elli Mar <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
+						<span class="dropdown-item" onclick="new_game(7)"><img src="/img/npc/maria.png" style="height:30px"/> Maria Mar <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
+						<span class="dropdown-item" onclick="new_game(3)"><img src="/img/npc/popuri.png" style="height:30px"/> Popuri Mar  <img src="/img/under-construction.png" style="height:30px"/></span>
+						<div class="dropdown-divider"></div>
+						<span class="dropdown-item" onclick="new_game(8)"><img src="/img/npc/ann.png" style="height:30px"/>Ann Photo <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
+						<span class="dropdown-item" onclick="new_game(4)"><img src="/img/npc/elli.png" style="height:30px"/>Elli Photo <img src="/img/under-construction.png" style="height:30px"/></span>
+						<span class="dropdown-item" onclick="new_game(9)"><img src="/img/npc/karen.png" style="height:30px"/>Karen Photo <img src="/img/versions/v1_0.png" style="height:20px;border:2px solid green"></span>
+						<div class="dropdown-divider"></div>
+						<span class="dropdown-item" onclick="new_game(24)"><img src="/img/npc/rick.png" style="height:30px"/>All Girl Photos <img src="/img/under-construction.png" style="height:30px"/></span>
         				</div>
-      				</li>
-      				
+      				</li>     				
       				<li class="nav-item dropdown">
         				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           					Other
@@ -209,8 +208,14 @@
 
 	<script>
 		$(function(){
-			// Start with Ann Photo
-			new_game(8);
+			const urlParams = new URLSearchParams(window.location.search);
+			const init_route = urlParams.get('route');
+			if (init_route != null && [1,2,3,4,5,7,8,9,10,14,15,16,17,18,20,21,24,25].includes(init_route)) {
+				new_game(init_route);
+			} else {
+				// Start with Ann Photo
+				new_game(8);
+			}
   		});
 
 		$(".display_main.weather").click( function(){
