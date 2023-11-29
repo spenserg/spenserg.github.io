@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Snow</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/png" href="img/logo/planet.png"/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/bollards.css" type="text/css" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<style>
+			@media only screen and (max-width: 700px) {
+				.bollard > a > img { height:180px; }
+			}
+		</style>
+	</head>
+	<body style="padding-top:100px">
+		<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #212121; color: white;">
+			<a class="navbar-brand" href="main.html">
+				<img class="logo" src="img/logo/geohints.png" />
+			</a>
+		</nav>
+
+		<span class="geoh3">Geoguessr map</span>
+		<p style="padding-left:15px;">You can find the map to test your knowledge about the locations <a href="https://www.geoguessr.com/maps/64e76696a96de1759a6235e4" target="_blank">here</a>.<br/>
+
+		<img style="margin-top:4px" src="img/snow/snow_ALL.jpg" class="noZoomGen" onclick="enlarge_pic(this)" id="snow_map" />
+
+		<div class="section">
+			<div class="headerText">Alaska</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@69.3647127,-148.7563331,3a,75y,176.53h,99.13t/data=!3m6!1e1!3m4!1s8BqakNoftpzr5I9aQd8R1Q!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_AK_PrudhoeBay.jpg" alt="snow in Prudhoe Bay, AK" class="noZoomScenery" />
+					</a>
+					<p class="country">Prudhoe Bay</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Arizona</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@34.4404501,-111.4782344,3a,90y,97.83h,90.08t/data=!3m6!1e1!3m4!1sMk6vH0ojZxFWrsW8jgsldA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_AZ_Pine.jpg" alt="Pine, Arizona" class="noZoomScenery" />
+					</a>
+					<p class="country">Pine</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Arkansas</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@36.3272511,-92.793026,3a,75y,352.55h,85.24t/data=!3m6!1e1!3m4!1sSoZ0PAhJPPk0BofGZz5c-Q!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_AR_Yellville.jpg" alt="Yellville, Arkansas" class="noZoomScenery" />
+					</a>
+					<p class="country">Yellville</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">California</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@39.7617089,-120.2490746,3a,90y,359.77h,96.9t/data=!3m6!1e1!3m4!1sypbpfgRqjNG2i27IjnTkjA!2e0!7i3328!8i1664" target="_blank">
+						<img src="img/snow/snow_CA_Loyalton.jpg" alt="Loyalton, California" class="noZoomScenery" />
+					</a>
+					<p class="country">Loyalton</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Colorado</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@39.8303956,-105.0296423,3a,90y,172.45h,94.9t/data=!3m6!1e1!3m4!1s1USv6CGq_pPD9fbJXTJhnA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_CO_Westminster.jpg" alt="Westminster, Colorado" class="noZoomScenery" />
+					</a>
+					<p class="country">Westminster</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Connecticut</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@41.7549735,-72.7652268,3a,90y,64.53h,91.45t/data=!3m6!1e1!3m4!1sPPp7HYyzxkJCkZM58-_44w!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_CT_Hartford.jpg" alt="West Hartford, Connecticut" class="noZoomScenery" />
+					</a>
+					<p class="country">West Hartford</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Idaho</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@43.4905623,-111.451967,3a,75y,133.31h,98.5t/data=!3m6!1e1!3m4!1sQW9K70T0jQgODZWOL3_ygg!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_ID_SwanValley.jpg" alt="Swan Valley, Idaho" class="noZoomScenery" />
+					</a>
+					<p class="country">Swan Valley</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@42.307991,-114.5747635,3a,90y,95.24h,94.97t/data=!3m6!1e1!3m4!1sgZsRV7STdhF1ncKfOJwU9Q!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_ID_TwinFalls.jpg" alt="Twin Falls, Idaho" class="noZoomScenery" />
+					</a>
+					<p class="country">Twin Falls</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Illinois</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@41.8351322,-87.7843306,3a,75y,172.16h,91.53t/data=!3m6!1e1!3m4!1sPl0-HrMHZam1EobPCqLOtA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_IL_Chicago.jpg" alt="snow in Chicago, IL" class="noZoomScenery" />
+					</a>
+					<p class="country">Chicago</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@38.472061,-89.7237212,3a,90y,355.89h,99.74t/data=!3m6!1e1!3m4!1sgTzfSODsuv97bPd-D50YLA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_IL_Mascoutah.jpg" alt="Mascoutah, Illinois" class="noZoomScenery" />
+					</a>
+					<p class="country">Mascoutah</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@41.3678621,-89.0201622,3a,90y,266.01h,94.95t/data=!3m6!1e1!3m4!1si2mETfIgIc63z8lbW1IQhg!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_IL_NorthUtica.jpg" alt="North Utica, Illinois" class="noZoomScenery" />
+					</a>
+					<p class="country">North Utica</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Iowa</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@41.46068,-91.074253,3a,90y,2.42h,89.44t/data=!3m6!1e1!3m4!1sgF4Ts3Foc_Dun_apHBtmmg!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_IA_Muscatine.jpg" alt="Muscatine, Iowa" class="noZoomScenery" />
+					</a>
+					<p class="country">Muscatine</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@42.9989795,-93.3405531,3a,75y,17.52h,93.64t/data=!3m6!1e1!3m4!1stODPcHynZW6oxTET6c5_gw!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_IA_Swaledale.jpg" alt="Swaledale, Iowa" class="noZoomScenery" />
+					</a>
+					<p class="country">Swaledale</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Maine</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@45.0948613,-70.2391676,2a,75y,98.86h,101.1t/data=!3m6!1e1!3m4!1sJQKZUBXaDe3gJM0KPbkCmA!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_ME_CarrabassettValley.jpg" alt="Carrabassett Valley, Maine" class="noZoomScenery" />
+					</a>
+					<p class="country">Carrabassett Valley</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Michigan</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@42.5016535,-85.8586842,3a,75y,343.96h,95.19t/data=!3m6!1e1!3m4!1s6BHTG1nZw4wRSK2jU-BD_w!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_MI_Allegan.jpg" alt="Allegan, Michigan" class="noZoomScenery" />
+					</a>
+					<p class="country">Allegan</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@43.0124185,-83.6954873,3a,90y,197.87h,96.66t/data=!3m6!1e1!3m4!1sRTHukOJTk4kFNBFnPYurJg!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_MI_Flint.jpg" alt="Flint, MI" class="noZoomScenery" />
+					</a>
+					<p class="country">Flint</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@44.8192892,-84.718241,3a,90y,166.24h,78.15t/data=!3m6!1e1!3m4!1sq91Gb6SdsfeztpVNvXP0rg!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_MI_Frederic.jpg" alt="snow in Frederic, MI" class="noZoomScenery" />
+					</a>
+					<p class="country">Frederic</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@44.3962002,-85.7310036,3a,75y,48.27h,95.44t/data=!3m7!1e1!3m5!1s0zM0nnMiZwUvJSvEnjF5BQ!2e0!5s20181101T000000!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_MI_Mesick.jpg" alt="Mesick, MI" class="noZoomScenery" />
+					</a>
+					<p class="country">Mesick</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Minnesota</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@47.2961664,-96.6066007,3a,75y,270.07h,97.34t/data=!3m6!1e1!3m4!1sjjcG-YEtuLuj1HHDfHpRRQ!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_MN_Ada.jpg" alt="Ada, Minnesota" class="noZoomScenery" />
+					</a>
+					<p class="country">Ada</p>
+				</div>
+<!--
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@44.8511773,-93.4235042,3a,90y,32.22h,93.28t/data=!3m6!1e1!3m4!1sdJtNTQ85bCikYbWwU0mHVA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_MN_EdenPrairie.jpg" alt="Eden Prairie, Minnesota" class="noZoomScenery" />
+					</a>
+					<p class="country">Eden Prairie</p>
+				</div>
+-->
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@44.5722932,-92.8865307,3a,75y,81.58h,101.93t/data=!3m6!1e1!3m4!1sXNAsITClNbwmWTkVIMd_qA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_MN_CannonFalls.jpg" alt="Cannon Falls, Minnesota" class="noZoomScenery" />
+					</a>
+					<p class="country">Cannon Falls</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@46.8332047,-96.6198289,3a,90y,339.8h,101.02t/data=!3m6!1e1!3m4!1spQFE6mKdpSyGlpNAqQliAQ!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_MN_Glyndon.jpg" alt="Glyndon, Minnesota" class="noZoomScenery" />
+					</a>
+					<p class="country">Glyndon</p>
+				</div>
+
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@48.0764389,-92.8226576,3a,90y,166.92h,98.82t/data=!3m6!1e1!3m4!1sOHYqEk6fv9fYcyqqDkjc6Q!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_MN_Orr.jpg" alt="Orr, Minnesota" class="noZoomScenery" />
+					</a>
+					<p class="country">Orr</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Missouri</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@37.6354085,-91.7632503,3a,75y,179.63h,94.1t/data=!3m6!1e1!3m4!1sFDjWdIW_QxQ2StvOVnk95w!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_MO_Lenox.jpg" alt="snow in Lenox, MO" class="noZoomScenery" />
+					</a>
+					<p class="country">Lenox</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Montana</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@46.0655715,-106.7097326,3a,48.8y,123.79h,96.75t/data=!3m6!1e1!3m4!1slbe7b69jpMR1kMdUc6kF_Q!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_MT_Forsyth.jpg" alt="Forsyth, Montana" class="noZoomScenery" />
+					</a>
+					<p class="country">Forsyth</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@44.9995404,-112.8527652,3a,75y,10.01h,102.67t/data=!3m6!1e1!3m4!1sU9JPXB4-qJnRPXbAVByvGw!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_MT_Butte.jpg" alt="Butte, Montana" class="noZoomScenery" />
+					</a>
+					<p class="country">Butte</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Nebraska</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@41.4222984,-100.3329843,3a,90y,288.32h,89.96t/data=!3m6!1e1!3m4!1s7pTXt6f0ivs9BjXLCC71Qw!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_NE_Arnold.jpg" alt="Arnold, Nebraska" class="noZoomScenery" />
+					</a>
+					<p class="country">Arnold</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@41.2646754,-96.1267688,3a,90y,76.72h,82.55t/data=!3m6!1e1!3m4!1sp1clQuCkg73bFQ_Gl1_pVQ!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_NE_Omaha.jpg" alt="Omaha, Nebraska" class="noZoomScenery" />
+					</a>
+					<p class="country">Omaha</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Nevada</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@40.8178448,-115.804884,3a,75y,57.62h,96.87t/data=!3m6!1e1!3m4!1sH7gXsvh8rnqxScGNnYXGqQ!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_NV_Elko.jpg" alt="Elko, Nevada" class="noZoomScenery" />
+					</a>
+					<p class="country">Elko</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@39.3295434,-119.8789534,3a,75y,286.84h,102.34t/data=!3m6!1e1!3m4!1sutdtrtebe6CuyBlxd_D4WA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_NV_Reno.jpg" alt="snow in Reno, NV" class="noZoomScenery" />
+					</a>
+					<p class="country">Reno</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">New Hampshire</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@44.842362,-71.2714272,3a,90y,134.03h,96.51t/data=!3m6!1e1!3m4!1sXg0A3AQ7cuiTqE6kIAGdjA!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_NH_Colebrook.jpg" alt="Colebrook, New Hampshire" class="noZoomScenery" />
+					</a>
+					<p class="country">Colebrook</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@44.1624879,-71.2131184,3a,75y,169.03h,92.14t/data=!3m6!1e1!3m4!1sufs1QveFJ-mIEZcXA9_8qA!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_NH_Jackson.jpg" alt="Jackson, New Hampshire" class="noZoomScenery" />
+					</a>
+					<p class="country">Jackson</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">New York</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@43.3151908,-73.6536155,3a,90y,235.2h,99.13t/data=!3m6!1e1!3m4!1s4AvX6LBp_qPbS4FJX52CDg!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_NY_GlensFalls.jpg" alt="Glens Falls, New York" class="noZoomScenery" />
+					</a>
+					<p class="country">Glens Falls</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@40.9300009,-73.8557501,3a,90y,71.28h,93.99t/data=!3m6!1e1!3m4!1ssPpGyXcnshQMHMu2ZWiMYg!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_NY_Yonkers.jpg" alt="Yonkers, New York" class="noZoomScenery" />
+					</a>
+					<p class="country">Yonkers</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">North Dakota</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@46.4872496,-100.0852084,3a,90y,269.06h,96.72t/data=!3m6!1e1!3m4!1sK2EywvD3TuYvm2SDuqluKg!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_ND_Braddock.jpg" alt="Braddock, North Dakota" class="noZoomScenery" />
+					</a>
+					<p class="country">Braddock</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@46.8748757,-96.9431115,3a,75y,301.09h,95.8t/data=!3m7!1e1!3m5!1sOsqvFcYczNsSx0edDXxesw!2e0!5s20220301T000000!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_ND_Fargo.jpg" alt="Fargo, North Dakota" class="noZoomScenery" />
+					</a>
+					<p class="country">Fargo</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@47.4417035,-97.8363541,3a,90y,261.05h,99.04t/data=!3m6!1e1!3m4!1sjDLBJe1RQ_JiLUROtdc66g!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_ND_Finley.jpg" alt="Finley, North Dakota" class="noZoomScenery" />
+					</a>
+					<p class="country">Finley</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@46.0807886,-97.6320013,3a,75y,95.95h,88.56t/data=!3m6!1e1!3m4!1sSjkiFrRS4sOyTIE5W437WA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_ND_Forman.jpg" alt="Forman, North Dakota" class="noZoomScenery" />
+					</a>
+					<p class="country">Forman</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@46.0660642,-96.9073126,3a,75y,271.03h,90.49t/data=!3m6!1e1!3m4!1sa0Qk0uYkFC8bWFLGl81vtA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_ND_Hankinson.jpg" alt="Hankinson, North Dakota" class="noZoomScenery" />
+					</a>
+					<p class="country">Hankinson</p>
+				</div>
+<!--
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@48.9832742,-97.5492097,3a,90y,323.24h,93.23t/data=!3m6!1e1!3m4!1stOucrgXOkz32-WhzFIB_tQ!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_ND_Neche.jpg" alt="Neche, North Dakota" class="noZoomScenery" />
+					</a>
+					<p class="country">Neche</p>
+				</div>
+-->
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@44.3645171,-100.3519632,3a,75y,113.72h,85.81t/data=!3m6!1e1!3m4!1s8VNvKUTUekwKkZ-yCE-IrQ!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_ND_Pierre.jpg" alt="Pierre, North Dakota" class="noZoomScenery" />
+					</a>
+					<p class="country">Pierre</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Ohio</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@39.9460478,-82.9195756,3a,75y,73.86h,84.02t/data=!3m6!1e1!3m4!1sKl_q4RtYmc-wqZO8gJ6L8Q!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_OH_Kent.jpg" alt="Kent, Ohio" class="noZoomScenery" />
+					</a>
+					<p class="country">Kent</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Oklahoma</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@34.1857582,-96.9858931,3a,75y,176.55h,87.24t/data=!3m6!1e1!3m4!1sAEOhrqUFfXp-eJAeO2yzRw!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_OK_Ardmore.jpg" alt="Ardmore, Oklahoma" class="noZoomScenery" />
+					</a>
+					<p class="country">Ardmore</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Oregon</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@42.0682025,-122.6018575,3a,75y,328.52h,96.46t/data=!3m6!1e1!3m4!1srG7lFY62UUKlJbjfkkOjvw!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_OR_Ashland.jpg" alt="Ashland, Oregon" class="noZoomScenery" />
+					</a>
+					<p class="country">Ashland</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@44.0049233,-121.6768915,3a,90y,40.91h,103.24t/data=!3m6!1e1!3m4!1sL7dqZkvJPVdfbKQlMZ0Lqg!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_OR_Bend.jpg" alt="Bend, Oregon" class="noZoomScenery" />
+					</a>
+					<p class="country">Bend</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Pennsylvania</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@41.1447927,-76.1830687,3a,90y,94.72h,92.99t/data=!3m6!1e1!3m4!1sK-wUduwbWbS8IsfBh6Tj7Q!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_PA_Shickshinny.jpg" alt="Shickshinny, Pennsylvania" class="noZoomScenery" />
+					</a>
+					<p class="country">Shickshinny</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Rhode Island</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@41.82515,-71.4118444,3a,90y,243.91h,98.65t/data=!3m6!1e1!3m4!1shwzE4_Pt7nu1to-gu35Ojw!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_RI_Providence.jpg" alt="Providence, Rhode Island" class="noZoomScenery" />
+					</a>
+					<p class="country">Providence</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Utah</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@41.1025295,-112.0187405,3a,75y,308.51h,89.49t/data=!3m6!1e1!3m4!1s_lQ3kzomvj_RZC3ZXZMySA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_UT_Clearfield.jpg" alt="Clearfield, Utah" class="noZoomScenery" />
+					</a>
+					<p class="country">Clearfield</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@41.1977177,-111.9656776,3a,90y,279.39h,98.35t/data=!3m6!1e1!3m4!1szau_skEdSKUp7-pDJSZCAA!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_UT_Ogden.jpg" alt="Ogden, Utah" class="noZoomScenery" />
+					</a>
+					<p class="country">Ogden</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@39.8247541,-110.9498071,3a,90y,315.92h,97.67t/data=!3m6!1e1!3m4!1sO5ayvm2zkWVV26YrFvG9vQ!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_UT_Thistle.jpg" alt="Thistle, Utah" class="noZoomScenery" />
+					</a>
+					<p class="country">Thistle</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Virginia</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@36.5883729,-80.4078042,3a,90y,110.97h,87t/data=!3m6!1e1!3m4!1ssGUdY_7PoOV-jNGDXEUSOQ!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_VA_Claudville.jpg" alt="Claudville, VA" class="noZoomScenery" />
+					</a>
+					<p class="country">Claudville</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@36.6429666,-80.2703139,3a,84.6y,115.42h,92.07t/data=!3m6!1e1!3m4!1s-u2tzsUoVb27Y9gfak5k3A!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_VA_Stuart.jpg" alt="Stuart, Virginia" class="noZoomScenery" />
+					</a>
+					<p class="country">Stuart</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Washington</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@47.7746717,-120.9632987,3a,75y,268.89h,102.62t/data=!3m6!1e1!3m4!1s2DqLnyjzG7LQxyEe_0u9kw!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_WA_Leavenworth.jpg" alt="Leavenworth, Washington" class="noZoomScenery" />
+					</a>
+					<p class="country">Leavenworth</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="headerText">Wyoming</div>
+			<div class="inside">
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@43.1568691,-106.3333566,3a,75y,10.75h,92.64t/data=!3m6!1e1!3m4!1shIqmdxAcepLoVFrLfDMYBw!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_WY_Casper.jpg" alt="Casper, Wyoming" class="noZoomScenery" />
+					</a>
+					<p class="country">Casper</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@44.2097464,-105.8421361,3a,90y,291.2h,84.07t/data=!3m6!1e1!3m4!1sSoV3PkaoTMzqOmajJFIlhw!2e0!7i16384!8i8192" target="_blank">
+						<img src="img/snow/snow_WY_Gillette.jpg" alt="Gillette, Wyoming" class="noZoomScenery" />
+					</a>
+					<p class="country">Gillette</p>
+				</div>
+				<div class="bollard">
+					<a href="https://www.google.com/maps/@43.8400546,-110.5097766,3a,90y,247.73h,93.83t/data=!3m6!1e1!3m4!1szl3krIb8APENb9_xJb0maA!2e0!7i13312!8i6656" target="_blank">
+						<img src="img/snow/snow_WY_Moran.jpg" alt="Moran, Wyoming" class="noZoomScenery" />
+					</a>
+					<p class="country">Moran</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+			<span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+			<div class="w3-modal-content">
+				<img id="img01" style="width:100%">
+			</div>
+		</div>
+		<script>
+			function enlarge_pic(element) {
+				document.getElementById("img01").src = element.src;
+				document.getElementById("modal01").style.display = "block";
+			}
+		</script>
+	</body>
+</html>
