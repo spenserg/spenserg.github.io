@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Streetcars</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/png" href="img/logo/planet.png"/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/bollards.css" type="text/css" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<style>
+			.zoomA { cursor:pointer }
+			body { margin-top:150px; }
+			@media only screen and (max-width: 633px) {
+				body { margin-top:200px; }
+			}
+			.section { padding-top:20px; }
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #212121; color: white;">
+			<a class="navbar-brand" href="main.html">
+				<img class="logo" src="img/logo/geohints.png" />
+			</a>
+			<div class="input-group mb-3" style="border:2px solid grey">
+				<div class="input-group-prepend" style="margin:2px">
+					<span style="margin:auto">Known colors:</span>
+					<button class="btn btn-geo-nav" id="r_nav" type="button" style="color:black; border:2px solid red">Red</button>
+					<button class="btn btn-geo-nav" id="o_nav" type="button" style="color:black; border:2px solid orange">Orange</button>
+					<button class="btn btn-geo-nav" id="y_nav" type="button" style="color:black; border:2px solid yellow">Yellow</button>
+					<button class="btn btn-geo-nav" id="g_nav" type="button" style="color:black; border:2px solid green">Green</button>
+					<button class="btn btn-geo-nav" id="b_nav" type="button" style="color:black; border:2px solid blue">Blue</button>
+					<button class="btn btn-geo-nav" id="aa_nav" type="button">Show All</button>
+				</div>
+			</div>
+		</nav>
+
+		<!-- No map exists
+		<span class="geoh3">Geoguessr map</span>
+		<p>You can find the map to test your knowledge about the locations <a href="" target="_blank">here</a>.</p> -->
+
+		<div class="headerText">Trolleys</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="yg"> <!-- San Francisco, California -->
+					<a href="https://www.google.com/maps/@37.8074486,-122.4173637,3a,88.7y,313.46h,87.18t/data=!3m6!1e1!3m4!1sdTEBUKRd3qDEzKSwNjov8Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/CA_3_tra.jpg" alt="Trolley in San Francisco, California" id="CA_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">San Francisco Trolley<br />San Francisco, California</p>
+				</div>
+				<div class="bollard" data-color="yr"> <!-- Tampa, Florida -->
+					<a href="https://www.google.com/maps/@27.9609866,-82.4428681,3a,22.7y,274.77h,91.45t/data=!3m6!1e1!3m4!1sv6YJjxUdJBss3dy3uewEPA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/FL_1_tra.jpg" alt="Trolley in Tampa, Florida" id="FL_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">TECO<br />Tampa, Florida</p>
+				</div>
+				<div class="bollard" data-color="ry"> <!-- New Orleans, Louisiana -->
+					<a href="https://www.google.com/maps/@29.9556842,-90.0727937,3a,15y,307.4h,89.52t/data=!3m6!1e1!3m4!1sJApUr6Nl8gIq_tStZY7CKA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/LA_1_tra.jpg" alt="Trolley in New Orleans, Louisiana" id="LA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">RTA<br />New Orleans, Louisiana</p>
+				</div>
+				<div class="bollard" data-color="row"> <!-- Milwaukee, Wisconsin -->
+					<a href="https://www.google.com/maps/@42.5866148,-87.8214139,3a,40.9y,68.11h,86.72t/data=!3m6!1e1!3m4!1sEOQljvhUmvdJbELS0VwGOQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/WI_2_tra.jpg" alt="Trolley in Milwaukee, Wisconsin" id="WI_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Kenosha Transit<br />Milwaukee, Wisconsin</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Streetcars</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="by"> <!-- Sacramento, California -->
+					<a href="https://www.google.com/maps/@38.5723992,-121.493902,3a,87.8y,214.36h,85.21t/data=!3m6!1e1!3m4!1sYTMUt7r50aSZqU14LWFN-w!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/CA_1_tra.jpg" alt="Streetcar in Sacramento, California" id="CA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Sacramento RT<br />Sacramento, California</p>
+				</div>
+				<div class="bollard" data-color="r"> <!-- San Diego, California -->
+					<a href="https://www.google.com/maps/@32.7141143,-117.1538452,3a,45.5y,148.45h,85.86t/data=!3m6!1e1!3m4!1swmnQ1YSbp5Tzd-l3HGeCCg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/CA_2_tra.jpg" alt="Streetcar in San Diego, California" id="CA_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">MTS<br />San Diego, California</p>
+				</div>
+				<div class="bollard" data-color="roy"> <!-- Washington, DC -->
+					<a href="https://www.google.com/maps/@38.9002301,-77.0006687,3a,63.6y,224.72h,87.25t/data=!3m6!1e1!3m4!1sKG-HpLuIIz5jQortCqcO7w!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/DC_1_tra.jpg" alt="Streetcar in Washington, DC" id="DC_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">DC Streetcar<br />Washington, DC</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Atlanta, Georgia -->
+					<a href="https://maps.app.goo.gl/QyHb5cSFPEpSpmBF8" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/GA_1_tra.jpg" alt="Streetcar in Atlanta, Georgia" id="GA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Atlanta Streetcar<br />Atlanta, Georgia</p>
+				</div>
+				<div class="bollard" data-color="gky"> <!-- Boston, Massachusetts -->
+					<a href="https://www.google.com/maps/@42.33186,-71.1120963,3a,18.8y,34.62h,91.23t/data=!3m6!1e1!3m4!1sdrRPCmZL3UjK4Nnt9BJs6g!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/MA_1_tra.jpg" alt="Streetcar in Boston, Massachusetts" id="MA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">MBTA Green Line<br />Boston, Massachusetts</p>
+				</div>
+				<div class="bollard" data-color="rw"> <!-- Detroit, Michigan -->
+					<a href="https://www.google.com/maps/@42.3366574,-83.0506863,3a,20.9y,358.19h,88.93t/data=!3m6!1e1!3m4!1sqd-kTmgahWvZq7ddu7Vv7w!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/MI_1_tra.jpg" alt="Streetcar in Detroit, Michigan" id="MI_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Q Line<br />Detroit, Michigan</p>
+				</div>
+				<div class="bollard" data-color="b"> <!-- Kansas City, Missouri -->
+					<a href="https://www.google.com/maps/@39.1027251,-94.5830074,3a,44.9y,307.8h,88.33t/data=!3m6!1e1!3m4!1s8P8anU1Jue0lFIB-f2HoOQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/MO_1_tra.jpg" alt="Streetcar in Kansas City, Missouri" id="MO_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">KC Streetcar<br />Kansas City, Missouri</p>
+				</div>
+				<div class="bollard" data-color="bgw"> <!-- Cincinnati, Ohio -->
+					<a href="https://www.google.com/maps/@39.1083072,-84.5147239,3a,75y,53.74h,85.26t/data=!3m6!1e1!3m4!1s8TCGNe9gNf1U9D_hydzzcw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/OH_1_tra.jpg" alt="Streetcar in Cincinnati, Ohio" id="OH_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">The Connector<br />Cincinnati, Ohio</p>
+				</div>
+				<div class="bollard" data-color="r"> <!-- Oklahoma City, Oklahoma -->
+					<a href="https://www.google.com/maps/@35.4685547,-97.5164245,3a,46.5y,345.37h,88.14t/data=!3m6!1e1!3m4!1sWykwDrVWzWkN4fAllnK4xA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/OK_1_tra.jpg" alt="Streetcar in Oklahoma City, Oklahoma" id="OK_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Bricktown Loop<br />Oklahoma City, Oklahoma</p>
+				</div>
+				<div class="bollard" data-color="r"> <!-- Portland, Oregon -->
+					<a href="https://www.google.com/maps/@45.5160252,-122.6842763,3a,90y,171.3h,80.93t/data=!3m6!1e1!3m4!1sgwwr1nLeUaBWoAa4O5Cb9w!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/OR_1_tra.jpg" alt="Streetcar in Portland, Oregon" id="OR_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Portland Streetcar<br />Portland, Oregon</p>
+				</div>
+				<div class="bollard" data-color="ybw"> <!-- Dallas, Texas -->
+					<a href="https://www.google.com/maps/@32.7752592,-96.8067292,3a,75y,306.25h,87.28t/data=!3m6!1e1!3m4!1seEUp2vnCatEfoH9Hf1UubA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/TX_1_tra.jpg" alt="Streetcar in Dallas, Texas" id="TX_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Dallas Streetcar<br />Dallas, Texas</p>
+				</div>
+				<div class="bollard" data-color="rwb"> <!-- Salt Lake City, Utah -->
+					<a href="https://www.google.com/maps/@40.7558779,-111.8909978,3a,90y,243.72h,82.15t/data=!3m6!1e1!3m4!1sdYJv3BuusIpXuwVtvkCq7Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/UT_1_tra.jpg" alt="Streetcar in Salt Lake City, Utah" id="UT_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">UTA TRAX<br />Salt Lake City, Utah</p>
+				</div>
+				<div class="bollard" data-color="y"> <!-- Seattle, Washington -->
+					<a href="https://www.google.com/maps/@47.5992485,-122.3285122,3a,42.6y,238.2h,85.59t/data=!3m6!1e1!3m4!1sHD8MnRDoH4CURqVuuOFBFQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/WA_1_tra.jpg" alt="Streetcar in Seattle, Washington" id="WA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Seattle Streetcar<br />Seattle, Washington</p>
+				</div>
+				<div class="bollard" data-color="ybw"> <!-- Milwaukee, Wisconsin -->
+					<a href="https://www.google.com/maps/@43.0480958,-87.8979449,3a,23.9y,76.64h,88.5t/data=!3m6!1e1!3m4!1suCr4QAs8d9JTNCjYQGqtrw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/streetcar/WI_1_tra.jpg" alt="Streetcar in Milwaukee, Wisconsin" id="WI_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">The Hop<br />Milwaukee, Wisconsin</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			var originalColors = [];
+			var colors_shown = [];
+			var used_colors = {
+				'r':"#f59b9b",
+				'o':"#ffc107",
+				'b':"#65acf9",
+				'g':"#7cef96",
+				'y':"#ffe595",
+			};
+			$(function() {
+				$(".btn-geo-nav").hover(function(){
+					originalColors[$(this).index('.btn-geo-nav')] = $(this).css('background-color');
+					$(this).css('background-color', '#aaa');
+				},
+				function(){
+					$(this).css('background-color', originalColors[$(this).index('.btn-geo-nav')]);
+				});
+				$(".btn-geo-nav").each(function() {
+					var tmp_id = $(this).attr("id").split("_nav")[0];
+					if (tmp_id.length == 1) {
+						colors_shown[tmp_id] = 0;
+					}
+				});
+			});
+
+			$(".btn-geo-nav").click(function(){
+				var tmp_id = $(this).attr("id").split("_nav")[0];
+				if (tmp_id.length == 1) {
+					if ($(this).css("font-weight") == 400) {
+						originalColors[$(this).index('.btn-geo-nav')] = used_colors[tmp_id];
+						toggle_colors(tmp_id, 1);
+					} else {
+						originalColors[$(this).index('.btn-geo-nav')] = "white";
+						toggle_colors(tmp_id, 0);
+					}
+					if ($(this).css("font-weight") == 700) {
+						$(this).css("font-weight", 400);
+					} else { $(this).css("font-weight", 700); }
+				} else { // Show All
+					$(".bollard").show();
+					$(".btn-geo-nav").each(function() {
+						$(this).css("font-weight", 400);
+						$(this).css("background-color", "white");
+					});
+					for (var key in colors_shown) {
+						colors_shown[key] = 0;
+					}
+				}
+			});
+
+			function toggle_colors(c, t) {
+				colors_shown[c] = t;
+				if (t == 0) {
+					var tmp_cs = [];
+					for (var key in colors_shown) {
+						if (colors_shown[key] == 1) {
+							tmp_cs.push(key);
+						}
+					}
+					$(".bollard").each(function() {
+						if( $(this).is(":hidden")) {
+							var show_this = true;
+							for (var i = 0; i < tmp_cs.length; i++) {
+								if (!($(this).attr("data-color").includes(tmp_cs[i]))) {
+									show_this = false;
+									break;
+								}
+							}
+							if (show_this) { $(this).show(); }
+						}
+					});
+				}
+				if (t == 1) {
+					$(".bollard").each(function(){
+						if($(this).is(":visible")) {
+							if (!($(this).attr("data-color").includes(c))) {
+								$(this).hide();
+							}
+						}
+					});
+				}
+			}
+		</script>
+	</body>
+</html>
