@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bus Signs</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/png" href="img/logo/planet.png"/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/bollards.css" type="text/css" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<style>
+			.zoomA { cursor:pointer }
+			body { margin-top:150px; }
+			@media only screen and (max-width: 800px) {
+				body { margin-top:200px; }
+			}
+			.section { padding-top:20px; }
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #212121; color: white;">
+			<a class="navbar-brand" href="main.html">
+				<img class="logo" src="img/logo/geohints.png" />
+			</a>
+			<div class="input-group mb-3" style="border:2px solid grey">
+				<div class="input-group-prepend" style="margin:2px">
+					<span style="margin:auto">Known colors:</span>
+					<button class="btn btn-geo-nav" id="r_nav" type="button" style="color:black; border:2px solid red">Red</button>
+					<button class="btn btn-geo-nav" id="o_nav" type="button" style="color:black; border:2px solid orange">Orange</button>
+					<button class="btn btn-geo-nav" id="y_nav" type="button" style="color:black; border:2px solid yellow">Yellow</button>
+					<button class="btn btn-geo-nav" id="g_nav" type="button" style="color:black; border:2px solid green">Green</button>
+					<button class="btn btn-geo-nav" id="b_nav" type="button" style="color:black; border:2px solid blue">Blue</button>
+					<button class="btn btn-geo-nav" id="p_nav" type="button" style="color:black; border:2px solid purple">Purple</button>
+					<button class="btn btn-geo-nav" id="k_nav" type="button" style="color:black; border:2px solid grey">Black</button>
+					<button class="btn btn-geo-nav" id="aa_nav" type="button">Show All</button>
+				</div>
+			</div>
+		</nav>
+
+<!-- No map exists
+<span class="geoh3">Geoguessr map</span>
+<p>You can find the map to test your knowledge about the locations <a href="" target="_blank">here</a>.</p> -->
+
+		<div class="headerText">Alabama</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="r"> <!-- Montgomery, Alabama  -->
+					<a href="https://www.google.com/maps/@33.2107985,-87.5296188,3a,21y,55.59h,90.99t/data=!3m6!1e1!3m4!1su36BroBv2i7SnPr33v1oVg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/AL_1_sign.jpg" alt="Montgomery, Alabama bus sign" id="AL_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Montgomery | Crimson Ride</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Birmingham, Alabama  -->
+					<a href="https://www.google.com/maps/@33.5438442,-86.7614355,3a,15y,196.83h,88.53t/data=!3m6!1e1!3m4!1sQIo4fR0q58-gfl6Ltwcphw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/AL_2_sign.jpg" alt="Birmingham, Alabama bus sign" id="AL_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Birmingham | Max Transit</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Montgomery, Alabama  -->
+					<a href="https://www.google.com/maps/@32.3808772,-86.2730232,3a,15y,133.9h,84.41t/data=!3m6!1e1!3m4!1saPw6nU6VD6B0vzJjamVrlw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/AL_3_sign.jpg" alt="Montgomery, Alabama bus sign" id="AL_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Montgomery | MATS</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Alaska</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- Juneau, Alaska  -->
+					<a href="https://www.google.com/maps/@58.3013954,-134.4211956,3a,15y,16.85h,88.23t/data=!3m6!1e1!3m4!1ssO88yxJmS3QJufphMBgdKQ!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/transit/AK_1_sign.jpg" alt="Juneau, Alaska bus sign" id="AK_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Juneau | Capital Transit</p>
+				</div>
+				<div class="bollard" data-color="wk"> <!-- Fairbanks, Alaska  -->
+					<a href="https://www.google.com/maps/@64.8362272,-147.7486679,3a,15y,45.84h,87.1t/data=!3m6!1e1!3m4!1srHwrB6Yvec8BVwmYzc7S0g!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/transit/AK_2_sign.jpg" alt="Fairbanks, Alaska bus sign" id="AK_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Fairbanks | MACS</p>
+				</div>
+				<div class="bollard" data-color="bgw"> <!-- Anchorage, Alaska  -->
+					<a href="https://www.google.com/maps/@61.1787524,-149.8978858,3a,15y,33.49h,94.7t/data=!3m6!1e1!3m4!1sf-WSg-uXU6rh8aPX4JgzNA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/AK_3_sign.jpg" alt="Anchorage, Alaska bus sign" id="AK_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Anchorage | People Mover</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Arizona</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- Phoenix, Arizona  -->
+					<a href="https://www.google.com/maps/@33.4470997,-112.064576,3a,37.7y,145.64h,96.31t/data=!3m6!1e1!3m4!1s3uDGqHzgIknqgAh5PL5P8g!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/AZ_1_sign.jpg" alt="Phoenix, Arizona bus sign" id="AZ_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Phoenix | Valley Metro</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Arkansas</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bgk"> <!-- Little Rock, Arkansas  -->
+					<a href="https://www.google.com/maps/@34.7262427,-92.2894615,3a,15y,41.92h,85.69t/data=!3m7!1e1!3m5!1s41Z92lwBy2VgX5Hp7r0VFA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D41Z92lwBy2VgX5Hp7r0VFA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D346.18637%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/AR_1_sign.jpg" alt="Little Rock, Arkansas bus sign" id="AR_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Little Rock | Rock Region Metro</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">California</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bgok"> <!-- Los Angeles, California  -->
+					<a href="https://www.google.com/maps/@34.0335511,-118.2710967,3a,39.6y,258.56h,92.48t/data=!3m6!1e1!3m4!1s4H4c8hqzbnfX2zpzg43PrA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/CA_5_sign.jpg" alt="Los Angeles, California bus sign" id="CA_5" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Los Angeles | Foothill Transit</p>
+				</div>
+				<div class="bollard" data-color="bow"> <!-- Los Angeles, California  -->
+					<a href="https://www.google.com/maps/@33.7599228,-117.8907202,3a,50.3y,110.22h,87.61t/data=!3m6!1e1!3m4!1sQXIQg4mzWpP49gRh6PbmUQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/CA_8_sign.jpg" alt="Los Angeles, California bus sign" id="CA_8" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Los Angeles | OC Bus</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Monterey, California  -->
+					<a href="https://www.google.com/maps/@36.6766105,-121.63215,3a,15y,60.03h,90.46t/data=!3m6!1e1!3m4!1sUv903uofDs73iC0lK_X5zw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/CA_1_sign.jpg" alt="Monterey, California bus sign" id="CA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Monterey | MST</p>
+				</div>
+				<div class="bollard" data-color="rwk"> <!-- San Diego, California  -->
+					<a href="https://www.google.com/maps/@32.6748131,-117.0974733,3a,15y,198.03h,94.3t/data=!3m6!1e1!3m4!1sBaDUjI5pPLzQAxemTU2Pxw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/CA_2_sign.jpg" alt="San Diego, California bus sign" id="CA_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">San Diego | MTS</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Sacramento, California  -->
+					<a href="https://www.google.com/maps/@38.5791946,-121.4954791,3a,15y,237.86h,91.6t/data=!3m6!1e1!3m4!1sCQbhDzdDfz1_rqwZkOMNHQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/CA_3_sign.jpg" alt="Sacramento, California bus sign" id="CA_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Sacramento | Regional Transit</p>
+				</div>
+				<div class="bollard" data-color="ykw"> <!-- Yuba City, California  -->
+					<a href="https://www.google.com/maps/@39.1387725,-121.6169667,3a,15y,168.07h,87.22t/data=!3m6!1e1!3m4!1sQCZAShHeP3w2qa1pgCxMrw!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/transit/CA_4_sign.jpg" alt="Yuba City, California bus sign" id="CA_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Yuba City | Yuba-Sutter Transit</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Colorado</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="wbp"> <!-- Aspen, Colorado  -->
+					<a href="https://www.google.com/maps/@39.1901913,-106.8166008,3a,20.5y,307.18h,87.51t/data=!3m6!1e1!3m4!1sheWaWvjgUnEOyfYjzbnV5Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/CO_2_sign.jpg" alt="Aspen, Colorado bus sign" id="CO_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Aspen | RFTA</p>
+				</div>
+				<div class="bollard" data-color="ro"> <!-- Denver, Colorado  -->
+					<a href="https://www.google.com/maps/@39.7497239,-104.9863374,3a,15y,264.47h,89.99t/data=!3m6!1e1!3m4!1sZ78b0lexnX--7O2zgZBSiA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/CO_1_sign.jpg" alt="Denver, Colorado bus sign" id="CO_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Denver | The Ride</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Connecticut</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="byw"> <!-- Bridgeport, Connecticut  -->
+					<a href="https://www.google.com/maps/@41.1772498,-73.1909799,3a,50y,265.44h,89.74t/data=!3m6!1e1!3m4!1sWsjjfwO7fjiBYjW65_zt2Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/CT_2_sign.jpg" alt="Bridgeport, Connecticut bus sign" id="CT_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Bridgeport | GBTA</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Connecticut  -->
+					<a href="https://www.google.com/maps/@41.7510086,-72.7736565,3a,19.4y,92.63h,89.96t/data=!3m6!1e1!3m4!1sAlnsVpF2jYaI3iW-3g-SqA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/CT_1_sign.jpg" alt="Hartford, Connecticut bus sign" id="CT_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Hartford | CT transit</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">District of Columbia</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="ryk"> <!-- Washington, DC  -->
+					<a href="https://www.google.com/maps/@38.8906123,-77.017262,3a,15y,341.25h,89.83t/data=!3m6!1e1!3m4!1sKCzvRDC4tDD4b_lBkF8nUg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/DC_1_sign.jpg" alt="Washington, DC bus sign" id="DC_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Washington | Circulator</p>
+				</div>
+				<div class="bollard" data-color="rb"> <!-- Washington, DC  -->
+					<a href="https://www.google.com/maps/@38.9001937,-76.9946128,3a,15y,144.83h,92.78t/data=!3m6!1e1!3m4!1sIhZDelAlQKPbaHyZH3zjPQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/DC_2_sign.jpg" alt="Washington, DC bus sign" id="DC_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Washington | metrobus</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Delaware</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bgw"> <!-- state-wide, Delaware  -->
+					<a href="https://www.google.com/maps/@39.7419408,-75.5687913,3a,15y,236.74h,91.74t/data=!3m6!1e1!3m4!1sXyrnyzx4GXIFTdj1n2KuCg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/DE_1_sign.jpg" alt="state-wide, Delaware bus sign" id="DE_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">state-wide | DART</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Florida</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- Tampa, FL  -->
+					<a href="https://www.google.com/maps/@27.9501323,-82.4502295,3a,15y,28.07h,91.5t/data=!3m6!1e1!3m4!1siKJXlwdYJiKweDYRUv9vaA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/FL_4_sign.jpg" alt="Tampa, FL bus sign" id="FL_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Tampa | HART</p>
+				</div>
+				<div class="bollard" data-color="gb"> <!-- Miami, Florida  -->
+					<a href="https://www.google.com/maps/@25.7800017,-80.1924767,3a,15y,281.83h,93.7t/data=!3m6!1e1!3m4!1shViMnHz1B7_GmDSvhhz75Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/FL_1_sign.jpg" alt="Miami, Florida bus sign" id="FL_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Miami | Miami-Dade Transit</p>
+				</div>
+				<div class="bollard" data-color="ro"> <!-- Orlando, Florida  -->
+					<a href="https://www.google.com/maps/@28.5404175,-81.3849145,3a,15y,14.85h,90.95t/data=!3m6!1e1!3m4!1svq6LAWxSWlEdKdq6ryMbgQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/FL_2_sign.jpg" alt="Orlando, Florida bus sign" id="FL_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Orlando | LYNX</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- St. Petersburg, Florida  -->
+					<a href="https://www.google.com/maps/@27.7918485,-82.7416508,3a,15y,288.64h,89.82t/data=!3m6!1e1!3m4!1slv1i3IzNtlp2pXFuZzWM-g!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/FL_3_sign.jpg" alt="St. Petersburg, Florida bus sign" id="FL_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">St. Petersburg | PSTA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Georgia</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="oybk"> <!-- Atlanta, Georgia  -->
+					<a href="https://www.google.com/maps/@33.755582,-84.3889426,3a,15y,12.53h,89.77t/data=!3m6!1e1!3m4!1sI9Lve5bvQz7Oyle9LS_mKA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/GA_1_sign.jpg" alt="Atlanta, Georgia bus sign" id="GA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Atlanta | marta</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Hawaii</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="yk"> <!-- Hawaii state, Hawaii  -->
+					<a href="https://www.google.com/maps/@21.3855856,-158.0077101,3a,43y,281.67h,82.67t/data=!3m6!1e1!3m4!1swFOhlRP_aPMRm4dqDpZucg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/HI_1_sign.jpg" alt="Hawaii state, Hawaii bus sign" id="HI_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Hawaii state | The Bus</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Idaho</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- Pocatello, Idaho  -->
+					<a href="https://www.google.com/maps/@42.8627027,-112.4338112,3a,15y,179.71h,85.19t/data=!3m6!1e1!3m4!1sJN9rgmOsEE3n_07KcqIQ2w!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/ID_1_sign.jpg" alt="Pocatello, Idaho bus sign" id="ID_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Pocatello | PRT</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Boise, Idaho  -->
+					<a href="https://www.google.com/maps/@43.6197946,-116.2118189,3a,15y,275.21h,90.28t/data=!3m6!1e1!3m4!1s0SetlWsIu2aGAh1WUGU7_w!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/ID_2_sign.jpg" alt="Boise, Idaho bus sign" id="ID_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Boise | Valley Ride</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Illinois</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="brw"> <!-- Champaign, Illinois -->
+					<a href="https://www.google.com/maps/@40.1104802,-88.2231983,3a,20.7y,134.72h,93.35t/data=!3m6!1e1!3m4!1s_kQfuo4t2ZFd6uisdTHdRg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/IL_2_sign.jpg" alt="Champaign, Illinois bus sign" id="IL_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Champaign | MTD</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Chicago, Illinois -->
+					<a href="https://www.google.com/maps/@41.8842241,-87.6397589,3a,15y,28.56h,92.31t/data=!3m6!1e1!3m4!1sCcqW-Yw6nocw3uc-FbPodA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/IL_1_sign.jpg" alt="Chicago, Illinois bus sign" id="IL_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Chicago | CTA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Indiana</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="gbwy"> <!-- Indianapolis, Indiana  -->
+					<a href="https://www.google.com/maps/@39.7585452,-86.1566431,3a,16.4y,230.42h,92.95t/data=!3m6!1e1!3m4!1sQSu9INEOMOK9RwXQMbvcsA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/IN_1_sign.jpg" alt="Indianapolis, Indiana bus sign" id="IN_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Indianapolis | Indy Go</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Iowa</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="rwk"> <!-- Iowa City, Iowa  -->
+					<a href="https://www.google.com/maps/@41.6593459,-91.5377735,3a,15y,287.66h,89.99t/data=!3m6!1e1!3m4!1sNBwKIrGAuAScaME_OLKGbg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/IA_1_sign.jpg" alt="Iowa City, Iowa bus sign" id="IA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Iowa City | Iowa City Transit</p>
+				</div>
+				<div class="bollard" data-color="ygwk"> <!-- Iowa City, Iowa  -->
+					<a href="https://www.google.com/maps/@41.6593459,-91.5377735,3a,15y,287.66h,89.99t/data=!3m6!1e1!3m4!1sNBwKIrGAuAScaME_OLKGbg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/IA_2_sign.jpg" alt="Iowa City, Iowa bus sign" id="IA_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Iowa City | cambus</p>
+				</div>
+				<div class="bollard" data-color="rwbk"> <!-- Iowa City, Iowa  -->
+					<a href="https://www.google.com/maps/@41.6763737,-91.568994,3a,15y,110.96h,90.71t/data=!3m6!1e1!3m4!1sSyUc9WAk7SKmmOnPLeY1cw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/IA_3_sign.jpg" alt="Iowa City, Iowa bus sign" id="IA_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Iowa City | Coralville Transit</p>
+				</div>
+				<div class="bollard" data-color="rkw"> <!-- Cedar Rapids, Iowa  -->
+					<a href="https://www.google.com/maps/@41.9617179,-91.6717605,3a,15y,109.14h,87.08t/data=!3m6!1e1!3m4!1sRdEaNd2ldeWErhA5EQEKPw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/IA_4_sign.jpg" alt="Cedar Rapids, Iowa bus sign" id="IA_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Cedar Rapids | CR Transit</p>
+				</div>
+				<div class="bollard" data-color="ry"> <!-- Ames, Iowa  -->
+					<a href="https://www.google.com/maps/@42.0227952,-93.6399717,3a,15y,291.76h,91.32t/data=!3m6!1e1!3m4!1sparwiiKg53BvVAR_L27mIw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/IA_5_sign.jpg" alt="Ames, Iowa bus sign" id="IA_5" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Ames | CyRide</p>
+				</div>
+				<div class="bollard" data-color="py"> <!-- Des Moines, Iowa  -->
+					<a href="https://www.google.com/maps/@41.587052,-93.6289371,3a,15y,77.4h,89.06t/data=!3m6!1e1!3m4!1sluwg6BfBVvYPLuQvwRKp3Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/IA_6_sign.jpg" alt="Des Moines, Iowa bus sign" id="IA_6" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Des Moines | DART</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Kentucky</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bgw"> <!-- Lexington, Kentucky  -->
+					<a href="https://www.google.com/maps/@38.042464,-84.4930948,3a,15y,78.51h,91.48t/data=!3m6!1e1!3m4!1siIgCpJq86ZRQI8llAlM9AA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/KY_1_sign.jpg" alt="Lexington, Kentucky bus sign" id="KY_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Lexington | Lextran</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Louisiana</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bgw"> <!-- Baton Rouge, Louisiana  -->
+					<a href="https://www.google.com/maps/@30.4455798,-91.1658023,3a,15y,27.21h,91.47t/data=!3m6!1e1!3m4!1sfsg3Xz_wGuPOdb6DJfoFxg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/LA_1_sign.jpg" alt="Baton Rouge, Louisiana bus sign" id="LA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Baton Rouge | CATS</p>
+				</div>
+				<div class="bollard" data-color="yw"> <!-- New Orleans, Louisiana  -->
+					<a href="https://www.google.com/maps/@30.0162028,-90.188196,3a,15y,113.25h,86.54t/data=!3m6!1e1!3m4!1sCCbBu-F10avnmikSGmzb-w!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/LA_2_sign.jpg" alt="New Orleans, Louisiana bus sign" id="LA_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">New Orleans | NORTA</p>
+				</div>
+				<div class="bollard" data-color="kgb"> <!-- New Orleans, Louisiana  -->
+					<a href="https://www.google.com/maps/@30.0159903,-90.1878152,3a,20.2y,32.28h,83.49t/data=!3m6!1e1!3m4!1sCneJEZh038NG4kUEKxGKvw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/LA_3_sign.jpg" alt="New Orleans, Louisiana bus sign" id="LA_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">New Orleans | JeT</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Maryland</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="rwk"> <!-- Baltimore, Maryland  -->
+					<a href="https://www.google.com/maps/@39.3040904,-76.60799,3a,47.1y,233.71h,91.06t/data=!3m6!1e1!3m4!1slV4hPBwZacC3dB8QrfC2Mw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MD_1_sign.jpg" alt="Baltimore, Maryland bus sign" id="MD_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Baltimore | Link</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Massachusetts</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="rwk"> <!-- Southeast MA  -->
+					<a href="https://www.google.com/maps/@41.6241781,-70.9430284,3a,44.1y,133.63h,86.16t/data=!3m6!1e1!3m4!1s8lnbAp7BjHnsEelBa81RZg!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/transit/MA_2_sign.jpg" alt="Southeast MA bus sign" id="MA_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Southeast MA | SRTA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Michigan</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bwr"> <!-- Ann Arbor, Michigan  -->
+					<a href="https://www.google.com/maps/@42.2694734,-83.7406127,3a,15y,201.83h,91.16t/data=!3m6!1e1!3m4!1sqLowCpC1PMnbNnqjcpEFtQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MI_4_sign.jpg" alt="Ann Arbor, Michigan bus" id="MI_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Ann Arbor | The Ride</p>
+				</div>
+				<div class="bollard" data-color="rwbk"> <!-- Flint, Michigan  -->
+					<a href="https://www.google.com/maps/@43.0136922,-83.6926838,3a,27.1y,94.89h,94.22t/data=!3m6!1e1!3m4!1su2NCsbaw-0K0vEDENtMGSw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MI_3_sign.jpg" alt="Flint, Michigan bus sign" id="MI_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Flint | MTA</p>
+				</div>
+				<div class="bollard" data-color="rwbk"> <!-- Jackson, Michigan  -->
+					<a href="https://www.google.com/maps/@42.2466451,-84.3841842,3a,15y,309.17h,86.56t/data=!3m6!1e1!3m4!1smbgFRsidumG2GWu13b5LPw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MI_2_sign.jpg" alt="Jackson, Michigan bus sign" id="MI_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Jackson | JTA / JATA</p>
+				</div>
+				<div class="bollard" data-color="wb"> <!-- Kalamazoo, Michigan  -->
+					<a href="https://www.google.com/maps/@42.2963335,-85.6445117,3a,15y,300.36h,91.22t/data=!3m6!1e1!3m4!1s2H5dfRrMR7EIhd3VesfYJg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MI_5_sign.jpg" alt="Kalamazoo, Michigan bus sign" id="MI_5" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Kalamazoo | KMetro</p>
+				</div>
+				<div class="bollard" data-color="rwk"> <!-- Lansing, Michigan  -->
+					<a href="https://www.google.com/maps/@42.7210998,-84.4821672,3a,17.8y,346.77h,87.71t/data=!3m6!1e1!3m4!1smI45mLUHqRtFyUdmdoZccw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MI_1_sign.jpg" alt="Lansing, Michigan bus sign" id="MI_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Lansing | CATA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Minnesota</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bgw"> <!-- Duluth, Minnesota  -->
+					<a href="https://www.google.com/maps/@46.7972694,-92.0981054,3a,15y,331.73h,95.68t/data=!3m6!1e1!3m4!1shytGjslz5U3BbXUhMQf-vQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MN_1_sign.jpg" alt="Duluth, Minnesota bus sign" id="MN_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Duluth | DTA</p>
+				</div>
+				<div class="bollard" data-color="bryw"> <!-- Minneapolis, Minnesota  -->
+					<a href="https://www.google.com/maps/@44.9878609,-93.2267345,3a,32.3y,328.45h,83.64t/data=!3m6!1e1!3m4!1sxvBvQEuHF55STL1UF1oFfA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MN_2_sign.jpg" alt="Minneapolis, Minnesota bus" id="MN_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Minneapolis | T Metro</p>
+				</div>
+				<div class="bollard" data-color="gw"> <!-- Minneapolis, Minnesota  -->
+					<a href="https://www.google.com/maps/@44.8510212,-93.4271374,3a,15y,289.21h,89.13t/data=!3m6!1e1!3m4!1sPBtWYVL9n9B8b6TK8vOs6A!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MN_3_sign.jpg" alt="Minneapolis, Minnesota bus" id="MN_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Minneapolis | T Metro</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Mississippi</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- Hattiesburg, Mississippi  -->
+					<a href="https://www.google.com/maps/@31.323557,-89.2940045,3a,15y,180.82h,88.98t/data=!3m6!1e1!3m4!1sAmd4RYKU314EnbTSzshfdA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MS_1_sign.jpg" alt="Hattiesburg, Mississippi bus sign" id="MS_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Hattiesburg | HCT</p>
+				</div>
+				<div class="bollard" data-color="gyw"> <!-- Jackson, Mississippi  -->
+					<a href="https://www.google.com/maps/@32.3014986,-90.1946126,3a,19.1y,165.31h,84.29t/data=!3m6!1e1!3m4!1sUEAXx-Golk9fGzPztr_PWA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MS_2_sign.jpg" alt="Jackson, Mississippi bus sign" id="MS_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Jackson | JTran</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Missouri</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="rkw"> <!-- St. Louis, Missouri  -->
+					<a href="https://www.google.com/maps/@38.6431081,-90.2440263,3a,16.7y,55.86h,93.23t/data=!3m6!1e1!3m4!1sxu1dF2n0c89e-gxk2I5uVQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MO_1_sign.jpg" alt="St. Louis, Missouri bus sign" id="MO_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">St. Louis | MetroBus</p>
+				</div>
+				<div class="bollard" data-color="brw"> <!-- Kansas City, Missouri  -->
+					<a href="https://www.google.com/maps/@39.1006117,-94.5855824,3a,15y,207.89h,91.77t/data=!3m6!1e1!3m4!1s4F7JeYcv6Ri4PeQMThcNsQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/MO_2_sign.jpg" alt="Kansas City, Missouri bus sign" id="MO_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Kansas City | Ride KC</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Nebraska</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="gb"> <!-- Lincoln, Nebraska  -->
+					<a href="https://www.google.com/maps/@40.8280138,-96.6606407,3a,15y,110.34h,90.91t/data=!3m6!1e1!3m4!1sS6KAx55r_xUI6N-dVPdR-A!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NE_1_sign.jpg" alt="Lincoln, Nebraska bus sign" id="NE_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Lincoln | Startran</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Omaha, Nebraska  -->
+					<a href="https://www.google.com/maps/@41.2578716,-95.9372135,3a,15y,239.01h,93.33t/data=!3m6!1e1!3m4!1s2aE1f3C1yf5MvFpY_XvGNA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NE_2_sign.jpg" alt="Omaha, Nebraska bus sign" id="NE_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Omaha | metro</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Nevada</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- Reno, Nevada  -->
+					<a href="https://www.google.com/maps/@39.5335991,-119.809388,3a,18.5y,25.85h,89.52t/data=!3m6!1e1!3m4!1sRm_uM641AlJKE6tw9LYfEA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NV_1_sign.jpg" alt="Reno, Nevada bus sign" id="NV_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Reno | RTC</p>
+				</div>
+				<div class="bollard" data-color="ybw"> <!-- Las Vegas, Nevada  -->
+					<a href="https://www.google.com/maps/@36.1643987,-115.1452458,3a,15y,74.01h,94.31t/data=!3m6!1e1!3m4!1sgQdgCvy8kd2dIxpHvYzfwQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NV_2_sign.jpg" alt="Las Vegas, Nevada bus sign" id="NV_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Las Vegas | RTC</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">New Jersey</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="rob"> <!-- New Jersey -->
+					<a href="https://www.google.com/maps/@39.6841676,-75.4901087,3a,44.9y,233.8h,89.74t/data=!3m6!1e1!3m4!1sYG8gmNu_USXdj2ETiXi5MQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NJ_1_sign.jpg" alt="New Jersey bus sign" id="NJ_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">State-wide | NJ Transit</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">New Mexico</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="rw"> <!-- Albuquerque, New Mexico  -->
+					<a href="https://www.google.com/maps/@35.08289,-106.6507348,3a,15y,227.03h,94.98t/data=!3m7!1e1!3m5!1s9CGKipvGnhTvEPFCyaIzmw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D9CGKipvGnhTvEPFCyaIzmw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D148.05579%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NM_1_sign.jpg" alt="Albuquerque, New Mexico bus sign" id="NM_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Albuquerque | ABQ Ride</p>
+				</div>
+				<div class="bollard" data-color="g"> <!-- Albuquerque, New Mexico  -->
+					<a href="https://www.google.com/maps/@35.1455171,-106.6399121,3a,15y,35.74h,90.37t/data=!3m6!1e1!3m4!1sIVzSu_Y-4GV4yWXDsZ9Jxg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NM_2_sign.jpg" alt="Albuquerque, New Mexico bus sign" id="NM_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Albuquerque | ARTx / Rapid Ride</p>
+				</div>
+				<div class="bollard" data-color="rwk"> <!-- Santa Fe, New Mexico  -->
+					<a href="https://www.google.com/maps/@35.6469573,-105.9841831,3a,15y,215.82h,87.58t/data=!3m6!1e1!3m4!1sp6Ppe7I2KXDilaemrJ8aVA!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/transit/NM_3_sign.jpg" alt="Santa Fe, New Mexico bus sign" id="NM_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Santa Fe | Santa Fe Transit</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Las Cruces, New Mexico  -->
+					<a href="https://www.google.com/maps/@32.2714032,-106.7901804,3a,15y,118.13h,87.1t/data=!3m6!1e1!3m4!1s5UfjBEVT7J8hTbvchdu52A!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NM_4_sign.jpg" alt="Las Cruces, New Mexico bus sign" id="NM_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Las Cruces | Road Runner Transit</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">New York</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- Albany, New York  -->
+					<a href="https://www.google.com/maps/@42.6420355,-73.7567234,3a,15y,237.5h,90.2t/data=!3m6!1e1!3m4!1sL1vmv8m08D8Q5IEIhle-Zg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NY_1_sign.jpg" alt="Albany, New York bus sign" id="NY_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Albany | CDTA</p>
+				</div>
+				<div class="bollard" data-color="rbw"> <!-- Buffalo, New York  -->
+					<a href="https://www.google.com/maps/@42.8967917,-78.8708752,3a,19.1y,10.13h,94.48t/data=!3m6!1e1!3m4!1sGgB8iuuarAOddzJAk4X78g!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NY_6_sign.jpg" alt="Buffalo, New York bus sign" id="NY_6" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Buffalo | NFTA</p>
+				</div>
+				<div class="bollard" data-color="ogw"> <!-- Rochester, New York  -->
+					<a href="https://www.google.com/maps/@43.1683387,-77.5801592,3a,15y,64.31h,90.77t/data=!3m6!1e1!3m4!1sx8e9qcD3_oJXHRsJVcn8kg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NY_2_sign.jpg" alt="Rochester, New York bus sign" id="NY_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Rochester | RTS</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Ithaca, New York  -->
+					<a href="https://www.google.com/maps/@42.4366282,-76.5062505,3a,15y,221.48h,88.01t/data=!3m6!1e1!3m4!1sX6cA6c5ptaB4lAiEBnmtaQ!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/transit/NY_3_sign.jpg" alt="Ithaca, New York bus sign" id="NY_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Ithaca | TCAT</p>
+				</div>
+				<div class="bollard" data-color="brog"> <!-- New York City, New York  -->
+					<a href="https://www.google.com/maps/@40.7527321,-73.9814319,3a,15y,256.32h,95.09t/data=!3m6!1e1!3m4!1s9jANPV3rVsjhKehl0CaKXg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NY_4_sign.jpg" alt="New York City, New York bus sign" id="NY_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">New York City | MTA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">North Carolina</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="rw"> <!-- Raleigh, North Carolina  -->
+					<a href="https://www.google.com/maps/@35.7685074,-78.6370916,3a,20.1y,239.36h,91.51t/data=!3m6!1e1!3m4!1s8eBqhsFJJgZPTipA2zQKfA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NC_1_sign.jpg" alt="Raleigh, North Carolina bus sign" id="NC_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Raleigh | Go Raleigh</p>
+				</div>
+				<div class="bollard" data-color="bgw"> <!-- Charlotte, North Carolina  -->
+					<a href="https://www.google.com/maps/@35.2180356,-80.8382168,3a,49.4y,183.89h,87.95t/data=!3m6!1e1!3m4!1s7MRk9Pdu_xW-EHJXs0Qz7Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NC_2_sign.jpg" alt="Charlotte, North Carolina bus sign" id="NC_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Charlotte | CATS</p>
+				</div>
+				<div class="bollard" data-color="bg"> <!-- Asheville, North Carolina  -->
+					<a href="https://www.google.com/maps/@35.5928409,-82.5551444,3a,15.1y,217.83h,86.12t/data=!3m6!1e1!3m4!1sT5VAJ35PSWWOfw5cCoZ1xA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NC_3_sign.jpg" alt="Asheville, North Carolina bus sign" id="NC_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Asheville | ART</p>
+				</div>
+				<div class="bollard" data-color="bwg"> <!-- Winston-Salem, North Carolina  -->
+					<a href="https://www.google.com/maps/@36.1010642,-80.2475399,3a,15y,26.83h,95.95t/data=!3m6!1e1!3m4!1s0FIO5eBZHcWxq6hMlch1lA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/NC_4_sign.jpg" alt="Winston-Salem, North Carolina bus sign" id="NC_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Winston-Salem | WSTA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Oklahoma</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bwk"> <!-- Oklahoma City, Oklahoma  -->
+					<a href="https://www.google.com/maps/@35.5284763,-97.5745871,3a,15y,234.84h,95.18t/data=!3m6!1e1!3m4!1sYAhAxgNqb7ObcgVzeKElaA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/OK_1_sign.jpg" alt="Oklahoma City, Oklahoma bus sign" id="OK_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Oklahoma City | Embark</p>
+				</div>
+				<div class="bollard" data-color="bw"> <!-- Tulsa, Oklahoma  -->
+					<a href="https://www.google.com/maps/@36.1566594,-95.9721485,3a,15y,118.39h,90.32t/data=!3m6!1e1!3m4!1sdg3gIGwnZl1Y21ThUniVYA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/OK_2_sign.jpg" alt="Tulsa, Oklahoma bus sign" id="OK_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Tulsa | Tulsa Transit</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Oregon</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- Eugene, Oregon  -->
+					<a href="https://www.google.com/maps/@44.0455068,-123.1036932,3a,15y,144.8h,92.88t/data=!3m6!1e1!3m4!1syHkaj6Gm8XVzm96IOTX0eQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/OR_1_sign.jpg" alt="Eugene, Oregon bus sign" id="OR_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Eugene | The Bus</p>
+				</div>
+				<div class="bollard" data-color="gw"> <!-- Eugene, Oregon  -->
+					<a href="https://www.google.com/maps/@44.0447008,-123.0614155,3a,15y,41.14h,86.06t/data=!3m6!1e1!3m4!1sEE6PssCyiiXAO9uNy3iIDQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/OR_2_sign.jpg" alt="Eugene, Oregon bus sign" id="OR_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Eugene | EmX</p>
+				</div>
+				<div class="bollard" data-color="bwr"> <!-- Portland, Oregon  -->
+					<a href="https://www.google.com/maps/@45.5321729,-122.6712064,3a,15.7y,284.78h,92.07t/data=!3m6!1e1!3m4!1sBubK3G4nNkznAlODAQvN2Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/OR_3_sign.jpg" alt="Portland, Oregon bus sign" id="OR_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Portland | Tri Met</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Pennsylvania</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- Pittsburgh, Pennsylvania  -->
+					<a href="https://www.google.com/maps/@40.4477697,-80.0199223,3a,22.9y,32.37h,95.39t/data=!3m6!1e1!3m4!1sI6c32iax8kssRjz6nY2Ppw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/PA_1_sign.jpg" alt="Pittsburgh, Pennsylvania bus sign" id="PA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Pittsburgh | PTA Port Authority</p>
+				</div>
+				<div class="bollard" data-color="kwrb"> <!-- Philadelphia, Pennsylvania  -->
+					<a href="https://www.google.com/maps/@39.9526176,-75.1655573,3a,15y,143.86h,90.72t/data=!3m6!1e1!3m4!1sFjp-aqYYryqXOEpDFH2-Mg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/PA_2_sign.jpg" alt="Philadelphia, Pennsylvania bus sign" id="PA_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Philadelphia | SEPTA</p>
+				</div>
+				<div class="bollard" data-color="bwrk"> <!-- Harrisburg, Pennsylvania  -->
+					<a href="https://www.google.com/maps/@40.2623517,-76.87934,3a,15.1y,77.23h,89.06t/data=!3m6!1e1!3m4!1slhj3e34ypfQJRlvKYNTn-w!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/PA_3_sign.jpg" alt="Harrisburg, Pennsylvania bus sign" id="PA_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Harrisburg | CAT</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Rhode Island</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- statewide, Rhode Island  -->
+					<a href="https://www.google.com/maps/@41.8225495,-71.4102945,3a,15y,226.19h,84.81t/data=!3m6!1e1!3m4!1sbq3FlcvMPU7mIJ8s_uLc1Q!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/transit/RI_1_sign.jpg" alt="statewide, Rhode Island bus sign" id="RI_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">statewide | RIPTA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">South Carolina</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="gy"> <!-- Charleston, South Carolina  -->
+					<a href="https://www.google.com/maps/@32.8722567,-79.9951812,3a,15y,329.57h,91.32t/data=!3m6!1e1!3m4!1s0cpuJj52ekcyfjnnBXnTqA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/SC_1_sign.jpg" alt="Charleston, South Carolina bus sign" id="SC_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Charleston | CARTA</p>
+				</div>
+				<div class="bollard" data-color="robgk"> <!-- Columbia, South Carolina  -->
+					<a href="https://www.google.com/maps/@34.0098542,-81.0391738,3a,15y,12.33h,83.78t/data=!3m6!1e1!3m4!1skAVslyzgQVAVOssz9-u20w!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/SC_2_sign.jpg" alt="Columbia, South Carolina bus sign" id="SC_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Columbia | COMET</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Tennessee</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="rbw"> <!-- Chattanooga, Tennessee  -->
+					<a href="https://www.google.com/maps/@35.0307289,-85.2688798,3a,15y,134.61h,87.84t/data=!3m6!1e1!3m4!1s5E0Te43bE_Tsz673nYF7Bg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TN_1_sign.jpg" alt="Chattanooga, Tennessee bus sign" id="TN_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Chattanooga | CARTA</p>
+				</div>
+				<div class="bollard" data-color="ywro"> <!-- Knoxville, Tennessee  -->
+					<a href="https://www.google.com/maps/@35.9677579,-83.9143519,3a,15y,2.5h,91.83t/data=!3m6!1e1!3m4!1sWRuT0pvS3bypM0vMhwJ5qA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TN_2_sign.jpg" alt="Knoxville, Tennessee bus sign" id="TN_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Knoxville | kat</p>
+				</div>
+				<div class="bollard" data-color="bwg"> <!-- Nashville, Tennessee  -->
+					<a href="https://www.google.com/maps/@36.1547652,-86.7582313,3a,15y,339.41h,88.7t/data=!3m6!1e1!3m4!1sSyOeRbGgafoJxcfeBwZVSQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TN_3_sign.jpg" alt="Nashville, Tennessee bus sign" id="TN_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Nashville | MTA</p>
+				</div>
+				<div class="bollard" data-color="gw"> <!-- Memphis, Tennessee  -->
+					<a href="https://www.google.com/maps/@35.0921258,-89.9986587,3a,15y,206.37h,89.6t/data=!3m6!1e1!3m4!1sO67QE98XmtkzGklh18994g!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TN_4_sign.jpg" alt="Memphis, Tennessee bus sign" id="TN_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Memphis | MATA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Texas</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="byow"> <!-- Abilene, Texas  -->
+					<a href="https://www.google.com/maps/@32.4001291,-99.7694256,3a,15y,294.99h,90.36t/data=!3m6!1e1!3m4!1s2o298AYMQoE2nHGcl4JwMQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TX_1_sign.jpg" alt="Abilene, Texas bus sign" id="TX_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Abilene | City Link</p>
+				</div>
+				<div class="bollard" data-color="gw"> <!-- Denton, Texas  -->
+					<a href="https://www.google.com/maps/@33.2140839,-97.1235819,3a,15y,31.81h,90.62t/data=!3m6!1e1!3m4!1sL6L4rXNWHZuH5A92Bnfnkg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TX_3_sign.jpg" alt="Denton, Texas bus sign" id="TX_3" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Denton | DCTA Connect</p>
+				</div>
+				<div class="bollard" data-color="rwb"> <!-- Abilene, Texas  -->
+					<a href="https://www.google.com/maps/@31.7750308,-106.4743269,3a,90y,129.07h,82.29t/data=!3m6!1e1!3m4!1sYioBQ8ExMjCUUrHP_XywKA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TX_4_sign.jpg" alt="Abilene, Texas bus sign" id="TX_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Abilene | brio</p>
+				</div>
+				<div class="bollard" data-color="yw"> <!-- Dallas, Texas  -->
+					<a href="https://www.google.com/maps/@32.8512146,-96.9923656,3a,15y,196.87h,87.16t/data=!3m6!1e1!3m4!1sseEU4ZoV1RDFoC8-rJYmZA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TX_5_sign.jpg" alt="Dallas, Texas bus sign" id="TX_5" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Dallas | DART</p>
+				</div>
+				<div class="bollard" data-color="rkw"> <!-- Fort Worth, Texas  -->
+					<a href="https://www.google.com/maps/@32.7531549,-97.3288513,3a,15y,109.71h,88.29t/data=!3m6!1e1!3m4!1sXGpQOYUO1CWfWrDx_a1Ffg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TX_6_sign.jpg" alt="Fort Worth, Texas bus sign" id="TX_6" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Fort Worth | Trinity Metro</p>
+				</div>
+				<div class="bollard" data-color="bkw"> <!-- Austin, Texas  -->
+					<a href="https://www.google.com/maps/@30.2692561,-97.7385474,3a,15y,47.79h,94.77t/data=!3m6!1e1!3m4!1sZWRvutQYHy-mrpG3aQ9vOg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TX_7_sign.jpg" alt="Austin, Texas bus sign" id="TX_7" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Austin | CapMetro</p>
+				</div>
+				<div class="bollard" data-color="wrbg"> <!-- Houston, Texas  -->
+					<a href="https://www.google.com/maps/@29.7013101,-95.3467867,3a,41.4y,354.02h,99.8t/data=!3m6!1e1!3m4!1sOoDLt5bKUXtuciPxQwlgSQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TX_8_sign.jpg" alt="Houston, Texas bus sign" id="TX_8" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Houston | Metro</p>
+				</div>
+				<div class="bollard" data-color="rkw"> <!-- San Antonio, Texas  -->
+					<a href="https://www.google.com/maps/@29.4446451,-98.5038532,3a,15y,28.28h,89.05t/data=!3m6!1e1!3m4!1sDHAFa8S3ZK5UaYylZMkCcA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/TX_9_sign.jpg" alt="San Antonio, Texas bus sign" id="TX_9" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">San Antonio | VIA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Utah</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bwrk"> <!-- Salt Lake City, Utah  -->
+					<a href="https://www.google.com/maps/@40.7716018,-111.9136646,3a,15.4y,328.05h,90.98t/data=!3m6!1e1!3m4!1swHNttqVQ2v8KAHOQqTpaVg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/UT_1_sign.jpg" alt="Salt Lake City, Utah bus sign" id="UT_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Salt Lake City | UTA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Vermont</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bgk"> <!-- Burlington, Vermont  -->
+					<a href="https://www.google.com/maps/@44.479157,-73.2176034,3a,15y,112.21h,86.41t/data=!3m6!1e1!3m4!1syzwU5udPoBwqs57L7IBA7g!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/transit/VT_1_sign.jpg" alt="Burlington, Vermont bus sign" id="VT_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Burlington | GMT</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Virginia</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="g"> <!-- Arlington, Virginia  -->
+					<a href="https://www.google.com/maps/@38.8853949,-77.11644,3a,15y,130.37h,90.94t/data=!3m6!1e1!3m4!1sxr9RPF9YiUIAFefTU96S8A!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/VA_1_sign.jpg" alt="Arlington, Virginia bus sign" id="VA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Arlington | ART</p>
+				</div>
+				<div class="bollard" data-color="byo"> <!-- Alexandria, Virginia  -->
+					<a href="https://www.google.com/maps/@38.8069482,-77.0617285,3a,15y,115.62h,89.48t/data=!3m6!1e1!3m4!1sUrH9Si2jSbDPRPrtcSt4ew!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/VA_2_sign.jpg" alt="Alexandria, Virginia bus sign" id="VA_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Alexandria | DASH</p>
+				</div>
+				<div class="bollard" data-color="bgw"> <!-- Newport News, Virginia  -->
+					<a href="https://www.google.com/maps/@37.0205391,-76.4264036,3a,42y,93.51h,96.08t/data=!3m6!1e1!3m4!1sC1XkBe1BQerM89SHIhOlsQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/VA_4_sign.jpg" alt="Newport News, Virginia bus sign" id="VA_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Newport News | Go HRT</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Washington</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="ygrkw"> <!-- Seattle, Washington  -->
+					<a href="https://www.google.com/maps/@47.4568929,-122.2369228,3a,15y,134.89h,92.98t/data=!3m6!1e1!3m4!1ss06mpTwvJmpfDBfWztlvvg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/WA_1_sign.jpg" alt="Seattle, Washington bus sign" id="WA_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Seattle | Rapid Ride</p>
+				</div>
+				<div class="bollard" data-color="rwg"> <!-- Olympia, Washington  -->
+					<a href="https://www.google.com/maps/@46.9712078,-123.8239465,3a,15y,267.21h,88.57t/data=!3m6!1e1!3m4!1sY2nJCDUD8c0XLN4OTIHa6Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/WA_2_sign.jpg" alt="Olympia, Washington bus sign" id="WA_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Olympia | Grays Harbor</p>
+				</div>
+				<div class="bollard" data-color="bgw"> <!-- Spokane, Washington  -->
+					<a href="https://www.google.com/maps/@47.6680177,-117.4305893,3a,15y,319.56h,88.24t/data=!3m6!1e1!3m4!1sGJ2apP-JrXro8KuTbt2OEQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/WA_4_sign.jpg" alt="Spokane, Washington bus sign" id="WA_4" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Spokane | STA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Wisconsin</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bw"> <!-- Lacrosse, Wisconsin  -->
+					<a href="https://www.google.com/maps/@43.8116686,-91.2479532,3a,15y,319.09h,86.22t/data=!3m6!1e1!3m4!1sODCyAEeeQXNfF6aSPWD0OA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/WI_1_sign.jpg" alt="Lacrosse, Wisconsin bus sign" id="WI_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Lacrosse | MTU</p>
+				</div>
+				<div class="bollard" data-color="ypkw"> <!-- Milwaukee, Wisconsin  -->
+					<a href="https://www.google.com/maps/@42.9071483,-87.9404264,3a,44.9y,42.38h,95.7t/data=!3m6!1e1!3m4!1sMWy0DNV0D_ZaptuflNgc_Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/WI_2_sign.jpg" alt="Milwaukee, Wisconsin bus sign" id="WI_2" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Milwaukee | MCTS</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Wyoming</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard" data-color="bkyw"> <!-- Jackson, Wyoming  -->
+					<a href="https://www.google.com/maps/@43.4584546,-110.8060415,3a,15y,304.95h,90.85t/data=!3m6!1e1!3m4!1shGmg2ZHKAWRSHqdn3dx3Gg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/transit/WY_1_sign.jpg" alt="Jackson, Wyoming bus sign" id="WY_1" class="zoomA" loading="lazy" />
+					</a>
+					<p class="country">Jackson | START</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			var originalColors = [];
+			var colors_shown = [];
+			var used_colors = {
+				'r':"#f59b9b",
+				'o':"#ffc107",
+				'b':"#65acf9",
+				'g':"#7cef96",
+				'y':"#ffe595",
+				'k':"#706f6f",
+				'p':"#b366ff"
+			};
+			$(function() {
+				$(".btn-geo-nav").hover(function(){
+					originalColors[$(this).index('.btn-geo-nav')] = $(this).css('background-color');
+					$(this).css('background-color', '#aaa');
+				},
+				function(){
+					$(this).css('background-color', originalColors[$(this).index('.btn-geo-nav')]);
+				});
+				$(".btn-geo-nav").each(function() {
+					var tmp_id = $(this).attr("id").split("_nav")[0];
+					if (tmp_id.length == 1) {
+						colors_shown[tmp_id] = 0;
+					}
+				});
+			});
+
+			$(".btn-geo-nav").click(function(){
+				var tmp_id = $(this).attr("id").split("_nav")[0];
+				if (tmp_id.length == 1) {
+					if ($(this).css("font-weight") == 400) {
+						originalColors[$(this).index('.btn-geo-nav')] = used_colors[tmp_id];
+						toggle_colors(tmp_id, 1);
+					} else {
+						originalColors[$(this).index('.btn-geo-nav')] = "white";
+						toggle_colors(tmp_id, 0);
+					}
+					if ($(this).css("font-weight") == 700) {
+						$(this).css("font-weight", 400);
+					} else { $(this).css("font-weight", 700); }
+				} else { // Show All
+					$(".bollard").show();
+					$(".btn-geo-nav").each(function() {
+						$(this).css("font-weight", 400);
+						$(this).css("background-color", "white");
+					});
+					for (var key in colors_shown) {
+						colors_shown[key] = 0;
+					}
+				}
+			});
+
+			function toggle_colors(c, t) {
+				colors_shown[c] = t;
+				if (t == 0) {
+					var tmp_cs = [];
+					for (var key in colors_shown) {
+						if (colors_shown[key] == 1) {
+							tmp_cs.push(key);
+						}
+					}
+					$(".bollard").each(function() {
+						if( $(this).is(":hidden")) {
+							var show_this = true;
+							for (var i = 0; i < tmp_cs.length; i++) {
+								if (!($(this).attr("data-color").includes(tmp_cs[i]))) {
+									show_this = false;
+									break;
+								}
+							}
+							if (show_this) { $(this).show(); }
+						}
+					});
+				}
+				if (t == 1) {
+					$(".bollard").each(function(){
+						if($(this).is(":visible")) {
+							if (!($(this).attr("data-color").includes(c))) {
+								$(this).hide();
+							}
+						}
+					});
+				}
+			}
+		</script>
+	</body>
+</html>
