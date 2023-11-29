@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>County Roads</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/png" href="img/logo/planet.png"/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/bollards.css" type="text/css" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<style>
+			.zoomA { cursor:pointer }
+			.section { padding-top:20px; }
+			.notes { padding-top:0px; margin-top:0px; }
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #212121; color: white;">
+			<a class="navbar-brand" href="main.html">
+				<img class="logo" src="img/logo/geohints.png" />
+			</a>
+		</nav>
+
+		<div class="section notes" style="margin-top:90px">
+			<b>Notes:</b><br/>
+			The blue pentagon is the current US standard for CR signage<br />
+			Many places still use the old square standards or use a black pentagon<br />
+			Individual counties can choose their own style shield<br />
+			If a state is not listed here, it does not have a county road system<br />
+			Utah has Federal Aid Routes, but currently have no coverage<br />
+			Ohio has the greatest variation (see map below)
+		</div><br />
+
+<!--
+No map exists
+<span class="geoh3">Geoguessr map</span>
+<p style="margin-left:8px">You can find the map to test your knowledge about the locations <a href="" target="_blank">here</a>.</p>
+-->
+
+		<img style="margin-top:4px" src="img/highwaySigns/countyRoads/cr_map.jpg" class="noZoomGen" onclick="enlarge_pic(this)" id="cr_map" />
+		<img style="margin-top:4px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Ohio%E2%80%99s_counties_and_their_county_route_shields.svg/551px-Ohio%E2%80%99s_counties_and_their_county_route_shields.svg.png" class="noZoomGen" onclick="enlarge_pic(this)" id="ohio_map" />
+
+		<div class="headerText">Alabama</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					If a county road is marked, a blue pentagon is used in all counties<br />
+					Look for the unique warning at T-shaped intersections to identify Alabama
+				</div><br/>
+				<div class="bollard"> <!-- Alabama County Road sign -->
+					<a href="https://www.google.com/maps/@30.9807552,-87.8482291,3a,18.3y,0.52h,90.28t/data=!3m6!1e1!3m4!1sOBuT8q-D1DfbC13WbsSl6g!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_AL_1.jpg" alt="Alabama county rd sign" id="AL_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Baldwin Co</p>
+				</div>
+				<div class="bollard"> <!-- Alabama County Road sign -->
+					<a href="https://www.google.com/maps/@31.0926254,-85.5152916,3a,41.3y,273.63h,88.44t/data=!3m6!1e1!3m4!1soc7QlI9G52wQ6nWfTnoisQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_AL_3.jpg" alt="Alabama county rd sign" id="AL_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Geneva Co</p>
+				</div>
+				<div class="bollard"> <!-- Alabama County Road sign -->
+					<a href="https://www.google.com/maps/@33.1251622,-87.8626523,3a,75y,302.39h,75.7t/data=!3m6!1e1!3m4!1s3trM4qjxQMzptx0I0zlGNw!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_AL_4.jpg" alt="Alabama county rd sign" id="AL_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Greene Co</p>
+				</div>
+				<div class="bollard"> <!-- Alabama County Road sign -->
+					<a href="https://www.google.com/maps/@34.6385752,-85.8478919,3a,24.9y,231.99h,79.89t/data=!3m6!1e1!3m4!1sBR8lZCpe96gF98Qjt3K3cA!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_AL_5.jpg" alt="Alabama county rd sign" id="AL_5" class="zoomA" loading="lazy" />
+					</a><p class="country">Jackson Co</p>
+				</div>
+				<div class="bollard"> <!-- Alabama County Road sign -->
+					<a href="https://www.google.com/maps/@30.5085655,-88.3352292,3a,17.1y,131.11h,87.87t/data=!3m6!1e1!3m4!1sdE0cFD3Hp0YEvNToLSEEpA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_AL_2.jpg" alt="Alabama county rd sign" id="AL_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Mobile Co</p>
+				</div>
+				<div class="bollard"> <!-- Alabama County Road sign -->
+					<a href="https://www.google.com/maps/@32.0776603,-85.999711,3a,75y,40.34h,79.52t/data=!3m6!1e1!3m4!1sO4Tn0BW7YTFqaoMHVlh4zg!2e0!7i3328!8i1664" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_AL_6.jpg" alt="Alabama county rd sign" id="AL_6" class="zoomA" loading="lazy" />
+					</a><p class="country">Unique T-intersection marking</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Arizona</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Blue pentagons are not used in Maricopa County (Phoenix metro area)<br />
+					Apache County has some blue pentagons (but they are rare)<br />
+					Some of these CRs are also marked with a white square
+				</div><br/>
+				<div class="bollard"> <!-- Arizona County Road sign -->
+					<a href="https://www.google.com/maps/@34.2947844,-109.3740744,3a,30.3y,17h,89.34t/data=!3m6!1e1!3m4!1sjqa7MF0OE2N-Fxj9z6Sq7g!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_AZ_1.jpg" alt="Arizona county rd sign" id="AZ_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Apache Co</p>
+				</div>
+				<div class="bollard"> <!-- Arizona County Road sign -->
+					<a href="https://www.google.com/maps/@34.2959511,-109.3746617,3a,15y,237.64h,88.59t/data=!3m6!1e1!3m4!1s43UqbDV01gg-LbQ4NUe4NQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_AZ_2.jpg" alt="Arizona county rd sign" id="AZ_1" class="zoomA" loading="lazy" />
+					</a><p class="country">White square marker</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Arkansas</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Blue pentagons are used in NW Arkansas<br/>
+					Jasper in Newton County uses blue/gold on sign blades
+				</div><br/>
+				<div class="bollard"> <!-- Arkansas County Road sign -->
+					<a href="https://www.google.com/maps/@35.9813228,-93.2207458,3a,15y,184.96h,91.12t/data=!3m6!1e1!3m4!1saowvlGfdeR88AafHNCqojA!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_AR_1.jpg" alt="Arkansas county rd sign" id="AR_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Jasper, Newton Co</p>
+				</div>
+				<div class="bollard"> <!-- Arkansas County Road sign -->
+					<a href="https://www.google.com/maps/@36.0221817,-94.3341321,3a,15y,287.75h,83.38t/data=!3m6!1e1!3m4!1sBmZeZ7v3_6KirdL_HtCzSw!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_AR_2.jpg" alt="Arkansas county rd sign" id="AR_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Washington Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">California</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					California county roads are given a unique letter-number combination<br/>
+					A and B routes are in northern California<br/>
+					C and D routes are near the northern coast, but are not often marked<br />
+					E routes are in and around Sacramento<br/>
+					G routes are near the central coast<br/>
+					J routes are in the central valley, south of Sacramento<br/>
+					N, R, and S routes are in southern California
+				</div><br/>
+				<div class="bollard"> <!-- California County Road sign -->
+					<a href="" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_CA_1.jpg" alt="California county rd sign" id="CA_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Sierra Co</p>
+				</div>
+				<div class="bollard"> <!-- California County Road sign -->
+					<a href="https://www.google.com/maps/@38.4080798,-121.3255897,3a,21.4y,51.09h,86.27t/data=!3m6!1e1!3m4!1stvFiYFlwP5VhSolFcr83lQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_CA_2.jpg" alt="California county rd sign" id="CA_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Sacramento Co</p>
+				</div>
+				<div class="bollard"> <!-- California County Road sign -->
+					<a href="https://www.google.com/maps/@36.556703,-121.5507377,3a,17.7y,154.94h,89.01t/data=!3m6!1e1!3m4!1s9qGz1bRZ_-yhkmbQNtoXpw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_CA_4.jpg" alt="California county rd sign" id="CA_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Monterey Co</p>
+				</div>
+				<div class="bollard"> <!-- California County Road sign -->
+					<a href="https://www.google.com/maps/@37.5231825,-120.4303996,3a,45y,93.29h,87.21t/data=!3m6!1e1!3m4!1sFO475yR09m29X38E_7SzMg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_CA_5.jpg" alt="California county rd sign" id="CA_5" class="zoomA" loading="lazy" />
+					</a><p class="country">Merced Co</p>
+				</div>
+				<div class="bollard"> <!-- California County Road sign -->
+					<a href="https://www.google.com/maps/@36.55631,-121.5500541,3a,39.3y,20.95h,86.79t/data=!3m6!1e1!3m4!1siOYmi9eER67Wn7Vkf77Ksw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_CA_3.jpg" alt="California county rd sign" id="CA_3" class="zoomA" loading="lazy" />
+					</a><p class="country">T-junctions marked with yellow diamonds</p>
+				</div>
+			</div>
+		</div>
+
+<!-- https://www.mesalek.com/colo/countynum.html -->
+		<div class="headerText">Colorado</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Fremont Co, Ouray Co, and Routt Co use green squares<br />
+					Douglas Co uses green pentagons<br />
+				</div><br/>
+				<div class="bollard"> <!-- Colorado County Road sign -->
+					<a href="https://www.google.com/maps/@39.436586,-104.9630908,3a,18.3y,301.28h,85.57t/data=!3m6!1e1!3m4!1sF_wfxC4C2lXNOw_yb5AitA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_CO_5.jpg" alt="Colorado county rd sign" id="CO_5" class="zoomA" loading="lazy" />
+					</a><p class="country">Douglas Co</p>
+				</div>
+				<div class="bollard"> <!-- Colorado County Road sign -->
+					<a href="https://www.google.com/maps/@38.365338,-105.1211187,3a,25.8y,45.44h,83.07t/data=!3m6!1e1!3m4!1shSmOEciqScLn0yjnBGXshw!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_CO_6.jpg" alt="Colorado county rd sign" id="CO_6" class="zoomA" loading="lazy" />
+					</a><p class="country">Fremont Co</p>
+				</div>
+				<div class="bollard"> <!-- Colorado County Road sign -->
+					<a href="https://www.google.com/maps/@40.2488689,-105.8378961,3a,15y,56.64h,85.94t/data=!3m6!1e1!3m4!1s9otbsIOpxoATZng03PyeBw!2e0!7i16384!8i819" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_CO_4.jpg" alt="Colorado county rd sign" id="CO_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Grand Co</p>
+				</div>
+				<div class="bollard"> <!-- Colorado County Road sign -->
+					<a href="https://www.google.com/maps/@40.6194858,-105.3571508,3a,15y,353.03h,89.16t/data=!3m6!1e1!3m4!1s7HbMXLXG3jlnZ1oujcD4wA!2e0!7i16384!8i819" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_CO_3.jpg" alt="Colorado county rd sign" id="CO_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Larimer Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Florida</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Florida county road numbers can have up to 4 digits<br />
+					Many CRs have a number-letter combination<br />
+					Occasionally a black pentagon is used instead of blue
+				</div><br />
+				<div class="bollard"> <!-- Florida County Road sign -->
+					<a href="https://www.google.com/maps/@27.3662906,-81.9152478,3a,17.7y,194.64h,90t/data=!3m6!1e1!3m4!1sTyEyMlR7asM6h4iy6huzzw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_FL_2.jpg" alt="Florida county rd sign" id="FL_2" class="zoomA" loading="lazy" />
+					</a><p class="country">DeSoto Co</p>
+				</div>
+				<div class="bollard"> <!-- Florida County Road sign -->
+					<a href="" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_FL_3.jpg" alt="Florida county rd sign" id="FL_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Monroe Co, black sign</p>
+				</div>
+				<div class="bollard"> <!-- Florida County Road sign -->
+					<a href="https://www.google.com/maps/@27.2820425,-81.8310811,3a,15.2y,227.57h,87.33t/data=!3m7!1e1!3m5!1sncMicOkpHufMl_gq783NVA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DncMicOkpHufMl_gq783NVA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D178.33664%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_FL_1.jpg" alt="Florida county rd sign" id="FL_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Hardee Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Idaho</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard"> <!-- Idaho County Road sign -->
+					<a href="https://www.google.com/maps/@46.4093784,-117.0017972,3a,64.3y,13.13h,84.79t/data=!3m6!1e1!3m4!1sMOnlvZ4Pr1E8_Pv4hRBXlA!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_ID_1.jpg" alt="Idaho county rd sign" id="ID_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Nez Perce Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Illinois</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Most IL county roads are marked with a both a number and a letter<br />
+					Blue pentagons are sometimes used, but a numbered/letted blade is much more common<br />
+					Rock Island County uses single/double letters instead of CR numbers
+				</div><br />
+				<div class="bollard"> <!-- Illinois County Road sign -->
+					<a href="https://www.google.com/maps/@41.7580872,-89.3810811,3a,15.1y,248.35h,90.35t/data=!3m6!1e1!3m4!1sgif5LkxdXPCUgpNRtiTcXA!2e0!7i16384!8i819" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_IL_3.jpg" alt="Illinois county rd sign" id="IL_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Lee Co</p>
+				</div>
+				<div class="bollard"> <!-- Illinois County Road sign -->
+					<a href="https://www.google.com/maps/@38.081637,-88.6306425,3a,15y,297.61h,90.6t/data=!3m6!1e1!3m4!1sDNanIR_InXSwRkbDsk4HLQ!2e0!7i13312!8i665" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_IL_2.jpg" alt="Illinois county rd sign" id="IL_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Hamilton Co</p>
+				</div>
+				<div class="bollard"> <!-- Illinois County Road sign -->
+					<a href="https://www.google.com/maps/@40.1640818,-89.7346863,3a,15y,290.05h,88.73t/data=!3m6!1e1!3m4!1so-84Stj2nZ-zoidukuxblQ!2e0!7i13312!8i665" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_IL_1.jpg" alt="Illinois county rd sign" id="IL_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Mason Co</p>
+				</div>
+				<div class="bollard"> <!-- Illinois County Road sign -->
+					<a href="https://www.google.com/maps/@41.3429885,-90.6076348,3a,31.6y,26.95h,79.84t/data=!3m6!1e1!3m4!1sIoISFeeQZy5Yg_hZeBeM_g!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_IL_4.jpg" alt="Illinois county rd sign" id="IL_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Rock Island Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Indiana</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Blue pentagons are only used on I-80
+				</div><br />
+				<div class="bollard"> <!-- Indiana County Road sign -->
+					<a href="https://www.google.com/maps/@41.7309367,-85.8786311,3a,24.6y,298.56h,88.95t/data=!3m6!1e1!3m4!1suZaGde1Um9L6iqV2EdO_1g!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_IN_1.jpg" alt="Indiana county rd sign" id="IN_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Elkhart Co</p>
+				</div>
+			</div>
+		</div>
+
+<!-- https://iowahighwayends.net/coshields.html -->
+		<div class="headerText">Iowa</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Iowa uses blue pentagons in every county except Polk County<br />
+					CRs use an alpha-numeric grid pattern based on location<br />
+				</div><br />
+				<div class="bollard"> <!-- Iowa County Road sign -->
+					<a href="https://www.google.com/maps/@42.4977227,-92.2197059,3a,33.3y,141.52h,91.18t/data=!3m6!1e1!3m4!1sWQLwRJvr60tppWw2954ZLw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_IA_2.jpg" alt="Iowa county rd sign" id="IA_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Blackhawk Co</p>
+				</div>
+				<div class="bollard"><!-- Iowa County Road sign -->
+					<a href="https://www.google.com/maps/@41.8333732,-91.5498165,3a,15y,228.57h,87.52t/data=!3m6!1e1!3m4!1symPG1uNpIcveNS8ZtoC9wA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_IA_1.jpg" alt="Iowa county rd sign" id="IA_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Johnson Co</p>
+				</div>
+				<div class="bollard"><!-- Iowa County Road sign -->
+					<a href="https://www.google.com/maps/@43.1136094,-96.135607,3a,23y,138.82h,86.62t/data=!3m6!1e1!3m4!1sVPZsOvaEw7Ye01LBFtq9sg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_IA_3.jpg" alt="Iowa county rd sign" id="IA_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Sioux Co</p>
+				</div>
+				<div class="bollard"><!-- Iowa County Road sign -->
+					<a href="https://www.google.com/maps/@43.3841212,-93.7750079,3a,20y,88.08h,84.4t/data=!3m6!1e1!3m4!1sXJ2kSD6qYKgbQweG_2JyMA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_IA_4.jpg" alt="Iowa county rd sign" id="IA_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Winnebago Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Louisiana</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Louisiana has Parish Roads instead of County Roads<br />
+					The bottom text of signs will be "Parish" instead of "County"<br />
+					T-intersections are generally marked with an arrow between two yellow/black stripes
+				</div><br />
+				<div class="bollard"> <!-- Louisiana Parish Road sign -->
+					<a href="https://www.google.com/maps/@32.5414489,-92.6767686,3a,40.4y,341.22h,95.26t/data=!3m6!1e1!3m4!1sA-p7ayScyQ40S0Bh9We6zQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_LA_1.jpg" alt="Louisiana parish rd sign" id="LA_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Lincoln Parish</p>
+				</div>
+				<div class="bollard"> <!-- Louisiana Parish Road sign -->
+					<a href="https://www.google.com/maps/@32.9429556,-93.8900367,3a,22.1y,358.52h,89.47t/data=!3m6!1e1!3m4!1sGETch0VMF6eRxYb4gZM98g!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_LA_2.jpg" alt="Louisiana parish rd sign" id="LA_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Caddo Parish</p>
+				</div>
+				<div class="bollard"> <!-- Louisiana Parish Road sign -->
+					<a href="https://www.google.com/maps/@32.9366934,-93.9500757,3a,70.9y,181.73h,71.24t/data=!3m6!1e1!3m4!1siKjP_xeSxyTlRa3FUB5O4g!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_LA_3.jpg" alt="Louisiana parish rd sign" id="LA_3" class="zoomA" loading="lazy" />
+					</a><p class="country">T-intersection marking</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Michigan</div> <!-- http://www.michiganhighways.org/county/intercounty.html -->
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Michigan uses both numbered County Roads and Intercounty highways<br />
+					Intercounty highways are preceded by a letter based on state region<br />
+					Older white squares do exist, but they are very rare or in gen 1 coverage<br />
+					Michigan shield are more worn the farther north you go
+				</div><br/>
+				<div class="bollard"> <!-- Michigan County Road sign -->
+					<a href="https://www.google.com/maps/@42.6234549,-85.8404929,3a,15.7y,209.15h,87.96t/data=!3m6!1e1!3m4!1sgCBACU7tHl4LZ2OyStd2Mg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MI_1.jpg" alt="Michigan county rd sign" id="MI_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Allegan Co</p>
+				</div>
+				<div class="bollard"> <!-- Michigan County Road sign -->
+					<a href="https://www.google.com/maps/@45.9207926,-86.934741,3a,15y,106.28h,90.42t/data=!3m6!1e1!3m4!1sVb2P0ByW6U6bcEALKJ09KA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MI_5.jpg" alt="Michigan county rd sign" id="MI_5" class="zoomA" loading="lazy" />
+					</a><p class="country">Delta Co</p>
+				</div>
+				<div class="bollard"> <!-- Michigan County Road sign -->
+					<a href="https://www.google.com/maps/@44.9142023,-84.4547965,3a,15y,120.53h,82.98t/data=!3m6!1e1!3m4!1sq_nZ0nbiJ0-29otPADB27g!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MI_2.jpg" alt="Michigan county rd sign" id="MI_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Otsego Co</p>
+				</div>
+				<div class="bollard"> <!-- Michigan County Road sign -->
+					<a href="https://www.google.com/maps/@45.1846503,-84.6727414,3a,20.5y,232.74h,86.32t/data=!3m6!1e1!3m4!1su3xradV8y_plI2Jot0bj5A!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MI_3.jpg" alt="Michigan county rd sign" id="MI_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Otsego Co</p>
+				</div>
+				<div class="bollard"> <!-- Michigan County Road sign -->
+					<a href="https://www.google.com/maps/@46.0754927,-86.4613135,3a,90y,75.14h,83.85t/data=!3m6!1e1!3m4!1sproY-gTSIpboh-rCTvjNXg!2e0!7i3328!8i1664" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MI_4.jpg" alt="Michigan county rd sign" id="MI_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Schoolcraft Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Minnesota</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Minnesota has an even distribution of blue pentagons and white squares<br/>
+					MN also has an "inter-county" system marked by single letters A to J<br />
+					Diagonal braces can be used to identify Minnesota, when present
+				</div><br/>
+				<div class="bollard"> <!-- Minnesota County Road sign -->
+					<a href="https://www.google.com/maps/@44.6441966,-93.0249803,3a,26.3y,27.23h,84.78t/data=!3m6!1e1!3m4!1s-cimWk978CKLygYwRkuuUg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MN_4.jpg" alt="Minnesota county rd sign" id="MN_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Dakota Co</p>
+				</div>
+				<div class="bollard"> <!-- Minnesota County Road sign -->
+					<a href="https://www.google.com/maps/@45.0065637,-93.1463855,3a,15y,16.7h,89t/data=!3m6!1e1!3m4!1sSFTLs-rV0vuBXn7GOrjbfA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MN_1.jpg" alt="Minnesota county rd sign" id="MN_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Ramsey Co</p>
+				</div>
+				<div class="bollard"> <!-- Minnesota County Road sign -->
+					<a href="https://www.google.com/maps/@45.7740102,-94.9820405,3a,22.6y,36.16h,90.11t/data=!3m7!1e1!3m5!1sl5FxDYUgNxSo9dg_ELfK-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dl5FxDYUgNxSo9dg_ELfK-g%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D93.77392%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MN_5.jpg" alt="Minnesota county rd sign" id="MN_5" class="zoomA" loading="lazy" />
+					</a><p class="country">Todd Co</p>
+				</div>
+				<div class="bollard"> <!-- Minnesota County Road sign -->
+					<a href="https://www.google.com/maps/@43.9187173,-94.4292958,3a,23.2y,32.25h,85.25t/data=!3m6!1e1!3m4!1s_eCFevwgcjluETqk2vsZJg!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MN_3.jpg" alt="Minnesota county rd sign" id="MN_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Watonwan Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Mississippi</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					CR numbers are generally 3-digit and 4-digit, but some are 2-digit<br/>
+					Most of the northwest does not have CR coverage
+				</div><br/>
+				<div class="bollard"> <!-- Mississippi County Road sign -->
+					<a href="" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MS_3.jpg" alt="Mississippi county rd sign" id="MS_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Lafayette Co</p>
+				</div>
+				<div class="bollard"> <!-- Mississippi County Road sign -->
+					<a href="https://www.google.com/maps/@34.282748,-88.6229814,3a,15y,278.59h,81.36t/data=!3m6!1e1!3m4!1s_xblk3FrCLj8SCf5rTUuZw!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MS_1.jpg" alt="Mississippi county rd sign" id="MS_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Lee Co</p>
+				</div>
+				<div class="bollard"> <!-- Mississippi County Road sign -->
+					<a href="https://www.google.com/maps/@34.2446276,-89.5113189,3a,43y,161.98h,87.54t/data=!3m7!1e1!3m5!1spaZmvXfBTUy8V3j1CD_mNg!2e0!5s20220901T000000!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MS_2.jpg" alt="Mississippi county rd sign" id="MS_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Oxford Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Missouri</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Lettered county roads use white boxes with black borders<br />
+					Numbered county roads use blue pentagons, but many don't have coverage<br />
+					Missouri uses Farm Road (FR) in Greene, Barry, and Lawrence counties
+				</div><br/>
+				<div class="bollard"> <!-- Missouri County Road sign -->
+					<a href="https://www.google.com/maps/@36.7249143,-93.8767434,3a,15y,42.53h,89.26t/data=!3m6!1e1!3m4!1sq77J4HuY5jmn1G5PU5JtOA!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MO_1.jpg" alt="Missouri county rd sign" id="MO_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Barry Co</p>
+				</div>
+				<div class="bollard"> <!-- Missouri County Road sign -->
+					<a href="https://www.google.com/maps/@36.8697616,-89.3560151,3a,42.8y,242.58h,74.8t/data=!3m6!1e1!3m4!1smz5KVkiEH1lEW-Z7bKEprw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MO_3.jpg" alt="Missouri county rd sign" id="MO_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Mississippi Co</p>
+				</div>
+				<div class="bollard"> <!-- Missouri County Road sign -->
+					<a href="https://www.google.com/maps/@38.4772829,-90.6378495,3a,75y,327.97h,84.49t/data=!3m6!1e1!3m4!1sG1LPHMphlyWfOt7ebYO92Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MO_4.jpg" alt="Missouri county rd sign" id="MO_4" class="zoomA" loading="lazy" />
+					</a><p class="country">St. Louis Co</p>
+				</div>
+				<div class="bollard"> <!-- Missouri County Road sign -->
+					<a href="https://www.google.com/maps/@36.8356406,-93.4867615,3a,28.6y,229.16h,78.17t/data=!3m6!1e1!3m4!1sCJfqkUljkzh-T7S0S0jjrQ!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_MO_2.jpg" alt="Missouri county rd sign" id="MO_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Stone Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Nevada</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Only Clark County uses blue pentagons, the rest are unsigned
+				</div><br/>
+				<div class="bollard"> <!-- Nevada County Road sign -->
+					<a href="https://www.google.com/maps/@36.2737302,-115.2064011,3a,16y,31.14h,94.53t/data=!3m6!1e1!3m4!1s8hj8z0FmXpRiTBnp48IjJw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_NV_1.jpg" alt="Nevada county rd sign" id="NV_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Clark Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">New Jersey</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					New Jersey county roads are almost always in the 500s/600s/700s/800s<br />
+					Bergen Co and Monmouth Co have a couple of CRs in the 100s
+				</div><br />
+				<div class="bollard"> <!-- New Jersey County Road sign -->
+					<a href="https://www.google.com/maps/@40.922482,-74.9613817,3a,15y,130.94h,94.42t/data=!3m6!1e1!3m4!1sezPCSHh7col4z9vPh6CJ3A!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_NJ_1.jpg" alt="New Jersey county rd sign" id="NJ_1" class="zoomA" loading="lazy" />
+					</a><p class="country">New Jersey</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">New York</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Some counties use green squares, some use blue pentagons<br />
+					Schenectady Co uses a large sign with both local name and CR number<br />
+					Ontario Co signs have the "RD" in a smaller font than the number
+				</div><br />
+				<div class="bollard"> <!-- New York County Road sign -->
+					<a href="https://www.google.com/maps/@44.8579192,-74.0339563,3a,15y,275.8h,88.68t/data=!3m6!1e1!3m4!1sCUhD5BeIEew-_pwkpCzR3w!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_NY_1.jpg" alt="New York county rd sign" id="NY_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Franklin Co</p>
+				</div>
+				<div class="bollard"> <!-- New York County Road sign -->
+					<a href="https://www.google.com/maps/@44.8578936,-74.0339624,3a,23.6y,290.82h,83.89t/data=!3m6!1e1!3m4!1s6g4o8F0zucwnAO4OcibiAQ!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_NY_2.jpg" alt="New York county rd sign" id="NY_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Franklin Co</p>
+				</div>
+				<div class="bollard"> <!-- New York County Road sign -->
+					<a href="https://www.google.com/maps/@42.8123739,-77.169199,3a,24y,12.94h,89.67t/data=!3m6!1e1!3m4!1s-hyFvhLva2uiwTAd7DQB6g!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_NY_4.jpg" alt="New York county rd sign" id="NY_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Ontario Co</p>
+				</div>
+				<div class="bollard"> <!-- New York County Road sign -->
+					<a href="https://www.google.com/maps/@42.7910643,-74.0765757,3a,15y,301.81h,88.56t/data=!3m6!1e1!3m4!1slhRvE0LmyBhBLHSUSssZng!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_NY_3.jpg" alt="New York county rd sign" id="NY_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Schenectady Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">North Carolina</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					North Carolina does not have county roads, but Charlotte has city routes
+				</div><br />
+				<div class="bollard"> <!-- North Carolina County Road sign -->
+					<a href="https://www.google.com/maps/@35.2352205,-80.9215051,3a,25.4y,234.84h,86.09t/data=!3m6!1e1!3m4!1sw6jxujsCDJ-CGbs0UFOAlA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_NC_1.jpg" alt="North Carolina county rd sign" id="NC_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Charlotte, NC</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">North Dakota</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard"> <!-- North Dakota County Road sign -->
+					<a href="https://www.google.com/maps/@48.8215222,-100.6871951,3a,15y,45.71h,87.85t/data=!3m6!1e1!3m4!1szTPz8NhOOZT8Pqb3gEG5jQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_ND_2.jpg" alt="North Dakota county rd sign" id="ND_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Bottineau Co</p>
+				</div>
+				<div class="bollard"> <!-- North Dakota County Road sign -->
+					<a href="https://www.google.com/maps/@47.5020723,-101.5056939,3a,22y,326.02h,87.7t/data=!3m6!1e1!3m4!1sU_mqi8iKd_WcgLf3kYImtw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_ND_4.jpg" alt="North Dakota county rd sign" id="ND_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Mercer Co</p>
+				</div>
+				<div class="bollard"> <!-- North Dakota County Road sign -->
+					<a href="https://www.google.com/maps/@47.4417035,-97.8363541,3a,15y,125.12h,88.68t/data=!3m6!1e1!3m4!1sjDLBJe1RQ_JiLUROtdc66g!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_ND_3.jpg" alt="North Dakota county rd sign" id="ND_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Steele Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Ohio</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Ashland Co has TWPs instead of CRs<br />
+					Ohio has the greatest variation of signage, some examples are shown below<br />
+					Click <span style="font-weight:bold;cursor:pointer" onclick="big_ohio_map()">here</span> to see the full state map.<br/>
+				</div><br />
+				<div class="bollard"> <!-- Ohio County Road sign -->
+					<a href="https://www.google.com/maps/@40.889989,-82.2993134,3a,24.8y,185.09h,74.68t/data=!3m6!1e1!3m4!1s7GNfvhDvZ93xSntaWP1uYQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_OH_9.jpg" alt="Ohio county rd sign" id="OH_9" class="zoomA" loading="lazy" />
+					</a><p class="country">Ashland Co</p>
+				</div>
+				<div class="bollard"> <!-- Ohio County Road sign -->
+					<a href="https://www.google.com/maps/@41.2681933,-84.1216162,3a,48.9y,46.67h,83.58t/data=!3m6!1e1!3m4!1svZ0g1NIZH9U7n67_yWLvIg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_OH_3.jpg" alt="Ohio county rd sign" id="OH_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Henry Co</p>
+				</div>
+				<div class="bollard"> <!-- Ohio County Road sign -->
+					<a href="https://www.google.com/maps/@41.3263227,-84.1186309,3a,15y,45.42h,89t/data=!3m6!1e1!3m4!1swx8T4_XHdnNprYKfmhDNTA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_OH_2.jpg" alt="Ohio county rd sign" id="OH_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Henry Co</p>
+				</div>
+				<div class="bollard"> <!-- Ohio County Road sign -->
+					<a href="https://www.google.com/maps/@39.7359825,-81.5648722,3a,15y,228.97h,75.34t/data=!3m6!1e1!3m4!1spGfVW7Xf_aZyHgAy8uwOgg!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_OH_7.jpg" alt="Ohio county rd sign" id="OH_7" class="zoomA" loading="lazy" />
+					</a><p class="country">Noble Co</p>
+				</div>
+				<div class="bollard"> <!-- Ohio County Road sign -->
+					<a href="https://www.google.com/maps/@38.8668643,-82.8647762,3a,15y,160.7h,84.59t/data=!3m6!1e1!3m4!1sS3t8aW68yvVVo2leYZMwFA!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_OH_8.jpg" alt="Ohio county rd sign" id="OH_8" class="zoomA" loading="lazy" />
+					</a><p class="country">Scioto Co</p>
+				</div>
+				<div class="bollard"> <!-- Ohio County Road sign -->
+					<a href="https://www.google.com/maps/@41.1213443,-84.8033312,3a,15y,244.55h,91.71t/data=!3m6!1e1!3m4!1smVWVByky3vCUtdA9aAATSw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_OH_4.jpg" alt="Ohio county rd sign" id="OH_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Seneca Co</p>
+				</div>
+				<div class="bollard"> <!-- Ohio County Road sign -->
+					<a href="https://www.google.com/maps/@41.238744,-80.6900487,3a,25y,28.55h,74.36t/data=!3m6!1e1!3m4!1sPEsKfKrJvdkZiIKfGYCu9A!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_OH_6.jpg" alt="Ohio county rd sign" id="OH_6" class="zoomA" loading="lazy" />
+					</a><p class="country">Trumbull Co</p>
+				</div>
+				<div class="bollard"> <!-- Ohio County Road sign -->
+					<a href="https://www.google.com/maps/@41.6422007,-84.7910193,3a,24y,153.57h,87.17t/data=!3m6!1e1!3m4!1s6N75yUBYD_r_qM_UckDBLA!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_OH_1.jpg" alt="Ohio county rd sign" id="OH_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Williams Co</p>
+				</div>
+			</div>
+		</div>
+
+<!--
+		<div class="headerText">Oklahoma</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard"> Oklahoma County Road sign
+					<a href="https://www.google.com/maps/@36.9488382,-94.7878743,3a,63.3y,218.82h,84.04t/data=!3m6!1e1!3m4!1s_eNktXKG9wCZYm_Jno3Trg!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_OK_1.jpg" alt="Oklahoma county rd sign" id="OK_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Oklahoma</p>
+				</div>
+			</div>
+		</div>
+-->
+
+		<div class="headerText">Oregon</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Blue pentagons can be found in Oregon, but are very rare
+				</div><br/>
+				<div class="bollard"> <!-- Oregon County Road sign -->
+					<a href="https://www.google.com/maps/@44.0905207,-123.1520393,3a,39.3y,11.04h,85.94t/data=!3m6!1e1!3m4!1sDrByEPLcI9Uz3wPluY45iw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_OR_1.jpg" alt="Oregon county rd sign" id="OR_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Lane Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">South Dakota</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					SD uses both blue pentagons and white squares somewhat sporadically<br/>
+					Some CR signs will use a number-letter combination
+				</div><br/>
+				<div class="bollard"> <!-- South Dakota County Road sign -->
+					<a href="https://www.google.com/maps/@45.5337219,-98.7840988,3a,23.3y,221.47h,82.9t/data=!3m6!1e1!3m4!1sKwS4bupFtv4JrgZTmKTtLg!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_SD_3.jpg" alt="South Dakota county rd sign" id="SD_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Edmunds Co</p>
+				</div>
+				<div class="bollard"> <!-- South Dakota County Road sign -->
+					<a href="https://www.google.com/maps/@45.5795886,-99.3381439,3a,20.3y,211.39h,82.97t/data=!3m6!1e1!3m4!1s_NKiekv_yX2ANyguiR9kog!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_SD_4.jpg" alt="South Dakota county rd sign" id="SD_4" class="zoomA" loading="lazy" />
+					</a><p class="country">Edmunds Co</p>
+				</div>
+				<div class="bollard"> <!-- South Dakota County Road sign -->
+					<a href="https://www.google.com/maps/@43.4299604,-96.6090078,3a,15y,213.83h,87.61t/data=!3m6!1e1!3m4!1szgiHJKozmvUUITBkRaWU9w!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_SD_1.jpg" alt="South Dakota county rd sign" id="SD_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Lincoln Co</p>
+				</div>
+				<div class="bollard"> <!-- South Dakota County Road sign -->
+					<a href="https://www.google.com/maps/@42.9379643,-96.7853925,3a,15y,202.97h,86.5t/data=!3m6!1e1!3m4!1sSs8D_3e2PaQlBXZvbDKLsw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_SD_2.jpg" alt="South Dakota county rd sign" id="SD_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Union Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Texas</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					Most counties use Farm Roads instead of County Roads<br />
+					Blue pentagons and squares are sometimes used near metro areas
+				</div><br />
+				<div class="bollard"> <!-- Texas County Road sign -->
+					<a href="https://www.google.com/maps/@30.4252626,-95.1162703,3a,63.9y,102.36h,89.62t/data=!3m6!1e1!3m4!1seAmmhWEsnui1c2zztW6SAQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_TX_3.jpg" alt="Texas county rd sign" id="TX_3" class="zoomA" loading="lazy" />
+					</a><p class="country">Liberty Co</p>
+				</div>
+				<div class="bollard"> <!-- Texas County Road sign -->
+					<a href="https://www.google.com/maps/@29.1733479,-95.4384395,3a,20.7y,345.15h,85.48t/data=!3m6!1e1!3m4!1sXQ8-P6CrPOk4FpVndKymrw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_TX_1.jpg" alt="Texas county rd sign" id="TX_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Brazoria Co</p>
+				</div>
+				<div class="bollard"> <!-- Texas County Road sign -->
+					<a href="https://www.google.com/maps/@29.1242601,-95.4303583,3a,20.7y,20.32h,92.58t/data=!3m6!1e1!3m4!1s7-RC1nv3YKt24jNDxYp_fw!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_TX_2.jpg" alt="Texas county rd sign" id="TX_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Brazoria Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Wisconsin</div>
+		<div class="section">
+			<div class="inside">
+				<div class="section notes">
+					<b>Notes:</b><br/>
+					All county roads are lettered instead of numbered
+				</div><br />
+				<div class="bollard"> <!-- Wisconsin County Road sign -->
+					<a href="https://www.google.com/maps/@45.5392474,-89.7191564,3a,15y,70.78h,90.12t/data=!3m6!1e1!3m4!1stSpCzkDV4MXl2GESjqiNkA!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_WI_1.jpg" alt="Wisconsin county rd sign" id="WI_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Lincoln Co</p>
+				</div>
+				<div class="bollard"> <!-- Wisconsin County Road sign -->
+					<a href="https://www.google.com/maps/@44.2440641,-88.4559702,3a,49.1y,229.07h,82.73t/data=!3m6!1e1!3m4!1sJpr24y-BrW1_VDloB81Hhg!2e0!7i13312!8i6656" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_WI_2.jpg" alt="Wisconsin county rd sign" id="WI_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Outagamie Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="headerText">Wyoming</div>
+		<div class="section">
+			<div class="inside">
+				<div class="bollard"> <!-- Wyoming County Road sign -->
+					<a href="https://www.google.com/maps/@44.4368079,-104.2933686,3a,24.8y,195.63h,86.36t/data=!3m6!1e1!3m4!1s1r_DFrr6qVFJ2n5Rqg9tuQ!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_WY_2.jpg" alt="Wyoming county rd sign" id="WY_2" class="zoomA" loading="lazy" />
+					</a><p class="country">Crook Co</p>
+				</div>
+				<div class="bollard"> <!-- Wyoming County Road sign -->
+					<a href="https://www.google.com/maps/@42.8178166,-106.3770907,3a,42.1y,239.31h,87.26t/data=!3m6!1e1!3m4!1szrAmdKzS9bBkfECdKFcF3Q!2e0!7i16384!8i8192" class="imglink" target="_blank">
+						<img src="img/highwaySigns/countyRoads/cr_WY_1.jpg" alt="Wyoming county rd sign" id="WY_1" class="zoomA" loading="lazy" />
+					</a><p class="country">Natrona Co</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+			<span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+			<div class="w3-modal-content">
+				<img id="img01" style="width:100%">
+			</div>
+		</div>
+		<script>
+			function big_ohio_map() { $("#ohio_map").click() }
+			function enlarge_pic(element) {
+				document.getElementById("img01").src = element.src;
+				document.getElementById("modal01").style.display = "block";
+			}
+		</script>
+	</body>
+</html>
