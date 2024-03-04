@@ -711,6 +711,9 @@ function new_game(rid = 25) {
 	} else if (rid == 10) { // All Recipes
 		flags['cliff_intro'] == 0;
 		flags['recipe_ellen'] = 0;
+		flags['recipe_saibara'] = 0;
+		flags['recipe_potion_master'] = 0;
+		flags['recipe_kai'] = 0;
 	} else if (rid == 11) { // Cow Photo
 		
 	} else if (rid == 24) { // All Girl Photos
