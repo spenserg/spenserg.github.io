@@ -4,6 +4,7 @@ get_actions_all_recipes = function (d = 3, g = 300, is_sunny = 1) {
 	var reset_reason = "";
 
 	var cliff_id = get_npc_id('cliff');
+	var doug_id = get_npc_id('doug');
 	var ellen_id = get_npc_id('ellen');
 	var gotz_id = get_npc_id('gotz');
 	var grey_id = get_npc_id('grey');
@@ -18,13 +19,35 @@ get_actions_all_recipes = function (d = 3, g = 300, is_sunny = 1) {
 		a.push({'desc':"Meet the Mayor", 'iid':mayor_id});
 	} else if (d == 54 || d == 174) { // Swim Festival
 		a.push({'desc':"Win Swim Fest", 'iid':mayor_id, 'cid':[grey_id, cliff_id], 'val':[8, 8]});
-	} else if (d == 83) {
-			// TODO Gotz grapes
-		a.push({'desc':"Bridge Work", 'iid':mas_carp_id, 'cid':['v_bridge_days_worked', 'v_gold'], 'val':[1, 1000]});
+	} else if (d == 83 || d == 84) {
+		if (aff[gotz_id] == 0) { a.push({'desc':"Meet",'cid':gotz_id, 'val':2, 'sel':(is_sunny == 1 || (d == 84 && vars['chickens'] == 0))}); }
+		a.push({'desc':"Talk",'cid':gotz_id, 'val':3, 'sr':(aff[gotz_id] == 0), 'sel':(is_sunny == 1 || (d == 84 && vars['chickens'] == 0))});
+		a.push({'desc':"Grapes",'cid':gotz_id, 'val':3, 'sr':true, 'sel':(is_sunny == 1 || (d == 84 && vars['chickens'] == 0))});
+		a.push({'desc':"Bridge Work", 'iid':get_npc_id('mas_carpenter'), 'cid':['v_bridge_days_worked', 'v_gold'], 'val':[1, 1000], 'sel':(is_sunny == 1 || (d == 84 && vars['chickens'] == 0))});
 		a.push({'desc':"get grapes"});
-		if (g >= 500) {
-			// TODO chicken
-			// TODO Gray
+		if (is_sunny == 1) {
+			a.push({'desc':("Talk (MTNS)"), 'cid':cliff_id, 'val':2, 'sel':false});
+			a.push({'desc':"Gift", 'cid':cliff_id, 'val':4, 'sr':true, 'sel':false});
+		}
+		if (g >= 500 && vars['chickens'] == 0) {
+			a.push({'desc':"Buy a Chicken", 'iid':doug_id, 'cid':['v_gold', 'v_chickens'], 'val':[1500, 1], 'sel':(is_sunny == 1 || (d == 84 && vars['chickens'] == 0))});
+		}
+		a.push({'desc':("Talk (" + ((is_sunny == 1) ? "RANCH" : "BARN") + ")"), 'cid':grey_id, 'val':2, 'sel':(is_sunny == 1 || (d == 84 && vars['chickens'] == 0))});
+		a.push({'desc':"Flower", 'cid':grey_id, 'val':2, 'sr':true, 'sel':(is_sunny == 1 || (d == 84 && vars['chickens'] == 0))});
+	} else if (d == 85) { // Fall l25 MON
+		a.push({'desc':"Talk",'cid':gotz_id, 'val':3, 'sr':(aff[gotz_id] == 0), 'sel':(is_sunny == 1)});
+		a.push({'desc':"Grapes",'cid':gotz_id, 'val':3, 'sr':true, 'sel':(is_sunny == 1)});
+		a.push({'desc':"Bridge Work", 'iid':get_npc_id('mas_carpenter'), 'cid':['v_bridge_days_worked', 'v_gold'], 'val':[1, 1000], 'sel':(is_sunny == 1 || (d == 84 && vars['chickens'] == 0))});
+		if (is_sunny == 1) {
+			a.push({'desc':"up ramp to get grapes"});
+			a.push({'desc':("Talk (3 stumps)"), 'cid':cliff_id, 'val':2});
+			a.push({'desc':"Gift ", 'cid':cliff_id, 'val':4, 'sr':true, 't2':"Egg "});
+			a.push({'desc':"Egg ", 'cid':cliff_id, 'val':8, 'sr':true, 'sel':false, 't2':"Gift "});
+		} else {
+			a.push({'desc':"get grapes"});
+			a.push({'desc':("Talk (In Carp House)"), 'cid':cliff_id, 'val':2, 'sel':false});
+			a.push({'desc':"Gift ", 'cid':cliff_id, 'val':4, 'sr':true, 'sel':false, 't2':"Egg "});
+			a.push({'desc':"Egg ", 'cid':cliff_id, 'val':8, 'sr':true, 'sel':false,'t2':"Gift "});
 		}
 	} else if (d == 109) {
 		// Dog Race, 1000 LUM (Win 19)	
