@@ -30,6 +30,42 @@ var gates = {};
 var gate_changes = {};
 var inbounds = {};
 
+function compute (type = -1) {
+	var output = "";
+    var reg;
+    $("#total").html("");
+	rega = /TOW\n(\d+)\n(\d+)\n[\s\S]*LDW\n(\d+)\n(\d+)\n/g;
+	regb = /Flight\n\n([A-Z]{4})[\s\S]+AAL(\d+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,]+)\,[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
+	
+	var fkeystxt = $("#outbound").val();
+	if ((result = rega.exec(fkeystxt)) != null) {
+		var mlwa = parseInt(result[2]) - parseInt(result[1]);
+		var mlwb = parseInt(result[4]) - parseInt(result[3]);
+		output = "MTOW SPREAD: ";
+		if (mlwa < mlwb) {
+			output += ((mlwa > 9999) ? "10K+" : mlwa);
+		} else {
+			output += '<span style="color:';
+			if (mlwb <= 2000) {
+				output += 'red';
+			} else if (mlwb <= 5000) {
+				output += 'orange';
+			} else {
+				output += 'green';
+			}
+			output += '"><b>' + ((mlwb > 9999) ? "10K+" : mlwb) + "</b></span> || Land Wgt Rstr";
+		}
+	} else {
+		console.log("regb parse error");
+	}
+	if ((result = regb.exec(fkeystxt)) != null) {
+		var tmpres = result[2] + '&nbsp;&nbsp;&nbsp;' + result[1] + '&nbsp;&nbsp;&nbsp;' + result[4] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result[3];
+		output = tmpres + '<br/>' + output;
+	}
+	$("#total").html('<br/>' + output);
+	$("#outbound").val("");
+}
+	
 Array.prototype.unique = function() {
     return this.filter(function (value, index, self) {
       return self.indexOf(value) === index;
@@ -54,17 +90,6 @@ function clear_input (type = -1) {
 	if (type == 0) {
 		$("#outbound").val("");
 	}
-}
-
-function compute (type = -1) {
-    var result = "";
-    var reg;
-    $("#total").html("");
-
-	reg = /TOW\n(\d+)\n(\d+)\n[\s\S]*LDW\n(\d+)\n(\d+)\n/g;
-	var fkeystxt = $("#outbound").val();
-	if ((result = reg.exec(ans)) != null) {
-		console.log(result);
-	}
+	$("total").html("");
 }
 </script>
