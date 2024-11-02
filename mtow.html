@@ -32,18 +32,30 @@ var inbounds = {};
 
 function compute (type = -1) {
 	var output = "";
-    var reg;
-    $("#total").html("");
+	var reg;
+	$("#total").html("");
 	rega = /TOW\n(\d+)\n(\d+)\n[\s\S]*LDW\n(\d+)\n(\d+)\n/g;
-	regb = /Flight\n\n([A-Z]{4})[\s\S]+AAL(\d+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,]+)\,[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
+	regb = /Flight\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AAL(\d+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,]+)\,[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
 	
 	var fkeystxt = $("#outbound").val();
 	if ((result = rega.exec(fkeystxt)) != null) {
 		var mlwa = parseInt(result[2]) - parseInt(result[1]);
 		var mlwb = parseInt(result[4]) - parseInt(result[3]);
+
 		output = "MTOW SPREAD: ";
 		if (mlwa < mlwb) {
-			output += ((mlwa > 9999) ? "10K+" : mlwa);
+			output += '<span style="color:';
+			if (mlwa <= 2000) {
+				output += 'red';
+			} else if (mlwa <= 5000) {
+				output += 'orange';
+			} else {
+				output += 'green';
+			}
+			output += '"><b>' + ((mlwb > 9999) ? "10K+" : mlwa) + "</b></span>";
+			if (mlwa <= 5000) {
+				 output += "&nbsp;&nbsp;&nbsp;<b>Takeoff Wgt Rstr</b>";
+			}
 		} else {
 			output += '<span style="color:';
 			if (mlwb <= 2000) {
@@ -53,17 +65,59 @@ function compute (type = -1) {
 			} else {
 				output += 'green';
 			}
-			output += '"><b>' + ((mlwb > 9999) ? "10K+" : mlwb) + "</b></span> || Land Wgt Rstr";
+			output += '"><b>' + ((mlwb > 9999) ? "10K+" : mlwb) + "</b></span>";
+			if (mlwb <= 5000) {
+				 output += "&nbsp;&nbsp;&nbsp;<b>Land Wgt Rstr</b>";
+			}
 		}
 	} else {
 		console.log("regb parse error");
 	}
 	if ((result = regb.exec(fkeystxt)) != null) {
-		var tmpres = result[2] + '&nbsp;&nbsp;&nbsp;' + result[1] + '&nbsp;&nbsp;&nbsp;' + result[4] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result[3];
+		/*
+	 	*	1 - Dptr Station
+	 	*	2 - Arvl Station
+	   	*	3 - Flt Number
+		* 	4 - Captain
+	   	*	5 - Tail Number
+		*/
+		var tmpres = result[3] + '&nbsp;&nbsp;&nbsp;' + result[1] + '&nbsp;&nbsp;&nbsp;' + result[5] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result[4];
 		output = tmpres + '<br/>' + output;
+	} else {
+		console.log("flifo parse error");
 	}
+	output = airport_extra(result[1], result[2], output);
 	$("#total").html('<br/>' + output);
 	$("#outbound").val("");
+}
+
+function airport_extra (dptr = "XXX", arvl = "XXX", result = "") {
+	dptr = ((dptr.length == 4) ? (dptr.substr(1, 4)) : dptr);
+	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
+
+	switch(dptr) {
+		case "AUS":
+			break;
+		case "DFW":
+			break;
+		case "MIA":
+			result += "<br/><br/>MIA - GLADZ EAST FLOW // BNGOS WEST FLOW";
+			break;
+		case "RNO":
+			result += "<br/><br/>RNO - ALPYN NORTH FLOW // ZEFFR SOUTH FLOW";
+			break;
+	}
+
+	switch(arvl) {
+		case "DFW":
+			result += "<br/><br/>DFW SOUTH FLOW - VKTRY / SEEVR / BOOVE / BEREE<br/>DFW NORTH FLOW - JOVEM / BRDJE / SOCKK / WHINY";
+			break;
+		case "IAH":
+			result += "<br/><br/>IAH - DRLLR WEST FLOW // GUSHR EAST FLOW";
+			break;
+	}
+	
+	return result;
 }
 	
 Array.prototype.unique = function() {
