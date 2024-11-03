@@ -13,22 +13,30 @@
 <body>
 	FKeys Page: <textarea id="outbound" rows="5"></textarea>&nbsp;&nbsp;
 	<button onclick="compute(0)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
-<!--
-	Inbound DSN: <textarea id="dsn" rows="5"></textarea>
-	<button onclick="compute(3)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(3)">Clear</button><br/>
-	Inbound List: <textarea id="inbound" rows="5"></textarea>&nbsp;&nbsp;
-	<button onclick="compute(1)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(1)">Clear</button><br/>
-	Rollover List: <textarea id="rollover" rows="5"></textarea>&nbsp;&nbsp;
-	<button onclick="compute(2)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(2)">Clear</button><br/>
-	Ans: <textarea id="ans_txt" rows="5" style="width:300px"></textarea>
--->
 	<div id="total"></div>
 </body>
 
 <script>
-var gates = {};
-var gate_changes = {};
-var inbounds = {};
+const M738 = ["3RA", "3RB", "3RC", "3RD", "3RE", "3RF", "3RG", "3RH", "3RJ", "3RK", "3RL", "3RM", "3RN", "3RP", "3RR", "3RS", "3RT", "3RU", "3RV", "3RW", "3RX", "3RY", "3SA", "3SB", "3SC", "3SD", "3SE", "3SF", "3SG", "3SH", "3SJ", "3SK", "3SL", "3SM", "3SN", "3SP", "3SR", "3SS", "3ST", "3SU", "3SV", "3SW", "3SX", "3SY", "3TA", "3TB", "3TC", "3TD", "3TE", "3TF", "3TG", "3TH", "3TJ", "3TK", "3TL", "3TM", "3TN", "3TP", "3TR", "3TS", "3TT", "3TU", "3TV", "3TW", "3TX", "3TY", "3UA", "3UB", "3UC", "3UD", "3UE", "3UF", "3UG", "3UH", "3UJ", "3UK", "3UL", "3UM", "3UN", "3UP", "3UR", "3US", "3UT", "3UU", "3UV", "3UW", "3UX", "3UY", "3VA", "3VB", "3VC", "3VD", "3VE", "3VF", "3VG", "3VH", "3VJ", "3VK", "3VL", "3VM"];
+const K738 = ["3AA", "3AB", "3AC", "3AD", "3AE", "3AF", "3AG", "3AH", "3AJ", "3AK", "3AL", "3AM", "3AN", "3AP", "3AR", "3AS", "3AT", "3AU", "3AV", "3AW", "3AX", "3AY", "3BA", "3BB", "3BC", "3BD", "3BE", "3BF", "3BG", "3BH", "3BJ", "3BK", "3BL", "3BM", "3BN", "3BP", "3BR", "3BS", "3BT", "3BU", "3BV", "3BW", "3BX", "3BY", "3CA", "3CB", "3CC", "3CD", "3CE", "3CF", "3CG", "3CH", "3CJ", "3CK", "3CL", "3CM", "3CN", "3CP", "3CR", "3CS", "3CT", "3CU", "3CV", "3CW", "3CX", "3CY", "3DA", "3DB", "3DC", "3DD", "3DE", "3DF", "3DG", "3DH", "3DJ", "3DM", "3DN", "3DP", "3DR", "3DS", "3DT", "3DU", "3DV", "3DW", "3DX", "3DY", "3EA", "3EB", "3EC", "3ED", "3EE", "3EF", "3EG", "3EH", "3EJ", "3EK", "3EL", "3EM", "3EN", "3EP", "3ER", "3ES", "3ET", "3EU", "3EV", "3EW", "3EX", "3EY", "3FA", "3FB", "3FC", "3FD", "3FE", "3FF", "3FG", "3FH", "3FJ", "3FK", "3FL", "3FM", "3FN", "3FP", "3FR", "3FS", "3FT", "3FU", "3FV", "3FW", "3FX", "3FY", "3GA", "3GB", "3GC", "3GD", "3GE", "3GF", "3GG", "3GH", "3GJ", "3GK", "3GL", "3GM", "3GN", "3GP", "3GR", "3GS", "3GT", "3GU", "3GV", "3GW", "3GX", "3GY", "3HA", "3HB", "3HC", "3HD", "3HE", "3HF", "3HG", "3HH", "3HJ", "3HK", "3HL", "3HM", "3HN", "3HP", "3HR", "3HS", "3HT", "3HU", "3HV", "3HW", "3HX", "3HY", "3JA", "3JB", "3JC", "3JD", "3JE", "3JF", "3JG", "3JH", "3JJ", "3JK", "3JL", "3JM", "3JN", "3JP", "3JR", "3JS", "3JT", "3JU", "3JV", "3JW", "3JX", "3JY", "3KA", "3KB", "3KC", "3KD", "3KE", "3KF", "3KG", "3KH", "3KJ", "3KK", "3KL", "3KM", "3KN", "3KP", "3KR", "3KS", "3KT", "3KU", "3KV", "3KW", "3KX", "3KY", "3LA", "3LB"];
+const R738 = ["3LC", "3LD", "3LE", "3LF", "3LG", "3LH", "3LJ", "3LK", "3LL", "3LM", "3LN", "3LP", "3LR", "3LS", "3LT", "3LU", "3LV", "3LW", "3LX", "3LY", "3MA", "3MB", "3MC", "3MD", "3ME", "3MF", "3MG", "3MH", "3MJ", "3MK", "3ML", "3MM", "3MN", "3MP", "3MR", "3MU", "3MV", "3MW", "3MX", "3MY", "3NA", "3NB", "3NC", "3ND", "3NE", "3NF", "3NG", "3NH", "3NJ", "3NK", "3NL", "3NM", "3NN", "3NP", "3NR", "3NS", "3NT", "3NU", "3NV", "3NW", "3NX", "3NY", "3PA", "3PB", "3PC", "3PD", "3PE", "3PF", "3PG", "3PH", "3PJ", "3PK", "3PL", "3PM", "3PN", "3PP", "3PR", "3PS", "3PT", "3PU"];
+const T321 = ["783", "784", "785", "786", "787", "788", "789", "790", "791", "792", "793", "794", "795", "798", "799"];
+const S319 = ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013", "014", "015", "016", "017", "018", "019", "020", "021", "022", "023", "024", "025", "026", "027", "028", "029", "030", "031", "032"];
+const H319 = ["742", "744", "745", "746", "747", "748", "749", "750", "751", "752", "753", "754", "755", "756", "757", "758", "760", "762", "763", "764", "765", "766", "767", "768", "769", "770", "771", "772", "773", "774", "775", "776", "777", "778", "801", "802", "803", "804", "805", "806", "807", "808", "809", "810", "812", "813", "814", "815", "816", "817", "818", "819", "820", "821", "822", "823", "824", "825", "826", "827", "828", "829", "830", "831", "832", "833", "834", "835", "836", "837", "838", "839", "840"];
+const W319 = ["700", "701", "702", "703", "704", "705", "708", "709", "710", "711", "712", "713", "714", "715", "716", "717", "721", "722", "723", "724", "725", "730", "732", "733", "737", "738", "740", "741"];
+const A320 = ["102", "103", "104", "105", "107", "108", "109", "110", "111", "112", "114", "117", "118", "119", "121", "122", "123", "124", "125", "126", "127", "128"];
+const H205 = ["601", "604", "647", "649", "650", "651", "652", "653", "654", "655", "656", "657", "658", "659", "660", "661", "662", "663", "664", "665", "667", "668", "669", "673", "679", "680"];
+const A321 = ["191", "540", "544", "549", "559"];
+const E321 = ["400", "401", "402", "403", "404", "405", "406", "407", "408", "409", "410", "411", "412", "413", "414", "415", "416", "417", "418", "419", "420", "421", "422", "423", "424", "425", "426", "427", "428", "429", "430", "431", "432", "433", "434", "435", "436", "437", "438", "439", "440", "441", "442", "443", "444", "445", "446", "447", "448", "449", "450", "451", "452", "453", "454", "455", "456", "457", "458", "459", "460", "461", "462", "463", "464", "465", "466", "467", "468", "469", "470", "471", "472", "473"];
+const K321 = ["150", "151", "152", "153", "154", "155", "156", "157", "161", "162", "163", "165", "167", "169", "170", "171", "172", "173", "174", "176", "177", "178", "179", "180", "181", "182", "183", "184", "185", "186", "187", "188", "189", "190", "192", "193", "194", "195", "196", "197", "198", "199", "507", "508", "509", "510", "519", "521", "523", "524", "534", "535", "536", "537", "538", "539", "542", "543", "545", "546", "551", "552", "553", "554", "556", "557", "558", "560", "561", "562", "563", "567", "568", "572", "573", "575", "576", "578", "579", "580", "581", "582", "583", "584", "585", "586", "587", "912", "913", "914", "915", "916", "917", "918", "919", "920", "921", "922", "923", "924", "925", "926", "927", "970", "971", "972", "973", "974", "975", "976", "977", "978", "979", "980", "981", "982"];
+const R321 = ["797", "850", "851", "852", "853", "854", "855", "856", "857", "858", "859", "860", "861", "862", "863", "864", "865", "866", "867", "868", "869", "870", "871", "872", "873", "874", "875", "876", "877", "878", "879", "880", "881", "882", "883", "884", "885", "886", "887", "888", "889", "890", "891", "892", "893", "894", "895", "896", "897", "898", "899", "900", "901", "902", "903", "904", "905", "906", "907", "908", "909", "910", "928", "929", "930", "931", "932", "933", "934", "986", "987", "988", "989", "990", "991", "992", "993", "994", "995", "996", "997", "998"];
+const N321 = ["950", "951", "952", "953", "954", "955", "956", "957", "958", "959"];
+const W773 = ["7LA", "7LB", "7LC", "7LD", "7LE", "7LF", "7LG", "7LH", "7LJ", "7LK", "7LL", "7LM", "7LN", "7LP", "7LR", "7LS", "7LT", "7LU", "7LV", "7LW"];
+const B772 = ["7AA", "7AB", "7AC", "7AD", "7AE", "7AF", "7AG", "7AH", "7AJ", "7AK", "7AL", "7AM", "7AN", "7AP", "7AR", "7AS", "7AT", "7AU", "7AV", "7AW", "7AX", "7AY", "7BA", "7BB", "7BC", "7BD", "7BE", "7BF", "7BG", "7BH", "7BJ", "7BK", "7BL", "7BM", "7BN", "7BP", "7BR", "7BS", "7BT", "7BU", "7BV", "7BW", "7BX", "7BY", "7CA", "7CB", "7CC"];
+const A332 = ["279", "280", "281", "282", "283", "284", "285", "286", "287", "288", "289", "290", "291", "292", "293"];
+const E787 = ["8AA", "8AB", "8AC", "8AD", "8AE", "8AF", "8AG", "8AH", "8AJ", "8AK", "8AL", "8AM", "8AN", "8AP", "8AR", "8AS", "8AT", "8AU", "8AV", "8AW", "8AX", "8AY", "8BA", "8BB", "8BC", "8BD", "8BE", "8BF", "8BG", "8BH"];
+const N787 = ["8LA", "8LB", "8LC", "8LD", "8LE", "8LF", "8LG", "8LH", "8LJ", "8LK", "8LL", "8LM", "8LN", "8LP", "8LR", "8LS", "8LT", "8LU", "8LV", "8LW", "8LX", "8LY"];
+const P789 = ["8MA", "8MB", "8MC", "8MD"];
 
 function compute (type = -1) {
 	var output = "";
@@ -36,6 +44,9 @@ function compute (type = -1) {
 	$("#total").html("");
 	rega = /TOW\n(\d+)\n(\d+)\n[\s\S]*LDW\n(\d+)\n(\d+)\n/g;
 	regb = /Flight\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AAL(\d+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,]+)\,[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
+
+	// Tanker | Ferry Fuel
+	regc = /(\d+)\t\d+\:\d+\tH\n+TOTAL/g;
 	
 	var fkeystxt = $("#outbound").val();
 	if ((result = rega.exec(fkeystxt)) != null) {
@@ -86,6 +97,15 @@ function compute (type = -1) {
 	} else {
 		console.log("flifo parse error");
 	}
+	if ((tmpres = regc.exec(fkeystxt)) != null) {
+		output += "<br/>Ferry Fuel: <b>" + tmpres[1] + "</b>";
+	}
+
+	// Plane specific
+	var ac_type = "<br/>" +get_ac_type(result[5]);
+	output += ac_type
+
+	// Airport Specific
 	output = airport_extra(result[1], result[2], output);
 	$("#total").html('<br/>' + output);
 	$("#outbound").val("");
@@ -100,6 +120,13 @@ function airport_extra (dptr = "XXX", arvl = "XXX", result = "") {
 			break;
 		case "DFW":
 			break;
+		case "DCA":
+			result += "<br/><br/>Curfew rstr 2200L - 0659L"; 
+			break;
+		case "EGE":
+			result += "<br/><br/>Rwy 25 is preferred, even with tailwind";
+			result += "<br/><br/>VAA 25X for icing conditions 1000 - 10,000 Feet";
+			break;
 		case "MIA":
 			result += "<br/><br/>MIA - GLADZ EAST FLOW // BNGOS WEST FLOW";
 			break;
@@ -109,8 +136,15 @@ function airport_extra (dptr = "XXX", arvl = "XXX", result = "") {
 	}
 
 	switch(arvl) {
+		case "DCA":
+			result += "<br/><br/>Curfew rstr 2200L - 0659L"; 
+			break;
 		case "DFW":
 			result += "<br/><br/>DFW SOUTH FLOW - VKTRY / SEEVR / BOOVE / BEREE<br/>DFW NORTH FLOW - JOVEM / BRDJE / SOCKK / WHINY";
+			break;
+		case "EGE":
+			result += "<br/><br/>Send RAIM Check RNP .11 // LAWS above 37C";
+			result += "<br/><br/>MALSR and PAPI required for night arrivals. RWY 7 N/A after Civil Twilght";
 			break;
 		case "IAH":
 			result += "<br/><br/>IAH - DRLLR WEST FLOW // GUSHR EAST FLOW";
@@ -124,6 +158,64 @@ Array.prototype.unique = function() {
     return this.filter(function (value, index, self) {
       return self.indexOf(value) === index;
     });
+}
+
+function get_ac_type(tail = "") {
+	if (tail.length != 3) { return null; }
+	var first = parseInt(tail.charAt(0));
+	if (isNaN(first)) { return null; }
+	switch (first) {
+		case 0:
+			if (S319.includes(tail)) { return "319S"; };
+			break;
+		case 1:
+			if (A320.includes(tail)) { return "A320"; };
+			if (A321.includes(tail)) { return "A321"; };
+			if (K321.includes(tail)) { return "321K"; };
+			break;
+		case 2:
+			if (A332.includes(tail)) { return "A332"; };
+			break;
+		case 3:
+			if (M738.includes(tail)) { return "738M"; };
+			if (K738.includes(tail)) { return "738K"; };
+			if (R738.includes(tail)) { return "738R"; };
+			break;
+		case 4:
+			if (E321.includes(tail)) { return "321E"; };
+			break;
+		case 5:
+			if (A321.includes(tail)) { return "A321"; };
+			if (K321.includes(tail)) { return "321K"; };
+			break;
+		case 6:
+			if (H205.includes(tail)) { return "H205"; };
+			break;
+		case 7:
+			if (isNaN(parseInt(tail.charAt(1)))) {
+				if (E787.includes(tail)) { return "7878"; };
+				if (N787.includes(tail)) { return "7879"; };
+				if (P789.includes(tail)) { return "789P"; };
+				if (B772.includes(tail)) { return "B772"; };
+				if (W773.includes(tail)) { return "773W"; };
+			} else {
+				if (T321.includes(tail)) { return "321T"; };
+				if (H319.includes(tail)) { return "H319"; };
+				if (W319.includes(tail)) { return "319W"; };
+				if (R321.includes(tail)) { return "321R"; };
+			}
+			break;
+		case 8:
+			if (H319.includes(tail)) { return "H319"; };
+			if (R321.includes(tail)) { return "321R"; };
+			break;
+		case 9:
+			if (K321.includes(tail)) { return "321K"; };
+			if (R321.includes(tail)) { return "321R"; };
+			if (M321.includes(tail)) { return "321M"; };
+			break;
+	}
+	return null;
 }
 
 function get_month_name(id = -1) {
