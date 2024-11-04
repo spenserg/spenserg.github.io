@@ -43,11 +43,8 @@ function compute (type = -1) {
 	var reg;
 	$("#total").html("");
 	rega = /TOW\n(\d+)\n(\d+)\n[\s\S]*LDW\n(\d+)\n(\d+)\n/g;
-	regb = /Flight\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AAL(\d+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,]+)\,[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
+	regb = /Flight\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AAL(\d+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,\n\.]+)[\,\n\.][^\n]*\n[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
 
-	// Tanker | Ferry Fuel
-	regc = /(\d+)\t\d+\:\d+\tH\n+TOTAL/g;
-	
 	var fkeystxt = $("#outbound").val();
 	if ((result = rega.exec(fkeystxt)) != null) {
 		var mlwa = parseInt(result[2]) - parseInt(result[1]);
@@ -94,24 +91,28 @@ function compute (type = -1) {
 		*/
 		var tmpres = result[3] + '&nbsp;&nbsp;&nbsp;' + result[1] + '&nbsp;&nbsp;&nbsp;' + result[5] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result[4];
 		output = tmpres + '<br/>' + output;
+
+		// Plane specific
+		var ac_type = get_ac_type(result[5]);
+		output += "<br/>" + ac_type;
+
+		// Airport Specific
+		output = airport_extra(result[1], result[2], result[5], ac_type, output);
 	} else {
 		console.log("flifo parse error");
 	}
+
+	// Tanker | Ferry Fuel
+	regc = /(\d+)\t\d+\:\d+\tH\n+TOTAL/g;
 	if ((tmpres = regc.exec(fkeystxt)) != null) {
 		output += "<br/>Ferry Fuel: <b>" + tmpres[1] + "</b>";
 	}
 
-	// Plane specific
-	var ac_type = "<br/>" +get_ac_type(result[5]);
-	output += ac_type
-
-	// Airport Specific
-	output = airport_extra(result[1], result[2], output);
 	$("#total").html('<br/>' + output);
 	$("#outbound").val("");
 }
 
-function airport_extra (dptr = "XXX", arvl = "XXX", result = "") {
+function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, result = "") {
 	dptr = ((dptr.length == 4) ? (dptr.substr(1, 4)) : dptr);
 	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
 
@@ -121,7 +122,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", result = "") {
 		case "DFW":
 			break;
 		case "DCA":
-			result += "<br/><br/>Curfew rstr 2200L - 0659L"; 
+			result += "<br/><br/>Curfew rstr 2200L - 0659L";
+			var tmp_mtow = get_dca_mtow(ac_type, tail);
+			if (tmp_mtow != null) { result += "<br/>" + tmp_mtow; }
 			break;
 		case "EGE":
 			result += "<br/><br/>Rwy 25 is preferred, even with tailwind";
@@ -137,7 +140,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", result = "") {
 
 	switch(arvl) {
 		case "DCA":
-			result += "<br/><br/>Curfew rstr 2200L - 0659L"; 
+			result += "<br/><br/>Curfew rstr 2200L - 0659L";
+			var tmp_mlw = get_dca_mlw(ac_type, tail);
+			if (tmp_mlw != null) { result += "<br/>" + tmp_mtow; }
 			break;
 		case "DFW":
 			result += "<br/><br/>DFW SOUTH FLOW - VKTRY / SEEVR / BOOVE / BEREE<br/>DFW NORTH FLOW - JOVEM / BRDJE / SOCKK / WHINY";
@@ -150,7 +155,6 @@ function airport_extra (dptr = "XXX", arvl = "XXX", result = "") {
 			result += "<br/><br/>IAH - DRLLR WEST FLOW // GUSHR EAST FLOW";
 			break;
 	}
-	
 	return result;
 }
 	
@@ -158,6 +162,45 @@ Array.prototype.unique = function() {
     return this.filter(function (value, index, self) {
       return self.indexOf(value) === index;
     });
+}
+
+function get_dca_mtow(ac_type = null, tail = null) {
+	if (ac_type == null) { return null; }
+	if (ac_type == "319S") { return "MTOW 162.600 to comply with DCA curfew noise limits"; }
+	if (["319W","H319"].includes(ac_type)) {
+		// H319 with IAE engines
+		if (parseInt(tail.charAt(0)) == 8) { return "MTOW 153.000 to comply with DCA curfew noise limits"; }
+		//H319 with CFM engines and 319W
+		return "MTOW 159.700 to comply with DCA curfew noise limits";
+	}
+	if (ac_type == "A320") { return "MTOW 165.500 to comply with DCA curfew noise limits"; }
+	if (ac_type == "H205") { return "MTOW 158.900 to comply with DCA curfew noise limits"; }
+	if (["321R", "321T", "321K"].includes(ac_type)) {
+		// 321K with CFM engines
+		if (parseInt(tail.charAt(0)) == 1) { return "MTOW 153.000 to comply with DCA curfew noise limits"; }
+		// 321R, 321T, and 321K with IAE engines
+		return "MTOW 184.400 to comply with DCA curfew noise limits";
+	}
+	if (ac_type == "321E") { return "No DCA curfew MTOW penalties for A321 NX acft"; }
+	if (["738K", "738R"].includes(ac_type)) { return "MTOW 166.800 to comply with DCA curfew noise limits"; }
+	if (ac_type == "738M") { return "No DCA curfew MTOW penalties for B737 MAX acft"; }
+	return null;
+}
+
+function get_dca_mlw(ac_type = null, tail = null) {
+	if (ac_type == null) { return null; }
+	if (["319S", "319W", "H319"].includes(ac_type)) { return "No DCA curfew MLW penalties for A319 acft"; }
+	if (["A320", "H205"].includes(ac_type)) { return "No DCA curfew MLW penalties for A320 acft"; }
+	if (["321R", "321T", "321K"].includes(ac_type)) {
+		// 321K with CFM engines
+		if (parseInt(tail.charAt(0)) == 1) { return "MLW 131.700 to comply with DCA curfew noise limits"; }
+		// 321R, 321T, and 321K with IAE engines
+		return "MLW 166.400 to comply with DCA curfew noise limits";
+	}
+	if (ac_type == "321E") { return "No DCA curfew MLW penalties for A321 NX acft"; }
+	if (["738K", "738R"].includes(ac_type)) { return "MLW 140.200 to comply with DCA curfew noise limits"; }
+	if (ac_type == "738M") { return "No DCA curfew MLW penalties for B737 MAX acft"; }
+	return null;
 }
 
 function get_ac_type(tail = "") {
