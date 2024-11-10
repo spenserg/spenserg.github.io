@@ -167,7 +167,7 @@ Array.prototype.unique = function() {
       return self.indexOf(value) === index;
     });
 }
-
+/*
 function get_wind_limits(ac_type = null, tail = null) {
 	if (ac_type == null) { return null; }
 	var wind_limits = ["takeoff" => ["headwind" => 50], "landing" => ["headwind" => 50]];
@@ -211,7 +211,7 @@ function get_wind_limits(ac_type = null, tail = null) {
 	}
 	return null;
 }
-
+*/
 function get_dca_mtow(ac_type = null, tail = null) {
 	if (ac_type == null) { return null; }
 	if (ac_type == "319S") { return "MTOW 162.600 to comply with DCA curfew noise limits"; }
