@@ -106,6 +106,7 @@ function compute (type = -1) {
 	regc = /(\d+)\t\d+\:\d+\tH\n+TOTAL/g;
 	if ((tmpres = regc.exec(fkeystxt)) != null) {
 		output += "<br/>Ferry Fuel: <b>" + tmpres[1] + "</b>";
+		
 	}
 
 	$("#total").html('<br/>' + output);
@@ -139,6 +140,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 	}
 
 	switch(arvl) {
+		case "ATL":
+			result += "<br/><br/>ATL - SITTH EAST FLOW // JJEDI WEST FLOW";
+			break;
 		case "DCA":
 			result += "<br/><br/>Curfew rstr 2200L - 0659L";
 			var tmp_mlw = get_dca_mlw(ac_type, tail);
@@ -162,6 +166,50 @@ Array.prototype.unique = function() {
     return this.filter(function (value, index, self) {
       return self.indexOf(value) === index;
     });
+}
+
+function get_wind_limits(ac_type = null, tail = null) {
+	if (ac_type == null) { return null; }
+	var wind_limits = ["takeoff" => ["headwind" => 50], "landing" => ["headwind" => 50]];
+
+	if (ac_type == "319S") {}
+	if (["319W","H319"].includes(ac_type)) {
+		if (parseInt(tail.charAt(0)) == 8) {
+			// H319 with IAE engines
+		} else {
+			//H319 with CFM engines and 319W
+		}
+	}
+	if (ac_type == "A320") {
+		
+	}
+	if (ac_type == "H205") {
+		
+	}
+	if (["321R", "321T", "321K"].includes(ac_type)) {
+		if (parseInt(tail.charAt(0)) == 1) {
+			// 321K with CFM engines
+			
+		} else {
+			// 321R, 321T, and 321K with IAE engines
+		}
+	}
+	if (ac_type == "321E") {
+		
+	}
+	if (["738K", "738R", "738M"].includes(ac_type)) {
+		// B737 NG and MAX
+		wind_limits["xwind"] = [
+			"takeoff" => ["tailwind" => 15],
+			"landing" => ["tailwind" => 10],
+			"hudto" => ["tailwind" => 10]
+		];
+		if (ac_type == "738M") {
+			// B737 MAX Only
+
+		}
+	}
+	return null;
 }
 
 function get_dca_mtow(ac_type = null, tail = null) {
@@ -255,7 +303,7 @@ function get_ac_type(tail = "") {
 		case 9:
 			if (K321.includes(tail)) { return "321K"; };
 			if (R321.includes(tail)) { return "321R"; };
-			if (M321.includes(tail)) { return "321M"; };
+			if (N321.includes(tail)) { return "321N"; };
 			break;
 	}
 	return null;
@@ -279,6 +327,6 @@ function clear_input (type = -1) {
 	if (type == 0) {
 		$("#outbound").val("");
 	}
-	$("total").html("");
+	$("#total").html("");
 }
 </script>
