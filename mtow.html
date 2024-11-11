@@ -94,7 +94,24 @@ function compute (type = -1) {
 
 		// Plane specific
 		var ac_type = get_ac_type(result[5]);
-		output += "<br/>" + ac_type;
+		// Approach Category
+		output += "<br/>" + ac_type + "&nbsp;&nbsp;&nbsp;CAT ";
+		if (["319S", "H319", "319W", "A320", "H205", "B772"].includes(ac_type)) {
+			// Cat C
+			output += "C"; //121-141 Kts
+		} else if (["738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "773W", "7878", "7879"].includes(ac_type)) {
+			// Cat D
+			output += "D"; // 141-165 Kts
+		} else { output += "Unknown"; }
+		// Cost Index
+		output += "&nbsp;&nbsp;||&nbsp;&nbsp;ci: ";
+		if (["319S", "H319", "319W", "A320", "H205", "738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N"].includes(ac_type)) {
+			// Narrow Body
+			output += "10 - 80";
+		} else if (["B772", "773W", "7878", "7879"].includes(ac_type)) {
+			// Wide Body
+			output += "40 - 300";
+		} else { output += "Unknown"; }
 
 		// Airport Specific
 		output = airport_extra(result[1], result[2], result[5], ac_type, output);
@@ -128,8 +145,10 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			if (tmp_mtow != null) { result += "<br/>" + tmp_mtow; }
 			break;
 		case "EGE":
+			result += "<br/><br/>Can handle 3 acft max: 2 gates + deice pad. Expect station to call for delay.";
+			result += "<br/>ARFF manages snow plow ops and notams";
 			result += "<br/><br/>Rwy 25 is preferred, even with tailwind";
-			result += "<br/><br/>VAA 25X for icing conditions 1000 - 10,000 Feet";
+			result += "<br/>VAA 25X for icing conditions 1000 - 10,000 Feet";
 			break;
 		case "MIA":
 			result += "<br/><br/>MIA - GLADZ EAST FLOW // BNGOS WEST FLOW";
@@ -152,8 +171,11 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>DFW SOUTH FLOW - VKTRY / SEEVR / BOOVE / BEREE<br/>DFW NORTH FLOW - JOVEM / BRDJE / SOCKK / WHINY";
 			break;
 		case "EGE":
+			result += "<br/><br/>Can handle 3 acft max: 2 gates + deice pad. Expect station to call for delay.";
+			result += "<br/>ARFF manages snow plow ops and notams";
 			result += "<br/><br/>Send RAIM Check RNP .11 // LAWS above 37C";
-			result += "<br/><br/>MALSR and PAPI required for night arrivals. RWY 7 N/A after Civil Twilght";
+			result += "<br/>MALSR and PAPI required for night arrivals.";
+			result += "<br/>RWY 7 and Visual 25 N/A after Civil Twilght";
 			break;
 		case "IAH":
 			result += "<br/><br/>IAH - DRLLR WEST FLOW // GUSHR EAST FLOW";
