@@ -12,14 +12,14 @@
 
 <body>
 	FKeys Page: <textarea id="outbound" rows="5"></textarea>&nbsp;&nbsp;
-	<button onclick="compute(0)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
+	<button id="go_button" onclick="compute(0)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
 	<div id="total"></div>
 </body>
 
 <script>
 const M738 = ["3RA", "3RB", "3RC", "3RD", "3RE", "3RF", "3RG", "3RH", "3RJ", "3RK", "3RL", "3RM", "3RN", "3RP", "3RR", "3RS", "3RT", "3RU", "3RV", "3RW", "3RX", "3RY", "3SA", "3SB", "3SC", "3SD", "3SE", "3SF", "3SG", "3SH", "3SJ", "3SK", "3SL", "3SM", "3SN", "3SP", "3SR", "3SS", "3ST", "3SU", "3SV", "3SW", "3SX", "3SY", "3TA", "3TB", "3TC", "3TD", "3TE", "3TF", "3TG", "3TH", "3TJ", "3TK", "3TL", "3TM", "3TN", "3TP", "3TR", "3TS", "3TT", "3TU", "3TV", "3TW", "3TX", "3TY", "3UA", "3UB", "3UC", "3UD", "3UE", "3UF", "3UG", "3UH", "3UJ", "3UK", "3UL", "3UM", "3UN", "3UP", "3UR", "3US", "3UT", "3UU", "3UV", "3UW", "3UX", "3UY", "3VA", "3VB", "3VC", "3VD", "3VE", "3VF", "3VG", "3VH", "3VJ", "3VK", "3VL", "3VM"];
 const K738 = ["3AA", "3AB", "3AC", "3AD", "3AE", "3AF", "3AG", "3AH", "3AJ", "3AK", "3AL", "3AM", "3AN", "3AP", "3AR", "3AS", "3AT", "3AU", "3AV", "3AW", "3AX", "3AY", "3BA", "3BB", "3BC", "3BD", "3BE", "3BF", "3BG", "3BH", "3BJ", "3BK", "3BL", "3BM", "3BN", "3BP", "3BR", "3BS", "3BT", "3BU", "3BV", "3BW", "3BX", "3BY", "3CA", "3CB", "3CC", "3CD", "3CE", "3CF", "3CG", "3CH", "3CJ", "3CK", "3CL", "3CM", "3CN", "3CP", "3CR", "3CS", "3CT", "3CU", "3CV", "3CW", "3CX", "3CY", "3DA", "3DB", "3DC", "3DD", "3DE", "3DF", "3DG", "3DH", "3DJ", "3DM", "3DN", "3DP", "3DR", "3DS", "3DT", "3DU", "3DV", "3DW", "3DX", "3DY", "3EA", "3EB", "3EC", "3ED", "3EE", "3EF", "3EG", "3EH", "3EJ", "3EK", "3EL", "3EM", "3EN", "3EP", "3ER", "3ES", "3ET", "3EU", "3EV", "3EW", "3EX", "3EY", "3FA", "3FB", "3FC", "3FD", "3FE", "3FF", "3FG", "3FH", "3FJ", "3FK", "3FL", "3FM", "3FN", "3FP", "3FR", "3FS", "3FT", "3FU", "3FV", "3FW", "3FX", "3FY", "3GA", "3GB", "3GC", "3GD", "3GE", "3GF", "3GG", "3GH", "3GJ", "3GK", "3GL", "3GM", "3GN", "3GP", "3GR", "3GS", "3GT", "3GU", "3GV", "3GW", "3GX", "3GY", "3HA", "3HB", "3HC", "3HD", "3HE", "3HF", "3HG", "3HH", "3HJ", "3HK", "3HL", "3HM", "3HN", "3HP", "3HR", "3HS", "3HT", "3HU", "3HV", "3HW", "3HX", "3HY", "3JA", "3JB", "3JC", "3JD", "3JE", "3JF", "3JG", "3JH", "3JJ", "3JK", "3JL", "3JM", "3JN", "3JP", "3JR", "3JS", "3JT", "3JU", "3JV", "3JW", "3JX", "3JY", "3KA", "3KB", "3KC", "3KD", "3KE", "3KF", "3KG", "3KH", "3KJ", "3KK", "3KL", "3KM", "3KN", "3KP", "3KR", "3KS", "3KT", "3KU", "3KV", "3KW", "3KX", "3KY", "3LA", "3LB"];
-const R738 = ["3LC", "3LD", "3LE", "3LF", "3LG", "3LH", "3LJ", "3LK", "3LL", "3LM", "3LN", "3LP", "3LR", "3LS", "3LT", "3LU", "3LV", "3LW", "3LX", "3LY", "3MA", "3MB", "3MC", "3MD", "3ME", "3MF", "3MG", "3MH", "3MJ", "3MK", "3ML", "3MM", "3MN", "3MP", "3MR", "3MU", "3MV", "3MW", "3MX", "3MY", "3NA", "3NB", "3NC", "3ND", "3NE", "3NF", "3NG", "3NH", "3NJ", "3NK", "3NL", "3NM", "3NN", "3NP", "3NR", "3NS", "3NT", "3NU", "3NV", "3NW", "3NX", "3NY", "3PA", "3PB", "3PC", "3PD", "3PE", "3PF", "3PG", "3PH", "3PJ", "3PK", "3PL", "3PM", "3PN", "3PP", "3PR", "3PS", "3PT", "3PU"];
+const R738 = ["3LC", "3LD", "3LE", "3LF", "3LG", "3LH", "3LJ", "3LK", "3LL", "3LM", "3LN", "3LP", "3LR", "3LS", "3LT", "3LU", "3LV", "3LW", "3LX", "3LY", "3MA", "3MB", "3MC", "3MD", "3ME", "3MF", "3MG", "3MH", "3MJ", "3MK", "3ML", "3MM", "3MN", "3MP", "3MR", "3MU", "3MV", "3MW", "3MX", "3MY", "3NA", "3NB", "3NC", "3ND", "3NE", "3NF", "3NG", "3NH", "3NJ", "3NK", "3NL", "3NM", "3NN", "3NP", "3NR", "3NS", "3NT", "3NU", "3NV", "3NW", "3NX", "3NY", "3PA", "3PB", "3PC", "3PD", "3PE", "3PF", "3PG", "3PH", "3PJ", "3PK", "3PL", "3PM", "3PN", "3PP", "3PR", "3PS", "3PT", "3PU", "3PV", "3PW", "3PX"];
 const T321 = ["783", "784", "785", "786", "787", "788", "789", "790", "791", "792", "793", "794", "795", "798", "799"];
 const S319 = ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013", "014", "015", "016", "017", "018", "019", "020", "021", "022", "023", "024", "025", "026", "027", "028", "029", "030", "031", "032"];
 const H319 = ["742", "744", "745", "746", "747", "748", "749", "750", "751", "752", "753", "754", "755", "756", "757", "758", "760", "762", "763", "764", "765", "766", "767", "768", "769", "770", "771", "772", "773", "774", "775", "776", "777", "778", "801", "802", "803", "804", "805", "806", "807", "808", "809", "810", "812", "813", "814", "815", "816", "817", "818", "819", "820", "821", "822", "823", "824", "825", "826", "827", "828", "829", "830", "831", "832", "833", "834", "835", "836", "837", "838", "839", "840"];
@@ -38,6 +38,15 @@ const E787 = ["8AA", "8AB", "8AC", "8AD", "8AE", "8AF", "8AG", "8AH", "8AJ", "8A
 const N787 = ["8LA", "8LB", "8LC", "8LD", "8LE", "8LF", "8LG", "8LH", "8LJ", "8LK", "8LL", "8LM", "8LN", "8LP", "8LR", "8LS", "8LT", "8LU", "8LV", "8LW", "8LX", "8LY"];
 const P789 = ["8MA", "8MB", "8MC", "8MD"];
 
+const partTimeControlTowers = ["BTV", "CHS", "MAF", "MYR", "PSP", "SJC"];
+
+document.getElementById("outbound").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("go_button").click();
+  }
+});
+
 function compute (type = -1) {
 	var output = "";
 	var reg;
@@ -46,9 +55,18 @@ function compute (type = -1) {
 	regb = /Flight\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AAL(\d+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,\n\.]+)[\,\n\.][^\n]*\n[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
 
 	var fkeystxt = $("#outbound").val();
-	if ((result = rega.exec(fkeystxt)) != null) {
-		var mlwa = parseInt(result[2]) - parseInt(result[1]);
-		var mlwb = parseInt(result[4]) - parseInt(result[3]);
+	var testing = false;
+	// For Testing Station Info
+	// XXXYYY | x = dptr | y = arr
+	if (fkeystxt.length == 6) { testing = true; }
+	
+	if (testing || ((result = rega.exec(fkeystxt)) != null)) {
+		var mlwa = 7777;
+		var mlwb = 7777;
+		if (!testing) {
+			mlwa = parseInt(result[2]) - parseInt(result[1]);
+			mlwb = parseInt(result[4]) - parseInt(result[3]);
+		}
 
 		output = "MTOW SPREAD: ";
 		if (mlwa < mlwb) {
@@ -81,7 +99,7 @@ function compute (type = -1) {
 	} else {
 		console.log("regb parse error");
 	}
-	if ((result = regb.exec(fkeystxt)) != null) {
+	if (testing || ((result = regb.exec(fkeystxt)) != null)) {
 		/*
 	 	*	1 - Dptr Station
 	 	*	2 - Arvl Station
@@ -89,6 +107,15 @@ function compute (type = -1) {
 		* 	4 - Captain
 	   	*	5 - Tail Number
 		*/
+		if (testing) {
+			result = [null,
+				fkeystxt.substring(0, 3).toUpperCase(),
+				fkeystxt.substring(3, 6).toUpperCase(),
+				7777,
+				"TESTING",
+				"3KC"
+			];
+		}
 		var tmpres = result[3] + '&nbsp;&nbsp;&nbsp;' + result[1] + '&nbsp;&nbsp;&nbsp;' + result[5] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result[4];
 		output = tmpres + '<br/>' + output;
 
@@ -123,7 +150,6 @@ function compute (type = -1) {
 	regc = /(\d+)\t\d+\:\d+\tH\n+TOTAL/g;
 	if ((tmpres = regc.exec(fkeystxt)) != null) {
 		output += "<br/>Ferry Fuel: <b>" + tmpres[1] + "</b>";
-		
 	}
 
 	$("#total").html('<br/>' + output);
@@ -135,7 +161,15 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
 
 	switch(dptr) {
-		case "AUS":
+		case "BTV":
+			result += "<br/><br/>BTV - Rwy15 limited due to terrain/ Tower will accommodate rwy33 with tailwind";
+			break;
+		case "BUR":
+			result += "<br/><br/>BUR - ATC prefers 15, even with a tailwind";
+			break;
+		case "COS":
+			result += "<br/><br/>COS - LAWS above 10C";
+			result += "<br/>COS - Rwy31 N/A, see 10-7A-1";
 			break;
 		case "DFW":
 			break;
@@ -145,16 +179,59 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			if (tmp_mtow != null) { result += "<br/>" + tmp_mtow; }
 			break;
 		case "EGE":
-			result += "<br/><br/>Can handle 3 acft max: 2 gates + deice pad. Expect station to call for delay.";
-			result += "<br/>ARFF manages snow plow ops and notams";
-			result += "<br/><br/>Rwy 25 is preferred, even with tailwind";
-			result += "<br/>VAA 25X for icing conditions 1000 - 10,000 Feet";
+			result += "<br/><br/>EGE Rwy 25 is preferred, even with tailwind";
+			result += "<br/>EGE VAA 25X for icing conditions 1000 - 10,000 Feet";
+			result += "<br/>EGE ARFF manages snow plow ops and notams";
+			break;
+		case "JAC":
+			result += "<br/><br/>JAC - ALPIN/TETON S FLOW (rwy19) // DIVYD/GEYSER N FLOW (rwy1)";
+			result += "<br/>JAC - Always check VAA, rwy19 is better";
+			result += "<br/>JAC - Tailwind or Contaminated rwy takeoff N/A";
 			break;
 		case "MIA":
 			result += "<br/><br/>MIA - GLADZ EAST FLOW // BNGOS WEST FLOW";
 			break;
+		case "MTJ":
+			result += "<br/><br/>MTJ Takeoff Mins 300-1, listed in 10-7C (add remark)";
+			break;
+		case "PSP":
+			result += "<br/><br/>PSP - Run VAA for rwy31L";
+			break;
 		case "RNO":
 			result += "<br/><br/>RNO - ALPYN NORTH FLOW // ZEFFR SOUTH FLOW";
+			break;
+		case "SAN":
+			result += "<br/><br/>SAN - SAYOW EAST FLOW // ZZOOO|CLSSY|PEBLE WEST FLOW // ECHHO|FALCC|MMOTO ALL";
+			result += "<br/>SAN - East Flow (Rwy9): Takeoff Mins 600-2// BORDER SID lower mins";
+			result += "<br/>SAN - Curfew rstr: Takeoff prohibited 2330-0630L";
+			break;
+		case "SFO":
+			result += "<br/>";
+			if (["P798", "N787", "E787","B772","W773"].includes(ac_type)) {
+				result += "<br/>Rwy19L N/A and rwy19R N/A for B787 and B777 (See comply memo)";
+			}
+			result += "<br/>SFO curfew (2100-0700L): Dptrs to northeast use NIITE";
+			break;
+		case "SJC":
+			result += "<br/><br/>SJC - ALMDN BMRNG TECKY Rwy12LR // LOUPE SJC3 SPTNS 30LR";
+			result += "<br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
+			result += "<br/>SJC - B737 MAX and A32F NEO exempt from curfew (see 10-7A-2)";
+			break;
+		case "SLC":
+			result += "<br/><br/>SLC - ARCHZ|SEVYR NORTH FLOW // ZIONZ SOUTH FLOW // RUGGD DEZRT BOTH";
+			result += "<br/>SLC - Run VAA in summer";
+			break;
+		case "SNA":
+			result += "<br/>";
+			if (arvl == "PHX") {
+				// Comply memo 3/26/24 Class E SNA Noise Abatement Restrictions
+				result += "<br/><b>SNA - Class E flights rstr MTOW 167.500 on 321E acft</b>";
+			}
+			result += "<br/>SNA - Check VAA, especially when wet";
+			result += "<br/>SNA - Curfew rstr: takeoff N/A without approval 2155-0700L (0800L on Sundays), 15 min extension possible";
+			break;
+		case "TUS":
+			result += "<br/><br/>TUS - BURRO Rwy12 // WLDKT Rwy30 // TUS9 all";
 			break;
 	}
 
@@ -162,25 +239,82 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 		case "ATL":
 			result += "<br/><br/>ATL - SITTH EAST FLOW // JJEDI WEST FLOW";
 			break;
+		case "BHM":
+			result += "<br/><br/>BHM - Landing 18/36 N/A per 10-7";
+			break;
+		case "BUR":
+			result += "<br/><br/>BUR - Voluntary curfew 2200-0700L";
+			result += "<br/>BUR - Wet: Use LAWS, ATC prefers rwy33 and rwy8";
+			break;
+		case "COS":
+			result += "<br/><br/>COS - Rwy31 N/A";
+			break;
 		case "DCA":
 			result += "<br/><br/>Curfew rstr 2200L - 0659L";
 			var tmp_mlw = get_dca_mlw(ac_type, tail);
-			if (tmp_mlw != null) { result += "<br/>" + tmp_mtow; }
+			if (tmp_mlw != null) { result += "<br/>" + tmp_mlw; }
 			break;
 		case "DFW":
 			result += "<br/><br/>DFW SOUTH FLOW - VKTRY / SEEVR / BOOVE / BEREE<br/>DFW NORTH FLOW - JOVEM / BRDJE / SOCKK / WHINY";
 			break;
 		case "EGE":
-			result += "<br/><br/>Can handle 3 acft max: 2 gates + deice pad. Expect station to call for delay.";
-			result += "<br/>ARFF manages snow plow ops and notams";
-			result += "<br/><br/>Send RAIM Check RNP .11 // LAWS above 37C";
-			result += "<br/>MALSR and PAPI required for night arrivals.";
-			result += "<br/>RWY 7 and Visual 25 N/A after Civil Twilght";
+			result += "<br/><br/>EGE Can handle 3 acft max: 2 gates + deice pad. Expect station to call for delay.";
+			result += "<br/>EGE ARFF manages snow plow ops and notams";
+			result += "<br/><br/>EGE: Send RAIM Check RNP .11 // LAWS above 37C";
+			result += "<br/>EGE MALSR and PAPI required for night arrivals.";
+			result += "<br/>EGE RWY 7 and Visual 25 N/A after Civil Twilght";
+			break;
+		case "GUC":
+			result += "<br/><br/>GUC Night: VOR, Circle-to-Land, Visual N/A; RWY 24 N/A";
+			result += "<br/>GUC Cold Temp chart below -26C";
 			break;
 		case "IAH":
 			result += "<br/><br/>IAH - DRLLR WEST FLOW // GUSHR EAST FLOW";
 			break;
+		case "JAC":
+			result += "<br/><br/>JAC - 5k spread on ferry fuel";
+			result += "<br/>JAC Winter: Coordinate for rwy clearing per F-2";
+			result += "<br/>JAC Cold Temp chart below -21C";
+			result += "<br/>JAC Night: Visual approaches N/A, ARFF curfew 2330L";
+			break;
+		case "MTJ":
+			result += "<br/><br/>MTJ No Control Tower at all";
+			result += "<br/>MTJ RWY 13/31 N/A";
+			result += "<br/>MTJ Night: Rwy 35 N/A, no circle to land";
+			break;
+		case "PSP":
+			result += "<br/><br/>PSP - send RAIM check, no ILS procedures";
+			break;
+		case "RIC":
+			result += "<br/><br/>RIC - primary AA gates A6 and A8, AE gates A10 A12 A14";
+			break;
+		case "SAN":
+			result += "<br/><br/>SAN - TOPGN EAST FLOW // LUCKI WEST FLOW";
+			break;
+		case "SJC":
+			result += "<br/><br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
+			result += "<br/>SJC - B737 MAX and A32F NEO exempt from curfew (see 10-7A-2)";
+			break;
+		case "SLC":
+			result += "<br/><br/>SLC - Run LAWS above 30C";
+			break;
+		case "SNA":
+			result += "<br/><br/>SNA - Curfew rstr: landing N/A without approval 2300-0705L (0805L on Sundays), 15 min extension possible";
+			break;
+		case "TUS":
+			result += "<br/><br/>TUS - Run LAWS above 35C";
+			result += "<br/>TUS - RAIM check if landing northwest/rwy30";
+			result += "<br/>TUS - Night: Visual appr N/A (see 10-7B)";
+			break;
+		case "YUL":
+			result += "<br/><br/>YUL - Curfew rstr 0100L - 0700L, Extensions authorized";
+			break;
+		case "YVR":
+			result += "<br/><br/>YVR - Curfew rstr 0000L - 0600L, Extensions authorized";
+			result += "<br/>YVR - Rwy 13/31 N/A";
+			break;
 	}
+	result = add_sara_rmks(arvl, result);
 	return result;
 }
 	
@@ -293,6 +427,7 @@ function get_ac_type(tail = "") {
 			if (M738.includes(tail)) { return "738M"; };
 			if (K738.includes(tail)) { return "738K"; };
 			if (R738.includes(tail)) { return "738R"; };
+			if (["3PV", "3PW", "3PX"].includes(tail)) { return "738R"; }
 			break;
 		case 4:
 			if (E321.includes(tail)) { return "321E"; };
@@ -329,6 +464,16 @@ function get_ac_type(tail = "") {
 			break;
 	}
 	return null;
+}
+
+function add_sara_rmks(arvl = null, result = "") {
+	if (["AVL", "IFP", "BUR", "BTV", "DRO", "EGE", "GDL", "GUC", "HDN", "JAC", "EYW", "BJX", "MEX", "MSO", "MRY", "ONT", "PSP", "OAX", "RDM", "RNO", "SAN", "SFO", "SBP", "DCA"].includes(arvl)) {
+		result += "<br/><br/>SARA airport";
+	}
+	if (["GUC", "JAC", "EYW", "MEX", "OAX", "RDM", "SBP"].includes(arvl)) {
+		result += ": CA needs 75 hrs in AC type// FAM page review required";
+	} else if (arvl == "EGE") { result += ": Capt must have flown into EGE in the last 18 months"; }
+	return result;
 }
 
 function get_month_name(id = -1) {
