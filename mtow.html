@@ -38,7 +38,7 @@ const E787 = ["8AA", "8AB", "8AC", "8AD", "8AE", "8AF", "8AG", "8AH", "8AJ", "8A
 const N787 = ["8LA", "8LB", "8LC", "8LD", "8LE", "8LF", "8LG", "8LH", "8LJ", "8LK", "8LL", "8LM", "8LN", "8LP", "8LR", "8LS", "8LT", "8LU", "8LV", "8LW", "8LX", "8LY"];
 const P789 = ["8MA", "8MB", "8MC", "8MD"];
 
-const partTimeControlTowers = ["BTV", "CHS", "MAF", "MYR", "PSP", "SJC"];
+const partTimeControlTowers = ["BTV", "CHS", "EYW", "MAF", "MSO", "MYR", "PSP", "SJC"];
 
 document.getElementById("outbound").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -161,27 +161,45 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
 
 	switch(dptr) {
+		case "BOI":
+			result += "<br/><br/>Run VAA above 30C";
+			break;
 		case "BTV":
 			result += "<br/><br/>BTV - Rwy15 limited due to terrain/ Tower will accommodate rwy33 with tailwind";
 			break;
 		case "BUR":
 			result += "<br/><br/>BUR - ATC prefers 15, even with a tailwind";
 			break;
+		case "BZN":
+			result += "<br/><br/>BZN - Run VAA above 25C; Rwy30 is about 3k lbs better";
+			break;
 		case "COS":
 			result += "<br/><br/>COS - LAWS above 10C";
 			result += "<br/>COS - Rwy31 N/A, see 10-7A-1";
-			break;
-		case "DFW":
 			break;
 		case "DCA":
 			result += "<br/><br/>Curfew rstr 2200L - 0659L";
 			var tmp_mtow = get_dca_mtow(ac_type, tail);
 			if (tmp_mtow != null) { result += "<br/>" + tmp_mtow; }
 			break;
+		case "DEN":
+			result += "<br/><br/>Run VAA when hot";
+			break;
 		case "EGE":
 			result += "<br/><br/>EGE Rwy 25 is preferred, even with tailwind";
 			result += "<br/>EGE VAA 25X for icing conditions 1000 - 10,000 Feet";
 			result += "<br/>EGE ARFF manages snow plow ops and notams";
+			break;
+		case "EYW":
+			result += "<br/><br/>Wet/Dry definitions FOM 2.1.6";
+			result += "<br/>EYW - Check VAA if wet or departing rwy 5";
+			result += "<br/>Tailwind N/A (1kt is about 10k lbs penalty)";
+			break;
+		case "FAT":
+			result += "<br/><br/>FAT - Run VAA if departing rwy29L (not common)";
+			break;
+		case "GJT":
+			result += "<br/><br/>GJT - Run VAA above 25C";
 			break;
 		case "JAC":
 			result += "<br/><br/>JAC - ALPIN/TETON S FLOW (rwy19) // DIVYD/GEYSER N FLOW (rwy1)";
@@ -190,6 +208,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			break;
 		case "MIA":
 			result += "<br/><br/>MIA - GLADZ EAST FLOW // BNGOS WEST FLOW";
+			break;
+		case "SBA":
+			result += "<br/><br/>Run VAA if using rwy10R";
 			break;
 		case "MTJ":
 			result += "<br/><br/>MTJ Takeoff Mins 300-1, listed in 10-7C (add remark)";
@@ -204,6 +225,14 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>SAN - SAYOW EAST FLOW // ZZOOO|CLSSY|PEBLE WEST FLOW // ECHHO|FALCC|MMOTO ALL";
 			result += "<br/>SAN - East Flow (Rwy9): Takeoff Mins 600-2// BORDER SID lower mins";
 			result += "<br/>SAN - Curfew rstr: Takeoff prohibited 2330-0630L";
+			break;
+		case "SBA":
+			result += "<br/><br/>Run VAA; Rwy 25 is about 2000lbs worse.";
+			result += "<br/>Tailwind takeoff N/A.";
+			result += "<br/>Check NOTAMs for crane penalty";
+			break;
+		case "SBP":
+			result += "<br/><br/>SBP - Mountains off rwy11; Watch winds and run VAA";
 			break;
 		case "SFO":
 			result += "<br/>";
@@ -233,6 +262,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 		case "TUS":
 			result += "<br/><br/>TUS - BURRO Rwy12 // WLDKT Rwy30 // TUS9 all";
 			break;
+		case "VPS":
+			result += "<br/><br/>VPS - If arresting cables are inop, use B runways for TPS";
+			break;
 	}
 
 	switch(arvl) {
@@ -242,9 +274,16 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 		case "BHM":
 			result += "<br/><br/>BHM - Landing 18/36 N/A per 10-7";
 			break;
+		case "BIL":
+			result += "<br/><br/>BIL - Run VAA if departing rwy28R";
+			break;
 		case "BUR":
 			result += "<br/><br/>BUR - Voluntary curfew 2200-0700L";
 			result += "<br/>BUR - Wet: Use LAWS, ATC prefers rwy33 and rwy8";
+			break;
+		case "BZN":
+			result += "<br/><br/>BZN - Run LAWS above 30C";
+			result += "<br/>BZN Night: Circle to Land N/A";
 			break;
 		case "COS":
 			result += "<br/><br/>COS - Rwy31 N/A";
@@ -253,6 +292,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>Curfew rstr 2200L - 0659L";
 			var tmp_mlw = get_dca_mlw(ac_type, tail);
 			if (tmp_mlw != null) { result += "<br/>" + tmp_mlw; }
+			break;
+		case "DEN":
+			result += "<br/><br/>DEN - Run LAWS above 20C";
 			break;
 		case "DFW":
 			result += "<br/><br/>DFW SOUTH FLOW - VKTRY / SEEVR / BOOVE / BEREE<br/>DFW NORTH FLOW - JOVEM / BRDJE / SOCKK / WHINY";
@@ -263,6 +305,14 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>EGE: Send RAIM Check RNP .11 // LAWS above 37C";
 			result += "<br/>EGE MALSR and PAPI required for night arrivals.";
 			result += "<br/>EGE RWY 7 and Visual 25 N/A after Civil Twilght";
+			break;
+		case "EYW":
+			result += "<br/><br/>Wet/Dry definitions FOM 2.1.6";
+			result += "<br/>EYW - Max crosswind 20 knots (see 10-7B)";
+			result += "<br/><br/>EYW Night: Papi and GPS required (see 10-7B)";
+			break;
+		case "GEG":
+			result += "<br/><br/>GEG - Run LAWS above 35C";
 			break;
 		case "GUC":
 			result += "<br/><br/>GUC Night: VOR, Circle-to-Land, Visual N/A; RWY 24 N/A";
@@ -277,10 +327,23 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>JAC Cold Temp chart below -21C";
 			result += "<br/>JAC Night: Visual approaches N/A, ARFF curfew 2330L";
 			break;
+		case "LAS":
+			result += "<br/><br/>LAS - Run LAWS above 35C";
+			break;
+		case "MCO":
+			result += "<br/><br/>MCO - SNFLD NORTH FLOW // GTOUT SOUTH FLOW";
+			break;
+		case "MSO":
+			result += "<br/><br/>MSO - Cold Temp Correction only available ILS Rwy12 below -12C (FOM 9w.4)";
+			result += "<br/>MSO - Run LAWS above 35C;
+			break;
 		case "MTJ":
 			result += "<br/><br/>MTJ No Control Tower at all";
 			result += "<br/>MTJ RWY 13/31 N/A";
 			result += "<br/>MTJ Night: Rwy 35 N/A, no circle to land";
+			break;
+		case "PHX":
+			result += "<br/><br/>Always check flow; Usually landing into the sun (East in AMs, West in PMs)";
 			break;
 		case "PSP":
 			result += "<br/><br/>PSP - send RAIM check, no ILS procedures";
@@ -290,6 +353,12 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			break;
 		case "SAN":
 			result += "<br/><br/>SAN - TOPGN EAST FLOW // LUCKI WEST FLOW";
+			break;
+		case "SBA":
+			result += "<br/><br/>Ferry fuel spread 5k";
+			break;
+		case "SBP":
+			result += "<br/><br/>SBP - Run LAWS when wet; LDA 5300 feet";
 			break;
 		case "SJC":
 			result += "<br/><br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
@@ -306,12 +375,22 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>TUS - RAIM check if landing northwest/rwy30";
 			result += "<br/>TUS - Night: Visual appr N/A (see 10-7B)";
 			break;
+		case "YEG":
+			result += "<br/><br/>ATL - SITTH EAST FLOW // JJEDI WEST FLOW";
+			break;
 		case "YUL":
 			result += "<br/><br/>YUL - Curfew rstr 0100L - 0700L, Extensions authorized";
 			break;
 		case "YVR":
 			result += "<br/><br/>YVR - Curfew rstr 0000L - 0600L, Extensions authorized";
 			result += "<br/>YVR - Rwy 13/31 N/A";
+			break;
+		case "YYC":
+			result += "<br/><br/>YYC - If alt needed: Check Customs for YEG; GEG is a good backup";
+			break;
+		case "YYZ":
+			result += "<br/><br/>YYZ - Curfew 0030-0630L; Extensions authorized (else pay fine)";
+			result += "<br/>Airbus and Boeing are Stage3 acft";
 			break;
 	}
 	result = add_sara_rmks(arvl, result);
@@ -385,25 +464,25 @@ function get_dca_mtow(ac_type = null, tail = null) {
 		// 321R, 321T, and 321K with IAE engines
 		return "MTOW 184.400 to comply with DCA curfew noise limits";
 	}
-	if (ac_type == "321E") { return "No DCA curfew MTOW penalties for A321 NX acft"; }
+	if (ac_type == "321E") { return "No DCA curfew MTOW penalties for A321 NX"; }
 	if (["738K", "738R"].includes(ac_type)) { return "MTOW 166.800 to comply with DCA curfew noise limits"; }
-	if (ac_type == "738M") { return "No DCA curfew MTOW penalties for B737 MAX acft"; }
+	if (ac_type == "738M") { return "No DCA curfew MTOW penalties for B737 MAX"; }
 	return null;
 }
 
 function get_dca_mlw(ac_type = null, tail = null) {
 	if (ac_type == null) { return null; }
-	if (["319S", "319W", "H319"].includes(ac_type)) { return "No DCA curfew MLW penalties for A319 acft"; }
-	if (["A320", "H205"].includes(ac_type)) { return "No DCA curfew MLW penalties for A320 acft"; }
+	if (["319S", "319W", "H319"].includes(ac_type)) { return "No DCA curfew MLW penalties for A319"; }
+	if (["A320", "H205"].includes(ac_type)) { return "No DCA curfew MLW penalties for A320"; }
 	if (["321R", "321T", "321K"].includes(ac_type)) {
 		// 321K with CFM engines
 		if (parseInt(tail.charAt(0)) == 1) { return "MLW 131.700 to comply with DCA curfew noise limits"; }
 		// 321R, 321T, and 321K with IAE engines
 		return "MLW 166.400 to comply with DCA curfew noise limits";
 	}
-	if (ac_type == "321E") { return "No DCA curfew MLW penalties for A321 NX acft"; }
+	if (ac_type == "321E") { return "No DCA curfew MLW penalties for A321 NX"; }
 	if (["738K", "738R"].includes(ac_type)) { return "MLW 140.200 to comply with DCA curfew noise limits"; }
-	if (ac_type == "738M") { return "No DCA curfew MLW penalties for B737 MAX acft"; }
+	if (ac_type == "738M") { return "No DCA curfew MLW penalties for B737 MAX"; }
 	return null;
 }
 
