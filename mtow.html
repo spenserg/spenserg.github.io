@@ -38,7 +38,7 @@ const E787 = ["8AA", "8AB", "8AC", "8AD", "8AE", "8AF", "8AG", "8AH", "8AJ", "8A
 const N787 = ["8LA", "8LB", "8LC", "8LD", "8LE", "8LF", "8LG", "8LH", "8LJ", "8LK", "8LL", "8LM", "8LN", "8LP", "8LR", "8LS", "8LT", "8LU", "8LV", "8LW", "8LX", "8LY"];
 const P789 = ["8MA", "8MB", "8MC", "8MD"];
 
-const partTimeControlTowers = ["BTV", "CHS", "EYW", "MAF", "MSO", "MYR", "PSP", "SJC"];
+const partTimeControlTowers = ["BTV", "CHS", "EYW", "MAF", "MSO", "MYR", "PSP", "RAP", "SJC"];
 
 document.getElementById("outbound").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -152,6 +152,9 @@ function compute (type = -1) {
 		output += "<br/>Ferry Fuel: <b>" + tmpres[1] + "</b>";
 	}
 
+	// Routes
+	output = get_routes(result[1], result[2], result[5], ac_type, output);
+
 	$("#total").html('<br/>' + output);
 	$("#outbound").val("");
 }
@@ -215,6 +218,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 		case "MTJ":
 			result += "<br/><br/>MTJ Takeoff Mins 300-1, listed in 10-7C (add remark)";
 			break;
+		case "PHX":
+			result += "<br/><br/>PHX - Make sure flow matches TPS; Usually departing into the sun (East in AMs, West in PMs)";
+			break;
 		case "PSP":
 			result += "<br/><br/>PSP - Run VAA for rwy31L";
 			break;
@@ -250,6 +256,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>SLC - ARCHZ|SEVYR NORTH FLOW // ZIONZ SOUTH FLOW // RUGGD DEZRT BOTH";
 			result += "<br/>SLC - Run VAA in summer";
 			break;
+		case "SMF":
+			result += "<br/><br/>SMF - Run VAA above 25C";
+			break;
 		case "SNA":
 			result += "<br/>";
 			if (arvl == "PHX") {
@@ -268,6 +277,10 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 	}
 
 	switch(arvl) {
+		case "ABQ":
+			result += "<br/>ABQ - Send RAIM check. No ILS Rwy21 or rwy26";
+			result += "<br/>ABQ - Rwy12/30 N/A (See 10-7A)";
+			break;
 		case "ATL":
 			result += "<br/><br/>ATL - SITTH EAST FLOW // JJEDI WEST FLOW";
 			break;
@@ -342,9 +355,6 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>MTJ RWY 13/31 N/A";
 			result += "<br/>MTJ Night: Rwy 35 N/A, no circle to land";
 			break;
-		case "PHX":
-			result += "<br/><br/>Always check flow; Usually landing into the sun (East in AMs, West in PMs)";
-			break;
 		case "PSP":
 			result += "<br/><br/>PSP - send RAIM check, no ILS procedures";
 			break;
@@ -402,6 +412,7 @@ Array.prototype.unique = function() {
       return self.indexOf(value) === index;
     });
 }
+	
 /*
 function get_wind_limits(ac_type = null, tail = null) {
 	if (ac_type == null) { return null; }
@@ -574,5 +585,2953 @@ function clear_input (type = -1) {
 		$("#outbound").val("");
 	}
 	$("#total").html("");
+}
+
+function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, result = "") {
+	dptr = ((dptr.length == 4) ? (dptr.substr(1, 4)) : dptr);
+	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
+	result += "<br/><br/><b>ROUTES:</b>";
+
+	switch(dptr) {
+		case "ABQ":
+			switch(arvl) {
+				case "DFW":
+					result += "<br/><br/><b>DFW South Flow:</b><br/>ABQ DOOKK3 TXO TURKI VKTRY2 DFW<br/>ABQ DOOKK3 CME BGS GEEKY BOOVE7 DFW";
+					result += "<br/><b>DFW North Flow:</b><br/>ABQ MNZNO3 TXO TURKI JOVEM6 DFW<br/>ABQ MNZNO3 CME BGS GEEKY SOCKK4 DFW";
+					result += "<br/><br/><b>Non RNAV</b><br/>ABQ J6 TCC J76 SPS UKW8 DFW";
+					break;
+				case "PHX":
+					result += "<br/><br/>ABQ RDRNR3 ZUN EAGUL6 PHX";
+					result += "<br/><br/><b>Non RNAV</b><br/>ABQ LARGO3 ZUN BUNTR3 PHX";
+					break;
+			}
+		break; // End of ABQ
+
+		case "ALB":
+			switch(arvl) {
+				case "DFW": // TODO ALB-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO ALB-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO ALB-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO ALB-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO ALB-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of ALB
+
+		case "AMA":
+			switch(arvl) {
+				case "DFW": // TODO AMA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO AMA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO AMA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO AMA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO AMA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of AMA
+
+		case "ATL":
+			switch(arvl) {
+				case "DFW": // TODO ATL-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO ATL-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO ATL-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO ATL-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO ATL-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of ATL
+
+		case "AUS":
+			switch(arvl) {
+				case "DFW": // TODO AUS-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO AUS-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO AUS-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO AUS-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO AUS-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of AUS
+
+		case "AVL":
+			switch(arvl) {
+				case "DFW": // TODO AVL-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO AVL-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO AVL-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO AVL-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO AVL-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of AVL
+
+		case "BDL":
+			switch(arvl) {
+				case "DFW": // TODO BDL-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BDL-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BDL-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BDL-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BDL-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BDL
+
+		case "BFI":
+			switch(arvl) {
+				case "DFW": // TODO BFI-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BFI-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BFI-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BFI-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BFI-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BFI
+
+		case "BFL":
+			switch(arvl) {
+				case "DFW": // TODO BFL-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BFL-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BFL-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BFL-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BFL-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BFL
+
+		case "BHM":
+			switch(arvl) {
+				case "DFW": // TODO BHM-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BHM-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BHM-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BHM-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BHM-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BHM
+
+		case "BNA":
+			switch(arvl) {
+				case "DFW": // TODO BNA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BNA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BNA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BNA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BNA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BNA
+
+		case "BOI":
+			switch(arvl) {
+				case "DFW": // TODO BOI-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BOI-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BOI-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BOI-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BOI-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BOI
+
+		case "BOS":
+			switch(arvl) {
+				case "DFW": // TODO BOS-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BOS-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BOS-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BOS-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BOS-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BOS
+
+		case "BTR":
+			switch(arvl) {
+				case "DFW": // TODO BTR-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BTR-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BTR-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BTR-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BTR-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BTR
+
+		case "BUF":
+			switch(arvl) {
+				case "DFW": // TODO BUF-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BUF-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BUF-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BUF-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BUF-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BUF
+
+		case "BUR":
+			switch(arvl) {
+				case "DFW": // TODO BUR-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BUR-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BUR-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BUR-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BUR-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BUR
+
+		case "BWI":
+			switch(arvl) {
+				case "DFW": // TODO BWI-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BWI-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BWI-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BWI-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BWI-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BWI
+
+		case "BZN":
+			switch(arvl) {
+				case "DFW": // TODO BZN-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO BZN-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO BZN-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO BZN-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO BZN-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of BZN
+
+		case "CAE":
+			switch(arvl) {
+				case "DFW": // TODO CAE-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO CAE-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO CAE-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO CAE-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO CAE-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of CAE
+
+		case "CHS":
+			switch(arvl) {
+				case "DFW": // TODO CHS-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO CHS-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO CHS-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO CHS-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO CHS-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of CHS
+
+		case "CID":
+			switch(arvl) {
+				case "DFW": // TODO CID-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO CID-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO CID-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO CID-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO CID-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of CID
+
+		case "CLE":
+			switch(arvl) {
+				case "DFW": // TODO CLE-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO CLE-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO CLE-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO CLE-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO CLE-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of CLE
+
+		case "CLT":
+			switch(arvl) {
+				case "DFW": // TODO CLT-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO CLT-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO CLT-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO CLT-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO CLT-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of CLT
+
+		case "CMH":
+			switch(arvl) {
+				case "DFW": // TODO CMH-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO CMH-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO CMH-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO CMH-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO CMH-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of CMH
+
+		case "COS":
+			switch(arvl) {
+				case "DFW": // TODO COS-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO COS-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO COS-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO COS-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO COS-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of COS
+
+		case "CVG":
+			switch(arvl) {
+				case "DFW": // TODO CVG-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO CVG-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO CVG-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO CVG-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO CVG-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of CVG
+
+		case "DCA":
+			switch(arvl) {
+				case "DFW": // TODO DCA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO DCA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO DCA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO DCA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO DCA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of DCA
+
+		case "DEN":
+			switch(arvl) {
+				case "DFW": // TODO DEN-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO DEN-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO DEN-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO DEN-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO DEN-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of DEN
+
+		case "DFW":
+			switch(arvl) {
+				case "DFW": // TODO DFW-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO DFW-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO DFW-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO DFW-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO DFW-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of DFW
+
+		case "DSM":
+			switch(arvl) {
+				case "DFW": // TODO DSM-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO DSM-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO DSM-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO DSM-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO DSM-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of DSM
+
+		case "DTW":
+			switch(arvl) {
+				case "DFW": // TODO DTW-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO DTW-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO DTW-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO DTW-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO DTW-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of DTW
+
+		case "ECP":
+			switch(arvl) {
+				case "DFW": // TODO ECP-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO ECP-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO ECP-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO ECP-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO ECP-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of ECP
+
+		case "EGE":
+			switch(arvl) {
+				case "DFW": // TODO EGE-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO EGE-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO EGE-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO EGE-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO EGE-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of EGE
+
+		case "ELP":
+			switch(arvl) {
+				case "DFW": // TODO ELP-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO ELP-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO ELP-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO ELP-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO ELP-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of ELP
+
+		case "EUG":
+			switch(arvl) {
+				case "DFW": // TODO EUG-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO EUG-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO EUG-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO EUG-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO EUG-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of EUG
+
+		case "EWR":
+			switch(arvl) {
+				case "DFW": // TODO EWR-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO EWR-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO EWR-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO EWR-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO EWR-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of EWR
+
+		case "EYW":
+			switch(arvl) {
+				case "DFW": // TODO EYW-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO EYW-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO EYW-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO EYW-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO EYW-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of EYW
+
+		case "FAT":
+			switch(arvl) {
+				case "DFW": // TODO FAT-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO FAT-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO FAT-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO FAT-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO FAT-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of FAT
+
+		case "FLL":
+			switch(arvl) {
+				case "DFW": // TODO FLL-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO FLL-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO FLL-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO FLL-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO FLL-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of FLL
+
+		case "FSD":
+			switch(arvl) {
+				case "DFW": // TODO FSD-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO FSD-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO FSD-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO FSD-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO FSD-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of FSD
+
+		case "GEG":
+			switch(arvl) {
+				case "DFW": // TODO GEG-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO GEG-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO GEG-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO GEG-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO GEG-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of GEG
+
+		case "GRR":
+			switch(arvl) {
+				case "DFW": // TODO GRR-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO GRR-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO GRR-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO GRR-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO GRR-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of GRR
+
+		case "GSO":
+			switch(arvl) {
+				case "DFW": // TODO GSO-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO GSO-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO GSO-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO GSO-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO GSO-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of GSO
+
+		case "GSP":
+			switch(arvl) {
+				case "DFW": // TODO GSP-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO GSP-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO GSP-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO GSP-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO GSP-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of GSP
+
+		case "HOU":
+			switch(arvl) {
+				case "DFW": // TODO HOU-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO HOU-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO HOU-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO HOU-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO HOU-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of HOU
+
+		case "IAD":
+			switch(arvl) {
+				case "DFW": // TODO IAD-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO IAD-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO IAD-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO IAD-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO IAD-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of IAD
+
+		case "IAH":
+			switch(arvl) {
+				case "DFW": // TODO IAH-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO IAH-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO IAH-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO IAH-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO IAH-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of IAH
+
+		case "ICT":
+			switch(arvl) {
+				case "DFW": // TODO ICT-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO ICT-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO ICT-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO ICT-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO ICT-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of ICT
+
+		case "ILM":
+			switch(arvl) {
+				case "DFW": // TODO ILM-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO ILM-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO ILM-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO ILM-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO ILM-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of ILM
+
+		case "IND":
+			switch(arvl) {
+				case "DFW": // TODO IND-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO IND-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO IND-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO IND-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO IND-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of IND
+
+		case "JAC":
+			switch(arvl) {
+				case "DFW": // TODO JAC-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO JAC-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO JAC-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO JAC-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO JAC-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of JAC
+
+		case "JAN":
+			switch(arvl) {
+				case "DFW": // TODO JAN-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO JAN-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO JAN-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO JAN-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO JAN-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of JAN
+
+		case "JAX":
+			switch(arvl) {
+				case "DFW": // TODO JAX-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO JAX-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO JAX-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO JAX-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO JAX-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of JAX
+
+		case "JFK":
+			switch(arvl) {
+				case "DFW": // TODO JFK-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO JFK-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO JFK-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO JFK-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO JFK-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of JFK
+
+		case "LAS":
+			switch(arvl) {
+				case "DFW": // TODO LAS-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO LAS-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO LAS-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO LAS-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO LAS-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of LAS
+
+		case "LAX":
+			switch(arvl) {
+				case "DFW": // TODO LAX-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO LAX-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO LAX-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO LAX-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO LAX-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of LAX
+
+		case "LBB":
+			switch(arvl) {
+				case "DFW": // TODO LBB-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO LBB-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO LBB-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO LBB-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO LBB-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of LBB
+
+		case "LEX":
+			switch(arvl) {
+				case "DFW": // TODO LEX-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO LEX-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO LEX-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO LEX-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO LEX-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of LEX
+
+		case "LGA":
+			switch(arvl) {
+				case "DFW": // TODO LGA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO LGA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO LGA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO LGA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO LGA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of LGA
+
+		case "LIT":
+			switch(arvl) {
+				case "DFW": // TODO LIT-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO LIT-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO LIT-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO LIT-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO LIT-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of LIT
+
+		case "LRD":
+			switch(arvl) {
+				case "DFW": // TODO LRD-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO LRD-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO LRD-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO LRD-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO LRD-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of LRD
+
+		case "MCI":
+			switch(arvl) {
+				case "DFW": // TODO MCI-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MCI-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MCI-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MCI-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MCI-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MCI
+
+		case "MCO":
+			switch(arvl) {
+				case "DFW": // TODO MCO-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MCO-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MCO-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MCO-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MCO-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MCO
+
+		case "MDT":
+			switch(arvl) {
+				case "DFW": // TODO MDT-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MDT-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MDT-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MDT-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MDT-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MDT
+
+		case "MEM":
+			switch(arvl) {
+				case "DFW": // TODO MEM-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MEM-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MEM-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MEM-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MEM-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MEM
+
+		case "MFE":
+			switch(arvl) {
+				case "DFW": // TODO MFE-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MFE-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MFE-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MFE-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MFE-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MFE
+
+		case "MHT":
+			switch(arvl) {
+				case "DFW": // TODO MHT-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MHT-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MHT-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MHT-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MHT-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MHT
+
+		case "MIA":
+			switch(arvl) {
+				case "DFW": // TODO MIA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MIA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MIA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MIA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MIA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MIA
+
+		case "MKE":
+			switch(arvl) {
+				case "DFW": // TODO MKE-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MKE-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MKE-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MKE-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MKE-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MKE
+
+		case "MOB":
+			switch(arvl) {
+				case "DFW": // TODO MOB-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MOB-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MOB-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MOB-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MOB-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MOB
+
+		case "MRY":
+			switch(arvl) {
+				case "DFW": // TODO MRY-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MRY-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MRY-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MRY-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MRY-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MRY
+
+		case "MSN":
+			switch(arvl) {
+				case "DFW": // TODO MSN-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MSN-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MSN-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MSN-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MSN-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MSN
+
+		case "MSP":
+			switch(arvl) {
+				case "DFW": // TODO MSP-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MSP-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MSP-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MSP-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MSP-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MSP
+
+		case "MSY":
+			switch(arvl) {
+				case "DFW": // TODO MSY-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MSY-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MSY-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MSY-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MSY-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MSY
+
+		case "MTJ":
+			switch(arvl) {
+				case "DFW": // TODO MTJ-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO MTJ-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO MTJ-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO MTJ-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO MTJ-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of MTJ
+
+		case "OKC":
+			switch(arvl) {
+				case "DFW": // TODO OKC-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO OKC-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO OKC-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO OKC-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO OKC-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of OKC
+
+		case "OMA":
+			switch(arvl) {
+				case "DFW": // TODO OMA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO OMA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO OMA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO OMA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO OMA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of OMA
+
+		case "ONT":
+			switch(arvl) {
+				case "DFW": // TODO ONT-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO ONT-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO ONT-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO ONT-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO ONT-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of ONT
+
+		case "ORD":
+			switch(arvl) {
+				case "DFW": // TODO ORD-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO ORD-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO ORD-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO ORD-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO ORD-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of ORD
+
+		case "ORF":
+			switch(arvl) {
+				case "DFW": // TODO ORF-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO ORF-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO ORF-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO ORF-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO ORF-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of ORF
+
+		case "PBI":
+			switch(arvl) {
+				case "DFW": // TODO PBI-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO PBI-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO PBI-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO PBI-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO PBI-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of PBI
+
+		case "PDX":
+			switch(arvl) {
+				case "DFW": // TODO PDX-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO PDX-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO PDX-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO PDX-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO PDX-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of PDX
+
+		case "PHL":
+			switch(arvl) {
+				case "DFW": // TODO PHL-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO PHL-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO PHL-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO PHL-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO PHL-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of PHL
+
+		case "PHX":
+			switch(arvl) {
+				case "DFW": // TODO PHX-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO PHX-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO PHX-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO PHX-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO PHX-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of PHX
+
+		case "PIT":
+			switch(arvl) {
+				case "DFW": // TODO PIT-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO PIT-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO PIT-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO PIT-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO PIT-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of PIT
+
+		case "PNS":
+			switch(arvl) {
+				case "DFW": // TODO PNS-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO PNS-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO PNS-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO PNS-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO PNS-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of PNS
+
+		case "PSM":
+			switch(arvl) {
+				case "DFW": // TODO PSM-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO PSM-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO PSM-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO PSM-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO PSM-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of PSM
+
+		case "PSP":
+			switch(arvl) {
+				case "DFW": // TODO PSP-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO PSP-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO PSP-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO PSP-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO PSP-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of PSP
+
+		case "RDU":
+			switch(arvl) {
+				case "DFW": // TODO RDU-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO RDU-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO RDU-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO RDU-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO RDU-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of RDU
+
+		case "RIC":
+			switch(arvl) {
+				case "DFW": // TODO RIC-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO RIC-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO RIC-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO RIC-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO RIC-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of RIC
+
+		case "RNO":
+			switch(arvl) {
+				case "DFW": // TODO RNO-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO RNO-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO RNO-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO RNO-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO RNO-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of RNO
+
+		case "ROC":
+			switch(arvl) {
+				case "DFW": // TODO ROC-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO ROC-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO ROC-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO ROC-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO ROC-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of ROC
+
+		case "RSW":
+			switch(arvl) {
+				case "DFW": // TODO RSW-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO RSW-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO RSW-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO RSW-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO RSW-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of RSW
+
+		case "SAN":
+			switch(arvl) {
+				case "DFW": // TODO SAN-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SAN-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SAN-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SAN-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SAN-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SAN
+
+		case "SAT":
+			switch(arvl) {
+				case "DFW": // TODO SAT-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SAT-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SAT-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SAT-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SAT-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SAT
+
+		case "SAV":
+			switch(arvl) {
+				case "DFW": // TODO SAV-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SAV-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SAV-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SAV-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SAV-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SAV
+
+		case "SBA":
+			switch(arvl) {
+				case "DFW": // TODO SBA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SBA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SBA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SBA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SBA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SBA
+
+		case "SBP":
+			switch(arvl) {
+				case "DFW": // TODO SBP-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SBP-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SBP-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SBP-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SBP-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SBP
+
+		case "SDF":
+			switch(arvl) {
+				case "DFW": // TODO SDF-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SDF-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SDF-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SDF-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SDF-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SDF
+
+		case "SEA":
+			switch(arvl) {
+				case "DFW": // TODO SEA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SEA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SEA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SEA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SEA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SEA
+
+		case "SFO":
+			switch(arvl) {
+				case "DFW": // TODO SFO-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SFO-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SFO-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SFO-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SFO-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SFO
+
+		case "SJC":
+			switch(arvl) {
+				case "DFW": // TODO SJC-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SJC-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SJC-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SJC-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SJC-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SJC
+
+		case "SLC":
+			switch(arvl) {
+				case "DFW": // TODO SLC-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SLC-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SLC-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SLC-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SLC-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SLC
+
+		case "SLP":
+			switch(arvl) {
+				case "DFW": // TODO SLP-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SLP-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SLP-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SLP-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SLP-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SLP
+
+		case "SMF":
+			switch(arvl) {
+				case "DFW": // TODO SMF-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SMF-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SMF-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SMF-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SMF-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SMF
+
+		case "SNA":
+			switch(arvl) {
+				case "DFW": // TODO SNA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SNA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SNA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SNA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SNA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SNA
+
+		case "SRQ":
+			switch(arvl) {
+				case "DFW": // TODO SRQ-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SRQ-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SRQ-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SRQ-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SRQ-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SRQ
+
+		case "STL":
+			switch(arvl) {
+				case "DFW": // TODO STL-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO STL-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO STL-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO STL-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO STL-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of STL
+
+		case "SYR":
+			switch(arvl) {
+				case "DFW": // TODO SYR-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO SYR-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO SYR-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO SYR-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO SYR-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of SYR
+
+		case "TPA":
+			switch(arvl) {
+				case "DFW": // TODO TPA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO TPA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO TPA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO TPA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO TPA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of TPA
+
+		case "TUL":
+			switch(arvl) {
+				case "DFW": // TODO TUL-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO TUL-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO TUL-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO TUL-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO TUL-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of TUL
+
+		case "TUS":
+			switch(arvl) {
+				case "DFW": // TODO TUS-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO TUS-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO TUS-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO TUS-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO TUS-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of TUS
+
+		case "TYS":
+			switch(arvl) {
+				case "DFW": // TODO TYS-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO TYS-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO TYS-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO TYS-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO TYS-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of TYS
+
+		case "XNA":
+			switch(arvl) {
+				case "DFW": // TODO XNA-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO XNA-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO XNA-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO XNA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO XNA-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of XNA
+
+		case "YUL":
+			switch(arvl) {
+				case "DFW": // TODO YUL-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO YUL-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO YUL-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO YUL-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO YUL-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of YUL
+
+		case "YVR":
+			switch(arvl) {
+				case "DFW": // TODO YVR-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO YVR-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO YVR-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO YVR-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO YVR-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of YVR
+
+		case "YYC":
+			switch(arvl) {
+				case "DFW": // TODO YYC-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO YYC-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO YYC-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO YYC-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO YYC-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of YYC
+
+		case "YYZ":
+			switch(arvl) {
+				case "DFW": // TODO YYZ-DFW
+					result += "<br/><br/><b>DFW South Flow:</b><br/>";
+					result += "<br/><br/><b>DFW North Flow:</b><br/>";					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "CLT": // TODO YYZ-CLT
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "ORD": // TODO YYZ-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "LAX": // TODO YYZ-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+				case "MIA": // TODO YYZ-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b><br/>";
+					break;
+			}
+		break; // End of YYZ
+	}
+	return result;
 }
 </script>
