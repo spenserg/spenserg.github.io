@@ -212,14 +212,26 @@ function decs_route(input = null) {
 		}
 
 		// Add to route array
-		result_arr[parseInt(z[1])] = {'route':z[4], 'notes':(z[5] + " || " + z[3])};
+		var tmp_notes = ((z[5].trim().length == 0 && z[3].trim().length == 0) ? "" : z[5] + " || " + z[3]);
+		if (tmp_notes.includes("CDR ")) {
+			var cdr_regex = /CDR\s[A-Z]{6}([A-Z0-9]{2})/g;
+			if ((tmp_cdrkey = cdr_regex.exec(tmp_notes)) != null) {
+				tmp_notes += "<br/><input value='<br/>" + tmp_cdrkey[1];
+				if (tmp_notes.includes("NO FILE") || tmp_notes.includes("COORD RQRD")) {
+					tmp_notes += " (Coord Req)";
+				}
+				tmp_notes += " - " + z[4] + "' readonly>";
+			}
+		}
+
+		result_arr[parseInt(z[1])] = {'route':z[4], 'notes':tmp_notes};
 /*
 		// result_arr = {'routes':[], 'nonrnav':[], 'cdrs':[], 'playbooks':[] };
 		if (z[3].includes("CDR") || z[5].includes("CDR")) {
 			routes['cdrs'][parseInt(z[1])] = {'route':z[4], 'notes':z[5], 
 		}
 */
-		
+
 	} // End of Loop
 
 	for (var key in result_arr) {
@@ -712,9 +724,17 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/>CLT_NO_CHSLY - KALB HNK J49 PSB Q71 GEFFS HVQ LNDIZ PARQR4 KCLT";
 					break;
 				case "ORD": // TODO ALB-ORD
-					result += "<br/><br/>";
+					result += "<br/><br/>KALB PAYGE Q822 FNT WYNDE2 KORD";
 					result += "<br/><br/><b>Non RNAV</b><br/>";
-					result += "<br/><br/><b>CDRS</b><br/>";
+					result += "<br/><br/><b>CDRS</b>";
+					result += "<br/>1N (Coord Req) - KALB ARNII Q816 GOATR WOZEE NOSIK ZOHAN OBSTR WYNDE2 KORD";
+					result += "<br/>3K (Coord Req) - KALB PAGER NOVON SIKBO KENPA OBSTR WYNDE2 KORD";
+					result += "<br/>4K (Coord Req) - KALB BUGSY RADEN KENPA OBSTR WYNDE2 KORD";
+					result += "<br/>4N (Coord Req) - KALB BUGSY LETAK NOSIK ZOHAN OBSTR WYNDE2 KORD";
+					result += "<br/>A6 (Coord Req) - KALB J6 JEFFF Q480 CANDR RAV Q62 WATSN WATSN4 KORD";
+					result += "<br/>A8 (Coord Req) - KALB J6 JEFFF Q480 AIR J80 EMPTY J149 FWA WATSN4 KORD";
+					result += "<br/>K3 (Coord Req) - KALB PAGER NOVON SIKBO KENPA GRB SHIKY FYTTE7 KORD";
+					result += "<br/>K4 (Coord Req) - KALB BUGSY RADEN KENPA GRB SHIKY FYTTE7 KORD";
 					break;
 				case "LAX": // TODO ALB-LAX
 					result += "<br/><br/>";
