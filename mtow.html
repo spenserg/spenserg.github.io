@@ -176,13 +176,12 @@ function decs_route(input = null) {
 
 	reg_tmp = /D(\d+)\s+(\d+)\s[A-Z]\s[A-Z]\s[A-Z]\s([^\n]+)\n\sARTC\sTEXT\s*([\s\S]+?)REMARKS([^\n]+)\n/g;
 	while(null != (z = reg_tmp.exec(input))) {
-		console.log(z);     // output: object
 		var tmp_rid = parseInt(z[1]);
 		var distance = parseInt(z[2]);
 
 		// Comments
-		z[3] = z[3].replaceAll("¶", "").trim();
-		z[5] = z[5].replaceAll("¶", "").trim();
+		z[3] = z[3].replaceAll("¶", "").replaceAll("¥", "").trim();
+		z[5] = z[5].replaceAll("¶", "").replaceAll("¥", "").trim();
 
 		// Route
 		const rte_regexa = /[\s¶\n]/g;
@@ -212,30 +211,82 @@ function decs_route(input = null) {
 		}
 
 		// Add to route array
-		var tmp_notes = ((z[5].trim().length == 0 && z[3].trim().length == 0) ? "" : z[5] + " || " + z[3]);
+		var cdr_name = null;
+		var tmp_notes = "";
+		if (z[5].length > 0) {
+			tmp_notes = z[5];
+			if (z[3].length > 0) { tmp_notes += " || " + z[3]; }
+		} else {
+			if (z[3].length > 0) { tmp_notes =  z[3]; }
+		}
+		
+		var tmp_tmp_notes = tmp_notes;
 		if (tmp_notes.includes("CDR ")) {
+			// CDR
 			var cdr_regex = /CDR\s[A-Z]{6}([A-Z0-9]{2})/g;
 			if ((tmp_cdrkey = cdr_regex.exec(tmp_notes)) != null) {
-				tmp_notes += "<br/><input value='<br/>" + tmp_cdrkey[1];
+				var file_status = "";
 				if (tmp_notes.includes("NO FILE") || tmp_notes.includes("COORD RQRD")) {
-					tmp_notes += " (Coord Req)";
+					file_status = " (Coord Req)";
+				} else if (tmp_notes.includes("OK TO FILE")) {
+					file_status = " (Ok to File)";
 				}
-				tmp_notes += " - " + z[4] + "' readonly>";
+				var output_value = "result += \"<br/>" + tmp_cdrkey[1] + file_status + ": <input style=\\\"width:75%\\\"; value=\\\"" + z[4] + "\\\" readonly>\";";
+				tmp_notes += "<br/>CDR " + tmp_cdrkey[1] + ": <input style=\'width:75%\'; value=\'" + output_value + "\' readonly>";
+				cdr_name = tmp_cdrkey[1];
 			}
+		} else if (tmp_notes.includes("PLAYBOOK ")) {
+			// PLAYBOOK
+			var playbook_regex = /PLAYBOOK ([^\|]+)/g;
+			while(null != (pkey = playbook_regex.exec(tmp_tmp_notes))) {
+				var output_value = "result += \"<br/>PLAYBOOK " + pkey[1] + ": <input style=\\\"width:75%\\\"; value=\\\"" + z[4] + "\\\" readonly>\";";
+				tmp_notes += "<br/>PLAYBOOK " + pkey[1] + ": <input style=\'width:75%\'; value=\'" + output_value + "\' readonly>";
+			}
+		} else {
+			// OTHER
+			var output_value = "result += \"<br/><input style=\\\"width:75%\\\"; value=\\\"" + z[4] + "\\\" readonly>\";";
+			tmp_notes += "<br/><input style=\'width:75%\'; value=\'" + output_value + "\' readonly>";
 		}
 
-		result_arr[parseInt(z[1])] = {'route':z[4], 'notes':tmp_notes};
-/*
-		// result_arr = {'routes':[], 'nonrnav':[], 'cdrs':[], 'playbooks':[] };
-		if (z[3].includes("CDR") || z[5].includes("CDR")) {
-			routes['cdrs'][parseInt(z[1])] = {'route':z[4], 'notes':z[5], 
-		}
-*/
+		result_arr[parseInt(z[1])] = {'route':z[4], 'notes':tmp_notes, 'distance':parseInt(z[2]), 'cdr':cdr_name};
 
 	} // End of Loop
 
-	for (var key in result_arr) {
-		result += "<br/>" + result_arr[key]['route'] + "<br/>" + result_arr[key]['notes'] + "<br/>";
+	// Convert to Array to sort
+	var sortable = [];
+ 	for (var key in result_arr) {
+		// CDR, distance, notes, route_string
+		sortable.push([result_arr[key]['cdr'], result_arr[key]['distance'], result_arr[key]['notes'], result_arr[key]['route']]);
+	}
+	
+	sortable.sort(function(x, y) {
+		// CDR, distance, notes, route_string
+		//  0       1        2         3
+		if (x[0] != null || y[0] != null) {
+			// At least one CDR
+			if (x[0] != null && y[0] != null) {
+				// Both CDRs
+				return (x[0].localeCompare(y[0])); 
+			} else {
+				// One CDR, One Not
+				if (x[0] == null) { return -1; }
+				return 1;
+			}
+		} else {
+			// Both not CDRS, sort by distance	
+			if (x[1] < y[1]) {
+				// x is higher on list
+				return -1;
+			}
+			if (x[1] > y[1]) {
+				// x is lower on list
+				return 1;
+			}
+			return 0;
+		}
+	});	
+	for (let i = 0; i < sortable.length; ++i) {
+		result += "<br/>" + sortable[i][3] + "<br/>" + sortable[i][2] + "<br/><hr>";
 	}
 	return result;
 }
@@ -429,7 +480,7 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>LAS - Run LAWS above 35C";
 			break;
 		case "MCO":
-			result += "<br/><br/>MCO - SNFLD NORTH FLOW // GTOUT SOUTH FLOW";
+			result += "<br/><br/>MCO - SNFLD NORTH FLOW // GTOUT SOUTH FLOW // GRNCH PRICY ALYNA BOTH";
 			break;
 		case "MSO":
 			result += "<br/><br/>MSO - Cold Temp Correction only available ILS Rwy12 below -12C (FOM 9w.4)";
@@ -692,6 +743,8 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>DFW South Flow:</b><br/>KABQ DOOKK3 TXO TURKI VKTRY2 KDFW<br/>KABQ DOOKK3 CME BGS GEEKY BOOVE7 KDFW";
 					result += "<br/><b>DFW North Flow:</b><br/>KABQ MNZNO3 TXO TURKI JOVEM6 DFW<br/>KABQ MNZNO3 CME BGS GEEKY SOCKK4 KDFW";
 					result += "<br/><br/><b>Non RNAV</b><br/>KABQ J6 TCC J76 SPS UKW8 KDFW";
+
+					<br/><input style="width:75%"; value="KABQ DOOKK3 TXO TURKI VKTRY2 KDFW" readonly>
 					break;
 				case "PHX":
 					result += "<br/><br/>KABQ RDRNR3 ZUN EAGUL6 KPHX";
