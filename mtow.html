@@ -51,7 +51,7 @@ function compute (type = -1) {
 	var output = "";
 	var reg;
 	$("#total").html("");
-	rega = /TOW\n(\d+)\n(\d+)\n[\s\S]*LDW\n(\d+)\n(\d+)\n/g;
+	rega = /TOW\n(\d+)\n(\d+)\n([^\n]*)\nLDW\n(\d+)\n(\d+)\n/g;
 	regb = /Flight\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AAL(\d+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,\n\.]+)[\,\n\.][^\n]*\n[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
 
 	// Decs route page
@@ -71,13 +71,15 @@ function compute (type = -1) {
 		var mlwb = 7777;
 		if (!testing) {
 			mlwa = parseInt(result[2]) - parseInt(result[1]);
-			mlwb = parseInt(result[4]) - parseInt(result[3]);
+			mlwb = parseInt(result[5]) - parseInt(result[4]);
 		}
-
+		var M1 = (trim(result[2]) == "E");
 		output = "MTOW SPREAD: ";
 		if (mlwa < mlwb) {
 			output += '<span style="color:';
-			if (mlwa <= 2000) {
+			if (M1) {
+				output += 'black';
+			} else if (mlwa <= 2000) {
 				output += 'red';
 			} else if (mlwa <= 5000) {
 				output += 'orange';
@@ -85,7 +87,9 @@ function compute (type = -1) {
 				output += 'green';
 			}
 			output += '"><b>' + ((mlwa > 9999) ? "10K+" : mlwa) + "</b></span>";
-			if (mlwa <= 5000) {
+			if (M1) {
+				output += "&nbsp;&nbsp;&nbsp;<b style=color:orange>Using Method 1, add weight to increase MTOW</b>";
+			} else if (mlwa <= 5000) {
 				 output += "&nbsp;&nbsp;&nbsp;<b>Takeoff Wgt Rstr</b>";
 			}
 		} else {
