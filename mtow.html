@@ -73,7 +73,7 @@ function compute (type = -1) {
 			mlwa = parseInt(result[2]) - parseInt(result[1]);
 			mlwb = parseInt(result[5]) - parseInt(result[4]);
 		}
-		var M1 = (trim(result[2]) == "E");
+		var M1 = (result[2].trim() == "E");
 		output = "MTOW SPREAD: ";
 		if (mlwa < mlwb) {
 			output += '<span style="color:';
@@ -934,6 +934,26 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					break;
 				case "MIA": // TODO AUS-MIA
 					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "SNA":
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PHX":
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "JFK":
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PHL":
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
