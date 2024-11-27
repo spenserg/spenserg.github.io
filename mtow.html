@@ -73,7 +73,7 @@ function compute (type = -1) {
 			mlwa = parseInt(result[2]) - parseInt(result[1]);
 			mlwb = parseInt(result[5]) - parseInt(result[4]);
 		}
-		var M1 = (result[2].trim() == "E");
+		var M1 = (testing ? false : ((result.length > 2) ? (result[2].trim() == "E") : false));
 		output = "MTOW SPREAD: ";
 		if (mlwa < mlwb) {
 			output += '<span style="color:';
@@ -191,6 +191,7 @@ function decs_route(input = null) {
 		const rte_regexa = /[\s¶\n]/g;
 		z[4] = z[4].replace(rte_regexa, '');
 		z[4] = z[4].replaceAll(".DCT.",".").replaceAll("."," ").trim();
+		z[4] = z[4].replace("PRICY3", "PRICY4"); // MCO arrivals out of date
 		// Origin
 		if (z[4].substring(3, 4) == " ") {
 			// Need country prefix
@@ -820,7 +821,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 			
 		case "ATL":
 			switch(arvl) {
-				case "DFW": // TODO ATL-DFW
+				case "DFW":
 					result += "<br/>DFW South Flow: <input style=\"width:75%\"; value=\"KATL NASSA2 VUZ SQS YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/>DFW North Flow: <input style=\"width:75%\"; value=\"KATL NASSA2 VUZ SQS YUYUN WHINY4 KDFW\" readonly>";
 					result += "<br/><br/><b>DFW South Flow:</b>";
@@ -837,7 +838,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/>PE (Coord Req): <input style=\"width:75%\"; value=\"KATL PENCL2 JAACE BNA CITAN MEM J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/>RP (Ok to File): <input style=\"width:75%\"; value=\"KATL KAJIN2 STNGA MLU YUYUN BEREE3 KDFW\" readonly>";
 					break;
-				case "CLT": // TODO ATL-CLT
+				case "CLT":
 					result += "<br/><input style=\"width:75%\"; value=\"KATL PHIIL3 PHIIL CNTLR JONZE5 KCLT\" readonly>";
 					result += "<br/><input style=\"width:75%\"; value=\"KATL PHIIL3 PHIIL BANKR BANKR5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -848,7 +849,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/>SK (Coord Req): <input style=\"width:75%\"; value=\"KATL SMKEY2 BOBBD COMDY FILPZ4 KCLT\" readonly>";
 					result += "<br/>VR (Coord Req): <input style=\"width:75%\"; value=\"KATL VRSTY3 NOKIE DBN SAV CHECR STOCR4 KCLT\" readonly>";
 					break;
-				case "ORD": // TODO ATL-ORD
+				case "ORD":
 					result += "<br/><input style=\"width:75%\"; value=\"KATL VARNM2 GLAZR Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KATL NOONE GLAZR Q118 VOSTK FWA KORD\" readonly>";
@@ -858,7 +859,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/>PL (Coord Req): <input style=\"width:75%\"; value=\"KATL PLMMR3 BURGG DOOGE Q93 HEVAN BONNT VEECK5 KORD\" readonly>";
 					result += "<br/>RP (Ok to File): <input style=\"width:75%\"; value=\"KATL VARNM2 GLAZR Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
 					break;
-				case "LAX": // TODO ATL-LAX
+				case "LAX":
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KATL WEONE VUZ J14 PNH J78 ABQ J78 DRK J231 TNP BASET5 KLAX\" readonly>";
 					result += "<br/><br/><b>CDRS</b>";
@@ -867,7 +868,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/>PE (Coord Req): <input style=\"width:75%\"; value=\"KATL PENCL2 JAACE BNA ARG OKM IFI EZEEE FTI GUP J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/>RP (Ok to File): <input style=\"width:75%\"; value=\"KATL NASSA2 YAALL J14 PNH J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					break;
-				case "MIA": // TODO ATL-MIA
+				case "MIA":
 					result += "<br/><input style=\"width:75%\"; value=\"KATL BANNG3 LUCKK HONID FROGZ4 KMIA\" readonly>";
 					result += "<br/><br/>Atlantic Rte: <input style=\"width:75%\"; value=\"KATL GAIRY2 IRQ FISHO DUUNK Y313 HOAGG BNFSH2 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -877,7 +878,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/>PC (Coord Req): <input style=\"width:75%\"; value=\"KATL POUNC2 POUNC GRGIA MGMRY ACORI FROGZ4 KMIA\" readonly>";
 					result += "<br/>RP (Ok to File): <input style=\"width:75%\"; value=\"KATL BANNG3 LUCKK HONID FROGZ4 KMIA\" readonly>";
 					break;
-				case "PHX": // TODO ATL-PHX
+				case "PHX": 
 					result += "<br/><input style=\"width:75%\"; value=\"KATL NASSA2 VUZ SQS KF18C EWM DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KATL WETWO VLKNN Q30 IZAAC KF24G KF27A ZUN BUNTR3 KPHX\" readonly>";
@@ -886,7 +887,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/>PE (Coord Req): <input style=\"width:75%\"; value=\"KATL PENCL2 JAACE BNA ARG RZC PER TOTOE CIM ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>RP (Coord Req): <input style=\"width:75%\"; value=\"KATL NASSA2 VUZ HRISN Q30 IZAAC TXK J131 FUZ J66 EWM DRRVR PINNG1 KPHX\" readonly>";
 					break;
-				case "DCA": // TODO ATL-DCA
+				case "DCA":
 					result += "<br/><input style=\"width:75%\"; value=\"KATL JACCC2 KELLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
 					result += "<br/><br/><b>CDRS</b>";
 					result += "<br/>PA (Coord Req): <input style=\"width:75%\"; value=\"KATL PADGT2 RAFTN FLM J43 ROD APE J30 LUISE FRDMM6 KDCA\" readonly>";
@@ -894,7 +895,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/>SK (Coord Req): <input style=\"width:75%\"; value=\"KATL SMKEY2 BOBBD Q71 KONGO SITTR TRUPS5 KDCA\" readonly>";
 					result += "<br/>VR (Coord Req): <input style=\"width:75%\"; value=\"KATL VRSTY3 NOKIE DBN TWINS CAE RDU FUUFF WAVES CAPSS3 KDCA\" readonly>";
 					break;
-				case "PHL": // TODO ATL-PHL
+				case "PHL":
 					result += "<br/><input style=\"width:75%\"; value=\"KATL PLMMR3 BURGG Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
 					result += "<br/><input style=\"width:75%\"; value=\"KATL PHIIL3 HRTWL Q64 SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -911,48 +912,104 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 
 		case "AUS":
 			switch(arvl) {
-				case "DFW": // TODO AUS-DFW
+				case "DFW":
 					result += "<br/><br/><b>DFW South Flow:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS ELOEL3 FORSS GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI STUFT BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>DFW North Flow:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS ELOEL3 FORSS GUTZZ SOCKK4 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI STUFT WHINY4 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS CWK7 NAVYS YEAGR4 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS CWK7 ACT YEAGR4 KDFW\" readonly>";
 					result += "<br/><br/><b>CDRS</b>";
+					result += "<br/>0N (Ok to File): <input style=\"width:75%\"; value=\"KAUS ELOEL3 FORSS GUTZZ SOCKK4 KDFW\" readonly>";
+					result += "<br/>2N (Ok to File): <input style=\"width:75%\"; value=\"KAUS SAYBR3 SAYBR CHEVE BEREE WHINY4 KDFW\" readonly>";
+					result += "<br/>3N (Ok to File): <input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI BLTWY CRIED WHINY4 KDFW\" readonly>";
+					result += "<br/>3S (Ok to File): <input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI BLTWY CRIED BEREE3 KDFW\" readonly>";
+					result += "<br/>6N (Ok to File): <input style=\"width:75%\"; value=\"KAUS BNDIA3 BNDIA COT DLF SJT GEEKY SOCKK4 KDFW\" readonly>";
+					result += "<br/>6S (Ok to File): <input style=\"width:75%\"; value=\"KAUS BNDIA3 BNDIA COT DLF SJT GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/>7N (Ok to File): <input style=\"width:75%\"; value=\"KAUS MUCKY3 MUCKY JCT SJT GEEKY SOCKK4 KDFW\" readonly>";
+					result += "<br/>7S (Ok to File): <input style=\"width:75%\"; value=\"KAUS MUCKY3 MUCKY JCT SJT GEEKY BOOVE7 KDFW\" readonly>";
 					break;
-				case "CLT": // TODO AUS-CLT
-					result += "<br/><br/>";
+				case "CLT":
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI LFK AEX J50 MCB MGM PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI LFK AEX MERDN JAMMR THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/><b>WX Avoicance</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI TXK Q34 MEMFS TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI IAH J2 LCH J22 MEI VUZ TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS CWK7 ACT GGG ELD SQS VUZ GQO VXV LIINN3 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS CWK7 TNV LFK J50 MCB J22 MEI VUZ GQO SOT LIINN3 KCLT\" readonly>";
 					result += "<br/><br/><b>CDRS</b>";
+					result += "<br/>0J (Ok to File): <input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI IAH GUSTI AWDAD SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/>6J (Ok to File): <input style=\"width:75%\"; value=\"KAUS BNDIA3 BNDIA THX CRP PSX SBIRD HRV SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/>9J (Ok to File): <input style=\"width:75%\"; value=\"KAUS ELOEL3 KLNGR FUZ Q184 MERDN PONZE BANKR5 KCLT\" readonly>";
 					break;
-				case "ORD": // TODO AUS-ORD
-					result += "<br/><br/>";
+				case "ORD":
+					result += "<br/>West Arrival: <input style=\"width:75%\"; value=\"KAUS ELOEL3 KLNGR FUZ MLC SGF WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/>East Arrival: <input style=\"width:75%\"; value=\"KAUS ELOEL3 KLNGR FUZ MLC SGF WELTS SHAIN2 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS AUS7 AGJ FUZ RZC SGF BAYLI BDF8 KORD\" readonly>";
 					result += "<br/><br/><b>CDRS</b>";
+					result += "<br/>0B: <input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI LFK SUTTN J29 CARIN MEMFS Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>0J: <input style=\"width:75%\"; value=\"KAUS ILEXY4 JAYJO TNV MCB J35 XESSS MEMFS Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>0K: <input style=\"width:75%\"; value=\"KAUS ELOEL3 KLNGR FUZ J42 TXK Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>0N: <input style=\"width:75%\"; value=\"KAUS ELOEL3 KLNGR FUZ TUL J25 MCI J26 IRK BENKY6 KORD\" readonly>";
+					result += "<br/>0T: <input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI LFK TXK Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>3N (Coord Req): <input style=\"width:75%\"; value=\"KAUS ILEXY4 JAYJO TNV FZT TUL J25 MCI J26 IRK BENKY6 KORD\" readonly>";
+					result += "<br/>6B: <input style=\"width:75%\"; value=\"KAUS BNDIA3 BNDIA THX CRP J22 MCB MEMFS Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>7N: <input style=\"width:75%\"; value=\"KAUS MUCKY3 MUCKY JCT SJT ABI TUL J25 MCI J26 IRK BENKY6 KORD\" readonly>";
+					result += "<br/>9J: <input style=\"width:75%\"; value=\"KAUS ELOEL3 KLNGR FUZ TXK Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>9T (Coord Req): <input style=\"width:75%\"; value=\"KAUS ELOEL3 KLNGR FUZ J42 TXK Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
 					break;
-				case "LAX": // TODO AUS-LAX
-					result += "<br/><br/>";
+				case "LAX":
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS MUCKY3 MUCKY JCT J86 FST EWM DMN BXK J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/>Full Non RNAV: <input style=\"width:75%\"; value=\"KAUS AUS7 JCT J2 ELP J50 SSO J4 TNP BASET5 KLAX\" readonly>";
+					result += "<br/>Non RNAV SID/STAR: <input style=\"width:75%\"; value=\"KAUS AUS7 AGJ ABI TXO J72 ABQ J78 DRK GABBL TNP BASET5 KLAX\" readonly>";
 					result += "<br/><br/><b>CDRS</b>";
+					result += "<br/>0E (Ok to File): <input style=\"width:75%\"; value=\"KAUS MUCKY3 MUCKY JCT Q20 CNX ONM PXR BXK J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/>0G (Coord Req): <input style=\"width:75%\"; value=\"KAUS BNDIA3 BNDIA KINEY OBGIY AGNID IMEXA AXASA ASUTA AMMOR OLAAA2 KLAX\" readonly>";
+					result += "<br/>0W (Coord Req): <input style=\"width:75%\"; value=\"KAUS BNDIA3 BNDIA KINEY OBGIY AGNID CUS SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/>6X (Ok to File): <input style=\"width:75%\"; value=\"KAUS BNDIA3 BNDIA KINEY DLF FST ELP SSO BXK ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/>7X (Ok to File): <input style=\"width:75%\"; value=\"KAUS MUCKY3 MUCKY JCT ELP J50 SSO BXK ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/>9X (Ok to File): <input style=\"width:75%\"; value=\"KAUS ELOEL3 ABI TXO J72 ABQ J78 DRK GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/>DR (Ok to File): <input style=\"width:75%\"; value=\"KAUS MUCKY3 MUCKY JCT MRF VOKOM JALIL IMEXA AXASA ASUTA AMMOR OLAAA2 KLAX\" readonly>";
 					break;
-				case "MIA": // TODO AUS-MIA
-					result += "<br/><br/>";
+				case "MIA":
+					result += "<br/>Non Overwater: <input style=\"width:75%\"; value=\"KAUS ILEXY4 JAYJO TNV DAS LCH J2 DEFUN FROGZ4 KMIA\" readonly>";
+					result += "<br/>Overwater: <input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI IAH J86 LEV Y280 CHRGE GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/>Full Overwater: <input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI IAH VUH KELPP ALGAE MINOW M580 MARCI FROGZ4 KMIA\" readonly>";
+					result += "<br/>Full Overwater via Key West: <input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI IAH J86 LEV L214 DAGGR PNSLL NAVVL EYW DVALL4 KMIA\" readonly>";
+					result += "<br/>South via Mexico: <input style=\"width:75%\"; value=\"KAUS CRP J25 BRO RADAS UT22 VESKO UT11 OMVOM UR522 XOPGI UB646 CANOA Y196 LULLS EYW DVALL4 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/>Overwater, Non RNAV SID/STAR: <input style=\"width:75%\"; value=\"KAUS CWK7 TNV J87 IAH J86 LEV Y290 CIGAR SRQ PALMZ2 KMIA\" readonly>";
+					result += "<br/>Non Overwater, Non RNAV Route: <input style=\"width:75%\"; value=\"KAUS CWK7 TNV J87 IAH SZW RSW PALMZ2 KMIA\" readonly>";
 					result += "<br/><br/><b>CDRS</b>";
+					result += "<br/>1E (Ok to File): <input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI IAH J86 LEV Q102 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
 					break;
-				case "SNA":
-					result += "<br/>";
+				case "SNA": // TODO AUS-SNA
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS MUCKY3 MUCKY JCT J86 ELP SKTTR EMLLD DSNEE6 KSNA\" readonly>";
+					result += "<br/>Wx Avoidance North: <input style=\"width:75%\"; value=\"KAUS ELOEL3 ABI TXO J72 ABQ J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
 				case "PHX":
+					result += "<br/><input style=\"width:75%\"; value=\"KAUS MUCKY3 MUCKY FST J2 ELP DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/>Non RNAV SID/STAR: <input style=\"width:75%\"; value=\"KAUS AUS7 JCT J15 ABQ J6 ZUN BUNTR3 KPHX\" readonly>";
+					result += "<br/>Full Non RNAV: <input style=\"width:75%\"; value=\"KAUS AUS6 JCT J2 ELP J50 SSO SUNSS8 KPHX\" readonly>";
+					result += "<br/><br/><b>CDRS</b>";
+					result += "<br/>6X (Ok to File): <input style=\"width:75%\"; value=\"KAUS BNDIA3 BNDIA KINEY DLF FST J86 ELP DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/>9X (Ok to File): <input style=\"width:75%\"; value=\"KAUS ELOEL3 ABI CNX ZUN EAGUL6 KPHX\" readonly>";
+					break;
+				case "JFK": // TODO AUS-JFK
 					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "JFK":
-					result += "<br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "PHL":
+				case "PHL": // TODO AUS-PHL
 					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
@@ -962,31 +1019,19 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 
 		case "AVL":
 			switch(arvl) {
-				case "DFW": // TODO AVL-DFW
-					result += "<br/><br/><b>DFW South Flow:</b>";
-					result += "<br/><br/><b>DFW North Flow:</b>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
+				case "CLT":
+					result += "<br/><input style=\"width:75%\"; value=\"KAVL JJENY KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KAVL SUZNN KCLT\" readonly>";
 					break;
-				case "CLT": // TODO AVL-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
+				case "MIA":
+					result += "<br/>East: <input style=\"width:75%\"; value=\"KAVL QUIWE Q93 DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/>West: <input style=\"width:75%\"; value=\"KAVL ODF THRSR HONID FROGZ4 KMIA\" readonly>";
 					break;
-				case "ORD": // TODO AVL-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
+				case "PHL":
+					result += "<br/>West: <input style=\"width:75%\"; value=\"KAVL SUG NYBLK Q22 BEARI FAK KPHL\" readonly>";
 					break;
-				case "LAX": // TODO AVL-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO AVL-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
+				case "DCA":
+					result += "<br/><input style=\"width:75%\"; value=\"KAVL SUG COLZI FAK WAVES CAPSS3 KDCA\" readonly>";
 					break;
 			}
 		break; // End of AVL
@@ -995,7 +1040,9 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 			switch(arvl) {
 				case "DFW": // TODO BDL-DFW
 					result += "<br/><br/><b>DFW South Flow:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"BDL VEERS PWL BASYE DBABE BWZ J6 HVQ Q68 LITTR FEWWW SEEVR4 DFW\" readonly>";
 					result += "<br/><br/><b>DFW North Flow:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"BDL VEERS PWL BASYE DBABE BWZ J6 HVQ Q68 LITTR FEWWW BRDJE5 DFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1009,49 +1056,18 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO BDL-LAX
+				case "MIA": // TODO BDL-MIA
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO BDL-MIA
+				case "DCA": // TODO BDL-DCA
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
 			}
 		break; // End of BDL
-
-		case "BFI":
-			switch(arvl) {
-				case "DFW": // TODO BFI-DFW
-					result += "<br/><br/><b>DFW South Flow:</b>";
-					result += "<br/><br/><b>DFW North Flow:</b>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // TODO BFI-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO BFI-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO BFI-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO BFI-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-			}
-		break; // End of BFI
 
 		case "BFL":
 			switch(arvl) {
@@ -1061,22 +1077,8 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO BFL-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO BFL-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO BFL-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO BFL-MIA
+				
+				case "PHX": //TODO: BFL-PHX
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
@@ -1097,21 +1099,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO BHM-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO BHM-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO BHM-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of BHM
 
@@ -1123,26 +1110,32 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO BNA-CLT
+				case "CLT": //TODO: BNA-CLT
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO BNA-ORD
+				case "PHL": //TODO: BNA-PHL
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO BNA-LAX
+				case "MIA": //TODO: BNA-MIA
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO BNA-MIA
+				case "PHX": //TODO: BNA-PHX
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
+				case "LAX": //TODO: BNA-LAX
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				
 			}
 		break; // End of BNA
 
@@ -1151,26 +1144,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 				case "DFW": // TODO BOI-DFW
 					result += "<br/><br/><b>DFW South Flow:</b>";
 					result += "<br/><br/><b>DFW North Flow:</b>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // TODO BOI-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO BOI-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO BOI-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO BOI-MIA
-					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1185,22 +1158,37 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO BOS-CLT
+				case "CLT": //TODO: BOS-CLT
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO BOS-ORD
+				case "DCA": //TODO: BOS-DCA
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO BOS-LAX
+				case "LAX": //TODO: BOS-LAX
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO BOS-MIA
+				case "MIA": //TODO: BOS-MIA
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "ORD": //TODO: BOS-ORD
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PHL": //TODO: BOS-PHL
+					result += "<br/><br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PHX": //TODO: BOS-PHX
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
@@ -1213,26 +1201,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 				case "DFW": // TODO BTR-DFW
 					result += "<br/><br/><b>DFW South Flow:</b>";
 					result += "<br/><br/><b>DFW North Flow:</b>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // TODO BTR-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO BTR-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO BTR-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO BTR-MIA
-					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1252,21 +1220,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO BUF-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO BUF-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO BUF-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of BUF
 
@@ -1278,22 +1231,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO BUR-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO BUR-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO BUR-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO BUR-MIA
+				case "PHX": // TODO BUR-PHX
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
@@ -1314,16 +1252,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO BWI-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO BWI-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 				case "MIA": // TODO BWI-MIA
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -1340,26 +1268,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO BZN-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO BZN-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO BZN-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO BZN-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of BZN
 
@@ -1372,21 +1280,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>CDRS</b>";
 					break;
 				case "CLT": // TODO CAE-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO CAE-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO CAE-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO CAE-MIA
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
@@ -1407,18 +1300,13 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO CHS-ORD
-					result += "<br/><br/>";
+				case "PHL": //TODO: CHS-PHL
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO CHS-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO CHS-MIA
-					result += "<br/><br/>";
+				case "MIA": //TODO: CHS-MIA
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1443,16 +1331,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO CID-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO CID-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of CID
 
@@ -1464,54 +1342,34 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO CLE-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: CLE-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO CLE-ORD
-					result += "<br/><br/>";
+				case "MIA": //TODO: CLE-MIA
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO CLE-LAX
-					result += "<br/><br/>";
+				case "ORD": //TODO: CLE-ORD
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO CLE-MIA
-					result += "<br/><br/>";
+				case "PHX": //TODO: CLE-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
 			}
 		break; // End of CLE
 
-		case "CLT":
+		case "CLT": // TODO CLT
 			switch(arvl) {
-				case "DFW": // TODO CLT-DFW
+				case "DFW":
 					result += "<br/><br/><b>DFW South Flow:</b>";
 					result += "<br/><br/><b>DFW North Flow:</b>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // TODO CLT-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO CLT-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO CLT-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO CLT-MIA
-					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1526,23 +1384,18 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO CMH-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: CMH-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO CMH-ORD
-					result += "<br/><br/>";
+				case "PHL": //TODO: CMH-PHL
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO CMH-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO CMH-MIA
-					result += "<br/><br/>";
+				case "PHX": //TODO: CMH-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1557,26 +1410,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO COS-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO COS-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO COS-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO COS-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of COS
 
@@ -1588,23 +1421,13 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO CVG-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: CVG-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO CVG-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO CVG-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO CVG-MIA
-					result += "<br/><br/>";
+				case "PHX": //TODO: CVG-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1619,23 +1442,88 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO DCA-CLT
-					result += "<br/><br/>";
+				case "BDL": //TODO: DCA-BDL
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO DCA-ORD
-					result += "<br/><br/>";
+				case "BOS": //TODO: DCA-BOS
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO DCA-LAX
-					result += "<br/><br/>";
+				case "FLL": //TODO: DCA-FLL
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO DCA-MIA
-					result += "<br/><br/>";
+				case "JAX": //TODO: DCA-JAX
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "LAS": //TODO: DCA-LAS
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "LAX": //TODO: DCA-LAX
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "LGA": //TODO: DCA-LGA
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "MCO": //TODO: DCA-MCO
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "MIA": //TODO: DCA-MIA
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "MSY": //TODO: DCA-MSY
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "ORD": //TODO: DCA-ORD
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PBI": //TODO: DCA-PBI
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PHX": //TODO: DCA-PHX
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "SRQ": //TODO: DCA-SRQ
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "STL": //TODO: DCA-STL
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "SYR": //TODO: DCA-SYR
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "TPA": //TODO: DCA-TPA
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1650,57 +1538,37 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO DEN-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: DEN-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO DEN-ORD
-					result += "<br/><br/>";
+				case "MIA": //TODO: DEN-MIA
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO DEN-LAX
-					result += "<br/><br/>";
+				case "ORD": //TODO: DEN-ORD
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO DEN-MIA
-					result += "<br/><br/>";
+				case "PHL": //TODO: DEN-PHL
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PHX": //TODO: DEN-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
 			}
 		break; // End of DEN
 
-		case "DFW":
+		case "DFW": // TODO DFW
 			switch(arvl) {
-				case "DFW": // TODO DFW-DFW
-					result += "<br/><br/><b>DFW South Flow:</b>";
-					result += "<br/><br/><b>DFW North Flow:</b>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // TODO DFW-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO DFW-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO DFW-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO DFW-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
+
 			}
 		break; // End of DFW
 
@@ -1712,23 +1580,18 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO DSM-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: DSM-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO DSM-ORD
-					result += "<br/><br/>";
+				case "ORD": //TODO: DSM-ORD
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO DSM-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO DSM-MIA
-					result += "<br/><br/>";
+				case "PHX": //TODO: DSM-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1742,24 +1605,19 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>DFW North Flow:</b>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // TODO DTW-CLT
-					result += "<br/><br/>";
+					break;	
+				case "CLT": //TODO: DTW-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO DTW-ORD
-					result += "<br/><br/>";
+				case "ORD": //TODO: DTW-ORD
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO DTW-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO DTW-MIA
-					result += "<br/><br/>";
+				case "PHX": //TODO: DTW-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1779,21 +1637,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO ECP-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO ECP-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO ECP-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of ECP
 
@@ -1802,26 +1645,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 				case "DFW": // TODO EGE-DFW
 					result += "<br/><br/><b>DFW South Flow:</b>";
 					result += "<br/><br/><b>DFW North Flow:</b>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // TODO EGE-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO EGE-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO EGE-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO EGE-MIA
-					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1836,22 +1659,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO ELP-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO ELP-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO ELP-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO ELP-MIA
+				case "PHX": // TODO ELP-PHX
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
@@ -1867,22 +1675,7 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO EUG-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO EUG-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO EUG-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO EUG-MIA
+				case "PHX": // TODO EUG-PHX
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
@@ -1898,23 +1691,23 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO EWR-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: EWR-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO EWR-ORD
-					result += "<br/><br/>";
+				case "MIA": //TODO: EWR-MIA
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO EWR-LAX
-					result += "<br/><br/>";
+				case "ORD": //TODO: EWR-ORD
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO EWR-MIA
-					result += "<br/><br/>";
+				case "PHX": //TODO: EWR-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1929,23 +1722,13 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO EYW-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: EYW-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO EYW-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO EYW-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO EYW-MIA
-					result += "<br/><br/>";
+				case "PHL": //TODO: EYW-PHL
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1960,23 +1743,8 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO FAT-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO FAT-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO FAT-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO FAT-MIA
-					result += "<br/><br/>";
+				case "PHX": //TODO: FAT-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -1991,23 +1759,23 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO FLL-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: FLL-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO FLL-ORD
-					result += "<br/><br/>";
+				case "DCA": //TODO: FLL-DCA
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO FLL-LAX
-					result += "<br/><br/>";
+				case "ORD": //TODO: FLL-ORD
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO FLL-MIA
-					result += "<br/><br/>";
+				case "PHL": //TODO: FLL-PHL
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -2022,26 +1790,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO FSD-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO FSD-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO FSD-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO FSD-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of FSD
 
@@ -2053,23 +1801,8 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO GEG-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO GEG-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO GEG-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO GEG-MIA
-					result += "<br/><br/>";
+				case "PHX": //TODO: GEG-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -2084,23 +1817,18 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO GRR-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: GRR-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO GRR-ORD
-					result += "<br/><br/>";
+				case "ORD": //TODO: GRR-ORD
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO GRR-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO GRR-MIA
-					result += "<br/><br/>";
+				case "PHX": //TODO: GRR-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -2116,21 +1844,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>CDRS</b>";
 					break;
 				case "CLT": // TODO GSO-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO GSO-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO GSO-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO GSO-MIA
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
@@ -2151,54 +1864,8 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO GSP-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO GSP-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO GSP-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of GSP
-
-		case "HOU":
-			switch(arvl) {
-				case "DFW": // TODO HOU-DFW
-					result += "<br/><br/><b>DFW South Flow:</b>";
-					result += "<br/><br/><b>DFW North Flow:</b>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // TODO HOU-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO HOU-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO HOU-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO HOU-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-			}
-		break; // End of HOU
 
 		case "IAD":
 			switch(arvl) {
@@ -2209,21 +1876,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>CDRS</b>";
 					break;
 				case "CLT": // TODO IAD-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO IAD-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO IAD-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO IAD-MIA
 					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
@@ -2239,23 +1891,28 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO IAH-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: IAH-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO IAH-ORD
-					result += "<br/><br/>";
+				case "MIA": //TODO: IAH-MIA
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO IAH-LAX
-					result += "<br/><br/>";
+				case "ORD": //TODO: IAH-ORD
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO IAH-MIA
-					result += "<br/><br/>";
+				case "PHL": //TODO: IAH-PHL
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PHX": //TODO: IAH-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -2267,26 +1924,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 				case "DFW": // TODO ICT-DFW
 					result += "<br/><br/><b>DFW South Flow:</b>";
 					result += "<br/><br/><b>DFW North Flow:</b>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // TODO ICT-CLT
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "ORD": // TODO ICT-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO ICT-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO ICT-MIA
-					result += "<br/><br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -2306,21 +1943,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO ILM-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO ILM-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO ILM-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of ILM
 
@@ -2332,23 +1954,33 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO IND-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: ICT-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO IND-ORD
-					result += "<br/><br/>";
+				case "LAX": //TODO: ICT-LAX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO IND-LAX
-					result += "<br/><br/>";
+				case "MIA": //TODO: ICT-MIA
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO IND-MIA
-					result += "<br/><br/>";
+				case "ORD": //TODO: ICT-ORD
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PHL": //TODO: ICT-PHL
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PHX": //TODO: ICT-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
@@ -2378,11 +2010,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO JAC-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of JAC
 
@@ -2399,21 +2026,6 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO JAN-ORD
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "LAX": // TODO JAN-LAX
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "MIA": // TODO JAN-MIA
-					result += "<br/><br/>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					break;
 			}
 		break; // End of JAN
 
@@ -2425,28 +2037,35 @@ function get_routes (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, re
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // TODO JAX-CLT
-					result += "<br/><br/>";
+				case "CLT": //TODO: JAX-CLT
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // TODO JAX-ORD
-					result += "<br/><br/>";
+				case "DCA": //TODO: JAX-DCA
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // TODO JAX-LAX
-					result += "<br/><br/>";
+				case "MIA": //TODO: JAX-MIA
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // TODO JAX-MIA
-					result += "<br/><br/>";
+				case "PHL": //TODO: JAX-PHL
+					result += "<br/>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "PHX": //TODO: JAX-PHX
+					result += "<br/>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>";
 					break;
 			}
 		break; // End of JAX
+
+// DONE WITH ELIMINATIONS THRU JFK
 
 		case "JFK":
 			switch(arvl) {
