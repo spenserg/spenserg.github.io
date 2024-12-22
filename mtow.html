@@ -40,12 +40,28 @@ const P789 = ["8MA", "8MB", "8MC", "8MD"];
 
 const partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "MAF", "MSO", "MYR", "PSP", "RAP", "RDM", "SJC"];
 
+var dfw_s_flow = true;
+
 document.getElementById("outbound").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("go_button").click();
   }
 });
+
+function dfw_flow(is_south = null) {
+	if ([0,1].includes(is_south) && dfw_s_flow != is_south) {
+		dfw_s_flow = is_south;
+		if (is_south) {
+			$("#dfw_s_flow_button").addClass("btn-success").removeClass("btn-danger");
+			$("#dfw_n_flow_button").addClass("btn-danger").removeClass("btn-success);
+		} else {
+			$("#dfw_n_flow_button").addClass("btn-success").removeClass("btn-danger");
+			$("#dfw_s_flow_button").addClass("btn-danger").removeClass("btn-success);
+		}
+	}
+	
+}
 
 function compute (type = -1) {
 	var output = "unchanged from init";
@@ -544,10 +560,11 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			break;
 		case "DFW":
 			result += "<br/><br/>DFW SOUTH FLOW - VKTRY / SEEVR / BOOVE / BEREE<br/>DFW NORTH FLOW - JOVEM / BRDJE / SOCKK / WHINY";
+			result += "<br/>DFW Flow: <button type='button' id='dfw_s_flow_button' class='btn btn-success' onclick='dfw_flow(1)'>South</button>&nbsp;&nbsp;<button type='button' 'class='btn btn-danger' id='dfw_n_flow_button' onclick='dfw_flow(0)>North</button>";
 			break;
 		case "DTW":
 			result += "<br/><br/>DTW SOUTH FLOW - BONZZ / HTROD / TPGUN / FERRL / LAYKS / HANBL / VCTRZ / RKCTY";
-			     result += "<br/>DTW NORTH FLOW - KLYNK / CRAKN / CUUGR / WNGNT / GRAYT / LECTR / HAYLL / KKISS";
+			result += "<br/>DTW NORTH FLOW - KLYNK / CRAKN / CUUGR / WNGNT / GRAYT / LECTR / HAYLL / KKISS";
 			break;
 		case "EGE":
 			result += "<br/><br/>EGE Can handle 3 acft max: 2 gates + deice pad. Expect station to call for delay.";
