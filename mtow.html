@@ -54,7 +54,7 @@ document.getElementById("outbound").addEventListener("keypress", function(event)
 });
 
 function change_flow(airport = null, is_standard = null) {
-	airport = airport.toUpperCase(0;
+	airport = airport.toUpperCase(0);
 	if ([0,1].includes(is_standard) && flows[airport] !== undefined && flows[airport] != is_standard) {
 		flows[airport] = is_standard;
 		if (is_standard) {
@@ -88,7 +88,7 @@ function change_flow(airport = null, is_standard = null) {
 				}
 			});
 		}
-	}	
+	}
 }
 
 function dfw_flow(is_south = null) {
