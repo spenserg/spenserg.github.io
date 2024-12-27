@@ -618,7 +618,7 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			break;
 		case "DFW":
 			result += "<br/><br/>DFW SOUTH FLOW - VKTRY / SEEVR / BOOVE / BEREE<br/>DFW NORTH FLOW - JOVEM / BRDJE / SOCKK / WHINY";
-			result += "<br/>DFW Flow: <button type='button' id='dfw_s_flow_button' class='btn" + (dfw_s_flow ? " selected" : "") + "' onclick='dfw_flow(1)'>South</button>&nbsp;&nbsp;<button type='button' id='dfw_n_flow_button' class='btn" + (dfw_s_flow ? "" : " selected") + "' onclick='dfw_flow(0)'>North</button>";
+			result += "<br/>DFW Flow: <button type='button' id='DFW_standard_left' class='btn" + ((flows['DFW'] == 1) ? " selected" : "") + "' onclick='change_flow(\"DFW\", 1)'>South</button>&nbsp;&nbsp;<button type='button' id='DFW_standard_right' class='btn" + ((flows['DFW'] == 0) ? "" : " selected") + "' onclick='change_flow(\"DFW\", 1)'>North</button>";
 			break;
 		case "DTW":
 			result += "<br/><br/>DTW SOUTH FLOW - BONZZ / HTROD / TPGUN / FERRL / LAYKS / HANBL / VCTRZ / RKCTY";
