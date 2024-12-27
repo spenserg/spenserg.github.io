@@ -44,6 +44,7 @@ const P789 = ["8MA", "8MB", "8MC", "8MD"];
 const partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "MAF", "MSO", "MYR", "PSP", "RAP", "RDM", "SJC"];
 
 var dfw_s_flow = true;
+var flows = {"ABQ":1,"ATL":1,"BZN":1,"DFW":1,"DTW":1,"IAH":1,"MCO":1,"MIA":1,"RNO":1,"SAN":1,"SLC":1,"SNA":1};
 
 document.getElementById("outbound").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -51,6 +52,44 @@ document.getElementById("outbound").addEventListener("keypress", function(event)
     document.getElementById("go_button").click();
   }
 });
+
+function change_flow(airport = null, is_standard = null) {
+	airport = airport.toUpperCase(0;
+	if ([0,1].includes(is_standard) && flows[airport] !== undefined && flows[airport] != is_standard) {
+		flows[airport] = is_standard;
+		if (is_standard) {
+			$("#" + flows[airport] + "_standard_left").addClass("selected");
+			$("#" + flows[airport] + "_standard_right").removeClass("selected");
+			$('input').each(function() {
+				switch(airport) {
+					case "DFW":
+						if (!$(this).hasClass("cdr_input")) { 
+							$(this).val($(this).val().replace("JOVEM6", "VKTRY2"));
+							$(this).val($(this).val().replace("BRDJE5", "SEEVR4"));
+							$(this).val($(this).val().replace("SOCKK4", "BOOVE7"));
+							$(this).val($(this).val().replace("WHINY4", "BEREE3"));
+						}
+						break;
+				}
+			});
+		} else {
+			$("#" + flows[airport] + "_standard_right").addClass("selected");
+			$("#" + flows[airport] + "_standard_left").removeClass("selected");
+			$('input').each(function() {
+				switch(airport) {
+					case "DFW":
+						if (!$(this).hasClass("cdr_input")) { 
+							$(this).val($(this).val().replace("VKTRY2", "JOVEM6"));
+							$(this).val($(this).val().replace("SEEVR4", "BRDJE5"));
+							$(this).val($(this).val().replace("BOOVE7", "SOCKK4"));
+							$(this).val($(this).val().replace("BEREE3", "WHINY4"));
+						}
+						break;
+				}
+			});
+		}
+	}	
+}
 
 function dfw_flow(is_south = null) {
 	if ([0,1].includes(is_south) && dfw_s_flow != is_south) {
