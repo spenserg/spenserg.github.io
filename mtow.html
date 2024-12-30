@@ -1116,6 +1116,8 @@ function get_routes(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, res
 	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
 	// if (arvl != "DFW") {  result += "<br/><br/><b>Faa Pref Route:</b>"; }
 
+	
+
 	switch(dptr) {
 		case "ABQ":
 			switch(arvl) {
@@ -4925,6 +4927,7 @@ function get_routes(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, res
 			}
 		break; // End of YYZ
 	}
+	return result;
 }
 
 
