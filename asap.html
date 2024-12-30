@@ -20,5 +20,34 @@
 </body>
 
 <script>
+function compute() {
+	// Checkbox acknowledgements
+	result = "$('#19997-air-medical-flight').prop('checked',true);";
+	result += "$('#ack-poc').prop('checked',true);";
 
+	var info = get_info();
+	if (info == null) {
+		return "Error parsing text";
+	}
+	// Flight Number
+	result += "$('19997-number').val('" + info[0] + "');";
+
+	// Registration
+	// TODO
+
+	// Departure Airport, RWY, Gate
+	result += $('input[name="19997-departure"]').val();
+	// TODO
+	
+	
+}
+
+function get_info() {
+	var result = null;
+	// 0 - Flight number
+	// 1 - registration number / Tail number
+	// 2 - dptr station
+
+	return result;
+}
 </script>
