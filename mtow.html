@@ -9,7 +9,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<style>
-		selected {font-weight:bold;color:black;font-size:20;border:4px solid black}
+		.selected {font-weight:bold;color:black;font-size:20;border:4px solid black}
 	</style>
 </head>
 
@@ -41,29 +41,37 @@ const E787 = ["8AA", "8AB", "8AC", "8AD", "8AE", "8AF", "8AG", "8AH", "8AJ", "8A
 const N787 = ["8LA", "8LB", "8LC", "8LD", "8LE", "8LF", "8LG", "8LH", "8LJ", "8LK", "8LL", "8LM", "8LN", "8LP", "8LR", "8LS", "8LT", "8LU", "8LV", "8LW", "8LX", "8LY"];
 const P789 = ["8MA", "8MB", "8MC", "8MD"];
 
-const partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "MAF", "MSO", "MYR", "PSP", "RAP", "RDM", "SJC"];
+const partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "GRR", "MAF", "MSO", "MYR", "PSP", "RAP", "RDM", "SJC"];
 
-var dfw_s_flow = true;
-var flows = {"ABQ":1,"ATL":1,"BZN":1,"DFW":1,"DTW":1,"IAH":1,"MCO":1,"MIA":1,"RNO":1,"SAN":1,"SLC":1,"SNA":1};
+var flows = {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"IAH":0,"MCO":0,"MIA":0,"RNO":0,"SAN":0,"SLC":0,"SNA":0};
 
 document.getElementById("outbound").addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("go_button").click();
-  }
+	if (event.key === "Enter") {
+		event.preventDefault();
+		document.getElementById("go_button").click();
+	}
 });
 
-function change_flow(airport = null, config = null) {
+function change_flow(airport = null, new_config = null, override_duplicated = false) {
 	airport = airport.toUpperCase(0);
-	if ([0,1].includes(config) && flows[airport] !== undefined && flows[airport] != config) {
-		flows[airport] = config;
-		if (config == 0) { // Left clicked
+	if (override_duplicated || ([0,1].includes(new_config) && flows[airport] !== undefined)) {
+		flows[airport] = new_config;
+		if (new_config == 0) { // Left clicked
 			$("#" + airport + "_standard_left").addClass("selected");
 			$("#" + airport + "_standard_right").removeClass("selected");
 			$('input').each(function() {
 				switch(airport) {
+					case "ABQ": // ABQ east // Rwy8
+						$(this).val($(this).val().replace("KABQ ADYOS3", "KABQ RDRNR3"));
+						$(this).val($(this).val().replace("KABQ ATOMK3 ATOMK", "KABQ JEMEZ3 JEMEZ"));
+						$(this).val($(this).val().replace("KABQ BOSQE3", "KABQ MNZNO3"));
+						$(this).val($(this).val().replace("KABQ DOOKK3", "KABQ MNZNO3"));
+						$(this).val($(this).val().replace("KABQ FYSTA3 FTI", "KABQ GRZZZ4 FLAVA"));
+						$(this).val($(this).val().replace("KABQ FYSTA3 JLPNO", "KABQ  GRZZZ4 POPRR"));
+						break;
 					case "ATL": // ATL west
 						$(this).val($(this).val().replace("JJEDI3 KATL", "SITTH2 KATL"));
+						break;
 					case "BZN": // BZN southeast / Rwy12
 						$(this).val($(this).val().replace("KBZN MEADO2 DBS", "KBZN BGSKY2 DBS"));
 						$(this).val($(this).val().replace("KBZN MEADO2 HIA", "KBZN BGSKY2 HIA"));
@@ -71,6 +79,7 @@ function change_flow(airport = null, config = null) {
 						$(this).val($(this).val().replace("KBZN MEADO2 TOOLS", "KBZN YODOG TOOLS")); // Replace other MEADO dptrs
 						$(this).val($(this).val().replace("KBZN MEADO2 CREKK", "KBZN BOBKT5 BIL"));
 						$(this).val($(this).val().replace("BIL SUBKY1 KBZN", "CREKK POWDA1 KBZN"));
+						break;
 					case "DFW": // DFW south
 						if (!$(this).hasClass("cdr_input")) { 
 							$(this).val($(this).val().replace("JOVEM6 KDFW", "VKTRY2 KDFW"));
@@ -125,23 +134,54 @@ function change_flow(airport = null, config = null) {
 						$(this).val($(this).val().replace("LVELL MOMAR TOPGN2 KSAN", "LVELL LUCKI1 KSAN"));
 						$(this).val($(this).val().replace("TPGN2 KSAN", "LUCKI1 KSAN"));
 						break;
+					case "SLC": // SLC North // Rwy34
+						$(this).val($(this).val().replace("DELTA6 KSLC", "QWENN5 KSLC"));
+						$(this).val($(this).val().replace("JAMMN5 KSLC", "QWENN5 KSLC"));
+						// SIDS // ARCHZ CGULL DEZRT RUGGD SEVYR
+						// $(this).val($(this).val().replace("KSLC ZIONZ1 KROST", "KSLC ARCHZ1 KROST");
+						// $(this).val($(this).val().replace("KSLC ZIONZ1 EHK", ""); // TODO
+						// $(this).val($(this).val().replace("KSLC ZIONZ1 BCE", ""); // TODO
+						$(this).val($(this).val().replace("KSLC ZIONZ1 EYELO", "KSLC RUGGD3 KIERA")); // TODO
+						$(this).val($(this).val().replace("KSLC ZIONZ1 KIMMR", "KSLC RUGGD3 KIERA"));
+						// $(this).val($(this).val().replace("KSLC FFU9 HVE", ""); // TODO
+						// $(this).val($(this).val().replace("KSLC FFU9 BCE", ""); // TODO
+						// $(this).val($(this).val().replace("KSLC FFU9 OAL", ""); // TODO
+						break;
+					case "SNA": // SNA south // Rwy20R
+						$(this).val($(this).val().replace("ROOBY3 KSNA", "DSNEE6 KSNA"));
+						break;
+						
 				}
 			});
-		} else if (config == 1) { // Right clicked
-			$("#" + airport + "_standard_right").addClass("selected");
+		} else if (new_config == 1) { // Right clicked
 			$("#" + airport + "_standard_left").removeClass("selected");
+			$("#" + airport + "_standard_right").addClass("selected");
 			$('input').each(function() {
 				switch(airport) {
+					case "ABQ": // ABQ west // Rwy26
+						$(this).val($(this).val().replace("KABQ RDRNR3", "KABQ ADYOS3"));
+						$(this).val($(this).val().replace("KABQ JEMEZ3 JEMEZ", "KABQ ATOMK3 ATOMK"));
+						$(this).val($(this).val().replace("KABQ GRZZZ4 FLAVA", "KABQ FYSTA3 FTI"));
+						$(this).val($(this).val().replace("KABQ  GRZZZ4 POPRR", "KABQ FYSTA3 JLPNO"));
+						$(this).val($(this).val().replace("KABQ MNZNO3 SJN", "KABQ BOSQE3 SJN"));
+						$(this).val($(this).val().replace("KABQ MNZNO3 ONM", "KABQ BOSQE3 ONM"));
+						$(this).val($(this).val().replace("KABQ MNZNO3 TXO", "KABQ DOOKK3 TXO"));
+						$(this).val($(this).val().replace("KABQ MNZNO3 CME", "KABQ DOOKK3 CME"));
+						$(this).val($(this).val().replace("KABQ MNZNO3 MOLVE", "KABQ DOOKK3 MOLVE"));
+						$(this).val($(this).val().replace("KABQ MNZNO3 LAMSE", "KABQ BOSQE3 LAMSE"));
+						break;
 					case "ATL": // ATL east
 						$(this).val($(this).val().replace("SITTH2 KATL", "JJEDI3 KATL"));
+						break;
 					case "BZN": // BZN northwest / Rwy30
 						$(this).val($(this).val().replace("KBZN BGSKY2 DBS", "KBZN MEADO2 DBS"));
 						$(this).val($(this).val().replace("KBZN BGSKY2 HIA", "KBZN MEADO2 HIA"));
 						$(this).val($(this).val().replace("KBZN BOBKT5 BIL", "KBZN MEADO2 CREKK"));
 						$(this).val($(this).val().replace("KBZN BOBKT5 BOY", "KBZN MEADO2 TOOLS BOY"));
 						$(this).val($(this).val().replace("CREKK POWDA1 KBZN", "BIL SUBKY1 KBZN"));
+						break;
 					case "DFW": // DFW north
-						if (!$(this).hasClass("cdr_input")) { 
+						if (!$(this).hasClass("cdr_input")) {
 							$(this).val($(this).val().replace("VKTRY2 KDFW", "JOVEM6 KDFW"));
 							$(this).val($(this).val().replace("SEEVR4 KDFW", "BRDJE5 KDFW"));
 							$(this).val($(this).val().replace("BOOVE7 KDFW", "SOCKK4 KDFW"));
@@ -195,39 +235,23 @@ function change_flow(airport = null, config = null) {
 						$(this).val($(this).val().replace("IPL HOGGZ LUCKI1 KSAN", "IPL TPGN2 KSAN"));
 						$(this).val($(this).val().replace("LUCKI1 KSAN", "TOPGN2 KSAN"));
 						break;
+					case "SLC": // SLC South // Rwy16
+						$(this).val($(this).val().replace("QWENN5 KSLC", "DELTA6 KSLC"));
+						// SIDS // DEZRT FFU RUGGD ZIONZ
+						// $(this).val($(this).val().replace("KSLC ARCHZ1 MLF", ""); // TODO
+						// $(this).val($(this).val().replace("KSLC ARCHZ1 WINEN", ""); // TODO
+						$(this).val($(this).val().replace("KSLC ARCHZ1 KROST", "KSLC ZIONZ1 KROST"));
+						// $(this).val($(this).val().replace("KSLC SEVYR3 MLF", ""); // TODO
+						$(this).val($(this).val().replace("KSLC SEVYR3 OAL", "KSLC DEZRT2 MVA"));
+						break;
+					case "SNA": // SNA north // Rwy2L
+						$(this).val($(this).val().replace("DSNEE6 KSNA", "ROOBY3 KSNA"));
+						break;
 				}
 			});
-		} else { console.log("Unknown config: " + config); }
+		} else { console.log("Unknown new_config: " + new_config); }
 	} else { console.log("Click registered, but no change detected"); }
 }
-/*
-function dfw_flow(is_south = null) {
-	if ([0,1].includes(is_south) && dfw_s_flow != is_south) {
-		dfw_s_flow = is_south;
-		if (is_south) {
-			$("#dfw_s_flow_button").addClass("selected");
-			$("#dfw_n_flow_button").removeClass("selected");
-			$('input').each(function() {
-				$(this).val($(this).val().replace("JOVEM6", "VKTRY2"));
-				$(this).val($(this).val().replace("BRDJE5", "SEEVR4"));
-				$(this).val($(this).val().replace("SOCKK4", "BOOVE7"));
-				$(this).val($(this).val().replace("WHINY4", "BEREE3"));
-			});
-		} else {
-			$("#dfw_n_flow_button").addClass("selected");
-			$("#dfw_s_flow_button").removeClass("selected");
-			$('input').each(function() {
-				if (!$(this).hasClass("cdr_input")) { 
-					$(this).val($(this).val().replace("VKTRY2", "JOVEM6"));
-					$(this).val($(this).val().replace("SEEVR4", "BRDJE5"));
-					$(this).val($(this).val().replace("BOOVE7", "SOCKK4"));
-					$(this).val($(this).val().replace("BEREE3", "WHINY4"));
-				}
-			});
-		}
-	}	
-}
-*/
 
 function compute (type = -1) {
 	var output = "I have no idea what you are talking about. Check the input box and make sure you pasted the right thing.";
@@ -452,6 +476,9 @@ function decs_route(input = null) {
 		z[4] = z[4].replace("RKSTR3 LAS", "RKSTR4 LAS");
 		z[4] = z[4].replace("CHOWW2 KLAS", "CHOWW3 KLAS");
 		z[4] = z[4].replace("CHOWW2 LAS", "CHOWW3 LAS");
+		z[4] = z[4].replace("GLADZ3 KMIA", "GLADZ4 KMIA");
+		z[4] = z[4].replace("GLADZ3 MIA", "GLADZ4 MIA");
+		
 		z[3] = z[3].replace("PLAYBOOK", "Playbook");
 		z[5] = z[5].replace("PLAYBOOK", "Playbook");
 		
@@ -573,7 +600,8 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 
 	switch(dptr) {
 		case "ABQ":
-			result += "<br/><br/>ABQ - DOOKK WEST FLOW // MNZNO EAST FLOW";
+			result += "<br/><br/>ABQ Flow: <button type='button' id='ABQ_standard_left' class='btn" + ((flows['ABQ'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 0)'>East</button>&nbsp;&nbsp;<button type='button' id='ABQ_standard_right' class='btn" + ((flows['ABQ'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 1)'>West</button>";
+			result += "<br/>ABQ - DOOKK WEST FLOW // MNZNO EAST FLOW";
 			break;
 		case "BFL":
 			result += "<br/><br/>BFL - 12R/30L N/A, see 10-7A";
@@ -589,6 +617,7 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			break;
 		case "BZN":
 			result += "<br/><br/>BZN - Run VAA above 25C; Rwy30 is about 3k lbs better";
+			result += "<br/><br/>BZN Flow: <button type='button' id='BZN_standard_left' class='btn" + ((flows['BZN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='BZN_standard_right' class='btn" + ((flows['BZN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 1)'>NW Rwy 30</button>";
 			break;
 		case "COS":
 			result += "<br/><br/>COS - LAWS above 10C";
@@ -618,6 +647,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			break;
 		case "GJT":
 			result += "<br/><br/>GJT - Run VAA above 25C";
+			break;
+		case "IAH":
+			result += "<br/><br/>IAH Flow: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East</button>";
 			break;
 		case "JAC":
 			result += "<br/><br/>JAC - ALPIN/TETON S FLOW (rwy19) // DIVYD/GEYSER N FLOW (rwy1)";
@@ -650,14 +682,15 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>RDM - Rwy11/29 N/A for A320 and non-sharklet A321, see 10-7A-2";
 			break;
 		case "RNO":
-			result += "<br/><br/>RNO - ALPYN NORTH FLOW // ZEFFR SOUTH FLOW";
-			result += "<br/>Use 10-7 Pages and SIDS for takeoff mins";
+			result += "<br/><br/>Use 10-7 Pages and SIDS for takeoff mins";
 			result += "<br/>Max climb gradient 525 feet per NM; Some Rwy17L/17R departures exceed 525 ft/nm (see 10-7C)";
+			result += "<br/><br/>RNO Flow: <button type='button' id='RNO_standard_left' class='btn" + ((flows['RNO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='RNO_standard_right' class='btn" + ((flows['RNO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 1)'>North</button>";
+			result += "<br/><br/>RNO - ALPYN NORTH FLOW // ZEFFR SOUTH FLOW";
 			break;
 		case "SAN":
-			result += "<br/><br/>SAN WEST FLOW - ZZOOO / CLSSY / PEBLE<br/>SAN EAST FLOW - SAYOW";
 			result += "<br/><br/>SAN - East Flow (Rwy9): Takeoff Mins 600-2// BORDER SID lower mins";
 			result += "<br/>SAN - Curfew rstr: Takeoff prohibited 2330 - 0630L";
+			result += "<br/><br/>SAN Flow: <button type='button' id='SAN_standard_left' class='btn" + ((flows['SAN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SAN\", 0)'>East</button>&nbsp;&nbsp;<button type='button' id='SAN_standard_right' class='btn" + ((flows['SAN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SAN\", 1)'>West</button>";
 			break;
 		case "SBA":
 			result += "<br/><br/>SBA - Run VAA; Rwy 25 is about 2000lbs worse.";
@@ -680,8 +713,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>SJC - B737 MAX and A32F NEO exempt from curfew (see 10-7A-2)";
 			break;
 		case "SLC":
-			result += "<br/><br/>SLC - ARCHZ|SEVYR NORTH FLOW // ZIONZ SOUTH FLOW // RUGGD DEZRT BOTH";
 			result += "<br/>SLC - Run VAA in summer";
+			result += "<br/><br/>SLC Flow: <button type='button' id='SLC_standard_left' class='btn" + ((flows['SLC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SLC\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='SLC_standard_right' class='btn" + ((flows['SLC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SLC\", 1)'>South</button>";
+			result += "<br/><br/>SLC - ARCHZ|SEVYR NORTH FLOW // ZIONZ SOUTH FLOW // RUGGD DEZRT BOTH";
 			break;
 		case "SMF":
 			result += "<br/><br/>SMF - Run VAA above 25C";
@@ -694,6 +728,7 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			}
 			result += "<br/>SNA - Check VAA, especially when wet";
 			result += "<br/>SNA - Curfew rstr: takeoff N/A without approval 2155-0700L (0800L on Sundays), 15 min extension possible";
+			result += "<br/><br/>SNA Flow: <button type='button' id='SNA_standard_left' class='btn" + ((flows['SNA'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SNA\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='SNA_standard_right' class='btn" + ((flows['SNA'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SNA\", 1)'>North</button>";
 			break;
 		case "TUS":
 			result += "<br/><br/>TUS - BURRO Rwy12 // WLDKT Rwy30 // TUS9 all";
@@ -712,7 +747,8 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>ABQ - Rwy12/30 N/A (See 10-7A)";
 			break;
 		case "ATL":
-			result += "<br/><br/>ATL - SITTH EAST FLOW // JJEDI WEST FLOW";
+			result += "<br/><br/>ATL Flow: <button type='button' id='ATL_standard_left' class='btn" + ((flows['ATL'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ATL\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='ATL_standard_right' class='btn" + ((flows['ATL'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ATL\", 1)'>East</button>";
+			result += "<br/>ATL - SITTH EAST FLOW // JJEDI WEST FLOW";
 			break;
 		case "BFL":
 			result += "<br/><br/>BFL - 12R/30L N/A, see 10-7A";
@@ -730,6 +766,7 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 		case "BZN":
 			result += "<br/><br/>BZN - Run LAWS above 30C";
 			result += "<br/>BZN Night: Circle to Land N/A";
+			result += "<br/><br/>BZN Flow: <button type='button' id='BZN_standard_left' class='btn" + ((flows['BZN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='BZN_standard_right' class='btn" + ((flows['BZN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 1)'>NW Rwy 30</button>";
 			break;
 		case "COS":
 			result += "<br/><br/>COS - Rwy31 N/A";
@@ -743,11 +780,12 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>DEN - Run LAWS above 20C";
 			break;
 		case "DFW":
-			result += "<br/><br/>DFW SOUTH FLOW - VKTRY / SEEVR / BOOVE / BEREE<br/>DFW NORTH FLOW - JOVEM / BRDJE / SOCKK / WHINY";
-			result += "<br/>DFW Flow: <button type='button' id='DFW_standard_left' class='btn" + ((flows['DFW'] == 1) ? " selected" : "") + "' onclick='change_flow(\"DFW\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='DFW_standard_right' class='btn" + ((flows['DFW'] == 1) ? "" : " selected") + "' onclick='change_flow(\"DFW\", 1)'>North</button>";
+			result += "<br/><br/>DFW Flow: <button type='button' id='DFW_standard_left' class='btn" + ((flows['DFW'] == 0) ? " selected" : "") + "' onclick='change_flow(\"DFW\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='DFW_standard_right' class='btn" + ((flows['DFW'] == 1) ? " selected" : "") + "' onclick='change_flow(\"DFW\", 1)'>North</button>";
+			result += "<br/>DFW SOUTH FLOW - VKTRY / SEEVR / BOOVE / BEREE<br/>DFW NORTH FLOW - JOVEM / BRDJE / SOCKK / WHINY";
 			break;
 		case "DTW":
-			result += "<br/><br/>DTW SOUTH FLOW - BONZZ / HTROD / TPGUN / FERRL / LAYKS / HANBL / VCTRZ / RKCTY";
+			result += "<br/><br/>DTW Flow: <button type='button' id='DTW_standard_left' class='btn" + ((flows['DTW'] == 0) ? " selected" : "") + "' onclick='change_flow(\"DTW\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='DTW_standard_right' class='btn" + ((flows['DTW'] == 1) ? " selected" : "") + "' onclick='change_flow(\"DTW\", 1)'>South</button>";
+			result += "<br/>DTW SOUTH FLOW - BONZZ / HTROD / TPGUN / FERRL / LAYKS / HANBL / VCTRZ / RKCTY";
 			result += "<br/>DTW NORTH FLOW - KLYNK / CRAKN / CUUGR / WNGNT / GRAYT / LECTR / HAYLL / KKISS";
 			break;
 		case "EGE":
@@ -770,7 +808,8 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>GUC Cold Temp chart below -26C";
 			break;
 		case "IAH":
-			result += "<br/><br/>IAH - DRLLR WEST FLOW // GUSHR EAST FLOW";
+			result += "<br/><br/>IAH Flow: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East</button>";
+			result += "<br/>IAH - DRLLR WEST FLOW // GUSHR EAST FLOW";
 			break;
 		case "JAC":
 			result += "<br/><br/>JAC - 5k spread on ferry fuel";
@@ -782,7 +821,8 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>LAS - Run LAWS above 35C";
 			break;
 		case "MCO":
-			result += "<br/><br/>MCO - SNFLD NORTH FLOW // GTOUT SOUTH FLOW // GRNCH PRICY ALYNA BOTH";
+			result += "<br/><br/>MCO Flow: <button type='button' id='MCO_standard_left' class='btn" + ((flows['MCO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='MCO_standard_right' class='btn" + ((flows['MCO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 1)'>North</button>";
+			result += "<br/>MCO - SNFLD NORTH FLOW // GTOUT SOUTH FLOW // GRNCH PRICY ALYNA BOTH";
 			break;
 		case "LAS":
 			result += "<br/><br/>MFE - Notify Ops of any arrivals after midnight local";
@@ -806,8 +846,12 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 		case "RIC":
 			result += "<br/><br/>RIC - primary AA gates A6 and A8, AE gates A10 A12 A14";
 			break;
+		case "RNO":
+			result += "<br/><br/>RNO Flow: <button type='button' id='RNO_standard_left' class='btn" + ((flows['RNO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='RNO_standard_right' class='btn" + ((flows['RNO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 1)'>North</button>";
+			break;
 		case "SAN":
-			result += "<br/><br/>SAN - TOPGN EAST FLOW // LUCKI WEST FLOW";
+			result += "<br/><br/>SAN Flow: <button type='button' id='SAN_standard_left' class='btn" + ((flows['SAN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SAN\", 0)'>East</button>&nbsp;&nbsp;<button type='button' id='SAN_standard_right' class='btn" + ((flows['SAN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SAN\", 1)'>West</button>";
+			result += "<br/>SAN - TOPGN EAST FLOW // LUCKI WEST FLOW";
 			break;
 		case "SBA":
 			result += "<br/><br/>SBA - Ferry fuel spread 5k";
@@ -821,6 +865,7 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			break;
 		case "SLC":
 			result += "<br/><br/>SLC - Run LAWS above 30C";
+			result += "<br/><br/>SLC Flow: <button type='button' id='SLC_standard_left' class='btn" + ((flows['SLC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SLC\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='SLC_standard_right' class='btn" + ((flows['SLC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SLC\", 1)'>South</button>";
 			break;
 		case "SNA":
 			result += "<br/><br/>SNA - DSNEE SOUTH FLOW // ROOBY NORTH FLOW";
@@ -4880,23 +4925,6 @@ function get_routes(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, res
 			}
 		break; // End of YYZ
 	}
-
-	// STAR / DFW Flow check
-	if (arvl == "DFW") {
-		if (dfw_s_flow) {
-			result = result.replace("JOVEM6", "VKTRY2");
-			result = result.replace("BRDJE5", "SEEVR4");
-			result = result.replace("SOCKK4", "BOOVE7");
-			result = result.replace("WHINY4", "BEREE3");
-		} else {
-			result = result.replace("VKTRY2", "JOVEM6");
-			result = result.replace("SEEVR4", "BRDJE5");
-			result = result.replace("BOOVE7", "SOCKK4");
-			result = result.replace("BEREE3", "WHINY4");
-		}
-
-	}
-	return result;
 }
 
 
@@ -5074,6 +5102,15 @@ function clt_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/>ES (Coord Req): <input style=\"width:75%\"; value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR ZPLEN VUUDU1 KPBI\" readonly>";
 			result += "<br/>LL (Coord Req): <input style=\"width:75%\"; value=\"KCLT LILLS3 LILLS RAEFO MRPIT CAKET Q97 KENLL CPTAN3 KPBI\" readonly>";
 			result += "<br/>RP: <input style=\"width:75%\"; value=\"KCLT ICONS5 NOOKS WURFL Q83 JEVED Q97 KENLL CPTAN3 KPBI\" readonly>";
+			break;
+		case "RDU":
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; TODO Faa pref?
+			result += "<br/><br/>Max FL130: <input style=\"width:75%\"; value=\"KCLT LILLS3 LILLS ETBUY DMSTR2 KRDU\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KCLT KER4 MERIL KRDU\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KCLT CLT3 LILLS SDZ KRDU\" readonly>";
+			result += "<br/><br/><b>CDRS</b>";
+			result += "<br/>KW (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY VANNC CHKLZ BLOGS3 KRDU\" readonly>";
 			break;
 		case "SAV":
 			result += "<br/><input style=\"width:75%\"; value=\"KCLT ICONS5 NOOKS CAE CANTR PLZZZ KSAV\" readonly>";
@@ -5430,6 +5467,15 @@ function lax_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>VH (Ok to File): <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J96 SLN J24 MCI J80 VHP APE J30 LUISE FRDMM6 KDCA\" readonly>";
 			break;
+		case "MIA":
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J65 KOFFA J169 TFD J50 ELP J2 JCT J86 LEV Y290 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+			result += "<br/><br/>Weekend/Holiday: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH KA18S KA15W KF09A CLL LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
+			result += "<br/>North: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 DRK J78 ABQ J72 TXO FUZ J58 HRV Q105 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+			result += "<br/>Full OW: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J86 FST J138 SAT MUSYL LCHLH KELPP MINOW MARCI FROGZ4 KMIA\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><br/><b>CDRS</b>";
+			break;
 		case "PHL":
 			result += "<br/><br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J96 DRK CIM EMP HLV VHP ROD J152 JST BOJID4 KPHL\" readonly>";
 			result += "<br/><br/>ORCKA: <input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 DVC J146 LNK J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>";
@@ -5471,14 +5517,14 @@ function mia_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA FLMGO2 STYMY Q77 WIGVO PONZE BANKR5 KCLT\" readonly>";
 			result += "<br/><br/>East: <input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 VIYAP CHECR STOCR4 KCLT\" readonly>";
 			result += "<br/>West: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CSG BESTT JONZE5 KCLT\" readonly>";
-			result += "<br/>Rocket Launch: <input style=\"width:75%\"; value=\"KMIA GLADZ3 BAGGS HILTI DOFFY CAMJO TWINS PONZE BANKR5 KCLT\" readonly>";
+			result += "<br/>Rocket Launch: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS HILTI DOFFY CAMJO TWINS PONZE BANKR5 KCLT\" readonly>";
 			result += "<br/>Overwater: <input style=\"width:75%\"; value=\"KMIA FOLZZ2 ZFP AR23 OZENA Y309 FLRDA SAGGY DIW KCLT\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA PHK CRG SAV FLO RASLN3 KCLT\" readonly>";
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>A0 (Ok to File): <input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 VIYAP CHECR STOCR4 KCLT\" readonly>";
 			result += "<br/>F0 (Ok to File): <input style=\"width:75%\"; value=\"KMIA FLMGO2 STYMY Q77 WIGVO PONZE BANKR5 KCLT\" readonly>";
-			result += "<br/>G2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA GLADZ3 SHAQQ KNOST DEANR CAMJO TWINS PONZE BANKR5 KCLT\" readonly>";
+			result += "<br/>G2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO TWINS PONZE BANKR5 KCLT\" readonly>";
 			result += "<br/>H2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q99 CAMJO TWINS PONZE BANKR5 KCLT\" readonly>";
 			result += "<br/>K2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA KLADA2 KLADA UPACE SEELO OGGRE PITRW STOCR4 KCLT\" readonly>";
 			result += "<br/>M2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA MIA1 MAYNR MARCI SHAQQ KNOST DEANR CAMJO TWINS PONZE BANKR5 KCLT\" readonly>";
@@ -5498,12 +5544,9 @@ function mia_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/>Z0 (Ok to File): <input style=\"width:75%\"; value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 PITRW KCHS\" readonly>";
 			break;
 		case "DFW":
-			result += "<br/><br/>OW (DFW South): <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV PNUTS BEREE3 KDFW\" readonly>";
-			result += "<br/>OW (DFW North): <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV PNUTS WHINY4 KDFW\" readonly>";
-			result += "<br/><br/>Land (DFW South):<input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 AEX PNUTS BEREE3 KDFW\" readonly>";
-			result += "<br/>Land (DFW North):<input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 AEX PNUTS WHINY4 KDFW\" readonly>";
-			result += "<br/><br/>Full OW (DFW South): <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG VUH IAH CRIED BEREE3 KDFW\" readonly>";
-			result += "<br/>Full OW (DFW North): <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG VUH IAH CRIED WHINY4 KDFW\" readonly>";
+			result += "<br/><br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV PNUTS BEREE3 KDFW\" readonly>";
+			result += "<br/><br/>Non OW: :<input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 AEX PNUTS BEREE3 KDFW\" readonly>";
+			result += "<br/>Full OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG VUH IAH CRIED BEREE3 KDFW\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA MIA1 HURCN LAL SZW DEFUN J2 CEW J50 AEX YEAGR4 KDFW\" readonly>";
 			result += "<br/><br/><b>CDRS</b>";
@@ -5528,7 +5571,7 @@ function mia_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>A0 (Ok to File): <input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 ALWZZ OGRAE Q99 QUART PHLBO4 KEWR\" readonly>";
 			result += "<br/>DW (Ok to File): <input style=\"width:75%\"; value=\"KMIA FOLZZ3 ALYRA ROWSY Y494 YAALE Y497 SUBBS CYN GXU RBV V249 METRO KEWR\" readonly>";
-			result += "<br/>G2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA GLADZ3 SHAQQ KNOST DEANR CAMJO Q99 QUART PHLBO4 KEWR\" readonly>";
+			result += "<br/>G2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO Q99 QUART PHLBO4 KEWR\" readonly>";
 			result += "<br/>H2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q99 QUART PHLBO4 KEWR\" readonly>";
 			result += "<br/>K2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA KLADA2 KLADA UPACE SEELO GARIC Q129 AARNN QUART PHLBO4 KEWR\" readonly>";
 			result += "<br/>M2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA MIA1 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 QUART PHLBO4 KEWR\" readonly>";
@@ -5546,6 +5589,21 @@ function mia_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/>H2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA HILIS TEBOW1 KJAX\" readonly>";
 			result += "<br/>M2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR HILIS TEBOW1 KJAX\" readonly>";					
 			break;
+		case "LAX":
+			result += "<br/><br/>OW (MIA west): <input style=\"width:75%\"; value=\"KMIA BNGOS4 DOLIE CIGAR Y290 LEV J86 IAH J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/>OW (MIA east): <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 BACCA ROZZI Y280 LEV J86 PEKON JCT EWM KA18Q WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/><br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW MHZ ELD TXK SPS J72 ABQ J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+			result += "<br/>NE Arrival: <input style=\"width:75%\"; value=\"KMIA BNGOS4 DOLIE CIGAR Y290 BACCA ROZZI Y280 REDFN Q105 HRV J58 FUZ TXO J72 ABQ J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+			result += "<br/><br/>Full OW via SAT: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW HRVLK KELPP LCHLH MUSYL SAT J138 FST J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/>Full OW via CRP: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KMIA MIA9 BNGOS LAL SZW CEW J2 IAH J86 JCT J2 ELP J50 SSO J4 TNP BASET5 KLAX\" readonly>";
+			result += "<br/><br/><b>CDRS</b>";
+			result += "<br/>G0 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/>H0 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN CEW J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/>M2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MIA9 MAYNR MARCI LEV J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/>W2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MIA9 GWAVA GLAMS TAZER MARCI LEV J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			break;
 		case "MCO":
 			result += "<br/>Max FL190: <input style=\"width:75%\"; value=\"KMIA FLMGO2 WAPOM RIDES2 KMCO\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
@@ -5553,6 +5611,19 @@ function mia_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>F0 (Ok to File): <input style=\"width:75%\"; value=\"KMIA FLMGO2 WAPOM RIDES2 KMCO\" readonly>";
 			result += "<br/>Z2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA FOLZZ3 ZFP CCLUB RIDES KMCO\" readonly>";
+			break;
+		case "MSY":
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV KMSY\" readonly>";
+			result += "<br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 SJI MNSTR1 KMSY\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KMIA MIA9 BNGOS LAL HEVVN DEFUN SJI SLIDD2 KMSY\" readonly>";
+			result += "<br/><br/><b>CDRS</b>";
+			result += "<br/>B2: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA BNGOS4 DOLIE Y280 REDFN Q105 HRV KMSY\" readonly>";
+			result += "<br/>G0 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV KMSY\" readonly>";
+			result += "<br/>H0 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 SJI MNSTR1 KMSY\" readonly>";
+			result += "<br/>M2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI REDFN Q105 HRV KMSY\" readonly>";
+			result += "<br/>W2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MIA1 GWAVA GLAMS TAZER MARCI REDFN Q105 HRV KMSY\" readonly>";
 			break;
 		case "PHL":
 			result += "<br/>OW: <input style=\"width:75%\"; value=\"KMIA FOLZZ3 ALYRA ROWSY FLRDA IDOLS SKARP Q101 TUGGR KALDA ZJAAY JIIMS4 KPHL\" readonly>";
@@ -5566,7 +5637,7 @@ function mia_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA MIA6 HEDLY CRG SAV CHS J121 SWL VCN9 KPHL\" readonly>";
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>A0 (Ok to File): <input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 JROSS Q135 CUDLE Q117 SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
-			result += "<br/>G2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA GLADZ3 SHAQQ KNOST DEANR CAMJO Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+			result += "<br/>G2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
 			result += "<br/>H2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
 			result += "<br/>K2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA KLADA2 KLADA UPACE FLRDA IDOLS SKARP Q101 KALDA ZJAAY JIIMS4 KPHL\" readonly>";
 			result += "<br/>M2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA MIA1 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
@@ -5577,7 +5648,7 @@ function mia_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA MVC MHZ ELD JONEZ IRW J98 MMB KK45Y BRK FIDLE EKR LEEHY5 KSLC\" readonly>";
 			
 			result += "<br/>OW (MIA west): <input style=\"width:75%\"; value=\"KMIA BNGOS4 DOLIE CIGAR Y290 BACCA ROZZI Y280 LEV LFK FUZ PNH ALS JNC J12 HELPR LEEHY5 KSLC\" readonly>";
-			result += "<br/>OW (MIA east): <input style=\"width:75%\"; value=\"KMIA GLADZ3 BAGGS Y290 BACCA ROZZI Y280 LEV LFK FUZ PNH ALS JNC J12 HELPR LEEHY5 KSLC\" readonly>";
+			result += "<br/>OW (MIA east): <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 BACCA ROZZI Y280 LEV LFK FUZ PNH ALS JNC J12 HELPR LEEHY5 KSLC\" readonly>";
 			result += "<br/>North: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM STJ SYTHH LBF CYS OCS NORDK6 KSLC\" readonly>";
 			
 			result += "<br/>South (Non OW): <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA DEFUN J2 CEW J50 ABI TXO TCC CIM ALS JNC J12 HELPR LEEHY5 KSLC\" readonly>";
