@@ -46,7 +46,7 @@ $(".fp_input").change(function(){
 			console.log(this.value);
 			var tmp_alt = parseInt(this.value);
 			tmp_alt = Math.round(tmp_alt / 10) * 10; // round down to nearest ten
-			if (tmp_alt < 60) {
+			if (tmp_alt < 60 || tmp_alt > 430) {
 				$(this).css("border", "2px solid red"); // Box red if value < 60
 			}
 		}
@@ -67,7 +67,7 @@ function compute() {
 	}
 	result = result.replace(" DCT ","");
 	var rega = /\/([^\s]+)\s/g;
-	result = result.replace(rega, ""));
+	result = result.replace(rega, "");
 
 	// ICAO conversion if necessary
 	var waypoints = result.split(' ');
