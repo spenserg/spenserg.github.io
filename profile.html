@@ -12,18 +12,16 @@
 </head>
 
 <body>
-	<br/>Flightkeys Route String: <textarea id="fkeys_route" rows="4"></textarea>
+	<br/>&nbsp;Original Route String: <textarea id="fkeys_route" rows="4"></textarea>
 	<!-- <input id="original_route"; style="width:75%"; value=""; /><br/> -->
-	<br/><br/>PFL&nbsp;<&nbsp;&nbsp;
-	<input id="fp_1" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input id="fp_2" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input id="fp_3" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input id="fp_4" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input id="fp_5" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input id="fp_6" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input id="fp_7" type="text" style="width:10%" maxlength="5" /><br/><br/>
+	<br/><br/>&nbsp;PFL&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_1" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_2" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_3" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_4" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_5" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;<br/><br/>
 	<!-- <button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input()">Clear</button><br/> -->
-	<br/><br/><input id="new_route_string"; style="width:75%"; value="" readonly>
+	<br/><b>Profiled Route String:</b><br/>&nbsp;<input id="new_route_string"; style="width:75%"; value="" readonly>
 	<div id="total"></div>
 </body>
 
@@ -31,6 +29,7 @@
 
 function compute() {
 	result = $("#fkeys_route").val();
+	waypoints = result.split(" ");
 
 	console.log(result);
 	
