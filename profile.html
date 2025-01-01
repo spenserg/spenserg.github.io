@@ -39,12 +39,12 @@
 <script>
 
 $(".fp_input").change(function(){
-	if (parseInt($(this).id.substring(3, 4)) % 2 == 1) {
+	if (parseInt(this.id.substring(3, 4)) % 2 == 1) {
 		// odd number // should be altitude
 		$(this).css("border", "1px solid black");
 		if ($(this).value != "") {
-			console.log($(this).value);
-			var tmp_alt = parseInt($(this).value);
+			console.log(this.value);
+			var tmp_alt = parseInt(this.value);
 			tmp_alt = Math.round(tmp_alt / 10) * 10; // round down to nearest ten
 			if (tmp_alt < 60) {
 				$(this).css("border", "2px solid red"); // Box red if value < 60
@@ -52,19 +52,43 @@ $(".fp_input").change(function(){
 		}
 	} else {
 		// even number // should be waypoint
-
-		
+		// TODO testing?
 	}
 });
 
 function compute() {
-	result = $("#fkeys_route").val();
-	waypoints = result.split(" ");
+	var notes = "";
+	var cur_min = null;
+	var cur_max = null;
+	// Check for errors in route string
+	result = $("#fkeys_route").val().trim();
+	while (result.includes("  ")) {
+		result = result.replace("  "," ");
+	}
+	result = result.replace(" DCT ","");
+	var rega = /\/([^\s]+)\s/g;
+	result = result.replace(rega, ""));
 
-	console.log(result);
+	// ICAO conversion if necessary
+	var waypoints = result.split(' ');
+	if (waypoints[0].length == 3) { // Origin: ALB => KALB
+		waypoints[0] = convert_icao(waypoints[0]);
+	}
+	if (waypoints[waypoints.length - 1].length == 3) { // Dest: ALB => KALB
+		waypoints[waypoints.length - 1] = convert_icao(waypoints[waypoints.length - 1]);
+	}
+
+	// Initial altitude
+	if ($("#fp_1").val() != "") {
+		waypoints[0] += "/" + $("#fp_1").val() + "B";
+		waypoints[waypoints.length - 1] += "/X";
+		cur_max = parseInt($("#fp_1").val());
+		cur_min = cur_max - 10;
+	}
+
+	// Add at or above
 	
 	$("#new_route_string").val(result);
-	
 }
 
 function convert_icao(str = null) {
