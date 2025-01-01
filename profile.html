@@ -23,7 +23,7 @@
 </head>
 
 <body>
-	<br/>&nbsp;Original Route String: <textarea id="fkeys_route" rows="4"></textarea>
+	<br/>&nbsp;Original Route: <textarea id="fkeys_route" rows="4"></textarea>
 	<!-- <input id="original_route"; style="width:75%"; value=""; /><br/> -->
 	<br/><br/>&nbsp;PFL&nbsp;<&nbsp;
 	<input class="fp_input" id="fp_1" type="number" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
@@ -31,14 +31,26 @@
 	<input class="fp_input" id="fp_3" type="number" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
 	<input class="fp_input" id="fp_4" type="text" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
 	<input class="fp_input" id="fp_5" type="number" style="width:10%;1px solid black" maxlength="5" /><br/><br/>
-	<!-- <button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input()">Clear</button><br/> -->
+	<button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input()">Clear</button><br/>
 	<br/><b>Profiled Route String:</b><br/>&nbsp;<input id="new_route_string"; style="width:75%"; value="" readonly>
 	<div id="total"></div>
 </body>
 
 <script>
 
-$(".fp_input").change(function(){
+$(".fp_input").change(function() {
+	// Initial profile filled or empty
+	if ($("#fp_1").val() == "") {
+		// No initial profile
+		var fp1_is_red = false;
+		$('.fp_input').each(function() {
+			if (this.value != "") {
+				fp1_is_red = true;
+			}
+		});
+		$('#fp_1').css('border',(fp1_is_red ? "2px solid red" : "1px solid black"));
+	} else { $('#fp_1').css('border','1px solid black'); }
+	
 	if (parseInt(this.id.substring(3, 4)) % 2 == 1) {
 		// odd number // should be altitude
 		$(this).css("border", "1px solid black");
@@ -47,7 +59,10 @@ $(".fp_input").change(function(){
 			var tmp_alt = parseInt(this.value);
 			tmp_alt = Math.round(tmp_alt / 10) * 10; // round down to nearest ten
 			if (tmp_alt < 60 || tmp_alt > 430) {
-				$(this).css("border", "2px solid red"); // Box red if value < 60
+				$(this).css("border", "2px solid red"); // Box red if value < 60 or > 430
+				console.log("Value in box '" + this.id + "' is out of range");
+			} else {
+				$(this).val(tmp_alt);
 			}
 		}
 	} else {
@@ -60,17 +75,19 @@ function compute() {
 	var notes = "";
 	var cur_min = null;
 	var cur_max = null;
+	$('.fp_input').each(function() { $(this).css('border','1px solid black'); });
+
 	// Check for errors in route string
-	result = $("#fkeys_route").val().trim();
-	while (result.includes("  ")) {
-		result = result.replace("  "," ");
+	rte_str = $("#fkeys_route").val().trim().toUpperCase();
+	while (rte_str.includes("  ")) {
+		rte_str = rte_str.replace("  "," ");
 	}
-	result = result.replace(" DCT ","");
+	rte_str = rte_str.replace(" DCT "," ");
 	var rega = /\/([^\s]+)\s/g;
-	result = result.replace(rega, "");
+	rte_str = rte_str.replace(rega, "");
 
 	// ICAO conversion if necessary
-	var waypoints = result.split(' ');
+	var waypoints = rte_str.split(' ');
 	if (waypoints[0].length == 3) { // Origin: ALB => KALB
 		waypoints[0] = convert_icao(waypoints[0]);
 	}
@@ -81,14 +98,15 @@ function compute() {
 	// Initial altitude
 	if ($("#fp_1").val() != "") {
 		waypoints[0] += "/" + $("#fp_1").val() + "B";
-		waypoints[waypoints.length - 1] += "/X";
 		cur_max = parseInt($("#fp_1").val());
 		cur_min = cur_max - 10;
 	}
 
 	// Add at or above
+
+	// Check alt limits of star
 	
-	$("#new_route_string").val(result);
+	$("#new_route_string").val(waypoints.join(" "));
 }
 
 function convert_icao(str = null) {
