@@ -26,87 +26,166 @@
 	<br/>&nbsp;Original Route: <textarea id="fkeys_route" rows="4"></textarea>
 	<!-- <input id="original_route"; style="width:75%"; value=""; /><br/> -->
 	<br/><br/>&nbsp;PFL&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_1" type="number" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_2" type="text" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_3" type="number" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_4" type="text" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_5" type="number" style="width:10%;1px solid black" maxlength="5" /><br/><br/>
+	<input class="fp_input" id="fp_1" type="number" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_2" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_3" type="number" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_4" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_5" type="number" style="width:10%" maxlength="5" /><br/><br/>
 	<button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input()">Clear</button><br/>
 	<br/><b>Profiled Route String:</b><br/>&nbsp;<input id="new_route_string"; style="width:75%"; value="" readonly>
 	<div id="total"></div>
 </body>
 
+<style>
+	.fp_input { border:1px solid black; }
+	.has_error { border:2px solid red; }
+</style>
+
 <script>
 
 $(".fp_input").change(function() {
+	check_for_errors(this.id);
+});
+
+function check_for_errors(cur_id = null) {
+	// If null, check all
+	var is_error = false;
+
 	// Initial profile filled or empty
 	if ($("#fp_1").val() == "") {
 		// No initial profile
-		var fp1_is_red = false;
+		var tmp_err = false; // probably not necessary, could use is_error for this
 		$('.fp_input').each(function() {
 			if (this.value != "") {
-				fp1_is_red = true;
+				if (!$("#fp_1").hasClass("has_error")) {
+					is_error = true;
+					tmp_err = true;
+					$("#fp_1").addClass("has_error");
+					console.log("Initial profile is not set");
+				}
+			}
+			if (!tmp_err && $("#fp_1").hasClass("has_error")) {
+				$("#fp_1").removeClass("has_error");
 			}
 		});
-		$('#fp_1').css('border',(fp1_is_red ? "2px solid red" : "1px solid black"));
-	} else { $('#fp_1').css('border','1px solid black'); }
-	
-	if (parseInt(this.id.substring(3, 4)) % 2 == 1) {
-		// odd number // should be altitude
-		$(this).css("border", "1px solid black");
-		if ($(this).value != "") {
-			console.log(this.value);
-			var tmp_alt = parseInt(this.value);
-			tmp_alt = Math.round(tmp_alt / 10) * 10; // round down to nearest ten
+	} else if ($("#fp_1").hasClass("has_error")) {
+		// check if fp_1 in range
+		var tmpval = parseInt($("#fp_1").val());
+		var tmp_err = ((tmpval < 60 || tmpval > 430) ? true : false);
+		if (!tmp_err) {
+			$("#fp_1").removeClass("has_error");
+		}
+	}
+
+	var tmp_tmp_tmp_errors = false;
+	if (cur_id == null) {
+		// Check specific id
+		tmp_tmp_tmp_errors = check_input_for_errors("#" + cur_id);
+	} else {
+		// Check all
+		$('.fp_input').each(function() {
+			tmp_tmp_tmp_errors = check_input_for_errors($(this).id);
+			is_error = (is_error || tmp_tmp_tmp_errors);
+		}
+	}
+	return (is_error || tmp_tmp_tmp_errors);
+}
+
+function check_input_for_errors (id = null) {
+	has_error = false;
+	if (id == null || id.length != 4) { return false; }
+	if (parseInt(id.substring(3, 4)) % 2 == 1) {
+	// odd number // should be altitude
+		if ($("#" + id).val() != "") {
+		// Check if in range
+			var tmp_alt = parseInt($("#" + id).val());
+			tmp_alt = Math.floor(tmp_alt / 10) * 10; // round down to nearest ten
 			if (tmp_alt < 60 || tmp_alt > 430) {
-				$(this).css("border", "2px solid red"); // Box red if value < 60 or > 430
-				console.log("Value in box '" + this.id + "' is out of range");
+				$("#" + id).css("border", "2px solid red"); // Box red if value < 60 or > 430
+				is_error = true;
+				console.log("Value in box '" + id + "' is out of range");
 			} else {
-				$(this).val(tmp_alt);
+				$("#" + id).css("border", "2px solid black");
+				$("#" + id).val(tmp_alt);
 			}
 		}
 	} else {
 		// even number // should be waypoint
 		// TODO testing?
 	}
-});
+
+	// Set input box color to red or black
+	if (has_error && !$("#" + id).hasClass("has_error")) {
+		$("#" + id).addClass("has_error");
+	}
+	if (!has_error && $("#" + id).hasClass("has_error")) {
+		$("#" + id).removeClass("has_error");
+	}
+	return has_error;
+}
 
 function compute() {
 	var notes = "";
 	var cur_min = null;
 	var cur_max = null;
-	$('.fp_input').each(function() { $(this).css('border','1px solid black'); });
+
+	// Check for individual input errors
+	if (check_for_errors()) { return; }
 
 	// Check for errors in route string
 	rte_str = $("#fkeys_route").val().trim().toUpperCase();
-	while (rte_str.includes("  ")) {
+	while (rte_str.includes("  ")) { // Remove all spaces
 		rte_str = rte_str.replace("  "," ");
 	}
-	rte_str = rte_str.replace(" DCT "," ");
+	rte_str = rte_str.replaceAll(" DCT "," "); // Remove " DCT "
+
+	// Remove any speed or alt restrictions currently in route string
 	var rega = /\/([^\s]+)\s/g;
 	rte_str = rte_str.replace(rega, "");
 
-	// ICAO conversion if necessary
 	var waypoints = rte_str.split(' ');
+
+	// ICAO conversion if necessary
 	if (waypoints[0].length == 3) { // Origin: ALB => KALB
 		waypoints[0] = convert_icao(waypoints[0]);
 	}
 	if (waypoints[waypoints.length - 1].length == 3) { // Dest: ALB => KALB
 		waypoints[waypoints.length - 1] = convert_icao(waypoints[waypoints.length - 1]);
 	}
-
-	// Initial altitude
-	if ($("#fp_1").val() != "") {
-		waypoints[0] += "/" + $("#fp_1").val() + "B";
-		cur_max = parseInt($("#fp_1").val());
-		cur_min = cur_max - 10;
-	}
-
-	// Add at or above
-
-	// Check alt limits of star
+	if (waypoints.length > 2 && $("#fp_1").val() != "") {
+		// Initial altitude
+		if ($("#fp_1").val() != "") {
+			waypoints[0] += "/" + $("#fp_1").val() + "B";
+			cur_max = parseInt($("#fp_1").val());
+			cur_min = cur_max - 10;
+		}
 	
+		if (waypoints.length == 3) {
+			// Short FP
+			// KAVL JJENY KCLT
+			// Wont get high enough for min alt to matter
+			waypoints[0] += "/" + cur_max + "B";
+			waypoints[2] += "/X";
+		} else {
+		
+			// Add at or above
+		
+			// Route has STAR?
+			// BEREE3 CQY3  //  NOT J6 
+			if (/\d/.test(waypoints[waypoints.length - 1]) && isNaN(parseInt(waypoints[1]))) {
+				waypoints = add_star_min(waypoints);
+			} else {
+				// No STAR // End profile at point before airport
+				waypoints[waypoints.length - 1] += "/X";
+			}
+		}
+	}
 	$("#new_route_string").val(waypoints.join(" "));
+}
+
+function add_star_mins(w = null) {
+	// 4+ items guaranteed
+	// STAR exists
 }
 
 function convert_icao(str = null) {
