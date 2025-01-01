@@ -8,24 +8,54 @@
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<style></style>
+	<style>
+	        /* Hide the spin buttons in WebKit browsers */
+	        input::-webkit-outer-spin-button,
+	        input::-webkit-inner-spin-button {
+	            -webkit-appearance: none;
+	            margin: 0;
+	        }
+	        /* Hide spin buttons in Firefox */
+	        input[type="number"] {
+	            -moz-appearance: textfield;
+	        }
+	</style>
 </head>
 
 <body>
 	<br/>&nbsp;Original Route String: <textarea id="fkeys_route" rows="4"></textarea>
 	<!-- <input id="original_route"; style="width:75%"; value=""; /><br/> -->
 	<br/><br/>&nbsp;PFL&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_1" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_2" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_3" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_4" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_5" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;<br/><br/>
+	<input class="fp_input" id="fp_1" type="number" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_2" type="text" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_3" type="number" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_4" type="text" style="width:10%;1px solid black" maxlength="5" />&nbsp;<&nbsp;
+	<input class="fp_input" id="fp_5" type="number" style="width:10%;1px solid black" maxlength="5" /><br/><br/>
 	<!-- <button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input()">Clear</button><br/> -->
 	<br/><b>Profiled Route String:</b><br/>&nbsp;<input id="new_route_string"; style="width:75%"; value="" readonly>
 	<div id="total"></div>
 </body>
 
 <script>
+
+$(".fp_input").change(function(){
+	if (parseInt($(this).id.substring(3, 4)) % 2 == 1) {
+		// odd number // should be altitude
+		$(this).css("border", "1px solid black");
+		if ($(this).value != "") {
+			console.log($(this).value);
+			var tmp_alt = parseInt($(this).value);
+			tmp_alt = Math.round(tmp_alt / 10) * 10; // round down to nearest ten
+			if (tmp_alt < 60) {
+				$(this).css("border", "2px solid red"); // Box red if value < 60
+			}
+		}
+	} else {
+		// even number // should be waypoint
+
+		
+	}
+});
 
 function compute() {
 	result = $("#fkeys_route").val();
