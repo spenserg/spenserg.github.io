@@ -53,11 +53,6 @@ document.getElementById("outbound").addEventListener("keypress", function(event)
 });
 
 function change_flow(airport = null, new_config = null, override_duplicated = false) {
-
-console.log(airport);
-console.log(new_config);
-console.log(override_duplicated);
-	
 	airport = airport.toUpperCase(0);
 	if (override_duplicated || ([0,1].includes(new_config) && flows[airport] !== undefined)) {
 		flows[airport] = new_config;
@@ -278,6 +273,9 @@ function compute (type = -1) {
 	// Decs route page
 	regz = /[DI][\d]+\s+\d+\s[A-Z]\s[A-Z]\s[A-Z][^\n]+\n\s*ARTC TEXT/g;
 
+	// Airway
+	regy = /\<(\d+)\s\<(K\d)\s\<([^\s]+)\s/g;
+
 	var fkeystxt = $("#outbound").val();
 	var testing = false;
 	var land_wgt_limited = false;
@@ -290,6 +288,9 @@ function compute (type = -1) {
 	if ((result = regz.exec(fkeystxt)) != null) {
 		// DECS routing page
 		output = decs_route(fkeystxt);
+	} else if ((result = regy.exec(fkeystxt)) != null) {
+		// Airway
+		output = parse_airway(fkeystxt);
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
@@ -441,7 +442,7 @@ function compute (type = -1) {
 
 		// Airport Specific
 		output = airport_extra(result[1], result[2], result[5], ac_type, output);
-	} else if (regz.exec(fkeystxt) == null) {
+	} else if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null) {
 		console.log("flifo parse error");
 	}
 
@@ -452,7 +453,7 @@ function compute (type = -1) {
 	}
 
 	// Routes
-	if (regz.exec(fkeystxt) == null && result != null) {
+	if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && result != null) {
 		output = get_routes(result[1], result[2], result[5], ac_type, output);
 		$("#outbound").val("");
 	}
@@ -460,8 +461,18 @@ function compute (type = -1) {
 	$("#total").html('<br/>' + output);
 }
 
+function parse_airway (input = null) {
+	var result = "";
+	var result_arr = [];
+	reg_tmp = /\<(\d+)\s\<(K\d)\s\<([^\s]+)\s/g;
+	result += 'case "XX":';
+	while(null != (z = reg_tmp.exec(input))) {
+		result_arr.push([z[0], z[1], z[2]]);
+	}
+	return '<textarea rows="15" cols="80">case "XX":\n\t\t\t\t' + result_arr.join('\n\t\t\t\t') + '\n\t\t\tbreak;</textarea>';
+}
+
 function decs_route(input = null) {
-	var ca_stations = ["YEG", "YHM", "YOW", "YQB", "YUL", "YVR", "YYC", "YYZ"];
 	var result = "";
 	var result_arr = {};
 	var textarea_tabs = "";
