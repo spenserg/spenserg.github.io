@@ -86,7 +86,7 @@ function check_for_errors(cur_id = null) {
 		$('.fp_input').each(function() {
 			tmp_tmp_tmp_errors = check_input_for_errors($(this).id);
 			is_error = (is_error || tmp_tmp_tmp_errors);
-		}
+		});
 	}
 	return (is_error || tmp_tmp_tmp_errors);
 }
