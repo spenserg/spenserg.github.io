@@ -469,13 +469,41 @@ function compute (type = -1) {
 }
 
 function fos_star_info (input = null) {
-	var result = "";
-	var stars = [];
-	reg_tmp = /([A-Z]+\d{1})\s+([A-Z]+)\s+([^\n\s]+)/g;
-	while(null != (z = reg_tmp.exec(input))) {
+	var stars = {};
+	var all_names = [];
+	var apt = "XXX";
+
+	reg_apt_1 = /IDAF([A-Z]{3})/g;
+	reg_apt_2 = /([A-Z]{3})\s+HAS THE FOLLOWING STARS/g;
+	if (null != (z = reg_apt_1.exec(input))) {
+		apt = z[1];
+		console.log(z);
+	} else if (null != (z = reg_apt_2.exec(input))) {
+		apt = z[1];
 		console.log(z);
 	}
-	return result;
+
+	var result = 'case "KDFW":\n\t\t\tswitch(star) {';
+	reg_tmp = /([A-Z]+\d{1})\s+([A-Z]+)\s+([^\n\s]+)/g;
+	while (null != (z = reg_tmp.exec(input))) {
+		if (stars[z[1].substring(0, z[1].length - 1)] === undefined) {
+			stars[z[1].substring(0, z[1].length - 1)] = [];
+			all_names.push(z[1].substring(0, z[1].length - 1));
+		}
+		if (!stars[z[1].substring(0, z[1].length - 1)].includes(z[3])) {
+			stars[z[1].substring(0, z[1].length - 1)].push(z[3]);
+		}
+	}
+	all_names.sort();
+	for (var val = 0; val < all_names.length; val++) {
+		result += '\n\t\t\t\tcase "' + all_names[val] + '":\n\t\t\t\t\tswitch(waypoints[waypoints.length - 2]) {';
+		stars[all_names[val]].sort();
+		for (var wal = 0; wal < stars[all_names[val]].length; wal++) {
+			result += '\n\t\t\t\t\t\tcase "' + stars[all_names[val]][wal] + '":';
+		}
+		result += '\n\t\t\t\t\t\treturn null; break;\n\t\t\t\t\t}\n\t\t\t\tbreak;';
+	}
+	return '<textarea rows="15" cols="80">' + result + '\n\t\t\t}\n\t\tbreak; // End of ' + apt + '</textarea>';
 }
 
 function parse_airway (input = null) {
