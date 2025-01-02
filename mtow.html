@@ -266,6 +266,7 @@ function compute (type = -1) {
 	var narrow_ci_max = 80;
 	var wide_ci_min = 40;
 	var wide_ci_max = 300;
+	var fkeystxt = $("#outbound").val();
 	$("#total").html("");
 	rega = /TOW\n(\d+)\n(\d+)\n([^\n]*)\nLDW\n(\d+)\n(\d+)\n/g;
 	regb = /light\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AAL(\d+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,\n\.]+)[\,\n\.][^\n]*\n[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
@@ -276,7 +277,13 @@ function compute (type = -1) {
 	// Airway
 	regy = /\<(\d+)\s\<(K\d)\s\<([^\s]+)\s/g;
 
-	var fkeystxt = $("#outbound").val();
+	// STAR - FOS: IDAFXXX (XXX is apt)
+	regx = /([A-Z]+\d{1})\s+([A-Z]+)\s+([^\n\s]+)/g;
+	if ((result = regx.exec(fkeystxt)) != null) {
+		$("#total").html('<br/>' + fos_star_info(fkeystxt));
+		return;
+	}
+
 	var testing = false;
 	var land_wgt_limited = false;
 	// For Testing Station Info
@@ -459,6 +466,16 @@ function compute (type = -1) {
 	}
 
 	$("#total").html('<br/>' + output);
+}
+
+function fos_star_info (input = null) {
+	var result = "";
+	var stars = [];
+	reg_tmp = /([A-Z]+\d{1})\s+([A-Z]+)\s+([^\n\s]+)/g;
+	while(null != (z = reg_tmp.exec(input))) {
+		console.log(z);
+	}
+	return result;
 }
 
 function parse_airway (input = null) {
