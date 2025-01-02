@@ -153,14 +153,11 @@ function compute() {
 		waypoints[waypoints.length - 1] = convert_icao(waypoints[waypoints.length - 1]);
 	}
 
-	
 	if (waypoints.length > 2 && $("#fp_1").val() != "") { // fp val checked above in errors, but included here anyway
 		// Initial altitude
-		if ($("#fp_1").val() != "") {
-			waypoints[0] += "/" + $("#fp_1").val() + "B";
-			cur_max = parseInt($("#fp_1").val());
-			cur_min = cur_max - 10;
-		}
+		waypoints[0] += "/" + $("#fp_1").val() + "B";
+		cur_max = parseInt($("#fp_1").val());
+		cur_min = cur_max - 10;
 	
 		if (waypoints.length == 3) {
 			// Short FP
@@ -169,13 +166,22 @@ function compute() {
 			waypoints[0] += "/" + cur_max + "B";
 			waypoints[2] += "/X";
 		} else {
-		
+			// TODO
 			// Add at or above
+			// use cur_max 
+
+			// TODO
+			// Check Other inputs for waypoints in route string
 		
 			// Route has STAR?
 			// BEREE3 CQY3  //  NOT J6 
 			if (/\d/.test(waypoints[waypoints.length - 1]) && isNaN(parseInt(waypoints[1]))) {
-				waypoints = add_star_min(waypoints, cur_min, cur_max);
+				var star_min = get_star_max(waypoints);
+				if (star_mins == null) {
+					waypoints[waypoints.length - 3] += "/X";
+				} else {
+					waypoints[waypoints.length - 3] += "/" + star_mins + "B";
+				}
 			} else {
 				// No STAR // End profile at point before airport
 				waypoints[waypoints.length - 1] += "/X";
@@ -185,21 +191,288 @@ function compute() {
 	$("#new_route_string").val(waypoints.join(" "));
 }
 
-function add_star_mins(waypoints = null, min = 0, max = 410) {
+function get_star_max(waypoints = null) {
 	// 4+ items guaranteed
 	// STAR exists guaranteed in w[w.length - 1]
 	// BEREE3 // UKW8
 	// FOS: IDAFXXX - XXX is apt code
-	var star = w[w.length - 1].substring(0, str.length - 1); // Just name, no number
+	var star = waypoints[waypoints.length - 1].substring(0, str.length - 1); // Just name, no number
 	switch (convert_icao(w[0])) {
 		case "KDFW":
 			switch(star) {
 				case "BEREE":
+					switch(waypoints[waypoints.length - 2]) {
+						case "BEREE":
+							return 230; break;
+						case "OUTLN":
+						case "POPSY":
+						case "POWND":
+							return 300; break;
+						case "STUFT":
+						case "CRIED":
+						case "PNUTS":
+						case "YUYUN":
+							return null; break;
+					}
+				break;
+				case "BOOVE":
+					switch(waypoints[waypoints.length - 2]) {
+						case "BOOVE": return 190; break;
+						case "KIILO": return 230; break;
+						case "SNGGL": return 300; break;
+						case "GEEKY":
+						case "GUTZZ":
+							return null;
+						break;
+					}
+				break;
+				case "BRDJE":
+					switch(waypoints[waypoints.length - 2]) {
+						case "SEEVR": return 230; break;
+						case "AXXEE":
+						case "CHMLI":
+						case "HITUG":
+						case "JRHED":
+						case "PROWD":
+						case "RRNET":
+						case "RRONY":
+						case "FEWWW":
+							return null; break;
+					}
+				break;
+				case "CABBY":
+					switch(waypoints[waypoints.length - 2]) {
+						case "PURRS":
+						return null;
+						break;
+					}
+				break;
+				case "CAINE":
+					switch(waypoints[waypoints.length - 2]) {
+						case "JONEZ": return 140; break;
+					}
+				break;
+				case "CQY":
+					switch(waypoints[waypoints.length - 2]) {
+						case "ACT":
+						case "AEX":
+						case "CQY":
+						case "CWK":
+						case "EMG":
+						case "GGG":
+						case "HERRI":
+						case "IAH":
+						case "LOA":
+						case "MHZ":
+						case "MLU":
+						case "NAVYS":
+						case "SQS":
+						return null;
+						break;
+					}
+				break;
+				case "DAWGZ":
+					switch(waypoints[waypoints.length - 2]) {
+						case "JONEZ": return null; break;
+					}
+				break;
+				case "FINGR":
+					switch(waypoints[waypoints.length - 2]) {
+						case "BYP":
+						case "FSM":
+						case "IRW":
+						case "LIT":
+						case "PRX":
+						case "RIGYA":
+						case "TUL":
+						case "TXK":
+							return null; break;
+					}
+				break;
+				case "FORNY":
+					switch(waypoints[waypoints.length - 2]) {
+						case "PURRS": return 110; break;
+					}
+				break;
+				case "GIBBI":
+					switch(waypoints[waypoints.length - 2]) {
+						case "GZNTA":
+						case "HYDES":
+							return null; break;
+					}
+				break;
+				case "JOVEM":
+					switch(waypoints[waypoints.length - 2]) {
+						case "BELFR":
+						case "TYPTN":
+						case "WLLTR":
+							return 300; break;
+						case "FAWNT":
+							return 280; break;
+						case "VKTRY":
+							return 180; break;
+						case "HOFFF":
+						case "IBAKE":
+						case "KLAWW":
+						case "HNKER":
+						case "MDANO":
+						case "TURKI":
+							return null;
+							break;
+					}
+				break;
+				case "PAWLZ":
+					switch(waypoints[waypoints.length - 2]) {
+						case "BGTOE":
+						case "DITSY":
+							return null; break;
+					}
+				break;
+				case "SEEVR":
+					switch(waypoints[waypoints.length - 2]) {
+						case "CHMLI": return 300; break;
+						case "RRONY": return 230; break;
+						case "SEEVR": return 160; break;	
+						case "AXXEE":
+						case "FEWWW":
+						case "HITUG":
+						case "JRHED":
+						case "PLEZE":
+						case "PROWD":
+						case "RRNET":
+						return null;
+						break;
+					}
+				break;
+				case "SHAAM":
+					switch(waypoints[waypoints.length - 2]) {
+						case "GZNTA":
+						case "HYDES":
+						return null;
+						break;
+					}
+				break;
+				case "SHMPP":
+					switch(waypoints[waypoints.length - 2]) {
+						case "GEEKY":
+						case "GUTZZ":
+						case "KIILO":
+						case "SNGGL":
+						return null;
+						break;
+					}
+				break;
+				case "SOCKK":
+					switch(waypoints[waypoints.length - 2]) {
+						case "BOOVE":
+						case "GEEKY":
+						case "GUTZZ":
+						case "KIILO":
+						case "KYSSS":
+						case "SNGGL":
+						return null;
+						break;
+					}
+				break;
+				case "TILLA":
+					switch(waypoints[waypoints.length - 2]) {
+						case "BGTOE":
+						case "DITSY":
+						return null;
+						break;
+					}
+				break;
+				case "UKW":
+					switch(waypoints[waypoints.length - 2]) {
+						case "IRW":
+						case "PNH":
+						case "SPS":
+						case "TUL":
+						case "TURKI":
+						case "TXO":
+						case "UKW":
+						return null;
+						break;
+					}
+				break;
+				case "VKTRY":
+					switch(waypoints[waypoints.length - 2]) {
+						case "BELFR":
+						case "FAWNT":
+						case "HNKER":
+						case "HOFFF":
+						case "IBAKE":
+						case "KLAWW":
+						case "MDANO":
+						case "RBUKL":
+						case "TURKI":
+						case "TYPTN":
+						case "VKTRY":
+						case "WLLTR":
+						return null;
+						break;
+					}
+				break;
+				case "WHINY":
+					switch(waypoints[waypoints.length - 2]) {
+						case "BEREE":
+						case "CRIED":
+						case "OUTLN":
+						case "PNUTS":
+						case "POPSY":
+						case "POWND":
+						case "STUFT":
+						case "WAITT":
+						case "WHINY":
+						case "YUYUN":
+						return null;
+						break;
+					}
+				break;
+				case "WILBR":
+					switch(waypoints[waypoints.length - 2]) {
+						case "BYP":
+						case "FSM":
+						case "LIT":
+						case "PRX":
+						case "TUL":
+						case "TXK":
+						return null;
+						break;
+					}
+				break;
+				case "YEAGR":
+					switch(waypoints[waypoints.length - 2]) {
+						case "ACT":
+						case "AEX":
+						case "CWK":
+						case "EMG":
+						case "GGG":
+						case "GIFFA":
+						case "HERRI":
+						case "IAH":
+						case "LOA":
+						case "MHZ":
+						case "MLU":
+						case "NAVYS":
+						case "SQS":
+						return null;
+						break;
+					}
+				break;
+				case "ZROBA":
+					switch(waypoints[waypoints.length - 2]) {
+						case "GEEKY":
+						case "GUTZZ":
+						case "KIILO":
+						case "SNGGL":
+						return null;
+						break;
+					}
 				break;
 			}
-		break;
+		break; // End of DFW
 	}
-	return waypoints;
 }
 
 function convert_icao(str = null) {
