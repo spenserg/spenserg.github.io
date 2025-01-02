@@ -185,13 +185,14 @@ function compute() {
 	$("#new_route_string").val(waypoints.join(" "));
 }
 
-function add_star_mins(waypoints = null, min = 0; max = 410) {
+function add_star_mins(waypoints = null, min = 0, max = 410) {
 	// 4+ items guaranteed
-	// STAR exists in w[w.length - 1]
+	// STAR exists guaranteed in w[w.length - 1]
 	// BEREE3 // UKW8
-	var star = w[w.length - 1].substring(0, str.length - 1);
-	switch (w[0]) {
-		case "DFW":
+	// FOS: IDAFXXX - XXX is apt code
+	var star = w[w.length - 1].substring(0, str.length - 1); // Just name, no number
+	switch (convert_icao(w[0])) {
+		case "KDFW":
 			switch(star) {
 				case "BEREE":
 				break;
