@@ -25,16 +25,14 @@
 <body>
 	<br/>&nbsp;Fkeys Route String: <textarea id="fkeys_route" rows="8"></textarea><br/><br/>
 	PFL&nbsp;<&nbsp;<input class="fp_input" id="fp_1" type="number" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_2" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
+<!--	<input class="fp_input" id="fp_2" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
 	<input class="fp_input" id="fp_3" type="number" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
 	<input class="fp_input" id="fp_4" type="text" style="width:10%" maxlength="5" />&nbsp;<&nbsp;
-	<input class="fp_input" id="fp_5" type="number" style="width:10%" maxlength="5" /><br/><br/>
+	<input class="fp_input" id="fp_5" type="number" style="width:10%" maxlength="5" /> --><br/><br/>
 	<!-- <input id="original_route"; style="width:75%"; value=""; /><br/> -->
 	<button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input()">Clear</button>
 	<br/><br/>
-	<div id="total">
-        <!-- <b>Suggested Fix: </b><br/>&nbsp;<input id="new_route_string"; style="width:75%"; value="" readonly> -->
-    </div>
+	<div id="total"></div>
 </body>
 
 <style>
@@ -50,39 +48,82 @@ function clear_input() {
 }
 
 function compute() {
-	var result_arr = [$("#fkeys_route").val(), ""];
+	var result_arr = [$("#fkeys_route").val(), []];
 
-// TODO Remover slash numbers /350B /F310
-	
-	result_arr = validate_segments(result_arr[0], result_arr[1]);
+	// Remove any speed or alt restrictions currently in route string
+	var rega = /\/([^\s]+)\s/g;
+	result_arr[0] = result_arr[0].replace(rega, " ");
+	result_arr[0] = result_arr[0].replace(" DCT "," ");
 
-// TODO check SID STAR alt limits
+	// Check profile for errors
+	var init_fl = (isNaN(parseInt($("#fp_1").val())) ? null : (parseInt($("#fp_1").val())));
+	if (init_fl < 60 || init_fl > 430) {
+		result_arr[1].push("Invalid Flight Level: '" + init_fl + "'");
+		init_fl = null;
+	} else if (init_fl % 10 != 0) {
+		var tmp_err = "Invalid Flight Level: '" + init_fl + "' => Assumed FL";
+		init_fl = Math.floor(init_fl / 10) * 10; // round down to nearest ten
+		result_arr[1].push(tmp_err + init_fl);
+	}
 
+	// Validate segments
+	result_arr = validate_segments(result_arr);
+
+	var waypoints = result_arr[0].split(' ');
+
+	// ICAO conversion if necessary
+	if (waypoints[0].length == 3) { // Origin: ALB => KALB
+		waypoints[0] = convert_icao(waypoints[0]);
+	}
+	if (waypoints[waypoints.length - 1].length == 3) { // Dest: ALB => KALB
+		waypoints[waypoints.length - 1] = convert_icao(waypoints[waypoints.length - 1]);
+	}
+
+	// TODO check SID STAR alt limits
+	if (/\d/.test(waypoints[waypoints.length - 2])) {
+		// STAR used
+		// Check STAR alt limits
+
+		// TODO
+		waypoints[waypoints.length - 3] += "/X";
+	} else {
+		waypoints[waypoints.length - 2] += "/X";
+	}
+
+	if (init_fl != null) {
+		waypoints[0] += "/F" + init_fl;
+	}
+
+	var html_final = '<b>Suggested Fix: </b><br/>&nbsp;<input id="new_route_string"; style="width:75%"; value="' + waypoints.join(" ") + '" readonly>';
+	if (result_arr[1].length > 0) {
+		html_final += '<br/><br/><span style="color:red">' + result_arr[1].join('<br/>') + '</span>';
+	}
+	$("#total").html(html_final);
 }
 
-function validate_segments(route = "", notes = "") {
-	if (route.includes("AGAZY FST")) {
-		route = route.replace("AGAZY FST", "AGAZY DOWES FST");
-		notes += "<br/>Fkeys will not accept 'AGAZY DCT FST' => changed to 'AGAZY DOWES FST'";
+function validate_segments(route_arr = []) {
+	if (route_arr[0].includes("AGAZY FST")) {
+		route_arr[0] = route_arr[0].replace("AGAZY FST", "AGAZY DOWES FST");
+		route_arr[1] += "<br/>Fkeys will not accept 'AGAZY DCT FST' => changed to 'AGAZY DOWES FST'";
 	}
-	if (route.includes("BLH JCT")) {
-		route = route.replace("BLH JCT", "BLH J169 TFD J50 ELP J2 JCT");
-		notes += "<br/>Fkeys will not accept 'BLH JCT' => changed to 'BLH J169 TFD J50 ELP J2 JCT'
+	if (route_arr[0].includes("BLH JCT")) {
+		route_arr[0] = route_arr[0].replace("BLH JCT", "BLH J169 TFD J50 ELP J2 JCT");
+		route_arr[1] += "<br/>Fkeys will not accept 'BLH JCT' => changed to 'BLH J169 TFD J50 ELP J2 JCT'";
 	}
-	if (route.includes("BOWFN BLVNS")) { // SEGMENT_BOWFN_BLVNS_MULTI
-		route = route.replace("BOWFN BLVNS", "LEV Y290 BLVNS");
-		notes += "<br/>Fkeys will not accept 'BOWFN BLVNS' => changed to 'LEV Y290 BLVNS'
+	if (route_arr[0].includes("BOWFN BLVNS")) { // SEGMENT_BOWFN_BLVNS_MULTI
+		route_arr[0] = route_arr[0].replace("BOWFN BLVNS", "LEV Y290 BLVNS");
+		route_arr[1] += "<br/>Fkeys will not accept 'BOWFN BLVNS' => changed to 'LEV Y290 BLVNS'";
 	}
-	if (route.includes("BSKAT ANSWA")) { // SEGMENT_BSKAT_ANSWA_MULTI
-		route = route.replace("BSKAT ANSWA", "BSKAT LIT");
-		notes += "<br/>Fkeys will not accept 'BSKAT ANSWA' => changed to 'BSKAT LIT'
+	if (route_arr[0].includes("BSKAT ANSWA")) { // SEGMENT_BSKAT_ANSWA_MULTI
+		route_arr[0] = route_arr[0].replace("BSKAT ANSWA", "BSKAT LIT");
+		route_arr[1] += "<br/>Fkeys will not accept 'BSKAT ANSWA' => changed to 'BSKAT LIT'";
 	}
-	if (route.includes("BSKAT CIVKI")) { // SEGMENT_BSKAT_CIVKI_MULTI
-		route = route.replace("BSKAT CIVKI", "BSKAT LIT");
-		notes += "<br/>Fkeys will not accept 'BSKAT CIVKI' => changed to 'BSKAT LIT'
+	if (route_arr[0].includes("BSKAT CIVKI")) { // SEGMENT_BSKAT_CIVKI_MULTI
+		route_arr[0] = route_arr[0].replace("BSKAT CIVKI", "BSKAT LIT");
+		route_arr[1] += "<br/>Fkeys will not accept 'BSKAT CIVKI' => changed to 'BSKAT LIT'";
 	}
 
-	return ([route, notes]);
+	return route_arr;
 }
 
 function get_star_max(waypoints = null) {
