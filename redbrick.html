@@ -104,23 +104,23 @@ function compute() {
 function validate_segments(route_arr = []) {
 	if (route_arr[0].includes("AGAZY FST")) {
 		route_arr[0] = route_arr[0].replace("AGAZY FST", "AGAZY DOWES FST");
-		route_arr[1] += "<br/>Fkeys will not accept 'AGAZY DCT FST' => changed to 'AGAZY DOWES FST'";
+		route_arr[1].push("<br/>Fkeys will not accept 'AGAZY DCT FST' => changed to 'AGAZY DOWES FST'");
 	}
 	if (route_arr[0].includes("BLH JCT")) {
 		route_arr[0] = route_arr[0].replace("BLH JCT", "BLH J169 TFD J50 ELP J2 JCT");
-		route_arr[1] += "<br/>Fkeys will not accept 'BLH JCT' => changed to 'BLH J169 TFD J50 ELP J2 JCT'";
+		route_arr[1].push("<br/>Fkeys will not accept 'BLH JCT' => changed to 'BLH J169 TFD J50 ELP J2 JCT'");
 	}
 	if (route_arr[0].includes("BOWFN BLVNS")) { // SEGMENT_BOWFN_BLVNS_MULTI
 		route_arr[0] = route_arr[0].replace("BOWFN BLVNS", "LEV Y290 BLVNS");
-		route_arr[1] += "<br/>Fkeys will not accept 'BOWFN BLVNS' => changed to 'LEV Y290 BLVNS'";
+		route_arr[1].push("<br/>Fkeys will not accept 'BOWFN BLVNS' => changed to 'LEV Y290 BLVNS'");
 	}
 	if (route_arr[0].includes("BSKAT ANSWA")) { // SEGMENT_BSKAT_ANSWA_MULTI
 		route_arr[0] = route_arr[0].replace("BSKAT ANSWA", "BSKAT LIT");
-		route_arr[1] += "<br/>Fkeys will not accept 'BSKAT ANSWA' => changed to 'BSKAT LIT'";
+		route_arr[1].push("<br/>Fkeys will not accept 'BSKAT ANSWA' => changed to 'BSKAT LIT'");
 	}
 	if (route_arr[0].includes("BSKAT CIVKI")) { // SEGMENT_BSKAT_CIVKI_MULTI
 		route_arr[0] = route_arr[0].replace("BSKAT CIVKI", "BSKAT LIT");
-		route_arr[1] += "<br/>Fkeys will not accept 'BSKAT CIVKI' => changed to 'BSKAT LIT'";
+		route_arr[1].push("<br/>Fkeys will not accept 'BSKAT CIVKI' => changed to 'BSKAT LIT'");
 	}
 
 	return route_arr;
