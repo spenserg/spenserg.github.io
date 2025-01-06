@@ -40,12 +40,44 @@
 <script>
 
 function clear_input() {
-    $("#fkeys_route").val("");
-    $("#total").html("");
+	$("#fkeys_route").val("");
+	$("#total").html("");
 }
 
 function compute() {
+	var result_arr = [$("#fkeys_route").val(), ""];
 
+// TODO Remover slash numbers /350B /F310
+	
+	result_arr = validate_segments(result_arr[0], result_arr[1]);
+
+// TODO check SID STAR alt limits
+
+}
+
+function validate_segments(route = "", notes = "") {
+	if (route.includes("AGAZY FST")) {
+		route = route.replace("AGAZY FST", "AGAZY DOWES FST");
+		notes += "<br/>Fkeys will not accept 'AGAZY DCT FST' => changed to 'AGAZY DOWES FST'";
+	}
+	if (route.includes("BLH JCT")) {
+		route = route.replace("BLH JCT", "BLH J169 TFD J50 ELP J2 JCT");
+		notes += "<br/>Fkeys will not accept 'BLH JCT' => changed to 'BLH J169 TFD J50 ELP J2 JCT'
+	}
+	if (route.includes("BOWFN BLVNS")) { // SEGMENT_BOWFN_BLVNS_MULTI
+		route = route.replace("BOWFN BLVNS", "LEV Y290 BLVNS");
+		notes += "<br/>Fkeys will not accept 'BOWFN BLVNS' => changed to 'LEV Y290 BLVNS'
+	}
+	if (route.includes("BSKAT ANSWA")) { // SEGMENT_BSKAT_ANSWA_MULTI
+		route = route.replace("BSKAT ANSWA", "BSKAT LIT");
+		notes += "<br/>Fkeys will not accept 'BSKAT ANSWA' => changed to 'BSKAT LIT'
+	}
+	if (route.includes("BSKAT CIVKI")) { // SEGMENT_BSKAT_CIVKI_MULTI
+		route = route.replace("BSKAT CIVKI", "BSKAT LIT");
+		notes += "<br/>Fkeys will not accept 'BSKAT CIVKI' => changed to 'BSKAT LIT'
+	}
+
+	return ([route, notes]);
 }
 
 function get_star_max(waypoints = null) {
