@@ -52,6 +52,10 @@ document.getElementById("outbound").addEventListener("keypress", function(event)
 	}
 });
 
+function check_segments(route = "") {
+	// TODO take route rstrs from 5D nav and replace them with good 
+}
+
 function change_flow(airport = null, new_config = null, override_duplicated = false) {
 	airport = ((airport == null) ? null : airport.toUpperCase(0));
 	if ((override_duplicated && airport != null) || ([0,1].includes(new_config) && flows[airport] !== undefined)) {
