@@ -378,10 +378,7 @@ function compute (type = -1) {
 		output = decs_route(fkeystxt);
 
 console.log("decs route page detected");
-		
-	} else if ((result = regy.exec(fkeystxt)) != null) {
-		// Airway
-		output = parse_airway(fkeystxt);
+
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
@@ -594,24 +591,14 @@ function fos_star_info (input = null) {
 	return '<textarea rows="15" cols="80">' + result + '\n\t\t\t}\n\t\tbreak; // End of ' + apt + '</textarea>';
 }
 
-function parse_airway (input = null) {
-	var result = "";
-	var result_arr = [];
-	reg_tmp = /\<(\d+)\s\<(K\d)\s\<([^\s]+)\s/g;
-	result += 'case "XX":';
-	while(null != (z = reg_tmp.exec(input))) {
-		result_arr.push([z[0], z[1], z[2]]);
-	}
-	return '<textarea rows="15" cols="80">case "XX":\n\t\t\t\t' + result_arr.join('\n\t\t\t\t') + '\n\t\t\tbreak;</textarea>';
-}
-
 function decs_route(input = null) {
 	var result = "";
 	var result_arr = {};
 	var textarea_tabs = "";
+	var faa_pref = "";
 	if (input == null) { return ""; }
 
-	reg_tmp = /[DI](\d+)\s+(\d+)\s[A-Z]\s[A-Z]\s[A-Z]\s([^\n]+)\n\sARTC\sTEXT\s*([\s\S]+?)REMARKS([^\n]+)\n/g;
+	reg_tmp = /[DI](\d+)\s+(\d+)\s[^\s]\s[^\s]\s[^\s]([^\n]*)\n\sARTC\sTEXT\s*([^‡¥]+?)REMARKS([^\n]*)\n/g;
 	while(null != (z = reg_tmp.exec(input))) {
 		var tmp_rid = parseInt(z[1]);
 		var distance = parseInt(z[2]);
@@ -625,6 +612,7 @@ function decs_route(input = null) {
 		z[4] = z[4].replace(rte_regexa, '');
 		z[4] = z[4].replaceAll(".DCT.",".").replaceAll("."," ").trim();
 		z[4] = z[4].split("¥MD20")[0];
+		z[4] = z[4].split("‡MD20")[0];
 
 		// SIDS / STARS out of date
 		z[4] = z[4].replace("PRICY3 KMCO", "PRICY4 KMCO");
@@ -635,9 +623,6 @@ function decs_route(input = null) {
 		z[4] = z[4].replace("CHOWW2 LAS", "CHOWW3 LAS");
 		z[4] = z[4].replace("GLADZ3 KMIA", "GLADZ4 KMIA");
 		z[4] = z[4].replace("GLADZ3 MIA", "GLADZ4 MIA");
-		
-		z[3] = z[3].replace("PLAYBOOK", "Playbook");
-		z[5] = z[5].replace("PLAYBOOK", "Playbook");
 		
 		// Origin
 		if (z[4].substring(3, 4) == " ") {
@@ -676,12 +661,18 @@ function decs_route(input = null) {
 				tmp_notes += "<br/>CDR " + tmp_cdrkey[1] + ": <input style=\'width:75%\' value=\'" + output_value + "\' readonly>";
 				cdr_name = tmp_cdrkey[1];
 				cdr_textarea_output = output_value;
+				if (cdr_name == "0P") {
+					faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0P";
+				}
 			}
 		} else if (tmp_notes.includes("PLAYBOOK ")) {
 			// PLAYBOOK
+			var output_value = "result += \"<br/><input style=\\\"width:75%\\\"; value=\\\"" + z[4] + "\\\" readonly>\";";
+			tmp_notes += "<br/><input style=\'width:75%\'; value=\'" + output_value + "\' readonly>";
+			
 			var playbook_regex = /PLAYBOOK ([^\|]+)/g;
 			while(null != (pkey = playbook_regex.exec(tmp_tmp_notes))) {
-				var output_value = "result += \"<br/>PLAYBOOK " + pkey[1] + ": <input style=\\\"width:75%\\\"; value=\\\"" + z[4] + "\\\" readonly>\";";
+				var output_value = "result += \"<br/>" + pkey[1] + ": <input style=\\\"width:75%\\\"; value=\\\"" + z[4] + "\\\" readonly>\";";
 				tmp_notes += "<br/>PLAYBOOK " + pkey[1] + ": <input style=\'width:75%\'; value=\'" + output_value + "\' readonly>";
 			}
 		} else {
@@ -729,27 +720,26 @@ function decs_route(input = null) {
 		}
 	});
 
-console.log(sortable);
-	
 	var textarea_cdr_arr = [];
 	var today = new Date();
 	var tmp_arvl_arr = sortable[0][3].split(" ");
-	result += '<br/><textarea rows="5">case "' + convert_iata(tmp_arvl_arr[tmp_arvl_arr.length - 1]) + '": // Updated ' +
-		 String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" +
-		 today.getFullYear() + textarea_tabs +
-		['result += "<br/><br/><b>Faa Pref Route:</b>";',
-		 	(("0P" in sortable) ? ("TODO") : ''),
-		 	'result += "<br/><br/><b>Non RNAV</b>";', '', 'result += "<br/><br/><b>CDRS</b>";', '', 'break;'
-		].join(textarea_tabs) + "</textarea>";
+	var tmp_res_mid = "";
 	for (let i = 0; i < sortable.length; ++i) {
-
-console.log(sortable[i]);
-		
-		result += "<br/>" + sortable[i][3] + "<br/>" + sortable[i][2] + "<br/><hr>";
+		tmp_res_mid += "<br/>" + sortable[i][3] + "<br/>" + sortable[i][2] + "<br/><hr>";
 		if (sortable[i][0] != null) {
 			textarea_cdr_arr.push(sortable[i][4]);
 		}
 	}
+	result += '<br/><textarea rows="5">case "' + convert_iata(tmp_arvl_arr[tmp_arvl_arr.length - 1]) + '": // Updated ' +
+		 String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" +
+		 today.getFullYear() + textarea_tabs + 'result += "<br/><br/><b>Faa Pref Route:</b>";' + textarea_tabs +
+			faa_pref + textarea_tabs +
+			'result += "<br/><br/><b>Non RNAV</b>";' + textarea_tabs +
+			'' + textarea_tabs +
+			'result += "<br/><br/><b>CDRS</b>";' + textarea_tabs +
+			textarea_cdr_arr.join(textarea_tabs) + textarea_tabs + 'break;'
+		+ "</textarea>";
+	result += tmp_res_mid;
 	result += '<textarea rows="15" cols="80">' + textarea_cdr_arr.join(textarea_tabs) + '</textarea>';
 	return result;
 }
@@ -1028,8 +1018,11 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>SBP - Run LAWS when wet; LDA 5300 feet";
 			break;
 		case "SJC":
-			result += "<br/><br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
-			result += "<br/>SJC - B737 MAX and A32F NEO exempt from curfew (see 10-7A-2)";
+			if (["321E", "738M"].includes(ac_type)) { // A32F neo & B737 max
+				result += "<br/><br/>SJC - " + ((ac_type == "738M") ? "B737 MAX" : "A32F NEO") + " acft are exempt from curfew (see 10-7A-2)";
+			} else {
+				result += "<br/><br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
+			}
 			break;
 		case "SLC":
 			result += "<br/><br/>SLC - Run LAWS above 30C";
@@ -8513,7 +8506,7 @@ function ord_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/>C4 (Ok to File): <input style=\"width:75%\"; value=\"KORD RAYNR BRTMN TAAYZ PECOK DAYYY RUBKI SIKBO AHPAH HANKK KODEY HNK FLOSI4 KEWR\" readonly>";
 			result += "<br/>C5 (Coord Req): <input style=\"width:75%\"; value=\"KORD RAYNR BRTMN TAAYZ PECOK DAYYY RUBKI KENLU TULEG HNK FLOSI4 KEWR\" readonly>";
 			result += "<br/>C6 (Coord Req): <input style=\"width:75%\"; value=\"KORD RAYNR BRTMN TAAYZ PECOK DAYYY RUBKI SIKBO OLABA SSENA BUGSY HANAA FLOSI4 KEWR\" readonly>";
-			result += "<br/>M2 (Coord Req): <input style=\"width:75%\"; value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO TULEG RKA HNK FLOSI4 EWR¥MD20«¥D0530807SHNCDRORDEWRM2ARTCTEXTORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO TULEG RKA HNK FLOSI4 KEWR\" readonly>";
+			result += "<br/>M2 (Coord Req): <input style=\"width:75%\"; value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO TULEG RKA HNK FLOSI4 EWR\" readonly>";
 			result += "<br/>M3 (Coord Req): <input style=\"width:75%\"; value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO AHPAH HANKK KODEY HNK FLOSI4 KEWR\" readonly>";
 			result += "<br/>MS (Coord Req): <input style=\"width:75%\"; value=\"KORD EARND ELANR EMMLY ROD KLYNE Q29 DORET J584 SLT FQM3 KEWR\" readonly>";
 			break;
@@ -8553,7 +8546,7 @@ function ord_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			result += "<br/>2W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD NOONY NIGHT NITWT OBH SNY J100 SAKES GGAPP CHOWW3 KLAS\" readonly>";
 			result += "<br/>3N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J89 DLH FAR DPR J107 MLF STEWW CHOWW3 KLAS\" readonly>";
 			result += "<br/>3W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE GLD PUB DVC TYEGR CHOWW3 KLAS\" readonly>";
-			result += "<br/>4N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB GEP J114 SNY J84 EKR J100 SAKES GGAPP CHOWW3 LAS¥MD20«¥D0561544SHNCDRORDLAS4NARTCTEXTORD RAYNR BRTMN TAAYZ GRB GEP J114 SNY J84 EKR J100 SAKES GGAPP CHOWW3 KLAS\" readonly>";
+			result += "<br/>4N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB GEP J114 SNY J84 EKR J100 SAKES GGAPP CHOWW3 LAS\" readonly>";
 			result += "<br/>4W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ELYNA SLN GCK J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>";
 			result += "<br/>5N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB DLH FAR DPR J107 MLF STEWW CHOWW3 KLAS\" readonly>";
 			result += "<br/>5S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV ARG TUL MMB FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
