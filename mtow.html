@@ -816,6 +816,11 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 				result += "<br/><br/>LAX curfew 2100L - 0700L // File OSHNN instead of ORKAS";
 			}
 			break;
+		case "LGA":
+			if (ac_type == "738M") {
+				result += "<br/><br/>B737 MAX acft are not subject to pier weights";
+			}
+			break;
 		case "MIA":
 			result += "<br/><br/>MIA - GLADZ EAST FLOW // BNGOS WEST FLOW";
 			break;
@@ -1057,6 +1062,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>Airbus and Boeing are Stage3 acft";
 			break;
 	}
+
+console.log(ac_type);
+	
 	result = add_sara_rmks(arvl, result);
 	return result;
 }
@@ -9781,8 +9789,7 @@ function mia_departures(arvl = "XXX", tail = null, ac_type = null, result = "") 
 			break;
 		case "LAX":
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><br/>OW (MIA west): <input style=\"width:75%\"; value=\"KMIA BNGOS4 DOLIE CIGAR Y290 LEV J86 IAH J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
-			result += "<br/>OW (MIA east): <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 BACCA ROZZI Y280 LEV J86 PEKON JCT EWM KA18Q WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 BACCA ROZZI Y280 LEV J86 PEKON JCT EWM KA18Q WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 			result += "<br/><br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW MHZ ELD TXK SPS J72 ABQ J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 			result += "<br/>NE Arrival: <input style=\"width:75%\"; value=\"KMIA BNGOS4 DOLIE CIGAR Y290 BACCA ROZZI Y280 REDFN Q105 HRV J58 FUZ TXO J72 ABQ J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 			result += "<br/><br/>Full OW via SAT: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW HRVLK KELPP LCHLH MUSYL SAT J138 FST J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
