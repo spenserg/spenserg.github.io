@@ -690,6 +690,8 @@ function decs_route(input = null) {
 			tmp_notes += "<br/><input style=\'width:75%\'; value=\'" + output_value + "\' readonly>";
 		}
 
+		
+
 		result_arr[parseInt(z[1])] = {'route':z[4], 'notes':tmp_notes, 'distance':parseInt(z[2]), 'cdr':cdr_name, 'cdr_textarea_output': cdr_textarea_output };
 		textarea_tabs = ((["KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(z[4].substring(0, 4))) ? "\n\t\t\t" : "\n\t\t\t\t\t");
 
