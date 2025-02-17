@@ -377,15 +377,20 @@ function compute (type = -1) {
 
 	tmp_rslt = regb.exec(fkeystxt);
 
-	if ((result = regc.exec(fkeystxt)) != null) {
-		// ATSCC CDR page
-		output = '<textarea rows="15" cols="80">' + cdr_parse(fkeystxt) + '</textarea>';
-	} else if ((result = regz.exec(fkeystxt)) != null) {
+	if ((result = regz.exec(fkeystxt)) != null) {
 		// DECS routing page
-		output = decs_route(fkeystxt);
+		var cdr_list = {};
+		if ((regc.exec(fkeystxt)) != null) {
+			// Check for ATSCC CDR page
+			cdr_list = cdr_parse(fkeystxt, true);
+		}
+		output = decs_route(fkeystxt, cdr_list);
 
 console.log("decs route page detected");
 
+	} else if ((result = regc.exec(fkeystxt)) != null) {
+		// ATSCC CDR page ONLY
+		output = '<textarea rows="15" cols="80">' + cdr_parse(fkeystxt) + '</textarea>';
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
@@ -450,7 +455,6 @@ console.log("decs route page detected");
 				 output += "&nbsp;&nbsp;&nbsp;<b>Land Wgt Rstr</b>";
 				if ((ci_res = reg_ci.exec(fkeystxt)) != null) {
 					var ci_int = parseInt(ci_res);
-					
 					
 					console.log(ci_int);
 					console.log(parseInt(ci_res));
@@ -560,7 +564,7 @@ console.log("decs route page detected");
 	}
 }
 
-function cdr_parse(input = null) {
+function cdr_parse(input = null, to_array = false) {
 	if (input == null) { return ""; }
 	var today = new Date();
 	var today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
@@ -599,7 +603,7 @@ function cdr_parse(input = null) {
 		// CDRs
 		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";";
 	}
-	
+
 	return "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" + non_rnav + ((non_rnav.length == 0) ? " // TODO" : "") + textarea_tabs +
@@ -646,7 +650,7 @@ function fos_star_info (input = null) {
 }
 */
 
-function decs_route(input = null) {
+function decs_route(input = null, cdr_list = null) {
 	var result = "";
 	var result_arr = {};
 	var textarea_tabs = "";
@@ -701,7 +705,7 @@ function decs_route(input = null) {
 		} else {
 			if (z[3].length > 0) { tmp_notes =  z[3]; }
 		}
-		
+
 		var tmp_tmp_notes = tmp_notes;
 		if (tmp_notes.includes("CDR ")) {
 			// CDR
