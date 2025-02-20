@@ -1,3 +1,265 @@
+change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
+	if (airport != "XXX" && [0,1].includes(new_config)) {
+		if (new_config == 0) { // Left clicked
+				switch(airport) {
+					case "ABQ": // ABQ east // Rwy8
+						result = result.replaceAll("KABQ ADYOS3", "KABQ RDRNR3");
+						result = result.replaceAll("KABQ ATOMK3 ATOMK", "KABQ JEMEZ3 JEMEZ");
+						result = result.replaceAll("KABQ BOSQE3", "KABQ MNZNO3");
+						result = result.replaceAll("KABQ DOOKK3", "KABQ MNZNO3");
+						result = result.replaceAll("KABQ FYSTA3 FTI", "KABQ GRZZZ4 FLAVA");
+						result = result.replaceAll("KABQ FYSTA3 JLPNO", "KABQ  GRZZZ4 POPRR");
+						break;
+					case "ATL": // ATL west
+						result = result.replaceAll("JJEDI3 KATL", "SITTH2 KATL");
+						break;
+					case "BZN": // BZN southeast / Rwy12
+						result = result.replaceAll("KBZN MEADO2 DBS", "KBZN BGSKY2 DBS");
+						result = result.replaceAll("KBZN MEADO2 HIA", "KBZN BGSKY2 HIA");
+						result = result.replaceAll("KBZN MEADO2 TOOLS BOY", "KBZN BOBKT5 BOY"); // Replace MEADO-BOY
+						result = result.replaceAll("KBZN MEADO2 TOOLS", "KBZN YODOG TOOLS"); // Replace other MEADO dptrs
+						result = result.replaceAll("KBZN MEADO2 CREKK", "KBZN BOBKT5 BIL");
+						result = result.replaceAll("BIL SUBKY1 KBZN", "CREKK POWDA1 KBZN");
+						break;
+					case "DFW": // DFW south
+						if (!$(this).hasClass("cdr_input")) { 
+							result = result.replaceAll("JOVEM6 KDFW", "VKTRY2 KDFW");
+							result = result.replaceAll("BRDJE5 KDFW", "SEEVR4 KDFW");
+							result = result.replaceAll("SOCKK4 KDFW", "BOOVE7 KDFW");
+							result = result.replaceAll("WHINY4 KDFW", "BEREE3 KDFW");
+						}
+						break;
+					case "DTW": // DTW north / Rwy3 Rwy4
+						result = result.replaceAll("BONZZ2 KDTW", "KLYNK3 KDTW");
+						result = result.replaceAll("HTROD2 KDTW", "CRAKN2 KDTW");
+						result = result.replaceAll("TPGUN2 KDTW", "CUUGR2 KDTW");
+						result = result.replaceAll("FERRL2 KDTW", "WNGNT2 KDTW");
+						result = result.replaceAll("LAYKS2 KDTW", "GRAYT2 KDTW");
+						result = result.replaceAll("HANBL3 KDTW", "LECTR3 KDTW");
+						result = result.replaceAll("VCTRZ2 KDTW", "HAYLL3 KDTW");
+						result = result.replaceAll("RKCTY2 KDTW", "KKISS2 KDTW");
+						break;
+					case "IAH": // IAH west // Rwy26 Rwy27
+						result = result.replaceAll("SKNRD4 KIAH", "DOOBI2 KIAH");
+						result = result.replaceAll("GUSHR3 KIAH", "DRLLR5 KIAH");
+						result = result.replaceAll("GESNR1 KIAH", "ZEEKK2 KIAH");
+						result = result.replaceAll("HTOWN3 KIAH", "TEJAS5 KIAH");
+						result = result.replaceAll("NNCEE2 KIAH", "LINKK1 KIAH");
+						result = result.replaceAll("TTORO3 KIAH", "MSCOT4 KIAH");
+						// IAH SIDS
+						result = result.replaceAll("KIAH PITZZ5", "KIAH BNDTO6");
+						result = result.replaceAll("KIAH GUMBY3", "KIAH MMUGS4");
+						break;
+					case "JAC": // JAC South // Rwy19 // ALPIN/TETON
+						result = result.replaceAll("KJAC DIVYD2 HUKET IDA", "KJAC ALPIN4 IDA"); // HUKET via IDA first
+						result = result.replaceAll("KJAC DIVYD2 HUKET", "KJAC TETON3 IDA HUKET"); // All else HUKET via IDA
+						result = result.replaceAll("KJAC DIVYD2 DNW", "KJAC DNW");
+						result = result.replaceAll("KJAC DIVYD2 BOY", "KJAC ALPIN BPI BOY");
+						result = result.replaceAll("KJAC DIVYD2 JEDHY BPI", "KJAC ALPIN4 BPI"); // BPI via JEDHY
+						result = result.replaceAll("KJAC DIVYD2 JEDHY", "KJAC JEDHY"); // All other JEDHY
+						result = result.replaceAll("KJAC GEYSR6 DNW", "KJAC DNW");
+						break;
+					case "MCO": // MCO south // Rwy17 Rwy18
+						result = result.replaceAll("SNFLD3 KMCO", "GTOUT1 KMCO");
+						break;
+					case "MIA": // MIA east // Rwy8 Rwy9
+						// TODO GLADZ east // BNGOS west
+						// result = result.replaceAll("", "");
+						break;
+					case "MSO": // MSO southeast // Rwy12
+						result = result.replaceAll("MSO DIDLY5", "MSO MZULA5");
+						result = result.replaceAll("MSO GRZLY3 MSO HLN", "MSO VICTO1 HLN");
+						result = result.replaceAll("MSO GRZLY3 MSO SKOTT", "MSO VICTO1 SKOTT");
+						break;
+					case "RNO": // RNO south // Rwy17
+						result = result.replaceAll("EELZA4", "KLUBS1");
+						result = result.replaceAll("ORRCA TARVR1 KRNO", "ORRCA ORRCA1 KRNO");
+						result = result.replaceAll("MVA TARVR1 KRNO", "MVA SCOLA1 KRNO");
+						result = result.replaceAll("SLEAT TARVR1 KRNO", "SLEAT KRNO");
+						result = result.replaceAll("KENNO TARVR1 KRNO", "KENNO SCOLA1 KRNO");
+						result = result.replaceAll("WADOL4 KRNO", "WINRZ4 KRNO");
+						// RNO SIDS
+						result = result.replaceAll("KRNO ALPYN1 YERIN","KRNO ZEFFR9 PESKE");
+						result = result.replaceAll("KRNO PVINE5 PVINE", "KRNO SPRKS1 FMG");
+						result = result.replaceAll("KRNO PVINE5", "KRNO SPRKS1 FMG");
+						break;
+					case "SAN": // SAN east // Rwy27
+						// IPL LUCKI1 SAN - ATC assigned only
+						result = result.replaceAll("HOGGZ IPL TOPGN2 KSAN", "HOGGZ LUCKI1 KSAN");
+						result = result.replaceAll("J2 IPL TOPGN2 KSAN", "J2 HOGGZ LUCKI1 KSAN");
+						result = result.replaceAll("LVELL MOMAR TOPGN2 KSAN", "LVELL LUCKI1 KSAN");
+						result = result.replaceAll("TOPGN2 KSAN", "LUCKI1 KSAN");
+						// SIDS
+						result = result.replaceAll("KSAN SAYOW2 MTBAL", "KSAN ZZOOO4 MTBAL");
+						result = result.replaceAll("KSAN SAYOW2 IPL TGOLD", "KSAN ZZOOO4 TGOLD");
+						result = result.replaceAll("KSAN SAYOW2 IPL GBN", "KSAN ZZOOO4 GBN");
+						result = result.replaceAll("KSAN SAYOW2 IPL", "KSAN BRDR7 IPL");
+						break;
+					case "SJC": // SJC North // Rwy30 // LOUPE/SJC3/SPTNS
+						result = result.replaceAll("KSJC ALMDN4", "KSJC LOUPE1");
+						result = result.replaceAll("KSJC BMRNG4", "KSJC LOUPE1");
+						result = result.replaceAll("KSJC TECKY4 VLREE AVE", "KSJC SJC3 AVE");
+						result = result.replaceAll("KSJC TECKY4", "KSJC SPTNS1");
+						break;
+					case "SLC": // SLC North // Rwy34
+						result = result.replaceAll("DELTA6 KSLC", "QWENN5 KSLC");
+						result = result.replaceAll("JAMMN5 KSLC", "QWENN5 KSLC");
+						// SIDS // ARCHZ CGULL DEZRT RUGGD SEVYR
+						// result = result.replaceAll("KSLC ZIONZ1 KROST", "KSLC ARCHZ1 KROST");
+						// result = result.replaceAll("KSLC ZIONZ1 EHK", ""); // TODO
+						// result = result.replaceAll("KSLC ZIONZ1 BCE", ""); // TODO
+						result = result.replaceAll("KSLC ZIONZ1 EYELO", "KSLC RUGGD3 KIERA"); // TODO
+						result = result.replaceAll("KSLC ZIONZ1 KIMMR", "KSLC RUGGD3 KIERA");
+						// result = result.replaceAll("KSLC FFU9 HVE", ""); // TODO
+						// result = result.replaceAll("KSLC FFU9 BCE", ""); // TODO
+						// result = result.replaceAll("KSLC FFU9 OAL", ""); // TODO
+						break;
+					case "SMF": // SMF north // Rwy35
+						result = result.replaceAll("KSMF SCTWN4", "KSMF RVRCT4");
+						break;
+					case "SNA": // SNA south // Rwy20R
+						result = result.replaceAll("ROOBY3 KSNA", "DSNEE6 KSNA");
+						break;
+					case "TUS": // TUS southeast / Rwy12
+						result = result.replaceAll("KTUS WLDKT4 SSO", "KTUS BURRO5 NOCHI SSO");
+						result = result.replaceAll("KTUS WLDKT4", "KTUS BURRO5");
+						break;
+				}
+		} else if (new_config == 1) {
+				switch(airport) {
+					case "ABQ": // ABQ west // Rwy26
+						result = result.replaceAll("KABQ RDRNR3", "KABQ ADYOS3");
+						result = result.replaceAll("KABQ JEMEZ3 JEMEZ", "KABQ ATOMK3 ATOMK");
+						result = result.replaceAll("KABQ GRZZZ4 FLAVA", "KABQ FYSTA3 FTI");
+						result = result.replaceAll("KABQ  GRZZZ4 POPRR", "KABQ FYSTA3 JLPNO");
+						result = result.replaceAll("KABQ MNZNO3 SJN", "KABQ BOSQE3 SJN");
+						result = result.replaceAll("KABQ MNZNO3 ONM", "KABQ BOSQE3 ONM");
+						result = result.replaceAll("KABQ MNZNO3 TXO", "KABQ DOOKK3 TXO");
+						result = result.replaceAll("KABQ MNZNO3 CME", "KABQ DOOKK3 CME");
+						result = result.replaceAll("KABQ MNZNO3 MOLVE", "KABQ DOOKK3 MOLVE");
+						result = result.replaceAll("KABQ MNZNO3 LAMSE", "KABQ BOSQE3 LAMSE");
+						break;
+					case "ATL": // ATL east
+						result = result.replaceAll("SITTH2 KATL", "JJEDI3 KATL");
+						break;
+					case "BZN": // BZN northwest / Rwy30
+						result = result.replaceAll("KBZN BGSKY2 DBS", "KBZN MEADO2 DBS");
+						result = result.replaceAll("KBZN BGSKY2 HIA", "KBZN MEADO2 HIA");
+						result = result.replaceAll("KBZN BOBKT5 BIL", "KBZN MEADO2 CREKK");
+						result = result.replaceAll("KBZN BOBKT5 BOY", "KBZN MEADO2 TOOLS BOY");
+						result = result.replaceAll("CREKK POWDA1 KBZN", "BIL SUBKY1 KBZN");
+						break;
+					case "DFW": // DFW north
+						if (!$(this).hasClass("cdr_input")) {
+							result = result.replaceAll("VKTRY2 KDFW", "JOVEM6 KDFW");
+							result = result.replaceAll("SEEVR4 KDFW", "BRDJE5 KDFW");
+							result = result.replaceAll("BOOVE7 KDFW", "SOCKK4 KDFW");
+							result = result.replaceAll("BEREE3 KDFW", "WHINY4 KDFW");
+						}
+						break;
+					case "DTW": // DTW south / Rwy21 Rwy22
+						result = result.replaceAll("KLYNK3 KDTW", "BONZZ2 KDTW");
+						result = result.replaceAll("CRAKN2 KDTW", "HTROD2 KDTW");
+						result = result.replaceAll("CUUGR2 KDTW", "TPGUN2 KDTW");
+						result = result.replaceAll("WNGNT2 KDTW", "FERRL2 KDTW");
+						result = result.replaceAll("GRAYT2 KDTW", "LAYKS2 KDTW");
+						result = result.replaceAll("LECTR3 KDTW", "HANBL3 KDTW");
+						result = result.replaceAll("HAYLL3 KDTW", "VCTRZ2 KDTW");
+						result = result.replaceAll("KKISS2 KDTW", "RKCTY2 KDTW");
+						break;
+					case "IAH": // IAH East // Rwy8 Rwy9
+						// IAH STARS
+						result = result.replaceAll("DOOBI2 KIAH", "SKNRD4 KIAH");
+						result = result.replaceAll("DRLLR5 KIAH", "GUSHR3 KIAH");
+						result = result.replaceAll("ZEEKK2 KIAH", "GESNR1 KIAH");
+						result = result.replaceAll("TEJAS5 KIAH", "HTOWN3 KIAH");
+						result = result.replaceAll("LINKK1 KIAH", "NNCEE2 KIAH");
+						result = result.replaceAll("MSCOT4 KIAH", "TTORO3 KIAH");
+						// IAH SIDS
+						result = result.replaceAll("KIAH BNDTO6", "KIAH PITZZ5");
+						result = result.replaceAll("KIAH MMUGS4", "KIAH GUMBY3");
+						break;
+					case "JAC": // JAC North // Rwy1 // DIVYD/GEYSR
+						result = result.replaceAll("KJAC ALPIN BPI BOY", "KJAC DIVYD2 BOY");
+						result = result.replaceAll("KJAC ALPIN4 BPI", "KJAC DIVYD2 JEDHY BPI");
+						result = result.replaceAll("KJAC ALPIN4 IDA", "KJAC DIVYD2 HUKET IDA");
+						result = result.replaceAll("KJAC TETON3 IDA HUKET", "KJAC DIVYD2 HUKET");
+						result = result.replaceAll("KJAC TETON3 IDA", "KJAC DIVYD2 HUKET IDA");
+						result = result.replaceAll("KJAC DNW", "KJAC DIVYD2 DNW");
+						result = result.replaceAll("KJAC JEDHY", "KJAC DIVYD2 JEDHY"); // All other JEDHY
+						break;
+					case "MCO": // MCO north // Rwy35 Rwy36
+						result = result.replaceAll("GTOUT1 KMCO", "SNFLD3 KMCO");
+						break;
+					case "MIA": // MIA west // Rwy26 Rwy27
+						// TODO GLADZ east // BNGOS west
+						// result = result.replaceAll("", "");
+						break;
+					case "MSO": // MSO northwest // Rwy30
+						result = result.replaceAll("MSO MZULA5", "MSO DIDLY5");
+						result = result.replaceAll("MSO VICTO1 MLP", "MSO DIDLY5 MLP");
+						result = result.replaceAll("MSO VICTO1 LKT", "MSO DIDLY5 LKT");
+						result = result.replaceAll("MSO VICTO1 HLN", "MSO GRZLY3 MSO HLN");
+						result = result.replaceAll("MSO VICTO1 SKOTT", "MSO GRZLY3 MSO SKOTT");
+						break;
+					case "RNO": // RNO north Rwy35
+						result = result.replaceAll("KLUBS1 KRNO","EELZA4 KRNO");
+						result = result.replaceAll("ORRCA ORRCA1 KRNO","ORRCA TARVR1 KRNO");
+						result = result.replaceAll("MVA RYANN2 KRNO", "MVA TARVR1 KRNO");
+						result = result.replaceAll("MVA SCOLA1 KRNO", "MVA TARVR1 KRNO");
+						result = result.replaceAll("KENNO SCOLA1 KRNO", "KENNO TARVR1 KRNO");
+						result = result.replaceAll("WINRZ4 KRNO", "WADOL4 KRNO");
+						result = result.replaceAll("SLEAT KRNO", "SLEAT TARVR1 KRNO");
+						// RNO SIDS
+						result = result.replaceAll("KRNO WAGGE8 LLC","KRNO PVINE5 PYGOW LLC");
+						result = result.replaceAll("KRNO ZEFFR9 PESKE","KRNO ALPYN1 YERIN");
+						result = result.replaceAll("KRNO ZEFFR9","KRNO SPRKS1 FMG");
+						break;
+					case "SAN": // SAN west // Rwy9
+						result = result.replaceAll("LVELL LUCKI1 KSAN", "LVELL MOMAR TOPGN2 KSAN");
+						result = result.replaceAll("HOGGZ LUCKI1 KSAN", "HOGGZ IPL TOPGN2 KSAN");
+						result = result.replaceAll("LUCKI1 KSAN", "TOPGN2 KSAN");
+						// SIDS
+						result = result.replaceAll("KSAN ZZOOO4 MTBAL", "KSAN SAYOW2 MTBAL");
+						result = result.replaceAll("KSAN PEBLE6", "KSAN FALCC1");
+						result = result.replaceAll("KSAN CLSSY1 MTBAL", "KSAN SAYOW2 MTBAL");
+						result = result.replaceAll("KSAN ZZOOO4 TGOLD", "KSAN SAYOW2 IPL TGOLD");
+						result = result.replaceAll("KSAN ZZOOO4 GBN", "KSAN SAYOW2 IPL GBN");
+						result = result.replaceAll("KSAN CLSSY1 TGOLD", "KSAN SAYOW2 IPL TGOLD");
+						result = result.replaceAll("KSAN CLSSY1 GBN", "KSAN SAYOW2 IPL GBN");
+						break;
+					case "SJC": // SJC South // Rwy12 // ALMDN/BMRNG/TECKY
+						result = result.replaceAll("KSJC LOUPE1", "KSJC BMRNG4");
+						result = result.replaceAll("KSJC SPTNS1", "KSJC TECKY4");
+						result = result.replaceAll("KSJC SJC3 PXN", "KSJC TECKY4 JFREE");
+						result = result.replaceAll("KSJC SJC3 AVE", "KSJC TECKY4 VLREE AVE");
+						break;
+					case "SLC": // SLC South // Rwy16
+						result = result.replaceAll("QWENN5 KSLC", "DELTA6 KSLC");
+						// SIDS // DEZRT FFU RUGGD ZIONZ
+						// result = result.replaceAll("KSLC ARCHZ1 MLF", ""); // TODO
+						// result = result.replaceAll("KSLC ARCHZ1 WINEN", ""); // TODO
+						result = result.replaceAll("KSLC ARCHZ1 KROST", "KSLC ZIONZ1 KROST");
+						// result = result.replaceAll("KSLC SEVYR3 MLF", ""); // TODO
+						result = result.replaceAll("KSLC SEVYR3 OAL", "KSLC DEZRT2 MVA");
+						break;
+					case "SMF": // SMF south // Rwy17
+						result = result.replaceAll("KSMF RVRCT4", "KSMF SCTWN4");
+						break;
+					case "SNA": // SNA north // Rwy2L
+						result = result.replaceAll("DSNEE6 KSNA", "ROOBY3 KSNA");
+						break;
+					case "TUS": // TUS northwest / Rwy30
+						result = result.replaceAll("KTUS BURRO5 NOCHI SSO", "KTUS WLDKT4 SSO");
+						result = result.replaceAll("KTUS BURRO5 NOCHI", "KTUS WLDKT4 SSO");
+						result = result.replaceAll("KTUS BURRO5", "KTUS WLDKT4");
+						break;
+				}
+		}
+	}
+	return result;
+}
+
 convert_iata = function (str = null) {
 	if (typeof str === 'string' || str instanceof String) {
 		if (str.length == 3) { return str; }
