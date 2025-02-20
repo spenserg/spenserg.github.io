@@ -360,16 +360,16 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		}
 
 		// CDRs
-		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";";
+		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; // Verified with ATCSCC on " + today_str;
 		result_arr['cdrs'][z[1]] = {'route' : z[4], 'notes' : ("CDR " + z[1]), 'result_str' : ("result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";") };
 	}
 	if (to_array) { return result_arr; }
 	return "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" + non_rnav + ((non_rnav.length == 0) ? " // TODO" : "") + textarea_tabs +
-		cdr_str + textarea_tabs + "break;";
+		"<br/><br/><b>CDRS</b>" + textarea_tabs + cdr_str + textarea_tabs + "break;";
 }
-
+	
 /*
 function fos_star_info (input = null) {
 	var stars = {};
