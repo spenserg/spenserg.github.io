@@ -27,7 +27,7 @@
 
 <body>
 	FKeys Page: <textarea id="outbound" rows="5">https://prod-1-public.fk.aa.com</textarea>&nbsp;&nbsp;
-	<button id="go_button" onclick="compute(0)">Go</button>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
+	<button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
 	<div id="total"></div>
 </body>
 
@@ -90,7 +90,7 @@ function compute (str_override = "") {
 	var wide_ci_min = 40;
 	var wide_ci_max = 300;
 	var exc_regex = /\n\!\n/g;
-	var fkeystxt = ((str_override.trim().length > 0) ? str_override : $("#outbound").val());
+	var fkeystxt = ((str_override != 0 && str_override.trim().length > 0) ? str_override : $("#outbound").val());
 	var routes_arr = {'faa_pref' : null, 'non_rnav' : null, 'cdrs' : {} };
 
 	// TODO: remove exclamation points in multi-edit
@@ -386,62 +386,33 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	sortable[0][3] = sortable[0][3].replace('result += \"<br/>', 'result += \"<br/><br/>');
 	result_arr['other'] = sortable;
 
-console.log(dptr);
-console.log(arvl);
+	arvl = ((arvl.length == 4) ? arvl.substring(1, 4) : arvl);
+	dptr = ((dptr.length == 4) ? dptr.substring(1, 4) : dptr);
 
+	merge_str_arr(get_routes(dptr, arvl), result_arr); // TODO
 	
 	if (to_array) { return result_arr; }
 	var playbook_str = "";
 	for (var i = 0; i < sortable.length; i++) {
 		playbook_str += sortable[i][3] + textarea_tabs;
 	}
-	
+
 	return "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" + non_rnav + ((non_rnav.length == 0) ? " // TODO" : "") + textarea_tabs +
 		"result += \"<br/><br/><b>CDRS</b>\";" + cdr_str + textarea_tabs + "break;";
 }
+
+function merge_str_arr(str = "", result_arr = {'faa_pref' : {}, 'non_rnav' : {}, 'cdrs' : {}}) {
+	if (str.trim().length == 0) { return arr; }
+
+	// FAA pref
+	reg_faa_pref = /<br\/><br\/><b>(Faa Pref Route)\:/g; // TODO
 	
-/*
-function fos_star_info (input = null) {
-	var stars = {};
-	var all_names = [];
-	var apt = "XXX";
-
-	reg_apt_1 = /IDAF([A-Z]{3})/g;
-	reg_apt_2 = /([A-Z]{3})\s+HAS THE FOLLOWING STARS/g;
-	if (null != (z = reg_apt_1.exec(input))) {
-		apt = z[1];
-		console.log(z);
-	} else if (null != (z = reg_apt_2.exec(input))) {
-		apt = z[1];
-		console.log(z);
-	}
-
-	var result = 'case "KDFW":\n\t\t\tswitch(star) {';
-	reg_tmp = /([A-Z]+\d{1})\s+([A-Z]+)\s+([^\n\s]+)/g;
-	while (null != (z = reg_tmp.exec(input))) {
-		if (stars[z[1].substring(0, z[1].length - 1)] === undefined) {
-			stars[z[1].substring(0, z[1].length - 1)] = [];
-			all_names.push(z[1].substring(0, z[1].length - 1));
-		}
-		if (!stars[z[1].substring(0, z[1].length - 1)].includes(z[3])) {
-			stars[z[1].substring(0, z[1].length - 1)].push(z[3]);
-		}
-	}
-	all_names.sort();
-	for (var val = 0; val < all_names.length; val++) {
-		result += '\n\t\t\t\tcase "' + all_names[val] + '":\n\t\t\t\t\tswitch(waypoints[waypoints.length - 2]) {';
-		stars[all_names[val]].sort();
-		for (var wal = 0; wal < stars[all_names[val]].length; wal++) {
-			result += '\n\t\t\t\t\t\tcase "' + stars[all_names[val]][wal] + '":';
-		}
-		result += '\n\t\t\t\t\t\treturn null; break;\n\t\t\t\t\t}\n\t\t\t\tbreak;';
-	}
-	return '<textarea rows="15" cols="80">' + result + '\n\t\t\t}\n\t\tbreak; // End of ' + apt + '</textarea>';
+	// result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR 0P', 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0P"};
+	return result_arr;
 }
-*/
 
 function decs_route(input = null, cdr_list = null) {
 	var result = "";
