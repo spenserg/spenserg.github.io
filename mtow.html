@@ -82,7 +82,7 @@ function change_flow(airport = null, new_config = null, override_duplicated = fa
 	} else { console.log("Click registered, but no change detected"); }
 }
 
-function compute (type = -1) {
+function compute (str_override = "") {
 	var output = "Check the input box and make sure you pasted the right thing.";
 	var reg;
 	var narrow_ci_min = 10;
@@ -90,7 +90,7 @@ function compute (type = -1) {
 	var wide_ci_min = 40;
 	var wide_ci_max = 300;
 	var exc_regex = /\n\!\n/g;
-	var fkeystxt = $("#outbound").val();
+	var fkeystxt = ((str_override.trim().length > 0) ? str_override : $("#outbound").val());
 	var routes_arr = {'faa_pref' : null, 'non_rnav' : null, 'cdrs' : {} };
 
 	// TODO: remove exclamation points in multi-edit
@@ -320,20 +320,19 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	if (input == null) { return ""; }
 	var today = new Date();
 	var today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
-	var reg_tmp = /\d\t[A-Z]{6}([^\t]{2})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])\t(\d)\t/g;
-	var result = "";
+	var reg_tmp = /\d\t[A-Z]{6}([^\t]{2})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])\t(\d)\t([^\n]*)\n/g;
 	var dptr = "KXXX";
 	var arvl = "YYY";
 	var faa_pref = "";
 	var non_rnav = "";
 	var non_rnav_coordreq = true;
 	var cdr_str = "";
-	var result = "result += \"<br/><br/><b>CDRS</b>\"; // Verified with ATCSCC on " + today_str;
+	var playbooks = {};
 	while(null != (z = reg_tmp.exec(input))) {
 		dptr = z[2].substring(0, 4);
 		arvl = z[3].substring(1, 4);
 		var textarea_tabs = ((["KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(dptr)) ? "\n\t\t\t" : "\n\t\t\t\t\t");
-		var file_status = ((z[5] == "Y") ? " (Coord Req)" : " (Ok to File)");
+		var file_status = "<span style=\\\"color:" + ((z[5] == "Y") ? "red\\\"> (Coord Req)" : "green\\\"> (Ok to File)") + "<\/span>";
 
 		// FAA Pref
 		if (dptr == "KDFW" && z[1] == "0P") { // DFW
@@ -350,6 +349,13 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR PH', 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR PH"};
 		}
 
+		// Playbook
+		z[7] = z[7].trim();
+		if (z[7].length > 0) {
+			playbooks[z[7]] = {'route' : z[4], 'desc' : z[7], 'coord_req' : ((z[5] == "N") ? false : true),
+						 'result_str' : ("result += \"<br/>" + z[7] + file_status + ": <input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";") };
+		}
+
 		// Non Rnav
 		if (z[6] == 1 && (non_rnav.length == 0 || (non_rnav_coordreq && z[5] == "N"))) {
 			non_rnav_coordreq = ((z[5] == "Y") ? true : false);
@@ -363,11 +369,38 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; // Verified with ATCSCC on " + today_str;
 		result_arr['cdrs'][z[1]] = {'route' : z[4], 'notes' : ("CDR " + z[1]), 'result_str' : ("result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";") };
 	}
+
+	// Sort Playbooks
+	var sortable = [];
+ 	for (var key in playbooks) {
+		// playbook, route, coord_req, result_str
+		sortable.push([playbooks[key]['desc'], playbooks[key]['route'], playbooks[key]['coord_req'], playbooks[key]['result_str']]);
+	}
+	if (sortable.length > 1) {
+		sortable.sort(function(x, y) {
+			// playbook, route, coord_req, result_str
+			//  0         1        2         3
+			return (x[0].localeCompare(y[0]));
+		});
+	}
+	sortable[0][3] = sortable[0][3].replace('result += \"<br/>', 'result += \"<br/><br/>');
+	result_arr['other'] = sortable;
+
+console.log(dptr);
+console.log(arvl);
+
+	
 	if (to_array) { return result_arr; }
+	var playbook_str = "";
+	for (var i = 0; i < sortable.length; i++) {
+		playbook_str += sortable[i][3] + textarea_tabs;
+	}
+	
 	return "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
+		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" + non_rnav + ((non_rnav.length == 0) ? " // TODO" : "") + textarea_tabs +
-		"<br/><br/><b>CDRS</b>" + textarea_tabs + cdr_str + textarea_tabs + "break;";
+		"result += \"<br/><br/><b>CDRS</b>\";" + cdr_str + textarea_tabs + "break;";
 }
 	
 /*
