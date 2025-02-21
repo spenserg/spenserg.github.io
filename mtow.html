@@ -130,19 +130,20 @@ function compute (str_override = "") {
 
 	if ((result = regz.exec(fkeystxt)) != null) {
 		// DECS routing page
+/* TODO
 		if ((regc.exec(fkeystxt)) != null) {
 			// Check for ATSCC CDR page
 			routes_arr['cdr_list'] = cdr_parse(fkeystxt, true);
 		}
+  */
 		output = decs_route(fkeystxt, routes_arr['cdr_list']);
-
-console.log("decs route page detected");
-
 	} else if ((result = regc.exec(fkeystxt)) != null) {
 		// TODO get array from compute first
 		
 		// ATSCC CDR page ONLY
-		output = '<textarea rows="15" cols="80">' + cdr_parse(fkeystxt) + '</textarea>';
+		tmp_output = cdr_parse(fkeystxt);
+		output = '<textarea rows="15" cols="80">' + tmp_output + '</textarea>' +
+			tmp_output.replaceAll('result += "', '').replaceAll('";', '').replaceAll('break;','').replaceAll('\\\"','"').replace( new RegExp("(case \"[^\n]+\n)","g"),"").replaceAll( new RegExp("(Verified with ATCSCC on [^\<]+\<)","g"),"<");
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
@@ -383,7 +384,9 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 			return (x[0].localeCompare(y[0]));
 		});
 	}
-	sortable[0][3] = sortable[0][3].replace('result += \"<br/>', 'result += \"<br/><br/>');
+	if (sortable.length > 0) {
+		sortable[0][3] = sortable[0][3].replace('result += \"<br/>', 'result += \"<br/><br/>');
+	}
 	result_arr['other'] = sortable;
 
 	arvl = ((arvl.length == 4) ? arvl.substring(1, 4) : arvl);
@@ -391,21 +394,21 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 
 	merge_str_arr(get_routes(dptr, arvl), result_arr); // TODO
 	
-	if (to_array) { return result_arr; }
 	var playbook_str = "";
 	for (var i = 0; i < sortable.length; i++) {
 		playbook_str += sortable[i][3] + textarea_tabs;
 	}
-
-	return "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
+	var output = "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" + non_rnav + ((non_rnav.length == 0) ? " // TODO" : "") + textarea_tabs +
 		"result += \"<br/><br/><b>CDRS</b>\";" + cdr_str + textarea_tabs + "break;";
+	if (to_array) { return result_arr; }
+	return output;
 }
 
 function merge_str_arr(str = "", result_arr = {'faa_pref' : {}, 'non_rnav' : {}, 'cdrs' : {}}) {
-	if (str.trim().length == 0) { return arr; }
+	if (str.trim().length == 0) { return result_arr; }
 
 	// FAA pref
 	reg_faa_pref = /<br\/><br\/><b>(Faa Pref Route)\:/g; // TODO
