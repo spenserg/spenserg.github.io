@@ -360,14 +360,14 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		// Non Rnav
 		if (z[6] == 1 && (non_rnav.length == 0 || (non_rnav_coordreq && z[5] == "N"))) {
 			non_rnav_coordreq = ((z[5] == "Y") ? true : false);
-			non_rnav = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR " + z[1];
+			non_rnav = "result += \"<br/><input style=\\\"width:75%\\\"; value=\\\"" + z[4] + "\\\"; readonly>\"; \/\/ CDR " + z[1];
 			if (result_arr['non_rnav'] == null) {
 				result_arr['non_rnav'] = {'route' : z[4], 'coord_req' : non_rnav_coordreq, 'notes' : ("CDR " + z[1]), 'result_str' : ("result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR " + z[1]) };
 			}
 		}
 
 		// CDRs
-		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; // Verified with ATCSCC on " + today_str;
+		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\" // Verified with ATCSCC on " + today_str;
 		result_arr['cdrs'][z[1]] = {'route' : z[4], 'notes' : ("CDR " + z[1]), 'result_str' : ("result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";") };
 	}
 
