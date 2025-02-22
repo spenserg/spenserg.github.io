@@ -401,7 +401,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" + non_rnav + ((non_rnav.length == 0) ? " // TODO" : "") + textarea_tabs +
-		"result += \"<br/><br/><b>CDRS</b>\";" + cdr_str + textarea_tabs + "break;";
+		textarea_tabs + textarea_tabs + "result += \"<br/><br/><b>CDRS</b>\";" + cdr_str + textarea_tabs + "break;";
 	if (to_array) { return result_arr; }
 	return output;
 }
