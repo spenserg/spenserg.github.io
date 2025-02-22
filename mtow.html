@@ -401,11 +401,11 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 */
 	var new_cdr_str = "";
 	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly/g;
-	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) {
-		new_cdr_str += "<br/>" + z[1] + z[2] +": <input class=\"cdr_input\" style=\"width:75%\" " + z[3] +
-			" readonly>\"; // Verified with ATCSCC on " + z[4] +			
-			"<br/>" + z[1] + ((z[2].includes("color:red")) ? z[2] : "") + ": <input style=\"width:75%\" " +
-			z[3] + " readonly> // CDR " + z[1];
+	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) { console.log(z);
+		new_cdr_str += "<br/>CDR " + z[1] + z[2].replaceAll("\\", "") + ": <input class=\"cdr_input\" style=\"width:75%\" " + z[3].replaceAll("\\", "") + " readonly><br/>" +
+			z[1] + ": <input style=\'width:75%\' value=\'" +
+			"result += \"<br/>" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\">(Coord Req)</span>: " : "") + 
+			"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
 	}
 	
 	var output = '<textarea rows="8" cols="80">' + "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
