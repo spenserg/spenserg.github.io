@@ -395,10 +395,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	for (var i = 0; i < sortable.length; i++) {
 		playbook_str += sortable[i][3] + textarea_tabs;
 	}
-/*
-	var new_cdr_str = cdr_str.replaceAll('result += "', '').replaceAll('";', '').replaceAll('break;','').replaceAll('\\\"','"').replace( new RegExp("(case \"[^\n]+\n)","g"),"").replaceAll( new RegExp("(Verified with ATCSCC on [^\<]+\<)","g"),"<");
-	var new_cdr_str_b = cdr_str.replace( new RegExp("(case \"[^\n]+\n)","g"),"")
-*/
+
 	var new_cdr_str = "";
 	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly/g;
 	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) { console.log(z);
@@ -418,7 +415,13 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 }
 
 function merge_str_arr(str = "", result_arr = {'faa_pref' : {}, 'non_rnav' : {}, 'cdrs' : {}}) {
-	if (str.trim().length == 0) { return result_arr; }
+	//str is TESTING get_routes (dptr, arvl)
+	console.log (str);
+
+	var today = new Date();
+	var today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
+	var textarea_tabs = ((["CLT","DFW","LAX","MIA","ORD","PHX","KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(dptr)) ? "\n\t\t\t" : "\n\t\t\t\t\t");
+	var result = 'case "' + dptr + '": // Updated ' + today_str;
 
 	// FAA pref
 	reg_faapref = /\<b\>Faa Pref Route([^\:]*)\:\<\/b\>\<br\/\>\<input[^\>]+value\=\"([^\"]+)\"/g;
@@ -431,7 +434,7 @@ console.log(str);
  */
 	
 	// result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR 0P', 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0P"};
-	return result_arr;
+	return result;
 }
 
 function decs_route(input = null, cdr_list = null) {
