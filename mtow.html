@@ -365,7 +365,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		}
 
 		// CDRs
-		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\" // Verified with ATCSCC on " + today_str;
+		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; // Verified with ATCSCC on " + today_str;
 		result_arr['cdrs'][z[1]] = {'route' : z[4], 'notes' : ("CDR " + z[1]), 'result_str' : ("result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";") };
 	}
 
@@ -395,13 +395,24 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	for (var i = 0; i < sortable.length; i++) {
 		playbook_str += sortable[i][3] + textarea_tabs;
 	}
-
+/*
+	var new_cdr_str = cdr_str.replaceAll('result += "', '').replaceAll('";', '').replaceAll('break;','').replaceAll('\\\"','"').replace( new RegExp("(case \"[^\n]+\n)","g"),"").replaceAll( new RegExp("(Verified with ATCSCC on [^\<]+\<)","g"),"<");
+	var new_cdr_str_b = cdr_str.replace( new RegExp("(case \"[^\n]+\n)","g"),"")
+*/
+	var new_cdr_str = "";
+	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly/g;
+	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) {
+		new_cdr_str += "<br/>" + z[1] + z[2] +": <input class=\"cdr_input\" style=\"width:75%\" " + z[3] +
+			" readonly>\"; // Verified with ATCSCC on " + z[4] +			
+			"<br/>" + z[1] + ((z[2].includes("color:red")) ? z[2] : "") + ": <input style=\"width:75%\" " +
+			z[3] + " readonly> // CDR " + z[1];
+	}
+	
 	var output = '<textarea rows="8" cols="80">' + "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" + non_rnav + ((non_rnav.length == 0) ? " // TODO" : "") + '</textarea><br/><br/><textarea rows="15" cols="80">' +
-		"result += \"<br/><br/><b>CDRS</b>\";" + cdr_str + textarea_tabs + "break;</textarea><br/><br/>"
-		  + cdr_str.replaceAll('result += "', '').replaceAll('";', '').replaceAll('break;','').replaceAll('\\\"','"').replace( new RegExp("(case \"[^\n]+\n)","g"),"").replaceAll( new RegExp("(Verified with ATCSCC on [^\<]+\<)","g"),"<");
+		"result += \"<br/><br/><b>CDRS</b>\";" + cdr_str + textarea_tabs + "break;</textarea><br/><br/>" + new_cdr_str;
 	if (to_array) { return result_arr; }
 	return output;
 }
