@@ -215,6 +215,24 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>H2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA HILIS TEBOW1 KJAX\" readonly>";
 			result += "<br/>M2 (Coord Req): <input style=\"width:75%\"; value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR HILIS TEBOW1 KJAX\" readonly>";					
 			break;
+		case "JFK": // Updated 02-22-2025
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/>OW: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA PELCN Y309 FLRDA SAGGY CHIEZ Q133 KALDA Q108 SIE CAMRN4 KJFK\" readonly>"; // CDR Z0
+			result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 JROSS JOHAR Q109 DFENC SAWED Q108 SIE CAMRN4 KJFK\" readonly>"; // CDR A0
+			result += "<br/>Full OW: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA ROWSY Y494 YAALE Y495 CAMRN KJFK\" readonly>"; // CDR DW
+			result += "<br/><br/>ATLANTIC NORTH 1: <input style=\"width:75%\"; value=\"KMIA FOLZZ3 GOZZR ETECK OZENA ROWSY OTTNG JOELO ETMEY AGUNE EXXES PREPI Y495 CAMRN KJFK\" readonly>";
+			result += "<br/>FLORIDA TO NE 3: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q118 THRSR RAFTN FLM J43 ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KMIA MIA9 HURCN ORL LIBBY CHS ILM ORF SIE CAMRN4 KJFK\" readonly>";
+			result += "<br/><br/><b>CDRS</b>";
+			result += "<br/>A0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 JROSS JOHAR Q109 DFENC SAWED Q108 SIE CAMRN4 KJFK\" readonly>"; // Verified with ATCSCC on 02-22-2025
+			result += "<br/>DW<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA ROWSY Y494 YAALE Y495 CAMRN KJFK\" readonly>"; // Verified with ATCSCC on 02-22-2025
+			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO Q109 DFENC SAWED Q108 SIE CAMRN4 KJFK\" readonly>"; // Verified with ATCSCC on 02-22-2025
+			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 CAMJO Q109 DFENC SAWED Q108 SIE CAMRN4 KJFK\" readonly>"; // Verified with ATCSCC on 02-22-2025
+			result += "<br/>K2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q109 DFENC SAWED Q108 SIE CAMRN4 KJFK\" readonly>"; // Verified with ATCSCC on 02-22-2025
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q109 DFENC SAWED Q108 SIE CAMRN4 KJFK\" readonly>"; // Verified with ATCSCC on 02-22-2025
+			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA PELCN Y309 FLRDA SAGGY CHIEZ Q133 KALDA Q108 SIE CAMRN4 KJFK\" readonly>"; // Verified with ATCSCC on 02-22-2025
+			break;
 		case "LAS": // Updated 02-21-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 BACCA ROZZI Y280 REDFN Q105 HRV J58 FUZ TXO J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
