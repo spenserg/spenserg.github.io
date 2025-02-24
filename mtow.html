@@ -398,7 +398,10 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 
 	var new_cdr_str = "";
 	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly/g;
-	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) { console.log(z);
+	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) {
+
+// console.log(z);
+
 		new_cdr_str += "<br/>CDR " + z[1] + z[2].replaceAll("\\", "") + ": <input class=\"cdr_input\" style=\"width:75%\" " + z[3].replaceAll("\\", "") + " readonly><br/>" +
 			z[1] + ": <input style=\'width:75%\' value=\'" +
 			"result += \"<br/>" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\">(Coord Req)</span>: " : "") + 
@@ -412,14 +415,15 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		((non_rnav.length == 0) ? " // TODO" : (textarea_tabs + non_rnav)) +
 		'</textarea><br/><br/><textarea rows="15" cols="80">' +
 		"result += \"<br/><br/><b>CDRS</b>\" \/\/ Verified with ATCSCC on " + today_str +
-		cdr_str + textarea_tabs + "break;</textarea><br/><br/>" + new_cdr_str;
+		cdr_str + textarea_tabs + "break;</textarea><br/><br/>" + new_cdr_str +
+		"<br/><br/><button onclick=\"clear_input(0)\">Clear</button>";
 	if (to_array) { return result_arr; }
 	return output;
 }
 
 function merge_str_arr(str = "", result_arr = {'arvl' : 'XXX', 'dptr' : 'YYY', 'faa_pref' : {}, 'non_rnav' : {}, 'cdrs' : {}}) {
 	//str is TESTING get_routes (dptr, arvl)
-	console.log (str);
+	// console.log (str);
 
 	var today = new Date();
 	var today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
