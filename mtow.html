@@ -389,7 +389,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 
 	result_arr['arvl'] = ((arvl.length == 4) ? arvl.substring(1, 4) : arvl);
 	result_arr['dptr'] = ((dptr.length == 4) ? dptr.substring(1, 4) : dptr);
-	merge_str_arr(get_routes(result_arr['dptr'], result_arr['arvl']), result_arr);
+	// merge_str_arr(get_routes(result_arr['dptr'], result_arr['arvl']), result_arr);
 
 	var playbook_str = "";
 	for (var i = 0; i < sortable.length; i++) {
@@ -407,9 +407,14 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 			"result += \"<br/>" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\">(Coord Req)</span>: " : "") + 
 			"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
 	}
-	
+
+	var faa_result = merge_faa_pref(result_arr['faa_pref'], result_arr['dptr'], result_arr['arvl'], today_str);
+	console.log(faa_result);
+
 	var output = '<textarea rows="8" cols="80">' + "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
+
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
+
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" +
 		((non_rnav.length == 0) ? " // TODO" : (textarea_tabs + non_rnav)) +
@@ -421,27 +426,54 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	return output;
 }
 
-function merge_str_arr(str = "", result_arr = {'arvl' : 'XXX', 'dptr' : 'YYY', 'faa_pref' : {}, 'non_rnav' : {}, 'cdrs' : {}}) {
-	//str is TESTING get_routes (dptr, arvl)
-	// console.log (str);
+function merge_faa_pref(result_arr = [], dptr = "XXX", arvl = "YYY") {
+	var textarea_tabs = ((["CLT","DFW","LAX","MIA","ORD","PHX","KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(dptr)) ? "\n\t\t\t" : "\n\t\t\t\t\t");
+	var result = "";
+	var errors = "";
+	var warnings = "";
+	var status = "";
+	if (today_str == null || today_str.trim().length == 0) {
+		var today = new Date();
+		var today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
+	}
 
-	var today = new Date();
-	var today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
-	var textarea_tabs = ((["CLT","DFW","LAX","MIA","ORD","PHX","KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(result_arr['dptr'])) ? "\n\t\t\t" : "\n\t\t\t\t\t");
-	var result = 'case "' + result_arr['dptr'] + '": // Updated ' + today_str;
-
-	// FAA pref
+	var existing_routes = get_routes(dptr, arvl);
 	reg_faapref = /\<b\>Faa Pref Route([^\:]*)\:\<\/b\>\<br\/\>\<input[^\>]+value\=\"([^\"]+)\"/g;
-	var faa_pref_arr = reg_faapref.exec(str);
+	var faa_pref = reg_faapref.exec(existing_routes);
 
-/* TODO
-console.log(faa_pref_arr);
-console.log(result_arr);
-console.log(str);
- */
-	
-	// result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR 0P', 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0P"};
-	return result;
+	if (faa_pref == null) {
+		// Faa Pref not detected in existing routes
+		warnings += "No existing FAA Pref route detected.";
+		if (result_arr['route'] !== undefined) {
+			// Pref route in CDR list, but not already existing
+			result += "result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs;
+			result += "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + result_arr['route'] + "\\\" readonly>\"; \/\/ " + result_arr['notes'];
+		} else {
+			// No pref routes in either CDR list or already existing
+			result += "// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of " + today_str + textarea_tabs;
+			result += textarea_tabs;
+		}
+	} else {
+		// Faa Pref exists in existing routes
+		if (result_arr['route'] !== undefined) {
+			// Pref route in CDR list and already existing
+			result += "result += \"<br/><br/><b>Faa Pref Route" + faa_pref['avg_fl'] + ":</b>\";" + textarea_tabs;
+			if (result_arr['route'].localeCompare(faa_pref[2])) {
+				errors += "Pref routes dont match! Defaulted to existing route. Check CDR list vs. existing route";
+			} else { status += "Existing pref route matches CDR"; }
+			result += "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + result_arr['route'] + "\\\" readonly>\";";
+		} else {
+			// Pref route already existing, but not CDR list
+			result += "result += \"<br/><br/><b>Faa Pref Route" + faa_pref['avg_fl'] + ":</b>\";" + textarea_tabs;
+			result += "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + result_arr['route'] + "\\\" readonly>\";";
+		}
+	}
+/*
+	console.log(result_arr);
+	console.log(faa_pref);
+	console.log(result);
+*/
+	return {'result' : result, 'errors' : errors, 'warnings' : warnings, 'status' : status};
 }
 
 function decs_route(input = null, cdr_list = null) {
