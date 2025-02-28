@@ -98,12 +98,12 @@ function compute (str_override = "") {
 	
 	$("#total").html("");
 	rega = /TOW\n(\d+)\n(\d+)\n([^\n]*)\nLDW\n(\d+)\n(\d+)\n/g;
-	regb = /light\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AAL([\dA-Z]+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,\n\.]+)[\,\n\.][^\n]*\n[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
+	regb = /light\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AA[LT]([\dA-Z]+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,\n\.]+)[\,\n\.][^\n]*\n[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
 
 	// ATCSCC CDRS
 	// https://www.fly.faa.gov/rmt/cdm_operational_coded_departur.jsp
 	regc = /\d\t([^\t]{8})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])\t(\d)\t/g;
-		
+
 	// Decs route page
 	regz = /[DI][\d]+\s+\d+\s[A-Z]\s[A-Z]\s[A-Z][^\n]+\n\s*ARTC TEXT/g;
 
@@ -153,7 +153,7 @@ function compute (str_override = "") {
 				mlwa = mlwb;
 			}
 		}
-		
+
 		// Get ac_type
 		var ac_type = (testing ? "321R" : get_ac_type(tmp_rslt[5]));
 
@@ -399,22 +399,23 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	var new_cdr_str = "";
 	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly/g;
 	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) {
-
-// console.log(z);
-
 		new_cdr_str += "<br/>CDR " + z[1] + z[2].replaceAll("\\", "") + ": <input class=\"cdr_input\" style=\"width:75%\" " + z[3].replaceAll("\\", "") + " readonly><br/>" +
 			z[1] + ": <input style=\'width:75%\' value=\'" +
 			"result += \"<br/>" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\">(Coord Req)</span>: " : "") + 
 			"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
 	}
 
-	var faa_result = merge_faa_pref(result_arr['faa_pref'], result_arr['dptr'], result_arr['arvl'], today_str);
+	var faa_result = merge_faa_pref(result_arr, today_str);
+	faa_result['result'] = "case " + result_arr['arvl'] + ": // Updated " + today_str + textarea_tabs + faa_result['result'];
+
 	console.log(faa_result);
-
-	var output = '<textarea rows="8" cols="80">' + "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
-
+	
+	var output = '<textarea rows="8" cols="80">' + faa_result['result'] + '</textarea><br/><br/>' +
+		'<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
+		'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span>' + faa_result['status'] +
+		
+		'<textarea rows="8" cols="80">' + "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
-
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" +
 		((non_rnav.length == 0) ? " // TODO" : (textarea_tabs + non_rnav)) +
@@ -426,9 +427,8 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	return output;
 }
 
-function merge_faa_pref(result_arr = [], dptr = "XXX", arvl = "YYY") {
+function merge_faa_pref(result_arr = {}) {
 	var textarea_tabs = ((["CLT","DFW","LAX","MIA","ORD","PHX","KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(dptr)) ? "\n\t\t\t" : "\n\t\t\t\t\t");
-	var result = "";
 	var errors = "";
 	var warnings = "";
 	var status = "";
@@ -436,43 +436,53 @@ function merge_faa_pref(result_arr = [], dptr = "XXX", arvl = "YYY") {
 		var today = new Date();
 		var today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
 	}
+	var result = "";
+	var dptr = result_arr['dptr'];
+	var arvl = result_arr['arvl'];
 
+	// FAA PREF
 	var existing_routes = get_routes(dptr, arvl);
 	reg_faapref = /\<b\>Faa Pref Route([^\:]*)\:\<\/b\>\<br\/\>\<input[^\>]+value\=\"([^\"]+)\"/g;
 	var faa_pref = reg_faapref.exec(existing_routes);
+	faa_pref['avg_fl'] = ((faa_pref['avg_fl'] === undefined) ? "" : faa_pref['avg_fl']);
 
-	if (faa_pref == null) {
+	if (faa_pref == null || faa_pref[2].trim().length == 0) {
 		// Faa Pref not detected in existing routes
-		warnings += "No existing FAA Pref route detected.";
-		if (result_arr['route'] !== undefined) {
+		warnings += "<span style=\"color:orange\">No existing FAA Pref route detected.<\/b><br/>";
+		if (result_arr['faa_pref']['route'] !== undefined) {
 			// Pref route in CDR list, but not already existing
 			result += "result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs;
-			result += "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + result_arr['route'] + "\\\" readonly>\"; \/\/ " + result_arr['notes'];
+			result += "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + result_arr['faa_pref']['route'] + "\\\" readonly>\"; \/\/ " + result_arr['faa_pref']['notes'];
 		} else {
 			// No pref routes in either CDR list or already existing
-			result += "// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of " + today_str + textarea_tabs;
-			result += textarea_tabs;
+			result += "// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of " + today_str + textarea_tabs + textarea_tabs;
 		}
 	} else {
 		// Faa Pref exists in existing routes
-		if (result_arr['route'] !== undefined) {
+		if (result_arr['faa_pref']['route'] !== undefined) {
 			// Pref route in CDR list and already existing
 			result += "result += \"<br/><br/><b>Faa Pref Route" + faa_pref['avg_fl'] + ":</b>\";" + textarea_tabs;
-			if (result_arr['route'].localeCompare(faa_pref[2])) {
-				errors += "Pref routes dont match! Defaulted to existing route. Check CDR list vs. existing route";
+			if (result_arr['faa_pref']['route'].localeCompare(faa_pref[2])) {
+				errors += "<b style=\"color:red\">Pref routes dont match- defaulted to existing route. Check CDR list vs. existing route<\/b><br\/>";
 			} else { status += "Existing pref route matches CDR"; }
-			result += "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + result_arr['route'] + "\\\" readonly>\";";
+			result += "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + result_arr['faa_pref']['route'] + "\\\" readonly>\";";
 		} else {
 			// Pref route already existing, but not CDR list
 			result += "result += \"<br/><br/><b>Faa Pref Route" + faa_pref['avg_fl'] + ":</b>\";" + textarea_tabs;
-			result += "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + result_arr['route'] + "\\\" readonly>\";";
+			result += "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + faa_pref[2] + "\\\" readonly>\";";
 		}
 	}
-/*
-	console.log(result_arr);
+
+	// OTHER ROUTES
+
+	// NON RNAV
+
+	// CDRS
+
 	console.log(faa_pref);
-	console.log(result);
-*/
+	console.log(result_arr);
+	console.log(existing_routes);
+
 	return {'result' : result, 'errors' : errors, 'warnings' : warnings, 'status' : status};
 }
 
