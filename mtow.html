@@ -410,11 +410,12 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 
 	console.log(faa_result);
 	
-	var output = '<textarea rows="8" cols="80">' + faa_result['result'] + '</textarea><br/><br/>' +
+	var output = /* '<textarea rows="8" cols="80">' + faa_result['result'] + '</textarea><br/><br/>' + */
 		'<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
-		'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span>' + faa_result['status'] +
-		
-		'<textarea rows="8" cols="80">' + "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
+		'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span>' +
+		/* faa_result['status'] + */
+
+		'<br/><br/><textarea rows="8" cols="80">' + "case \"" + arvl + "\": // Updated " + today_str + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" +
