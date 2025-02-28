@@ -444,7 +444,9 @@ function merge_faa_pref(result_arr = {}) {
 	var existing_routes = get_routes(dptr, arvl);
 	reg_faapref = /\<b\>Faa Pref Route([^\:]*)\:\<\/b\>\<br\/\>\<input[^\>]+value\=\"([^\"]+)\"/g;
 	var faa_pref = reg_faapref.exec(existing_routes);
-	faa_pref['avg_fl'] = ((faa_pref['avg_fl'] === undefined) ? "" : faa_pref['avg_fl']);
+	if (faa_pref != null) {
+		faa_pref['avg_fl'] = ((faa_pref['avg_fl'] === undefined) ? "" : faa_pref['avg_fl']);
+	}
 
 	if (faa_pref == null || faa_pref[2].trim().length == 0) {
 		// Faa Pref not detected in existing routes
