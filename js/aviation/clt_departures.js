@@ -872,7 +872,8 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 
 		case "PVD": // Updated 02-06-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT BARMY5 RDU NOWAE Q87 GEARS BBOBO Q22 RBV Q430 CREEL ORCHA JORDN JORDN2 KPVD\" readonly>"; // CDR RP
+			result += "<br/><input style=\"width:75%\" value=\"KCLT BARMY5 RDU NOWAE Q87 GEARS BBOBO Q22 RBV Q430 CREEL HTO JORDN2 KPVD\" readonly>"; // CDR RP
+			result += "<br/><b style=\"color:orange\">As of 03-01-2025 FAA pref is JORDN JORDN2 but its not on the chart. Use HTO JORDN2<\/b>";
 			result += "<br/><br/>West: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD Q39 ASERY AIR Q430 CREEL HTO JORDN2 KPVD\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT RDU ORF KALDA Q167 ORCHA KPVD\" readonly>";
