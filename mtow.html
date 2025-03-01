@@ -334,15 +334,18 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		var file_status = "<span style=\\\"color:" + ((z[5] == "Y") ? "red\\\"> (Coord Req)" : "green\\\"> (Ok to File)") + "<\/span>";
 
 		// FAA Pref
-		if (dptr == "KDFW" && z[1] == "0P") { // DFW
+		if (dptr == "KCLT" && z[1] == "RP") { // CLT
+			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR RP";
+			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR RP', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR RP"};
+		} else if (dptr == "KDCA" && z[1] == "00") { // DCA
+			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 00";
+			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR 00', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 00"};
+		} else if (dptr == "KDFW" && z[1] == "0P") { // DFW
 			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0P";
 			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR 0P', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0P"};
 		} else if (dptr == "KORD" && z[1] == "0E") { // ORD
 			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0E";
 			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR 0E', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0E"};
-		} else if (dptr == "KCLT" && z[1] == "RP") { // CLT
-			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR RP";
-			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR RP', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR RP"};
 		} else if (dptr == "KPHL" && z[1] == "PH") { // PHL
 			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR PH";
 			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR PH', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR PH"};
