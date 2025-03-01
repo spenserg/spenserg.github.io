@@ -608,7 +608,8 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "FLL": // Updated 01-23-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA HRV Q105 BLVNS Y290 OCHHO VNECK TEEKY3 KFLL\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA HRV Q105 BLVNS Y290 BACCA VNECK TEEKY3 KFLL\" readonly>";
+			result += "<br/><b style=\"color:orange\">FAA pref route includes OCHHO but route above is most common. Keeps flight within ZJX/ZMA<\/b>";
 			result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA MCB J50 CEW J2 DEFUN TEEKY3 KFLL\" readonly>";
 			result += "<br/>North: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD MEI MGM ACORI TEEKY3 KFLL\" readonly>";
 			result += "<br/>E Coast: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN LGC YANTI Q89 PRMUS CUUDA3 KFLL\" readonly>";
