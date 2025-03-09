@@ -382,7 +382,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "LAX":
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KPHX KEENS3 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
-			result += "<br/><b style=\"color:orange\">LAX arrivals must file WLVRN transition (see chart notes)<\/b>";
+			result += "<br/><b style=\"color:orange\">LAX arrivals must file WLVRN transition out of PHX (see chart notes)<\/b>";
 			result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KPHX FYRBD1 MOHAK J2 IPL JLI VISTA3 KLAX\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX BXK4 PKE TNP BASET5 KLAX\" readonly>";
