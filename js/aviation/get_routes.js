@@ -1898,7 +1898,7 @@ function get_routes(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, res
 					break;
 				case "PHX": // Updated 01-09-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 AIR J110 STL BUM ICT LBL FTI BUKKO ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 AIR J110 STL BUM ICT LBL FTI ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KEWR PORTT4 PARKE J6 HVQ Q68 LITTR MEEOW J66 EWM DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/>ELP: <input style=\"width:75%\" value=\"KEWR LANNA J48 CSN FANPO Q40 NIOLA MCB LCH IAH J86 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/>KENPA WEST 1: <input style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE KENPA CESNA ONL LBF ALS GUP EAGUL6 KPHX\" readonly>";
@@ -2160,19 +2160,18 @@ function get_routes(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, res
 
 		case "GSP":
 			switch(arvl) {
+				case "CLT": // Updated 01-09-2025
+					result += "<br/><br/><b>Faa Pref Route (Avg FL130):</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KGSO BANKR BANKR5 KCLT\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed 03-10-25
+					break;
 				case "DFW": // Updated 01-09-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KGSP HRS GQO MEM J66 LIT FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KGSP HRS GQO MEM J66 LIT FINGR9 KDFW\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					
-					break;
-				case "CLT": // Updated 01-09-2025
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KGSO FILPZ KCLT\" readonly>";
-					// result += "<br/><br/><b>Non RNAV</b>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed 03-10-25
 					break;
 			}
 		break; // End of GSP
