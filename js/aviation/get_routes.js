@@ -552,7 +552,8 @@ function get_routes(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, res
 				case "MIA": // Updated 01-17-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBHM MGMRY ACORI FROGZ4 KMIA\" readonly>";
-					result += "<br/>East: <input style=\"width:75%\" value=\"KBHM CHEHA THRSR IRQ FISHO DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KBHM CHEHA THRSR IRQ FISHO DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/><br/>MIA VIA MOGAE: <input style=\"width:75%\" value=\"KBHM CHEHA THRSR IRQ FISHO Q93 WOPNR Q97 EBAYY MOGAE BNFSH2 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBHM LGC GEF CTY PIE PALMZ2 KMIA\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
