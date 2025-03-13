@@ -796,7 +796,32 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // end of BRO
 
 		// TODO BTR
+		case "BTR":
+			switch(arvl) {
+				case "CLT": // TODO
+					break;
+				case "DCA": // TODO
+					break;
+				case "DFW": // TODO
+					break;
+			}
+		break; // End of BTR
+
 		// TODO BTV
+		case "BTV":
+			switch(arvl) {
+				case "CLT": // TODO
+					break;
+				case "DCA": // TODO
+					break;
+				case "LGA": // TODO
+					break;
+				case "ORD": // TODO
+					break;
+				case "PHL": // TODO
+					break;	
+			}
+		break; // End of BTV
 
 		case "BUF":
 			switch(arvl) {
@@ -950,7 +975,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 			}
 		break; // End of CAE
 
-		// TODO CAK
+// CAK skipped
 
 		case "CHS":
 			switch(arvl) {
@@ -1140,7 +1165,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 			}
 		break; // End of COS
 
-		// TODO CRP
+		case "CRP":
+			switch(arvl) {
+				case "DFW": // TODO
+					break;
+			}
+		break; // End of CRP
 
 		case "CVG":
 			switch(arvl) {
