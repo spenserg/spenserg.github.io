@@ -1156,17 +1156,16 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV KTYS\" readonly>";
 			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ Q68 YOCKY VXV KTYS\" readonly>";
 			break;
-		case "VPS": // TODO which is faa pref?
-			// result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/>BEAVY: <input style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DARED CORKY KVPS\" readonly>";
-			result += "<br/>ESTRR: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ BESTT STRDR DEFUN MSSTY KVPS\" readonly>";
-			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KCLT BEAVY6 JENDO WADEB TAY SZW CORKY KVPS\" readonly>";
+		case "VPS": // Updated 03-16-2025
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DARED CORKY KVPS\" readonly>";
+			result += "<br/><br/>South via TAY: <input style=\"width:75%\" value=\"KCLT BEAVY6 JENDO WADEB TAY SZW CORKY KVPS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 DEBIE BYRDS DNICE HUZER BAIZE DEFUN KVPS\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>ES: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR CSG DARED CORKY KVPS\" readonly>";
-			result += "<br/>ES (Coord Req): <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR RSVLT DARED CORKY KVPS\" readonly>";
-			result += "<br/>RP (Ok to File): <input style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DARED CORKY KVPS\" readonly>";
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 03-16-2025
+			result += "<br/>BA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 BARMY BATTA ROZBO CHS JROSS Q409 ISUZO ALLMA CABLO KVPS\" readonly>";
+			result += "<br/>ES<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR RSVLT DARED CORKY KVPS\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DARED CORKY KVPS\" readonly>";
 			break;
 		case "XNA":
 			result += "<br/><br/><b>Faa Pref Route:</b>";
