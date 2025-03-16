@@ -5859,18 +5859,19 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>Coastal: <input style=\"width:75%\" value=\"KSEA SUMMA2 SUMMA WANTA J523 IMB NEERO WINEN CORKR BAVPE J86 ELP J86 LEV Y290 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSEA MONTN2 SEA NORMY J90 MWH LKT J52 DBS J175 CYS GLD J182 ICT RZC MEM J41 MGM SZW PIE PALMZ2 KMIA\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 03-16-2025
 					break;
 			}
 		break; // End of SEA
 
 		case "SFO":
 			switch(arvl) {
-				case "CLT": // Updated 01-18-2025
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSFO SAHEY4 NTELL Q164 KATTS TABLL JNC KK48E BNA TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>Night: <input style=\"width:75%\" value=\"KSFO NIITE4 SYRAH Q128 EDLES KD51W KK45G BNA TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KSFO TRUKN2 MOGEE Q122 LCU OCS J94 BFF OBH LMN STL J45 BNA TAZZA FILPZ4 KCLT\" readonly>";
+				case "CLT": // Updated 03-16-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref as of 03-16-2028
+					result += "<br/><br/>NRS/HAR: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q130 REANA KD45S KA42W KK42C BNA TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/>Night (10PM to 7AM Local): <input style=\"width:75%\"; value=\"KSFO NIITE4 SYRAH Q128 EDLES KD51W KK45G BNA TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>South/HAR: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q130 REANA KD48Q KD45S KA39Y KK36A KF30E IZAAC Q30 VLKNN TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\"; value=\"KSFO TRUKN2 MOGEE Q122 LCU OCS J94 BFF WYYTE CANIO DSM SPI IIU Q50 CUBIM WILUM PARQR4 KCLT\" readonly>";
 					result += "<br/><br/>North via DPR: <input style=\"width:75%\" value=\"KSFO SFO4 SFO SAC J32 DPR J34 ODI J30 JOT VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
 					result += "<br/>South via ABI: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN PMD J6 DRK SJN J74 CNX HOMET ABI J50 ACT SQS VUZ THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
