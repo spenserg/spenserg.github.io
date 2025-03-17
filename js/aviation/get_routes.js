@@ -3862,8 +3862,8 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 				case "CLT": // Updated 02-22-2025
 					// result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><br/>HAR: <input style=\"width:75%\"; value=\"KONT RAJEE4 AVRRY PKE J134 DRK J6 PNH IRW ARG J46 VXV TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>South via FUZ: <input style=\"width:75%\"; value=\"KONT RAJEE4 MTBAL BLH J169 TFD J50 SSO J4 FUZ IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/>South via IAH: <input style=\"width:75%\"; value=\"KONT RAJEE4 MTBAL BLH J169 TFD J50 ELP J86 IAH J2 SJI Q56 CATLN MGMRY THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/>South via FUZ: <input style=\"width:75%\"; value=\"KONT RAJEE4 MTBAL CNERY BLH J169 TFD J50 SSO J4 FUZ IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/>South via IAH: <input style=\"width:75%\"; value=\"KONT RAJEE4 MTBAL CNERY BLH J169 TFD J50 ELP J86 IAH J2 SJI Q56 CATLN MGMRY THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/>North via ICT: <input style=\"width:75%\"; value=\"KONT SNSHN5 LAS J146 DVC PUB J28 ICT ARG TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/>North via HYS: <input style=\"width:75%\"; value=\"KONT SNSHN5 LAS J146 DVC J197 HGO J24 HYS BUM J112 FAM BNA TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/>CLT NO FILPZ: <span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KONT MTBAL CNERY BLH J169 TFD J50 SSO EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
@@ -5646,7 +5646,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 SSO J4 EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
 					result += "<br/>North: <input style=\"width:75%\" value=\"KSAN ZZOOO4 MTBAL CHADT Q73 HAKMN BLD J60 BCE J100 EKR MBW RAP J158 ABR GRB FNT DJB EWC JST BOJID4 KPHL\" readonly>";
 					result += "<br/><br/>BAE 1: <input style=\"width:75%\" value=\"KSAN ZZOOO4 MTBAL CADEZ HAKMN Q73 LAKRR Q88 PROMT EKR MBW RAP RWF J34 DJB EWC JST BOJID4 KPHL\" readonly>";
-					result += "<br/>LEV EAST 1: <input style=\"width:75%\" value=\"KSAN ZZOOO4 MTBAL BLH J169 TFD J50 ELP MRF KOBLE DLF KINEY THX PSX HOODO BOWFN LEV SJI J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>LEV EAST 1: <input style=\"width:75%\" value=\"KSAN ZZOOO4 MTBAL CNERY BLH J169 TFD J50 ELP MRF KOBLE DLF KINEY THX PSX HOODO BOWFN LEV SJI J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
 					result += "<br/>LEV EAST 2: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP MRF KOBLE DLF KINEY THX PSX HOODO BOWFN LEV SJI Q56 CATLN FRDDO NOKIE TWINS BLAAN Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSAN BRDR7 IPL J18 PXR J244 FTI LBL ICT BUM STL J110 VHP ROD EWC PSB BUNTS3 KPHL\" readonly>";
