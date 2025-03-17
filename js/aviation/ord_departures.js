@@ -555,7 +555,7 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "SAN": // Updated 02-20-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD PEKUE PIGGG QUANE CARET IRK J96 PKE LUCKI1 KSAN\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SLN J96 PKE LUCKI1 KSAN\" readonly>";
 			result += "<br/><br/>North: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD NOONY NIGHT NITWT OBH LBF J10 FQF J128 TBC PLNDL Q86 TTRUE LUCKI1 KSAN\" readonly>"; // CDR 4W
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL IFI PNH J6 DRK J78 PKE LUCKI1 KSAN\" readonly>";
 			result += "<br/>South via INK: <input style=\"width:75%\"; value=\"KORD BACEN BLOKR BEKKI ENL FAM J78 IRW GTH INK EWM J4 SSO GBN J18 HOGGZ LUCKI1 KSAN\" readonly>";
