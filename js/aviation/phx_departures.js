@@ -767,22 +767,21 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ZE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED DSNEE6 KSNA\" readonly>";
 			break;
 		case "STL": // Updated 01-11-2025
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ FTI J18 GCK J110 BUM KAYLA3 KSTL\" readonly>";
-			result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO CNX PNH IFI TUL J98 SGF KAYLA3 KSTL\" readonly>";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref as of 03-17-2025
+			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ LBL ICT J134 BUM KAYLA3 KSTL\" readonly>";
+			result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE EWM J4 ABI ADM TUL SGF KAYLA3 KSTL\" readonly>";
 			result += "<br/>North: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK J10 FQF J44 MCK PWE IRK LORLE3 KSTL\" readonly>";
-			
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX SJN9 ABQ FTI J18 GCK J110 BUM KOOOP1 KSTL\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>BR (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO ACH TOTOE ICT BUM KAYLA3 KSTL\" readonly>";
-			result += "<br/>CM (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 CME TXO J74 IRW J98 SGF KAYLA3 KSTL\" readonly>";
-			result += "<br/>EC (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J26 PNH IFI SGF KAYLA3 KSTL\" readonly>";
-			result += "<br/>FR (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 GCK J110 BUM KAYLA3 KSTL\" readonly>";
-			result += "<br/>MR (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS J110 BUM KAYLA3 KSTL\" readonly>";
-			result += "<br/>QU (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS J110 BUM KAYLA3 KSTL\" readonly>";
-			result += "<br/>ST (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 ONM ACH TOTOE ICT BUM KAYLA3 KSTL\" readonly>";
-			result += "<br/>TM (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 ONM ACH TOTOE ICT BUM KAYLA3 KSTL\" readonly>";
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 03-17-2025
+			result += "<br/>BR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO ACH LBL ICT BUM KAYLA3 KSTL\" readonly>";
+			result += "<br/>CM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 CME TXO J74 IRW J98 SGF KAYLA3 KSTL\" readonly>";
+			result += "<br/>EC<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J26 PNH IFI SGF KAYLA3 KSTL\" readonly>";
+			result += "<br/>FR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 GCK J110 BUM KOOOP1 KSTL\" readonly>";
+			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS J110 BUM KOOOP1 KSTL\" readonly>";
+			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 JARPA RSK ALS J110 BUM KOOOP1 KSTL\" readonly>";
+			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 ONM ACH LBL ICT BUM KAYLA3 KSTL\" readonly>";
+			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 ONM ACH LBL ICT BUM KAYLA3 KSTL\" readonly>";
 			break;
 		case "TPA": // Updated 02-05-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
