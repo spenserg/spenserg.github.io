@@ -6438,14 +6438,13 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "VPS":
 			switch(arvl) {
-				case "CLT": // TODO which one is faa pref?
-					// result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/>Jonze: <input style=\"width:75%\" value=\"KVPS CORKY ACORI CSG BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/>Bankr: <input style=\"width:75%\" value=\"KVPS CORKY MCN PONZE BANKR5 KCLT\" readonly>";
-					result += "<br/><br/>East (Wx Avoid): <input style=\"width:75%\" value=\"KVPS CORKY DEFUN CABLO CAMJO Q99 TEEEM CHECR STOCR4 KCLT\" readonly>";
+				case "CLT": // Updated 03-16-202
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KVPS CORKY ACORI CSG BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KVPS CORKY DEFUN CABLO HEPAR Q99 TEEEM CHECR STOCR4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KVPS CORKY GONDR SHAKK WUDEE LORNN VXV LIINN3 KCLT\" readonly>";
-					//result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 03-13-2025
 					break;
 				case "DFW": // Updated 01-19-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
