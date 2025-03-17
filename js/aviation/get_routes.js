@@ -3890,7 +3890,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					break;
 				case "PHX": // Updated 01-17-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KONT RAJEE4 MTBAL DCT BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KONT RAJEE4 MTBAL CNERY BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/><br/>PHX HYDRR: <input style=\"width:75%\" value=\"KONT NIKKL1 TRM BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/>PHX NO J92: <input style=\"width:75%\" value=\"KONT NIKKL1 TRM BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
