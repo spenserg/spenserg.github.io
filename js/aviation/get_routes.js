@@ -2135,7 +2135,33 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 			}
 		break; // End of FAT
 
-		// TODO FCA
+		case "FCA":
+			switch(arvl) {
+				case "DFW": // Updated 03-18-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-18-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KGPI GPI1 CHOTE GTF J13 CYS HGO PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KGPI HLN BPI OCS HBU J206 ALS CIM TCC TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/>North/East: <input style=\"width:75%\"; value=\"KGPI GPI1 CHOTE GTF MLS RAP HYS IRW IBAKE JOVEM6 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 03-18-2025
+					break;
+				case "LGA": // Updated 03-18-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/>NRP: <input style=\"width:75%\"; value=\"KGPI GTF LWT MLS J90 ABR COMOS ODI J34 BAE J70 PMM CXR J146 MIP MIP4 KLGA\" readonly>";
+					result += "<br/><br/>SE Arrival: <input style=\"width:75%\"; value=\"KGPI GTF LWT MLS J204 DPR J16 FSD Q19 STL J8 IIU Q108 SITTR Q34 GVE PROUD2 KLGA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 03-18-2025
+					break;
+				case "ORD": // Updated 03-18-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/>NRP: <input style=\"width:75%\"; value=\"KGPI GPI1 CHOTE GTF J13 BIL J34 DPR J16 FSD FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KGPI GPI1 CHOTE GTF J36 FAR J36 GEP ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/>South: <input style=\"width:75%\"; value=\"KGPI DLN J9 DBS J52 FQF J80 MCI J26 IRK BENKY6 KORD\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 03-18-2025
+					break;
+			}
+		break; // End of FCA
 
 		case "FLL":
 			switch(arvl) {
@@ -2248,9 +2274,29 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 // GNV skipped
 // GPT skipped
 
-		// TODO GRB
+		case "GRB":
+			switch(arvl) {
+				case "ORD": // Updated 03-18-2025
+					result += "<br/><br/><b>Faa Pref Route (Avg FL170):</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KGRB FAALZ ERNNY8 KORD\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KGRB J101 OBK KORD\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>";// No CDRs as of 03-18-2025
+					break;
+			}
+		break; // End of GRB
 
-// GRK skipped
+		case "GRK":
+			switch(arvl) {
+				case "DFW": // Updated 03-18-2025
+					result += "<br/><br/><b>Faa Pref Route (Avg FL210):</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KGRK AGJ EGADS KIILO BOOVE7 KDFW\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KGRK ABI UKW UKW7 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>";// No CDRs as of 03-18-2025
+					break;
+			}
+		break; // End of GRK
 
 		case "GRR":
 			switch(arvl) {
@@ -2328,8 +2374,39 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 // GTF skipped
 
-		// TODO GUC
-		// TODO HDN
+		case "GUC":
+			switch(arvl) {
+				case "DFW": // Updated 03-18-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KGUC HBU J206 ALS PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KGUC HELPS ESPAN CNX J15 CME BGS GEEKY BOOVE6 KDFW\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KGUC DUFEL CIM PNH UKW8 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed 03-17-25
+					break;
+			}
+		break; // End of GUC
+
+		case "HDN":
+			switch(arvl) {
+				case "DFW": // Updated 03-18-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KHDN CHE FQF J52 HGO PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KHDN CHE FQF J20 LAA TOTOE MMB J98 IRW IBAKE VKTRY2 KDFW\" readonly>";
+					result += "<br/>West: <input style=\"width:75%\"; value=\"KHDN CHE EKR JNC J15 RSK J58 FTI TXO TXO TURKI JOVEM6 KDFW\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KHDN CHE FQF J52 HGO PNH UKW8 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed 03-17-25
+					break;
+				case "ORD": // Updated 03-18-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // Nor FAA pref as of 03/18/2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KHDN CHE CYS J148 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KHDN CHE CYS J148 MCW JVL1 KORD\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>";
+					break;
+			}
+		break; // End of HDN
 
 // HRL skipped
 
