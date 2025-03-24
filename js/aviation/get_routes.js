@@ -6660,16 +6660,16 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "VPS":
 			switch(arvl) {
-				case "CLT": // Updated 03-16-202
+				case "CLT": // Updated 03-24-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KVPS CORKY ACORI CSG BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KVPS CORKY DEFUN CABLO HEPAR Q99 TEEEM CHECR STOCR4 KCLT\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KVPS PIGON PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\" value=\"KVPS CORKY PIGON PONZE BANKR5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KVPS CORKY GONDR SHAKK WUDEE LORNN VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 03-13-2025
 					break;
-				case "DFW": // Updated 01-19-2025
+				case "DFW": // Updated 01-24-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KVPS CEW J50 AEX PNUTS BEREE3 KDFW\" readonly>";
 					result += "<br/><b style=\"color:orange\">Route  CEW MCB PNUTS  if SUA is active<\/b>";
