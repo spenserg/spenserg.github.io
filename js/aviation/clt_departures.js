@@ -759,7 +759,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "ONT": // Updated 02-06-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL END MMB FTI J244 ZUN J78 PKE DAFNY SCBBY2 KONT\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL END MMB FTI J244 ZUN J78 DRK DAFNY SCBBY2 KONT\" readonly>";
 			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC EIC J4 ABI EWM J4 BXK PHRED SCBBY2 KONT\" readonly>";
 			result += "<br/>North: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE Q93 OCASE CVG AXC STJ HUSQA Q90 JASSE MARUE JCKIE2 KONT\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
