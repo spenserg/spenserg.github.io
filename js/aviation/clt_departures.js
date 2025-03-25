@@ -1159,7 +1159,8 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "VPS": // Updated 03-16-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DARED CORKY KVPS\" readonly>";
-			result += "<br/><br/>South via TAY: <input style=\"width:75%\" value=\"KCLT BEAVY6 JENDO WADEB TAY SZW CORKY KVPS\" readonly>";
+			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ MGM CORKY KVPS\" readonly>";
+			result += "<br/>South via TAY: <input style=\"width:75%\" value=\"KCLT BEAVY6 JENDO WADEB TAY SZW CORKY KVPS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 DEBIE BYRDS DNICE HUZER BAIZE DEFUN KVPS\" readonly>";
 			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 03-16-2025
