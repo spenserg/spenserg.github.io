@@ -4625,9 +4625,10 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>J6<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ J85 SPA IRQ FINNE OHDEA1 KJAX\" readonly>";
 					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 SESUE ESENT LUNNI1 KJAX\" readonly>";
 					break;
-				case "LAS": // Updated 03-02-2025
+				case "LAS": // Updated 03-27-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 AIR J80 MCI J24 SLN J102 ALS J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>"; // CDR MC
-					result += "<br/>J110: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>"; // CDR ST
+					result += "<br/>PTW/North: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV J64 BDF LMN PWE MCK J44 FQF J80 JNC HVE GGAPP CHOWW3 KLAS\" readonly>"; // CDR ST
+					result += "<br/>STOEN/South via EWM: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 BFOLO FIBER HRISN IZAAC EIC J4 ABI J66 EWM DMN GREBE J86 INW HAHAA RKSTR4 KLAS\" readonly>"; // CDR EM
 					result += "<br/><br/>MXE/South via FSM<input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ Q68 RAMRD ARG FSM IRW PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>"; // CDR P1
 					result += "<br/>STOEN/South via EWM: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 BFOLO FIBER HRISN IZAAC EIC J4 ABI J66 EWM DMN GREBE J86 INW HAHAA RKSTR4 KLAS\" readonly>"; // CDR EM
 					result += "<br/><br/>MEX OBGIY WEST 2: <input style=\"width:75%\" value=\"KPHL STOEN Q75 GVE LYH COLZI Q52 CHOPZ MGMRY SJI LEV BOWFN HOODO PSX THX OBGIY AGNID VYLLA J92 DRK ELLDA RKSTR4 KLAS\" readonly>";
