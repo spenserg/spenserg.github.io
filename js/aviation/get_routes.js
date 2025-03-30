@@ -292,12 +292,13 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><input style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI AEX MERDN JAMMR THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI TXK Q34 MEMFS TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/>South: <input style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI LFK AEX J50 MCB MGM PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/><br/>CLT NO JONZE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAUS ELOEL3 KLNGR FUZ Q184 MERDN PONZE BANKR5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KAUS CWK7 ACT GGG ELD SQS VUZ GQO VXV LIINN3 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>0J (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI IAH GUSTI AWDAD SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
-					result += "<br/>6J (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA THX CRP PSX SBIRD HRV SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
-					result += "<br/>9J (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS ELOEL3 KLNGR FUZ Q184 MERDN PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 03-29-2025
+					result += "<br/>0J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI IAH GUSTI AWDAD SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/>6J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA THX CRP PSX SBIRD HRV SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/>9J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS ELOEL3 KLNGR FUZ Q184 MERDN PONZE BANKR5 KCLT\" readonly>";
 					break;
 				case "ORD": // Updated 10-22-24
 					result += "<br/><br/><b>Faa Pref Route:</b>";
