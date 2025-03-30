@@ -3684,20 +3684,20 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KMKE LYNNI ERNNY8 KORD\" readonly>";
 					result += "<br/>West: <input style=\"width:75%\" value=\"KMKE ZANDI MADII7 KORD\" readonly>";
 					break;
-				case "PHX": // Updated 01-16-2025
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMKE GREAS JAYEX KG75I LNK J146 GLD ALS J102 GUP EAGUL6 KPHX\" readonly>";
+				case "PHX": // Updated 03-30-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-30-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMKE GREAS JAYEX KG75I LNK J146 GLD ALS J102 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMKE DBQ IOW PWE HLC J64 PUB ALS J102 GUP BUNTR3 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>0W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IOW PWE HLC J64 RSK FLG DUTEY MAIER BRUSR1 KPHX\" readonly>";
-					result += "<br/>1N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE HAWKN RWF FSD J114 SNY FQF J10 RSK GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>1S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS STL SGF IFI DANKS EZEEE FTI BUKKO ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>1W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IRK J26 ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>2S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS J71 ENL FAM SGF J98 IRW J78 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>2W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IOW PWE HLC J64 PUB ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>3S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE UECKR6 DELHI PXV ARG IRW J78 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>LP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ LNK HLC ALS J102 GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 03-30-2025
+					result += "<br/>0W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IOW PWE HLC J64 RSK FLG DUTEY MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE HAWKN RWF FSD J114 SNY FQF J10 RSK GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS STL SGF IFI DANKS EZEEE FTI BUKKO ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IRK J26 ICT LBL FTI ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS J71 ENL FAM SGF J98 IRW J78 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>2W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IOW PWE HLC J64 PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE UECKR6 DELHI PXV ARG IRW J78 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>LP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ LNK HLC ALS J102 GUP EAGUL6 KPHX\" readonly>";
 					break;
 			}
 		break; // End of MKE
