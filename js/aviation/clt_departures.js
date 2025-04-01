@@ -823,13 +823,13 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>FL TO NE 3: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD APE JST BOJID4 KPHL\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 MERIL RDU J55 ZITTO JAMIE SWL VCN9 KPHL\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>BZ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV FLM ROD J152 JST BOJID4 KPHL\" readonly>";
-			result += "<br/>JJ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD J152 JST BOJID4 KPHL\" readonly>";
-			result += "<br/>KW (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY PANDY Q109 DFENC SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
-			result += "<br/>RP: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KILNS5 AUDII BBDOL PAATS4 KPHL\" readonly>";
-			result += "<br/>W1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD SITTR Q34 GVE PAATS4 KPHL\" readonly>";
-			result += "<br/>W2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ APE JST BOJID4 KPHL\" readonly>";
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 03-31-2025
+			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV FLM ROD J152 JST BOJID4 KPHL\" readonly>";
+			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD J152 JST BOJID4 KPHL\" readonly>";
+			result += "<br/>KW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY PANDY Q109 DFENC SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KILNS5 AUDII BBDOL PAATS4 KPHL\" readonly>";
+			result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD SITTR Q34 GVE PAATS4 KPHL\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ APE JST BOJID4 KPHL\" readonly>";
 			break;
 		case "PHX": // Updated 02-06-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
