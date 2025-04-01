@@ -359,14 +359,16 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>S1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LADYJ4 CSTRO NURAY SAC RBL LMT BTG HAWKZ8 KSEA\" readonly>";
 			result += "<br/>S2 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LADYJ4 CSTRO NURAY LIN J189 LMT BTG HAWKZ8 KSEA\" readonly>";
 			break;
-		case "SFO": // Updated 01-31-2025
+		case "SFO": // Updated 04-01-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX DARRK3 STOKD SERFR SERFR4 KSFO\" readonly>";
+			result += "<br/>Day: <input style=\"width:75%\"; value=\"KLAX SUMMR2 STOKD SERFR SERFR4 KSFO\" readonly>";
+			result += "<br/>Night: <input style=\"width:75%\"; value=\"KLAX DARRK3 STOKD SERFR SERFR4 KSFO\" readonly>";
 			result += "<br/><br/>SFO RWY19LR: <input style=\"width:75%\"; value=\"KLAX SUMMR2 STOKD SERFR WWAVS2 KSFO\" readonly>";
 			result += "<br/>SFO RWY10LR: <input style=\"width:75%\"; value=\"KLAX SUMMR2 STOKD BSR BSR3 KSFO\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX VTU8 RZS J501 BSR BSR3 KSFO\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>";
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-01-2025
+			result += "<br/>SF<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX IKAYE RZS SERFR SERFR4 KSFO\" readonly>";
 			break;
 		case "SMF": // Updated 01-31-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
