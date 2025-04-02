@@ -2673,12 +2673,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KIND ROCKY1 SPI J80 MCI J24 SLN J96 CIM ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KIND DAWNN1 MYS BWG ARG FSM SPS EWM DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/>BUM: <input style=\"width:75%\" value=\"KIND ROCKY1 STL BUM ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>FAM: <input style=\"width:75%\" value=\"KIND OOM WEGEE PXV J78 FAM J98 SGF PER MMB FTI J244 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>FAM: <input style=\"width:75%\" value=\"KIND OOM5 PXV J78 FAM J98 SGF PER MMB FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>BT (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND MEARZ7 BVT J89 CADIZ JOT MZV J18 GCK CIM ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>BU (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND DAWNN1 MYS BWG ARG J46 TUL MMB FTI J244 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>SW (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND OOM5 PXV J78 FAM J112 BUM ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-01-2025
+					result += "<br/>BT<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND MEARZ7 BVT J89 CADIZ JOT MZV J18 GCK CIM ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>BU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND DAWNN1 DAWNN BWG ARG J46 TUL MMB FTI J244 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>SW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND OOM5 PXV J78 FAM J112 BUM ICT LBL FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					break;
 			}
 		break; // End of IND
@@ -6115,7 +6115,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					break;
 				case "JFK": // TODO
 					break;
-				case "LAX": // TODO
+				case "LAX": // Updated 04-01-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/>SFO 1L/1R: <input style=\"width:75%\"; value=\"KSFO SSTIK5 SUSEY EBAYE BURGL IRNMN2 KLAX\" readonly>";
+					result += "<br/>SFO 28L/28R: <input style=\"width:75%\"; value=\"KSFO WESLA5 SUSEY EBAYE BURGL IRNMN2 KLAX\" readonly>";
+					result += "<br/>Night: <input style=\"width:75%\"; value=\"KSFO NIITE4 SYRAH BURGL IRNMN2 KLAX\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSFO OFFSH2 RZS SADDE8 KLAX\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-01-2025
 					break;
 				case "MIA": // TODO
 					break;
