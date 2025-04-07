@@ -502,7 +502,7 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "MCO": // Updated 04-06-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI MAATY5 KMCO\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KORD DENNT DARCY DREGS DUMGE SCOTO SWAPP Q79 THRSR ZJAYX GRNCH5 KMCO\" readonly>";
 			result += "<br/><br/>East: <input style=\"width:75%\"; value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM KI45S BZM CAE WURFL Q83 ROYCO Q85 LPERD GTOUT1 KMCO\" readonly>";
 			// TODO West
 			result += "<br/><br/>East via APE <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE VXV THRSR ZJAYX GRNCH5 KMCO\" readonly>"; // CDR 2E
