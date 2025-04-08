@@ -502,22 +502,23 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 TYI ORF SAWED Q108 SIE CAMRN4 KJFK\" readonly>";
 			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD SITTR Q108 SIE CAMRN4 KJFK\" readonly>";
 			break;
-		case "LAS": // Updated 02-06-2025
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY5 BNA FAM J112 BUM J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>";
+		case "LAS": // Updated 04-08-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL MMB FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE FLM J24 VHP J80 GLD J146 HBU J28 HVE GGAPP CHOWW3 KLAS\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY MEMFS TXK FUZ J4 SSO ELLDA RKSTR4 KLAS\" readonly>";
+			result += "<br/>ZKC Avoid: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA LIT J14 PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>"; // CDR RP
 			result += "<br/><br/>ABI: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC EIC J4 ABI CME J15 ABQ J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/>HNKER 1/2: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC SUTTN J52 TXK BYP UKW HNKER TXO J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/>LAS NO DVC: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK BYP SPS J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT BNA J46 TUL J78 IRW J74 TXO J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>BE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DBN MGMRY MEM ARG BUM J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>";
-			result += "<br/>ES (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN LIT J14 PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
-			result += "<br/>JJ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM FAM J112 BUM J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>";
-			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA LIT J14 PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
-			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD ZIEBR YOCKY BWG ARG FSM IRW PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-08-2025
+			result += "<br/>BE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DBN MGMRY MEM ARG BUM J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>";
+			result += "<br/>ES<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN LIT J14 PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
+			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM FAM J112 BUM J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA LIT J14 PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
+			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD ZIEBR YOCKY BWG ARG FSM IRW PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			break;
 		case "LAX": // Updated 03-10-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
