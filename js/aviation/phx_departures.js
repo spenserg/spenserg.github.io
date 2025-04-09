@@ -373,15 +373,16 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS PUB J64 HLC PWE LMN MZV JOT ELX SVM J70 LVZ LENDY8 KJFK\" readonly>"; // Verified with ATCSCC on 02-21-2025
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO ONM ACH LBL ICT BUM STL VHP ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>"; // Verified with ATCSCC on 02-21-2025
 			break;
-		case "LAS":
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+		case "LAS": // Updated 04-09-2025
+			result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
 			result += "<br/><input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA ELLDA RKSTR4 KLAS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX PXR J11 DRK ISHEE2 KLAS\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>KE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 WLVRN PKE GFS LARKK1 KLAS\" readonly>";
-			result += "<br/>QU (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 CARTL HAHAA RKSTR4 KLAS\" readonly><br/><b style=\"color:red\">Fkeys rejects CARTL transition to LAS</b>";
-			result += "<br/>ZE (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA ELLDA RKSTR4 KLAS\" readonly>";
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-09-2025
+			result += "<br/>KE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 WLVRN PKE GFS LARKK1 KLAS\" readonly>";
+			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 MRBIL HAHAA RKSTR4 KLAS\" readonly>";
+			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 CARTL HAHAA RKSTR4 KLAS\" readonly>";
+			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA ELLDA RKSTR4 KLAS\" readonly>";
 			break;
 		case "LAX":
 			result += "<br/><br/><b>Faa Pref Route:</b>";
