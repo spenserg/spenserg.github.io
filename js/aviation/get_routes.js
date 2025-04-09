@@ -3100,15 +3100,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KLAS HEC BASET5 KLAX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "MIA": // Updated 01-12-2025
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KLAS NIITZ4 SSKEE GUP ABQ LBB KF15C KH06G LEV Y280 REMIS GAWKS FROGZ4 KMIA\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KLAS NIITZ4 SSKEE INW J86 LEV Y290 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+				case "MIA": // Updated 04-09-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route listed as of 04-09-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KLAS NIITZ4 SSKEE GUP ABQ LBB KF15C KH06G LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KLAS NIITZ4 SSKEE INW J86 LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
 					result += "<br/>North/Non OW: <input style=\"width:75%\" value=\"KLAS NIITZ4 SSKEE GUP ABQ J78 IRW J14 VUZ ACORI FROGZ4 KMIA\" readonly>";
 					result += "<br/>Full OW: <input style=\"width:75%\" value=\"KLAS NIITZ4 SSKEE INW ELP FST DUNDE YEEHA PEGLG ALGAE MINOW M580 MARCI FROGZ4 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLAS PGS J72 ABQ J15 CNX ABI J50 LFK LEV Y290 BLVNS Y290 BAGGS RSW PALMZ2 KMIA\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-09-2025
 					break;
 				case "ORD": // Updated 2024-12-28
 					// No FAA pref as of 03-25-2025
@@ -6234,16 +6234,16 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KSLC EKR J116 FQF J80 HLC SLN BUM J112 FAM BNA TAZZA FILPZ4 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "DFW": // Updated 12-29-2024
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSLC ZIONZ1 KIMMR HBU PNH MDANO VKTRY2 KDFW\" readonly>";
+				case "DFW": // Updated 04-09-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref routes as of 04-09-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSLC ZIONZ1 KIMMR HBU PNH MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSLC ZIONZ1 EYELO RSK J15 ABQ J72 TURKI JOVEM6 KDFW\" readonly>";
 					result += "<br/>North: <input style=\"width:75%\" value=\"KSLC RUGGD3 EKR J116 FQF J20 LAA TOTOE MMB J98 IRW IBAKE VKTRY2 KDFW\" readonly>";
 					result += "<br/>SW Arrival: <input style=\"width:75%\" value=\"KSLC ZIONZ1 KIMMR ALS TXO GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSLC FFU9 HVE DVC CIM PNH UKW8 KDFW\" readonly>";
 					result += "<br/><span style=\"color:red\">FFU9 authorized for Rwy16LR Only</span>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-09-2025
 					break;
 				case "ORD": // Updated 12-29-2024
 					result += "<br/><br/><b>Faa Pref Route:</b>";
