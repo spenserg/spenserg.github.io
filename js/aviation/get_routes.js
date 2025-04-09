@@ -617,11 +617,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
 				case "LAX": // No Faa pref  // Updated 10-21-24
-					result += "<br/><br/>Via TXO: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG BARKK IRW J74 NABOB ESTWD HLYWD1 KLAX\" readonly>";
-					result += "<br/>HAR via ICT: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS ICT RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
-					result += "<br/><br/>Avoid ZAB: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS HAKAT CITGA FASTT GCK J28 HBU CHESZ Q88 HAKMN ANJLL4 KLAX\" readonly>";
-					result += "<br/>North via STL/MCI: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS J45 STL J24 SLN J102 ALS J110 RSK J64 TBC JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KBNA DRURY3 HAGIE MHZ AEX TNV JCT J2 ELP J50 GBN J104 TNP BASET5 KLAX\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG KF33E IRW J6 ZUN GABBL HLYWD1 KLAX\" readonly>";
+					// result += "<br/>HAR via ICT: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS ICT RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
+					// ^ cuts through a small corner of ZAB
+					result += "<br/><br/>North via STL/MCI: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS J45 STL J24 SLN J102 ALS J110 RSK J64 TBC JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/>South/Avoid ZFW: <input style=\"width:75%\" value=\"KBNA DRURY3 HAGIE MHZ AEX TNV CWK JCT J2 ELP J50 GBN J104 TNP BASET5 KLAX\" readonly>";
+					result += "<br/>North/Avoid ZAB: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS HAKAT CITGA FASTT GCK J28 HBU CHESZ Q88 HAKMN ANJLL4 KLAX\" readonly>";
 					result += "<br/><br/>ABI: <input style=\"width:75%\" value=\"KBNA DANLS3 SPKER SQS EIC J4 ABI EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/>PNH 1: <input style=\"width:75%\" value=\"KBNA DANLS3 SPKER MEM J66 LIT J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
