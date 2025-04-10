@@ -1654,28 +1654,30 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>60 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q176 HNN EWC ELZ NABOR KSYR\" readonly>";
 					result += "<br/>65 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA WYNGS5 RAMAY J149 SINDE EWC ELZ NABOR KSYR\" readonly>";
 					break;
-				case "TPA": // Updated 01-04-2025
+				case "TPA": // Updated 04-10-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 TEUFL BAAMF DADES1 KTPA\" readonly>";
-					result += "<br/><br/>Coastal: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB GUILD Q409 PUPYY BAAMF DADES1 KTPA\" readonly>";
-					result += "<br/>OW: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB EARZZ Q131 WAALT Y289 BAHAA HIBAC DADES1 KTPA\" readonly>";
-					result += "<br/>West: <input style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GRD MCN BULZI BRDGE BRDGE9 KTPA\" readonly>";
-					result += "<br/>Full OW: <input style=\"width:75%\" value=\"KDCA DOCTR5 AGARD SIE B24 LYNUS SILLY HOBOH Y488 STERN Y493 BAHAA HIBAC DADES1 KTPA\" readonly>";
-					result += "<br/>NO J75 1: <input style=\"width:75%\" value=\"KDCA AMEEE1 COLIN SCOOB GUILD Q409 PUPYY BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/><br/>Coastal <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB GUILD Q409 PUPYY BAAMF DADES1 KTPA\" readonly>"; // CDR 41
+					result += "<br/>OW <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB EARZZ Q131 WAALT Y289 BAHAA HIBAC DADES1 KTPA\" readonly>"; // CDR AR
+					result += "<br/>West <input style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 TEUFL BAAMF DADES1 KTPA\" readonly>"; // CDR 00
+					result += "<br/><br/>NO J75 1: <input style=\"width:75%\" value=\"KDCA AMEEE1 COLIN SCOOB GUILD Q409 PUPYY BAAMF DADES1 KTPA\" readonly>";
 					result += "<br/>NO Q75 3: <input style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ J85 SPA BAAMF DADES1 KTPA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA AML GVE GSO CAE AMG TAY LAL BRDGE BRDGE9 KTPA\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>00 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 TEUFL BAAMF DADES1 KTPA\" readonly>";
-					result += "<br/>40 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB COUPN BEETN JIMAR DEEEZ Q409 PUPYY BAAMF DADES1 KTPA\" readonly>";
-					result += "<br/>41 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB GUILD Q409 PUPYY BAAMF DADES1 KTPA\" readonly>";
-					result += "<br/>52 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 FLASK COREX SPA BAAMF DADES1 KTPA\" readonly>";
-					result += "<br/>53 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 ALEAN VXV THRSR HONID MAATY4 KTPA\" readonly>";
-					result += "<br/>55 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 FLASK COREX SPA WIGVO Q77 TEUFL BAAMF DADES1 KTPA\" readonly>";
-					result += "<br/>60 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 WISTA NEALS J85 SPA BAAMF DADES1 KTPA\" readonly>";
-					result += "<br/>62 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ SPAYD VXV THRSR HONID MAATY4 KTPA\" readonly>";
-					result += "<br/>63 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ J85 SPA BAAMF DADES1 KTPA\" readonly>";
-					result += "<br/>72 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 TEUFL BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-10-2025
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 TEUFL BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/>20<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD T287 CANNY LAFLN TRPOD Q409 PUPYY BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/>40<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB COUPN BEETN JIMAR DEEEZ Q409 PUPYY BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/>41<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB GUILD Q409 PUPYY BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/>52<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 FLASK COREX SPA BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/>53<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 ALEAN VXV THRSR HONID MAATY5 KTPA\" readonly>";
+					result += "<br/>55<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 FLASK COREX SPA WIGVO Q77 TEUFL BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 WISTA NEALS J85 SPA BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/>62<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ SPAYD VXV THRSR HONID MAATY5 KTPA\" readonly>";
+					result += "<br/>63<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ J85 SPA BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/>72<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 TEUFL BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/>97<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB PAACK Q97 ELMSZ JROSS Q409 PUPYY BAAMF DADES1 KTPA\" readonly>";
+					result += "<br/>AR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB EARZZ Q131 WAALT Y289 BAHAA HIBAC DADES1 KTPA\" readonly>";
 					break;
 			}
 		break; // End of DCA
