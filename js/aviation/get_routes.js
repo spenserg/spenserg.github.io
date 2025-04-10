@@ -2640,6 +2640,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>SL (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND ROCKY1 STL Q19 HITMN VXV LIINN3 KCLT\" readonly>";
 					result += "<br/>SW (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND OOM5 PXV HITMN VXV LIINN3 KCLT\" readonly>";
 					break;
+				case "DCA": // Updated 04-10-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KIND MAREO5 BDOCK DCT CLNTN DCT BUCKO FRDMM6 KDCA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-10-2025
+					result += "<br/>BU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND DAWNN1 IIU Q108 SITTR TRUPS5 KDCA\" readonly>";
+					result += "<br/>KK<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND OKK FWA DJB J34 BUCKO FRDMM6 KDCA\" readonly>";
+					result += "<br/>PR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND MAREO5 BDOCK APE J30 LUISE FRDMM6 KDCA\" readonly>";
+					break;
 				case "DFW": // Updated 01-10-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIND ROCKY1 STL FSM RRNET SEEVR4 KDFW\" readonly>";
@@ -2689,7 +2698,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIND ROCKY1 SPI J80 MCI J24 SLN J96 CIM ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KIND DAWNN1 MYS BWG ARG FSM SPS EWM DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/><br/>BUM: <input style=\"width:75%\" value=\"KIND ROCKY1 STL BUM ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>BUM: <input style=\"width:75%\" value=\"KIND ROCKY1 STL J134 ICT LBL FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>FAM: <input style=\"width:75%\" value=\"KIND OOM5 PXV J78 FAM J98 SGF PER MMB FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-01-2025
