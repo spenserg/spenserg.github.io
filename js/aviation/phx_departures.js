@@ -444,16 +444,16 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>TM: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM CNX J74 IRW LITTR CONDR4 KMEM\" readonly>";
 			break;
 		case "MIA": // Updated 02-05-2025
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP FST J86 LEV Y290 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-11-2025
+			result += "<br/><br/>OW/NRP: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J2 FST J86 LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
 			result += "<br/><br/>Non OW: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J50 INK ACT J50 CEW J2 DEFUN FROGZ4 KMIA\" readonly>";
 			result += "<br/>North: <input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO J74 IRW J14 LIT VLKNN ACORI FROGZ4 KMIA\" readonly>";
 			result += "<br/>Full OW: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP FST DUNDE YEEHA PEGLG ALGAE MINOW M580 MARCI FROGZ4 KMIA\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; // todo
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>EC (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J2 FST J86 IAH J2 DEFUN FROGZ4 KMIA\" readonly>";
-			result += "<br/>ST (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J2 FST J86 IAH J2 DEFUN FROGZ4 KMIA\" readonly>";
-			result += "<br/>TM (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM CNX J15 JCT J86 IAH J2 DEFUN FROGZ4 KMIA\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-11-2025
+			result += "<br/>EC<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J2 FST J86 IAH J2 DEFUN FROGZ4 KMIA\" readonly>";
+			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J2 FST J86 IAH J2 DEFUN FROGZ4 KMIA\" readonly>";
+			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM CNX J15 JCT J86 IAH J2 DEFUN FROGZ4 KMIA\" readonly>";
 			break;
 		case "MKE": // Updated 03-30-2025
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No Faa pref as of 03-30-2025
