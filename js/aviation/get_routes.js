@@ -6851,7 +6851,33 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		// TODO YVR
 		// TODO YYC
-		// TODO YYZ
+
+		case "YYZ":
+			switch(arvl) {
+				case "CLT": // Updated 04-14-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"CYYZ BETES3 FOXEE Q145 HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/><br/>East: <input style=\"width:75%\"; value=\"CYYZ RIGUS5 PSB BUSTR LDN GVE AIROW CHSLY6 KCLT\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-14-2025
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"CYYZ BETES3 FOXEE Q145 HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>S3<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"CYYZ MIXUT7 GNTRY DJB J85 HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					break;
+				case "DFW": // Updated 04-14-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-14-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"CYYZ MIXUT7 GNTRY DJB ROD PXV J131 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>North/HARP: <input style=\"width:75%\"; value=\"CYYZ MIXUT7 GNTRY CRL J554 GIJ SPI RZC FSM RRNET BRDJE5 KDFW\" readonly>";
+					result += "<br/>South: <input style=\"width:75%\"; value=\"CYYZ MIXUT7 GNTRY DJB APE FLM BWG IZAAC YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/>NW Arrival: <input style=\"width:75%\"; value=\"CYYZ GOPUP4 HOCKE FNT J94 OBK MZV IRK MCI PER IRW IBAKE VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"CYYZ GNTRY DJB VHP TTH FAM FSM FINGR9 KDFW\" readonly>";
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-14-2025
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"CYYZ MIXUT7 GNTRY ROD PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/>S1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"CYYZ KEPTA3 BMPAH FOXEE Q145 HVQ J78 PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"CYYZ GOPUP4 HOCKE SVM FWA TTH FAM FSM RRNET SEEVR4 KDFW\" readonly>";
+					break;
+			}
+		break; // End of YYZ
 
 	}
 	return result;
