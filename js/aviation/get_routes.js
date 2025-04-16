@@ -1032,6 +1032,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "CHS":
 			switch(arvl) {
+				case "DCA": // Updated 04-16-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KCHS SWPFX3 FILLI SARKY Q113 AARNN WAVES CAPSS3 KDCA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed as of 04-16-2025
+					break;
 				case "DFW": // Updated 12-23-24
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCHS STUNO1 DBN MGM MHZ YUYUN WHINY4 KDFW\" readonly>";
@@ -1043,20 +1049,32 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KCHS CHS MCN MGM J20 MHZ YEAGR4 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "CLT": // Updated 12-23-24
-					result += "<br/><br/><b>Faa Pref Route (Avg FL200):</b>";
+				case "CLT": // Updated 04-16-2025
+					result += "<br/><br/><b>Faa Pref Route (Avg FL220):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCHS SWPFX3 FILLI FLLGG STOCR4 KCLT\" readonly>";
+					result += "<br/><b style=\"color:orange\">STOCR Min FL210 at FLLGG<\/b>";
 					result += "<br/><br/>NE Arrival: <input style=\"width:75%\" value=\"KCHS PLMTO3 CRE JOHAR OGRAE SDAIL CHSLY6 KCLT\" readonly>";
 					result += "<br/><br/>CLT NO STOCR: <input style=\"width:75%\" value=\"KCHS SWPFX3 FILLI RDU SDAIL CHSLY6 KCLT\" readonly>";
 					result += "<br/>JONZE NO BANKR: <input style=\"width:75%\" value=\"KCHS MLTRE3 JYMSE FLLGG STOCR4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCHS CHS FLO RASLN3 KCLT\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-16-2025
 					break;
 				case "MIA": // Updated 12-23-24
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCHS LGRHD3 GIPPL Q93 DEBRL CSTAL2 KMIA\" readonly>";
 					result += "<br/><br/>OW: <input style=\"width:75%\" value=\"KCHS PITRW Y436 EBEAR DUUNK Y313 HOAGG BNFSH2 KMIA\" readonly>";
 					result += "<br/>West: <input style=\"width:75%\" value=\"KCHS STUNO1 DBN HONID FROGZ4 KMIA\" readonly>";
+					break;
+				case "PHL": // Updated 04-16-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KCHS PLMTO3 CRE RAPZZ Q135 RREGG Q117 SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
+					result += "<br/><br/>West via DCA: <input style=\"width:75%\"; value=\"KCHS SWPFX3 FILLI FLO RDU BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>West via JST: <input style=\"width:75%\"; value=\"KCHS SWPFX3 FILLI LIB ROA MGW JST BOJID4 KPHL\" readonly>";
+					result += "<br/>West via IRQ: <input style=\"width:75%\"; value=\"KCHS STUNO1 IRQ SPA LYH GVE PAATS4 KPHL\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KCHS CRE ILM FAK KPHL\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-16-2025
 					break;
 			}
 		break; // End of CHS
