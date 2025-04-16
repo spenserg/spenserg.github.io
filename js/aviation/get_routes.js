@@ -1369,6 +1369,18 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>11 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA HORTO4 JERES J211 LEONI WEVEL ELZ VIEEW ITH PONCT JFUND2 KBOS\" readonly>";
 					result += "<br/>40 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB JAMIE CONFR Q133 JFK ROBUC3 KBOS\" readonly>";
 					break;
+				case "CHS": // Updated 04-16-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB DFENC Q109 JOHAR AMYLU AMYLU3 KCHS\" readonly>"; // CDR 00
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KDCA GVE GSO KCHS\" readonly>";
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-16-2025
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB DFENC Q109 JOHAR AMYLU AMYLU3 KCHS\" readonly>";
+					result += "<br/>20<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD T287 CANNY LAFLN TRPOD Q409 CRPLR DFENC Q109 JOHAR AMYLU AMYLU3 KCHS\" readonly>";
+					result += "<br/>50<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO OBNEE OSPRI7 KCHS\" readonly>";
+					result += "<br/>55<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 FLASK COREX SPA DEFFN OSPRI7 KCHS\" readonly>";
+					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 WISTA NEALS J85 SPA DEFFN OSPRI7 KCHS\" readonly>";
+					break;
 				case "CLT": // Updated 04-11-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA SCRAM6 GLANC AIROW CHSLY6 KCLT\" readonly>"; // CDR 00
@@ -6763,12 +6775,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "TYS":
 			switch(arvl) {
-				case "CLT": // Updated 01-17-2025
+				case "CLT": // Updated 04-16-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTYS COMDY FILPZ4 KCLT\" readonly>";
+					result += "<br/><b style=\"color:orange\">Might need to disable proc alt limits or use KTYS-VXV-COMDY...<\/b>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KTYS ODF BANKR BANKR5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTYS VXV LIINN3 KCLT\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs listed as of 04-16-2025
 					break;
 				case "DFW": // Updated 01-17-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
