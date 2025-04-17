@@ -1369,6 +1369,17 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>11 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA HORTO4 JERES J211 LEONI WEVEL ELZ VIEEW ITH PONCT JFUND2 KBOS\" readonly>";
 					result += "<br/>40 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB JAMIE CONFR Q133 JFK ROBUC3 KBOS\" readonly>";
 					break;
+				case "BTV": // Updated 04-16-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KDCA SOOKI5 SWANN BROSS Q419 RBV Q22 LLUND CAM KBTV\" readonly>"; // CDR 00
+					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KDCA HORTO4 JERES Q221 BIGEO J49 ALB KBTV\" readonly>"; // CDR 10
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODO
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-16-2025
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA SOOKI5 SWANN BROSS Q419 RBV Q22 LLUND CAM KBTV\" readonly>";
+					result += "<br/>10<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA HORTO4 JERES Q221 BIGEO J49 ALB KBTV\" readonly>";
+					result += "<br/>11<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA HORTO4 JERES J211 LEONI WEVEL ELZ GONZZ LAGGS KBTV\" readonly>";
+					result += "<br/>46<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA HORTO4 JERES Q221 BIGEO J49 ALB KBTV\" readonly>";
+					break;
 				case "CHS": // Updated 04-16-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB DFENC Q109 JOHAR AMYLU AMYLU3 KCHS\" readonly>"; // CDR 00
