@@ -1606,7 +1606,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "SDF": // Updated 04-17-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT MOOCH MBELL5 KSDF\" readonly>"; // CDR 0P
+			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE BUMPY MBELL5 KSDF\" readonly>";
 			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS BNA EWO KSDF\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 LIT J131 PXV KSDF\" readonly>";
