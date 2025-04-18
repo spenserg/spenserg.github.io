@@ -6375,7 +6375,18 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\"; value=\"KSFO OFFSH2 RZS SADDE8 KLAX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-01-2025
 					break;
-				case "MIA": // TODO
+				case "MIA": // Updated 04-18-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-18-2025
+					result += "<br/><br/>NRP South: <input style=\"width:75%\"; value=\"KSFO SSTIK5 KAYEX LOSHN BOILE Q2 EWM FST J86 LEV Y290 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/>NRP North: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q128 JSICA ILC BCE RSK J58 FTI TCC CHMPZ TBEND TBD BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/>North via GLC: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q128 JILLS MGMRY ACORI FROGZ4 KMIA\" readonly>";
+					result += "<br/><b style=\"color:orange\";>10PM to 7AM local departures north/east file: KSFO NIITE4 SYRAH...<\/b>";
+					result += "<br/><br/>North/Non OW: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q130 ROCCY KD42S KA33Y BYP MCB J50 CEW DEFUN FROGZ4 KMIA\" readonly>";
+					result += "<br/>South/Non OW: <input style=\"width:75%\"; value=\"KSFO SSTIK5 KAYEX LOSHN BOILE BLH J169 TFD J50 ELP J2 FST J138 SAT J2 DEFUN FROGZ4 KMIA\" readonly>";
+					result += "<br/>Full OW: <input style=\"width:75%\"; value=\"KSFO SSTIK5 KAYEX LOSHN BOILE Q2 EWM FST DUNDE YEEHA ALGAE MINOW M580 MARCI FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSFO SFO4 SFO AVE BOILE BLH J169 TFD J50 ELP Q4 CLL LCH J2 DEFUN SZW PIE PALMZ2 KMIA\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-18-2025
 					break;
 				case "ORD": // Updated 01-18-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
