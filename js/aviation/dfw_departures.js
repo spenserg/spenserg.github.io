@@ -540,6 +540,8 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>West (Max FL280 at AVVVS): <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH LAA HGO AVVVS HUGGS RLG KEGE\" readonly>";
 			result += "<br/>North: <input style=\"width:75%\" value=\"KDFW BLECO8 ZEMMA ICT HYS GLD TXC AVVVS HUGGS RLG KEGE\" readonly>";
 			// todo ski routes
+			result += "<br/><br/>SKI COUNTRY 1: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO ABQ KA36S BUGGG EKR RLG KEGE\" readonly>";
+			result += "<br/>SKI COUNTRY 1: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW J21 ICT HYS GLD TXC AVVVS HUGGS RLG KEGE\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 ABI J17 FQF AVVVS HUGGS RLG KEGE\" readonly>";
 			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-09-2025
@@ -703,7 +705,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW J98 MMB TOTOE LAA PUB J28 HBU V484 BATTZ KGJT\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO ABQ DVC JNC KGJT\" readonly>";
 			result += "<br/><br/>COWBOY WEST 1: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT FST CNM CME CNX J15 SINSY KGJT\" readonly>";
-			result += "<br/>SKI COUNTRY 2: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE FTI DVC JNC KGJT\" readonly>";
+			result += "<br/>SKI COUNTRY 3: <input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX ABQ KA36S DVC JNC KGJT\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 PNH ALS JNC KGJT\" readonly>";
 			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-14-2025
@@ -780,6 +782,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 PUB J28 HBU KGUC\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE LAA PUB J28 HBU KGUC\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA TXO ESPAN DRO HBU KGUC\" readonly>";
+			result += "<br/><br/>SKI COUNTRY 2: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK DAAYE KGUC\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 IRW J98 MMB LBL LAA PUB J28 HBU KGUC\" readonly>";
 			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-14-2025
@@ -792,6 +795,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route listed as of 04-15-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK GLD DVV CHE KHDN\" readonly>"; // CDR KC
 			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO TCC CIM HBU RIL EKR CHE KHDN\" readonly>";
+			result += "<br/>SKI COUNTRY 3: <input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX ABQ KA36S EKR KHDN\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 IRW GCK GLD DVV CHE KHDN\" readonly>";
 			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-14-2025
@@ -1245,6 +1249,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ALS HELPS KMTJ\" readonly>";
 			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE FTI ESPAN KMTJ\" readonly>";
+			result += "<br/><br/>SKI COUNTRY 2: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK HELPS KMTJ\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODO
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>AA: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO ABQ KA36S MTJ KMTJ\" readonly>";
