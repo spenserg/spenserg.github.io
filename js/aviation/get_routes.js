@@ -6429,15 +6429,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>RW (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 JSICA MLF J28 GCK PER RZC ARG PXV ROD J152 JST BOJID4 KPHL\" readonly>";
 					result += "<br/>VU: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 JSICA MLF J28 GCK PER TUL LIT J14 YAALL VLKNN THRSR TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
 					break;
-				case "PHX":
+				case "PHX": // Updated 04-18-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSFO SSTIK5 NTELL Q158 MYCAL BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN BOILE BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN BOILE BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSFO SSTIK5 NTELL Q158 MYCAL BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/>PHX BUNTR: <input style=\"width:75%\" value=\"KSFO SSTIK5 NTELL BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/>Non RNAV SID/STAR: <input style=\"width:75%\" value=\"KSFO SFO4 SFO SNS J6 PMD J65 BLH BLH5 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>PB (Coord Req): <input style=\"width:75%\" value=\"KSFO WAGES BOILE BLH HYDRR1 KPHX\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-18-2025
 					break;
 			}
 		break; // End of SFO
