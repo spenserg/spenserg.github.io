@@ -808,17 +808,20 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS TAZER MARCI REDFN Q105 HRV LSU BDDAY MRSSH FUZ CDS PNH CIM ALS LOPEC JNC J15 TCH PDT CHINS5 KSEA\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR HANKO MEMFS BUM DRABS PECKS GCC BIL MLP GLASR3 KSEA\" readonly>";
 			break;
-		case "SFO": // Updated 02-27-2025
+		case "SFO": // Updated 04-18-2025
 			// result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 BACCA ROZZI Y280 LEV LFK MQP TCC J76 FTI J58 ILC KITTN KATTS OAL INYOE DYAMD5 KSFO\" readonly>";
-			result += "<br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ PATOY JAWJA SZW MHZ ELD ADM TCC J76 FTI J58 ILC KATTS OAL INYOE DYAMD5 KSFO\" readonly>";
-			result += "<br/><br/>Full OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW PEGLG CRP DUNDE FST ELP J50 TFD J212 DECAS J65 PMD AVE SERFR SERFR4 KSFO\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 VIYAP HOTHH IRQ SGF ICT J28 MLF ILC KATTS OAL INYOE DYAMD5 KSFO\" readonly>";
+			result += "<br/><br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV LFK MQP TCC J76 FTI J58 ILC KITTN KATTS OAL INYOE DYAMD5 KSFO\" readonly>";
+			result += "<br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW MHZ ELD ADM TCC J76 FTI J58 ILC KATTS OAL INYOE DYAMD5 KSFO\" readonly>";
+			result += "<br/><br/>South/OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV J86 ELP J50 TFD J212 DECAS J65 PMD AVE SERFR SERFR4 KSFO\" readonly>";
+			result += "<br/>South/Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 IAH J86 ELP J50 TFD J212 DECAS J65 PMD AVE SERFR SERFR4 KSFO\" readonly>";
+			result += "<br/>Full OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW PEGLG CRP DUNDE FST ELP J50 TFD J212 DECAS J65 PMD AVE SERFR SERFR4 KSFO\" readonly>";
+			result += "<br/>North via GCK: <input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 VIYAP HOTHH IRQ SGF ICT J28 MLF ILC KATTS OAL INYOE DYAMD5 KSFO\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA MIA1 BNGOS LAL SZW DEFUN J2 IAH J86 ELP J50 TFD J212 DECAS J65 PMD J6 AVE BSR BSR3 KSFO\" readonly>";
-			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 02-27-2025
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-18-2025
 			result += "<br/>B2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA BNGOS4 DOLIE Y280 LEV J86 BLD J92 LIDAT RUSME DYAMD5 KSFO\" readonly>";
 			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS CABLO KEENY MHZ ELD TXO BLD JEDNA BTY J92 LIDAT RUSME DYAMD5 KSFO\" readonly>";
+			result += "<br/>G0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 BLD J92 LIDAT RUSME DYAMD5 KSFO\" readonly>";
 			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO KEENY MHZ ELD TXO BLD JEDNA BTY J92 LIDAT RUSME DYAMD5 KSFO\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI LEV J86 BLD J92 LIDAT RUSME DYAMD5 KSFO\" readonly>";
 			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS TAZER MARCI LEV J86 BLD J92 LIDAT RUSME DYAMD5 KSFO\" readonly>";
