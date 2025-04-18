@@ -66,7 +66,7 @@ document.getElementById("outbound").addEventListener("keypress", function(event)
 
 function change_flow(airport = null, new_config = null, override_duplicated = false) {
 	airport = ((airport == null) ? null : airport.toUpperCase(0));
-	if ((override_duplicated && airport != null) || ([0,1].includes(new_config) && flows[airport] !== undefined)) {
+	if ((override_duplicated && airport != null) || ([0,1,2].includes(new_config) && flows[airport] !== undefined)) {
 		flows[airport] = new_config;
 		$('input').each(function() {
 			$(this).val(change_flow_str(airport, new_config, $(this).val()));
