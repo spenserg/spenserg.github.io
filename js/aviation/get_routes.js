@@ -3796,6 +3796,31 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
+				case "ORD": // Updated 04-17-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KMEM JTEEE5 ODATE FTZ TRTLL6 KORD\" readonly>";
+					result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KMEM NIKEI5 INAYO SGF WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KMEM ELVIS4 NTWOO FAM FTZ BDF9 KORD\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-17-2025
+					break;
+				case "PHL": // Updated 04-17-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KMEM GOETZ7 DIYAB DITZL Q34 GVE PAATS4 KPHL\" readonly>";
+					result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KMEM CRSON7 HUMMS PXV JUDDI MILAN CREEP TRAKK J152 JST BOJID4 KPHL\" readonly>";
+					result += "<br/>South: <input style=\"width:75%\"; value=\"KMEM PIEPE6 IBUFY CBM VUZ TEMPO TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-17-2025
+					break;
+				case "PHX": // Updated 04-17-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-17-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KMEM DUCKZ5 HELAR FSM IRW J6 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KMEM ZUMIT5 FOXOM RZC PER TOTOE Q176 CIM ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>South: <input style=\"width:75%\"; value=\"KMEM CHLDR5 ANSWA LIT J131 FUZ J66 EWM DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KMEM ELVIS4 WONEE IRW PNH TCC ABQ ZUN BUNTR3 KPHX\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-17-2025
+					break;
 			}
 		break; // End of MEM
 
