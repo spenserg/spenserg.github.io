@@ -95,6 +95,14 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KSAN SAYOW2 IPL GBN", "KSAN ZZOOO4 GBN");
 						result = result.replaceAll("KSAN SAYOW2 IPL", "KSAN BRDR7 IPL");
 						break;
+					case "SFO": // SFO dpting 1L/1R // SSTIK 
+						// South
+						result = result.replaceAll("KSFO SAHEY4", "KSFO SSTIK5");
+						result = result.replaceAll("KSFO WESLA5", "KSFO SSTIK5");
+						result = result.replaceAll("KSFO SEGUL1 YYUNG", "KSFO SSTIK5 YYUNG");
+						// East
+						result = result.replaceAll("KSFO CIITY3", "KSFO TRUKN2");
+						break;
 					case "SJC": // SJC North // Rwy30 // LOUPE/SJC3/SPTNS
 						result = result.replaceAll("KSJC ALMDN4", "KSJC LOUPE1");
 						result = result.replaceAll("KSJC BMRNG4", "KSJC LOUPE1");
@@ -228,6 +236,14 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KSAN CLSSY1 TGOLD", "KSAN SAYOW2 IPL TGOLD");
 						result = result.replaceAll("KSAN CLSSY1 GBN", "KSAN SAYOW2 IPL GBN");
 						break;
+					case "SFO": // SFO dpting 28lr // WESLA 
+						// South
+						result = result.replaceAll("KSFO SAHEY4", "KSFO WESLA5");
+						result = result.replaceAll("KSFO SSTIK5", "KSFO WESLA5");
+						result = result.replaceAll("KSFO SEGUL1 YYUNG", "KSFO WESLA5 YYUNG");
+						// East
+						result = result.replaceAll("KSFO CIITY3", "KSFO TRUKN2");
+						break;
 					case "SJC": // SJC South // Rwy12 // ALMDN/BMRNG/TECKY
 						result = result.replaceAll("KSJC LOUPE1", "KSJC BMRNG4");
 						result = result.replaceAll("KSJC SPTNS1", "KSJC TECKY4");
@@ -253,6 +269,17 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KTUS BURRO5 NOCHI SSO", "KTUS WLDKT4 SSO");
 						result = result.replaceAll("KTUS BURRO5 NOCHI", "KTUS WLDKT4 SSO");
 						result = result.replaceAll("KTUS BURRO5", "KTUS WLDKT4");
+						break;
+				}
+		} else if (new_config == 2) {
+				switch(airport) {
+					case "SFO": // SFO dpting 10LR or 19LR  // SAHEY 
+						// South
+						result = result.replaceAll("KSFO WESLA5", "KSFO SAHEY4");
+						result = result.replaceAll("KSFO SSTIK5", "KSFO SAHEY4");
+						result = result.replaceAll("KSFO SAHEY4 YYUNG", "KSFO SEGUL1 YYUNG");
+						// East
+						result = result.replaceAll("KSFO TRUKN2", "KSFO CIITY3");
 						break;
 				}
 		}
