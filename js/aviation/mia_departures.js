@@ -882,12 +882,12 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 BLAAN Q69 RICCS JST ELZ BEEPS NABOR KSYR\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 BLAAN Q69 RICCS JST ELZ BEEPS NABOR KSYR\" readonly>";
 			break;
-		case "TPA": // Updated 02-27-2025
+		case "TPA": // Updated 02-27-2025 // Mandatory Routes checked
 			result += "<br/><br/><b>Faa Pref Route: (Avg FL200-230)</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA BNGOS4 COREA BLFRG3 KTPA\" readonly>"; // CDR B0
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA WINCO LBV BRDGE9 KTPA\" readonly>";
-			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 02-27-2025
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-19-2025
 			result += "<br/>B0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA BNGOS4 COREA BLFRG3 KTPA\" readonly>";
 			break;
 		case "TUL": // Updated 02-27-2025
