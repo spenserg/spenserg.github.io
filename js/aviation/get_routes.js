@@ -427,6 +427,19 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "BDL":
 			switch(arvl) {
+				case "DCA": // Updated 04-19-2025 // Mandatory Routes checked
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBDL CSTL9 CCC TOPRR Q167 ZIZZI KNUKK ATR LAFLN DEALE3 KDCA\" readonly>"; // CDR PJ
+					result += "<br/><br/>West <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KBDL CTR CAM Q822 GONZZ Q29 JHW CXR AIR J34 BUCKO FRDMM6 KDCA\" readonly>"; // CDR 29
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KBDL CTR HNK J49 PSB SKILS5 KDCA\" readonly>"; // CDR N4
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-19-2025
+					result += "<br/>29<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CTR CAM Q822 GONZZ Q29 JHW CXR AIR J34 BUCKO FRDMM6 KDCA\" readonly>";
+					result += "<br/>N4<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CTR HNK J49 PSB SKILS5 KDCA\" readonly>";
+					result += "<br/>PB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL VEERS PWL BIZEX Q75 MXE CLIPR3 KDCA\" readonly>";
+					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CSTL9 CCC TOPRR Q167 ZIZZI KNUKK ATR LAFLN DEALE3 KDCA\" readonly>";
+					result += "<br/>Y5<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CTR CAM SYR J59 PSB SKILS5 KDCA\" readonly>";
+					break;
 				case "DFW": // Updated 10-22-24
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBDL VEERS PWL BASYE DBABE BWZ J6 HVQ Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>";
@@ -481,18 +494,6 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>PJ (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CSTL9 CCC Q97 KALDA Q101 SKARP Y313 HOAGG BNFSH2 KMIA\" readonly>";
 					result += "<br/>PL (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CSTL9 CCC Q97 DEBRL CSTAL2 KMIA\" readonly>";
 					result += "<br/>S5 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL VEERS PWL BIZEX Q75 SLOJO Q83 JEVED Q97 DEBRL CSTAL2 KMIA\" readonly>";
-					break;
-				case "DCA": // Updated 10-22-24
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBDL VEERS PWL BIZEX Q75 MXE CLIPR3 KDCA\" readonly>";
-					result += "<br/><br/>OW: <input style=\"width:75%\" value=\"KBDL CSTL9 CCC TOPRR Q167 ZIZZI KNUKK ATR LAFLN DEALE3 KDCA\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBDL CTR CAM SYR J59 PSB SKILS5 KDCA\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>N4 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CTR HNK J49 PSB SKILS5 KDCA\" readonly>";
-					result += "<br/>PB: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL VEERS PWL BIZEX Q75 MXE CLIPR3 KDCA\" readonly>";
-					result += "<br/>PJ: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CSTL9 CCC TOPRR Q167 ZIZZI KNUKK ATR LAFLN DEALE3 KDCA\" readonly>";
-					result += "<br/>Y5 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CTR CAM SYR J59 PSB SKILS5 KDCA\" readonly>";
 					break;
 			}
 		break; // End of BDL
@@ -676,7 +677,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "BOS":
 			switch(arvl) {
-				case "CLT": // Updated 04-19-2025
+				case "CLT": // Updated 04-19-2025 // Mandatory Routes checked
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBOS PATSS7 PATSS NELIE Q75 GVE AIROW CHSLY6 KCLT\" readonly>";
 					result += "<br/><br/>East <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KBOS SSOXS7 SSOXS Q167 RIFLE HEADI Q97 SAWED GUILD Q409 OKNEE MLLET3 KCLT\" readonly>"; // CDR T7
@@ -704,7 +705,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>CDRS</b>";
 					result += "<br/>PJ: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBOS SSOXS7 SSOXS Q167 ZIZZI KNUKK ATR LAFLN DEALE3 KDCA\" readonly>";
 					break;
-				case "DFW": // Updated 04-19-2025
+				case "DFW": // Updated 04-19-2025 // Mandatory Routes checked
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBOS BLZZR6 BLZZR BAF Q406 BWZ J6 HVQ Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/>North <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KBOS HYLND7 HYLND CAM Q822 FNT J94 OBK MZV IRK J26 ICT IRW IBAKE VKTRY2 KDFW\" readonly>"; // CDR 22
@@ -950,7 +951,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>63 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q68 HVQ LNDIZ PARQR4 KCLT\" readonly>";
 					result += "<br/>C1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI CONLE5 SCOOB GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
 					break;
-				case "DFW": // Updated 04-19-2025
+				case "DFW": // Updated 04-19-2025 // Mandatory Routes checked
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q80 FAREV RAMRD Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>"; // CDR 00
 					result += "<br/><br/>South <span style=\"color:green\">(Ok to File)</span>: <input style=\"width:75%\" value=\"KBWI TERPZ8 GLANC COLZI Q52 CHOPZ THRSR VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>"; // CDR 50
@@ -3052,7 +3053,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>ZC (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KJFK WAVEY EMJAY Q167 ZJAAY Q97 DEBRL CSTAL2 KMIA\" readonly>";
 					result += "<br/>ZW (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KJFK WAVEY EMJAY Q167 KALDA Q101 SKARP Y313 HOAGG BNFSH2 KMIA\" readonly>";
 					break;
-				case "ORD": // Updated 04-19-2025
+				case "ORD": // Updated 04-19-2025 // Mandatory Routes checked
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KJFK COATE Q436 EMMMA WYNDE2 KORD\" readonly>";
 					result += "<br/><br/>South <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 EYTEE J149 FWA WATSN4 KORD\" readonly>"; // CDR X6
