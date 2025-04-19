@@ -1134,20 +1134,19 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD HOBRK4 KMEM\" readonly>";
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC BRBBQ3 KMEM\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MCB MEVEE HOBRK4 KMEM\" readonly>";
-			break;	
-		case "MFE": // Updated 01-24-2025
+			break;
+		case "MFE": // Updated 04-18-2025 // Mandatory Routes checked
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW NELYN6 HOARY CRP JIMIE KMFE\" readonly>";
-			result += "<br/><br/>Central: <input style=\"width:75%\" value=\"KDFW NELYN6 SAT J25 ICEMN KH75C KMFE\" readonly>";
-			result += "<br/>East Rte: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV PSX J29 CRP KMFE\" readonly>";
-			result += "<br/>West Rte: <input style=\"width:75%\" value=\"KDFW NELYN6 SAT J21 LRD KMFE\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KDFW NELYN6 SAT J25 CRP KMFE\" readonly>"; // CDR 0P
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV PSX J29 CRP KMFE\" readonly>";
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 DOSXX SJT JCT SAT J25 CRP KMFE\" readonly>"; // CDR 1W
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW JPOOL7 SAT J21 LRD V17 KMFE\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>0P (Ok to File): <input style=\"width:75%\" value=\"KDFW NELYN6 SAT J25 CRP KMFE\" readonly>";
-			result += "<br/>1E (Coord Req): <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWB IAH J29 CRP KMFE\" readonly>";
-			result += "<br/>1W (Coord Req): <input style=\"width:75%\" value=\"KDFW WSTEX2 DOSXX SJT JCT SAT J25 CRP KMFE\" readonly>";
-			result += "<br/>2W (Coord Req): <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN WUNIL SJT JCT SAT J25 CRP KMFE\" readonly>";
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-19-2025
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT J25 CRP KMFE\" readonly>";
+			result += "<br/>1E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWB IAH J29 CRP KMFE\" readonly>";
+			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW WSTEX2 DOSXX SJT JCT SAT J25 CRP KMFE\" readonly>";
+			result += "<br/>2W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN WUNIL SJT JCT SAT J25 CRP KMFE\" readonly>";
 			break;
 		case "MGM": // Updated 01-30-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
