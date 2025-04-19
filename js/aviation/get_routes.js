@@ -950,17 +950,18 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>63 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q68 HVQ LNDIZ PARQR4 KCLT\" readonly>";
 					result += "<br/>C1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI CONLE5 SCOOB GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
 					break;
-				case "DFW": // Updated 04-08-2025
+				case "DFW": // Updated 04-19-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q80 FAREV RAMRD Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBWI TERPZ8 FLASK VXV SYI MEM J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KBWI LINSE1 MCRAY Q178 LEJOY AIR J80 FYLLS PXV J131 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/>North via STL: <input style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q176 STL OLLII HITUG SEEVR4 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q80 FAREV RAMRD Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>"; // CDR 00
+					result += "<br/><br/>South <span style=\"color:green\">(Ok to File)</span>: <input style=\"width:75%\" value=\"KBWI TERPZ8 GLANC COLZI Q52 CHOPZ THRSR VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>"; // CDR 50
+					result += "<br/>North <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KBWI LINSE2 MCRAY Q178 DJB J60 GSH RBS STL RZC FSM RRNET SEEVR4 KDFW\" readonly>"; // CDR 18
+					result += "<br/>Coastal <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KBWI CONLE5 SCOOB GUILD Q409 SESUE PANDY TWINS NOKIE MGMRY GARTS MCB AEX PNUTS BEREE3 KDFW\" readonly>"; // CDR 40
+					result += "<br/>SW Arr <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KBWI TERPZ8 GLANC COLZI Q52 CHOPZ MGMRY CATLN Q56 HRV KCEEE TKNIQ MOLLR CRGER GUTZZ SOCKK4 KDFW\" readonly>"; // CDR D6
 					result += "<br/><br/>DFW EAST 1: <input style=\"width:75%\" value=\"KBWI TERPZ8 GLANC LYH COLZI Q52 CHOPZ MGMRY CATLN Q56 HRV KCEEE TKNIQ MOLLR CRGER GUTZZ BOOVE7 KDFW\" readonly>";
 					result += "<br/>DFW EAST 2: <input style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q80 ENGRA BNA SQS AEX DAS IAH CRGER GUTZZ BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBWI CSN J8 HVQ J78 PXV J131 LIT FINGR9 KDFW\" readonly>";
-					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-08-2025
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-19-2025
 					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q80 FAREV RAMRD Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/>11<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI LINSE2 JERES J211 JST HAGUD J60 DJB ROD PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/>18<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI LINSE2 MCRAY Q178 DJB J60 GSH RBS STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
