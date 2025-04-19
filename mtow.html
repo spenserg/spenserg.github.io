@@ -416,12 +416,13 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) {
 		new_cdr_str += "<br/>CDR " + z[1] + z[2].replaceAll("\\", "") + ": <input class=\"cdr_input\" style=\"width:75%\" " + z[3].replaceAll("\\", "") + " readonly><br/>" +
 			z[1] + ": <input style=\'width:75%\' value=\'" +
-			"result += \"<br/>" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\">(Coord Req)</span>: " : "") + 
+			"result += \"<br/>XXX" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ") + 
 			"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
 	}
 
 	var faa_result = merge_faa_pref(result_arr, today_str);
-	faa_result['result'] = "case " + result_arr['arvl'] + ": // Updated " + today_str + textarea_tabs + faa_result['result'];
+	faa_result['result'] = "case " + result_arr['arvl'] + ": // Updated " + today_str +
+		" // Mandatory Routes checked" + textarea_tabs + faa_result['result'];
 
 	console.log(faa_result);
 	
