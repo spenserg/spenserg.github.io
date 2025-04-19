@@ -134,14 +134,15 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV SWFFT2 KBNA\" readonly>";
 			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ HYK FORKS PASLY4 KBNA\" readonly>";
 			break;
-		case "BOS": // Updated 04-10-2025
+		case "BOS": // Updated 04-19-2025 // Mandatory Routes Checked
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT BARMY5 RDU NOWAE Q87 GEARS BBOBO Q22 RBV Q419 JFK ROBUC3 KBOS\" readonly>";
-			result += "<br/><br/>West: <input style=\"width:75%\" value=\"KCLT KRITR6 FILDS ILLSA Q69 RICCS PSB HNK PONCT JFUND2 KBOS\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT BARMY5 RDU NOWAE Q87 GEARS BBOBO Q22 RBV Q419 JFK ROBUC3 KBOS\" readonly>"; // CDR RP
+			result += "<br/><br/>West <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KRITR6 FILDS ILLSA Q69 RICCS PSB HNK PONCT JFUND2 KBOS\" readonly>";
+			result += "<br/>West via APE <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE APE WWSHR Q29 JHW Q82 PONCT JFUND2 KBOS\" readonly>"; // CDR JJ
 			result += "<br/><br/>FLORIDA TO NE 3: <input style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD KLYNE Q29 JHW Q82 PONCT JFUND2 KBOS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 MERIL RDU RIC ENO RBV JFK ORW7 KBOS\" readonly>";
-			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-10-2025
+			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-19-2025
 			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE APE WWSHR Q29 JHW Q82 PONCT JFUND2 KBOS\" readonly>";
 			result += "<br/>KW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY PANDY Q109 YURCK Q97 PAACK JAMIE CONFR Q133 JFK ROBUC3 KBOS\" readonly>";
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 RDU NOWAE Q87 GEARS BBOBO Q22 RBV Q419 JFK ROBUC3 KBOS\" readonly>";
