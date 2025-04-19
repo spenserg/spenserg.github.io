@@ -172,17 +172,17 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "BWI": // Updated 02-01-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT KILNS5 AUDII THHMP RAVNN7 KBWI\" readonly>";
-			result += "<br/><br/>PSK (FL230 to PSK): <input style=\"width:75%\" value=\"KCLT KRITR6 FILDS PSK ROCKA TBART RAVNN7 KBWI\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT KILNS5 AUDII THHMP RAVNN8 KBWI\" readonly>";
+			result += "<br/><br/>PSK (FL230 to PSK): <input style=\"width:75%\" value=\"KCLT KRITR6 FILDS PSK ROCKA TBART RAVNN8 KBWI\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT RDU RIC RIPKN2 KBWI\" readonly>";
 			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>BZ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV CEMEX KONGO Q34 SITTR CJAAE RAVNN7 KBWI\" readonly>";
+			result += "<br/>BZ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV CEMEX KONGO Q34 SITTR CJAAE RAVNN8 KBWI\" readonly>";
 			result += "<br/>JJ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE APE KEMAN ANTHM5 KBWI\" readonly>";
-			result += "<br/>KR (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KRITR6 FILDS PSK JOOEY RAVNN7 KBWI\" readonly>";
-			result += "<br/>KW (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY VANNC FLO RDU GOOOB THHMP RAVNN7 KBWI\" readonly>";
-			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KILNS5 AUDII THHMP RAVNN7 KBWI\" readonly>";
-			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD BKW CJAAE RAVNN7 KBWI\" readonly>";
+			result += "<br/>KR (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KRITR6 FILDS PSK JOOEY RAVNN8 KBWI\" readonly>";
+			result += "<br/>KW (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY VANNC FLO RDU GOOOB THHMP RAVNN8 KBWI\" readonly>";
+			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KILNS5 AUDII THHMP RAVNN8 KBWI\" readonly>";
+			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD BKW CJAAE RAVNN8 KBWI\" readonly>";
 			break;
 		case "CAE": // Updated 02-01-2025
 			result += "<br/><br/><b>Faa Pref Route (Avg FL100):</b>";
