@@ -1598,6 +1598,16 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>50 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA SCRAM6 GLANC COLZI Q52 CHOPZ MGMRY CATLN Q56 SJI MNSTR1 KMSY\" readonly>";
 					result += "<br/>60 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 JONEN TONIO VXV VLKNN MERDN TRSSH1 KMSY\" readonly>";
 					break;
+				case "MSN": // Updated 04-19-2025 // Mandatory Routes checked
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KDCA HORTO4 BUFFR Q178 DJB J34 BAE KMSN\" readonly>"; // CDR 00
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODO
+					result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-19-2025
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA HORTO4 BUFFR Q178 DJB J34 BAE KMSN\" readonly>";
+					result += "<br/>11<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA HORTO4 JERES J211 JST HAGUD J60 DJB J34 BAE KMSN\" readonly>";
+					result += "<br/>55<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 ALEAN VXV IIU J89 BVT JVL KMSN\" readonly>";
+					result += "<br/>60<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q176 HNN FLM MACES BVT J89 BAE KMSN\" readonly>";
+					break;
 				case "ORD": // Updated 01-04-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA WYNGS5 RAMAY Q72 HACKS J149 ROD WATSN4 KORD\" readonly>";
@@ -3985,6 +3995,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>W2 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT HOFFF JOVEM6 KDFW\" readonly>";
 					result += "<br/>W4 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT IFI HOFFF JOVEM6 KDFW\" readonly>";
 					result += "<br/>W6 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ LMN PWE ICT HOFFF JOVEM6 KDFW\" readonly>";
+					break;
+				case "ORD": // Updated 04-19-2025 // Mandatory Routes checked
+					result += "<br/><br/><b>Faa Pref Route (Avg FL170):</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KMSN JVL JVL1 KORD\" readonly>";
+					//result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>";
 					break;
 				case "PHX": // Updated 01-16-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
