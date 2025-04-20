@@ -366,7 +366,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>SFO RWY10LR: <input style=\"width:75%\"; value=\"KLAX SUMMR2 STOKD BSR BSR3 KSFO\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX VTU8 RZS J501 BSR BSR3 KSFO\" readonly>";
-			result += "<br/><br/><b>CDRS</b>" // Verified with ATCSCC on 04-01-2025
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-01-2025
 			result += "<br/>SF<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX IKAYE RZS SERFR SERFR4 KSFO\" readonly>";
 			break;
 		case "SMF": // Updated 01-31-2025
