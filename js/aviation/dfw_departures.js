@@ -1194,14 +1194,17 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "MLB": // Updated 01-24-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW MRSSH2 ZALEA SWB MCB J50 CEW J2 DEFUN CABLO CTY OCF CERMO ORL KMLB\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
 			break;
 		case "MLI": // Updated 01-24-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW BLECO8 TUL J87 IRK KMLI\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-19-2025
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC MZV KMLI\" readonly>";
+			result += "<br/>1E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT MZV KMLI\" readonly>";
 			break;
-
-
-			
+			break;
 		case "MOB": // Updated 01-24-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWB MCB SJI KMOB\" readonly>";
