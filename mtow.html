@@ -437,7 +437,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" +
 		((non_rnav.length == 0) ? " // TODO" : (textarea_tabs + non_rnav)) +
 		'</textarea><br/><br/><textarea rows="15" cols="80">' +
-		"result += \"<br/><br/><b>CDRS</b>\" \/\/ Verified with ATCSCC on " + today_str +
+		"result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on " + today_str +
 		cdr_str + textarea_tabs + "break;</textarea><br/><br/>" + new_cdr_str +
 		"<br/><br/><button onclick=\"clear_input(0)\">Clear</button>";
 	if (to_array) { return result_arr; }
