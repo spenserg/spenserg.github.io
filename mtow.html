@@ -26,8 +26,9 @@
 </head>
 
 <body>
-	FKeys Page: <textarea id="outbound" rows="5">https://prod-1-public.fk.aa.com</textarea>&nbsp;&nbsp;
-	<button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button><br/>
+	FKeys Page: <textarea id="outbound" rows="5">https://prod-1-public.fk.aa.com</textarea>&nbsp;
+	<textarea id="ob_copy" rows="5" hidden></textarea>&nbsp;&nbsp
+	<button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button>&nbsp;&nbsp;<button onclick="restore_last()">Refresh/Run Previous</button><br/>
 	<div id="total"></div>
 </body>
 
@@ -63,6 +64,10 @@ document.getElementById("outbound").addEventListener("keypress", function(event)
 		document.getElementById("go_button").click();
 	}
 });
+
+function restore_last() {
+	$("#outbound").val($("#ob_copy").val());
+}
 
 function change_flow(airport = null, new_config = null, override_duplicated = false) {
 	airport = ((airport == null) ? null : airport.toUpperCase(0));
@@ -104,10 +109,12 @@ function compute (str_override = "") {
 	var exc_regex = /\n\!\n/g;
 	var fkeystxt = ((str_override != 0 && str_override.trim().length > 0) ? str_override : $("#outbound").val());
 	var routes_arr = {'faa_pref' : null, 'non_rnav' : null, 'cdrs' : {} };
+	
 
 	// TODO: remove exclamation points in multi-edit
 	//console.log(fkeystxt);
-	
+
+	$("#ob_copy").val($("#outbound").val());
 	$("#total").html("");
 	rega = /TOW\n(\d+)\n(\d+)\n([^\n]*)\nLDW\n(\d+)\n(\d+)\n/g;
 	regb = /light\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AA[LT]([\dA-Z]+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,\n\.]+)[\,\n\.][^\n]*\n[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
