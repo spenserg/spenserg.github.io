@@ -1352,16 +1352,18 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>KK (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW BLECO8 TUL J25 MCI J26 IRK BENKY6 KORD\" readonly>";
 			result += "<br/>MS (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC SGF WELTS TRTLL6 KORD\" readonly>";
 			break;
-		case "ORF": // Updated 01-24-2025
+		case "ORF": // Updated 04-28-2025 // Mandatory Routes checked
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR HRTWL Q54 NUTZE DRONE DRONE2 KORF\" readonly>"; // CDR 0P
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC FAM J78 HVQ J24 MOL TERKS2 KORF\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC FAM J78 HVQ J24 MOL TERKS2 KORF\" readonly>";
+			result += "<br/>North/Avoid ZKC<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA SWAPP Q34 MAULS MOL TERKS2 KORF\" readonly>"; // CDR 1N
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J138 SJI Q56 CATLN Q64 HRTWL Q54 NUTZE DRONE DRONE2 KORF\" readonly>"; // CDR 1S
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 TXK LIT MEM BNA BKW MOL TERKS2 KORF\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>0P (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR HRTWL Q54 NUTZE DRONE DRONE2 KORF\" readonly>";
-			result += "<br/>1N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA SWAPP Q34 MAULS MOL TERKS2 KORF\" readonly>";
-			result += "<br/>1S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J138 SJI Q56 CATLN Q64 HRTWL Q54 NUTZE DRONE DRONE2 KORF\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-28-2025
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR HRTWL Q54 NUTZE DRONE DRONE2 KORF\" readonly>";
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA SWAPP Q34 MAULS MOL TERKS2 KORF\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J138 SJI Q56 CATLN Q64 HRTWL Q54 NUTZE DRONE DRONE2 KORF\" readonly>";
 			break;
 		case "PBI": // Updated 01-24-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
