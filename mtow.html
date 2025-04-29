@@ -338,7 +338,8 @@ function compute (str_override = "") {
 function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}, 'non_rnav' : {}, 'cdrs' : {}}) {
 	if (input == null) { return ""; }
 	var today = new Date();
-	var today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
+	var today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + String(today.getFullYear());
+	var today_str_short = String(today.getMonth() + 1) + "/" + String(today.getDate()) + "/" + String(today.getYear()-100);
 	var reg_tmp = /\d\t[A-Z]{6}([^\t]{2})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])\t(\d)\t([^\n]*)\n/g;
 	var dptr = "KXXX";
 	var arvl = "YYY";
@@ -429,15 +430,10 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	}
 
 	var faa_result = merge_faa_pref(result_arr, today_str);
-	faa_result['result'] = "case " + result_arr['arvl'] + ": document.title=\"MR U" + today_str +
-		"\"; // Updated " + today_str + " // Mandatory Routes checked" +
-		textarea_tabs + faa_result['result'];
-
-	var output = /* '<textarea rows="8" cols="80">' + faa_result['result'] + '</textarea><br/><br/>' + */
-		'<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
+	var output = '<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
 		'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span>' +
 		'<br/><br/><textarea rows="8" cols="80">' + "case \"" + arvl +
-		": document.title=\"MR U" + today_str + "\"; // Updated " + today_str +
+		"\": document.title=\"MR U" + today_str_short + "\"; // Updated " + today_str +
 		" // Mandatory Routes checked" + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
