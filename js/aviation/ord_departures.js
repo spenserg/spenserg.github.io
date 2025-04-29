@@ -1,4 +1,5 @@
 ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "") {
+	var new_title = "FKeys Helper";
 	switch(arvl) {
 		case "ABQ": // Updated 02-14-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -734,5 +735,6 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>5S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV ARG IRW TCC ACH ONM J104 SSO ZONNA2 KTUS\" readonly>"; // Verified with ATCSCC on 02-20-2025
 			break;
 	}
+	document.title = new_title;
 	return result;
 }
