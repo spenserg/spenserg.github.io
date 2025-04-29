@@ -67,6 +67,7 @@ document.getElementById("outbound").addEventListener("keypress", function(event)
 
 function restore_last() {
 	$("#outbound").val($("#ob_copy").val());
+	compute();
 }
 
 function change_flow(airport = null, new_config = null, override_duplicated = false) {
