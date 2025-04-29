@@ -429,17 +429,16 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	}
 
 	var faa_result = merge_faa_pref(result_arr, today_str);
-	faa_result['result'] = "case " + result_arr['arvl'] + ": // Updated " + today_str +
-		" // Mandatory Routes checked" + textarea_tabs + faa_result['result'];
+	faa_result['result'] = "case " + result_arr['arvl'] + ": document.title=\"MR U" + today_str +
+		"\"; // Updated " + today_str + " // Mandatory Routes checked" +
+		textarea_tabs + faa_result['result'];
 
-	console.log(faa_result);
-	
 	var output = /* '<textarea rows="8" cols="80">' + faa_result['result'] + '</textarea><br/><br/>' + */
 		'<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
 		'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span>' +
-		/* faa_result['status'] + */
-
-		'<br/><br/><textarea rows="8" cols="80">' + "case \"" + arvl + "\": // Updated " + today_str + " // Mandatory Routes checked" + textarea_tabs +
+		'<br/><br/><textarea rows="8" cols="80">' + "case \"" + arvl +
+		": document.title=\"MR U" + today_str + "\"; // Updated " + today_str +
+		" // Mandatory Routes checked" + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" +
