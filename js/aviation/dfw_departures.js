@@ -1,4 +1,5 @@
 dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "") {
+	var new_title = "FKeys Helper";
 	switch(arvl) {
 		case "ABI": // Updated 03-25-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -1953,5 +1954,6 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
 	}
+	document.title = new_title;
 	return result;
 }
