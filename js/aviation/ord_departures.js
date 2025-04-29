@@ -736,5 +736,6 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 	}
 	document.title = new_title;
+	console.log(new_title);
 	return result;
 }
