@@ -515,6 +515,33 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>LP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J60 HVE GGAPP CHOWW3 KLAS\" readonly>";
 			result += "<br/>NR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD IOW J60 BCE BLAID2 KLAS\" readonly>";
 			break;
+		case "LAX": // Updated 04-29-2025 // Mandatory Routes checked
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-29-2025
+			result += "<br/>NRP: <input style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J146 GLD PUB J64 RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>"; // CDR 1W
+			result += "<br/><br/>North via ONL: <input style=\"width:75%\"; value=\"KORD MYKIE MONNY IANNA FOD ONL J148 CYS EKR J100 SAKES PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>";
+			result += "<br/>North via RAP: <input style=\"width:75%\"; value=\"KORD MYKIE MONNY IANNA FOD ONL J148 CYS EKR J100 SAKES PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>";
+			result += "<br/>South: <input style=\"width:75%\"; value=\"KORD BACEN BLOKR BEKKI FAM J78 TUL EZEEE FTI J76 TBC JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/>North: <input style=\"width:75%\"; value=\"KORD IOW PWE HLC J64 HEC BASET5 KLAX\"; readonly>"; // CDR NR
+			result += "<br/>South: <input style=\"width:75%\"; value=\"KORD ACITO ADELL ARLYN STL J24 SLN J102 ALS J110 RSK J10 TNP BASET5 KLAX\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-29-2025
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 RWF FSD J114 ONL J148 CYS EKR HVE PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>";
+			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J146 GLD PUB J64 RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
+			result += "<br/>2N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 GEP J114 ONL J148 CYS EKR PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL BUM ICT LBL CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+			result += "<br/>2W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J60 DVV ZAKRY Q88 HAKMN ANJLL4 KLAX\" readonly>";
+			result += "<br/>3W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE HLC J64 RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
+			result += "<br/>4N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB GEP J114 ONL J148 CYS EKR PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>";
+			result += "<br/>4S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL SGF LBL CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+			result += "<br/>4W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ELYNA STJ J18 GCK J110 RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
+			result += "<br/>5S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV J131 LIT J66 FUZ ABI J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/>5W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SLN J102 ALS J110 RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
+			result += "<br/>6W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ BUM ICT LBL FTI J8 GUP INW DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+			result += "<br/>8W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MYKIE MONNY SMIDD MCW J16 FSD J82 RAP EKR HVE PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>";
+			result += "<br/>K1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL IFI PNH J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+			result += "<br/>LP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J60 DVV ZAKRY Q88 HAKMN ANJLL4 KLAX\" readonly>";
+			result += "<br/>NR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD IOW PWE HLC J64 HEC BASET5 KLAX\" readonly>";
+			break;
 		case "MCI": // Updated 01-10-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD PEKUE PIGGG QUANE CARET BULET RUDDH3 KMCI\" readonly>";
