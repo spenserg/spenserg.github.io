@@ -1,4 +1,5 @@
 mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "") {
+	var new_title = "FKeys Helper";
 	switch(arvl) {
 
 // MIA-ALB skipped
@@ -944,5 +945,6 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC Q129 PYTON WOZEE LINNG3 CYYZ\" readonly>";
 			break;
 		}
+	document.title = new_title;
 	return result;
 }
