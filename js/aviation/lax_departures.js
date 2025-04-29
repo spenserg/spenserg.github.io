@@ -1,4 +1,5 @@
 lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "") {
+	var new_title = "FKeys Helper";
 	switch(arvl) {
 		case "ABQ": // Updated 02-01-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -404,5 +405,6 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>S2: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LADYJ4 CSTRO NURAY LIN J189 LMT SEA PAE CYVR\" readonly>";
 			break;
 	}
+	document.title = new_title;
 	return result;
 }
