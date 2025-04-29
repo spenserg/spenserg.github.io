@@ -405,6 +405,5 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>S2: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LADYJ4 CSTRO NURAY LIN J189 LMT SEA PAE CYVR\" readonly>";
 			break;
 	}
-	document.title = new_title;
-	return result;
+	return [result, new_title];
 }
