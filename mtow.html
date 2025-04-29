@@ -1,5 +1,5 @@
 <head>
-	<title>FKeys Helper</title>
+	<title>PCM</title>
 	<meta name="viewport" content="user-scalable=no, width=device-width">
 	<meta charset="UTF-8">
 
@@ -435,7 +435,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	var output = '<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
 		'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span>' +
 		'<br/><br/><textarea rows="8" cols="80">' + "case \"" + arvl +
-		"\": document.title=\"MR U" + today_str_short + "\"; // Updated " + today_str +
+		"\": new_title=\"MR U" + today_str_short + "\"; // Updated " + today_str +
 		" // Mandatory Routes checked" + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
