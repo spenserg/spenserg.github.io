@@ -5,7 +5,6 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 	// if (arvl != "DFW") {  result += "<br/><br/><b>Faa Pref Route:</b>"; }
 
 	switch(dptr) {
-
 		case "ABE":
 			switch(arvl) {
 				case "JFK": new_title=" U3/17/25"; // Updated 03-17-2025
@@ -1182,7 +1181,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // End of CLE
 
 		case "CLT":
-			result = clt_departures(arvl, tail, ac_type, result);
+			var test_delete = clt_departures(arvl, tail, ac_type, result);
+			result = test_delete[0];
+			new_title = test_delete[1];
 		break;
 
 		case "CMH":
@@ -1886,7 +1887,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // End of DEN
 
 		case "DFW":
-			result = dfw_departures(arvl, tail, ac_type, result);
+			var test_delete = dfw_departures(arvl, tail, ac_type, result);
+			result = test_delete[0];
+			new_title = test_delete[1];
 		break; // End of DFW
 
 // DLH skipped
@@ -3376,7 +3379,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // End of LAW
 
 		case "LAX":
-			result = lax_departures(arvl, tail, ac_type, result);
+			var test_delete = lax_departures(arvl, tail, ac_type, result);
+			result = test_delete[0];
+			new_title = test_delete[1];
 		break; // End of LAX
 
 		case "LBB":
@@ -3914,7 +3919,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		// TODO MHT
 
 		case "MIA":
-			result = mia_departures(arvl, tail, ac_type, result);
+			var test_delete = mia_departures(arvl, tail, ac_type, result);
+			result = test_delete[0];
+			new_title = test_delete[1];
 		break; // End of MIA
 
 		case "MKE":
@@ -4387,7 +4394,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // End of ONT
 
 		case "ORD":
-			result = ord_departures(arvl, tail, ac_type, result);
+			var test_delete = ord_departures(arvl, tail, ac_type, result);
+			result = test_delete[0];
+			new_title = test_delete[1];
 		break;
 
 		case "ORF":
@@ -5611,8 +5620,10 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // End of PHL
 
 		case "PHX":
-			result = phx_departures(arvl, tail, ac_type, result);
-			break; // End of PHX
+			var test_delete = phx_departures(arvl, tail, ac_type, result);
+			result = test_delete[0];
+			new_title = test_delete[1];
+		break; // End of PHX
 
 // PIH skipped
 
