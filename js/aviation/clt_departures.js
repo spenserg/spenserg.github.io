@@ -1218,6 +1218,5 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
 	}
-	document.title = new_title;
-	return result;
+	return [result, new_title];
 }
