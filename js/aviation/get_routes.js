@@ -2515,12 +2515,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed 03-10-25
 					break;
-				case "DFW": // Updated 01-09-2025
+				case "DFW": // Updated 04-29-2025 // Mandatory Routes checked
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KGSP HRS GQO MEM J66 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KGSP ODF RMG VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\"; value=\"KGSP BWALL2 JLENA VXV J46 ARG RRNET SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KGSP HRS GQO MEM J66 LIT FINGR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed 03-10-25
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed as of 04-29-2025
 					break;
 			}
 		break; // End of GSP
