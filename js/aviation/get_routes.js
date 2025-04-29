@@ -1,6 +1,7 @@
 get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, result = "") {
 	dptr = ((dptr.length == 4) ? (dptr.substr(1, 4)) : dptr);
 	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
+	var new_title = "FKeys Helper";
 	// if (arvl != "DFW") {  result += "<br/><br/><b>Faa Pref Route:</b>"; }
 
 	switch(dptr) {
@@ -7185,5 +7186,6 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // End of YYZ
 
 	}
+	document.title = new_title;
 	return result;
 }
