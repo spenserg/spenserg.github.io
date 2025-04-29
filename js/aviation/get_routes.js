@@ -7186,6 +7186,5 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // End of YYZ
 
 	}
-	document.title = new_title;
-	return result;
+	return [result, new_title];
 }
