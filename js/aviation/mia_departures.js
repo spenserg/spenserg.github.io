@@ -944,7 +944,6 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 BLAAN Q69 RICCS OXMAN LINNG3 CYYZ\" readonly>";
 			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC Q129 PYTON WOZEE LINNG3 CYYZ\" readonly>";
 			break;
-		}
-	document.title = new_title;
-	return result;
+	}
+	return [result, new_title];
 }
