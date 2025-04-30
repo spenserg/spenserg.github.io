@@ -164,7 +164,8 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 04-30-2025 PCM -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-30-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX MMB PER SGF J98 FAM J78 IIU Q108 SITTR TRUPS5 KDCA\" readonly>";
-			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS PUB J64 HLC PWE LMN MZV JOT J30 LUISE FRDMM6 KDCA\" readonly>"; // CDR MR
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS PUB J64 HLC PWE LMN MZV JOT J30 APE J30 LUISE FRDMM6 KDCA\" readonly>"; // CDR MR
+			result += "<br/><b style=\"color:orange\">APE inserted into ..JOT J30 APE J30 LUISE.. because Fkeys will throw mandatory route violation for ..JOT J30 LUISE..<\/b>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J50 ABI J42 TXK Q34 SITTR TRUPS5 KDCA\" readonly>"; // CDR EC
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX SJN9 SJN J231 ACH EZEEE IFI TUL J98 FAM J78 HVQ KDCA\" readonly>";
