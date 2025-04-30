@@ -1,5 +1,4 @@
 phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "") {
-	var new_title = "FKeys Helper";
 	switch(arvl) {
 		case "ABQ": // Updated 02-05-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -818,5 +817,5 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
 	}
-	return [result, new_title];
+	return result;
 } // End of PHX
