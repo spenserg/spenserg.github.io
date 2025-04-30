@@ -324,10 +324,11 @@ function compute (str_override = "") {
 
 	// Routes
 	if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null && result != null) {
-		var tmp_test = get_routes(result[1], result[2], result[5], ac_type, output);
-		output = tmp_test[0];
-		$("#outbound").val(tmp_test[1].replace(" U", "\nUpdated "));
-		document.title = tmp_test[1];
+		output = get_routes(result[1], result[2], result[5], ac_type, output);
+		regad = /\<\!\-\-\sUpdated\s([\d\-]+)\s([A-Z]*)\s*\-\-\>/g;
+		if ((tmp_xad = regad.exec(output)) !== null) {
+			$("#outbound").val(("Updated " + tmp_xad[1] + "\n" + tmp_xad[2]).trim());
+		}
 	}
 
 	$("#total").html('<br/>' + output);
@@ -415,7 +416,6 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 
 	result_arr['arvl'] = ((arvl.length == 4) ? arvl.substring(1, 4) : arvl);
 	result_arr['dptr'] = ((dptr.length == 4) ? dptr.substring(1, 4) : dptr);
-	// merge_str_arr(get_routes(result_arr['dptr'], result_arr['arvl']), result_arr);
 
 	var playbook_str = "";
 	for (var i = 0; i < sortable.length; i++) {
@@ -435,8 +435,8 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	var output = '<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
 		'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span>' +
 		'<br/><br/><textarea rows="8" cols="80">' + "case \"" + arvl +
-		"\": new_title=\"MR U" + today_str_short + "\"; // Updated " + today_str +
-		" // Mandatory Routes checked" + textarea_tabs +
+		"// Updated " + today_str + " // Mandatory Routes checked" + textarea_tabs +
+		"result += \"<!-- Updated " + today_str + " PCM -->\";" + textarea_tabs +
 		"result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + "result += \"<br/><br/><b>Non RNAV</b>\";" +
@@ -463,8 +463,7 @@ function merge_faa_pref(result_arr = {}) {
 	var arvl = result_arr['arvl'];
 
 	// FAA PREF
-	var tmp_test_2 = get_routes(dptr, arvl);
-	var existing_routes = tmp_test_2[0];
+	var existing_routes = get_routes(dptr, arvl);
 	reg_faapref = /\<b\>Faa Pref Route([^\:]*)\:\<\/b\>\<br\/\>\<input[^\>]+value\=\"([^\"]+)\"/g;
 	var faa_pref = reg_faapref.exec(existing_routes);
 	if (faa_pref != null) {
