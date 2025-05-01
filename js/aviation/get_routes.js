@@ -1831,7 +1831,8 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDEN SLEEK2 SLEEK EZEEE MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/>SW Arrival: <input style=\"width:75%\" value=\"KDEN SABTH2 VRONI PNH J17 DUMPS GEEKY BOOVE7 KDFW\" readonly>";
-					result += "<br/>NE Arrival: <input style=\"width:75%\" value=\"KDEN EPKEE7 DUUZE PER TUL HITUG SEEVR4 KDFW\" readonly>";
+					result += "<br/>East: <input style=\"width:75%\" value=\"KDEN EPKEE7 DUUZE PER HITUG SEEVR4 KDFW\" readonly>";
+					result += "<br/>West: <input style=\"width:75%\" value=\"KDEN BAYLR6 TEHRU MTJ RSK J15 ABQ J15 CME GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDEN PLAIN1 GCK SPS UKW8 KDFW\" readonly>";
 					result += "<br/><input style=\"width:75%\" value=\"KDEN PLAIN1 GLD J182 ICT J21 IRW FINGR9 KDFW\" readonly>";
