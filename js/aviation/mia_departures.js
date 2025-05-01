@@ -827,14 +827,16 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS TAZER MARCI LEV J86 BLD J92 LIDAT RUSME DYAMD5 KSFO\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR HANKO MEM PER LBL DVC ILC RUMPS OAL DYAMD DYAMD5 KSFO\" readonly>";
 			break;
-		case "SLC": // Updated 02-27-2025
-			// result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><br/>OW: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV LSU AEX J58 TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>"; // CDR G0
+		case "SLC": // Updated 05-01-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-01-2025 PCM -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/>OW: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV LSU AEX J58 TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>"; // CDR G0
 			result += "<br/>Non OW: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW J50 MCB TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>"; // CDR H0
-			// result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM STJ SYTHH LBF CYS OCS NORDK6 KSLC\" readonly>";
-			// result += "<br/>South/Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA DEFUN J2 CEW J50 ABI TXO TCC CIM ALS JNC J12 HELPR LEEHY5 KSLC\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; // todo
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-27-2025
+			result += "<br/><br/>South/OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 ELP J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
+			result += "<br/>North via TUL: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN MUDHO Q128 FLOOD JNC J12 HELPR JAZZZ1 KSLC\" readonly>";
+			result += "<br/>North via MCI: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM MCI KP63C LBF CYS OCS CARTR1 KSLC\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-01-2025
 			result += "<br/>B2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA BNGOS4 DOLIE Y280 REDFN Q105 HRV LSU AEX J58 TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS CABLO DEFUN J2 CEW J50 MCB TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/>G0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV LSU AEX J58 TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>";
