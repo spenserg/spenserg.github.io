@@ -6641,14 +6641,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSMF RVRCT4 MACUS Q124 BVL J154 OCS BFF ONL Q122 KATES FOD MYRRS FYTTE7 KORD\" readonly>";
 					break;
-				case "PHX":
+				case "PHX": // Updated 04-30-2025 // Mandatory Routes checked
+					result += "<!-- Updated 04-30-2025 PCM -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSMF RVRCT4 SHUFL LIDAT J92 BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSMF RVRCT4 RALEY MVA J198 ILC BCE J11 CORKR TENTS BRUSR1 KPHX\" readonly>";
-					result += "<br/><br/>PHX NO J92: <input style=\"width:75%\" value=\"KSMF FTHIL3 FRA EHF LANDO PMD J65 BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/>South: <input style=\"width:75%\" value=\"KSMF FTHIL3 FRA EHF J65 PMD BLH HYDRR1 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>PB (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSMF FTHIL3 FRA EHF J65 PMD BLH HYDRR1 KPHX\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed as of 04-30-2025
 					break;
 			}
 		break; // End of SMF
