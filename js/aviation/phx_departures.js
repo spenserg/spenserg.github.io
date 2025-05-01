@@ -300,6 +300,22 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN PGS J64 HEC J6 PMD J65 LANDO TTE ALTTA9 KFAT\" readonly>";
 			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED J6 PMD J65 LANDO TTE ALTTA9 KFAT\" readonly>";
 			break;
+		case "GEG": // Updated 04-30-2025 // Mandatory Routes checked
+			result += "<!-- Updated 04-30-2025 PCM -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KPHX QUAKY1 GCN WINEN Q73 ZATIP KGEG\"; readonly>";
+			result += "<br/><br/>East: <input style=\"width:75%\" value=\"KPHX MRBIL1 YOOPR DVC JNC BIL J136 MLP HILIE3 KGEG\" readonly>";
+			result += "<br/>West: <input style=\"width:75%\" value=\"KPHX KEENS3 HRRBR PMD J65 EHF J5 FMG J7 REO J153 GEG KGEG\" readonly>"; // CDR KE
+			result += "<br/>Coastal/ZLC Avoid: <input style=\"width:75%\" value=\"KPHX KEENS3 HRRBR J212 DECAS J65 PMD J6 AVE J189 LMT DSD YKM MWH ZOOMR2 KGEG\" readonly>";
+			result += "<br/><b style=\"color:orange\";>Fkeys will flag mandatory route violation unless routed through WINEN or BTY but Ive never had an issue routing west<\/b>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR PMD J65 EHF J5 FMG J7 REO J153 GEG KGEG\"; readonly>"; // CDR KE
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-30-2025
+			result += "<br/>KE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR PMD J65 EHF J5 FMG J7 REO J153 GEG KGEG\" readonly>";
+			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 YOOPR DVC JNC J15 BOI J517 GEG KGEG\" readonly>";
+			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN BCE J11 TCH J15 BOI J517 GEG KGEG\" readonly>";
+			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BTY J92 FMG J7 REO J153 GEG KGEG\" readonly>";
+			break;
 		case "GRR":
 			result += "<br/><br/><input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ FTI J18 MZV OBK KGRR\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK FQF SNY FSD ODI J34 ADALE KGRR\" readonly>";
