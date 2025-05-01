@@ -507,12 +507,13 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 TYI ORF SAWED Q108 SIE CAMRN4 KJFK\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD SITTR Q108 SIE CAMRN4 KJFK\" readonly>";
 			break;
-		case "LAS": // Updated 04-08-2025
+		case "LAS": // Updated 05-01-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-01-2025 PCM -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL MMB FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE FLM J24 VHP J80 GLD J146 HBU J28 HVE GGAPP CHOWW3 KLAS\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY MEMFS TXK FUZ J4 SSO ELLDA RKSTR4 KLAS\" readonly>";
-			result += "<br/>ZKC Avoid: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA LIT J14 PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>"; // CDR RP
+			result += "<br/>South: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK FUZ J4 SSO ELLDA RKSTR4 KLAS\" readonly>";
+			result += "<br/>ZKC Avoid: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA ARG KF33E IRW J14 PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/><br/>ABI: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC EIC J4 ABI CME J15 ABQ J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/>HNKER 1/2: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC SUTTN J52 TXK BYP UKW HNKER TXO J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/>LAS NO DVC: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK BYP SPS J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
