@@ -748,10 +748,11 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 PLIED DRLER MURAH3 KOKC\" readonly>";
 			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS CAE THRSR VLKNN Q30 IZAAC SUTTN J52 TXK ZEMMA TSDEL3 KOKC\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; TODO
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>ES (Coord Req): <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN LIT KLUBB DWINE RIFFL3 KOKC\" readonly>";
-			result += "<br/>JJ (Coord Req): <input style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM BWG RZC OKM DIMPL RIFFL3 KOKC\" readonly>";
-			result += "<br/>WE (Coord Req): <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ VHP SGF MPYRE MURAH3 KOKC\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-01-2025
+			result += "<br/>ES<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN LIT KLUBB DWINE RIFFL3 KOKC\" readonly>";
+			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM BWG RZC OKM DIMPL RIFFL3 KOKC\" readonly>";
+			result += "<br/>RP<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA RZC TUL GULLI GULLI3 KOKC\" readonly>";
+			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ VHP SGF MPYRE MURAH3 KOKC\" readonly>";
 			break;
 		case "OMA": // Updated 02-06-2025
 			result += "<br/><br/><b>Faa Pref Route:</b>";
