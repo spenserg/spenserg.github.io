@@ -1735,6 +1735,17 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>97<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB PAACK Q97 ELMSZ JROSS Q409 PUPYY Q103 CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>AR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB EARZZ Q131 WAALT Y289 BAHAA HIBAC SHFTY6 KRSW\" readonly>";
 					break;
+				case "SAT": // Updated 05-01-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-01-2025 PCM -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 AEX CAAGE QERVO1 KSAT\" readonly>"; // CDR 00
+					result += "<br/><br/><b style=\"color:orange\">Fkeys will flag anything other than CDR00 as a mandatory route violation but routes below are good.<\/b>";
+					result += "<br/>South: <input style=\"width:75%\" value=\"KDCA SCRAM6 GLANC COLZI Q52 CHOPZ MGMRY GARTS LCH CAAGE QERVO1 KSAT\" readonly>"; // CDR 00
+					result += "<br/>North: <input style=\"width:75%\" value=\"KDCA HORTO4 BUFFR Q178 AVERE J152 ROD VHP STL FSM WINDU QERVO1 KSAT\" readonly>"; // CDR 00
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODO
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-01-2025
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 AEX CAAGE QERVO1 KSAT\" readonly>";
+					break;
 				case "SRQ": // Updated 01-04-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 SLOJO Q103 PUPYY KYYUU LUBBR3 KSRQ\" readonly>";
