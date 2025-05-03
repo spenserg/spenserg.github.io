@@ -57,12 +57,17 @@ const P789 = ["8MA", "8MB", "8MC", "8MD"];
 const partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "GRR", "MAF", "MSO", "MYR", "PSP", "RAP", "RDM", "SJC"];
 
 var flows = {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"IAH":0,"JAC":0,"MCO":0,"MIA":0,"MSO":0,"RNO":0,"SAN":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0, "TUS":0};
+var debug_mode = false;
 
 document.getElementById("outbound").addEventListener("keypress", function(event) {
 	if (event.key === "Enter") {
 		event.preventDefault();
 		document.getElementById("go_button").click();
 	}
+});
+
+$( document ).ready(function() {
+	console.log("Remember to set debug_mode! (debug_mode = true;)");
 });
 
 function restore_last() {
@@ -96,8 +101,8 @@ function change_flow(airport = null, new_config = null, override_duplicated = fa
 			$("#" + airport + "_standard_middle").removeClass("selected");
 			$("#" + airport + "_standard_right").addClass("selected");
 		}
-	} else if (!override_duplicated) { console.log("Unknown new_config: " + new_config);
-	} else { console.log("Click registered, but no change detected"); }
+	} else if (!override_duplicated && debug_mode) { console.log("Unknown new_config: " + new_config);
+	} else if (debug_mode) { console.log("Click registered, but no change detected"); }
 }
 
 function compute (str_override = "") {
@@ -194,10 +199,10 @@ function compute (str_override = "") {
 				if ((ci_res = reg_ci.exec(fkeystxt)) != null) {
 					var ci_int = parseInt(ci_res);
 					
-					
+					/*
 					console.log(ci_int);
 					console.log(parseInt(ci_res));
-
+					*/
 					
 					if (["319S", "H319", "319W", "A320", "H205", "738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N"].includes(ac_type)) {
 						// Narrow Body
@@ -226,11 +231,12 @@ function compute (str_override = "") {
 				 output += "&nbsp;&nbsp;&nbsp;<b>Land Wgt Rstr</b>";
 				if ((ci_res = reg_ci.exec(fkeystxt)) != null) {
 					var ci_int = parseInt(ci_res);
-					
+
+					/*
 					console.log(ci_int);
 					console.log(parseInt(ci_res));
+					*/
 
-					
 					if (["319S", "H319", "319W", "A320", "H205", "738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N"].includes(ac_type)) {
 						// Narrow Body
 						if (ci_int > 20) {
@@ -255,7 +261,7 @@ function compute (str_override = "") {
 				output += "<br/><b style='color:" + ((parseInt(unnecessary_var[1]) > 49000) ? "red" : "orange") + "'>A321 balance issues when FOB above 47000 lbs (Cur FOB " + parseInt(unnecessary_var[1]) + " - Coordinate with loads)</b>";
 			}
 		}
-	} else {
+	} else if (debug_mode) {
 		console.log("regb parse error");
 	}
 	if (testing || (tmp_rslt != null)) {
@@ -312,7 +318,7 @@ function compute (str_override = "") {
 
 		// Airport Specific
 		output = airport_extra(result[1], result[2], result[5], ac_type, output);
-	} else if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null) {
+	} else if (debug_mode && regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null) {
 		console.log("flifo parse error");
 	}
 
@@ -327,7 +333,7 @@ function compute (str_override = "") {
 		output = get_routes(result[1], result[2], result[5], ac_type, output);
 		regad = /\<\!\-\-\sUpdated\s([\d\-]+)\s([A-Z]*)\s*\-\-\>/g;
 		$("#outbound").val("");
-		if ((tmp_xad = regad.exec(output)) !== null) {
+		if (debug_mode && ((tmp_xad = regad.exec(output)) !== null)) {
 			$("#outbound").val(("Updated " + tmp_xad[1] + "\n" + tmp_xad[2]).trim());
 		}
 	}
@@ -503,10 +509,11 @@ function merge_faa_pref(result_arr = {}) {
 	// NON RNAV
 
 	// CDRS
-
-	console.log(faa_pref);
-	console.log(result_arr);
-	console.log(existing_routes);
+	if (debug_mode) {
+		console.log(faa_pref);
+		console.log(result_arr);
+		console.log(existing_routes);
+	}
 
 	return {'result' : result, 'errors' : errors, 'warnings' : warnings, 'status' : status};
 }
