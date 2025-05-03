@@ -141,7 +141,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "BGR": // Updated 03-25-2025
 			result += "<!-- Updated 03-25-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref as of 03-25-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-25-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV KLYNE Q29 KRAZZ DAVID FRIAR KBGR\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC STL BVT CRL J554 JHW Q29 KRAZZ DAVID FRIAR KBGR\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
@@ -301,7 +301,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "BZN": // Updated 03-30-2025
 			result += "<!-- Updated 03-30-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref as of 03-30-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-30-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KDFW HUDAD2 HUDAD PNH J17 PUB CHE J163 OCS BPI TOCUD LOSST1 KBZN\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW IFI HYS MCK RAP J151 BIL SUBKY1 KBZN\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ALS DBL OCS BPI TOCUD LOSST1 KBZN\" readonly>";
@@ -404,7 +404,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "COS": // Updated 04-08-2025
 			result += "<!-- Updated 04-08-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route listed as of 04-08-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-08-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS LBL LAA OZZZY5 KCOS\" readonly>";
 			result += "<br/>West: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 TBE DBRY5 KCOS\" readonly>";
 			result += "<br/>West via ABQ: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN CME ABQ J13 ALS DBRY5 KCOS\" readonly>";
@@ -417,8 +417,9 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF BGS PNH J17 TBE DBRY5 KCOS\" readonly>";
 			result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME CNX ALS DBRY5 KCOS\" readonly>";
 			break;
-		case "COU":  // Updated 04-08-2025
-			// result += "<br/><br/><b>Faa Pref Route:</b>";  // No FAA pref route as of 04-08-2025
+		case "COU": // Updated 04-08-2025
+			result += "<!-- Updated 04-08-2025 -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-08-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC SGF KCOU\" readonly>";
 			result += "<br/><br/>East: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J180 FTZ KCOU\" readonly>";
 			result += "<br/>West: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J87 BUM KCOU\" readonly>";
@@ -612,7 +613,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "EUG": // Updated 01-22-2025
 			result += "<!-- Updated 01-22-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref listed as of 04-11-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-11-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TCC J76 FTI J58 MLF ELY SLOWN LKV KEUG\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK GLL OCS BOI DSD KEUG\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRS as of 04-11-2025
@@ -846,7 +847,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "GUC": // Updated 04-15-2025
 			result += "<!-- Updated 04-15-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route listed as of 04-15-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-15-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 PUB J28 HBU KGUC\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE LAA PUB J28 HBU KGUC\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA TXO ESPAN DRO HBU KGUC\" readonly>";
@@ -861,7 +862,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "HDN": // Updated 04-15-2025
 			result += "<!-- Updated 04-15-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route listed as of 04-15-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-15-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK GLD DVV CHE KHDN\" readonly>"; // CDR KC
 			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO TCC CIM HBU RIL EKR CHE KHDN\" readonly>";
 			result += "<br/>SKI COUNTRY 3: <input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX ABQ KA36S EKR KHDN\" readonly>";
@@ -874,7 +875,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "HRL": // Updated 04-15-2025
 			result += "<!-- Updated 04-15-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route listed as of 04-15-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-15-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY CRP KHRL\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW ACT HOARY CRP KHRL\" readonly>";
@@ -1949,7 +1950,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 
 		case "SYR": // Updated 04-16-2025
 			result += "<!-- Updated 04-16-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref routes listed as of 04-16-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 04-16-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ENL VHP DJB JHW Q29 GONZZ SYR KSYR\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL BVT CRL J554 JHW KSYR\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 KONGO Q71 PSB J59 SYR KSYR\" readonly>";
