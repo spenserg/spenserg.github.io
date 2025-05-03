@@ -505,7 +505,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "MKE": // Updated 03-30-2025
 			result += "<!-- Updated 03-30-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No Faa pref as of 03-30-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-30-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ FTI J18 GCK HYS OVR OGECA GOPAC3 KMKE\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK BRK KD66A KP78G DLL BAE KMKE\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J26 MMB CNU STL J101 SPI JOT LEEDN GOPAC3 KMKE\" readonly>";
@@ -843,7 +843,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "STL": // Updated 01-11-2025
 			result += "<!-- Updated 01-11-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref as of 03-17-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-17-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ LBL ICT J134 BUM KAYLA3 KSTL\" readonly>";
 			result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE EWM J4 ABI ADM TUL SGF KAYLA3 KSTL\" readonly>";
 			result += "<br/>North: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK J10 FQF J44 MCK PWE IRK LORLE3 KSTL\" readonly>";
