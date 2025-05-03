@@ -641,7 +641,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "OMA": // Updated 02-23-2025
 			result += "<!-- Updated 02-23-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No Faa Pref Route listed
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 02-23-2025
 			result += "<br/><br/><input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM HLV LMN MARWI4 KOMA\" readonly>";
 			result += "<br/><br/>East: <input style=\"width:75%\"; value=\"KMIA FLMGO2 STYMY Q77 WIGVO IRQ ODF BWG STL J45 IRK LMN MARWI4 KOMA\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW MEI SQS LIT RZC BUM MCI STJ MARWI4 KOMA\" readonly>";
@@ -683,7 +683,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "PDX": // Updated 02-24-2025
 			result += "<!-- Updated 02-24-2025 -->";
-			//result += "<br/><br/><b>Faa Pref Route:</b>"; // No Faa pref route listed
+			//result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 02-24-2025
 			result += "<br/><br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 MEMFS RZC ICT J182 GLD J80 FQF J20 PIH J54 BOI J15 IMB JOTBA HHOOD5 KPDX\" readonly>";
 			result += "<br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV J58 SPS J168 LAA J20 PIH J54 BOI J15 IMB JOTBA HHOOD5 KPDX\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 VIYAP HOTHH IRQ BNA ICT J182 GLD J80 FQF J20 PIH J54 BOI J15 IMB JOTBA HHOOD5 KPDX\" readonly>";
