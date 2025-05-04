@@ -331,10 +331,16 @@ function compute (str_override = "") {
 	// Routes
 	if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null && result != null) {
 		output = get_routes(result[1], result[2], result[5], ac_type, output);
-		regad = /\<\!\-\-\sUpdated\s([\d\-]+)\s([A-Z]*)\s*\-\-\>/g;
 		$("#outbound").val("");
-		if (debug_mode && ((tmp_xad = regad.exec(output)) !== null)) {
-			$("#outbound").val(("Updated " + tmp_xad[1] + "\n" + tmp_xad[2]).trim());
+		if (debug_mode) {
+			regad = /\<\!\-\-\sUpdated\s([\d\-]+)\s([A-Z]*)\s*\-\-\>/g;
+			if ((tmp_xad = regad.exec(output)) !== null) {
+				$("#outbound").val(("Updated " + tmp_xad[1] + "\n" + tmp_xad[2]).trim());
+			}
+			regae = /\<\!\-\-\sVerified\swith\sATCSCC\son\s([\d\-]+)\s([A-Z]*)\s*\-\-\>/g;
+			if ((tmp_xae = regae.exec(output)) !== null) {
+				output = output.replace("<b>CDRS</b>", "<b>CDRS</b> Updated: " + tmp_xae[1].trim());
+			}
 		}
 	}
 
