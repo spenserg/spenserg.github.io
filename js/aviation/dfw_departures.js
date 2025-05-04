@@ -147,7 +147,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>COWBOY WEST 1: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT FST ELP SSO HRRBR J212 DECAS J65 PMD FASTO2 KBFL\" readonly>";
 			result += "<br/>COWBOY WEST 2: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY SAT DLF FST ELP SSO HRRBR J212 DECAS J65 PMD FASTO2 KBFL\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODO
-			// result += "<br/><br/><b>CDRS</b>"; //  as of 03-25-2025
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-25-2025
 			break;
 		case "BGR": // Updated 03-25-2025
 			result += "<!-- Updated 03-25-2025 -->";
