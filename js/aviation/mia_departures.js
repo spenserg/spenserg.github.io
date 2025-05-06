@@ -513,7 +513,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW MHZ ELD TXK SPS J72 ABQ J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 			result += "<br/>NE Arrival: <input style=\"width:75%\"; value=\"KMIA BNGOS4 DOLIE CIGAR Y290 BACCA ROZZI Y280 REDFN Q105 HRV J58 FUZ TXO J72 ABQ J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 			result += "<br/><br/>Full OW via SAT: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW HRVLK KELPP LCHLH MUSYL SAT J138 FST J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
-			result += "<br/>Full OW via CRP: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/>Full OW via CRP: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP KH87A FST J2 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA MIA9 BNGOS LAL SZW CEW J2 IAH J86 JCT J2 ELP J50 SSO J4 TNP BASET5 KLAX\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-23-2025
@@ -818,15 +818,18 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 
 // MIA-ROC skipped
 
-		case "SAN": // Updated 01-09-2025
-			result += "<!-- Updated 01-09-2025 -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 JCT ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
-			result += "<br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW MHZ ELD TXK SPS J72 ABQ J78 PKE LUCKI1 KSAN\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 DEEDA MGMRY ARNNY Q184 FUZ J4 INK ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; //TODO
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-27-2025
-			result += "<!-- Verified with ATCSCC on 02-27-2025 -->";
+		case "SAN": // Updated 05-06-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-06-2025 MP -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-06-2025
+			result += "<br/><br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
+			result += "<br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW J50 ACT INK J50 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
+			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 DEEDA MGMRY SQS J52 TXK SPS J72 TXO J74 SJN J18 HOGGZ LUCKI1 KSAN\" readonly>";
+			result += "<br/><br/>Full OW via SAT: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW HRVLK KELPP LCHLH MUSYL SAT J138 FST J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
+			result += "<br/>Full OW via CRP: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP KH87A FST J2 HOGGZ LUCKI1 KSAN\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KMIA MIA2 HURCN LAL SZW DEFUN J2 CEW J50 ACT INK J50 SSO J50 GBN J18 IPL BARET5 KSAN\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-06-2025
+			result += "<!-- Verified with ATCSCC on 05-06-2025 -->";
 			result += "<br/>B2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA BNGOS4 DOLIE Y280 LEV J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS CABLO DEFUN J2 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/>G0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
