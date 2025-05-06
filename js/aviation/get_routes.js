@@ -1352,14 +1352,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "COS":
 			switch(arvl) {
-				case "DFW": // Updated 12-30-24
-					result += "<!-- Updated 12-30-24 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KCOS BRESH TBE J17 PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>NE Arrival: <input style=\"width:75%\" value=\"KCOS BRK GCK PER TUL HITUG SEEVR4 KDFW\" readonly>";
+				case "DFW": // Updated 05-06-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-06-2025 MP -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>"; // Not listed as FAA pref but this is what everyone files and what they expect
+					result += "<br/><input style=\"width:75%\" value=\"KCOS BRESH EZEEE MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KCOS BRESH TBE TXO TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCOS BRK GCK PER HITUG SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCOS PUB TBE J17 PNH UKW8 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-06-2025
 					break;
 			}
 		break; // End of COS
