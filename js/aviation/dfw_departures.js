@@ -138,17 +138,18 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>MH<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR TWOUP Q22 BEARI FAK AML Q227 KONJE HNK STELA1 KBDL\" readonly>";
 			result += "<br/>SP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEMFS Q29 JHW Q82 MEMMS WILET STELA1 KBDL\" readonly>";
 			break;
-		case "BFL": // Updated 03-25-2025 
-			result += "<!-- Updated 03-25-2025 -->";
+		case "BFL": // Updated 05-06-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-06-2025 MP -->";
 			// TODO Arrivals before 2300L // Arrivals after 2300L
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref as of 03-25-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-06-2025
 			result += "<br/><br/>Arr Before 2300L: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE CNX ZUN J6 PMD FASTO2 KBFL\" readonly>";
 			result += "<br/>Arr After 2300L: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE CNX ZUN J6 HELDE LHS FASTO2 KBFL\" readonly>";
+			result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KDFW WSTEX2 CIKAN EWM J4 SSO J50 TFD HRRBR J212 DECAS J65 PMD FASTO2 KBFL\" readonly>";
+			// North TODO
 			result += "<br/><br/>COWBOY WEST 1: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT FST ELP SSO HRRBR J212 DECAS J65 PMD FASTO2 KBFL\" readonly>";
 			result += "<br/>COWBOY WEST 2: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY SAT DLF FST ELP SSO HRRBR J212 DECAS J65 PMD FASTO2 KBFL\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; // TODO
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-25-2025
-			result += "<!-- Verified with ATCSCC on 03-25-2025 -->";
+			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-06-2025
 			break;
 		case "BGR": // Updated 03-25-2025
 			result += "<!-- Updated 03-25-2025 P -->";
