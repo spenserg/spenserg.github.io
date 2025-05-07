@@ -159,20 +159,22 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO KCAE\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY KCAE\" readonly>";
 			break;
-		case "CHS": // Updated 02-07-2025
-			result += "<!-- Updated 02-07-2025 -->";
+		case "CHS": // Updated 05-06-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-06-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 VIYAP SAV BAGGY3 KCHS\" readonly>";
-			result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q99 TEEEM DEQUE BAGGY3 KCHS\" readonly>";
-			result += "<br/>East OW: <input style=\"width:75%\"; value=\"KMIA FOLZZ3 ALYRA GRUBR AR16 SEELO OGGRE Y436 PITRW KCHS\" readonly>";
+			result += "<br/><b style=\"color:orange\">As of 05-06-2025 Fkeys will throw Mandatory Route violation for everything that isn't CDR A0<\/b>";
+			result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q99 TEEEM DEQUE BAGGY3 KCHS\" readonly>"; // Based on CDR H2
+			result += "<br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 PITRW KCHS\" readonly>"; // CDR Z0
 			// result += "<br/><br/><b>Non RNAV</b>"; // todo
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>A0 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 VIYAP SAV BAGGY3 KCHS\" readonly>";
-			result += "<br/>G2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO SAV BAGGY3 KCHS\" readonly>";
-			result += "<br/>H2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 CAMJO SAV BAGGY3 KCHS\" readonly>";
-			result += "<br/>K2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 KLADA UPACE SEELO OGGRE Y436 PITRW KCHS\" readonly>";
-			result += "<br/>M2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO SAV BAGGY3 KCHS\" readonly>";
-			result += "<br/>Z0 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 PITRW KCHS\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-06-2025
+			result += "<!-- Verified with ATCSCC on 05-06-2025 -->";
+			result += "<br/>A0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 VIYAP SAV BAGGY3 KCHS\" readonly>";
+			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO SAV BAGGY3 KCHS\" readonly>";
+			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 CAMJO SAV BAGGY3 KCHS\" readonly>";
+			result += "<br/>K2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 KLADA UPACE SEELO OGGRE Y436 PITRW KCHS\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO SAV BAGGY3 KCHS\" readonly>";
+			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 PITRW KCHS\" readonly>";
 			break;
 		case "CLE": // Updated 02-07-2025
 			result += "<!-- Updated 02-07-2025 -->";
