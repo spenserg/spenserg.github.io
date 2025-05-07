@@ -1236,18 +1236,21 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>LL: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT LILLS3 LILLS FAY CHS JROSS Q409 PUPYY KTLH\" readonly>";
 			break;
-		case "TPA": // Updated 02-06-2025
-			result += "<!-- Updated 02-06-2025 -->";
+		case "TPA": // Updated 05-07-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-07-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT BEAVY6 JENDO MAVRC TEUFL BAAMF DADES1 KTPA\" readonly>"; // CDR RP
-			result += "<br/><br/>East: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS WURFL Q83 ROYCO Q85 LPERD OMN NICCK DADES1 KTPA\" readonly>";
-			result += "<br/>West: <input style=\"width:75%\" value=\"KCLT BEAVY6 GANDT MCN HONID MAATY5 KTPA\" readonly>";
-			result += "<br/>East OW: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 OGGRE AR17 HIBAC DADES1 KTPA\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT BEAVY6 JENDO MAVRC TEUFL BAAMF DADES2 KTPA\" readonly>"; // CDR RP
+			result += "<br/><b style=\"color:orange\">As of 05-07-2025 Fkeys will flag every route except CDR RP as Mandatory Route Violation<\/b>";
+			result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR HONID MAATY5 KTPA\" readonly>"; // CDR ES
+			result += "<br/>East: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS WURFL Q83 ROYCO Q85 LPERD OMN NICCK DADES2 KTPA\" readonly>";
+			result += "<br/>East OW: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 OGGRE AR17 HIBAC DADES2 KTPA\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER5 HAMLN CAE AMG TAY LAL BRDGE BRDGE9 KTPA\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>ES (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR HONID MAATY5 KTPA\" readonly>";
-			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 JENDO MAVRC TEUFL BAAMF DADES1 KTPA\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-07-2025
+			result += "<!-- Verified with ATCSCC on 05-07-2025 -->";
+			result += "<br/>BA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 BARMY BATTA ROZBO CHS JROSS Q409 PUPYY BAAMF DADES2 KTPA\" readonly>";
+			result += "<br/>ES<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR HONID MAATY5 KTPA\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 JENDO MAVRC TEUFL BAAMF DADES2 KTPA\" readonly>";
 			break;
 		case "TUL": // Updated 04-19-2025 // Mandatory Routes checked
 			result += "<!-- Updated 04-19-2025 M -->";
