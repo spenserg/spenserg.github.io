@@ -213,15 +213,16 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX SEBBY3 DAG LARKK1 KLAS\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-		case "MCO": // Updated 02-01-2025
-			result += "<!-- Updated 02-01-2025 -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/>OW: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 JCT J86 LEV Y280 CHRGE PRICY4 KMCO\" readonly>";
-			result += "<br/><br/>Non OW: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 ABQ J72 SPS TXK ELD MEI MGM DEEDA GRNCH5 KMCO\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 PNH J14 VUZ LGC ALLMA WHYYT GRNCH5 KMCO\" readonly>";
+		case "MCO": // Updated 05-07-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-07-2025 MP -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-07-2025
+			result += "<br/><br/>OW: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 JCT J86 LEV Y280 CHRGE PRICY4 KMCO\" readonly>";
+			result += "<br/>Non OW: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 JCT LFK J50 CEW J2 DEFUN GRNCH5 KMCO\" readonly>";
+			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 PNH J14 VUZ LGC ZJAYX GRNCH5\" readonly>";
+			result += "<br/>Full OW: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 FST J138 SAT PSX PEGLG ALGAE DTSRJ CIGAR PRICY4 KMCO\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM PKE J78 DRK J78 ABQ J72 TXO J72 SPS TXK ELD MEI OTK LEESE3 KMCO\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2025
 			break;
 		case "MIA": // Updated 05-02-2025
 			result += "<!-- Updated 05-02-2025 P -->";
