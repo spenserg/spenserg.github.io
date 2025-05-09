@@ -59,6 +59,7 @@ const partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "GRR", "MAF", "MSO", 
 var flows = {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"IAH":0,"JAC":0,"MCO":0,"MIA":0,"MSO":0,"RNO":0,"SAN":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0, "TUS":0};
 var debug_mode = false;
 var mandatory_routes_checked = true;
+var input_boxes_shown = false;
 
 document.getElementById("outbound").addEventListener("keypress", function(event) {
 	if (event.key === "Enter") {
@@ -79,6 +80,11 @@ function restore_last() {
 function toggle_mandatory_routes() {
 	mandatory_routes_checked = !mandatory_routes_checked;
 	restore_last();
+}
+
+function toggle_input_boxes() {
+	input_boxes_shown = !input_boxes_shown;
+	$("#input_boxes").toggle();
 }
 
 function change_flow(airport = null, new_config = null, override_duplicated = false) {
@@ -349,7 +355,9 @@ function compute (str_override = "") {
 			if ((tmp_xae = regae.exec(output)) !== null) {
 				output = output.replace("<b>CDRS</b>", "<b>CDRS</b> Updated: " + tmp_xae[1].trim());
 			}
-			output += '<br/><br/><br/><hr><br/><br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of ' + tmp_today_str + '\' readonly>';
+			output += '<br/><br/><button onclick=\"toggle_input_boxes()\">Toggle Input Boxes</button>';
+			output += '<div id="input_boxes"' + (input_boxes_shown ? '>' : ' hidden>');
+			output += '<br/><hr><br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of ' + tmp_today_str + '\' readonly>';
 			output += '<br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>CDRS</b>\"; // No CDRs as of ' + tmp_today_str + '\' readonly>';
 			output += '<br/><br/><input style=\'width:75%\' value=\'case "' + result[2] + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
 			output += '<br/><input style=\'width:75%\' value=\'result += \"<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->\";\' readonly>';
@@ -357,6 +365,7 @@ function compute (str_override = "") {
 				'result += "<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->";\n\t' +
 				'result += "<br/><br/><b>Faa Pref Route:</b>";</textarea>';
 			output += '<br/><button onclick=\"toggle_mandatory_routes()\">Turn ' + (mandatory_routes_checked ? "OFF" : "ON") + ' Mandatory Routes</button>';
+			output += '</div>';
 		}
 	}
 
