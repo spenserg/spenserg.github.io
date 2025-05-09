@@ -4385,13 +4385,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "MRY":
 			switch(arvl) {
-				case "DFW": // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
+				case "DFW": // Updated 05-09-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-09-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMRY AVE J6 PMD J65 KOFFA J169 TFD J50 SSO J4 EWM BGS GEEKY SOCKK4 KDFW\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KMRY PANOS NTELL Q158 MYCAL FUZZY LAS J76 FTI J58 PNH MDANO VKTRY2 KDFW\" readonly>";
-					// result += "<br/><br/><b>Non RNAV</b>";
-					// result += "<br/><br/><b>CDRS</b>";
+					result += "<br/><br/>North via TBC: <input style=\"width:75%\" value=\"KMRY PANOS NTELL Q158 MYCAL FUZZY LAS J76 FTI J58 PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/>North via PUB: <input style=\"width:75%\" value=\"KMRY SNS FRA OAL KATTS KITTN MLF J28 ICT TUL HITUG SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KMRY SNS FRA OAL MLF DVC CIM PNH UKW8 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-09-2025
 					break;
 				case "PHX": // Updated 01-16-2025
 					result += "<!-- Updated 01-16-2025 -->";
