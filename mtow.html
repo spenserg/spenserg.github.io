@@ -58,6 +58,7 @@ const partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "GRR", "MAF", "MSO", 
 
 var flows = {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"IAH":0,"JAC":0,"MCO":0,"MIA":0,"MSO":0,"RNO":0,"SAN":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0, "TUS":0};
 var debug_mode = false;
+var mandatory_routes_checked = true;
 
 document.getElementById("outbound").addEventListener("keypress", function(event) {
 	if (event.key === "Enter") {
@@ -73,6 +74,11 @@ $( document ).ready(function() {
 function restore_last() {
 	$("#outbound").val($("#ob_copy").val());
 	compute();
+}
+
+function toggle_mandatory_routes() {
+	mandatory_routes_checked = !mandatory_routes_checked;
+	restore_last();
 }
 
 function change_flow(airport = null, new_config = null, override_duplicated = false) {
@@ -115,7 +121,7 @@ function compute (str_override = "") {
 	var exc_regex = /\n\!\n/g;
 	var fkeystxt = ((str_override != 0 && str_override.trim().length > 0) ? str_override : $("#outbound").val());
 	var routes_arr = {'faa_pref' : null, 'non_rnav' : null, 'cdrs' : {} };
-	
+	var mr_text = ((mandatory_routes_checked) ? " // Mandatory Routes checked" : "");
 
 	// TODO: remove exclamation points in multi-edit
 	//console.log(fkeystxt);
@@ -333,6 +339,8 @@ function compute (str_override = "") {
 		output = get_routes(result[1], result[2], result[5], ac_type, output);
 		$("#outbound").val("");
 		if (debug_mode) {
+			var today = new Date();
+			var tmp_today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + String(today.getFullYear());
 			regad = /\<\!\-\-\sUpdated\s([\d\-]+)\s([A-Z]*)\s*\-\-\>/g;
 			if ((tmp_xad = regad.exec(output)) !== null) {
 				$("#outbound").val(("Updated " + tmp_xad[1] + "\n" + tmp_xad[2]).trim());
@@ -341,6 +349,14 @@ function compute (str_override = "") {
 			if ((tmp_xae = regae.exec(output)) !== null) {
 				output = output.replace("<b>CDRS</b>", "<b>CDRS</b> Updated: " + tmp_xae[1].trim());
 			}
+			output += '<hr><br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of ' + tmp_today_str + '\' readonly>';
+			output += '<br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>CDRS</b>\"; // No CDRs as of ' + tmp_today_str + '\' readonly>';
+			output += '<br/><br/><input style=\'width:75%\' value=\'case "' + result[2] + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
+			output += '<br/><input style=\'width:75%\' value=\'result += \"<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->\";\' readonly>';
+			output += '<textarea rows="8" cols="80">case "' + result[2] + '": // Updated ' + tmp_today_str + mr_text + '\n\t' +
+				'result += "<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->";\n\t' +
+				'result += "<br/><br/><b>Faa Pref Route:</b>";</textarea>';
+			output += '<br/><button onclick=\"toggle_mandatory_routes()\">Turn ' + (mandatory_routes_checked ? "OFF" : "ON") + ' Mandatory Routes</button>';
 		}
 	}
 
@@ -364,6 +380,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	var non_rnav_coordreq = true;
 	var cdr_str = "";
 	var playbooks = {};
+	var mr_text = ((mandatory_routes_checked) ? " // Mandatory Routes checked" : "");
 	while(null != (z = reg_tmp.exec(input))) {
 		dptr = z[2].substring(0, 4);
 		arvl = z[3].substring(1, 4);
@@ -448,9 +465,8 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	var output = '<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
 		'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span>' +
 		'<br/><br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA pref route as of ' + today_str + '\' readonly>' +
-		'<br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>CDRS</b>\"; // No CDRs as of ' + today_str + '\' readonly>' +
 		'<br/><br/><textarea rows="8" cols="80">' + "case \"" + arvl + "\":" +
-		' // Updated ' + today_str + ' // Mandatory Routes checked' + textarea_tabs +
+		' // Updated ' + today_str + mr_text + textarea_tabs +
 		'result += \"<!-- Updated ' + today_str + ' MP -->\";' + textarea_tabs +
 		'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
