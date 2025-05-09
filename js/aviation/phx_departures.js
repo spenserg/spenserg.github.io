@@ -424,14 +424,16 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS PUB J64 HLC PWE LMN MZV JOT ELX SVM J70 LVZ LENDY8 KJFK\" readonly>";
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO ONM ACH LBL ICT BUM STL VHP ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
 			break;
-		case "LAS": // Updated 04-09-2025
-			result += "<!-- Updated 04-09-2025 -->";
+		case "LAS": // Updated 05-09-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-09-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
 			result += "<br/><input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA ELLDA RKSTR4 KLAS\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 MRBIL HAHAA RKSTR4 KLAS\" readonly>"; // CDR MR
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX KEENS3 WLVRN PKE GFS LARKK1 KLAS\" readonly>"; // CDR KE
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX PXR J11 DRK ISHEE2 KLAS\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-09-2025
-			result += "<!-- Verified with ATCSCC on 04-09-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-09-2025
+			result += "<!-- Verified with ATCSCC on 05-09-2025 -->";
 			result += "<br/>KE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 WLVRN PKE GFS LARKK1 KLAS\" readonly>";
 			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 MRBIL HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 CARTL HAHAA RKSTR4 KLAS\" readonly>";
