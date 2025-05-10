@@ -7480,6 +7480,18 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KSTL PLESS5 BNA VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed as of 03-17-2025
 					break;
+				case "DCA": // Updated 05-10-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-10-2025 MP -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSTL TEDDD5 IIU Q108 SITTR TRUPS5 KDCA\" readonly>";
+					// result += "<br/>NRP: <input style=\"width:75%\"; value=\"KSTL JHART7 DOBLR CAROL J134 FLM J24 HVQ TRUPS5 KDCA\" readonly>";
+					// NRP route above but ZDC is requiring pref routes only
+					result += "<br/><br/>North via GIJ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KSTL NATCA5 SPI RBS GIJ J146 WOOST J34 BUCKO FRDMM6 KDCA\" readonly>";
+					// TODO: South route
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSTL GATWY1 JIGSY Q176 GBEES FLM J24 HVQ BUCKO NUMMY3 KDCA\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-10-2025
+					break;
 				case "DFW": // Updated 01-19-2025
 					result += "<!-- Updated 01-19-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
