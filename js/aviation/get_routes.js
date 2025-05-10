@@ -4105,6 +4105,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 JAWJA CABLO MEI MLU YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/>Weekend/Holiday: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PLYER TRADR AEX PNUTS BEREE3 KDFW\" readonly>";
 					result += "<br/>North: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 VLKNN YAALL J14 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					// TODO JEEMY3 PAINN DCT SHRKS DCT AMG DCT MCN DCT VUZ/N0461F320 DCT BESOM DCT IGB DCT YUYUN WHINY4 // cdr 05X?
 					result += "<br/>South: <input style=\"width:75%\" value=\"KMCO OSPRY1 REMIS Y280 LEV KCEEE TKNIQ MOLLR IAH CRIED BEREE3 KDFW\" readonly>";
 					result += "<br/>Full OW: <input style=\"width:75%\" value=\"KMCO OSPRY1 CIGAR M215 SNOMN ALGAE PEGLG MUSYL IAH CRIED BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
