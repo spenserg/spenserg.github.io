@@ -535,14 +535,18 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 FTI J18 JOT KMKE\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 FTI J18 JOT KMKE\" readonly>";
 			break;
-		case "MRY": // Updated 02-05-2025
-			result += "<!-- Updated 02-05-2025 -->";
+		case "MRY": // Updated 05-09-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-09-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR J212 DECAS J65 PMD J6 ROBIE KMRY\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BTY CZQ SNS KMRY\" readonly>"; // Based on CDR ZE
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX FYRBD1 MOHAK J2 MZB J1 AVE SNS KMRY\" readonly>"; // CDR FY
 			// result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>KE: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR DECAS J65 LANDO AVE SNS KMRY\" readonly>";
-			result += "<br/>ZE: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED J6 PMD J65 LANDO AVE SNS KMRY\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-09-2025
+			result += "<!-- Verified with ATCSCC on 05-09-2025 -->";
+			result += "<br/>FY<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FYRBD1 MOHAK J2 MZB J1 AVE SNS KMRY\" readonly>";
+			result += "<br/>KE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR DECAS J65 LANDO AVE SNS KMRY\" readonly>";
+			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED J6 PMD J65 LANDO AVE SNS KMRY\" readonly>";
 			break;
 		case "MSN": // Updated 02-05-2025
 			result += "<!-- Updated 02-05-2025 -->";
