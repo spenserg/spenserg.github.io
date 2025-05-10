@@ -13,16 +13,16 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT KABI\" readonly>";
 			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF SJT KABI\" readonly>";
 			break;
-		case "ABQ": // Updated 03-25-2025
-			result += "<!-- Updated 03-25-2025 -->";
+		case "ABQ": // Updated 05-09-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-09-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO RECKN COLTR4 KABQ\" readonly>";
 			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN FANGZ LZZRD4 KABQ\" readonly>";
 			result += "<br/>North: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS EZEEE TAMEY SNDIA4 KABQ\" readonly>";			
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 TXO MIERA2 KABQ\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-25-2025
-			result += "<!-- Verified with ATCSCC on 03-25-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-09-2025
+			result += "<!-- Verified with ATCSCC on 05-09-2025 -->";
 			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO MIERA2 KABQ\" readonly>";
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 TCC MIERA2 KABQ\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT J15 CME MIERA2 KABQ\" readonly>";
@@ -77,16 +77,17 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF BGS PNH KAMA\" readonly>";
 			result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST LBB PNH KAMA\" readonly>";
 			break;
-		case "ATL": // Updated 03-25-2025
-			result += "<!-- Updated 03-25-2025 -->";
+		case "ATL": // Updated 05-09-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-09-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD MERDN ORRKK HOBTT2 KATL\" readonly>"; // CDR 0P
-			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA AEX GARTS SHYRE HOBTT2 KATL\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J14 YAALL VLKNN DRSDN GNDLF2 KATL\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEMFS HUTCC KNSAW RUSSA GLAVN1 KATL\" readonly>";
+			result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD MERDN ORRKK HOBTT2 KATL\" readonly>"; // CDR 0P
+			result += "<br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG MEM HUTCC KNSAW RUSSA GLAVN1 KATL\" readonly>"; // CDR 1N
+			result += "<br/><b style=\"color:orange\">CDR is ..ARG MEM HUTCC.. but mandatory route is ..ARG MEMFS HUTCC..<\/b>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 EIC MHZ MEI VUZ KATL\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-25-2025
-			result += "<!-- Verified with ATCSCC on 03-25-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-09-2025
+			result += "<!-- Verified with ATCSCC on 05-09-2025 -->";
 			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD MERDN ORRKK HOBTT2 KATL\" readonly>";
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG MEM HUTCC KNSAW RUSSA GLAVN1 KATL\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH Q24 PAYTN SHYRE HOBTT2 KATL\" readonly>";
@@ -1129,12 +1130,12 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME J15 ABQ J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			break;
 		case "LAX": // Updated 04-18-2025 // Mandatory Routes checked
-			result += "<!-- Updated 04-18-2025 M -->";
+			result += "<!-- Updated 04-18-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>"; // CDR 0P
 			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO J72 ABQ J78 DRK GABBL HLYWD1 KLAX\" readonly>";
-			result += "<br/><br/>COWBOY WEST 1 (FL220 to JCT): <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT FST ELP J50 SSO BXK ESTWD HLYWD1 KLAX\" readonly>";
-			result += "<br/>COWBOY WEST 2 (FL220 to SAT): <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY SAT DLF FST ELP J50 SSO BXK ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/><br/>COWBOY WEST 1 (FL220 to JCT)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT FST ELP J50 SSO BXK ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/>COWBOY WEST 2 (FL220 to SAT)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY SAT DLF FST ELP J50 SSO BXK ESTWD HLYWD1 KLAX\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 CNX J74 SJN J231 TNP BASET5 KLAX\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-18-2025
@@ -1194,21 +1195,22 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG PXV KLEX\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MCB MERDN VLKNN VXV KLEX\" readonly>";
 			break;
-		case "LGA": // Updated 04-18-2025 // TODO wtf is going on with laguardia??
-			result += "<!-- Updated 04-18-2025 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // TODO what is going on with LGA???
-			result += "<br/><br/>CDR LT: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV ROD KLYNE Q29 WWSHR TEESY J146 ETG MIP4 KLGA\" readonly>"; // CDR LT
-			result += "<br/>CDR 0P <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 GVE PROUD2 KLGA\" readonly>"; // CDR 0P
-			result += "<br/><br/>South/CDR 1P: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR TWOUP BURGG Q60 HURTS PROUD2 KLGA\" readonly>"; // CDR 1P
-			result += "<br/>North/CDR J3: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL VHP ROD KLYNE Q29 WWSHR TEESY J146 ETG MIP4 KLGA\" readonly>"; // CDR J3
+		case "LGA": // Updated 05-09-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-09-2025 MP -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // FAA pref route is not a good choice here
+			result += "<br/><br/>NRP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV ROD KLYNE Q29 WWSHR TEESY J146 ETG MIP4 KLGA\" readonly>"; // CDR LT
 			result += "<br/><b style=\"color:orange\">As of 04-18-2025 only two routes wont flag mandatory route violation: CDR 1P and CDR LT<\/b>";
-			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH): <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J138 SJI Q56 CATLN Q22 BURGG Q60 HURTS PROUD2 KLGA\" readonly>";
+			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL VHP ROD KLYNE Q29 WWSHR TEESY J146 ETG MIP4 KLGA\" readonly>"; // CDR J3
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR TWOUP BURGG Q60 HURTS PROUD2 KLGA\" readonly>"; // CDR 1P
+			result += "<br/><br/>CDR 0P<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 GVE PROUD2 KLGA\" readonly>"; // CDR WB
+			result += "<br/><b style=\"color:orange\">As of 04-18-2025 LGA-DFW is the only city pair where CDR 0P is not the preferred route<\/b>";
+			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV J87 IAH J2 LCH J138 SJI Q56 CATLN Q22 BURGG Q60 HURTS PROUD2 KLGA\" readonly>"; // CDR VS
 			result += "<br/>MGM 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD MERDN Q184 ARNNY FRDDO TWOUP Q22 BURGG Q60 HURTS PROUD2 KLGA\" readonly>"; // CDR WM
 			result += "<br/>VUZ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR TWOUP Q22 BURGG Q60 HURTS PROUD2 KLGA\" readonly>"; // CDR WV
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW BLECO8 TUL J98 SGF J8 STL J24 VHP WWSHR TEESY J146 ETG MIP4 KLGA\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-18-2025
-			result += "<!-- Verified with ATCSCC on 04-18-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-09-2025
+			result += "<!-- Verified with ATCSCC on 05-09-2025 -->";
 			result += "<br/>0P<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 GVE PROUD2 KLGA\" readonly>";
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA SWAPP Q34 GVE PROUD2 KLGA\" readonly>";
 			result += "<br/>1P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR TWOUP BURGG Q60 HURTS PROUD2 KLGA\" readonly>";
