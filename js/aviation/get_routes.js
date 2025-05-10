@@ -7775,6 +7775,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 05-10-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KVPS CORKY ACORI CSG BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><b style=\"color:orange\">Routes below okay for weather deviation. File pref route otherwise.<\/b>";
 					result += "<br/><br/>South/East <input style=\"width:75%\" value=\"KVPS CORKY DEFUN CABLO HEPAR Q99 TEEEM CHECR STOCR4 KCLT\" readonly>";
 					result += "<br/>North/West: <input style=\"width:75%\" value=\"KVPS CORKY MGM KT24O TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -7815,6 +7816,18 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>DFW SEEVR1: <input style=\"width:75%\" value=\"KXNA TUL PER HOFFF VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KXNA FSM FINGR9 KDFW\" readonly>";
+					break;
+				case "ORD": // Updated 05-10-2025
+					result += "<!-- Updated 05-10-2025 MP -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KXNA EOS SGF WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/><br/>West via MCI: <input style=\"width:75%\"; value=\"KXNA EOS MCI IRK BENKY6 KORD\" readonly>";
+					// TODO East
+					result += "<br/><br/>West via CID: <input style=\"width:75%\"; value=\"KXNA EOS MCI IRK BENKY6 KORD\" readonly>";
+					result += "<br/>East via PXV: <input style=\"width:75%\"; value=\"KXNA HRO KM42K PXV BONNT VEECK5 KORD \" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KXNA SGF BAYLI BDF9 KORD\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-10-2025
 					break;
 			}
 		break; // End of XNA
