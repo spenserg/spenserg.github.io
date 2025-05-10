@@ -3687,15 +3687,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>SP: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAS GIDGT2 TUKRR DVC LAA J102 SLN J24 MCI J80 SPI J80 VHP ROD J152 JST BOJID4 KPHL\" readonly>";
 					result += "<br/>VU (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAS NIITZ4 SSKEE INW J86 ELP J50 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
 					break;
-				case "PHX": // Updated 04-09-2025
-					result += "<!-- Updated 04-09-2025 -->";
+				case "PHX": // Updated 05-09-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-09-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL290):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLAS RASLR3 ZAYNE WOTRO BRUSR1 KPHX\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KLAS RADYR2 LVELL BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/>Low Level Rte: <input style=\"width:75%\" value=\"KLAS DRK COYOT5 KPHX\" readonly>";
+					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KLAS RADYR2 LVELL BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLAS BLD COYOT5 KPHX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed as of 04-09-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-09-2025
 					break;
 			}
 		break; // End of LAS
