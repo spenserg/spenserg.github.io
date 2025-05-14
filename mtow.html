@@ -367,12 +367,12 @@ function compute (str_override = "") {
 			output += '<br/><span style=\"color:red\"> (Coord Req)</span>: <input style=\'width:75%\' value=\'' +
 				'result += \"<br/>XXX<span style=\\\"color:red\\\"> (Coord Req)<\/span>: <input style=\\\"width:75%\\\" value=\\\"YYY\\\" readonly>\";' +
 				'\' readonly>';
-			output += '<br/><input style=\'width:75%\' value=\'' +
+			output += '<br/>XXX: <input style=\'width:75%\' value=\'' +
 				'result += \"<br/><input style=\\\"width:75%\\\" value=\\\"YYY\\\" readonly>\";' +
 				'\' readonly>';
 			output += '<br/><br/><input style=\'width:75%\' value=\'case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
 			output += '<br/><input style=\'width:75%\' value=\'result += \"<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->\";\' readonly>';
-			output += '<textarea rows="8" cols="80">case "' + result[2] + '": // Updated ' + tmp_today_str + mr_text + '\n\t' +
+			output += '<textarea rows="8" cols="80">case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + '\n\t' +
 				'result += "<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->";\n\t' +
 				'result += "<br/><br/><b>Faa Pref Route:</b>";</textarea>';
 			output += '<br/><button onclick=\"toggle_mandatory_routes()\">Turn ' + (mandatory_routes_checked ? "OFF" : "ON") + ' Mandatory Routes</button>';
