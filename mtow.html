@@ -351,10 +351,12 @@ function compute (str_override = "") {
 			if ((tmp_xad = regad.exec(output)) !== null) {
 				$("#outbound").val(("Updated " + tmp_xad[1] + "\n" + tmp_xad[2]).trim());
 			}
+/*  I dont know what this is for
 			regae = /\<\!\-\-\sVerified\swith\sATCSCC\son\s([\d\-]+)\s([A-Z]*)\s*\-\-\>/g;
 			if ((tmp_xae = regae.exec(output)) !== null) {
 				output = output.replace("<b>CDRS</b>", "<b>CDRS</b> Updated: " + tmp_xae[1].trim());
 			}
+*/
 			output += '<br/><br/><button onclick=\"toggle_input_boxes()\">Toggle Input Boxes</button>';
 			output += '<div id="input_boxes"' + (input_boxes_shown ? '>' : ' hidden>');
 			output += '<br/><hr><br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of ' + tmp_today_str + '\' readonly>';
