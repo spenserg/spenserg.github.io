@@ -1971,12 +1971,13 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN EWM J4 SSO J50 TFD J212 DECAS J65 PMD AVE MAKRS TROXX SILCN6 KSJC\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 TXO FTI J58 MLF MVA SAC PYE3 KSJC\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>0P (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO TCC FTI J58 ILC KNGRY RAZRR5 KSJC\" readonly>";
-			result += "<br/>1N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 PNH J58 ILC KNGRY RAZRR5 KSJC\" readonly>";
-			result += "<br/>1S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT J15 RSK J58 ILC KNGRY RAZRR5 KSJC\" readonly>";
-			result += "<br/>2S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF INK J15 RSK J58 ILC KNGRY RAZRR5 KSJC\" readonly>";
-			result += "<br/>3S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME J15 RSK J58 ILC KNGRY RAZRR5 KSJC\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-16-2025
+			result += "<!-- Verified with ATCSCC on 05-16-2025 -->";
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO TCC FTI J58 ILC KNGRY RAZRR5 KSJC\" readonly>";
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 PNH J58 ILC KNGRY RAZRR5 KSJC\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT J15 RSK J58 ILC KNGRY RAZRR5 KSJC\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF INK J15 RSK J58 ILC KNGRY RAZRR5 KSJC\" readonly>";
+			result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME J15 RSK J58 ILC KNGRY RAZRR5 KSJC\" readonly>";
 			break;
 		case "SLC": // Updated 05-09-2025 // Mandatory Routes checked
 			result += "<!-- Updated 05-09-2025 MP -->";
