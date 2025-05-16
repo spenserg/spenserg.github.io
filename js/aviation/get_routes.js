@@ -6954,10 +6954,20 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref as of 03-30-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KSBA MISHN4 NNAVY EED DRK J6 ABQ J72 TURKI VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\"; value=\"KSBA KWANG5 HENER FIM PMD J6 ABQ J72 TXO J72 SPS UKW8 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSBA KWANG6 HENER FIM PMD J6 ABQ J72 TXO J72 SPS UKW8 KDFW\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-30-2025
 					result += "<!-- Verified with ATCSCC on 03-30-2025 -->";
 					result += "<br/>JE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSBA KPTIN BENET SXC TRM BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					break;
+				case "PHX": // Updated 05-16-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-16-2025 MP -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KSBA MISHN4 BOILE BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KSBA MISHN4 SXC TRM BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\"; value=\"KSBA MISHN4 NNAVY WOTRO BRUSR1 KPHX\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSBA KWANG6 GINNA PDZ J50 BLH ARLIN4 KPHX\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
 					break;
 			}
 		break; // End of SBA
@@ -7558,7 +7568,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 			}
 		break; // End of STL
 
-		// TODO STS
+		case "STS": // todo
+			switch(arvl) {
+				case "PHX": // Updated 05-16-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
+					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
+					break;
+				}
+		break; // End of STS
 
 // SWF skipped
 
