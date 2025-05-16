@@ -2119,15 +2119,6 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "DSM":
 			switch(arvl) {
-				case "DFW": // Updated 12-30-24
-					result += "<!-- Updated 12-30-24 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KDSM DSM J25 MCI RZC FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>NW Arrival: <input style=\"width:75%\" value=\"KDSM PER IRW IBAKE VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KDSM J25 TUL FINGR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
-					break;
 				case "CLT": // Updated 01-05-2025
 					result += "<!-- Updated 01-05-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -2138,6 +2129,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KDSM IRK STL PXV BWG VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
+				case "DFW": // Updated 12-30-24
+					result += "<!-- Updated 12-30-24 -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KDSM DSM J25 MCI RZC FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>NW Arrival: <input style=\"width:75%\" value=\"KDSM PER IRW IBAKE VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KDSM J25 TUL FINGR9 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>";
+					break;
 				case "ORD": // Updated 01-05-2025
 					result += "<!-- Updated 01-05-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -2146,14 +2146,16 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KDSM OTM BDF BDF8 KORD\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "PHX": // Updated 01-05-2025
-					result += "<!-- Updated 01-05-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KDSM LNK J146 GLD PUB ALS J102 GUP EAGUL6 KPHX\" readonly>";
+				case "PHX": // Updated 05-16-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-16-2025 MP -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDSM LNK J146 GLD PUB ALS J102 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDSM LNK J60 HCT J128 FQF DVC INW EAGUL6 KPHX\" readonly>";
+					result += "<br/><b style=\"color:orange\">Expect reroute to GUP EAGUL6 KPHX on west side of weather.<\/b>";
+					result += "<br/>South: <input style=\"width:75%\"; value=\"KDSM STJ HUT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDSM LNK J60 HCT J128 FQF J10 HBU RSK GUP BUNTR3 KPHX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
 					break;
 			}
 		break; // End of DSM
