@@ -883,6 +883,14 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 ONM ACH LBL ICT BUM KAYLA3 KSTL\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 ONM ACH LBL ICT BUM KAYLA3 KSTL\" readonly>";
 			break;
+		case "STS": // Updated 05-16-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
+			result += "<!-- Updated 05-16-2025 -->";
+			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR CURIV J212 DECAS J65 LANDO J6 AVE J1 OAK KSTS\" readonly>";
+			// TODO: East route
+			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
+			break;
 		case "TPA": // Updated 02-05-2025
 			result += "<!-- Updated 02-05-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
