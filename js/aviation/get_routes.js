@@ -1218,13 +1218,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "DFW": // Updated 12-23-24
-					result += "<!-- Updated 12-23-24 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KCID IOW COLIE SGF FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>NW Arrival: <input style=\"width:75%\" value=\"KCID OVR ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
+				case "DFW": // Updated 05-16-2025
+					result += "<!-- Updated 05-16-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCID CID IRK SGF FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>West/ROEZZ: <input style=\"width:75%\"; value=\"KCID ROEZZ MCI ICT HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/>West/OVR: <input style=\"width:75%\"; value=\"KCID CID OVR ICT HOFFF VKTRY2 KDFW\" readonly>";
+					// TODO East
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
 					break;
 			}
 		break; // End of CID
@@ -2129,14 +2131,16 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KDSM IRK STL PXV BWG VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "DFW": // Updated 12-30-24
-					result += "<!-- Updated 12-30-24 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KDSM DSM J25 MCI RZC FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>NW Arrival: <input style=\"width:75%\" value=\"KDSM PER IRW IBAKE VKTRY2 KDFW\" readonly>";
+				case "DFW": // Updated 05-16-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-16-2025 MP -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDSM DSM J25 MCI RZC FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>West/LMN: <input style=\"width:75%\" value=\"KDSM LMN STJ ICT HOFFF JOVEM6 KDFW\" readonly>";
+					result += "<br/>West/OVR: <input style=\"width:75%\" value=\"KDSM OVR J21 ICT HOFFF JOVEM6 KDFW\" readonly>";
+					// TODO East
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDSM J25 TUL FINGR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
 					break;
 				case "ORD": // Updated 01-05-2025
 					result += "<!-- Updated 01-05-2025 -->";
@@ -7569,8 +7573,11 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "STS": // todo
 			switch(arvl) {
-				case "PHX": // Updated 05-16-2025
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
+				case "PHX": // Updated 05-16-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-16-2025 MP -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KSTS RREHD1 HADLY KAYEX LOSHN BOILE BLH HYDRR1 KPHX\" readonly>";
+					// TODO East rte
 					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
 					break;
