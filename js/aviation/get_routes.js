@@ -4808,16 +4808,19 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>TN (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KONT RAJEE4 MTBAL CNERY BLH TFD J50 ELP J86 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
 					result += "<br/>UK (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KONT RAJEE4 AVRRY LANCY ABQ J72 TXO TURKI VKTRY2 KDFW\" readonly>";
 					break;
-				case "PHX": // Updated 01-17-2025
-					result += "<!-- Updated 01-17-2025 -->";
+				case "PHX": // Updated 05-17-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-17-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KONT RAJEE4 MTBAL CNERY BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/><br/>PHX HYDRR: <input style=\"width:75%\" value=\"KONT NIKKL1 TRM BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/>PHX NO J92: <input style=\"width:75%\" value=\"KONT NIKKL1 TRM BLH HYDRR1 KPHX\" readonly>";
+					// TODO North Rte
+					result += "<br/><br/>South via BLH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KONT NIKKL1 TRM BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/>South via IPL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KONT JLI IPL J2 HOGGZ HYDRR1 KPHX\" readonly>"; // CDR SE
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KONT NIKKL1 TRM J169 BLH ARLIN4 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>SE (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KONT JLI IPL J2 HOGGZ HYDRR1 KPHX\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-17-2025
+					result += "<!-- Verified with ATCSCC on 05-17-2025 -->";
+					result += "<br/>ME<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KONT RAJEE4 MTBAL CNERY BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/>SE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KONT JLI IPL J2 HOGGZ HYDRR1 KPHX\" readonly>";
 					break;
 			}
 		break; // End of ONT
