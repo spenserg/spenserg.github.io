@@ -253,12 +253,18 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ES (Coord Req): <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY IRQ OSPRI7 KCHS\" readonly>";
 			result += "<br/>RP (Ok to File): <input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM OSPRI7 KCHS\" readonly>";
 			break;
-		case "CID": // Updated 02-01-2025
-			result += "<!-- Updated 02-01-2025 -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT JOJJO3 DOOGE FLM J24 VHP RBS BDF KCID\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>";
-			// result += "<br/><br/><b>CDRS</b>";
+		case "CID": // Updated 05-16-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-16-2025 MP -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-16-2025
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM OOM TTH CID KCID\" readonly>";
+			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HNN ROD J149 FWA JOT KCID\" readonly>";
+			result += "<br/>South via MEM: <input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN HRS GQO MEM J41 SGF IRK KCID\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-16-2025
+			result += "<!-- Verified with ATCSCC on 05-16-2025 -->";
+			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV IIU CMI MZV KCID\" readonly>";
+			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE HYK TTH CMI MZV KCID\" readonly>";
+			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HYK TTH CMI MZV KCID\" readonly>";
 			break;
 		case "CLE": // Updated 02-01-2025
 			result += "<!-- Updated 02-01-2025 -->";
