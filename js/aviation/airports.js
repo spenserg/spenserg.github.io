@@ -95,6 +95,10 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KSAN SAYOW2 IPL GBN", "KSAN ZZOOO4 GBN");
 						result = result.replaceAll("KSAN SAYOW2 IPL", "KSAN BRDR7 IPL");
 						break;
+					case "SBP": // SBP East Rwy 11// AVILA WYNNR
+						result = result.replaceAll("");
+						
+						break;
 					case "SFO": // SFO dpting 1L/1R // SSTIK 
 						// South
 						result = result.replaceAll("KSFO SAHEY4", "KSFO SSTIK5");
@@ -235,6 +239,9 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KSAN ZZOOO4 GBN", "KSAN SAYOW2 IPL GBN");
 						result = result.replaceAll("KSAN CLSSY1 TGOLD", "KSAN SAYOW2 IPL TGOLD");
 						result = result.replaceAll("KSAN CLSSY1 GBN", "KSAN SAYOW2 IPL GBN");
+						break;
+					case "SBP": // SBP West Rwy 29// CREPE
+						
 						break;
 					case "SFO": // SFO dpting 28lr // WESLA 
 						// South
