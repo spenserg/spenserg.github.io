@@ -205,13 +205,13 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM GNDLA TBARR3 KDEN\" readonly>";
 			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA TBC RSK SHNPS TBARR3 KDEN\" readonly>";
 			break;
-		case "DFW": // Updated 01-11-2025
-			result += "<!-- Updated 01-11-2025 -->";
+		case "DFW": // Updated 05-17-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-17-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE EWM J4 INK GEEKY SOCKK4 KDFW\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO TXO TURKI JOVEM6 KDFW\" readonly>";
-			result += "<br/><br/>DFW BGTOE: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
-			result += "<br/>DFW WEST: <input style=\"width:75%\"; value=\"KPHX STRRM1 TUS J2 ELP J86 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
+			// result += "<br/><br/>DFW BGTOE: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
+			// result += "<br/>DFW WEST: <input style=\"width:75%\"; value=\"KPHX STRRM1 TUS J2 ELP J86 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX SJN9 ABQ J72 TXO UKW8 KDFW\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-17-2025
