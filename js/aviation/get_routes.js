@@ -6969,7 +6969,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\"; value=\"KSBA KWANG6 HENER FIM PMD J6 ABQ J72 TXO J72 SPS UKW8 KDFW\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-30-2025
 					result += "<!-- Verified with ATCSCC on 03-30-2025 -->";
-					result += "<br/>JE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSBA KPTIN BENET SXC TRM BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/>JE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSBA MISHN4 SXC TRM BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
 					break;
 				case "PHX": // Updated 05-16-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-16-2025 MP -->";
@@ -6985,7 +6985,20 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // End of SBA
 
 		// TODO SBN
-		// TODO SBP
+
+		case "SBP":
+			switch(arvl) {
+				case "DFW": // Updated 05-18-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-18-2025 MP -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KSBP DERBB MARIC PMD J65 BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/><br/>North via ABQ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSBP MQO DERBB MARIC PMD J6 DRK J78 ABQ J72 TXO TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/>North via FTI<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSBP MQO DERBB MARIC PMD J6 EED J8 FTI J58 PNH MDANO VKTRY2 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-18-2025
+					break;
+			}
+		break; // End of SBP
 
 		case "SDF":
 			switch(arvl) {
