@@ -321,6 +321,7 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 02-14-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD MYKIE MONNY JORDY KDSM\" readonly>";
+			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 ODI MCW J25 DSM KDSM\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD IOW J10 DSM KDSM\" readonly>";
 			result += "<br/><br/><b>CDRS</b>";
