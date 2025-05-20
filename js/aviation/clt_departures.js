@@ -375,16 +375,18 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
 			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>";
 			break;
-		case "DSM": // Updated 01-04-2025
-			result += "<!-- Updated 01-04-2025 -->";
+		case "DSM": // Updated 05-20-2025
+			result += "<!-- Updated 05-20-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE Q93 HEVAN BVT BDF MZV IOW KDSM\" readonly>";
-			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J45 DSM KDSM\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; // TODO
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>JJ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM IIU ENL IRK V175 DSM KDSM\" readonly>";
-			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA J45 DSM KDSM\" readonly>";
-			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ ENL IRK V175 DSM KDSM\" readonly>";
+			result += "<br/><input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA J45 DSM KDSM\" readonly>"; // CDR RP
+			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE Q93 HEVAN BVT BDF MZV IOW KDSM\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+			// KCLT KER4 NALEY HNN ROD J149 FWA....
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-19-2025
+			result += "<!-- Verified with ATCSCC on 05-19-2025 -->";
+			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM IIU ENL IRK V175 DSM KDSM\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA J45 DSM KDSM\" readonly>";
+			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ ENL IRK V175 DSM KDSM\" readonly>";
 			break;
 		case "DTW": // Updated 02-01-2025
 			result += "<!-- Updated 02-01-2025 -->";
