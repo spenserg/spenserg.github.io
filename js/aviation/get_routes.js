@@ -679,18 +679,19 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "BNA":
 			switch(arvl) {
-				case "CLT": // Updated 10-21-24
-					result += "<!-- Updated 10-21-24 -->";
+				case "CLT": // Updated 05-19-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-19-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL270):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA TAZMO3 BURME COMDY FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA FLAME3 GENDE BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA CHADM3 SWAPP ROSAR HMV LIINN3 KCLT\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA CHADM3 SWAPP SKYWA FILPZ4 KCLT\" readonly>";
+					// todo North via IIU
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA VXV LIINN3 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
 					break;
-				case "DFW": // Updated 10-21-24
-					result += "<!-- Updated 10-21-24 -->";
+				case "DFW": // Updated 05-19-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-19-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA DANLS3 SPKER LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA DRURY3 ACKEE SQS YUYUN WHINY4 KDFW\" readonly>";
@@ -698,41 +699,56 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>DFW EAST 2 SOUTH: <input style=\"width:75%\" value=\"KBNA DRURY3 DRURY SQS AEX DAS IAH CRGER GUTZZ BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA MEM LIT FINGR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
 					break;
-				case "LAX": // No Faa pref  // Updated 10-21-24
+				case "LAX": // Updated 05-19-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-19-2025 MP -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-19-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG KF33E IRW J6 ZUN GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA DRURY3 HAGIE MHZ AEX J50 ACT INK J50 GBN J104 TNP BASET5 KLAX\" readonly>";
+					result += "<br/><b style=\"color:orange\">For ZFW avoidance use ...AEX J50 LFK JCT J86 ELP...<\/b>";
+					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS J45 STL J24 MCI J80 HLC HGO J197 DVC PEEWE Q98 HAKMN KLAX\" readonly>";
 					// result += "<br/>HAR via ICT: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS ICT RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
 					// ^ cuts through a small corner of ZAB
-					result += "<br/><br/>North via STL/MCI: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS J45 STL J24 SLN J102 ALS J110 RSK J64 TBC JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
-					result += "<br/>South/Avoid ZFW: <input style=\"width:75%\" value=\"KBNA DRURY3 HAGIE MHZ AEX TNV CWK JCT J2 ELP J50 GBN J104 TNP BASET5 KLAX\" readonly>";
-					result += "<br/>North/Avoid ZAB: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS HAKAT CITGA FASTT GCK J28 HBU CHESZ Q88 HAKMN ANJLL4 KLAX\" readonly>";
-					result += "<br/><br/>ABI: <input style=\"width:75%\" value=\"KBNA DANLS3 SPKER SQS EIC J4 ABI EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
-					result += "<br/>PNH 1: <input style=\"width:75%\" value=\"KBNA DANLS3 SPKER MEM J66 LIT J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+					// result += "<br/><br/>ABI: <input style=\"width:75%\" value=\"KBNA DANLS3 SPKER SQS EIC J4 ABI EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					// result += "<br/>PNH 1: <input style=\"width:75%\" value=\"KBNA DANLS3 SPKER MEM J66 LIT J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA J46 TUL J78 PKE J104 TNP BASET5 KLAX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
 					break;
-				case "MIA": // Updated 10-21-24
-					result += "<!-- Updated 10-21-24 -->";
+				case "MIA": // Updated 05-19-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-19-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA FLAME3 FLAME ACORI FROGZ4 KMIA\" readonly>";
-					result += "<br/><br/>East Coast FL: <input style=\"width:75%\" value=\"KBNA TIPPN3 BRXTN RMG MCN CRG DEBRL CSTAL2 KMIA\" readonly>";
-					result += "<br/>East via SPA: <input style=\"width:75%\" value=\"KBNA TAZMO3 BURME VXV SPA QUIWE Q93 DEBRL CSTAL2 KMIA\" readonly>";
-					result += "<br/>Gulf: <input style=\"width:75%\" value=\"KBNA DRURY3 JALAR IGB MEI J31 HRV Q105 BLVNS Y290 BAGGS RSW PALMZ2 KMIA\" readonly>";
+					result += "<br/><b style=\"color:orange\">Anything other than what is listed above will trigger a Mandatory Route violation<\/b>";
+					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KBNA TIPPN3 BRXTN RMG MCN CRG DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/><br/>East via SPA: <input style=\"width:75%\" value=\"KBNA TAZMO3 BURME VXV SPA QUIWE Q93 DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/>West via HRV: <input style=\"width:75%\" value=\"KBNA DRURY3 JALAR IGB MEI J31 HRV Q105 BLVNS Y290 BAGGS RSW PALMZ2 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA RMG AMG CRG OMN ANNEY4 KMIA\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
 					break;
-				case "PHX": // No faa pref rte  // Updated 10-21-24
+				case "PHL": // Updated 05-19-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-19-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBNA DANLS3 SPKER FSM IRW J78 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/><br/>South via ABI: <input style=\"width:75%\" value=\"KBNA DRURY3 ACKEE CRAMM Q32 ELD FUZ J4 ABI J66 EWM DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/>NW Arrival: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG J46 TUL MMB CIM RSK J64 TBC TENTS BRUSR1 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBNA CHADM3 SWAPP Q34 GVE PAATS4 KPHL\" readonly>";
+					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA TIPPN3 BRXTN RMG TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA GDOGG3 FAPER VHP ROD J152 JST BOJID4 KPHL\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
 					break;
-				
+				case "PHX": // Updated 05-19-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-19-2025 MP -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-19-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA DANLS3 SPKER FSM IRW J78 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA DRURY3 ACKEE CRAMM Q32 ELD FUZ J4 ABI J66 EWM DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG J46 TUL MMB CIM RSK J161 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>South via AEX: <input style=\"width:75%\" value=\"KBNA DRURY3 HAGIE MHZ AEX J50 ACT INK J4 EWM DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/><b style=\"color:orange\">For ZFW avoidance use ...AEX J50 LFK JCT J86 FST EWM...<\/b>";
+					result += "<br/>NW Arrival: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS J45 STL J24 MCI J80 GLD J146 HBU J128 GCN TENTS KPHX\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
+					break;
 			}
 		break; // End of BNA
 
