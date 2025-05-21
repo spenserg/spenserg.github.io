@@ -140,11 +140,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PWL BIZEX Q75 GVE AIROW CHSLY6 KCLT\" readonly>";
 					result += "<br/>T7<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB NELIE ORCHA HEADI Q97 SAWED GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
 					break;
-				case "DFW": // Updated 10-22-24
-					result += "<!-- Updated 10-22-24 -->";
+				case "DFW": // Updated 05-20-2025
+					result += "<!-- Updated 05-20-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-07-2025
-					result += "<br/><br/><input style=\"width:75%\" value=\"KALB CEDOR DANZI HNK J49 PSB Q71 WISTA Q80 FAREV RAMRD Q68 LITTR MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>SE Arrival: <input style=\"width:75%\" value=\"KALB CEDOR DANZI HNK J49 PSB Q71 GEFFS HVQ Q68 RAMRD IZAAC YUYUN WHINY4 KDFW\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KALB CEDOR DANZI HNK J49 PSB Q71 GEFFS HVQ Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KALB GALWA PAYGE Q822 FNT J94 OBK MZV IRK J26 ICT HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/>South: <input style=\"width:75%\" value=\"KALB CEDOR DANZI HNK J49 PSB Q71 BOBBD RMG VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/><br/>South via ZDC<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KALB CANAN TRIBS Q448 PTW J48 CSN FANPO Q40 BFOLO IGB SQS YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/>Coastal<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KALB GDM FOXWD Q439 RIFLE HEADI Q97 SAWED GUILD Q409 SESUE PANDY TWINS NOKIE MGMRY GARTS AEX PNUTS BEREE3 KDFW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b><br/>"; // toddo
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-07-2025
 					result += "<!-- Verified with ATCSCC on 05-07-2025 -->";
