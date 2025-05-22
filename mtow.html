@@ -366,9 +366,9 @@ function compute (str_override = "") {
 			output += '<br/>XXX: <input style=\'width:75%\' value=\'' +
 				'result += \"<br/><input style=\\\"width:75%\\\" value=\\\"YYY\\\" readonly>\";' +
 				'\' readonly>';
-			output += '<br/><br/><input style=\'width:75%\' value=\'case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
+			output += '<br/><br/><input style=\'width:75%\' value=\'case "' + convert_iata(result[3]) + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
 			output += '<br/><input style=\'width:75%\' value=\'result += \"<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->\";\' readonly>';
-			output += '<textarea rows="8" cols="80">case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + tmp_textarea_tabs +
+			output += '<textarea rows="8" cols="80">case "' + convert_iata(result[3]) + '": // Updated ' + tmp_today_str + mr_text + tmp_textarea_tabs +
 				'result += "<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->";' + tmp_textarea_tabs +
 				'result += "<br/><br/><b>Faa Pref Route:</b>";</textarea>';
 			output += '<br/><button onclick=\"toggle_mandatory_routes()\">Turn ' + (mandatory_routes_checked ? "OFF" : "ON") + ' Mandatory Routes</button>';
