@@ -153,20 +153,39 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Verified with ATCSCC on 05-07-2025 -->";
 					result += "<br/>A1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB ALB J6 HVQ Q68 RAMRD IZAAC YUYUN BEREE3 KDFW\" readonly>";
 					break;
-				case "ORD": // Updated 10-22-24
-					result += "<!-- Updated 10-22-24 -->";
+				case "ORD": // Updated 05-21-2025
+					result += "<!-- Updated 05-21-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KALB PAYGE Q822 FNT WYNDE2 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KALB PAGER NOVON KENLU NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>"; // CDR 3N
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KALB ALB J6 JEFFF Q480 AIR J80 EMPTY J149 FWA WATSN4 KORD\" readonly>"; // CDR A8
+					result += "<br/><br/>North via SSM<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KALB BUGSY POLTY OXASA SSM GRB SHIKY FYTTE7 KORD\" readonly>"; // CDR CJ
 					// result += "<br/><br/><b>Non RNAV</b><br/>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>1N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB ARNII Q816 GOATR WOZEE NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>";
-					result += "<br/>3K (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON SIKBO KENPA OBSTR WYNDE2 KORD\" readonly>";
-					result += "<br/>4K (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB BUGSY RADEN KENPA OBSTR WYNDE2 ORD\" readonly>";
-					result += "<br/>4N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB BUGSY LETAK NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>";
-					result += "<br/>A6 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB J6 JEFFF Q480 CANDR RAV Q62 WATSN WATSN4 KORD\" readonly>";
-					result += "<br/>A8 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB J6 JEFFF Q480 AIR J80 EMPTY J149 FWA WATSN4 KORD\" readonly>";
-					result += "<br/>K3 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON SIKBO KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
-					result += "<br/>K4 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB BUGSY RADEN KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-21-2025
+					result += "<!-- Verified with ATCSCC on 05-21-2025 -->";
+					result += "<br/>1K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB ARNII Q816 GOATR WOZEE KENPA OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB ARNII Q816 GOATR WOZEE NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>2K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON KENPA OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>2N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON SIKBO NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>3K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON SIKBO KENPA OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>3N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON KENLU NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>4K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB BUGSY RADEN KENPA OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>4N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB BUGSY LETAK NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>5K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB ARNII Q816 GOATR WOZEE KENPA OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>6K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON KENPA OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>A6<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB ALB J6 JEFFF Q480 CANDR RAV Q62 WATSN WATSN4 KORD\" readonly>";
+					result += "<br/>A8<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB ALB J6 JEFFF Q480 AIR J80 EMPTY J149 FWA WATSN4 KORD\" readonly>";
+					result += "<br/>CJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB BUGSY POLTY OXASA SSM GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>K1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB ARNII Q816 GOATR WOZEE KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>K2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>K3<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON SIKBO KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>K4<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB BUGSY RADEN KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>N1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB ARNII Q816 GOATR WOZEE NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>N2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON SIKBO NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>N3<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAGER NOVON KENLU NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>N4<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB BUGSY LETAK NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAYGE Q822 FNT WYNDE2 KORD\" readonly>";
+					result += "<br/>YZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAYGE Q822 GONZZ FARGN CHAAP Q436 EMMMA WYNDE2 KORD\" readonly>";
 					break;
 			}
 		break; // End of ALB
