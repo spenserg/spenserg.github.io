@@ -289,33 +289,35 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>5N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB DLH FSD ONL PORDR AALLE3 KDEN\" readonly>";
 			result += "<br/>NR (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD IOW DSM OBH ELJAY LANDR3 KDEN\" readonly>";
 			break;
-		case "DFW": // Updated 02-14-2025
-			result += "<!-- Updated 02-14-2025 -->";
+		case "DFW": // Updated 05-26-2025 // Mandatory Routes checked
+			result += "<!-- Updated 05-26-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD ACITO ADELL ARLYN STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
-			result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI PER IFI HOFFF JOVEM6 KDFW\" readonly>";
+			result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT HOFFF VKTRY2 KDFW\" readonly>"; // CDR 2W
+			result += "<br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL FAM J137 LIT FEWWW SEEVR4 KDFW\" readonly>"; // Based on CDR 2S
+			result += "<br/><br/>West via OVR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE OVR J21 JUDGE ICT IRW IBAKE VKTRY2 KDFW\" readonly>"; // CDR 8W
 			result += "<br/>SE Arrival: <input style=\"width:75%\"; value=\"KORD BACEN BLOKR BEKKI ENL J71 MEM SQS MLU YUYUN BEREE3 KDFW\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD RBS STL J8 SGF RZC FSM FINGR9 KDFW\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>0S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
-			result += "<br/>0W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ BUM J87 TUL KLAWW VKTRY2 KDFW\" readonly>";
-			result += "<br/>1W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI TUL HITUG SEEVR4 KDFW\" readonly>";
-			result += "<br/>2S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL FAM J137 LIT FEWWW SEEVR4 KDFW\" readonly>";
-			result += "<br/>2W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT HOFFF VKTRY2 KDFW\" readonly>";
-			result += "<br/>3W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
-			result += "<br/>4W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT IFI HOFFF VKTRY2 KDFW\" readonly>";
-			result += "<br/>5S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
-			result += "<br/>6W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT HOFFF VKTRY2 KDFW\" readonly>";
-			result += "<br/>7W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
-			result += "<br/>8W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE OVR J21 JUDGE ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
-			result += "<br/>W1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI TUL HITUG BRDJE5 KDFW\" readonly>";
-			result += "<br/>W2 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT HOFFF JOVEM6 KDFW\" readonly>";
-			result += "<br/>W3 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT IRW IBAKE JOVEM6 KDFW\" readonly>";
-			result += "<br/>W3 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
-			result += "<br/>W4 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT IFI HOFFF VKTRY2 KDFW\" readonly>";
-			result += "<br/>W6 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT HOFFF VKTRY2 KDFW\" readonly>";
-			result += "<br/>W7 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-26-2025
+			result += "<!-- Verified with ATCSCC on 05-26-2025 -->";
+			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN RZC FSM RRNET SEEVR4 KDFW\" readonly>";
+			result += "<br/>0W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ BUM J87 TUL KLAWW VKTRY2 KDFW\" readonly>";
+			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI TUL HITUG SEEVR4 KDFW\" readonly>";
+			result += "<br/>2S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL FAM J137 LIT FEWWW SEEVR4 KDFW\" readonly>";
+			result += "<br/>2W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT HOFFF VKTRY2 KDFW\" readonly>";
+			result += "<br/>3W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
+			result += "<br/>5S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
+			result += "<br/>6W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT HOFFF VKTRY2 KDFW\" readonly>";
+			result += "<br/>7W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
+			result += "<br/>8W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE OVR J21 JUDGE ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
+			result += "<br/>W0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ BUM J87 TUL KLAWW JOVEM6 KDFW\" readonly>";
+			result += "<br/>W1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI TUL HITUG BRDJE5 KDFW\" readonly>";
+			result += "<br/>W2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT HOFFF JOVEM6 KDFW\" readonly>";
+			result += "<br/>W3<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT IRW IBAKE JOVEM6 KDFW\" readonly>";
+			result += "<br/>W4<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT IFI HOFFF JOVEM6 KDFW\" readonly>";
+			result += "<br/>W6<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT HOFFF JOVEM6 KDFW\" readonly>";
+			result += "<br/>W7<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT IRW IBAKE JOVEM6 KDFW\" readonly>";
 			break;
 		case "DSM": // Updated 02-14-2025
 			result += "<!-- Updated 02-14-2025 -->";
