@@ -1150,24 +1150,33 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>D7<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q80 ENGRA BNA SQS AEX DAS IAH CRGER GUTZZ SOCKK4 KDFW\" readonly>";
 					result += "<br/>D8<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q80 ENGRA BNA SQS YUYUN WHINY4 KDFW\" readonly>";
 					break;
-				case "MIA": // Updated 12-23-24
-					result += "<!-- Updated 12-23-24 -->";
+				case "MIA": // Updated 05-27-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-27-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBWI CONLE5 SCOOB EARZZ SKARP Y313 HOAGG BNFSH2 KMIA\" readonly>";
-					result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KBWI CONLE5 SCOOB PAACK Q97 DEBRL CSTAL2 KMIA\" readonly>";
-					result += "<br/>Full OW: <input style=\"width:75%\" value=\"KBWI DAILY COLIN HUBBS EDDYS ECG AR8 OXANA ROBBB Y493 JENKS HOAGG BNFSH2 KMIA\" readonly>";
+					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBWI CONLE5 SCOOB PAACK Q97 DEBRL CSTAL2 KMIA\" readonly>"; // CDR 00
+					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBWI TERPZ8 MAULS Q40 FEEDS THRSR HONID FROGZ4 KMIA\" readonly>"; // CDR 52
+					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBWI CONLE5 SCOOB EDDYS ECG AR8 OXANA ROBBB Y493 JENKS HOAGG BNFSH2 KMIA\" readonly>";
+					result += "<br/>West via VXV<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q68 HVQ SPAYD VXV THRSR HONID FROGZ4 KMIA\" readonly>"; // CDR 62
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBWI OTT HUBBS J55 RDU FLO CHS SAV CRG OMN KMIA\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>00 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI CONLE5 SCOOB PAACK Q97 DEBRL CSTAL2 KMIA\" readonly>";
-					result += "<br/>50 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 RRSIN GSO Q75 SLOJO Q83 JEVED Q97 DEBRL CSTAL2 KMIA\" readonly>";
-					result += "<br/>51 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 FLASK COREX SPA QUIWE Q93 DEBRL CSTAL2 KMIA\" readonly>";
-					result += "<br/>52 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 FLASK COREX THRSR HONID FROGZ4 KMIA\" readonly>";
-					result += "<br/>53 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 MAULS Q40 ALEAN VXV THRSR HONID FROGZ4 KMIA\" readonly>";
-					result += "<br/>60 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q80 WISTA NEALS J85 SPA ALLMA BULZI Q81 ENDEW BROMO FROGZ4 KMIA\" readonly>";
-					result += "<br/>62 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q68 HVQ SPAYD VXV THRSR HONID FROGZ4 KMIA\" readonly>";
-					result += "<br/>71: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 RRSIN GSO Q75 SLOJO Q83 JEVED Q97 DEBRL CSTAL2 KMIA\" readonly>";
-					result += "<br/>72: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 RRSIN GSO Q75 SLOJO Q75 TEEEM BULZI Q81 ENDEW BROMO FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-27-2025
+					result += "<!-- Verified with ATCSCC on 05-27-2025 -->";
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI CONLE5 SCOOB PAACK Q97 DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/>20<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI DUKPN1 SPEAK LAFLN TRPOD Q409 CRPLR SKARP Y313 HOAGG BNFSH2 KMIA\" readonly>";
+					result += "<br/>43<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI CONLE5 SCOOB PAACK Q97 DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/>49<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI CONLE5 SCOOB GUILD Q409 ISUZO BULZI Q81 ENDEW BROMO FROGZ4 KMIA\" readonly>";
+					result += "<br/>50<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 RRSIN GSO Q83 JEVED Q97 DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/>51<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 FLASK GOWBE BURGG QUIWE Q93 DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/>52<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 MAULS Q40 FEEDS THRSR HONID FROGZ4 KMIA\" readonly>";
+					result += "<br/>53<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 MAULS Q40 ALEAN VXV THRSR HONID FROGZ4 KMIA\" readonly>";
+					result += "<br/>55<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 FLASK COREX SPA WIGVO Q77 SHRKS Q89 PRMUS DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q80 WISTA NEALS J85 SPA ALLMA BULZI Q81 ENDEW BROMO FROGZ4 KMIA\" readonly>";
+					result += "<br/>62<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI FOXHL1 OTTTO Q68 HVQ SPAYD VXV THRSR HONID FROGZ4 KMIA\" readonly>";
+					result += "<br/>71<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 RRSIN GSO Q83 JEVED Q97 DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/>72<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI TERPZ8 RRSIN GSO Q75 SLOJO Q75 TEEEM BULZI Q81 ENDEW BROMO FROGZ4 KMIA\" readonly>";
+					result += "<br/>AR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI CONLE5 SCOOB EARZZ SKARP Y313 HOAGG BNFSH2 KMIA\" readonly>";
+					result += "<br/>ML<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBWI CONLE5 SCOOB PAACK Q97 EBAYY MOGAE BNFSH2 KMIA\" readonly>";
 					break;
 			}
 		break; // End of BWI
