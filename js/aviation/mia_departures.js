@@ -135,8 +135,8 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q118 THRSR VXV TONIO Q34 SITTR CJAAE RAVNN8 KBWI\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA FLMGO2 STYMY CRG IRQ SPA J85 NEALS CJAAE RAVNN8 KBWI\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-22-2025
-			result += "<!-- Verified with ATCSCC on 02-22-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-27-2025
+			result += "<!-- Verified with ATCSCC on 05-27-2025 -->";
 			result += "<br/>A0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 RAYVO Q113 AARNN THHMP RAVNN8 KBWI\" readonly>";
 			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO Q99 OGRAE GOOOB THHMP RAVNN8 KBWI\" readonly>";
 			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 CAMJO Q99 OGRAE GOOOB THHMP RAVNN8 KBWI\" readonly>";
