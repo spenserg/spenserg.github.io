@@ -6830,18 +6830,22 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>NF<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN GBN J50 SSO EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/>NJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN TGOLD PXR J18 ABQ J6 IRW FSM MEMFS Q34 HITMN TAZZA FILPZ4 KCLT\" readonly>";
 					break;
-				case "DFW":
+				case "DFW": // Updated 05-29-2025
+					result += "<!-- Updated 05-29-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSAN ZZOOO4 TGOLD PXR ONM TXO MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/>Weekend: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN KA21S REYOK LBB VKTRY VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSAN MZB J2 GBN J50 SSO J4 INK ACT YEAGR4 KDFW\" readonly>";
-					result += "<br/><br/><b>CDRS (S Flow)</b>";
-					result += "<br/>DG (Ok to File): <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
-					result += "<br/>JU (Ok to File): <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
-					result += "<br/>TN (Ok to File): <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP J86 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
-					result += "<br/>UK (Ok to File): <input style=\"width:75%\" value=\"KSAN ZZOOO4 TGOLD PXR J18 SJN J74 TXO TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-29-2025
+					result += "<!-- Verified with ATCSCC on 05-29-2025 -->";
+					result += "<br/>DG<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN GBN J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/>JE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN GBN J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/>JU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN GBN J50 ELP FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/>SE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN GBN J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/>TN<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN GBN J50 ELP J86 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
+					result += "<br/>UK<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN TGOLD PXR J18 SJN J74 TXO TURKI VKTRY2 KDFW\" readonly>";
 					break;
 				case "LAX": // Updated 01-17-2025
 					result += "<!-- Updated 01-17-2025 -->";
