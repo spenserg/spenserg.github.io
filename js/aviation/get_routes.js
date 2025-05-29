@@ -411,6 +411,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KAUS MUCKY3 MUCKY JCT J2 ALIBY J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAUS ELOEL3 ABI TXO J72 ABQ J78 DRK GABBL HLYWD1 KLAX\" readonly>"; // CDR 9X
+					result += "<br/><b style=\"color:orange\">If LANCER sua is active: KAUS ELOEL3 ABI DUMPS TXO J72...<\/b>";
 					//result += "<br/><br/>Via ABQ: <input style=\"width:75%\" value=\"KAUS AEROZ2 SJT CME J15 ABQ J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					//result += "<br/><br/>NO EWM ELP: <input style=\"width:75%\" value=\"KAUS ELOEL3 ABI TXO CNX ONM PXR BXK J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -4119,6 +4120,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>South/ZID Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI RACER8 SGF ARG J46 BNA TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMCI STL J45 BNA J46 VXV LIINN3 KCLT\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-29-2025
+					break;
+				case "DCA": // Updated 05-29-2025 // Mandatory Routes checked
+					result += "<!-- Updated 05-29-2025 MP -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KMCI LAKES5 COU STL J24 VHP J80 BOWRR LUISE FRDMM6 KDCA\" readonly>";
+					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI RACER8 SGF TWITS Q36 HITMN Q34 SITTR TRUPS5 KDCA\" readonly>";
+					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI ROYAL2 TONCE DSM J144 DBQ BAE J34 BUCKO FRDMM6 KDCA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-29-2025
 					break;
 				case "DFW": // Updated 01-15-2025
