@@ -590,18 +590,22 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>LP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J60 DVV ZAKRY Q88 HAKMN ANJLL4 KLAX\" readonly>";
 			result += "<br/>NR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD IOW PWE HLC J64 HEC BASET5 KLAX\" readonly>";
 			break;
-		case "MCI": // Updated 01-10-2025
-			result += "<!-- Updated 01-10-2025 -->";
+		case "MCI": // Updated 05-29-2025
+			result += "<!-- Updated 05-29-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD PEKUE PIGGG QUANE CARET BULET RUDDH3 KMCI\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET BULET RUDDH3 KMCI\" readonly>"; // CDR 1W
+			result += "<br/><br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN SPI EUING RUDDH3 KMCI\" readonly>"; // CDR 1S
+			result += "<br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE GRB EAU ONTIJ DABOY ASIIX JSONN4 KMCI\" readonly>"; // CDR 1N
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD JOT J26 IRK BQS8 KMCI\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>1S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN SPI EUING RUDDH3 KMCI\" readonly>";
-			result += "<br/>1W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET BULET RUDDH3 KMCI\" readonly>";
-			result += "<br/>2S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL EUING RUDDH3 KMCI\" readonly>";
-			result += "<br/>2W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE OVR ASIIX JSONN4 KMCI\" readonly>";
-			result += "<br/>AS (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RBS SPI EUING RUDDH3 KMCI\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-29-2025
+			result += "<!-- Verified with ATCSCC on 05-29-2025 -->";
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE GRB EAU ONTIJ DABOY ASIIX JSONN4 KMCI\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN SPI EUING RUDDH3 KMCI\" readonly>";
+			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET BULET RUDDH3 KMCI\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL EUING RUDDH3 KMCI\" readonly>";
+			result += "<br/>2W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE OVR ASIIX JSONN4 KMCI\" readonly>";
+			result += "<br/>AS<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RBS SPI EUING RUDDH3 KMCI\" readonly>";
 			break;
 		case "MCO": // Updated 04-06-2025
 			result += "<!-- Updated 04-06-2025 -->";
