@@ -1436,6 +1436,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN BVT BDF VIGGR Q122 ONL J114 DVV RSK GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>South: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY FLM RAMRD Q68 LITTR TXK J42 ABI J4 EWM DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/>BUM: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN VHP J110 BUM ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>IRW: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN VHP J110 STL J8 SGF J98 IRW J6 ABQ J78 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN VHP STL CNU MMB TCC J78 ZUN BUNTR3 KPHX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
