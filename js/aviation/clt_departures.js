@@ -670,19 +670,22 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VUZ J14 LIT KLIT\" readonly>";
 			result += "<br/>WE: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ Q68 LITTR KLIT\" readonly>";
 			break;
-		case "MCI": // Updated 02-06-2025
-			result += "<!-- Updated 02-06-2025 -->";
+		case "MCI": // Updated 05-29-2025
+			result += "<!-- Updated 05-29-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY5 BNA ARG SGF TYGER7 KMCI\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM Q50 IIU J8 BOSIE LAPOW RUDDH3 KMCI\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM Q50 IIU J8 BOSIE LAPOW RUDDH3 KMCI\" readonly>";
+			result += "<br/><br/>North via HVQ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ VHP SPI BQS8 KMCI\" readonly>"; // CDR WE
+			result += "<br/>South via VUZ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q116 SGF TYGER7 KMCI\" readonly>"; // CDR ES
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT CLT3 PITTY VXV BNA J46 ARG SGF TYGER7 KMCI\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>BE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DBN MGMRY IGB MEM J41 SGF TYGER7 KMCI\" readonly>";
-			result += "<br/>ES (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q116 SGF TYGER7 KMCI\" readonly>";
-			result += "<br/>JJ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE FLM J24 VHP J80 SPI BQS8 KMCI\" readonly>";
-			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA ARG SGF TYGER7 KMCI\" readonly>";
-			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ VHP SPI BQS8 KMCI\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-29-2025
+			result += "<!-- Verified with ATCSCC on 05-29-2025 -->";
+			result += "<br/>BE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DBN MGMRY IGB MEM J41 SGF TYGER7 KMCI\" readonly>";
+			result += "<br/>ES<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q116 SGF TYGER7 KMCI\" readonly>";
+			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE FLM J24 VHP J80 SPI BQS8 KMCI\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA ARG SGF TYGER7 KMCI\" readonly>";
+			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ VHP SPI BQS8 KMCI\" readonly>";
 			break;
 		case "MCO": // Updated 02-06-2025
 			result += "<!-- Updated 02-06-2025 -->";
