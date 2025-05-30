@@ -898,7 +898,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "STS": // Updated 05-30-2025
 			result += "<!-- Updated 05-16-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR CURIV J212 DECAS J65 LANDO RGOOD VNYRD1 KSTS\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR J212 DECAS J65 LANDO RGOOD VNYRD1 KSTS\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 GCN BCE ILC J80 OAL YOSEM VNYRD1 KSTS\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX FYRBD1 MOHAK J2 IPL SXC IKAYE RGOOD VNYRD1 KSTS\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
