@@ -7297,10 +7297,10 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "SJC":
 			switch(arvl) {
-				case "DFW": // Updated 05-16-2025 // Mandatory Routes checked
+				case "DFW": // Updated 05-30-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-16-2025 MP -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSJC BMRNG4 SYRAH OAL ILC BCE RSK DIXAN Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KSJC SPTNS1 TECKY NTELL OAL ILC BCE RSK DIXAN Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE PMD J65 DECAS J212 BXK Q180 EWM J4 INK GEEKY SOCKK4 KDFW\" readonly>";
 					result += "<br/>NE Arrival: <input style=\"width:75%\" value=\"KSJC BMRNG4 SYRAH Q128 JSICA MLF J28 ICT TUL HITUG SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/>DFW BGTOE: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE AVE J6 PMD BLH J169 TFD J50 ELP FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
