@@ -517,23 +517,24 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KILNS5 AUDII DORRN CAVLR6 KIAD\" readonly>";
 			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD JARLO GIBBZ5 KIAD\" readonly>";
 			break;
-		case "IAH": // Updated 02-06-2025
-			result += "<!-- Updated 02-06-2025 -->";
+		case "IAH": // Updated 06-03-2025 // Mandatory Routes checked
+			result += "<!-- Updated 06-03-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR SARKK AEX SKNRD4 KIAH\" readonly>";
-			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS CAE ALLMA KJ06O SJI NNCEE2 KIAH\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL J87 CVE DRLLR5 KIAH\" readonly>";
-			result += "<br/><br/>DOOBI N/S: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR MGMRY CATLN Q56 SJI LINKK1 KIAH\" readonly>";
-			result += "<br/>IAHAEX: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC SWB ZEEKK2 KIAH\" readonly>";
-			result += "<br/>LINKK1: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR SARKK AEX DOOBI2 KIAH\" readonly>";
-			result += "<br/>LINKK2: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ MGMRY GARTS MCB J50 AEX DOOBI2 KIAH\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR SARKK AEX DOOBI2 KIAH\" readonly>";
+			result += "<br/><b style=\"color:orange\">ZEEKK/GESNR okay too ...AEX ZEEKK2 KIAH (east flow) -or- ...AEX GESNR1 KIAH (west flow)<\/b>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC ELD PLANB ZEEKK2 KIAH\" readonly>";
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS FISHO Q75 TEEEM AMG CABLO DEFUN J2 SJI NNCEE2 KIAH\" readonly>";
+			result += "<br/><br/>North via MEM<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN GQO MEM ELD PLANB ZEEKK2 KIAH\" readonly>";
+			result += "<br/>North via TUL<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL J87 CVE DRLLR5 KIAH\" readonly>";
+			// result += "<br/><br/>DOOBI N/S: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR MGMRY CATLN Q56 SJI LINKK1 KIAH\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 DEBIE ODF RMG VUZ MHZ AEX OHIIO4 KIAH\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>BE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DBN MGMRY SJI NNCEE2 KIAH\" readonly>";
-			result += "<br/>JJ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM BWG LIT DHART SWB ZEEKK2 KIAH\" readonly>";
-			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR SARKK AEX GESNR1 KIAH\" readonly>";
-			result += "<br/>WE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD ZIEBR YOCKY Q68 LITTR DHART SWB ZEEKK2 KIAH\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-03-2025
+			result += "<!-- Verified with ATCSCC on 06-03-2025 -->";
+			result += "<br/>BE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DBN MGMRY SJI LINKK1 KIAH\" readonly>";
+			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM BWG LIT DHART SWB ZEEKK2 KIAH\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR SARKK AEX ZEEKK2 KIAH\" readonly>";
+			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD ZIEBR YOCKY Q68 LITTR DHART SWB ZEEKK2 KIAH\" readonly>";
 			break;
 		case "ILM": // Updated 06-03-2025
 			result += "<!-- Updated 06-03-2025 P -->";
