@@ -5605,12 +5605,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 				case "LAX": // Updated 03-10-2025
 					result += "<!-- Updated 03-10-2025 -->";
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 STL J134 ICT LBL CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR ST
-					result += "<br/><br/>PTW/North: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 HVE PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>"; // CDR 60
-					result += "<br/>STOEN/South: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 BFOLO FIBER HRISN IZAAC EIC J4 ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>"; // CDR EM
-					result += "<br/>Gulf Coast: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 NIOLA GRGIA ARNNY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT FST ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>"; // CDR EP
-					result += "<br/>North via BUF/MKE<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL FJC CFB Q818 DERLO Q935 MONEE DABJU J68 BAE KG78K KP75G KP72E KP69C KD66A KD60Y FLOOD KD48U TAHIB JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
-					result += "<br/><br/>DQO TUNNEL WEST (FL230 to OTTTO): <input style=\"width:75%\" value=\"KPHL DQO BELAY MORTY FOXHL OTTTO Q176 STL J134 ICT TOTOE CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
-					result += "<br/>MEX OBGIY WEST 2: <input style=\"width:75%\" value=\"KPHL STOEN Q75 GVE LYH COLZI Q52 CHOPZ MGMRY SJI LEV BOWFN HOODO PSX THX OBGIY AGNID VYLLA J92 TUS J104 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>PTW/North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 HVE PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>"; // CDR 60
+					result += "<br/>STOEN/South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 BFOLO FIBER HRISN IZAAC EIC J4 ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>"; // CDR EM
+					result += "<br/><br/>DITCH/North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL DITCH Q437 HNNAH Q450 JFK CFB Q818 WOZEE Q935 HOCKE BAE J16 MCW J148 DTA MLF WINEN Q73 HAKMN ANJLL4 KLAX\" readonly>"; // CDR 95
+					result += "<br/>South via HRV<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 NIOLA GRGIA ARNNY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT FST ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>"; // CDR EP
+					result += "<br/><br/>DQO TUNNEL WEST (FL230 to OTTTO)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL DQO BELAY MORTY FOXHL OTTTO COLNS Q176 CIM DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR DQ
+					result += "<br/>MEX OBGIY WEST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL STOEN Q75 GVE LYH COLZI Q52 CHOPZ MGMRY SJI LEV BOWFN HOODO PSX THX OBGIY AGNID VYLLA J92 TUS J104 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPHL MXE LRP J6 FLIRT J110 VHP J80 MCI J24 SLN J96 GUP J96 DRK J231 TNP SEAVU2 KLAX\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-10-2025
