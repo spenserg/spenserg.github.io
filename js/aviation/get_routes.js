@@ -2971,7 +2971,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 				case "CLT": // Updated 01-09-2025
 					result += "<!-- Updated 01-09-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL130):</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KGSO BANKR BANKR5 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KGSP BANKR BANKR5 KCLT\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed 03-10-25
 					break;
@@ -3353,8 +3353,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KIND ROCKY1 SPI J80 MCI J24 SLN J96 CIM ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIND OOM5 PXV J78 FAM J98 SGF PER MMB FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND MEARZ7 BVT J89 CADIZ JOT MZV J18 GCK CIM ZUN EAGUL6 KPHX\" readonly>"; // CDR BT
-					result += "<br/><br/>BUM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIND ROCKY1 STL J134 ICT LBL FTI J244 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>South via EWM: <input style=\"width:75%\" value=\"KIND DAWNN1 MYS LAJUG Q68 LITTR TXK J131 FUZ J4 EWM DRRVR PINNG1 KPHX\" readonly>";
+					// result += "<br/><br/>BUM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIND ROCKY1 STL J134 ICT LBL FTI J244 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>South via EWM: <input style=\"width:75%\" value=\"KIND DAWNN1 MYS LAJUG Q68 LITTR TXK J131 FUZ J4 EWM DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/>North via FQF: <input style=\"width:75%\" value=\"KIND ROCKY1 SPI IRK LNK J60 HCT J128 HBU J10 RSK J161 ZUN EAGUL6 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-05-2025
 					result += "<!-- Verified with ATCSCC on 06-05-2025 -->";
