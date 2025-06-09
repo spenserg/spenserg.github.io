@@ -889,7 +889,6 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "GSO": // Updated 04-10-2025
 			result += "<!-- Updated 04-10-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>"; // Not CDR 0P
-			KDFW TRYTN4 LOOSE MEM VXV GZG BROOK4 KGSO
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEM GQO BURGG TRAKS4 KGSO\" readonly>";
 			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWB MCB MGMRY THRSR BURGG TRAKS4 KGSO\" readonly>";
 			result += "<br/>North: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC SGF J98 FAM J78 IIU OTONE TRAKS4 KGSO\" readonly>";
