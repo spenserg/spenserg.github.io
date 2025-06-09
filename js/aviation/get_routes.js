@@ -7922,6 +7922,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KTPA SZW CEW J50 MCB MLU YEAGR4 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
+				case "LGA": // Updated 06-08-2025 // TODO
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KTPA BAYPO2 CAMJO Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
+
+					// West/ZDC Avoid: KTPA BAYPO2 CAMJO IRQ HVQ GEFFS Q71 PSB MIP4 KLGA
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-08-2025
+					break;
 				case "MIA": // Updated 01-19-2025
 					result += "<!-- Updated 01-19-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
