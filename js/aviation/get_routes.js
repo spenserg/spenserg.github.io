@@ -2586,23 +2586,45 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>SP (Coord Req): <input style=\"width:75%\" value=\"KEWR NEWEL J60 DANNR RAV J64 BURNI TYROO QUARM AIR HVQ J85 SPA QUIWE Q93 DEBRL CSTAL2 KMIA\" readonly>";
 					result += "<br/>TR (Coord Req): <input style=\"width:75%\" value=\"KEWR ELVAE NECCK WHITE Q409 CRPLR PAACK Q97 DEBRL CSTAL2 KMIA\" readonly>";
 					break;
-				case "ORD": // Updated 01-09-2025
-					result += "<!-- Updated 01-09-2025 -->";
+				case "ORD": // Updated 06-10-2025 // Mandatory Routes checked
+					result += "<!-- Updated 06-10-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KEWR  COATE Q436 EMMMA WYNDE2 KORD\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KEWR LANNA J48 PTW LRP GGRIF IHD AIR FWA WATSN4 KORD\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KEWR STOMP HNK ROC SIKBO ECK FNT WYNDE2 KORD\" readonly>";
-					result += "<br/><br/>NY DUCT WEST: <input style=\"width:75%\" value=\"KEWR NEION Q232 DARBO J49 PSB J60 DJB ZANLA WATSN4 KORD\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KEWR COATE Q436 EMMMA WYNDE2 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEWR GAYEL J95 CFB RAAKK Q436 EMMMA WYNDE2 KORD\" readonly>"; // CDR 95
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 AIR J80 EMPTY J149 FWA WATSN4 KORD\" readonly>"; // CDR 80
+					result += "<br/><br/>North via WOSIK<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>"; // CDR 1N
+					result += "<br/>South/ZOB Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEWR PARKE J6 EYTEE J149 FWA WATSN4 KORD\" readonly>"; // CDR X6
+					result += "<br/><br/>North via CAM<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KENPA OBSTR WYNDE2 KORD\" readonly>"; // CDR 2K
+					result += "<br/>North via GRB<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KENPA GRB SHIKY FYTTE7 KORD\" readonly>"; // CDR GS
+					result += "<br/>North/ZOB Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>"; // CDR ZS
+					result += "<br/><br/>GREKI 3<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM Q822 GONZZ FARGN CHAAP Q436 EMMMA WYNDE2 KORD\" readonly>";
+					// result += "<br/>NY DUCT WEST: <input style=\"width:75%\" value=\"KEWR NEION Q232 DARBO J49 PSB J60 DJB ZANLA WATSN4 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KEWR SAX LVZ J70 PMM KORD\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>2N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>";
-					result += "<br/>GS (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
-					result += "<br/>KF (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
-					result += "<br/>KS (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
-					result += "<br/>NE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEION Q232 DARBO J49 PSB J60 DJB NOLNN Q62 WATSN WATSN4 KORD\" readonly>";
-					result += "<br/>PH (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR COATE Q436 EMMMA WYNDE2 KORD\" readonly>";
-					result += "<br/>ZS (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-10-2025
+					result += "<!-- Verified with ATCSCC on 06-10-2025 -->";
+					result += "<br/>1K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE KENPA OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>2K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KENPA OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>2N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO NOSIK ZOHAN OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>3K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO KENPA OBSTR WYNDE2 KORD\" readonly>";
+					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEWEL J60 DJB NOLNN Q62 WATSN WATSN4 KORD\" readonly>";
+					result += "<br/>61<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEWEL J60 PSB YARRK Q436 EMMMA WYNDE2 KORD\" readonly>";
+					result += "<br/>64<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEWEL J60 DANNR RAV Q62 WATSN WATSN4 KORD\" readonly>";
+					result += "<br/>80<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 AIR J80 EMPTY J149 FWA WATSN4 KORD\" readonly>";
+					result += "<br/>95<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL J95 CFB RAAKK Q436 EMMMA WYNDE2 KORD\" readonly>";
+					result += "<br/>CA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM Q822 FNT WYNDE2 KORD\" readonly>";
+					result += "<br/>DJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEWEL J60 CANCR RRONS Q436 EMMMA WYNDE2 KORD\" readonly>";
+					result += "<br/>G3<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM Q822 GONZZ FARGN CHAAP Q436 EMMMA WYNDE2 KORD\" readonly>";
+					result += "<br/>GS<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>J6<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR PARKE J6 COLNS Q176 HNN FLM J24 VHP BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>KF<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>KS<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE KENPA GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>NE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEION Q232 DARBO J49 PSB J60 DJB NOLNN Q62 WATSN WATSN4 KORD\" readonly>";
+					result += "<br/>NZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR COATE Q436 EMMMA WYNDE2 KORD\" readonly>";
+					result += "<br/>X6<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR PARKE J6 EYTEE J149 FWA WATSN4 KORD\" readonly>";
+					result += "<br/>ZS<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
 					break;
 				case "PHX": // Updated 01-09-2025
 					result += "<!-- Updated 01-09-2025 -->";
