@@ -791,14 +791,15 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 02-14-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD BACEN BLOKR RBS AARCH2 KSTL\" readonly>";
-			result += "<br/><br/>West: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE MZV SKOVE LORLE3 KSTL\" readonly>";
+			result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE MZV SKOVE LORLE3 KSTL\" readonly>"; // CDR 1W
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD MZV J87 IRK RIVRS6 KSTL\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>0S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR RBS AARCH2 KSTL\" readonly>";
-			result += "<br/>1W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE MZV SKOVE LORLE3 KSTL\" readonly>";
-			result += "<br/>2W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LMN IRK LORLE3 KSTL\" readonly>";
-			result += "<br/>4S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR RBS SPI SKOVE LORLE3 KSTL\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-14-2025
+			result += "<!-- Verified with ATCSCC on 06-14-2025 -->";
+			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR RBS AARCH2 KSTL\" readonly>";
+			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE MZV SKOVE LORLE3 KSTL\" readonly>";
+			result += "<br/>2W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LMN IRK LORLE3 KSTL\" readonly>";
+			result += "<br/>4S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR RBS SPI SKOVE LORLE3 KSTL\" readonly>";
 			break;
 		case "TPA": // Updated 04-08-2025
 			result += "<!-- Updated 04-08-2025 -->";
