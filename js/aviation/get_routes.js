@@ -4843,19 +4843,21 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "MSY":
 			switch(arvl) {
-				case "CLT": // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
+				case "CLT": // Updated 06-14-202
+					result += "<!-- Updated 06-14-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSY CATLN BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KMSY GOOGY TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KMSY SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
-					result += "<br/><br/>CLT NO JONZE: <input style=\"width:75%\" value=\"KMSY SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
-					result += "<br/>CLT NO JONZE BANKR: <input style=\"width:75%\" value=\"KMSY SJI J2 CEW ALLMA ISUZO CHECR STOCR4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>"; // CDR 0J
+					result += "<br/><br/>CLT NO JONZE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/>CLT NO JONZE BANKR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI J2 CEW ALLMA ISUZO CHECR STOCR4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSY HRV SJI MGM RMG SOT LIINN3 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>0J (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY SJI CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
-					result += "<br/>1P (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MERDN JAMMR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-14-2025
+					result += "<!-- Verified with ATCSCC on 06-14-2025 -->";
+					result += "<br/>0J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY SJI CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/>1P<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MEI JAMMR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/>7T<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 					break;
 				case "DCA": // Updated 01-16-2025
 					result += "<!-- Updated 01-16-2025 -->";
