@@ -5495,8 +5495,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					break;
 				case "DCA": // Updated 03-02-2025
 					result += "<!-- Updated 03-02-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL120):</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KPHL DQO BAINS SUDOY CLIPR CLIPR3 KDCA\" readonly>";
+					result += "<br/><b style=\"color:black\">Avg FL100 but charted minimum FL120 at CLIPR for DCA CLIPR arrival<\/b>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KPHL DQO V166 BELAY V378 BAL KDCA\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed as of 03-03-2025
