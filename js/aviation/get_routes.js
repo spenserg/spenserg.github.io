@@ -3909,14 +3909,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>W5: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAS GIDGT2 TUKRR PGA RSK GCK BUM KK54K KI57O ROD DJB JHW J70 LVZ LENDY8 KJFK\" readonly>";
 					result += "<br/>W6: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAS GIDGT2 TUKRR PGA RSK TOTOE PXV ROD DJB JHW J70 LVZ LENDY8 KJFK\" readonly>";
 					break;
-				case "LAX": // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+				case "LAX": // Updated 06-17-2025
+					result += "<!-- Updated 06-17-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLAS RADYR2 BLAQQ SHTNR ANJLL4 KLAX\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KLAS RADYR2 LVELL TNP BASET5 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLAS HEC BASET5 KLAX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-17-2025
 					break;
 				case "MIA": // Updated 04-09-2025
 					result += "<!-- Updated 04-09-2025 P -->";
