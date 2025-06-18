@@ -942,20 +942,22 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS TAZER MARCI LEV J86 BLD J92 LIDAT RUSME DYAMD5 KSFO\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR HANKO MEM PER LBL DVC ILC RUMPS OAL DYAMD DYAMD5 KSFO\" readonly>";
 			break;
-		case "SLC": // Updated 05-31-2025
-			result += "<!-- Updated 05-31-2025 P -->";
+		case "SLC": // Updated 06-17-2025
+			result += "<!-- Updated 06-17-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/>OW: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV LSU AEX J58 TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>"; // CDR G0
 			result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW J50 MCB TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>"; // CDR H0
 			result += "<br/>North: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN MUDHO Q128 FLOOD JNC J12 HELPR JAZZZ1 KSLC\" readonly>";
-			result += "<br/>South/OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 ELP J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
-			result += "<br/><br/>South/Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 IAH J86 ELP J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
-			result += "<br/>North via MCI: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM MCI KP63C LBF CYS OCS CARTR1 KSLC\" readonly>";
+			result += "<br/><br/>OW/South: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 JCT Q20 CNX J15 RSK DVC HELPR JAZZZ1 KSLC\" readonly>";
+			result += "<br/>OW/West: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 ELP J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
+			result += "<br/><br/>Non OW/South: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 JCT Q20 CNX J15 RSK DVC HELPR JAZZZ1 KSLC\" readonly>";
+			result += "<br/>Non OW/West: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 IAH J86 ELP J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
+			result += "<br/><br/>North via MCI: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM MCI KP63C LBF CYS OCS CARTR1 KSLC\" readonly>";
 			result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW HRVLK KELPP LCHLH MUSYL SAT J138 FST J86 ELP J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
 			result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP KH87A FST J2 ELP J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-31-2025
-			result += "<!-- Verified with ATCSCC on 05-31-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-17-2025
+			result += "<!-- Verified with ATCSCC on 06-17-2025 -->";
 			result += "<br/>B2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA BNGOS4 DOLIE Y280 REDFN Q105 HRV LSU AEX J58 TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS CABLO DEFUN J2 CEW J50 MCB TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/>G0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV LSU AEX J58 TURNN ADUKE J58 FUZ CDS PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>";
