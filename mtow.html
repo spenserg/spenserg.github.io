@@ -402,9 +402,6 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	var playbooks = {};
 	var mr_text = ((mandatory_routes_checked) ? " // Mandatory Routes checked" : "");
 	while(null != (z = reg_tmp.exec(input))) {
-
-console.log(z);
-		
 		dptr = z[2].substring(0, 4);
 		arvl = z[3].substring(1, 4);
 		var textarea_tabs = ((["KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(dptr)) ? "\n\t\t\t" : "\n\t\t\t\t\t");
@@ -495,7 +492,7 @@ console.log(z);
 		today_str + '\' readonly><br/><br/>';
 
 	// Top large box
-	outpuut += '<textarea rows="8" cols="80">' + "case \"" + arvl + "\":" + ' // Updated ' + today_str + mr_text + textarea_tabs +
+	output += '<textarea rows="8" cols="80">' + "case \"" + arvl + "\":" + ' // Updated ' + today_str + mr_text + textarea_tabs +
 		'result += \"<!-- Updated ' + today_str + ' MP -->\";' + textarea_tabs +
 		'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
@@ -564,9 +561,9 @@ function merge_faa_pref(result_arr = {}) {
 
 	// CDRS
 	if (debug_mode) {
-		console.log(faa_pref);
-		console.log(result_arr);
-		console.log(existing_routes);
+		// console.log(faa_pref);
+		// console.log(result_arr);
+		// console.log(existing_routes);
 	}
 
 	return {'result' : result, 'errors' : errors, 'warnings' : warnings, 'status' : status};
