@@ -351,24 +351,27 @@ function compute (str_override = "") {
 			if ((tmp_xad = regad.exec(output)) !== null) {
 				$("#outbound").val(("Updated " + tmp_xad[1] + "\n" + tmp_xad[2]).trim());
 			}
-
-			var tmp_textarea_tabs = ((["KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(result[1])) ? "\n\t\t\t" : "\n\t\t\t\t\t");
+			var tmp_textarea_tabs = ((["CLT","DFW","LAX","MIA","ORD","PHX"].includes(((result[1].length > 3) ? convert_iata(result[1]) : result[1]))) ? "\n\t\t\t" : "\n\t\t\t\t\t");
 			output += '<br/><br/><button onclick=\"toggle_input_boxes()\">Toggle Input Boxes</button>';
 			output += '<div id="input_boxes">';
 			output += '<br/><hr><br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of ' + tmp_today_str + '\' readonly>';
 			output += '<br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>CDRS</b>\"; // No CDRs as of ' + tmp_today_str + '\' readonly>';
-			output += '<br/><br/><span style=\"color:green\"> (Ok to File)</span>: <input style=\'width:75%\' value=\'' +
+
+			// 3 input boxes: [green, red, xxx]
+			output += '<br/><br/><span style=\"color:green\"> (Ok to File)</span>: <input id=\'newroute_oktofile\' style=\'width:75%\' value=\'' +
 				'result += \"<br/>XXX<span style=\\\"color:green\\\"> (Ok to File)<\/span>: <input style=\\\"width:75%\\\" value=\\\"YYY\\\" readonly>\";' +
 				'\' readonly>';
-			output += '<br/><span style=\"color:red\"> (Coord Req)</span>: <input style=\'width:75%\' value=\'' +
+			output += '<br/><span style=\"color:red\"> (Coord Req)</span>: <input id=\'newroute_coordreq\' style=\'width:75%\' value=\'' +
 				'result += \"<br/>XXX<span style=\\\"color:red\\\"> (Coord Req)<\/span>: <input style=\\\"width:75%\\\" value=\\\"YYY\\\" readonly>\";' +
 				'\' readonly>';
-			output += '<br/>XXX: <input style=\'width:75%\' value=\'' +
+			output += '<br/>XXX: <input id=\'newroute_xxx\' style=\'width:75%\' value=\'' +
 				'result += \"<br/><input style=\\\"width:75%\\\" value=\\\"YYY\\\" readonly>\";' +
 				'\' readonly>';
-			output += '<br/><br/><input style=\'width:75%\' value=\'case "' + convert_iata(result[3]) + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
+
+			// Two inputs and one text box // case, result, case
+			output += '<br/><br/><input style=\'width:75%\' value=\'case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
 			output += '<br/><input style=\'width:75%\' value=\'result += \"<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->\";\' readonly>';
-			output += '<textarea rows="8" cols="80">case "' + convert_iata(result[3]) + '": // Updated ' + tmp_today_str + mr_text + tmp_textarea_tabs +
+			output += '<textarea rows="8" cols="80">case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + tmp_textarea_tabs +
 				'result += "<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->";' + tmp_textarea_tabs +
 				'result += "<br/><br/><b>Faa Pref Route:</b>";</textarea>';
 			output += '<br/><button onclick=\"toggle_mandatory_routes()\">Turn ' + (mandatory_routes_checked ? "OFF" : "ON") + ' Mandatory Routes</button>';
@@ -399,6 +402,9 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	var playbooks = {};
 	var mr_text = ((mandatory_routes_checked) ? " // Mandatory Routes checked" : "");
 	while(null != (z = reg_tmp.exec(input))) {
+
+console.log(z);
+		
 		dptr = z[2].substring(0, 4);
 		arvl = z[3].substring(1, 4);
 		var textarea_tabs = ((["KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(dptr)) ? "\n\t\t\t" : "\n\t\t\t\t\t");
@@ -479,11 +485,17 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	}
 
 	var faa_result = merge_faa_pref(result_arr, today_str);
+
+	// -- HTML Building below here --
+	// Errors
 	var output = '<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
-		'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span>' +
-		'<br/><br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA pref route as of ' + today_str + '\' readonly>' +
-		'<br/><br/><textarea rows="8" cols="80">' + "case \"" + arvl + "\":" +
-		' // Updated ' + today_str + mr_text + textarea_tabs +
+				'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span><br/><br/>';
+	// First input line
+	output += '<input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA pref route as of ' + 
+		today_str + '\' readonly><br/><br/>';
+
+	// Top large box
+	outpuut += '<textarea rows="8" cols="80">' + "case \"" + arvl + "\":" + ' // Updated ' + today_str + mr_text + textarea_tabs +
 		'result += \"<!-- Updated ' + today_str + ' MP -->\";' + textarea_tabs +
 		'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
