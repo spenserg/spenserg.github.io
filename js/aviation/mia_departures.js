@@ -1018,8 +1018,8 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 02-27-2025 M -->";
 			result += "<br/><br/><b>Faa Pref Route: (Avg FL200-230)</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA BNGOS4 COREA BLFRG3 KTPA\" readonly>"; // CDR B0
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KMIA WINCO LBV BRDGE9 KTPA\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\"; value=\"KMIA WINCO LBV BRDGE9 KTPA\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-19-2025
 			result += "<!-- Verified with ATCSCC on 04-19-2025 -->";
 			result += "<br/>B0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA BNGOS4 COREA BLFRG3 KTPA\" readonly>";
