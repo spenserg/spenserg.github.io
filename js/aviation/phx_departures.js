@@ -915,16 +915,16 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "TPA": // Updated 02-05-2025
 			result += "<!-- Updated 02-05-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/>OW: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP JCT J86 LEV Y280 CHRGE RAYZZ2 KTPA\" readonly>";
+			result += "<br/>OW: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP JCT J86 LEV Y280 CHRGE RAYZZ3 KTPA\" readonly>";
 			result += "<br/><br/>Non OW: <input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO CNX GTH FUZ SWB DEFUN MAATY5 KTPA\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO CNX J74 IRW FSM MEMFS VLKNN ALLMA BAAMF DADES1 KTPA\" readonly>";
+			result += "<br/>North: <input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO CNX J74 IRW FSM MEMFS VLKNN ALLMA BAAMF DADES2 KTPA\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // todo
 			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>BR: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX J15 JCT J86 IAH J2 DEFUN MAATY4 KTPA\" readonly>";
-			result += "<br/>EC (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J2 FST J86 IAH J2 DEFUN MAATY4 KTPA\" readonly>";
-			result += "<br/>FR: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO J74 TXO J72 SPS J58 AEX J50 CEW J2 DEFUN MAATY4 KTPA\" readonly>";
-			result += "<br/>MR (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA FTI TXO J72 SPS J58 AEX J50 CEW J2 DEFUN MAATY4 KTPA\" readonly>";
-			result += "<br/>ST (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J2 FST J86 IAH J2 DEFUN MAATY4 KTPA\" readonly>";
+			result += "<br/>BR: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX J15 JCT J86 IAH J2 DEFUN MAATY5 KTPA\" readonly>";
+			result += "<br/>EC (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J2 FST J86 IAH J2 DEFUN MAATY5 KTPA\" readonly>";
+			result += "<br/>FR: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO J74 TXO J72 SPS J58 AEX J50 CEW J2 DEFUN MAATY5 KTPA\" readonly>";
+			result += "<br/>MR (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA FTI TXO J72 SPS J58 AEX J50 CEW J2 DEFUN MAATY5 KTPA\" readonly>";
+			result += "<br/>ST (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J2 FST J86 IAH J2 DEFUN MAATY5 KTPA\" readonly>";
 			break;
 		case "TUL": // Updated 02-05-2025
 			result += "<!-- Updated 02-05-2025 -->";
