@@ -2109,7 +2109,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "TPA": // Updated 01-30-2025
 			result += "<!-- Updated 01-30-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/>OW: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWB HRV Q105 REDFN Y280 CHRGE RAYZZ2 KTPA\" readonly>";
+			result += "<br/>OW: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWB HRV Q105 REDFN Y280 CHRGE RAYZZ3 KTPA\" readonly>";
 			result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWB CREEM CEW J2 DEFUN MAATY5 KTPA\" readonly>";
 			result += "<br/><br/>COWBOY EAST 1: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 DEFUN MAATY5 KTPA\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
