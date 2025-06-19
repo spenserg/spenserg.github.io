@@ -523,7 +523,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 06-03-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR SARKK AEX DOOBI3 KIAH\" readonly>";
-			result += "<br/><b style=\"color:orange\">ZEEKK/GESNR okay too ...AEX ZEEKK3 KIAH (east flow) -or- ...AEX GESNR1 KIAH (west flow)<\/b>";
+			result += "<br/><b style=\"color:orange\">ZEEKK/GESNR okay too ...AEX ZEEKK3 KIAH (east flow) -or- ...AEX GESNR2 KIAH (west flow)<\/b>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC ELD PLANB ZEEKK3 KIAH\" readonly>";
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS FISHO Q75 TEEEM AMG CABLO DEFUN J2 SJI NNCEE2 KIAH\" readonly>";
 			result += "<br/><br/>North via MEM<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN GQO MEM ELD PLANB ZEEKK3 KIAH\" readonly>";
