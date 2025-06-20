@@ -57,9 +57,13 @@ const P789 = ["8MA", "8MB", "8MC", "8MD"];
 const partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "GRR", "MAF", "MSO", "MYR", "PSP", "RAP", "RDM", "SJC"];
 
 var flows = {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"IAH":0,"JAC":0,"MCO":0,"MIA":0,"MSO":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0, "TUS":0};
+
+// Toggle Vars
 var debug_mode = false;
-var mandatory_routes_checked = true;
+var mandatory_routes_checked = false;
 var input_boxes_shown = false;
+var tog_faapref = false;
+var tog_cdrroutes = false;
 
 document.getElementById("outbound").addEventListener("keypress", function(event) {
 	if (event.key === "Enter") {
@@ -81,10 +85,24 @@ function toggle_mandatory_routes() {
 	mandatory_routes_checked = !mandatory_routes_checked;
 	restore_last();
 }
-
 function toggle_input_boxes() {
 	input_boxes_shown = !input_boxes_shown;
 	$("#input_boxes").toggle();
+	$("#button_toggle_input_boxes").text(((input_boxes_shown) ? 'Hide Input Boxes' : 'Show Input Boxes'));
+}
+function toggle_faa_pref() {
+	tog_faapref = !tog_faapref;
+	var today = new Date();
+	$("#button_faapref_default").text(((tog_faapref) ? 'No FAA pref' : 'Remove Pref Rte Comments'));
+	$("#input_faapref_default").val(((tog_faapref) ? '' : '// ') + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + ((tog_faapref) ? '' :  ' // No FAA Pref route as of ' + 
+		String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + String(today.getFullYear())));
+}
+function toggle_cdr_routes() {
+	tog_cdrroutes = !tog_cdrroutes;
+	var today = new Date();
+	$("#button_cdrroutes_default").text(((tog_cdrroutes) ? 'No CDRs listed' : 'Remove CDR Comments'));
+	$("#input_cdrroutes_default").val(((tog_cdrroutes) ? '' : '// ') + 'result += \"<br/><br/><b>CDRS</b>\";' + ((tog_cdrroutes) ? '' : ' // No CDRs as of ' +
+		String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + String(today.getFullYear())));
 }
 
 function update_cdr_text(input_id = null, coord_req = -1) {
@@ -98,6 +116,11 @@ function update_cdr_text(input_id = null, coord_req = -1) {
 	}
 	return result;
 	// Route Str = cdrstr_xxx || Description = cdrdesc_xxx || CopyPaste = cdrcp_xxx
+}
+function update_rte_text() {
+	$("#newroute_oktofile").val('result += \"<br/>' + $('#3box_desc').val() + '<span style=\\\"color:green\\\"> (Ok to File)<\/span>: <input style=\\\"width:75%\\\" value=\\\"' + $('#3box_route').val() + '\\\" readonly>\";');
+	$("#newroute_coordreq").val('result += \"<br/>' + $('#3box_desc').val() + '<span style=\\\"color:red\\\"> (Coord Req)<\/span>: <input style=\\\"width:75%\\\" value=\\\"' + $('#3box_route').val() + '\\\" readonly>\";');
+	$("#newroute_xxx").val('result += \"<br/>' + $('#3box_desc').val() + ': <input style=\\\"width:75%\\\" value=\\\"' + $('#3box_route').val() + '\\\" readonly>\";');
 }
 
 function change_flow(airport = null, new_config = null, override_duplicated = false) {
@@ -365,13 +388,21 @@ function compute (str_override = "") {
 				$("#outbound").val(("Updated " + tmp_xad[1] + "\n" + tmp_xad[2]).trim());
 			}
 			var tmp_textarea_tabs = ((["CLT","DFW","LAX","MIA","ORD","PHX"].includes(((result[1].length > 3) ? convert_iata(result[1]) : result[1]))) ? "\n\t\t\t" : "\n\t\t\t\t\t");
-			output += '<br/><br/><button onclick=\"toggle_input_boxes()\">Toggle Input Boxes</button>';
+			output += '<br/><br/><button id=\"button_toggle_input_boxes\" onclick=\"toggle_input_boxes()\">' + (input_boxes_shown ? 'Hide' : 'Show') + ' Input Boxes</button>';
 			output += '<div id="input_boxes">';
-			output += '<br/><hr><br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of ' + tmp_today_str + '\' readonly>';
-			output += '<br/><input style=\'width:75%\' value=\'// result += \"<br/><br/><b>CDRS</b>\"; // No CDRs as of ' + tmp_today_str + '\' readonly>';
+
+			// Faa Pref
+			output += '<br/><hr><br/><input id=\'input_faapref_default\' style=\'width:75%\' value=\'' + ((tog_faapref) ? '' : '// ') + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + ((tog_faapref) ? '' :  '// No FAA Pref route as of ' + tmp_today_str) + '\' readonly>';
+			output += '&nbsp;&nbsp;<button id=\'button_faapref_default\' onclick=\"toggle_faa_pref()\">' + ((tog_faapref) ? 'No FAA pref' : 'Remove Pref Rte Comments') + '</button>';
+
+			// CDRs
+			output += '<br/><input id=\'input_cdrroutes_default\' style=\'width:75%\' value=\'' + ((tog_cdrroutes) ? '' : '// ') + 'result += \"<br/><br/><b>CDRS</b>\";' + ((tog_cdrroutes) ? '' : ' // No CDRs as of ' + tmp_today_str) + '\' readonly>';
+			output += '&nbsp;&nbsp;<button id=\'button_cdrroutes_default\' onclick=\"toggle_cdr_routes()\">' + ((tog_cdrroutes) ? 'No CDRs listed' : 'Remove CDR Comments') + '</button>';
 
 			// 3 input boxes: [green, red, xxx]
-			output += '<br/><br/><span style=\"color:green\"> (Ok to File)</span>: <input id=\'newroute_oktofile\' style=\'width:75%\' value=\'' +
+			output += '<hr>Route: <input id=\'3box_route\' style=\'width:25%\' value=\'YYY\' onchange=\'update_rte_text()\'>';
+			output += '&nbsp;&nbsp;&nbsp;&nbsp;Desc: <input id=\'3box_desc\' style=\'width:25%\' value=\'XXX\' onchange=\'update_rte_text()\'>';
+			output += '<br/><span style=\"color:green\"> (Ok to File)</span>: <input id=\'newroute_oktofile\' style=\'width:75%\' value=\'' +
 				'result += \"<br/>XXX<span style=\\\"color:green\\\"> (Ok to File)<\/span>: <input style=\\\"width:75%\\\" value=\\\"YYY\\\" readonly>\";' +
 				'\' readonly>';
 			output += '<br/><span style=\"color:red\"> (Coord Req)</span>: <input id=\'newroute_coordreq\' style=\'width:75%\' value=\'' +
@@ -381,17 +412,17 @@ function compute (str_override = "") {
 				'result += \"<br/><input style=\\\"width:75%\\\" value=\\\"YYY\\\" readonly>\";' +
 				'\' readonly>';
 
-			// Two inputs and one text box // case, result, case
-			output += '<br/><br/><input style=\'width:75%\' value=\'case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
-			output += '<br/><input style=\'width:75%\' value=\'result += \"<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->\";\' readonly>';
-			output += '<textarea rows="8" cols="80">case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + tmp_textarea_tabs +
-				'result += "<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->";' + tmp_textarea_tabs +
-				'result += "<br/><br/><b>Faa Pref Route:</b>";</textarea>';
+			// Bottom text box
+			// output += '<br/><br/><input style=\'width:75%\' value=\'case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
+			// output += '<br/><input style=\'width:75%\' value=\'result += \"<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->\";\' readonly>';
+			output += '<hr><textarea rows="8" cols="80">case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + tmp_textarea_tabs +
+				'result += "<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->";</textarea>';
+				// + tmp_textarea_tabs + 'result += "<br/><br/><b>Faa Pref Route:</b>";</textarea>';
 			output += '<br/><button onclick=\"toggle_mandatory_routes()\">Turn ' + (mandatory_routes_checked ? "OFF" : "ON") + ' Mandatory Routes</button>';
 			output += '</div>';
 		}
 	}
-
+	
 	$("#total").html('<br/>' + output);
 	if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && result != null) {
 		change_flow(((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1]), flows[((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1])], true);
