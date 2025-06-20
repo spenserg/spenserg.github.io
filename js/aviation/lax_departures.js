@@ -81,10 +81,10 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 01-31-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 DRK J96 SLN J24 MCI J80 VHP JADUB DUBLN1 KCMH\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS BAWER LARVE EKR BFF FSD MCW OBK FWA BRYEN DUBLN1 KCMH\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J74 SJN TCC J78 IRW ARG PXV GVR FISUL JAKTZ2 KCMH\" readonly>";
-			result += "<br/>South via EWM: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 EWM J66 ABI J42 TXK LIT J131 PXV GVR FISUL JAKTZ2 KCMH\" readonly>";			
-			result += "<br/><br/>JOT 2: <input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 DVC PUB J64 FWA BRYEN DUBLN1 KCMH\" readonly>";
+			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR BFF FSD MCW OBK FWA BRYEN DUBLN1 KCMH\" readonly>";
+			result += "<br/>South: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J74 SJN TCC J78 IRW ARG PXV GVR FISUL JAKTZ2 KCMH\" readonly>";
+			result += "<br/>South via EWM: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 EWM J66 ABI J42 TXK LIT J131 PXV GVR FISUL JAKTZ2 KCMH\" readonly>";
+			result += "<br/><br/>JOT 2: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS J146 DVC PUB J64 FWA BRYEN DUBLN1 KCMH\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX SEBBY3 DAG J146 DVC J197 HGO J24 MCI J80 VHP KCMH\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
