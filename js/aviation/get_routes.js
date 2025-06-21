@@ -743,33 +743,35 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "BHM":
 			switch(arvl) {
-				case "DFW": // Updated 10-22-2024
-					result += "<!-- Updated 10-22-2024 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBHM JOEYE IGB MLU YUYUN BEREE3 KDFW\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KBHM JOEYE IGB LIT FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>SW Arrival: <input style=\"width:75%\" value=\"KBHM JOEYE IGB MCB J22 LCH J2 IAH CWK GUTZZ BOOVE7 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBHM JOEYE IGB SQS YEAGR4 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // Updated 10-22-2024
-					result += "<!-- Updated 10-22-2024 -->";
+				case "CLT": // Updated 06-20-2025
+					result += "<!-- Updated 06-20-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL290):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBHM CHEHA BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KBHM GQO SOT LIINN3 KCLT\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBHM GQO COMDY FILPZ4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBHM LGC MCN DBN SAV CHECR STOCR4 KCLT\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-20-2025
 					break;
-				case "MIA": // Updated 01-17-2025
-					result += "<!-- Updated 01-17-2025 -->";
+				case "DFW": // Updated 06-20-2025
+					result += "<!-- Updated 06-20-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBHM JOEYE IGB MLU YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBHM JOEYE IGB LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBHM JOEYE IGB MCB J22 LCH J2 IAH CWK GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBHM JOEYE IGB SQS YEAGR4 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-20-2025
+					break;
+				case "MIA": // Updated 06-20-2025
+					result += "<!-- Updated 06-20-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBHM MGMRY ACORI FROGZ4 KMIA\" readonly>";
-					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KBHM CHEHA THRSR IRQ FISHO DEBRL CSTAL2 KMIA\" readonly>";
-					result += "<br/><br/>MIA VIA MOGAE: <input style=\"width:75%\" value=\"KBHM CHEHA THRSR IRQ FISHO Q93 WOPNR Q97 EBAYY MOGAE BNFSH2 KMIA\" readonly>";
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBHM CHEHA THRSR IRQ FISHO DEBRL CSTAL2 KMIA\" readonly>";
+					result += "<br/>West/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBHM JOEYE IGB MCB HRV Q105 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					// result += "<br/><br/>MIA VIA MOGAE: <input style=\"width:75%\" value=\"KBHM CHEHA THRSR IRQ FISHO Q93 WOPNR Q97 EBAYY MOGAE BNFSH2 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBHM LGC GEF CTY PIE PALMZ2 KMIA\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-20-2025
 					break;
 			}
 		break; // End of BHM
@@ -785,9 +787,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-// BIL-LAX skipped
-// BIL-ORD skipped
-// BIL-PHX skipped
+				case "ORD": // Updated 02-23-2025
+					result += "<!-- Updated 02-23-2025 -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>";// No FAA Pref route as of 06-20-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBIL BIL JELRO Q156 ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBIL BIL MLS DIK J36 GEP J70 BAE LYNNI ERNNY8 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBIL BIL J13 DDY BFF LNK IRK SHAIN2 KORD\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-20-2025
+					break;
 			}
 		break; // End of BIL
 
