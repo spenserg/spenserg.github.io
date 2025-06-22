@@ -322,17 +322,20 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>W6<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT HOFFF JOVEM6 KDFW\" readonly>";
 			result += "<br/>W7<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT IRW IBAKE JOVEM6 KDFW\" readonly>";
 			break;
-		case "DSM": // Updated 02-14-2025
-			result += "<!-- Updated 02-14-2025 -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD MYKIE MONNY JORDY KDSM\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 ODI MCW J25 DSM KDSM\" readonly>";
+		case "DSM": // Updated 06-22-2025
+			result += "<!-- Updated 06-22-2025 MP -->";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KORD OLINN OREOS OBENE KDSM\" readonly>";
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 ODI MCW J25 DSM KDSM\" readonly>";
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR RBS SPI IRK LMN DSM KDSM\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD IOW J10 DSM KDSM\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>1N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE MSN KDSM\" readonly>";
-			result += "<br/>1W: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE KDSM\" readonly>";
-			result += "<br/>NR (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD IOW J10 DSM KDSM\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-22-2025
+			result += "<!-- Verified with ATCSCC on 06-22-2025 -->";
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE MSN KDSM\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL AKMIE BMI BRL KDSM\" readonly>";
+			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE KDSM\" readonly>";
+			result += "<br/>NR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD IOW J10 DSM KDSM\" readonly>";
 			break;
 		case "EGE": // Updated 02-14-2025
 			result += "<!-- Updated 02-14-2025 -->";
