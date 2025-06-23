@@ -843,7 +843,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA FLAME3 FLAME ACORI FROGZ4 KMIA\" readonly>";
 					result += "<br/><b style=\"color:orange\">Anything other than what is listed above will trigger a Mandatory Route violation<\/b>";
-					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KBNA TIPPN3 BRXTN RMG MCN CRG DEBRL CSTAL3 KMIA\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA TIPPN3 BRXTN RMG MCN CRG DEBRL CSTAL3 KMIA\" readonly>";
 					result += "<br/><br/>East via SPA: <input style=\"width:75%\" value=\"KBNA TAZMO3 BURME VXV SPA QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>";
 					result += "<br/>West via HRV: <input style=\"width:75%\" value=\"KBNA DRURY3 JALAR IGB MEI J31 HRV Q105 BLVNS Y290 BAGGS RSW PALMZ2 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -4433,13 +4433,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KMCO GUANO MATEO TAY SZW CEW J50 AEX YEAGR4 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-10-2025
 					break;
-				case "LAX": // Updated 05-07-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-07-2025 MP -->";
+				case "LAX": // Updated 06-23-2025 // Mandatory Routes checked
+					result += "<!-- Updated 06-23-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMCO OSPRY1 REMIS Y280 LEV J86 ELP J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
-					result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 JAWJA CABLO MCB J50 LFK AGJ SJT ELP J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 VLKNN LIT J6 DRK GABBL HLYWD1 KLAX\" readonly>";
-					result += "<br/>Full OW: <input style=\"width:75%\" value=\"KMCO OSPRY1 CIGAR M215 SNOMN ALGAE PEGLG CRP KH87A FST J2 ELP J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>Non OW via JCT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 JAWJA CABLO MCB J50 LFK JCT J86 ELP J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/>Non OW via ABQ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 JAWJA CABLO MCB J50 ABI TXO J72 ABQ J6 DRK GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 VLKNN LIT J6 DRK GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>Full OW/SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO OSPRY1 CIGAR M215 SNOMN KELPP MUSYL PSX SAT J138 FST J86 ELP J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/>Full OW/CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO OSPRY1 CIGAR M215 SNOMN ALGAE PEGLG CRP KH87A FST J2 ELP J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMCO GUANO MATEO TAY SZW CEW J50 ABI J65 CME J15 CNX J74 PKE J4 TMP BASET5 LAX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2025
