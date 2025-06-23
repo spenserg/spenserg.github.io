@@ -763,9 +763,9 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "MIA":
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS WURFL Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>";
-			result += "<br/><br/>Ltd Overwater: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 EBEAR DUUNK Y313 HOAGG BNFSH2 KMIA\" readonly>";
+			result += "<br/><br/>Ltd Overwater: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 EBEAR DUUNK Y313 HOAGG BNFSH3 KMIA\" readonly>";
 			result += "<br/>West: <input style=\"width:75%\" value=\"KCLT BEAVY6 GANDT MCN HONID FROGZ4 KMIA\" readonly>";
-			result += "<br/>Full OW/ZJX Avoid: <input style=\"width:75%\" value=\"KCLT BARMY5 NUTZE ECG AR8 OXANA L452 WILYY M203 SNAGY BNFSH2 KMIA\" readonly>";
+			result += "<br/>Full OW/ZJX Avoid: <input style=\"width:75%\" value=\"KCLT BARMY5 NUTZE ECG AR8 OXANA L452 WILYY M203 SNAGY BNFSH3 KMIA\" readonly>";
 			result += "<br/><br/>ZTL TO FLORIDA ESCAPE (Capped FL190): <input style=\"width:75%\" value=\"KCLT BEAVY6 JENDO MAVRC REIDS ENEME Q65 DOFFY BROMO FROGZ4 KMIA\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/>Non RNAV SID/STAR: <input style=\"width:75%\" value=\"KCLT KER4 HAMLN CAE SAV OMN ANNEY4 KMIA\" readonly>";
