@@ -650,7 +650,7 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DUMGE SCOTO SWAPP Q79 THRSR HONID FROGZ4 KMIA\" readonly>";
 			result += "<br/><b style=\"color:orange\">As of 5-6-2025 CDR SB is listed as FAA pref route, but is also Coord Rqd on ATCSCC CDR listing.<\/b>";
 			result += "<br/><br/>East via SPA: <input style=\"width:75%\"; value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM SPA QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>";
-			result += "<br/>East/ZTL Avoid: <input style=\"width:75%\"; value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM BKW RDU SKARP Y313 HOAGG BNFSH2 KMIA\" readonly>";
+			result += "<br/>East/ZTL Avoid: <input style=\"width:75%\"; value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM BKW RDU SKARP Y313 HOAGG BNFSH3 KMIA\" readonly>";
 			result += "<br/>East via DTW: <span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE J83 SPA QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>"; // Based on CDR 2E
 			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF MERDN DEFUN FROGZ4 KMIA\" readonly>"; // CDR 1W
 			result += "<br/><br/><b>Non RNAV</b>"; // TODO
