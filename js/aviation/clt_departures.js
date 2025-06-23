@@ -762,7 +762,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "MIA":
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS WURFL Q83 JEVED Q97 DEBRL CSTAL2 KMIA\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS WURFL Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>";
 			result += "<br/><br/>Ltd Overwater: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 EBEAR DUUNK Y313 HOAGG BNFSH2 KMIA\" readonly>";
 			result += "<br/>West: <input style=\"width:75%\" value=\"KCLT BEAVY6 GANDT MCN HONID FROGZ4 KMIA\" readonly>";
 			result += "<br/>Full OW/ZJX Avoid: <input style=\"width:75%\" value=\"KCLT BARMY5 NUTZE ECG AR8 OXANA L452 WILYY M203 SNAGY BNFSH2 KMIA\" readonly>";
@@ -772,8 +772,8 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>Non OW: <input style=\"width:75%\" value=\"KCLT KER4 HAMLN CAE TAY PIE PALMZ2 KMIA\" readonly>";
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>ES (Coord Req): <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR HONID FROGZ4 KMIA\" readonly>";
-			result += "<br/>LL (Coord Req): <input style=\"width:75%\" value=\"KCLT LILLS3 LILLS RAEFO MRPIT CAKET Q97 DEBRL CSTAL2 KMIA\" readonly>";
-			result += "<br/>RP (Ok to File): <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS WURFL Q83 JEVED Q97 DEBRL CSTAL2 KMIA\" readonly>";
+			result += "<br/>LL (Coord Req): <input style=\"width:75%\" value=\"KCLT LILLS3 LILLS RAEFO MRPIT CAKET Q97 DEBRL CSTAL3 KMIA\" readonly>";
+			result += "<br/>RP (Ok to File): <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS WURFL Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>";
 			break;
 		case "MKE": // Updated 02-06-2025
 			result += "<!-- Updated 02-06-2025 -->";
