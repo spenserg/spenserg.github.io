@@ -2241,7 +2241,6 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 IRW GCK GLD CYS J13 DDY BIL GTF J516 YQL EBGAL CYYC\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-18-2025
-			result += "<!-- Verified with ATCSCC on 04-18-2025 -->";
 			break;
 		case "YYZ": // Updated 01-30-2025
 			result += "<!-- Updated 01-30-2025 -->";
