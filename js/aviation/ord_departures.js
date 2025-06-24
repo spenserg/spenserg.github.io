@@ -531,7 +531,7 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE Q935 HANKK Q140 YODAA IGN IGN1 KJFK\" readonly>";
 			result += "<br/>2E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EBAKE WISMO POSTS PADDE SVM DAFLU J70 BEWEL GEE HANKK EXTOL YODAA IGN IGN1 KJFK\" readonly>";
 			result += "<br/>2N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO AHPAH YODAA IGN IGN1 KJFK\" readonly>";
-			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SIE CAMRN4 KJFK\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SIE CAMRN5 KJFK\" readonly>";
 			result += "<br/>C0<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK DAYYY RUBKI SIKBO TULEG PRNCE IGN IGN1 KJFK\" readonly>";
 			result += "<br/>C1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK NOTAP TULEG PRNCE IGN IGN1 KJFK\" readonly>";
 			result += "<br/>C2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK NOTAP KAPUX TULEG PRNCE IGN IGN1 KJFK\" readonly>";
