@@ -8292,7 +8292,27 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // End of YUL
 
 		// TODO YVR
-		// TODO YYC
+
+		case "YYC":
+			switch(arvl) {
+				case "CLT": // Updated 06-23-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-23-2025
+					result += "<br/><br/>NRP<input style=\"width:75%\" value=\"CYYC STAMP2 GADKI YQL J478 GGW DIK J70 ABR MCW ALO BDF TTH IIU SKYWA FILPZ4 KCLT \" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYYC STAMP2 GADKI YQL J478 GGW WILTN Q140 DAYYY DJB Q147 HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYYC GADKI VOBUK DLN J9 DBS J52 OCS FQF J80 HLC SLN BUM J112 FAM BNA TAZZA FILPZ4 KCLT\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-23-2025
+					break;
+				case "DFW": // Updated 06-23-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-23-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"CYYC STAMP2 GADKI Q957 VOBUK GTF J13 CYS LAA EZEEE MDANO JOVEM6 KDFW\" readonly>";
+					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYYC GADKI VOBUK DLN J9 DBS J52 OCS J206 DBL CIM PNH MDANO VKTRY2 KDFW \" readonly>";
+					result += "<br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYYC STAMP2 GADKI YQL J478 GGW DIK J70 ABR J45 FSD OVR J41 MCI BUM RZC FSM RRNET SEEVR4 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-23-2025
+					break;
+			}
+		break; // End of YYC
 
 		case "YYZ":
 			switch(arvl) {
