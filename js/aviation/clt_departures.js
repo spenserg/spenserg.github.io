@@ -584,18 +584,18 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "JFK": // Updated 04-28-2025 // Mandatory Routes checked
 			result += "<!-- Updated 04-28-2025 M -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT BARMY5 TYI Q64 SAWED Q108 SIE CAMRN4 KJFK\" readonly>"; // CDR RP
+			result += "<br/><input style=\"width:75%\" value=\"KCLT BARMY5 TYI Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>"; // CDR RP
 			result += "<br/><b style=\"color:orange\">CDR RP is .. TYI ORF SAWED.. FAA Pref is ..TYI Q64 SAWED.. but its the same route<\/b>";
-			result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM DEDDY Y436 DIZNY WHOOS Y494 YAALE Y495 CAMRN CAMRN4 KJFK\" readonly>";
+			result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM DEDDY Y436 DIZNY WHOOS Y494 YAALE Y495 CAMRN CAMRN5 KJFK\" readonly>";
 			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>"; // CDR JJ
 			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 MERIL TYI ORF RADDS SIE CAMRN4 KJFK\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 MERIL TYI ORF RADDS SIE CAMRN5 KJFK\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-28-2025
 			result += "<!-- Verified with ATCSCC on 04-28-2025 -->";
 			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV FLM ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
 			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
-			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 TYI ORF SAWED Q108 SIE CAMRN4 KJFK\" readonly>";
-			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD SITTR Q108 SIE CAMRN4 KJFK\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 TYI ORF SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
+			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD SITTR Q108 SIE CAMRN5 KJFK\" readonly>";
 			break;
 		case "LAS": // Updated 05-01-2025 // Mandatory Routes checked
 			result += "<!-- Updated 05-01-2025 PCM -->";
