@@ -2751,15 +2751,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KFAT OAL J92 BTY BLD J72 TXO UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "PHX": // Updated 03-25-2025
-					result += "<!-- Updated 03-25-2025 P -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-25-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KFAT BULL3 NTELL FRAME EHF J65 BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KFAT YOSE3 NTELL OAL BTY J92 BLD COYOT5 KPHX\" readonly>";
+				case "PHX": // Updated 06-23-2025
+					result += "<!-- Updated 06-23-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KFAT BULL3 NTELL FRAME EHF J65 BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAT OAL4 OAL J80 ILC WINEN Q35 CORKR TENTS BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KFAT EHF J65 BLH ARLIN4 KPHX\" readonly>";
+					result += "<br/>South: <input style=\"width:75%\" value=\"KFAT EHF J65 BLH ARLIN4 KPHX\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\" value=\"KFAT OAL BTY J92 BLD COYOT5 KPHX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-25-2025
-					result += "<!-- Verified with ATCSCC on 03-25-2025 -->";
 					break;
 			}
 		break; // End of FAT
@@ -7523,12 +7523,11 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 04-18-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN BOILE BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSFO SSTIK5 NTELL Q158 MYCAL BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO SSTIK5 NTELL Q158 MYCAL BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/>PHX BUNTR: <input style=\"width:75%\" value=\"KSFO SSTIK5 NTELL BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/>Non RNAV SID/STAR: <input style=\"width:75%\" value=\"KSFO SFO4 SFO SNS J6 PMD J65 BLH BLH5 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KSFO SFO4 SFO SNS J6 PMD J65 BLH BLH5 KPHX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-18-2025
-					result += "<!-- Verified with ATCSCC on 04-18-2025 -->";
 					break;
 			}
 		break; // End of SFO
