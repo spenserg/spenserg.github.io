@@ -205,7 +205,7 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU SKYWA FILPZ4 KCLT\" readonly>"; // CDR 0S
 			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM TAFTT PARQR4 KCLT\" readonly>"; // CDR 1S
-			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE BWG VXV LIINN3 KCLT\" readonly>"; // CDR 4S
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE BWG SKYWA FILPZ4 KCLT\" readonly>"; // CDR 4S
 			result += "<br/><br/>SW Arrival<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN THRSR BESTT JONZE5 KCLT\" readonly>"; // CDR 3S
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD EON BVT J89 IIU J99 VXV LIINN3 KCLT\"; readonly>"; // CDR NR
@@ -879,6 +879,18 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN RZC KXNA\" readonly>";
 			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI BUM EOS KXNA\" readonly>";
 			result += "<br/>5S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV ARG RZC KXNA\" readonly>";
+			break;
+		case "YYC": // Updated 06-24-2025
+			// result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KORD MYKIE MONNY IANNA FOD FSD J16 DPR J204 GTF J516 YQL EBGAL EBGAL7 CYYC \" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 GEP KP06C DIK GGW PEMDU Q832 VESDO EBGAL7 CYYC \" readonly>";
+			// TODO South
+			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+			result += "<br/>North via HML<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE DLH HML SEGAP DURUR SHAWI Q874 ILADA BIRKO6 CYYC\" readonly>"; // CDR 3N
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-24-2025
+			result += "<!-- Verified with ATCSCC on 06-24-2025 -->";
+			result += "<br/>3N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE DLH HML SEGAP DURUR SHAWI Q874 ILADA BIRKO6 CYYC\" readonly>";
+			result += "<br/>4N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB GEP J70 DIK GGW PEMDU Q832 VESDO EBGAL7 CYYC\" readonly>";
 			break;
 	}
 	return result;
