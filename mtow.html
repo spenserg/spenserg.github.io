@@ -392,7 +392,7 @@ function compute (str_override = "") {
 			output += '<div id="input_boxes">';
 
 			// Faa Pref
-			output += '<br/><hr><br/><input id=\'input_faapref_default\' style=\'width:75%\' value=\'' + ((tog_faapref) ? '' : '// ') + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + ((tog_faapref) ? '' :  '// No FAA Pref route as of ' + tmp_today_str) + '\' readonly>';
+			output += '<br/><hr><br/><input id=\'input_faapref_default\' style=\'width:75%\' value=\'' + ((tog_faapref) ? '' : '// ') + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + ((tog_faapref) ? '' :  ' // No FAA Pref route as of ' + tmp_today_str) + '\' readonly>';
 			output += '&nbsp;&nbsp;<button id=\'button_faapref_default\' onclick=\"toggle_faa_pref()\">' + ((tog_faapref) ? 'No FAA pref' : 'Remove Pref Rte Comments') + '</button>';
 
 			// CDRs
@@ -721,8 +721,6 @@ function decs_route(input = null, cdr_list = null) {
 			tmp_notes += "<br/><input style=\'width:75%\'; value=\'" + output_value + "\' readonly>";
 		}
 
-		
-
 		result_arr[parseInt(z[1])] = {'route':z[4], 'notes':tmp_notes, 'distance':parseInt(z[2]), 'cdr':cdr_name, 'cdr_textarea_output': cdr_textarea_output };
 		textarea_tabs = ((["KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(z[4].substring(0, 4))) ? "\n\t\t\t" : "\n\t\t\t\t\t");
 
@@ -772,16 +770,17 @@ function decs_route(input = null, cdr_list = null) {
 			textarea_cdr_arr.push(sortable[i][4]);
 		}
 	}
-	result += '<br/><textarea rows="5">case "' + convert_iata(tmp_arvl_arr[tmp_arvl_arr.length - 1]) + '": // Updated ' +
-		 String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" +
-		 today.getFullYear() + textarea_tabs + 'result += "<br/><br/><b>Faa Pref Route:</b>";' + textarea_tabs +
-			faa_pref + textarea_tabs +
-			'result += "<br/><br/><b>Non RNAV</b>";' + textarea_tabs +
-			'' + textarea_tabs +
-			((textarea_cdr_arr.length == 0) ? '' : ('result += "<br/><br/><b>CDRS</b>";' + textarea_tabs)) +
-			((textarea_cdr_arr.length == 0) ? '// result += "<br/><br/><b>CDRS</b>";' : textarea_cdr_arr.join(textarea_tabs)) + textarea_tabs +
-			'break;'
-		+ "</textarea>";
+	var tmp_zz_todaystr = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
+	result += '<br/><textarea rows="5">case "' + convert_iata(tmp_arvl_arr[tmp_arvl_arr.length - 1]) + '": // Updated ' + tmp_zz_todaystr + textarea_tabs +
+		'result += "<!-- Updated ' + tmp_zz_todaystr + (mandatory_routes_checked ? " M" : " ") + 'P -->"' + textarea_tabs +
+		'result += "<br/><br/><b>Faa Pref Route:</b>";' + textarea_tabs +
+		faa_pref + textarea_tabs + '// result += "<br/><br/><b>Non RNAV</b>"; // TODDO' + textarea_tabs;
+	if (textarea_cdr_arr.length == 0) {
+		result += '// result += "<br/><br/><b>CDRS</b>";  // No CDRs as of ' + tmp_zz_todaystr;
+	} else {
+		result += 'result += "<br/><br/><b>CDRS</b>";' + textarea_tabs + textarea_cdr_arr.join(textarea_tabs);
+	}
+	result += textarea_tabs + 'break; </textarea>';
 	result += tmp_res_mid;
 	result += '<textarea rows="15" cols="80">' + textarea_cdr_arr.join(textarea_tabs) + '</textarea>';
 	return result;
