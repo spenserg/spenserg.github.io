@@ -8053,6 +8053,11 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTPA RSW PALMZ2 KMIA\" readonly>";
 					break;
+				case "MCO": // Updated 06-28-2025
+					result += "<!-- Updated 06-28-2025 MP -->"
+					result += "<br/><br/><b>Div Recovery (Max FL090):</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KTPA PRICY MINEE KMCO\" readonly>";
+					break; 
 				case "ORD": // Updated 01-19-2025
 					result += "<!-- Updated 01-19-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
