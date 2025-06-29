@@ -2765,16 +2765,16 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		break; // End of FAT
 
 		case "FCA":
+		case "GPI":
 			switch(arvl) {
-				case "DFW": // Updated 03-18-2025
-					result += "<!-- Updated 03-18-2025 P -->";
+				case "DFW": // Updated 06-29-2025
+					result += "<!-- Updated 06-29-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-18-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KGPI GPI1 CHOTE GTF J13 CYS HGO PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KGPI HLN BPI OCS HBU J206 ALS CIM TCC TURKI VKTRY2 KDFW\" readonly>";
-					result += "<br/>North/East: <input style=\"width:75%\"; value=\"KGPI GPI1 CHOTE GTF MLS RAP HYS IRW IBAKE JOVEM6 KDFW\" readonly>";
+					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGPI RIDDG1 MSO DBS BPI OCS HBU J206 ALS CIM TCC TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGPI GPI1 CHOTE GTF MLS RAP HYS IRW IBAKE VKTRY2 KDFW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-18-2025
-					result += "<!-- Verified with ATCSCC on 03-18-2025 -->";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-29-2025
 					break;
 				case "LGA": // Updated 03-18-2025
 					result += "<!-- Updated 03-18-2025 -->";
@@ -2785,15 +2785,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-18-2025
 					result += "<!-- Verified with ATCSCC on 03-18-2025 -->";
 					break;
-				case "ORD": // Updated 03-18-2025
-					result += "<!-- Updated 03-18-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/>NRP: <input style=\"width:75%\"; value=\"KGPI GPI1 CHOTE GTF J13 BIL J34 DPR J16 FSD FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KGPI GPI1 CHOTE GTF J36 FAR J36 GEP ZZIPR FYTTE7 KORD\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\"; value=\"KGPI DLN J9 DBS J52 FQF J80 MCI J26 IRK BENKY6 KORD\" readonly>";
+				case "ORD": // Updated 06-29-2025
+					result += "<!-- Updated 06-29-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-29-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KGPI GPI1 CHOTE GTF J13 BIL J34 DPR J16 FSD FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGPI GPI1 CHOTE GTF J36 FAR J36 GEP ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGPI RIDDG1 MSO DBS J52 FQF J80 MCI J26 IRK BENKY6 KORD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-18-2025
-					result += "<!-- Verified with ATCSCC on 03-18-2025 -->";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-29-2025
 					break;
 			}
 		break; // End of FCA
