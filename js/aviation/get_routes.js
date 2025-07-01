@@ -2310,15 +2310,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "DSM":
 			switch(arvl) {
-				case "CLT": // Updated 01-05-2025
-					result += "<!-- Updated 01-05-2025 -->";
+				case "CLT": // Updated 07-01-2025
+					result += "<!-- Updated 07-01-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDSM DSM Q19 STL ENL PXV SKYWA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDSM PIA VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KDSM IRK J45 BNA TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDSM PIA VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDSM IRK J45 BNA TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDSM IRK STL PXV BWG VXV LIINN3 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-01-2025
 					break;
 				case "DFW": // Updated 05-16-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-16-2025 MP -->";
