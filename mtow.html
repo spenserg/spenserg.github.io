@@ -837,6 +837,10 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 		case "FAT":
 			result += "<br/><br/>FAT - Run VAA if departing rwy29L (not common)";
 			break;
+		case "FCA":
+		case "GPI":
+			result += "<br/><br/>FCA/KGPI Flow: <button type='button' id='FCA_standard_left' class='btn" + ((flows['FCA'] == 0) ? " selected" : "") + "' onclick='change_flow(\"FCA\", 0)'>North Rwy 2</button>&nbsp;&nbsp;<button type='button' id='FCA_standard_right' class='btn" + ((flows['FCA'] == 1) ? " selected" : "") + "' onclick='change_flow(\"FCA\", 1)'>South Rwy 20</button>";
+			break;
 		case "GJT":
 			result += "<br/><br/>GJT - Run VAA above 25C";
 			break;
