@@ -38,6 +38,11 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("VCTRZ2 KDTW", "HAYLL3 KDTW");
 						result = result.replaceAll("RKCTY2 KDTW", "KKISS2 KDTW");
 						break;
+					case "FCA":
+					case "GPI": // FCA North // Rwy2
+						result = result.replaceAll("KGPI GPI1 CHOTE", "KGPI RIDDG1 SKOTT CHOTE");
+						result = result.replaceAll("KGPI GPI1 SKOTT", "KGPI RIDDG1 SKOTT");
+						result = result.replaceAll("KGPI GPI1 ANGIL", "KGPI RIDDG1 RIDDG");
 					case "IAH": // IAH west // Rwy26 Rwy27
 						result = result.replaceAll("SKNRD4 KIAH", "DOOBI2 KIAH");
 						result = result.replaceAll("GUSHR3 KIAH", "DRLLR5 KIAH");
