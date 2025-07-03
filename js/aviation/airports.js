@@ -11,7 +11,8 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KABQ FYSTA3 JLPNO", "KABQ  GRZZZ4 POPRR");
 						break;
 					case "ATL": // ATL west
-						result = result.replaceAll("JJEDI3 KATL", "SITTH2 KATL");
+						result = result.replaceAll("SITTH2 KATL", "JJEDI3 KATL");
+						result = result.replaceAll("GNDLF2 KATL", "HOBTT2 KATL");
 						break;
 					case "BZN": // BZN southeast / Rwy12
 						result = result.replaceAll("KBZN MEADO2 DBS", "KBZN BGSKY2 DBS");
@@ -22,12 +23,10 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("BIL SUBKY1 KBZN", "CREKK POWDA1 KBZN");
 						break;
 					case "DFW": // DFW south
-						if (!$(this).hasClass("cdr_input")) { 
-							result = result.replaceAll("JOVEM6 KDFW", "VKTRY2 KDFW");
-							result = result.replaceAll("BRDJE5 KDFW", "SEEVR4 KDFW");
-							result = result.replaceAll("SOCKK4 KDFW", "BOOVE7 KDFW");
-							result = result.replaceAll("WHINY4 KDFW", "BEREE3 KDFW");
-						}
+						result = result.replaceAll("JOVEM6 KDFW", "VKTRY2 KDFW");
+						result = result.replaceAll("BRDJE5 KDFW", "SEEVR4 KDFW");
+						result = result.replaceAll("SOCKK4 KDFW", "BOOVE7 KDFW");
+						result = result.replaceAll("WHINY4 KDFW", "BEREE3 KDFW");
 						break;
 					case "DTW": // DTW north / Rwy3 Rwy4
 						result = result.replaceAll("BONZZ2 KDTW", "KLYNK3 KDTW");
@@ -152,7 +151,8 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KABQ MNZNO3 LAMSE", "KABQ BOSQE3 LAMSE");
 						break;
 					case "ATL": // ATL east
-						result = result.replaceAll("SITTH2 KATL", "JJEDI3 KATL");
+						result = result.replaceAll("JJEDI3 KATL", "SITTH2 KATL");
+						result = result.replaceAll("HOBTT2 KATL", "GNDLF2 KATL");
 						break;
 					case "BZN": // BZN northwest / Rwy30
 						result = result.replaceAll("KBZN BGSKY2 DBS", "KBZN MEADO2 DBS");
