@@ -7002,11 +7002,13 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 01-09-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KROC GEE BURST HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KROC GEE SFK J220 AML GVE AIROW CHSLY6 KCLT\" readonly>";
-					result += "<br/>Northwest: <input style=\"width:75%\" value=\"KROC JHW DJB J83 APE OHIOS TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KROC GEE SFK J220 AML GVE AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KROC JHW DJB APE HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/><br/>West via ROD<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KROC JHW DJB ROD FLM SKYWA FILPZ4 KCLT\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>P1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KROC BURST HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-07-2025
+					result += "<!-- Verified with ATCSCC on 07-07-2025 -->";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KROC BURST HVQ LNDIZ PARQR4 KCLT\" readonly>";
 					break;
 				case "DFW": // Updated 01-17-2025
 					result += "<!-- Updated 01-17-2025 -->";
