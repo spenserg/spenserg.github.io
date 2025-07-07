@@ -263,6 +263,20 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>PE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL PENCL2 JAACE BNA CITAN MEM J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL KAJIN2 STNGA MLU YUYUN BEREE3 KDFW\" readonly>";
 					break;
+				case "EWR": // Updated 07-07-2025
+					result += "<!-- Updated 07-07-2025 MP -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KATL PLMMR3 BURGG Q22 UMBRE QUART PHLBO4 KEWR\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL PADGT2 RAFTN FLM J43 ROD KLYNE Q29 DORET J584 SLT FQM3 KEWR\" readonly>"; // CDR PA
+					// TODO East/South
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-07-2025
+					result += "<!-- Verified with ATCSCC on 07-07-2025 -->";
+					result += "<br/>PA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL PADGT2 RAFTN FLM J43 ROD KLYNE Q29 DORET J584 SLT FQM3 KEWR\" readonly>";
+					result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL PLMMR3 BURGG Q22 UMBRE QUART PHLBO4 KEWR\" readonly>";
+					result += "<br/>SK<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL SMKEY2 BOBBD Q71 KONGO Q34 GVE PHLBO4 KEWR\" readonly>";
+					result += "<br/>VR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL VRSTY3 NOKIE TWINS BLAAN Q99 QUART PHLBO4 KEWR\" readonly>";
+					break;
 				case "LAX": // Updated 05-21-2025
 					result += "<!-- Updated 05-21-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-21-2025
@@ -6611,14 +6625,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "PNS":
 			switch(arvl) {
-				case "CLT": // Updated 01-17-2025
-					result += "<!-- Updated 01-17-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KPNS CEW LGC BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KPNS CEW DEFUN SAV CHECR STOCR4 KCLT\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KPNS CATLN VUZ BNA TAZZA FILPZ4 KCLT\" readonly>";
+				case "CLT": // Updated 07-07-2025
+					result += "<!-- Updated 07-07-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-07-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPNS CEW LGC BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS CEW MCN PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS CEW DEFUN SAV CHECR STOCR4 KCLT\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS CATLN VUZ TAZZA FILPZ4 KCLT\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-07-2025
 					break;
 				case "DFW": // Updated 01-17-2025
 					result += "<!-- Updated 01-17-2025 -->";
