@@ -1274,3 +1274,33 @@ convert_icao = function (str = null) {
 	}
 	return null;
 }
+
+get_star_array = function(text = "") {
+	// copy paste entire XXX_departures.js page or get_routes.js and this will look for any discrepancies 
+	var result = {};
+	tmp_star_reg = /[^A-Z]([A-Z]{5})(\d) ([A-Z]{4})[^A-Z]/g;
+	while(null != (tmp_r = tmp_star_reg.exec(text))) {
+		if (result[tmp_r[3]] == null) { result[tmp_r[3]] = {}; }
+		if (result[tmp_r[3]][tmp_r[1]] == null) { result[tmp_r[3]][tmp_r[1]] = tmp_r[2];
+		} else if (result[tmp_r[3]][tmp_r[1]] != tmp_r[2]) {
+			console.log("MISMATCH: " + tmp_r[1] + tmp_r[2] + " " + tmp_r[3] + " AND " + tmp_r[1] + result[tmp_r[3]][tmp_r[1]] + " " + tmp_r[3]);
+		}
+		// console.log(tmp_r);
+	}
+	return result;
+}
+
+get_sid_array = function(text = "") {
+	// copy paste entire XXX_departures.js page or get_routes.js and this will look for any discrepancies
+	var result = {};
+	tmp_sid_reg = /[^A-Z]([A-Z]{4}) ([A-Z]{5})(\d)[^A-Z]/g;
+	while(null != (tmp_r = tmp_sid_reg.exec(text))) {
+		if (result[tmp_r[1]] == null) { result[tmp_r[1]] = {}; }
+		if (result[tmp_r[1]][tmp_r[2]] == null) { result[tmp_r[1]][tmp_r[2]] = tmp_r[3];
+		} else if (result[tmp_r[1]][tmp_r[2]] != tmp_r[3]) {
+			console.log("MISMATCH: " + tmp_r[1] + " " + tmp_r[2] + tmp_r[3] + " AND " + tmp_r[1] + " " + tmp_r[2] + result[tmp_r[1]][tmp_r[2]]);
+		}
+		// console.log(tmp_r);
+	}
+	return result;
+}
