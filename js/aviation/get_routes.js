@@ -3838,6 +3838,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>X6<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 EYTEE J149 FWA WATSN4 KORD\" readonly>";
 					result += "<br/>ZS<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KJFK GREKI JUDDS CAM NOVON SIKBO NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
 					break;
+				case "PHL": // Updated 07-08-2025
+					result += "<!-- Updated 07-08-2025 -->";
+					result += "<br/><br/><b>Div Recovery (Max FL080)</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KJFK DIXIE V16 VCN V184 OOD KPHL\" readonly>";
+					result += "<br/><br/>TEC: <input style=\"width:75%\" value=\"KJFK DIXIE T224 JIIMS KPHL\" readonly>";
+					break;
 				case "PHX": // Updated 01-11-2025
 					result += "<!-- Updated 01-11-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
