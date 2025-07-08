@@ -73,12 +73,13 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 02-21-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ GARTS LCH WEEED WLEEE7 KAUS\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KCLT BOBZY BRAYN GQO DEVAC GAGLE ELD LFK WEEED WLEEE7 KAUS\" readonly>";
-			result += "<br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS CAE SAV AMG DEFUN J2 LCH Q24 MOLLR DBOYS WLEEE7 KAUS\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY BRAYN GQO DEVAC GAGLE ELD LFK WEEED WLEEE7 KAUS\" readonly>";
+			result += "<br/><br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS CAE SAV AMG DEFUN J2 LCH Q24 MOLLR DBOYS WLEEE7 KAUS\" readonly>";
+			result += "<br/>North/ZME Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE IIU J78 IRW PRTZY LAIKS4 KAUS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT CLT3 HARAY SPA LGC MEI MHZ AEX IAH BITER9 KAUS\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-21-2025
-			result += "<!-- Verified with ATCSCC on 02-21-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-08-2025
+			result += "<!-- Verified with ATCSCC on 07-08-2025 -->";
 			result += "<br/>BE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DBN MGMRY LCH LUKKN WLEEE7 KAUS\" readonly>";
 			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA ELD EIC WINDU SEWZY6 KAUS\" readonly>";
 			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM BWG LCH LUKKN WLEEE7 KAUS\" readonly>";
