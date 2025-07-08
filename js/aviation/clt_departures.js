@@ -579,7 +579,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>West: <input style=\"width:75%\" value=\"KCLT BEAVY6 GANDT IRQ FINNE OHDEA2 KJAX\" readonly>";
 			result += "<br/>East/OW: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 OGGRE AR17 BAHAA AR5 JAWSS KJAX\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT LILLS3 LILLS FAY CHS ESENT LUNNI1 KJAX\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT LILLS3 LILLS FAY CHS ESENT LUNNI2 KJAX\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-04-2025
 			result += "<!-- Verified with ATCSCC on 06-04-2025 -->";
 			result += "<br/>BA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 BARMY BATTA ROZBO CHS ESENT LUNNI2 KJAX\" readonly>";
@@ -1115,7 +1115,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 02-06-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS GRONK Q103 CYNTA SHFTY6 KRSW\" readonly>"; // CDR RP
-			result += "<br/><br/>East/OW: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 OGGRE AR17 HIBAC SHFTY5 KRSW\" readonly>";
+			result += "<br/><br/>East/OW: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 OGGRE AR17 HIBAC SHFTY6 KRSW\" readonly>";
 			result += "<br/>West Coast FL: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS RIELE Q103 CYNTA PLYER TYNEE3 KRSW\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // todo
 			result += "<br/><br/><b>CDRS</b>";
