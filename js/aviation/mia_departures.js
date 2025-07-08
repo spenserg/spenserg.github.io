@@ -218,7 +218,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Faa Pref Route:</b>"; // CDR A0
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 VIYAP Q69 GURGE Q93 QUIWE SPA MCGNS SCRLT2 KCMH\" readonly>";
 			result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KMIA HURCN3 KPASA Q118 THRSR Q79 SWAPP GETTA JAKTZ1 KCMH\" readonly>";
-			result += "<br/>East/Full OW: <input style=\"width:75%\"; value=\"KMIA FOLZZ2 ALYRA OZENA Y309 FLRDA SAGGY DIW RDU BKW MCGNS SCRLT1 KCMH\" readonly>";
+			result += "<br/>East/Full OW: <input style=\"width:75%\"; value=\"KMIA FOLZZ2 ALYRA OZENA Y309 FLRDA SAGGY DIW RDU BKW MCGNS SCRLT2 KCMH\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // todo
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-21-2025
 			result += "<!-- Verified with ATCSCC on 02-21-2025 -->";
