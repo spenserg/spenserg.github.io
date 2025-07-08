@@ -119,7 +119,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/>OW: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC Q129 PYTON BENEE KBUF\" readonly>"; // CDR Z0
 			result += "<br/>Non OW: <input style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 VIYAP Q69 RICCS EWC DKK KBUF\" readonly>"; // CDR A0
-			result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KMIA HURCN3 KPASA Q118 VOSTK CVG CREEP Q29 DUTSH DJB KBUF\" readonly>";
+			result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q118 VOSTK CVG CREEP Q29 DUTSH DJB KBUF\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // todo	
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-22-2025
 			result += "<!-- Verified with ATCSCC on 02-22-2025 -->";
@@ -217,8 +217,8 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 02-21-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>"; // CDR A0
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 VIYAP Q69 GURGE Q93 QUIWE SPA MCGNS SCRLT2 KCMH\" readonly>";
-			result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KMIA HURCN3 KPASA Q118 THRSR Q79 SWAPP GETTA JAKTZ1 KCMH\" readonly>";
-			result += "<br/>East/Full OW: <input style=\"width:75%\"; value=\"KMIA FOLZZ2 ALYRA OZENA Y309 FLRDA SAGGY DIW RDU BKW MCGNS SCRLT2 KCMH\" readonly>";
+			result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q118 THRSR Q79 SWAPP GETTA JAKTZ1 KCMH\" readonly>";
+			result += "<br/>East/Full OW: <input style=\"width:75%\"; value=\"KMIA FOLZZ3 ALYRA OZENA Y309 FLRDA SAGGY DIW RDU BKW MCGNS SCRLT2 KCMH\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // todo
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-21-2025
 			result += "<!-- Verified with ATCSCC on 02-21-2025 -->";
