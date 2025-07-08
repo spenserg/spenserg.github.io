@@ -238,13 +238,13 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "CAK": // Updated 02-01-2025
 			result += "<!-- Updated 02-01-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT WEAZL3 CLAWD Q39 ASERY JPU ZZIPS1 KCAK\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD Q39 ASERY JPU ZZIPS1 KCAK\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODO
 			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>BZ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY3 BOBZY BRAYN REWET VXV CEMEX Q67 DARYN DARYN SPOCC HUUVR1 KCAK\" readonly>";
-			result += "<br/>JJ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO3 JOJJO DOOGE TONIO Q67 DARYN SPOCC HUUVR1 KCAK\" readonly>";
-			result += "<br/>KL (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KILNS3 AUDII FAK LDN ATWOO MGOOD ZZIPS KCAK\" readonly>";
-			result += "<br/>RP: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL3 CLAWD Q39 ASERY JPU ZZIPS1 KCAK\" readonly>";
+			result += "<br/>BZ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV CEMEX Q67 DARYN DARYN SPOCC HUUVR1 KCAK\" readonly>";
+			result += "<br/>JJ (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE TONIO Q67 DARYN SPOCC HUUVR1 KCAK\" readonly>";
+			result += "<br/>KL (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KILNS5 AUDII FAK LDN ATWOO MGOOD ZZIPS KCAK\" readonly>";
+			result += "<br/>RP: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD Q39 ASERY JPU ZZIPS1 KCAK\" readonly>";
 			break;
 		case "CHS": // Updated 05-27-2025
 			result += "<!-- Updated 05-27-2025 P -->";
@@ -505,7 +505,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>BE: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DBN MGMRY VUZ RQZ KHSV\" readonly>";
 			result += "<br/>ES: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN IRRTH KHSV\" readonly>";
-			result += "<br/>JJ: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO4 NOONN SYI RQZ KHSV\" readonly>";
+			result += "<br/>JJ: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 NOONN SYI RQZ KHSV\" readonly>";
 			result += "<br/>RP: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET RQZ KHSV\" readonly>";
 			result += "<br/>WE: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD ZIEBR SYI RQZ KHSV\" readonly>";
 			break;
