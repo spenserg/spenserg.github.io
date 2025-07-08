@@ -1106,7 +1106,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>STL: <input style=\"width:75%\" value=\"KBOS BLZZR6 BLZZR BAF Q480 AIR J110 STL BUM ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/>Non RNAV SID/STAR: <input style=\"width:75%\" value=\"KBOS LOGAN4 HYLND CAM Q822 FNT J36 BAE MCW ONL PUB ALS GUP BUNTR3 KPHX\" readonly>";
-					result += "<br/>Full Non RNAV: <input style=\"width:75%\" value=\"KBOS LOGAN3 REVSS HNK J217 ETG EWC J64 BDF J26 ICT LBL FTI J244 ZUN BUNTR3 KPHX\" readonly>";
+					result += "<br/>Full Non RNAV: <input style=\"width:75%\" value=\"KBOS LOGAN4 REVSS HNK J217 ETG EWC J64 BDF J26 ICT LBL FTI J244 ZUN BUNTR3 KPHX\" readonly>";
 					result += "<br/><br/><b>CDRS</b>";
 					result += "<br/>1K: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBOS HYLND7 HYLND HANAA Q816 GOATR WOZEE KENPA CESNA ONL LBF ALS GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>1N: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBOS HYLND7 HYLND HANAA Q816 GOATR WOZEE NOSIK ZOHAN LAAKE ONL LBF ALS GUP EAGUL6 KPHX\" readonly>";
@@ -1118,7 +1118,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>A8: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBOS BLZZR6 BLZZR BAF Q480 AIR J80 MCI J24 SLN J96 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>PJ: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBOS HYLND7 HYLND CAM Q822 GONZZ Q29 KLYNE ROD VHP J110 BUM ICT TOTOE FTI BUKKO ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>RK: <input style=\"width:75%\" value=\"KBOS BLZZR6 BLZZR BAF Q406 BWZ J6 HVQ Q68 RAMRD ARG FSM IRW PNH J6 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>T7 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBOS SSOXS6 SSOXS BUZRD SEY HTO J174 ORF J121 BARTL KAATT Q172 YUTEE IRQ THRSR VLKNN Q30 IZAAC EIC J4 ABI J66 EWM DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/>T7 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBOS SSOXS7 SSOXS BUZRD SEY HTO J174 ORF J121 BARTL KAATT Q172 YUTEE IRQ THRSR VLKNN Q30 IZAAC EIC J4 ABI J66 EWM DRRVR PINNG1 KPHX\" readonly>";
 					break;
 			}
 		break; // End of BOS
@@ -3530,7 +3530,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 01-10-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KJAC ALPIN4 KICNE FFU J9 MLF J107 BLD J60 HEC BASET5 KLAX\" readonly>";
-					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KJAC ALPIN2 KICNE MLD J158 MVA FRA AVE MOOR4 KLAX\" readonly>";
+					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KJAC ALPIN4 KICNE MLD J158 MVA FRA AVE MOOR4 KLAX\" readonly>";
 					result += "<br/>East: <input style=\"width:75%\" value=\"KJAC GEYSR6 NALSI OCS JNC TBC DRK J231 TNP SEAVU2 KLAX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					//result += "<br/><br/><b>CDRS</b>";
