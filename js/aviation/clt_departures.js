@@ -74,6 +74,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ GARTS LCH WEEED WLEEE7 KAUS\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY BRAYN GQO DEVAC GAGLE ELD LFK WEEED WLEEE7 KAUS\" readonly>";
+			result += "<br/>South via EIC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR JAMMR KM18K EIC WINDU SEWZY6 KAUS\" readonly>";
 			result += "<br/><br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS CAE SAV AMG DEFUN J2 LCH Q24 MOLLR DBOYS WLEEE7 KAUS\" readonly>";
 			result += "<br/>North/ZME Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE IIU J78 IRW PRTZY LAIKS4 KAUS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
