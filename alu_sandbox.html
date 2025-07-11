@@ -105,6 +105,8 @@ https://www.insideedition.com/21148-fine-dining-restaurant-gives-former-inmates-
 <div id="column2_header"><h1>Cain<br><span style="font-size:12px;">The Sweet Hot</span></h1><br><br><br>Quote</div>
 <div id="column2"><div id="scroll_box">
 
+<div id="cain_1">
+<a href="" onclick="alu_show_hide('cain2','cain1')">More Info HREF</span> | <span onclick="alu_show_hide('cain2','cain1')">More Info SPAN</span>
 <!--<i>Lyrics</i>-->
 
 <br><br>--------------------<br><br>
@@ -112,7 +114,13 @@ https://www.insideedition.com/21148-fine-dining-restaurant-gives-former-inmates-
 <img src="https://www.jestersnook.com/characters/all/cain/cocoa-1908020_960_720.jpg" width="475px">
 
 <br><br>--------------------<br><br>
+</div>
+<div id="cain2" hidden>
+MORE STUFF!<br>
+<a href="" onclick="alu_show_hide('cain1','cain2')">More Info HREF</span> | <span onclick="alu_show_hide('cain1','cain2')">More Info SPAN</span>
+</div>
 
+	
 </div>
 
 <div id="column3"><div>
@@ -136,4 +144,8 @@ https://www.insideedition.com/21148-fine-dining-restaurant-gives-former-inmates-
 </body>
 
 <script>
+function alu_show_hide(id_1, id_2) {
+	$("#" + id_1).show();
+	$("#" + id_2).hide();
+}
 </script>
