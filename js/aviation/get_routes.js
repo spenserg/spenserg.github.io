@@ -1236,6 +1236,20 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "BUF":
 			switch(arvl) {
+				case "CLT": // Updated 07-12-2025
+					result += "<!-- Updated 07-12-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF JHW HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBUF JHW DJB ROD J43 FLM SKYWA FILPZ4 KCLT\" readonly>"; // CDR W1
+					result += "<br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBUF BUF BFD JST ESL MOL AIROW CHSLY6 KCLT\" readonly>";
+					// result += "<br/>West: <input style=\"width:75%\" value=\"KBUF JHW YNG APE ZIEBR GZG BTSEY2 KCLT\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBUF JHW EWC AIR HNN SPAYD SOT LIINN3 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-12-2025
+					result += "<!-- Verified with ATCSCC on 07-12-2025 -->";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF JHW FOXEE Q145 HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF JHW DJB ROD J43 FLM SKYWA FILPZ4 KCLT\" readonly>";
+					break;
 				case "DFW": // Updated 12-23-24
 					result += "<!-- Updated 12-23-24 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -1244,18 +1258,6 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBUF JHW ROD PXV LIT FINGR9 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "CLT": // Updated 12-23-24
-					result += "<!-- Updated 12-23-24 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF JHW HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/><br/>NE Arrival: <input style=\"width:75%\" value=\"KBUF BUF BFD JST ESL MOL AIROW CHSLY6 KCLT\" readonly>";
-					result += "<br/>West: <input style=\"width:75%\" value=\"KBUF JHW YNG APE ZIEBR GZG BTSEY2 KCLT\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBUF JHW EWC AIR HNN SPAYD SOT LIINN3 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>P1: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF JHW HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/>W1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF JHW DJB ROD J43 FLM SKYWA FILPZ4 KCLT\" readonly>";
 					break;
 			}
 		break; // End of BUF
