@@ -168,6 +168,8 @@ function compute (str_override = "") {
 	// TODO: remove exclamation points in multi-edit
 	//console.log(fkeystxt);
 
+	if ($("#outbound").val() == "debug") { debug_mode = !debug_mode; }
+
 	$("#ob_copy").val($("#outbound").val());
 	$("#total").html("");
 	rega = /TOW\n(\d+)\n(\d+)\n([^\n]*)\nLDW\n(\d+)\n(\d+)\n/g;
@@ -550,7 +552,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + 'result += \"<br/><br/><b>Non RNAV</b>\";' +
-		((non_rnav.length == 0) ? " // TODO" : (textarea_tabs + non_rnav)) +
+		((non_rnav.length == 0) ? " // TODDO" : (textarea_tabs + non_rnav)) +
 		'</textarea><br/><br/><textarea rows="15" cols="80">' +
 		'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
 		'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
@@ -583,7 +585,7 @@ function merge_faa_pref(result_arr = {}) {
 
 	if (faa_pref == null || faa_pref[2].trim().length == 0) {
 		// Faa Pref not detected in existing routes
-		warnings += "<span style=\"color:orange\">No existing FAA Pref route detected.<\/b><br/>";
+		warnings += "<span style=\"color:orange\">No existing FAA Pref route detected.<\/span><br/>";
 		if (result_arr['faa_pref']['route'] !== undefined) {
 			// Pref route in CDR list, but not already existing
 			result += "result += \"<br/><br/><b>Faa Pref Route:</b>\";" + textarea_tabs;
