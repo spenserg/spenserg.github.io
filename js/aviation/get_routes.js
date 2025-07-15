@@ -1603,13 +1603,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE KKIDS1 NUSMM JPU HNN FLM HEVAN BONNT VEECK5 KORD\" readonly>";
 					result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE GTLKE4 ALPHE EMMMA WYNDE2 KORD\" readonly>";
 					break;
-				case "PHX": // Updated 12-30-24
-					result += "<!-- Updated 12-30-24 -->";
+				case "PHX": // Updated 07-14-2025
+					result += "<!-- Updated 07-14-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KCLE GTLKE4 YABRO IOW PWE HLC PUB ALS GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/><input style=\"width:75%\" value=\"KCLE ZAAPA5 SNNOH VHP J24 STL BUM ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KCLE CAVVS4 APE FLM PXV J78 TUL J98 IRW J78 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KCLE GTLKE4 ALPHE PMM BAE MCW ONL PUB RSK INW EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLE GTLKE4 YABRO IOW PWE HLC PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLE CAVVS4 APE FLM PXV J78 TUL J98 IRW J78 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>North via ONL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLE GTLKE4 ALPHE PMM BAE MCW ONL PUB RSK INW EAGUL6 KPHX\" readonly>";
+					result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLE CAVVS4 APE YOCKY BNA MEM TXK J42 FUZ J4 EWM DRRVR PINNG1 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-14-2025
 					result += "<!-- Verified with ATCSCC on 07-14-2025 -->";
