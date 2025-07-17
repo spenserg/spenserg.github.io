@@ -2452,9 +2452,10 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 05-16-2025 MP -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDSM DSM J25 MCI RZC FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>West/LMN: <input style=\"width:75%\" value=\"KDSM LMN STJ ICT HOFFF JOVEM6 KDFW\" readonly>";
-					result += "<br/>West/OVR: <input style=\"width:75%\" value=\"KDSM OVR J21 ICT HOFFF JOVEM6 KDFW\" readonly>";
-					// TODO East
+					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDSM LMN STJ ICT HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/><b>For West dptr: KDSM OVR J21 ICT...<\/b>";
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDSM IOW PIA STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/>East via SQS<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDSM IOW PIA ENL J71 MEM SQS MLU YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDSM J25 TUL FINGR9 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
