@@ -7784,16 +7784,16 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KSJC SJC3 AVE J6 EED J6 DRK J78 ABQ J72 TXO UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
 					break;
-				case "PHX": // Updated 01-18-2025
-					result += "<!-- Updated 01-18-2025 -->";
+				case "PHX": // Updated 07-17-2025
+					result += "<!-- Updated 07-17-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSJC SPTNS1 JFREE LOSHN BOILE BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSJC TECKY4 TECKY NTELL BIKKR FUZZY J86 BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KSJC SNS J126 LAX SLI J169 BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/><br/>PHX NO J92: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE BOILE BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSJC SPTNS1 TECKY NTELL BIKKR FUZZY J86 BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSJC SJC3 MOONY SNS J126 LAX SLI J169 BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><br/>PHX NO J92<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE AVE J6 PMD J65 BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSJC SJC3 AVE J6 PMD J65 BLH ARLIN4 KPHX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-17-2025
 					break;
 			}
 		break; // End of SJC
