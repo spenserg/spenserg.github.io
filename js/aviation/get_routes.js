@@ -7774,7 +7774,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSJC SPTNS1 TECKY NTELL OAL ILC BCE RSK DIXAN Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><b style=\"color:orange\">Specify flight level at NTELL- SID requires exactly 5000 ft at SPTNS, specifying fl before NTELL will red brick<\/b>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE PMD J65 DECAS J212 BXK Q180 EWM J4 INK GEEKY SOCKK4 KDFW\" readonly>";
+					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE AVE J6 PMD J65 DECAS BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/>NE Arrival: <input style=\"width:75%\" value=\"KSJC BMRNG4 SYRAH Q128 JSICA MLF J28 ICT TUL HITUG SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/>DFW BGTOE: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE AVE J6 PMD BLH J169 TFD J50 ELP FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
 					result += "<br/>DFW WEST: <input style=\"width:75%\" value=\"KSJC BMRNG4 SYRAH Q128 JSICA MLF J28 ICT TUL HITUG SEEVR4 KDFW\" readonly>";
