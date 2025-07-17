@@ -1449,15 +1449,18 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC MZV KMSN\" readonly>";
 			result += "<br/>1E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT MZV KMSN\" readonly>";
 			break;
-		case "MSO": // Updated 01-24-2025 // todo
-			result += "<!-- Updated 01-24-2025 -->";
+		case "MSO": // Updated 07-17-2025
+			result += "<!-- Updated 07-17-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 PUB HAHNS QUIRT WAIDE KMSO\" readonly>";
-			result += "<br/><br/>North/East: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW IFI HYS MCK RAP J151 BIL J34 HLN KMSO\" readonly>";
-			result += "<br/>South/West: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ALS JNC J15 TCH PIH LKT KMSO\" readonly>";
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 ZEMMA END HLC BFF BIL J34 HLN KMSO\" readonly>";
+			result += "<br/>West/HUDAD<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ALS JNC J15 TCH PIH LKT KMSO\" readonly>";			
+			result += "<br/>West/KATZZ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX J15 RSK DVC PUC TCH PIH LKT KMSO\" readonly>";
+			result += "<br/><br/>East via MCI<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J25 MCI J41 OVR J151 BIL J136 HLN KMSO\" readonly>";
+			result += "<br/>West via ELP (FL220 to SAT)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY SAT DLF FST ELP J86 INW CORKR J11 TCH PIH LKT KMSO\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 PNH J17 PUB DBL J206 OCS J52 LKT KMSO\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-17-2025
 			break;
 		case "MSP": // Updated 04-19-2025 // Mandatory Routes checked
 			result += "<!-- Updated 04-19-2025 M -->";
