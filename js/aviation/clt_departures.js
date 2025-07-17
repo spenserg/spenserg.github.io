@@ -267,9 +267,10 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 05-16-2025 MP -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-16-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM OOM TTH CID KCID\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HNN ROD J149 FWA JOT KCID\" readonly>";
-			result += "<br/>South via MEM: <input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN HRS GQO MEM J41 SGF IRK KCID\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HNN ROD J149 FWA JOT KCID\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY GQO MEM J41 SGF IRK KCID\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 NALEY HNN ROD J149 FWA JOT KCID\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-16-2025
 			result += "<!-- Verified with ATCSCC on 05-16-2025 -->";
 			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV IIU CMI MZV KCID\" readonly>";
