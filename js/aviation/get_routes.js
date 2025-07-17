@@ -8185,6 +8185,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 05-16-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSTS RREHD1 HADLY KAYEX LOSHN BOILE BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><b>PHX NO J92: ...LOSHN LANDO J65 BLH HYDRR1 PHX<\/b>";
 					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSTS RREHD1 NTELL Q158 MYCAL BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
