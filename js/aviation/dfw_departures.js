@@ -2014,19 +2014,22 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF INK J15 JNC J12 HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME J15 JNC J12 HELPR JAZZZ1 KSLC\" readonly>";
 			break;
-		case "SMF": // Updated 01-29-2025
-			result += "<!-- Updated 01-29-2025 -->";
+		case "SMF": // Updated 07-18-2025
+			result += "<!-- Updated 07-18-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO TCC FTI J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>"; // CDR 0P
-			result += "<br/>South: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK J4 RUSTT BOILE J50 LANDO J65 EHF NURAY SUUTR4 KSMF\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO FTI J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>"; // CDR 0P
+			result += "<br/><br/>South Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TCC GUP J96 PKE J4 RUSTT BOILE J50 LANDO J65 EHF NURAY SUUTR4 KSMF\" readonly>";
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS LBL LAA BRK EKR J173 TCH J154 BAM ANAHO SLMMR5 KSMF\" readonly>";
+			result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK J4 RUSTT BOILE J50 LANDO J65 EHF NURAY SUUTR4 KSMF\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 TXO TCC J76 FTI J58 ILC J198 MVA J84 LIN CCR CCR2 KSMF\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>0P (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO TCC FTI J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
-			result += "<br/>1N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 PNH J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
-			result += "<br/>1S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT J15 RSK J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
-			result += "<br/>2S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF INK J15 RSK J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
-			result += "<br/>3S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME J15 RSK J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-18-2025
+			result += "<!-- Verified with ATCSCC on 07-18-2025 -->";
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO TCC FTI J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 PNH J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT J15 RSK J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF INK J15 RSK J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
+			result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME J15 RSK J58 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
 			break;
 		case "SNA": // Updated 05-26-2025 // Mandatory Routes checked
 			result += "<!-- Updated 05-26-2025 MP -->";
