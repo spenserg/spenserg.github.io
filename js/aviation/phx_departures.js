@@ -948,13 +948,13 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX SJN9 ABQ PNH IRW KTUL\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-		case "TUS": // Updated 02-05-2025
-			result += "<!-- Updated 02-05-2025 -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+		case "TUS": // Updated 07-18-2025
+			result += "<!-- Updated 07-18-2025 MP -->";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL170):</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX STRRM1 STRRM BASER DINGO DINGO6 KTUS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX TFD4 TFD DINGO6 KTUS\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-18-2025
 			break;
 	}
 	return result;
