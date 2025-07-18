@@ -600,12 +600,14 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 02-23-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 VLKNN WASER VANZE3 KMEM\" readonly>";
-			result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA JENIM PATOY DEANR MICES JAWJA CABLO DEFUN J2 CEW J50 MCB MEVEE HOBRK4 KMEM\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\"; value=\"KMIA FLMGO2 STYMY Q77 WIGVO IRQ VXV RAMRD BLUZZ5 KMEM\" readonly>";
-			result += "<br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 PEKON LCH AEX LITTR CONDR4 KMEM\" readonly>";
+			// result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA JENIM PATOY DEANR MICES JAWJA CABLO DEFUN J2 CEW J50 MCB MEVEE HOBRK4 KMEM\" readonly>";
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 WIGVO IRQ VXV RAMRD BLUZZ5 KMEM\" readonly>";
+			result += "<br/>West/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 LEV AEX ELD LITTR CONDR4 KMEM\" readonly>";
+			result += "<br/><br/>East/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR VLKNN WASER VANZE3 KMEM\" readonly>";
+			result += "<br/>West/Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW J50 MCB SWB ELD LITTR CONDR4 KMEM\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODO
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-23-2025
-			result += "<!-- Verified with ATCSCC on 02-23-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-17-2025
+			result += "<!-- Verified with ATCSCC on 07-17-2025 -->";
 			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS VLKNN WASER VANZE3 KMEM\" readonly>";
 			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR Q116 VLKNN WASER VANZE3 KMEM\" readonly>";
 			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 VLKNN WASER VANZE3 KMEM\" readonly>";
@@ -975,14 +977,14 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "SMF": // Updated 05-30-2025
 			result += "<!-- Updated 05-30-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV J58 PNH Q130 ROCCY Q164 KATTS JSICA CRASY SLMMR5 KSMF\" readonly>";
-			result += "<br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW J50 MCB SWB KF18E SPS J58 PNH Q130 ROCCY Q164 KATTS JSICA CRASY SLMMR5 KSMF\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN MUDHO Q128 JSICA CRASY SLMMR5 KSMF\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV J86 ELP J50 LANDO J65 EHF NURAY SUUTR4 KSMF\" readonly>";
-			result += "<br/><br/>South/Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 IAH J86 ELP J50 LANDO J65 EHF NURAY SUUTR4 KSMF\" readonly>";
-			result += "<br/>North via MCI: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM MCI HCT RIDJE J56 TCH J154 BAM J94 LLC ANAHO SLMMR5 KSMF\" readonly>";
-			result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW HRVLK KELPP LCHLH MUSYL SAT J138 FST J86 ELP J50 LANDO J65 EHF NURAY SUUTR4 KSMF\" readonly>";
-			result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP KH87A FST J2 ELP J50 LANDO J65 EHF NURAY SUUTR4 KSMF\" readonly>";
+			result += "<br/><br/>NRP<input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV J58 PNH Q130 ROCCY Q164 KATTS JSICA CRASY SLMMR5 KSMF\" readonly>";
+			result += "<br/><b>Non OW: KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW J50 MCB SWB KF18E SPS J58...<\/b>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 VLKNN MUDHO Q128 JSICA CRASY SLMMR5 KSMF\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV J86 ELP J50 TFD J212 DECAS J65 EHF NURAY SUUTR4 KSMF\" readonly>";
+			result += "<br/><b>Non OW: KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 IAH J86...<\/b>";
+			result += "<br/><br/>North via MCI<span style=\"color:green\"> (Ok to File)</span>:<input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM MCI HCT RIDJE J56 TCH J154 BAM J94 LLC ANAHO SLMMR5 KSMF\" readonly>";
+			result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>:<br/><input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW HRVLK KELPP LCHLH MUSYL SAT J138 FST J86 ELP J50 LANDO J65 EHF NURAY SUUTR4 KSMF\" readonly>";
+			result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>:<br/><input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP KH87A FST J2 ELP J50 LANDO J65 EHF NURAY SUUTR4 KSMF\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>";
 			// result += "<br/><input style=\"width:75%\"; value=\"KMIA MIA1 BNGOS LAL SZW DEFUN J2 IAH J86 ELP J50 TFD J212 DECAS J65 PMD J6 AVE BSR BSR3 KSFO\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-30-2025
