@@ -6499,7 +6499,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 				case "SEA": // Updated 03-10-2025
 					result += "<!-- Updated 03-10-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-10-2025
-					result += "<br/><br/>HAR: <input style=\"width:75%\"; value=\"KPHL PTW SARAA RAV PSB J60 DJB J34 BAE SKETR KP06Y KU12Q MLP GLASR3 KSEA\" readonly>";
+					result += "<br/><br/>HAR: <input style=\"width:75%\"; value=\"KPHL PTW SARAA RAV PSB J60 DJB J34 BAE HUFFR Q146 KIXCO Q142 MLP GLASR3 KSEA\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 AIR J80 MCI HCT BFF BOY DNW LKT PDT CHINS5 KSEA\" readonly>"; // CDR 80
 					result += "<br/><br/>HLC: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV J64 LMN PWE HLC J80 FQF J20 PDT CHINS5 KSEA\" readonly>"; // CDR 64
 					result += "<br/>PNH 2: <input style=\"width:75%\"; value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 ALEAN Q66 LITTR KOMMA IRW J6 PNH ALS JNC J15 BOI PDT CHINS5 KSEA\" readonly>";
