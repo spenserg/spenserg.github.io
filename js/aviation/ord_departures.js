@@ -925,14 +925,14 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>8S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J151 VUZ ACORI MAATY5 KTPA\" readonly>";
 			result += "<br/>SB<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE BWG HITMN ACORI MAATY5 KTPA\" readonly>";
 			break;
-		case "TUS": // Updated 05-17-2025 // Mandatory Routes checked
-			result += "<!-- Updated 05-17-2025 MP -->";
+		case "TUS": // Updated 07-18-2025 // Mandatory Routes checked
+			result += "<!-- Updated 07-18-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD PEKUE PIPPN ELYNA STJ J18 FTI J104 SSO ZONNA2 KTUS\" readonly>"; // CDR 1W
 			result += "<br/><br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J8 SGF J98 IRW J74 CNX ONM J104 SSO ZONNA2 KTUS\" readonly>"; // CDR 2S
-			result += "<br/>North/ZKC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\"; value=\"KORD PEKUE PIPPN ROTTN PWE HLC J64 PUB ALS J13 ABQ J57 ONM J104 SSO ZONNA2 KTUS\" readonly>";
-			result += "<br/>North via RWF<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 RWF FSD J114 SNY FQF J13 ABQ ONM J104 SSO ZONNA2 KTUS\" readonly>"; // CDR 1N
-			result += "<br/>NW Arrival<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KORD NOONY NIGHT NITWT OBH LBF J10 HBU INW J44 PXR DINGO6 KTUS\" readonly>";
+			// result += "<br/>North/ZKC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\"; value=\"KORD PEKUE PIPPN ROTTN PWE HLC J64 PUB ALS J13 ABQ J57 ONM J104 SSO ZONNA2 KTUS\" readonly>";
+			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J146 GLD PUB J64 RSK J44 PXR DINGO6 KTUS\" readonly>";
+			result += "<br/><br/>North via RWF<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 RWF FSD J114 SNY FQF J13 ABQ ONM J104 SSO ZONNA2 KTUS\" readonly>"; // CDR 1N
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD PEKUE PIPPN ROTTN PWE GCK J18 PXR J92 TFD DINGO6 KTUS\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-20-2025
