@@ -8404,7 +8404,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					break;
 				case "PHX": // Updated 01-18-2025
 					result += "<!-- Updated 01-18-2025 -->";
-					result += "<br/><br/><b>Div Recovery:</b>";
+					result += "<br/><br/><b>Div Recovery (Avg FL160):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTUS BURRO5 HOTTT PINNG1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTUS TUS9 BAYBI SUNSS8 KPHX\" readonly>";
