@@ -536,7 +536,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR SARKK AEX DOOBI3 KIAH\" readonly>";
 			result += "<br/><b style=\"color:orange\">ZEEKK/GESNR okay too ...AEX ZEEKK3 KIAH (east flow) -or- ...AEX GESNR2 KIAH (west flow)<\/b>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC ELD PLANB ZEEKK3 KIAH\" readonly>";
-			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS FISHO Q75 TEEEM AMG CABLO DEFUN J2 SJI NNCEE2 KIAH\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS FISHO Q75 TEEEM AMG CABLO DEFUN J2 SJI LINKK1 KIAH\" readonly>";
 			result += "<br/><br/>North via MEM<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN GQO MEM ELD PLANB ZEEKK3 KIAH\" readonly>";
 			result += "<br/>North via TUL<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL J87 CVE DRLLR5 KIAH\" readonly>";
 			// result += "<br/><br/>DOOBI N/S: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR MGMRY CATLN Q56 SJI LINKK1 KIAH\" readonly>";
