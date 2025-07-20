@@ -1637,16 +1637,16 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-28-2025
 					result += "<!-- Verified with ATCSCC on 04-28-2025 -->";
 					break;
-				case "DFW": // Updated 12-30-24
-					result += "<!-- Updated 12-30-24 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KCMH PKACZ TARRY CVG PXV J131 LIT MEEOW FEWWW BRDJE5 KDFW\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY FLM BNA MEM LIT MEEOW FEWWW BRDJE5 KDFW\" readonly>";
-					result += "<br/>NW Arrival: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN VHP J24 STL J8 SGF TUL KLAWW VKTRY2 KDFW\" readonly>";
-					result += "<br/>SE Arrival: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY FLM BWG IZAAC YUYUN WHINY4 KDFW\" readonly>";
+				case "DFW": // Updated 07-20-2025
+					result += "<!-- Updated 07-20-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-20-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY CVG PXV J131 LIT MEEOW FEWWW BRDJE5 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN VHP J24 STL J8 SGF TUL KLAWW VKTRY2 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY FLM BNA MEM LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><b>For SE Arrival: .. BNA SQS YUYUN BEREE3 KDFW<\/b>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN CVG PXV J131 LIT FINGR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-20-2025
 					break;
 				case "LAX": // Updated 03-12-2025
 					result += "<!-- Updated 03-12-2025 P -->";
@@ -1654,11 +1654,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KCMH PKACZ TARRY DQN VHP AXC MCI J24 SLN LAA DRO JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
 					result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KCMH PKACZ TARRY FWA J64 WHETT J30 JOT J60 DBL CHESZ Q88 HAKMN ANJLL4 KLAX\" readonly>";
 					result += "<br/>South/ZKC Avoid: <input style=\"width:75%\"; value=\"KCMH PKACZ TARRY CVG PXV ARG IRW J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
-					result += "<br/>South via BNA: <input style=\"width:75%\"; value=\"KCMH PKACZ TARRY CVG IIU BNA MEM LIT ADM TXO J74 CNX ONM SJN J74 PKE J104 TNP BASET5 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KCMH PKACZ TARRY VHP J80 MCI J24 SLN J102 ALS J44 RSK J64 TBC J236 EED TNP BASET5 KLAX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-12-2025
-					result += "<!-- Verified with ATCSCC on 03-12-2025 -->";
 					break;
 				case "PHL": // Updated 12-30-24
 					result += "<!-- Updated 12-30-24 -->";
@@ -6915,7 +6913,8 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 07-20-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL220):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KRDU CATAR SDAIL CHSLY6 KCLT\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KRDU HOOKZ5 DAWTS TORQD MLLET3 KCLT\" readonly>";
+					result += "<br/><br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRDU HOOKZ5 DAWTS OKNEE MLLET3 KCLT\" readonly>"; // CDR 41
+					result += "<br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRDU OXFRD5 CARML AIROW CHSLY6 KCLT\" readonly>"; // CDR XF
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KRDU CATAR LIB MAJIC4 KCLT\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-20-2025
