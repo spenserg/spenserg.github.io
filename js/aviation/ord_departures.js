@@ -509,13 +509,13 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 02-15-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD DENNT DARCY DREGS DUMGE SCOTO SWAPP Q79 THRSR DUCHY OHDEA1 KJAX\" readonly>";
-			result += "<br/><br/>East: <input style=\"width:75%\"; value=\"KORD RAYNR BRTMN TAAYZ PETTY VIO ANEWA APE SPAYD SPA ESENT LUNNI1 KJAX\" readonly>";
+			result += "<br/><br/>East: <input style=\"width:75%\"; value=\"KORD RAYNR BRTMN TAAYZ PETTY VIO ANEWA APE SPAYD SPA ESENT LUNNI2 KJAX\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\"; value=\"KORD CMSKY CARYN CYBIL PXV VUZ SZW CAPPS MARQO2 KJAX\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD EARND ELANR EMMLY ETAME EMEGE SWAPP VXV ODF MCN AMG KJAX\" readonly>";
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>1W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF Q116 VLKNN MGMRY CAPPS MARQO2 KJAX\" readonly>";
-			result += "<br/>2E (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE J83 SPA ESENT LUNNI1 KJAX\" readonly>";
+			result += "<br/>2E (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE J83 SPA ESENT LUNNI2 KJAX\" readonly>";
 			result += "<br/>2S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q79 THRSR NOKIE DUCHY OHDEA1 KJAX\" readonly>";
 			result += "<br/>5S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN THRSR NOKIE DUCHY OHDEA1 KJAX\" readonly>";
 			result += "<br/>6S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL PLESS HITMN THRSR NOKIE DUCHY OHDEA1 KJAX\" readonly>";
