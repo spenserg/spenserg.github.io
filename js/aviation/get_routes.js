@@ -8590,6 +8590,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO					
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-24-2025
 					break;
+				case "LGA": // Updated 07-18-2025
+					result += "<!-- Updated 07-18-2025 -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-18-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"CYYC CWBOY2 NOSIV Q909 PEMDU GGW ABR J90 RWF J34 WOOST J146 ETG MIP4 KLGA\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYYC CWBOY2 NOSIV Q909 PEMDU GGW WILTN Q140 EXTOL RKA HAARP4 KLGA\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYYC STAMP2 GADKI Q957 VOBUK GTF J13 BIL J151 ONL DSM IOW J146 ETG MIP4 KLGA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO					
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-18-2025
+					break;
 			}
 		break; // End of YYC
 
