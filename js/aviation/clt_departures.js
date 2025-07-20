@@ -1091,14 +1091,20 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 NALEY HVQ IIU J8 STL J151 RAP KRAP\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-		case "RDU":
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/>Max FL130: <input style=\"width:75%\" value=\"KCLT LILLS3 LILLS ETBUY DMSTR2 KRDU\" readonly>";
+		case "RDU": // Updated 07-20-2025
+			result += "<!-- Updated 07-20-2025 MP -->";
+			result += "<br/><br/><b>Faa Pref Route (Max FL130):</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT LILLS3 LILLS ETBUY DMSTR2 KRDU\" readonly>";
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KRITR6 FILDS ROBLS TABER MCDON ALDAN4 KRDU\" readonly>"; // CDR KR
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY VANNC CHKLZ BLOGS3 KRDU\" readonly>"; // CDR KW
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 MERIL KRDU\" readonly>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT CLT3 LILLS SDZ KRDU\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>KW (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY VANNC CHKLZ BLOGS3 KRDU\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-20-2025
+			result += "<!-- Verified with ATCSCC on 07-20-2025 -->";
+			result += "<br/>KR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KRITR6 FILDS ROBLS TABER MCDON ALDAN4 KRDU\" readonly>";
+			result += "<br/>KW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY VANNC CHKLZ BLOGS3 KRDU\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT LILLS3 LILLS ETBUY DMSTR2 KRDU\" readonly>";
 			break;
 		case "RIC": // Updated 01-28-2025
 			result += "<!-- Updated 01-28-2025 -->";
