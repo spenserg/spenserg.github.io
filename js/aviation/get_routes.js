@@ -8096,6 +8096,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
+				case "PHL": // Updated 07-20-2025
+					result += "<!-- Updated 07-20-2025 P -->"
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSRQ TIDES1 CAMJO Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					// TODO
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>";  // No CDRs as of 07-20-2025
+					break; 
 			}
 		break; // End of SRQ
 
