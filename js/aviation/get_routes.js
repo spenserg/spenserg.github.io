@@ -6911,19 +6911,21 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "RDU":
 			switch(arvl) {
-				case "CLT":
+				case "CLT": // Updated 07-20-2025
+					result += "<!-- Updated 07-20-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL220):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KRDU CATAR SDAIL CHSLY6 KCLT\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KRDU HOOKZ5 DAWTS TORQD MLLET3 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KRDU CATAR LIB MAJIC4 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>00 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU CATAR SDAIL CHSLY6 KCLT\" readonly>";
-					result += "<br/>41 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU HOOKZ5 DAWTS OKNEE MLLET3 KCLT\" readonly>";
-					result += "<br/>C1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU HOOKZ5 DAWTS OKNEE MLLET3 KCLT\" readonly>";
-					result += "<br/>C2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU CATAR SDAIL CHSLY6 KCLT\" readonly>";
-					result += "<br/>HK (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU HOOKZ5 DAWTS OKNEE MLLET3 KCLT\" readonly>";
-					result += "<br/>XF (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU OXFRD5 CARML AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-20-2025
+					result += "<!-- Verified with ATCSCC on 07-20-2025 -->";
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU CATAR SDAIL CHSLY6 KCLT\" readonly>";
+					result += "<br/>41<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU HOOKZ5 DAWTS OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/>C1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU HOOKZ5 DAWTS OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/>C2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU CATAR SDAIL CHSLY6 KCLT\" readonly>";
+					result += "<br/>HK<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU HOOKZ5 DAWTS OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/>XF<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRDU OXFRD5 CARML AIROW CHSLY6 KCLT\" readonly>";
 					break;
 				case "DCA": // Updated 07-20-2025
 					result += "<!-- Updated 07-20-2025 MP -->";
