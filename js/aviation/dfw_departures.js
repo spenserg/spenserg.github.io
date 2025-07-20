@@ -418,10 +418,9 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "CMH": // Updated 04-08-2025
 			result += "<!-- Updated 04-08-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV JUDDI JAKTZ2 KCMH\" readonly>";
-			result += "<br/>NRP: <input style=\"width:75%\" value=\"KDFW BSKAT LIT KM36K KI48O GETTA JAKTZ2 KCMH\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL VHP JADUB DUBLN1 KCMH\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS BNA GETTA JAKTZ2 KCMH\" readonly>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV JUDDI JAKTZ2 KCMH\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL VHP JADUB DUBLN1 KCMH\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS BNA GETTA JAKTZ2 KCMH\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 LIT MEM BWG HNN TASKE BREMN KCMH\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-08-2025
