@@ -7836,17 +7836,17 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "SLC":
 			switch(arvl) {
-				case "CLT": // Updated 06-16-2025
-					result += "<!-- Updated 06-16-2025 P -->";
+				case "CLT": // Updated 07-20-2025
+					result += "<!-- Updated 07-20-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-16-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSLC RUGGD3 EKR J116 FQF J80 HLC SLN BUM J112 FAM BNA TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSLC ZIONZ1 EYELO ALS KA36Y IRW ARG J46 VXV TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KSLC RUGGD3 OCS J94 BFF OVR J151 IRK SPI TILMN FLM TAFTT PARQR4 KCLT\" readonly>";
-					result += "<br/><br/>South via TXK: <input style=\"width:75%\" value=\"KSLC ZIONZ1 EYELO TAHIB Q130 PNH ADM J52 SQS HRISN Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
-					// TODO: North via BAE
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 OCS J94 BFF OVR J151 IRK SPI TILMN FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA BONGO Q154 NOSEW IRW ARG J46 VXV TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 HOLTR BOY J32 ABR J70 BAE J89 BVT VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/>South via TXK<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA JNC J15 ABQ J72 SPS TXK J52 SQS HRISN Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSLC EKR J116 FQF J80 HLC SLN BUM J112 FAM BNA TAZZA FILPZ4 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-16-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-20-2025
 					break;
 				case "DFW": // Updated 06-29-2025
 					result += "<!-- Updated 06-29-2025 P -->";
