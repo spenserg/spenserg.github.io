@@ -7511,15 +7511,22 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>9N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT ALISS6 ALISS JCT SJT ABI TUL J25 MCI J26 IRK BENKY6 KORD\" readonly>";
 					result += "<br/>9X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT ALISS6 ALISS JCT SJT HNKER ICT J26 IRK BENKY6 KORD\" readonly>";
 					break;
-				case "PHX":
+				case "PHX": // Updated 07-20-2025
+					result += "<!-- Updated 07-20-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSAT ALISS6 ALISS FST ELP DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSAT YODUH1 KLNGR MQP J23 BATIK J58 PNH J6 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAT YODUH1 PRTZY CNX ZUN EAGUL6 KPHX\" readonly>"; // CDR 1X
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSAT TJANO1 TJANO OBGIY AGNID CUS DRRVR PINNG1 KPHX\" readonly>"; // CDR 0W
+					result += "<br/><br/>North via PNH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAT YODUH1 KLNGR MQP J23 BATIK J58 PNH J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSAT FST ELP J2 TUS SUNSS8 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>1X (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT YODUH1 PRTZY CNX ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>9X (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT ALISS6 ALISS FST ELP DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-20-2025
+					result += "<!-- Verified with ATCSCC on 07-20-2025 -->";
+					result += "<br/>0G<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT TJANO1 TJANO OBGIY AGNID VYLLA TUS HOTTT PINNG1 KPHX\" readonly>";
+					result += "<br/>0W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT TJANO1 TJANO OBGIY AGNID CUS DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/>1X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT YODUH1 PRTZY CNX ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>6X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT TJANO1 TJANO KINEY DLF FST ELP DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/>9X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT ALISS6 ALISS FST ELP DRRVR PINNG1 KPHX\" readonly>";
 					break;
 			}
 		break; // End of SAT
@@ -7858,8 +7865,8 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 06-16-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSLC RUGGD3 OCS J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA DBL BRK HGO J24 SLN J96 IRK SHAIN2 KORD\" readonly>";
-					// TODO North
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 HOLTR BOY J32 ABR J70 BAE LYNNI ERNNY8 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA DBL BRK HGO J24 SLN J96 IRK SHAIN2 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSLC OCS J202 DDY J158 RAP J82 FSD J16 MCW JVL1 KORD\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-16-2025
