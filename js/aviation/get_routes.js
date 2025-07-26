@@ -5275,7 +5275,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 				case "CLT": // Updated 02-22-2025
 					result += "<!-- Updated 02-22-2025 -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><br/>HAR: <input style=\"width:75%\"; value=\"KONT RAJEE4 AVRRY PKE J134 DRK J6 PNH IRW ARG J46 VXV TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>HAR: <input style=\"width:75%\"; value=\"KONT RAJEE4 AVRRY PKE J134 DRK J6 PNH IRW ARG J46 BNA TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/>South via FUZ: <input style=\"width:75%\"; value=\"KONT RAJEE4 MTBAL CNERY BLH J169 TFD J50 SSO J4 FUZ IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/>South via IAH: <input style=\"width:75%\"; value=\"KONT RAJEE4 MTBAL CNERY BLH J169 TFD J50 ELP J86 IAH J2 SJI Q56 CATLN MGMRY THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/>North via ICT: <input style=\"width:75%\"; value=\"KONT SNSHN5 LAS J146 DVC PUB J28 ICT ARG TAZZA FILPZ4 KCLT\" readonly>";
@@ -7842,7 +7842,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-16-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSLC RUGGD3 EKR J116 FQF J80 HLC SLN BUM J112 FAM BNA TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 OCS J94 BFF OVR J151 IRK SPI TILMN FLM TAFTT PARQR4 KCLT\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA BONGO Q154 NOSEW IRW ARG J46 VXV TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA BONGO Q154 NOSEW IRW ARG J46 BNA TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 HOLTR BOY J32 ABR J70 BAE J89 BVT VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
 					result += "<br/>South via TXK<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA JNC J15 ABQ J72 SPS TXK J52 SQS HRISN Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
