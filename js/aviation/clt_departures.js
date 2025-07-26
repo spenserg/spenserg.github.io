@@ -1174,14 +1174,15 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR JAMMR MERDN AEX J50 ACT INK J50 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ FAM J98 SGF PER MMB FTI HOGGZ LUCKI1 KSAN\" readonly>";
 			break;
-		case "SAT": // Updated 05-01-2025 // Mandatory Routes checked
-			result += "<!-- Updated 05-01-2025 PCM -->";
+		case "SAT": // Updated 07-26-2025
+			result += "<!-- Updated 07-26-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR JAMMR MERDN AEX CAAGE QERVO1 KSAT\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA MEM LIT J101 LFK CAAGE QERVO1 KSAT\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS FISHO Q75 TEEEM ALLMA CEW J2 LCH CAAGE QERVO1 KSAT\" readonly>";
+			result += "<br/><br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS FISHO Q75 TEEEM ALLMA CEW J2 LCH CAAGE QERVO1 KSAT\" readonly>";
+			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA ARG TXK LLEAD QERVO1 KSAT\" readonly>";
+			result += "<br/><b>If wx over TXK: .. BNA ARG LIT J101 LFK CAAGE QERVO1 KSAT<\/b>";
 			result += "<br/><br/>North via TUL: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL J25 CWK MARCS1 KSAT\" readonly>";
-			// todo South OW??
+			result += "<br/><b>NW Arrival: .. TUL J78 IRW ABI WEELS TRVLL DNKIN1 KSAT<\/b>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT SPA CHOPZ MGMRY CATLN SJI LSU LCH IAH IDU KSAT\" readonly>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 DEBIE CHOPZ MGMRY CATLN SJI LSU LCH IAH IDU MARCS1 KSAT\" readonly>";
