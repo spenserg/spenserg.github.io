@@ -1259,9 +1259,12 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 05-01-2025 PCM -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY5 BNA FAM J112 BUM SLN HLC J80 FQF J116 EKR RACER JAZZZ1 KSLC\" readonly>"; // CDR RP
-			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE FLM J24 VHP BRL OVR OBH BFF J94 OCS CARTR1 KSLC\" readonly>";
-			result += "<br/><br/>ELP: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR MGMRY CATLN Q56 PEKON J86 ELP J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
-			result += "<br/>EWM 1: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC SUTTN EIC J4 ABI J66 EWM DMN GREBE J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
+			result += "<br/>Via TUL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL GCK HGO EKR PITTT1 KSLC\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE FLM J24 VHP BRL OVR OBH BFF J94 OCS CARTR1 KSLC\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC SUTTN J52 TXK BYP UKW GTH TCC ALS JNC J12 HELPR JAZZZ1 KSLC\" readonly>";
+			result += "<br/><br/>South via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK J42 ABI J50 ELP J86 INW CORKR J11 BCE QWENN6 KSLC\" readonly>";
+			//result += "<br/><br/>ELP: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR MGMRY CATLN Q56 PEKON J86 ELP J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
+			result += "<br/><br/>EWM 1: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC SUTTN EIC J4 ABI J66 EWM DMN GREBE J86 BAVPE CORKR J11 BCE QWENN6 KSLC\" readonly>";
 			result += "<br/>GTH 1: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC SUTTN J52 TXK BYP UKW GTH TCC ALS JNC J12 HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/>LEV WEST: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ MGMRY SJI LEV BOWFN HOODO PSX CARTI HFMAN DLF KOBLE FST CNM CME CNX JNC HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/>PNH 1/2: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VUZ J14 PNH ALS JNC HELPR JAZZZ1 KSLC\" readonly>";
