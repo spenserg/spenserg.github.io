@@ -129,6 +129,11 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						// result = result.replaceAll("KSLC FFU9 HVE", ""); // TODO
 						// result = result.replaceAll("KSLC FFU9 BCE", ""); // TODO
 						// result = result.replaceAll("KSLC FFU9 OAL", ""); // TODO
+						// STARS
+						result = result.replaceAll("EKR PITTT1 KSLC", "EKR RACER JAZZZ1 KSLC");
+						result = result.replaceAll("HELPR PITTT1 KSLC", "HELPR JAZZZ1 KSLC");
+						result = result.replaceAll("MLF PITTT1 KSLC", "MLF QWENN6 KSLC");
+						result = result.replaceAll("BCE PITTT1 KSLC", "BCE QWENN6 KSLC");
 						break;
 					case "SMF": // SMF north // Rwy35
 						result = result.replaceAll("KSMF SCTWN4", "KSMF RVRCT4");
@@ -274,6 +279,11 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KSLC ARCHZ1 KROST", "KSLC ZIONZ1 KROST");
 						// result = result.replaceAll("KSLC SEVYR3 MLF", ""); // TODO
 						result = result.replaceAll("KSLC SEVYR3 OAL", "KSLC DEZRT2 MVA");
+						// STARS
+						result = result.replaceAll("EKR RACER JAZZZ1 KSLC", "EKR PITTT1 KSLC");
+						result = result.replaceAll("RACER JAZZZ1 KSLC", "EKR PITTT1 KSLC");
+						result = result.replaceAll("HELPR JAZZZ1 KSLC", "HELPR PITTT1 KSLC");
+						result = result.replaceAll("QWENN6 KSLC", "PITTT1 KSLC");
 						break;
 					case "SMF": // SMF south // Rwy17
 						result = result.replaceAll("KSMF RVRCT4", "KSMF SCTWN4");
