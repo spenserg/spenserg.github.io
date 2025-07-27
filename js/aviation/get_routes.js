@@ -1674,8 +1674,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN VHP J110 BUM Q176 CIM J96 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY IIU ARG IRW J6 ABQ J78 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN JOT J60 LNK J146 GLD ALS J102 GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/><br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY FLM RAMRD Q68 LITTR TXK J42 ABI J4 EWM DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/>IRW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN VHP J110 STL J8 SGF J98 IRW J6 ABQ J78 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>SPI<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN VHP J80 MCI J24 SLN J96 GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY FLM RAMRD Q68 LITTR TXK J42 ABI J4 EWM DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN VHP STL CNU MMB TCC J78 ZUN BUNTR3 KPHX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-26-2025
