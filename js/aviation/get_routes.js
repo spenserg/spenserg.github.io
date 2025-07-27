@@ -1642,8 +1642,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-20-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY CVG PXV J131 LIT MEEOW FEWWW BRDJE5 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN VHP J24 STL J8 SGF TUL KLAWW VKTRY2 KDFW\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY FLM BNA MEM LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><b>For SE Arrival: .. BNA SQS YUYUN BEREE3 KDFW<\/b>";
+					result += "<br/><b>Via SPI: <input style=\"width:20em\" value=\"KCMH PKACZ TARRY DQN VHP J80 MCI TUL\" readonly> .. <\/b>";
+					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY FLM BNA MEM LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><b>SE Arvl: .. <\/b><input style=\"width:15em\" value=\"BNA SQS YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN CVG PXV J131 LIT FINGR9 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-20-2025
@@ -3649,7 +3650,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 				case "MIA": // Updated 07-26-2025
 					result += "<!-- Updated 07-26-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KJAX EXBOX2 EXBOX PRMUS DEBRL CSTAL3 KMIA\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KJAX EXBOX2 EXBOX DEBRL CSTAL3 KMIA\" readonly>";
 					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAX JETIN2 JAYJA BROMO FROGZ4 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KJAX SAWGY3 OMN TRV ANNEY4 KMIA\" readonly>";
