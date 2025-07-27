@@ -17,13 +17,13 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 ONM KABQ\" readonly>";
 			result += "<br/>TM: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM KABQ\" readonly>";
 			break;
-		case "ATL": // Updated 02-05-2025
-			result += "<!-- Updated 02-05-2025 -->";
+		case "ATL": // Updated 07-26-2025
+			result += "<!-- Updated 07-26-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ J6 IRW MEM HUTCC KNSAW RUSSA GLAVN1 KATL\" readonly>";
-			result += "<br/><b style=\"color:red\">Fkeys tries to cut thru ZKC- Use IRW to stay south of ZKC<\/b>";
-			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK GCK RZC MEM HUTCC KNSAW RUSSA GLAVN1 KATL\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J50 ABI J4 FUZ Q184 MERDN DUUCK ORRKK HOBTT2 KATL\" readonly>";
+			result += "<br/><b>Fkeys tries to cut thru ZKC- Use IRW to stay south of ZKC<\/b>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK J110 ALS ZAROS Q128 MUDHO HUTCC KNSAW RUSSA GLAVN1 KATL\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J50 ABI J4 FUZ Q184 MERDN ORRKK HOBTT2 KATL\" readonly>"; // CDR EC
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-20-2025
 			result += "<!-- Verified with ATCSCC on 07-20-2025 -->";
@@ -738,7 +738,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 07-20-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ J6 IRW ARG J46 BNA VXV KPASS ALDAN4 KRDU\" readonly>";
-			result += "<br/><b style=\"color:red\">Fkeys tries to cut thru ZKC- Use IRW to stay south of ZKC<\/b>";
+			result += "<br/><b>Fkeys tries to cut thru ZKC- Use IRW to stay south of ZKC<\/b>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS J110 BUM ENL IIU Q108 ZIEBR PSK FRIKY ALDAN4 KRDU\" readonly>"; // CDR MR
 			result += "<br/><b>Via VXV: .. J110 GCK J28 ICT SGF VXV KPASS ALDAN4 KRDU<\/b>";
 			result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX J74 TXO J72 SPS BYP TXK J52 SUTTN IZAAC Q30 VLKNN THRSR IRQ PYRES DMSTR2 KRDU\" readonly>"; // CDR FT
