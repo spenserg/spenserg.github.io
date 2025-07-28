@@ -556,23 +556,23 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "DEN": // Updated 04-09-2025
 			result += "<!-- Updated 04-09-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE HALEN NIIXX3 KDEN\" readonly>";
-			result += "<br/><b style=\"color:orange\">CDR 0P is ..ROLLS LBL HALEN...<\/b>";
-			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ZIGEE NIIXX3 KDEN\" readonly>";
-			result += "<br/>West: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN TXO TCC ZIGEE NIIXX3 KDEN\" readonly>";
-			result += "<br/><br/>COWBOY WEST 1 (FL220 to JCT): <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT FST CNM CME CNX ABQ GNDLA TBARR3 KDEN\" readonly>";
-			result += "<br/>COWBOY WEST 2 (FL220 to SAT): <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY SAT DLF FST CNM CME CNX ABQ GNDLA TBARR3 KDEN\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE HALEN NIIXX4 KDEN\" readonly>";
+			result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ZIGEE NIIXX4 KDEN\" readonly>"; // CDR 1W
+			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 ZEMMA END GCK KIISS CLASH5 KDEN\" readonly>";
+			// result += "<br/>West: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN TXO TCC ZIGEE NIIXX4 KDEN\" readonly>";
+			result += "<br/><br/>COWBOY WEST 1 (FL220 to JCT)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT FST CNM CME CNX ABQ GNDLA TBARR3 KDEN\" readonly>";
+			result += "<br/>COWBOY WEST 2 (FL220 to SAT)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY SAT DLF FST CNM CME CNX ABQ GNDLA TBARR3 KDEN\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 ROLLS LBL LAA QUAIL1 KDEN\" readonly>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 ROLLS GCK DANDD1 KDEN\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-09-2025
-			result += "<!-- Verified with ATCSCC on 04-09-2025 -->";
-			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS LBL HALEN NIIXX3 KDEN\" readonly>";
-			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT BGS PNH ZIGEE NIIXX3 KDEN\" readonly>";
-			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ZIGEE NIIXX3 KDEN\" readonly>";
-			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF BGS PNH ZIGEE NIIXX3 KDEN\" readonly>";
-			result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME CNX GNDLA TBARR3 KDEN\" readonly>";
-			result += "<br/>GC<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX GNDLA TBARR3 KDEN\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-27-2025
+			result += "<!-- Verified with ATCSCC on 07-27-2025 -->";
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE HALEN NIIXX4 KDEN\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT BGS PNH ZIGEE NIIXX4 KDEN\" readonly>";
+			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ZIGEE NIIXX4 KDEN\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF BGS PNH ZIGEE NIIXX4 KDEN\" readonly>";
+			result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME CNX GNDLA TBARR4 KDEN\" readonly>";
+			result += "<br/>GC<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX GNDLA TBARR4 KDEN\" readonly>";
 			break;
 
 // TODO DLH
