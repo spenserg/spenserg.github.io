@@ -100,8 +100,12 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KSAN SAYOW2 IPL", "KSAN BRDR7 IPL");
 						break;
 					case "SBP": // SBP East Rwy 11// AVILA WYNNR
-						result = result.replaceAll("");
-						
+						result = result.replaceAll("KSBP CREPE3 MQO GVO", "KSBP AVILA4 GVO");
+						result = result.replaceAll("KSBP CREPE3 MQO", "KSBP AVILA4 MQO");
+						result = result.replaceAll("KSBP CREPE3 BSR", "KSBP WYNNR4 PRB BSR");
+						result = result.replaceAll("KSBP CREPE3 PRB", "KSBP WYNNR4 PRB");
+						result = result.replaceAll("KSBP CREPE3 CREPE FLW", "KSBP WYNNR4 FLW");
+						result = result.replaceAll("KSBP CREPE3 CREPE RZS", "KSBP WYNNR4 RZS");
 						break;
 					case "SFO": // SFO dpting 1L/1R // SSTIK 
 						// South
@@ -254,8 +258,15 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KSAN CLSSY1 TGOLD", "KSAN SAYOW2 IPL TGOLD");
 						result = result.replaceAll("KSAN CLSSY1 GBN", "KSAN SAYOW2 IPL GBN");
 						break;
-					case "SBP": // SBP West Rwy 29// CREPE
-						
+					case "SBP": // SBP West Rwy 29 // CREPE
+						result = result.replaceAll("KSBP AVILA4 MQO", "KSBP CREPE3 MQO");
+						result = result.replaceAll("KSBP AVILA4 GVO", "KSBP CREPE3 MQO GVO");
+						result = result.replaceAll("KSBP WYNNR4 MQO", "KSBP CREPE3 MQO");
+						result = result.replaceAll("KSBP WYNNR4 PRB BSR", "KSBP CREPE3 BSR");
+						result = result.replaceAll("KSBP WYNNR4 PRB", "KSBP CREPE3 PRB");
+						result = result.replaceAll("KSBP WYNNR4 FLW", "KSBP CREPE3 CREPE FLW");
+						result = result.replaceAll("KSBP WYNNR4 RZS", "KSBP CREPE3 CREPE RZS");
+						result = result.replaceAll("KSBP WYNNR4 MQO", "KSBP CREPE3 MQO");
 						break;
 					case "SFO": // SFO dpting 28lr // WESLA 
 						// South
