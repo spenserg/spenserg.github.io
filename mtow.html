@@ -905,6 +905,7 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>SBA - Check NOTAMs for crane penalty";
 			break;
 		case "SBP":
+			result += "<br/><br/>SBP Flow: <button type='button' id='SBP_standard_left' class='btn" + ((flows['SBP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SBP\", 0)'>East Rwy 11</button>&nbsp;&nbsp;<button type='button' id='SBP_standard_right' class='btn" + ((flows['SBP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SBP\", 1)'>West Rwy 29</button>";
 			result += "<br/><br/>SBP - Mountains off rwy11; Watch winds and run VAA";
 			break;
 		case "SFO":
