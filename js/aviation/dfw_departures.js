@@ -199,15 +199,15 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG LOPPY CHSNE2 KBNA\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MEI IGB HRTUN CHSNE2 KBNA\" readonly>";
 			break;
-		case "BOI": // Updated 03-25-2025
-			result += "<!-- Updated 03-25-2025 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-25-2025
-			result += "<br/><br/><input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ALS JNC J15 TWF BROPH SPUUD4 KBOI\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW LOWGN8 ADM J21 ICT J182 GLD J80 FQF J20 OCS PIH REAPS KOURT4 KBOI\" readonly>";
-			result += "<br/>West: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN FAVON FTI MTJ JNC J15 TWF BROPH SPUUD4 KBOI\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>";
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-28-2025
-			result += "<!-- Verified with ATCSCC on 03-28-2025 -->";
+		case "BOI": // Updated 07-29-2025
+			result += "<!-- Updated 07-29-2025 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 07-29-2025
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ALS JNC J15 TWF BROPH SPUUD4 KBOI\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS LBL LAA J20 PIH REAPS KOURT4 KBOI\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX ABQ J15 RSK KU54Q TCH J12 TWF BROPH SPUUD4 KBOI\" readonly>";
+			result += "<br/><br/>South via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK J50 ELP J86 BAVPE CORKR Q35 WINEN Q73 BROPH SPUUD4 KBOI\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-29-2025
 			break;
 		case "BOS": // Updated 04-19-2025
 			result += "<!-- Updated 04-19-2025 -->";
