@@ -482,6 +482,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 06-04-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KAUS ELOEL3 KLNGR FUZ MLC SGF WELTS SHAIN2 KORD\" readonly>";
+					result += "<br/><b style=\"color:orange\">FAA Pref route throws the \"KZ_FRA_SEGMENT_MULTI\" error in fkeys as of 2025-07-29<\/b>";
 					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAUS ELOEL3 KLNGR FUZ TUL J25 MCI J26 IRK BENKY6 KORD\" readonly>"; // CDR 0N
 					result += "<br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI LFK SUTTN J29 CARIN MEMFS Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>"; // CDR 0B
 					result += "<br/><br/>ORD BDF 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAUS ELOEL3 KLNGR FUZ TXK Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
