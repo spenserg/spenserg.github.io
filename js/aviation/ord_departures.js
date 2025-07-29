@@ -59,7 +59,7 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL FSM BROBB WINDU SEWZY6 KAUS\" readonly>";
 			result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ BUM J87 CVE WINDU SEWZY6 KAUS\" readonly>"; // CDR 0W
-			result += "<br/>East: <input style=\"width:75%\"; value=\"KORD CMSKY CARYN CYBIL PXV J29 ELD LFK WEEED WLEEE7 KAUS\" readonly>";
+			result += "<br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV J29 ELD LFK WLEEE WLEEE7 KAUS\" readonly>";
 			result += "<br/><br/>West via ICT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE ICT FUZ WINDU SEWZY6 KAUS\" readonly>"; // CDR 1W
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD ACITO ADELL ARLYN STL J8 SGF RZC FSM WINDU BLEWE5 KAUS\" readonly>";
