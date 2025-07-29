@@ -3353,26 +3353,30 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>8N (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER GUTZZ BOOVE7 KDFW\" readonly>";
 					result += "<br/>8S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER GUTZZ BOOVE7 KDFW\" readonly>";
 					break;
-				case "MIA": // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
+				case "MIA": // Updated 07-29-2025
+					result += "<!-- Updated 07-29-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIAH GUMBY3 LLA LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
-					result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KIAH KIAH  GUMBY3 GUSTI AWDAD SJI J2 DEFUN FROGZ4 KMIA KMIA\" readonly>";
-					result += "<br/>Weekend/Holiday: <input style=\"width:75%\" value=\"KIAH MMUGS4 LLA LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
-					result += "<br/>Full OW: <input style=\"width:75%\" value=\"KIAH FLYZA5 KELPP ALGAE MINOW M580 MARCI FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI AWDAD SJI J2 DEFUN FROGZ4 KMIA\" readonly>"; // CDR 3L
+					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH LURIC8 ORRTH IZAAC Q30 HRISN LDK ACORI FROGZ4 KMIA\" readonly>"; // Based on CDR 1L
+					result += "<br/><br/>North/Coastal WX<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH STRYA8 JBULL SJI J2 DEFUN FROGZ4 KMIA\" readonly>"; // CDR 2L
+					result += "<br/>South/Coastal WX<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH HOODO7 HRV SJI J2 DEFUN FROGZ4 KMIA\" readonly>"; // CDR 5L
+					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIAH FLYZA5 KELPP ALGAE MINOW M580 MARCI FROGZ4 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIAH LCH5 LSU J2 DEFUN SZW RSW PALMZ2 KMIA\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>1L (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 ORRTH IZAAC Q30 VLKNN ACORI FROGZ4 KMIA\" readonly>";
-					result += "<br/>1Q (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 ORRTH MHZ HRV LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
-					result += "<br/>2L (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STRYA8 JBULL SJI J2 DEFUN FROGZ4 KMIA\" readonly>";
-					result += "<br/>3L (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI AWDAD SJI J2 DEFUN FROGZ4 KMIA\" readonly>";
-					result += "<br/>3Q (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 LLA LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
-					result += "<br/>4L (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI AWDAD SJI J2 DEFUN FROGZ4 KMIA\" readonly>";
-					result += "<br/>4Q (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 LLA LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
-					result += "<br/>5J (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH FLYZA5 ANKRR HRVCI BACCA GAWKS FROGZ4 KMIA\" readonly>";
-					result += "<br/>5L (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH HOODO7 HRV SJI J2 DEFUN FROGZ4 KMIA\" readonly>";
-					result += "<br/>5Q (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH HOODO7 LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-29-2025
+					result += "<!-- Verified with ATCSCC on 07-29-2025 -->";
+					result += "<br/>1L<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 ORRTH IZAAC Q30 VLKNN ACORI FROGZ4 KMIA\" readonly>";
+					result += "<br/>1Q<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 ORRTH MHZ HRV LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/>2L<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STRYA8 JBULL SJI J2 DEFUN FROGZ4 KMIA\" readonly>";
+					result += "<br/>2Q<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STRYA8 STRYA AEX HRV LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/>3L<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH GUMBY3 GUSTI AWDAD SJI J2 DEFUN FROGZ4 KMIA\" readonly>";
+					result += "<br/>3Q<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH GUMBY3 LLA LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/>4L<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI AWDAD SJI J2 DEFUN FROGZ4 KMIA\" readonly>";
+					result += "<br/>4Q<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 LLA LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/>5J<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH FLYZA5 ANKRR HRVCI BACCA GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/>5L<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH HOODO7 HRV SJI J2 DEFUN FROGZ4 KMIA\" readonly>";
+					result += "<br/>5Q<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH HOODO7 LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
 					break;
 				case "ORD": // Updated 01-10-2025
 					result += "<!-- Updated 01-10-2025 -->";
