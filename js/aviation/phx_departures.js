@@ -362,11 +362,12 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>Non RNAV SID/STAR: <input style=\"width:75%\"; value=\"KPHX SJN9 SJN J18 GCK J18 MZV OBK J94 PMM KGRR\" readonly>";
 			//result += "<br/><br/><b>CDRS</b>";
 			break;
-		case "IAH": // Updated 02-05-2025
-			result += "<!-- Updated 02-05-2025 -->";
+		case "IAH": // Updated 07-29-2025
+			result += "<!-- Updated 07-29-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE EWM J4 INK SJT DCT DIESL MSCOT4 KIAH\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO CNX LBB ACT OILLL GUSHR3 KIAH\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP Q4 FUSCO DIESL MSCOT4 KIAH\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX KF21Y ABI J50 ACT OILLL DRLLR5 KIAH\" readonly>";
+			// KPHX BROAK1 MAXXO CNX KF21Y ABI J50 ACT OILLL DRLLR5 KIAH
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-10-2025
 			result += "<!-- Verified with ATCSCC on 06-10-2025 -->";
