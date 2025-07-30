@@ -7332,16 +7332,17 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSAN PEBLE6 SLI KLAX\" readonly>";
 					break;
-				case "MIA": // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP J86 LEV Y290 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
-					result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP J2 DEFUN FROGZ4 KMIA\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KSAN ZZOOO4 MTBAL LANCY J78 IRW J14 LIT VLKNN ACORI FROGZ4 KMIA\" readonly>";
-					result += "<br/><br/>HAVANA EAST: <input style=\"width:75%\" value=\"KSAN SAYOW2 IPL NOVOS MXL UT25 AXASA UT41 CUU UJ2 MAM UT22 VESKO UT11 OTOGU ALPUK UM346 CANOA SNDBR3 KMIA\" readonly>";
+				case "MIA": // Updated 07-29-2025
+					result += "<!-- Updated 07-29-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-29-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP J86 LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP J2 DEFUN FROGZ4 KMIA\" readonly>";
+					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAN ZZOOO4 MTBAL LANCY J78 IRW J14 XESSS LDK ACORI FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP J86 FST J138 SAT MUSYL LCHLH KELPP MINOW MARCI FROGZ4 KMIA\" readonly>";
+					result += "<br/>HAVANA EAST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSAN BRDR7 IPL NOVOS MXL UT25 AXASA UT41 CUU UJ2 MAM UT22 VESKO UT11 OTOGU ALPUK UM346 CANOA SNDBR3 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSAN BRDR7 IPL J2 GBN J50 CEW DRABK HEVVN PIE PALMZ2 KMIA\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-29-2025
 					break;
 				case "ORD": // Updated 07-29-2025
 					result += "<!-- Updated 07-29-2025 -->";
