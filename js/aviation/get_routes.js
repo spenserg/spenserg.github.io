@@ -7806,8 +7806,17 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KSFO SFO4 SFO LIN J84 MVA J198 ILC J58 MLF J28 ICT SGF J98 FAM VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "DFW": // TODO
-					break;
+				case "DFW": // Updated 07-29-2025
+					result += "<!-- Updated 07-29-2025 P -->"
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-29-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q128 JSICA Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><b>Night use NIITE4 dptr: KSFO NIITE4 SYRAH...<\/b>";
+					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN BOILE Q4 ELP J50 INK GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSFO SFO4 SFO LIN J84 MVA J198 ILC J58 PNH UKW5 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSFO BSR MQO FLW PMD J65 BLH J50 SSO J4 INK ACT YEAGR4 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-29-2025
+					break; 
 				case "JFK": // TODO
 					break;
 				case "LAX": // Updated 04-01-2025
