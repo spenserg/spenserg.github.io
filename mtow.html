@@ -206,7 +206,7 @@ function compute (str_override = "") {
 		
 		// ATSCC CDR page ONLY
 		output = cdr_parse(fkeystxt);
-	if ((result = regw.exec(fkeystxt)) != null) {
+	} else if ((result = regw.exec(fkeystxt)) != null) {
 		output = vaa_parse(fkeystxt);
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
