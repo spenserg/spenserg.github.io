@@ -184,14 +184,10 @@ function compute (str_override = "") {
 
 	// Airway
 	regy = /\<(\d+)\s\<(K\d)\s\<([^\s]+)\s/g;
-/*
-	// STAR - FOS: IDAFXXX (XXX is apt)
-	regx = /([A-Z]+\d{1})\s+([A-Z]+)\s+([^\n\s]+)/g;
-	if ((result = regx.exec(fkeystxt)) != null) {
-		$("#total").html('<br/>' + fos_star_info(fkeystxt));
-		return;
-	}
-*/
+
+	// VAA App
+	regw = /PERMANENT AIRPORT ANALYSIS/g;
+
 	var testing = false;
 	var land_wgt_limited = false;
 	// For Testing Station Info
@@ -204,19 +200,14 @@ function compute (str_override = "") {
 	tmp_rslt = regb.exec(fkeystxt);
 
 	if ((result = regz.exec(fkeystxt)) != null) {
-		// DECS routing page
-/* TODO
-		if ((regc.exec(fkeystxt)) != null) {
-			// Check for ATSCC CDR page
-			routes_arr['cdr_list'] = cdr_parse(fkeystxt, true);
-		}
-  */
 		output = decs_route(fkeystxt, routes_arr['cdr_list']);
 	} else if ((result = regc.exec(fkeystxt)) != null) {
 		// TODO get array from compute first
 		
 		// ATSCC CDR page ONLY
 		output = cdr_parse(fkeystxt);
+	if ((result = regw.exec(fkeystxt)) != null) {
+		output = vaa_parse(fkeystxt);
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
