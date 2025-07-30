@@ -813,7 +813,7 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SLN J96 PKE LUCKI1 KSAN\" readonly>";
 			// ZKC Avoid: KORD PEKUE PIPPN ROTTN PWE HLC J64 TBC PLNDL Q86 TTRUE LUCKI1 KSAN
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD NOONY NIGHT NITWT OBH LBF J10 FQF J128 TBC PLNDL Q86 TTRUE LUCKI1 KSAN\" readonly>"; // CDR 4W
-			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL BUM ICT TOTOE FTI J18 HOGGZ LUCKI1 KSAN\" readonly>"; // CDR 2S
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL Q176 TOTOE FTI J18 HOGGZ LUCKI1 KSAN\" readonly>"; // CDR 2S
 			result += "<br/><br/>North via MSP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 RWF FSD J114 DVV ZAKRY Q88 LAKRR Q73 LVELL LUCKI1 KSAN\" readonly>"; // CDR 1N
 			result += "<br/>South via INK<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J8 SGF J98 IRW GTH INK EWM J4 SSO GBN J18 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
