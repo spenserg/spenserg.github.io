@@ -1,5 +1,13 @@
 vaa_parse = function (fkeystxt = "") {
-	return "VAA program";
+	// Structural
+	rega = /STRUCT WT (\d+\.*\d*) LB\n/g;
+	var struct_parse = rega.exec(fkeystxt);
+	structural = parseFloat(struct_parse[1]).toFixed(1);
+	console.log(structural);
+
+	// Result
+	var result = "<br/>Dry: " + structural + "<br/>Wet: " + structural;
+	return result;
 }
 
 change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
