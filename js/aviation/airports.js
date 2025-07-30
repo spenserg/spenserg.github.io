@@ -1,3 +1,7 @@
+vaa_parse = function (fkeystxt = "") {
+	return "VAA program";
+}
+
 change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 	if (airport != "XXX" && [0,1,2].includes(new_config)) {
 		if (new_config == 0) { // Left clicked
