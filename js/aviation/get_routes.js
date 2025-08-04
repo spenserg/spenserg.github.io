@@ -8153,19 +8153,24 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // Updated 01-18-2025
-					result += "<!-- Updated 01-18-2025 -->";
+				case "ORD": // Updated 08-04-2025
+					result += "<!-- Updated 08-04-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSNA PIGGN3 AVRRY LANCY J78 DRK J96 IRK SHAIN2 KORD\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSNA FINZZ3 BEALE BAWER LARVE EKR CYS ONL FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KSNA PIGGN3 AVRRY LANCY J78 TUL J98 SGF FTZ TRTLL6 KORD\" readonly>";
-					result += "<br/>North via DPR: <input style=\"width:75%\" value=\"KSNA FINZZ3 BEALE NORRA J107 DPR ALLOT UFFDA Q156 ZZIPR FYTTE7 KORD\" readonly>";
-					result += "<br/><br/>ORD BDF 1: <input style=\"width:75%\" value=\"KSNA PIGGN3 AVRRY LANCY J78 DRK J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
-					result += "<br/>ORD BDF 2: <input style=\"width:75%\" value=\"KSNA FINZZ3 BEALE BAWER LARVE EKR BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSNA FINZZ3 BEALE BAWER LARVE EKR BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>"; // CDR F2
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSNA PIGGN3 AVRRY LANCY J78 TUL J98 SGF WELTS TRTLL6 KORD\" readonly>"; // CDR F1
+					result += "<br/><br/>North via DPR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSNA FINZZ3 BEALE NORRA J107 DPR ALLOT UFFDA Q156 ZZIPR FYTTE7 KORD\" readonly>";
+					// result += "<br/><br/>ORD BDF 1: <input style=\"width:75%\" value=\"KSNA PIGGN3 AVRRY LANCY J78 DRK J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
+					// result += "<br/>ORD BDF 2: <input style=\"width:75%\" value=\"KSNA FINZZ3 BEALE BAWER LARVE EKR BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSNA MUSEL8 TRM LANCY J78 DRK J96 IRK BDF8 KORD\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>JW (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSNA FINZZ3 BEALE BAWER LARVE EKR BFF J94 ONL J114 GEP TVC WYNDE2 KORD\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-04-2025
+					result += "<!-- Verified with ATCSCC on 08-04-2025 -->";
+					result += "<br/>F1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSNA AVRRY LANCY DRK J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/>F2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSNA BEALE BAWER LARVE EKR BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/>JB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSNA BEALE BAWER LARVE EKR BFF J94 ONL J114 GEP DLL MSN JAKSA MOOPS FYTTE FYTTE7 KORD\" readonly>";
+					result += "<br/>JV<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSNA AVRRY LANCY DRK J96 IRK BENKY6 KORD\" readonly>";
+					result += "<br/>JW<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSNA BEALE BAWER LARVE EKR BFF J94 ONL J114 GEP TVC WYNDE2 KORD\" readonly>";
 					break;
 				case "PHX": // Updated 01-18-2025
 					result += "<!-- Updated 01-18-2025 -->";
