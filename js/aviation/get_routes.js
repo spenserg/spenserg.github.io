@@ -5205,15 +5205,16 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "OKC":
 			switch(arvl) {
-				case "CLT": // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
+				case "CLT": // Updated 08-04-2025
+					result += "<!-- Updated 08-04-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KOKC FUNNL3 PHARA ARG BNA TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KOKC RDHWK3 HOLLE LIT J14 YAALL VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KOKC DRLER SGF J98 FAM J78 IIU TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/><b>Can use .. PHARA MEM TAZZA .. to get a little farther south<\/b>";
+					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KOKC RDHWK3 HOLLE LIT J14 YAALL VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KOKC TRUPR3 DRLER SGF J98 FAM J78 IIU TAFTT PARQR4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KOKC TUL RZC ARG J46 VXV LIINN3 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 08-04-2025
 					break;
 				case "DFW":
 					result += "<br/><br/><b>Faa Pref Route: (Expect FL230)</b>";
@@ -7810,7 +7811,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 07-29-2025 P -->"
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-29-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q128 JSICA Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><b>Night use NIITE4 dptr: KSFO NIITE4 SYRAH...<\/b>";
+					result += "<br/><b>After 2200L use NIITE4 dptr: KSFO NIITE4 SYRAH...<\/b>";
 					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN BOILE Q4 ELP J50 INK GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KSFO SFO4 SFO LIN J84 MVA J198 ILC J58 PNH UKW5 KDFW\" readonly>";
@@ -7824,7 +7825,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/>SFO 1L/1R: <input style=\"width:75%\"; value=\"KSFO SSTIK5 SUSEY EBAYE BURGL IRNMN2 KLAX\" readonly>";
 					result += "<br/>SFO 28L/28R: <input style=\"width:75%\"; value=\"KSFO WESLA5 SUSEY EBAYE BURGL IRNMN2 KLAX\" readonly>";
-					result += "<br/>Night: <input style=\"width:75%\"; value=\"KSFO NIITE4 SYRAH BURGL IRNMN2 KLAX\" readonly>";
+					result += "<br/>After 2200L: <input style=\"width:75%\"; value=\"KSFO NIITE4 SYRAH BURGL IRNMN2 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KSFO OFFSH2 RZS SADDE8 KLAX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-01-2025
