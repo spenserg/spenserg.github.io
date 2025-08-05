@@ -5237,7 +5237,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 08-04-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KOKC TRUPR3 DRLER FAM J78 HVQ TRUPS5 KDCA\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KOKC TRUPR3 DRLER SGF STL VHP RINTE APE J30 LUISE FRDMM6 KDCA \" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KOKC TRUPR3 DRLER SGF J8 STL J24 VHP ROD APE J30 LUISE FRDMM6 KDCA\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KOKC TEBRD3 ATOKA TXK J52  SQS HRISN Q30 VLKNN THRSR KBLER Q56 KIWII WAVES CAPSS3 KDCA \" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 08-04-2025
