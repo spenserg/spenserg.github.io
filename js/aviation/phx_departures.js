@@ -658,8 +658,9 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 05-16-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ J18 GCK J96 IRK BENKY6 KORD\" readonly>";
-			// TODO North rte
-			// TODO South rte
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS J102 SLN J96 IRK BENKY6 KORD\" readonly>"; // CDR MR
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J26 BDF BENKY BENKY6 KORD\" readonly>"; // CDR EC
+			result += "<br/><br/>North via FOD<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK J64 PUB GLD OBH FOD MYRRS FYTTE7 KORD \" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX SJN9 ABQ J18 SLN J96 IRK BDF9 KORD\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-23-2025
