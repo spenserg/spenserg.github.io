@@ -56,9 +56,9 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KGPI GPI1 SKOTT", "KGPI RIDDG1 SKOTT");
 						result = result.replaceAll("KGPI GPI1 ANGIL", "KGPI RIDDG1 RIDDG");
 					case "IAH": // IAH west // Rwy26 Rwy27
-						result = result.replaceAll("SKNRD4 KIAH", "DOOBI2 KIAH");
+						result = result.replaceAll("SKNRD5 KIAH", "DOOBI3 KIAH");
 						result = result.replaceAll("GUSHR3 KIAH", "DRLLR5 KIAH");
-						result = result.replaceAll("GESNR1 KIAH", "ZEEKK2 KIAH");
+						result = result.replaceAll("GESNR2 KIAH", "ZEEKK3 KIAH");
 						result = result.replaceAll("HTOWN3 KIAH", "TEJAS5 KIAH");
 						result = result.replaceAll("NNCEE2 KIAH", "LINKK1 KIAH");
 						result = result.replaceAll("TTORO3 KIAH", "MSCOT4 KIAH");
@@ -211,9 +211,9 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KGPI RIDDG1 SKOTT", "KGPI GPI1 SKOTT");
 					case "IAH": // IAH East // Rwy8 Rwy9
 						// IAH STARS
-						result = result.replaceAll("DOOBI2 KIAH", "SKNRD4 KIAH");
+						result = result.replaceAll("DOOBI3 KIAH", "SKNRD5 KIAH");
 						result = result.replaceAll("DRLLR5 KIAH", "GUSHR3 KIAH");
-						result = result.replaceAll("ZEEKK2 KIAH", "GESNR1 KIAH");
+						result = result.replaceAll("ZEEKK3 KIAH", "GESNR2 KIAH");
 						result = result.replaceAll("TEJAS5 KIAH", "HTOWN3 KIAH");
 						result = result.replaceAll("LINKK1 KIAH", "NNCEE2 KIAH");
 						result = result.replaceAll("MSCOT4 KIAH", "TTORO3 KIAH");
