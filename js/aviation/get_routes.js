@@ -3350,25 +3350,26 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>5J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH HOODO7 HRV SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
 					result += "<br/>5X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH HOODO7 HRV Q56 CATLN BESTT JONZE5 KCLT\" readonly>";
 					break;
-				case "DFW": // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+				case "DFW": // Updated 08-06-2025
+					result += "<!-- Updated 08-06-2025 -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL260):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIAH BLTWY7 CRIED BEREE3 KDFW\" readonly>";
 					result += "<br/><br/>DFW WEST: <input style=\"width:75%\" value=\"KIAH BLTWY7 CRIED BEREE3 KDFW\" readonly>";
 					result += "<br/>SEEVR2: <input style=\"width:75%\" value=\"KIAH BNDTO6 CRGER GUTZZ SOCKK4 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIAH GIFFA1 GIFFA CQY CQY2 KDFW\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>0N (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BLTWY7 CRIED BEREE3 KDFW\" readonly>";
-					result += "<br/>0S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BLTWY7 CRIED BEREE3 KDFW\" readonly>";
-					result += "<br/>1N (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK JRHED SEEVR4 KDFW\" readonly>";
-					result += "<br/>1S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK JRHED SEEVR4 KDFW\" readonly>";
-					result += "<br/>6N (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH RITAA7 PSX THX SAT GUTZZ BOOVE7 KDFW\" readonly>";
-					result += "<br/>6S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH RITAA7 PSX THX SAT GUTZZ BOOVE7 KDFW\" readonly>";
-					result += "<br/>7N (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER GUTZZ BOOVE7 KDFW\" readonly>";
-					result += "<br/>7S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER GUTZZ BOOVE7 KDFW\" readonly>";
-					result += "<br/>8N (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER GUTZZ BOOVE7 KDFW\" readonly>";
-					result += "<br/>8S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-06-2025
+					result += "<!-- Verified with ATCSCC on 08-06-2025 -->";
+					result += "<br/>0N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BLTWY7 CRIED WHINY4 KDFW\" readonly>";
+					result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BLTWY7 CRIED BEREE3 KDFW\" readonly>";
+					result += "<br/>1N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK JRHED BRDJE5 KDFW\" readonly>";
+					result += "<br/>1S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK JRHED SEEVR4 KDFW\" readonly>";
+					result += "<br/>6N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH RITAA7 PSX THX SAT GUTZZ SOCKK4 KDFW\" readonly>";
+					result += "<br/>6S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH RITAA7 PSX THX SAT GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/>7N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH PITZZ5 CRGER GUTZZ SOCKK4 KDFW\" readonly>";
+					result += "<br/>7S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH PITZZ5 CRGER GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/>8N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER GUTZZ SOCKK4 KDFW\" readonly>";
+					result += "<br/>8S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER GUTZZ BOOVE7 KDFW\" readonly>";
 					break;
 				case "MIA": // Updated 07-29-2025
 					result += "<!-- Updated 07-29-2025 P -->";
