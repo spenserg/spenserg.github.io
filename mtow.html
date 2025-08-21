@@ -334,8 +334,13 @@ function compute (str_override = "") {
 			// Cat C
 			output += "C"; // 121-141 Kts
 		} else if (["738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "773W", "7878", "7879", "789P"].includes(ac_type)) {
-			// Cat D
-			output += "D"; // 141-165 Kts
+			if (ac_type == "738R") {
+				// SFP - Cat C under certain conditions
+				output += "C [if flaps 40 using straight-in apch] // circle-to-land Cat D<br/>";
+			} else {
+				// Cat D
+				output += "D"; // 141-165 Kts
+			}
 		} else { output += "Unknown"; }
 		// Cost Index
 		output += "&nbsp;&nbsp;||&nbsp;&nbsp;ci: ";
