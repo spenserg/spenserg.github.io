@@ -4685,7 +4685,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q87 HURTS PROUD2 KLGA\" readonly>";
 					result += "<br/><br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO MZULO3 LENDS GRUBR Y299 SEELO GARIC Q107 HURTS PROUD2 KLGA\" readonly>";
 					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO JEEMY3 PAINN SHRKS Q77 WIGVO IRQ SPA J85 HVQ IHD PSB MIP4 KLGA\" readonly>";
-					result += "<br/>Full OW/ZDC Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO MZULO3 ETECK PELCN ROWSY Y494 YAALE Y495 OWENZ DPK KLGA\" readonly>";
+					result += "<br/><br/>Full OW/ZDC Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO MZULO3 ETECK PELCN ROWSY Y494 YAALE Y495 OWENZ DPK KLGA\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2025
 					break;
@@ -4699,13 +4699,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
 				case "ORD": // Updated 05-07-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-07-2025 MP -->";
+					result += "<!-- Updated 05-07-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS BRUTS Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
 					result += "<br/><b style=\"color:orange\">Anything other than route above will flag as Mandatory Route violation<\/b>";
-					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q69 GURGE Q93 HEVAN BONNT VEECK5 KORD\" readonly>";
-					result += "<br/>West: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 JAWJA CABLO ACORI MGM JILLS Q128 MUDHO ARG FTZ TRTLL6 KORD\" readonly>";
-					result += "<br/>Gulf: <input style=\"width:75%\" value=\"KMCO OSPRY1 REMIS Y280 REDFN Q105 HRV MEI IGB PXV RBS BENKY BENKY6 KORD\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q69 GURGE Q93 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 JAWJA CABLO ACORI MGM JILLS Q128 MUDHO ARG FTZ TRTLL6 KORD\" readonly>";
+					result += "<br/><br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO MZULO3 LENDS GRUBR Y299 SEELO OGGRE Y436 DEDDY CAE BENBY Q93 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>West/Gulf<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO OSPRY1 REMIS Y280 REDFN Q105 HRV MCB J35 SQS ARG FTZ SHAIN2 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMCO GUANO MATEO AMG ODF VXV J43 ROD J149 FWA KORD\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2025
