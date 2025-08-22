@@ -6919,6 +6919,26 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "PWM":
 			switch(arvl) {
+				case "CLT": // Updated 08-22-2025
+					result += "<!-- Updated 08-22-2025 MP -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KPWM NUBLE4 NELIE Q75 GVE AIROW CHSLY6 KCLT\" readonly>"; // CDR PJ
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPWM NUBLE4 CCC Q97 SAWED GUILD Q409 OKNEE MLLET3 KCLT\" readonly>"; // CDR T7
+					result += "<br/>West/ZDC Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPWM HSKEL3 BAUER HNK J49 PSB HACKS HVQ LNDIZ PARQR4 KCLT\" readonly>"; // CDR N4
+					result += "<br/><br/>NE TO ATL CLT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPWM HSKEL3 BAUER HNK J49 PSB HACKS HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>NO Q75 3<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPWM HSKEL3 CAM Q822 GONZZ Q29 JHW FOXEE Q145 HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>ZBW VIA HTO ESCAPE<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPWM NUBLE4 CCC Q97 SAWED GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KPWM CAM ALB BIZEX Q75 GVE LYH MAJIC4 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-22-2025
+					result += "<!-- Verified with ATCSCC on 08-22-2025 -->";
+					result += "<br/>29<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPWM HSKEL3 CAM Q822 GONZZ Q29 JHW FOXEE Q145 HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>A4<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPWM NUBLE4 BAF Q448 PTW J48 CSN GVE AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/>AB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPWM HSKEL3 BAUER ALB BIZEX Q75 GVE AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/>N4<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPWM HSKEL3 BAUER HNK J49 PSB HACKS HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPWM NUBLE4 NELIE Q75 GVE AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/>T7<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPWM NUBLE4 CCC Q97 SAWED GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
+					break;
 				case "DCA": // Updated 03-12-2025
 					result += "<!-- Updated 03-12-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
