@@ -1439,13 +1439,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KCHS SWPFX3 FILLI FLLGG STOCR4 KCLT\" readonly>";
 					result += "<br/><b style=\"color:orange\">STOCR Min FL210 at FLLGG<\/b>";
 					result += "<br/><br/>MOA Avoidance: <input style=\"width:75%\" value=\"KCHS MLTRE3 JYMSE FLLGG STOCR4 KCLT\" readonly>";
-					result += "<br/>East: <input style=\"width:75%\" value=\"KCHS PLMTO3 CRE JOHAR OGRAE SDAIL CHSLY6 KCLT\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCHS PLMTO3 CRE JOHAR OGRAE SDAIL CHSLY6 KCLT\" readonly>";
 					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCHS STUNO1 IRQ BANKR BANKR5 KCLT\" readonly>";
 					// result += "<br/><br/>CLT NO STOCR: <input style=\"width:75%\" value=\"KCHS SWPFX3 FILLI RDU SDAIL CHSLY6 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCHS CHS FLO RASLN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-16-2025
-					result += "<!-- Verified with ATCSCC on 04-16-2025 -->";
 					break;
 				case "DCA": // Updated 07-14-2025
 					result += "<!-- Updated 07-14-2025 P -->";
@@ -4921,12 +4920,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMKE GREAS JAYEX KG75I LNK J146 GLD ALS J102 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMKE DBQ IOW PWE HLC J64 PUB ALS J102 GUP BUNTR3 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-30-2025
-					result += "<!-- Verified with ATCSCC on 03-30-2025 -->";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-21-2025
+					result += "<!-- Verified with ATCSCC on 08-21-2025 -->";
 					result += "<br/>0W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IOW PWE HLC J64 RSK FLG DUTEY MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE HAWKN RWF FSD J114 SNY FQF J10 RSK GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS STL SGF IFI DANKS EZEEE FTI BUKKO ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IRK J26 ICT LBL FTI ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IRK J26 ICT TOTOE FTI ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS J71 ENL FAM SGF J98 IRW J78 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>2W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IOW PWE HLC J64 PUB ALS GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE UECKR6 DELHI PXV ARG IRW J78 ZUN EAGUL6 KPHX\" readonly>";
