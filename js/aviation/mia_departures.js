@@ -265,20 +265,20 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "DEN": // Updated 08-23-2025
 			result += "<!-- Updated 08-23-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 MEMFS RZC LBL HALEN NIIXX3 KDEN\" readonly>"; // CDR H0
+			result += "<br/><input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 MEMFS RZC LBL HALEN NIIXX4 KDEN\" readonly>"; // CDR H0
 			result += "<br/><b style=\"color:orange\"> As of 02/23/25 Listed Pref Route is KMIA HURCN4 SMELZ Q116 JAWJA MGMRY VLKNN Q116 MEMFS...<\/b>";
-			result += "<br/><br/>OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV J58 SPS HALEN NIIXX3 KDEN\" readonly>";
+			result += "<br/><br/>OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV J58 SPS HALEN NIIXX4 KDEN\" readonly>";
 			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 OVENP Q89 HESPI RMG J66 MEM ECIGE Q128 VEGUC GCK KIISS CLASH5 KDEN\" readonly>";
 			result += "<br/>SW Arr<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BACCA ROZZI Y280 LEV J86 JCT Q20 CNX GNDLA TBARR4 KDEN\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA LAL SZW MGM MEI SQS LIT TUL ICT SOSPE OATHE DANDD1 KDEN\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-06-2025
 			result += "<!-- Verified with ATCSCC on 05-06-2025 -->";
-			result += "<br/>B2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA BNGOS4 DOLIE Y280 REDFN Q105 HRV J58 SPS HALEN NIIXX3 KDEN\" readonly>";
-			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS VLKNN Q116 MEMFS RZC LBL HALEN NIIXX3 KDEN\" readonly>";
-			result += "<br/>G0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV J58 SPS HALEN NIIXX3 KDEN\" readonly>";
-			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 MEMFS RZC LBL HALEN NIIXX3 KDEN\" readonly>";
-			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI REDFN Q105 HRV J58 SPS HALEN NIIXX3 KDEN\" readonly>";
+			result += "<br/>B2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA BNGOS4 DOLIE Y280 REDFN Q105 HRV J58 SPS HALEN NIIXX4 KDEN\" readonly>";
+			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS VLKNN Q116 MEMFS RZC LBL HALEN NIIXX4 KDEN\" readonly>";
+			result += "<br/>G0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV J58 SPS HALEN NIIXX4 KDEN\" readonly>";
+			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 MEMFS RZC LBL HALEN NIIXX4 KDEN\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI REDFN Q105 HRV J58 SPS HALEN NIIXX4 KDEN\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR HANKO MEM PER GCK KIISS CLASH5 KDEN\" readonly>";
 			break;
 		case "DFW": // Updated 05-28-2025
