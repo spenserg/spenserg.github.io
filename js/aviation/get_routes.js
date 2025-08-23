@@ -3692,7 +3692,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 			switch(arvl) {
 				case "CLT": // Updated 08-22-2025
 					result += "<!-- Updated 08-22-2025 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL270):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KJAX BRSTL1 BAXLY PONZE BANKR5 KCLT\" readonly>";
 					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAX CROSB2 WISPR CHECR STOCR4 KCLT\" readonly>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAX JETIN2 CAPPS FEONA THRSR BESTT JONZE5 KCLT\" readonly>";
