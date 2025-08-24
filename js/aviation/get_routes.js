@@ -2425,7 +2425,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 				case "MIA": // Updated 08-22-2025
 					result += "<!-- Updated 08-22-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/>OW: <input style=\"width:75%\" value=\"KDEN EPKEE7 DUUZE IRW J20 EIC SWB HRV Q105 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/>OW: <input style=\"width:75%\" value=\"KDEN EPKEE7 DUUZE GCK IRW J20 EIC AEX J58 HRV Q105 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
 					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN EXTAN7 SHAYK SLN SGF Q116 MEMFS MGMRY ACORI FROGZ4 KMIA\" readonly>";
 					// result += "<br/>Weekend/Holiday: <input style=\"width:75%\" value=\"KDEN EPKEE7 DUUZE GCK IRW EIC SWB DYEES GAWKS FROGZ4 KMIA\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN SABTH2 VRONI PNH J17 ABI AGJ TNV J87 IAH J86 LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
