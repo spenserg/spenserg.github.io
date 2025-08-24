@@ -2201,16 +2201,17 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG MEM VLKNN Q139 MGMRY CEW KVPS\" readonly>";
 			result += "<br/>1S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 CEW KVPS\" readonly>";
 			break;
-		case "XNA": // Updated 01-16-2025
-			result += "<!-- Updated 01-16-2025 -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+		case "XNA": // Updated 08-23-2025
+			result += "<!-- Updated 08-23-2025 -->";
+			result += "<br/><br/><b>Faa Pref Route (Max FL290):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC KXNA\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 EAKER MLC RZC KXNA\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>0P (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC KXNA\" readonly>";
-			result += "<br/>1E (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT KXNA\" readonly>";
-			result += "<br/>1W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J26 MMB TUL RZC KXNA\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-23-2025
+			result += "<!-- Verified with ATCSCC on 08-23-2025 -->";
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC KXNA\" readonly>";
+			result += "<br/>1E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT KXNA\" readonly>";
+			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J26 MMB TUL RZC KXNA\" readonly>";
 			break;
 		case "YEG": // Updated 01-30-2025
 			result += "<!-- Updated 01-30-2025 -->";
