@@ -788,6 +788,22 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>LP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK HLC ALS J102 GUP EAGUL6 KPHX\" readonly>";
 			result += "<br/>W0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE HLC J64 RSK FLG DUTEY MAIER BRUSR1 KPHX\" readonly>";
 			break;
+		case "PIT": // Updated 08-25-2025
+			result += "<!-- Updated 08-25-2025 MP -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA TAMDE GRIVY JESEY5 KPIT\" readonly>"; // CDR 0E
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN DNIKA TAAYZ PETTY VIO LNDOR GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME VHP APE CTW FEWGA7 KPIT\" readonly>"; // CDR VR
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KORD ADIME OTENS ANEWA LNDOR ACO KPIT\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-25-2025
+			result += "<!-- Verified with ATCSCC on 08-25-2025 -->";
+			result += "<br/>0E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA TAMDE GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH CXR GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU HNN FEWGA7 KPIT\" readonly>";
+			result += "<br/>5S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV IIU HNN FEWGA7 KPIT\" readonly>";
+			result += "<br/>VR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME VHP APE CTW FEWGA7 KPIT\" readonly>";
+			break;
 		case "PVD": // Updated 07-06-2025
 			result += "<!-- Updated 07-06-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
