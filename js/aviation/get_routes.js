@@ -6832,6 +6832,23 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>CDRS</b>";
 					result += "<br/>W1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT AHTIY BURGS HVQ SPA TWINS ALLMA BULZI Q81 ENDEW BROMO FROGZ4 KMIA\" readonly>";
 					break;
+				case "ORD": // Updated 08-25-2025
+					result += "<!-- Updated 08-25-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KPIT BSV WEEVR Q62 WATSN WATSN4 KORD\" readonly>"; // CDR P1
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPIT EWC YARRK Q436 KAYYS WYNDE3 KORD\" readonly>"; // CDR N1
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPIT AHTIY BURGS HNN FLM HEVAN BONNT VEECK5 KORD\" readonly>"; // CDR S1
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KPIT EWC FNT WYNDE2 KORD\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-25-2025
+					result += "<!-- Verified with ATCSCC on 08-25-2025 -->";
+					result += "<br/>N1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT EWC YARRK Q436 KAYYS WYNDE3 KORD\" readonly>";
+					result += "<br/>N2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT BSV DJB RRONS Q436 KAYYS WYNDE3 KORD\" readonly>";
+					result += "<br/>N3<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT BSV DJB RRONS ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT BSV WEEVR Q62 WATSN WATSN4 KORD\" readonly>";
+					result += "<br/>S1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT AHTIY BURGS HNN FLM HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT DILNE TVTRN ROD WATSN4 KORD\" readonly>";
+					break;
 				case "PHL": // Updated 05-27-2025
 					result += "<!-- Updated 05-27-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
