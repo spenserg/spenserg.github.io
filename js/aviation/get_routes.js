@@ -1605,6 +1605,21 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE KKIDS1 NUSMM JPU HNN FLM HEVAN BONNT VEECK5 KORD\" readonly>";
 					result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE GTLKE4 ALPHE EMMMA WYNDE2 KORD\" readonly>";
 					break;
+				case "PHL": // Updated 08-25-2025
+					result += "<!-- Updated 08-25-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KCLE KKIDS1 EWC JST BOJID4 KPHL\" readonly>"; // CDR P1
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLE PFLYD1 MAAJR PSB ETX SPUDS KPHL\" readonly>"; // CDR E2
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLE KKIDS1 NUSMM MAULS Q34 GVE PAATS4 KPHL\" readonly>"; // CDR S2
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KCLE ACO PSB BOJID4 KPHL\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-25-2025
+					result += "<!-- Verified with ATCSCC on 08-25-2025 -->";
+					result += "<br/>E1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE PFLYD1 MAAJR PSB BOJID4 KPHL\" readonly>";
+					result += "<br/>E2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE PFLYD1 MAAJR PSB ETX SPUDS KPHL\" readonly>";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE KKIDS1 EWC JST BOJID4 KPHL\" readonly>";
+					result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE KKIDS1 NUSMM MAULS Q34 GVE PAATS4 KPHL\" readonly>";
+					break;
 				case "PHX": // Updated 07-14-2025
 					result += "<!-- Updated 07-14-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -8681,7 +8696,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 05-10-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KVPS CORKY ACORI CSG BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/><b style=\"color:orange\">Routes below okay for weather deviation. File pref route otherwise.<\/b>";
+					result += "<br/><b style=\"color:orange\">File pref route unless weather requires another route.<\/b>";
 					result += "<br/><br/>South/East <input style=\"width:75%\" value=\"KVPS CORKY DEFUN CABLO HEPAR Q99 TEEEM CHECR STOCR4 KCLT\" readonly>";
 					result += "<br/>North/West: <input style=\"width:75%\" value=\"KVPS CORKY MGM KT24O TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
