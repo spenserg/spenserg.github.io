@@ -789,8 +789,8 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>W0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE HLC J64 RSK FLG DUTEY MAIER BRUSR1 KPHX\" readonly>";
 			break;
 		case "PIT": // Updated 08-25-2025
-			result += "<!-- Updated 08-25-2025 MP -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<!-- Updated 08-25-2025 P -->";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL290):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA TAMDE GRIVY JESEY5 KPIT\" readonly>"; // CDR 0E
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN DNIKA TAAYZ PETTY VIO LNDOR GRIVY JESEY5 KPIT\" readonly>";
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME VHP APE CTW FEWGA7 KPIT\" readonly>"; // CDR VR
