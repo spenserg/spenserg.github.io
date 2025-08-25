@@ -8082,15 +8082,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 			}
 		break; // End of SLC
 
-
 		case "SMF":
 			switch(arvl) {
 				case "CLT": // Updated 01-18-2025
 					result += "<!-- Updated 01-18-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSMF RVRCT4 RALEY MLF J28 ICT SGF BNA TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSMF RVRCT4 RALEY JSICA MLF J80 FQF MCK LNK BDF VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KSMF FTHIL3 FRA PINNI J5 LANDO J65 ABI J4 FUZ J42 TXK J52 SUTTN IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSMF RVRCT4 MACUS Q124 BVL J56 RIDJE GLL HCT KP63C IRK SPI J80 VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/>South: <input style=\"width:75%\" value=\"KSMF FTHIL3 FRA PINNI J5 LANDO J65 BLH J169 TFD J50 SSO EWM J66 ABI J4 FUZ MEMFS TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSMF MLF J28 ICT SGF BNA J46 VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
