@@ -6959,16 +6959,18 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>JV (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP CATH1 PSP V370 TNP PKE DRK J96 IRK BENKY6 KORD\" readonly>";
 					result += "<br/>JW (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP CATH1 PSP V370 TNP JOTNU ZELMA HAKMN LAKRR PROMT LARVE EKR BFF J94 ONL J114 GEP TVC WYNDE2 KORD\" readonly>";
 					break;
-				case "PHX": // Updated 01-17-2025
-					result += "<!-- Updated 01-17-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KPSP TRM6 TRM BLH HYDRR1 KPHX\" readonly>";
+				case "PHX": // Updated 08-29-2025
+					result += "<!-- Updated 08-29-2025 -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL250):</b>";
+					result += "<br/>RWY 31L: <input style=\"width:75%\" value=\"KPSP HWRRD1 BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/>RWY 13R: <input style=\"width:75%\" value=\"KPSP JEEON1 BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/><br/>MOJAVE EAST: <input style=\"width:75%\" value=\"KPSP CATH1 PSP V137 TRM BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/>SPRINGS EAST: <input style=\"width:75%\" value=\"KPSP CATH1 PSP V137 TRM V137 IPL J2 HOGGZ HYDRR1 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>ME (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP CATH1 PSP V137 TRM BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/>SE (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP CATH1 PSP V137 TRM V137 IPL J2 HOGGZ HYDRR1 KPHX\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-29-2025
+					result += "<!-- Verified with ATCSCC on 08-29-2025 -->";
+					result += "<br/>ME<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP TRM BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/>SE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP TRM V137 IPL J2 HOGGZ HYDRR1 KPHX\" readonly>";
 					break;
 			}
 		break; // End of PSP
