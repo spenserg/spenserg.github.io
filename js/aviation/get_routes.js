@@ -7964,7 +7964,23 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\"; value=\"KSFO BSR MQO FLW PMD J65 BLH J50 SSO J4 INK ACT YEAGR4 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-29-2025
 					break; 
-				case "JFK": // TODO
+				case "JFK": // Updated 08-28-2025
+					result += "<!-- Updated 08-28-2025 P -->"
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/>NRP: <input style=\"width:75%\" value=\"KSFO SYRAH Q128 JSICA MLF J28 PUB LAA J102 SLN J24 MCI J80 VHP ROD KLYNE Q29 JHW J70 LVZ KJFK\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 MOGEE Q122 ONL KATES DBQ KG75M DAFLU J70 LVZ LENDY8 KJFK \" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 ZAROS GCK J110 BUM ENL IIU Q108 SIE CAMRN5 KJFK\" readonly>";
+					result += "<br/><br/>North via GEP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 PROXI BOY J32 DPR ABR GEP DLL HASTE DAFLU JHW J70 LVZ LENDY8 KJFK \" readonly>";
+					result += "<br/>South/ZKC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 JSICA Q130 PNH IRW ARG J46 BNA SWAPP Q34 SITTR Q108 SIE CAMRN5 KJFK\" readonly>";
+					result += "<br/><br/>BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 UFFDA RWF J34 BAE SVM J70 LVZ LENDY8 KJFK \" readonly>";
+					result += "<br/>BAE-2<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 JASTI FSD J16 BAE J70 LVZ LENDY8 KJFK \" readonly>";
+					result += "<br/>JOT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 TIPRE Q126 BRAFF HCT LNK J146 GIJ J554 JHW J70 LVZ LENDY8 KJFK\" readonly>";
+					result += "<br/>ICT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH JSICA MLF J28 ICT J134 STL VHP ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
+					result += "<br/>PUB<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 FLOOD PUB J64 HLC PWE LMN MZV JOT ELX SVM J70 LVZ LENDY8 KJFK\" readonly>";
+					result += "<br/>SPI<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 TIPRE Q126 BRAFF AKO PWE UIN SPI KOLTS WWODD RINTE KLYNE Q29 WWSHR JHW J70 LVZ LENDY8 KJFK \" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSFO LIN J84 EKR AKO PWE UIN SPI VHP ROD DJB JHW J70 LVZ LENDY8 KJFK\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 08-28-2025
 					break;
 				case "LAX": // Updated 04-01-2025
 					result += "<!-- Updated 04-01-2025 -->";
