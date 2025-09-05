@@ -1477,14 +1477,14 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-14-2025
 					break;
-				case "PHL": // Updated 05-10-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-10-2025 MP -->";
+				case "PHL": // Updated 09-05-2025
+					result += "<!-- Updated 09-05-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KCHS PLMTO3 CRE RAPZZ Q135 RREGG Q117 SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
 					result += "<br/><b style=\"color:orange\">As of 2025-05-10 Fkeys will flag any route except above as Mandatory Route violation<\/b>";
-					result += "<br/><br/>West via DCA: <input style=\"width:75%\"; value=\"KCHS SWPFX3 FILLI FLO RDU BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/>West via JST: <input style=\"width:75%\"; value=\"KCHS SWPFX3 FILLI LIB ROA MGW JST BOJID4 KPHL\" readonly>";
-					result += "<br/>West via IRQ: <input style=\"width:75%\"; value=\"KCHS STUNO1 IRQ SPA LYH GVE PAATS4 KPHL\" readonly>";
+					result += "<br/><br/>West via RDU<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCHS SWPFX3 FILLI FLO RDU BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>West/ZDC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCHS MLTRE3 JYMSE SLOJO CLAWD Q39 ASERY Q71 PSYKO JST BOJID4 KPHL\" readonly>";
+					// result += "<br/>West via IRQ: <input style=\"width:75%\"; value=\"KCHS STUNO1 IRQ SPA LYH GVE PAATS4 KPHL\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KCHS CRE ILM FAK KPHL\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-27-2025
@@ -6440,6 +6440,21 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>N4<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD PUT CTR HNK J49 PSB Q71 GEFFS HVQ LNDIZ PARQR4 KCLT\" readonly>";
 					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD PUT NELIE Q75 GVE AIROW CHSLY6 KCLT\" readonly>";
 					result += "<br/>T7<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD JUMPR RIFLE HEADI Q97 SAWED GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
+					break;
+				case "PWM": // Updated 09-05-2025
+					result += "<!-- Updated 09-05-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL320):</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KPHL DITCH T416 JIMEE WAVEY SHIPP CCC SCOGS3 KPWM\" readonly>"; // CDR PJ
+					result += "<br/><br/>West/PTW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW CHLSE T449 CFB GTOWN ALB CAM CDOGG4 KPWM\" readonly>"; // CDR RA
+					result += "<br/><br/>PHYLER NORTH (Max FL070) <input style=\"width:75%\"; value=\"KPHL FJC T221 LAAYK T212 WEETS PWL CTR EEN CON NEETS KPWM\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KPHL DITCH T416 JIMEE WAVEY SHIPP CCC SCOGS3 KPWM\"; readonly>"; // CDR PJ
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-05-2025
+					result += "<!-- Verified with ATCSCC on 09-05-2025 -->";
+					result += "<br/>FF<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL FJC T221 LAAYK T295 SAGES KEYNN CDOGG CDOGG4 KPWM\" readonly>";
+					result += "<br/>KY<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DITCH T416 JIMEE WAVEY SHIPP FOSTY BILJE BUOYY SHAUN CEKAY SCOGS SCOGS3 KPWM\" readonly>";
+					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DITCH T416 JIMEE WAVEY SHIPP CCC SCOGS3 KPWM\" readonly>";
+					result += "<br/>RA<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW CHLSE T449 CFB GTOWN ALB CAM CDOGG4 KPWM\" readonly>";
 					break;
 				case "RDU": // Updated 03-10-2025
 					result += "<!-- Updated 03-10-2025 -->";
