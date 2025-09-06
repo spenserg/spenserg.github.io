@@ -1374,12 +1374,12 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG MERDN DEFUN FROGZ4 KMIA\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH J86 LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
 			break;
-		case "MKE": // Updated 04-19-2025 // Mandatory Routes checked
-			result += "<!-- Updated 04-19-2025 M -->";
+		case "MKE": // Updated 04-19-2025
+			result += "<!-- Updated 09-05-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW AKUNA9 MLC SGF BAYLI JOT LEEDN GOPAC3 KMKE\" readonly>"; // CDR 0P
-			result += "<br/><br/>West: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J25 MCI DSM DBQ JVL KMKE\" readonly>";
-			result += "<br/>East: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEMFS Q29 SIDAE VHP NUKIE PETTY KMKE\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC SGF BAYLI JOT LEEDN GOPAC3 KMKE\" readonly>"; // CDR 0P
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEMFS Q29 SIDAE VHP NUKIE PETTY KMKE\" readonly>";
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J25 MCI DBQ JVL KMKE\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 TUL J98 SGF BAYLI JOT OBK KMKE\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-19-2025
