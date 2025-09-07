@@ -1770,8 +1770,8 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>WD<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCVG LOVEY8 HELIS STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
 					break;
 				case "ORD": // Updated 09-06-2025
-					result += "<!-- Updated 09-06-2025 MP -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<!-- Updated 09-06-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCVG JBNCH6 SNKPT BONNT VEECK5 KORD\" readonly>"; // CDR JB
 					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCVG BNGLE5 WWSHR FNT WYNDE3 KORD\" readonly>";
 					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCVG CHCLL6 BUSYY IMPEL J8 STL TRTLL6 KORD\" readonly>"; // CDR CH
