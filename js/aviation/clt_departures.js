@@ -306,12 +306,14 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>KL<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KILNS5 AUDII FAK LDN TOMAC LEJOY AIR CLPRR3 KCMH\" readonly>";
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HNN SCRLT SCRLT2 KCMH\" readonly>";
 			break;
-		case "CVG": // Updated 03-25-2025
-			result += "<!-- Updated 03-25-2025 -->";
+		case "CVG": // Updated 09-06-2025
+			result += "<!-- Updated 09-06-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM JAKIE6 KCVG\" readonly>";
-			// TODO North
-			// TODO South
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ BRROW GAVNN7 KCVG\" readonly>";
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA KM42M PXV SARGO4 KCVG\" readonly>";
+			result += "<br/><br/>East via HVQ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KILNS5 AUDII FAK GVE PERKS FAIIR GAVNN7 KCVG\" readonly>";
+			result += "<br/>West via MEM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VUZ MEM TERGE SARGO4 KCVG\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-25-2025
 			result += "<!-- Verified with ATCSCC on 03-25-2025 -->";
