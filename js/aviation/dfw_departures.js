@@ -1815,7 +1815,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "RSW": // Updated 09-06-2025
 			result += "<!-- Updated 09-06-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/>OW: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWB HRV Q105 BLVNS Y290 DOWRY TYNEE4 KRSW\" readonly>"; // CDR 0P
+			result += "<br/>OW: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP HRV Q105 BLVNS KOLBR TYNEE4 KRSW\" readonly>"; // CDR 0P
 			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWB MCB J50 CEW J2 DEFUN CABLO BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
 			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS LDK LGC DUCHY OHDEA2 KJAX\" readonly>";
 			result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV MUSYL LCHLH KELPP MINOW M580 SHAQQ TYNEE TYNEE4 KRSW\" readonly>";
