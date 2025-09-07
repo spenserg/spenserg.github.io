@@ -1642,9 +1642,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "CMH":
 			switch(arvl) {
-				case "CLT": // Updated 04-28-2025 // Mandatory Routes checked
-					result += "<!-- Updated 04-28-2025 MP -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+				case "CLT": // Updated 04-28-2025
+					result += "<!-- Updated 04-28-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCMH POBSE OHIOS LNDIZ PARQR4 KCLT\" readonly>";
 					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY DQN CVG SKYWA FILPZ4 KCLT\" readonly>";
 					result += "<br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCMH OWEBO HLG JST CSN GVE AIROW CHSLY6 KCLT\" readonly>";
@@ -1652,7 +1652,6 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCMH POBSE OHIOS HMV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-28-2025
-					result += "<!-- Verified with ATCSCC on 04-28-2025 -->";
 					break;
 				case "DFW": // Updated 07-20-2025
 					result += "<!-- Updated 07-20-2025 P -->";
