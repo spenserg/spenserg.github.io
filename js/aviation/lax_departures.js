@@ -356,7 +356,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "PHX": // Updated 06-23-2025
 			result += "<!-- Updated 06-23-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL270):</b>";
 			result += "<br/><input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH HYDRR1 KPHX\" readonly>";
 			// result += "<br/><br/>Night: <input style=\"width:75%\"; value=\"KLAX OSHNN1 BEALE PRFUM WOTRO BRUSR1 KPHX\" readonly>";
 			result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX PNDAH2 TCATE IPL J2 HOGGZ HYDRR1 KPHX\" readonly>";
