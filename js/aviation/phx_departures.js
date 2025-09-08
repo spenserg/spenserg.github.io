@@ -451,7 +451,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "LAX": // Updated 06-23-2025
 			result += "<!-- Updated 06-23-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL320):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KPHX KEENS3 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 			result += "<br/><b style=\"color:orange\">LAX arrivals must file WLVRN transition out of PHX (see chart notes)<\/b>";
 			result += "<br/><br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX FYRBD1 MOHAK J2 IPL AMMOR OLAAA2 KLAX\" readonly>"; // CDR FY
