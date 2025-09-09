@@ -830,6 +830,29 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO TULEG HNK WIPOR3 KPVD\" readonly>";
 			result += "<br/>M3<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO AHPAH HANKK HNK WIPOR3 KPVD\" readonly>";
 			break;
+		case "RSW": // Updated 09-08-2025
+			result += "<!-- Updated 09-08-2025 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN Q19 BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>"; // CDR 0S
+			result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE SPA IRQ CYNTA SHFTY6 KRSW\" readonly>"; // CDR 2E
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J151 VUZ MGMRY ACORI BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>"; // CDR 8S
+			result += "<br/><br/>East/ZTL Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM BKW RDU PRONI Q131 WAALT Y289 BAHAA HIBAC SHFTY6 KRSW\" readonly>";
+			result += "<br/>West/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J101 LIT EDWAH Q33 SWEUP AEX J58 HRV Q105 BLVNS KOLBR TYNEE4 KRSW\" readonly>";
+			result += "<br/><br/>OHIO VALLEY TO FLORIDA 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN Q19 BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-08-2025
+			result += "<!-- Verified with ATCSCC on 09-08-2025 -->";
+			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN Q19 BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+			result += "<br/>1S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM J43 VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF Q116 VLKNN MGMRY ACORI BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+			result += "<br/>2E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE SPA IRQ CYNTA SHFTY6 KRSW\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU J99 VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+			result += "<br/>2W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI J41 VUZ MGMRY ACORI BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+			result += "<br/>4S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE BWG HITMN Q19 BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+			result += "<br/>6S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL PLESS Q19 BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+			result += "<br/>8S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J151 VUZ MGMRY ACORI BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+			result += "<br/>SB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN Q19 BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+			break;
 		case "SAN": // Updated 07-29-2025
 			result += "<!-- Updated 07-29-2025 -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-29-2025
@@ -1061,13 +1084,13 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "YYC": // Updated 06-24-2025
 			// result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KORD MYKIE MONNY IANNA FOD FSD J16 DPR J204 GTF J516 YQL EBGAL EBGAL7 CYYC \" readonly>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KORD MYKIE MONNY IANNA FOD FSD J16 DPR J204 HILGR EBGAL EBGAL7 CYYC\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 GEP KP06C DIK GGW PEMDU Q832 VESDO EBGAL7 CYYC \" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MYKIE MONNY JORDY ONL J151 BIL J13 COUTS MOBEK EBGAL7 CYYC\" readonly>";
 			result += "<br/><br/>North via HML<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE DLH HML SEGAP DURUR SHAWI Q874 ILADA BIRKO6 CYYC\" readonly>"; // CDR 3N
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-24-2025
-			result += "<!-- Verified with ATCSCC on 06-24-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-08-2025
+			result += "<!-- Verified with ATCSCC on 09-08-2025 -->";
 			result += "<br/>3N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE DLH HML SEGAP DURUR SHAWI Q874 ILADA BIRKO6 CYYC\" readonly>";
 			result += "<br/>4N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB GEP J70 DIK GGW PEMDU Q832 VESDO EBGAL7 CYYC\" readonly>";
 			break;
