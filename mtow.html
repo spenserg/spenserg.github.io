@@ -121,6 +121,7 @@ function update_rte_text() {
 	$("#newroute_oktofile").val('result += \"<br/>' + $('#3box_desc').val() + '<span style=\\\"color:green\\\"> (Ok to File)<\/span>: <input style=\\\"width:75%\\\" value=\\\"' + $('#3box_route').val() + '\\\" readonly>\";');
 	$("#newroute_coordreq").val('result += \"<br/>' + $('#3box_desc').val() + '<span style=\\\"color:red\\\"> (Coord Req)<\/span>: <input style=\\\"width:75%\\\" value=\\\"' + $('#3box_route').val() + '\\\" readonly>\";');
 	$("#newroute_xxx").val('result += \"<br/>' + $('#3box_desc').val() + ': <input style=\\\"width:75%\\\" value=\\\"' + $('#3box_route').val() + '\\\" readonly>\";');
+	$('#3box_desc2').val('<br\/>' + $('#3box_desc').val());
 }
 
 function change_flow(airport = null, new_config = null, override_duplicated = false) {
@@ -400,6 +401,7 @@ function compute (str_override = "") {
 			// 3 input boxes: [green, red, xxx]
 			output += '<hr>Route: <input id=\'3box_route\' style=\'width:25%\' value=\'YYY\' onchange=\'update_rte_text()\'>';
 			output += '&nbsp;&nbsp;&nbsp;&nbsp;Desc: <input id=\'3box_desc\' style=\'width:25%\' value=\'XXX\' onchange=\'update_rte_text()\'>';
+			output += '&nbsp;&nbsp;&nbsp;&nbsp;Desc BR: <input id=\'3box_desc2\' style=\'width:25%\' value=\'<br\/>XXX\' readonly>';
 			output += '<br/><span style=\"color:green\"> (Ok to File)</span>: <input id=\'newroute_oktofile\' style=\'width:75%\' value=\'' +
 				'result += \"<br/>XXX<span style=\\\"color:green\\\"> (Ok to File)<\/span>: <input style=\\\"width:75%\\\" value=\\\"YYY\\\" readonly>\";' +
 				'\' readonly>';
