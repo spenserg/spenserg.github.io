@@ -2304,8 +2304,8 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 SLOJO Q103 CYNTA SHFTY6 KRSW\" readonly>"; // CDR 00
 					result += "<br/><br/>NE TO FLORIDA VIA J48 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA CLTCH3 FLASK GOWBE BURGG IRQ WIGVO CYNTA SHFTY6 KRSW\" readonly>";
-					result += "<br/>NE TO FLORIDA VIA J48 3<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 ALEAN VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
-					result += "<br/>NE TO FLORIDA VIA J6<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
+					result += "<br/>NE TO FLORIDA VIA J48 3<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 ALEAN VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+					result += "<br/>NE TO FLORIDA VIA J6<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
 					result += "<br/>NE TO FLORIDA VIA Q75 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 SLOJO Q103 CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>NE TO FLORIDA VIA Q97 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB PAACK Q97 ELMSZ JROSS Q409 PUPYY Q103 CYNTA SHFTY6 KRSW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODO
@@ -2315,10 +2315,10 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>20<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD T287 CANNY LAFLN TRPOD Q409 PUPYY CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>40<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB COUPN BEETN JIMAR DEEEZ Q409 PUPYY CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>52<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 FLASK GOWBE BURGG IRQ WIGVO CYNTA SHFTY6 KRSW\" readonly>";
-					result += "<br/>53<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 ALEAN VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
+					result += "<br/>53<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 ALEAN VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
 					result += "<br/>55<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 FLASK COREX SPA WIGVO Q77 TEUFL CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 WISTA NEALS J85 SPA IRQ CYNTA SHFTY6 KRSW\" readonly>";
-					result += "<br/>62<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
+					result += "<br/>62<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
 					result += "<br/>72<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 SLOJO Q103 CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>97<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB PAACK Q97 ELMSZ JROSS Q409 PUPYY Q103 CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>AR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB EARZZ Q131 WAALT Y289 BAHAA HIBAC SHFTY6 KRSW\" readonly>";
@@ -4543,13 +4543,13 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					result += "<br/><br/><b>CDRS</b>";
 					result += "<br/>48: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA LANNA J48 MOL FLASK COREX SPA IRQ WIGVO CYNTA SHFTY6 KRSW\" readonly>";
-					result += "<br/>4A: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA LANNA J48 CSN FANPO Q40 ALEAN VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
-					result += "<br/>60: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 DJB ROD J43 VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
-					result += "<br/>64: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 DANNR RAV J64 BURNI TYROO QUARM AIR HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
-					result += "<br/>6A: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA PARKE J6 HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
+					result += "<br/>4A: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA LANNA J48 CSN FANPO Q40 ALEAN VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+					result += "<br/>60: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 DJB ROD J43 VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+					result += "<br/>64: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 DANNR RAV J64 BURNI TYROO QUARM AIR HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+					result += "<br/>6A: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA PARKE J6 HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
 					result += "<br/>80: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA ZIMMZ Q42 MIKYG Q480 AIR HVQ J85 SPA IRQ CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>85: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 DANNR RAV J64 BURNI TYROO QUARM AIR HVQ J85 SPA IRQ CYNTA SHFTY6 KRSW\" readonly>";
-					result += "<br/>8T: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA ZIMMZ Q42 MIKYG Q480 AIR HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
+					result += "<br/>8T: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA ZIMMZ Q42 MIKYG Q480 AIR HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
 					result += "<br/>AR: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA WHITE Q409 CRPLR EARZZ Q131 WAALT Y289 BAHAA HIBAC SHFTY6 KRSW\" readonly>";
 					result += "<br/>J6: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA PARKE J6 HVQ J85 SPA IRQ CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>KA (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA WHITE Q409 PUPYY Q103 CYNTA SHFTY6 KRSW\" readonly>";
@@ -6543,7 +6543,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/<br/>OW: <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ Q131 WAALT Y289 BAHAA HIBAC SHFTY6 KRSW\" readonly>"; // CDR AR
 					result += "<br/>West: <input style=\"width:75%\" value=\"KPHL STOEN Q75 SLOJO Q103 CYNTA SHFTY6 KRSW\" readonly>"; // CDR PH
 					result += "<br/>West via HVQ: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ J85 SPA IRQ CYNTA SHFTY6 KRSW\" readonly>"; // CDR J6
-					result += "<br/>NW Arrival: <input style=\"width:75%\"; value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 PUPYY TAY PLYER TYNEE3 KRSW\" readonly>";
+					result += "<br/>NW Arrival: <input style=\"width:75%\"; value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 PUPYY TAY PLYER TYNEE4 KRSW\" readonly>";
 					result += "<br/><br/>ATLANTIC S1: <input style=\"width:75%\"; value=\"KPHL OOD TEBEE HAYDO SIE WICKE LYNUS CUMBY LOZER WHOOS WEAKK BAHAA HIBAC SHFTY6 KRSW\" readonly>";
 					result += "<br/>VACAPES S1: <input style=\"width:75%\"; value=\"KPHL OOD TEBEE HAYDO SIE B24 CORNE ECG WEAKK BAHAA HIBAC SHFTY6 KRSW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -6551,12 +6551,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-10-2025
 					result += "<!-- Verified with ATCSCC on 03-10-2025 -->";
 					result += "<br/>48<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 MOL FLASK COREX SPA IRQ WIGVO CYNTA SHFTY6 KRSW\" readonly>";
-					result += "<br/>4A<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 ALEAN VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
-					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB ROD J43 VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
-					result += "<br/>64<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV J64 BURNI TYROO QUARM AIR HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
+					result += "<br/>4A<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 ALEAN VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB ROD J43 VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+					result += "<br/>64<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV J64 BURNI TYROO QUARM AIR HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
 					result += "<br/>80<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 AIR HVQ J85 SPA IRQ CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>85<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV J64 BURNI TYROO QUARM AIR HVQ J85 SPA IRQ CYNTA SHFTY6 KRSW\" readonly>";
-					result += "<br/>8T<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 AIR HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE3 KRSW\" readonly>";
+					result += "<br/>8T<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 AIR HVQ SPAYD VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
 					result += "<br/>AR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ Q131 WAALT Y289 BAHAA HIBAC SHFTY6 KRSW\" readonly>";
 					result += "<br/>DQ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DQO BELAY MORTY LITME HIRCK JDUBB RRSIN GSO Q75 SLOJO Q103 CYNTA SHFTY6 KRSW\" readonly>";
 					result += "<br/>J6<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ J85 SPA IRQ CYNTA SHFTY6 KRSW\" readonly>";
