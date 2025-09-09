@@ -1147,17 +1147,20 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KRITR6 FILDS ILLSA Q69 RICCS KROC\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ GEFFS KROC\" readonly>";
 			break;
-		case "RSW": // Updated 02-06-2025
-			result += "<!-- Updated 02-06-2025 -->";
+		case "RSW": // Updated 09-08-2025
+			result += "<!-- Updated 09-08-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS GRONK Q103 CYNTA SHFTY6 KRSW\" readonly>"; // CDR RP
-			result += "<br/><br/>East/OW: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 OGGRE AR17 HIBAC SHFTY6 KRSW\" readonly>";
-			result += "<br/>West Coast FL: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS RIELE Q103 CYNTA PLYER TYNEE3 KRSW\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>ES (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR HONID BULZI NICKI PLYER TYNEE3 KRSW\" readonly>";
-			result += "<br/>LL (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT LILLS3 LILLS FAY CHS JROSS Q409 PUPYY Q103 CYNTA SHFTY6 KRSW\" readonly>";
-			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ICONS5 NOOKS GRONK Q103 CYNTA SHFTY6 KRSW\" readonly>";
+			result += "<br/><br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 OGGRE AR17 HIBAC SHFTY6 KRSW\" readonly>";
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR HONID BULZI NICKI PLYER TYNEE4 KRSW\" readonly>"; // CDR ES
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT LILLS3 LILLS FAY CHS JROSS Q409 PUPYY Q103 CYNTA SHFTY6 KRSW\" readonly>"; // CDR LL
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-08-2025
+			result += "<!-- Verified with ATCSCC on 09-08-2025 -->";
+			result += "<br/>BA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 BARMY BATTA ROZBO CHS JROSS Q409 PUPYY Q103 CYNTA SHFTY6 KRSW\" readonly>";
+			result += "<br/>ES<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR HONID BULZI NICKI PLYER TYNEE4 KRSW\" readonly>";
+			result += "<br/>LL<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT LILLS3 LILLS FAY CHS JROSS Q409 PUPYY Q103 CYNTA SHFTY6 KRSW\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ICONS5 NOOKS GRONK Q103 CYNTA SHFTY6 KRSW\" readonly>";
 			break;
 		case "SAN":  // Updated 07-07-2025
 			result += "<!-- Updated 07-07-2025 -->";
