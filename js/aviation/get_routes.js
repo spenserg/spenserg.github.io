@@ -5481,16 +5481,21 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "ORF":
 			switch(arvl) {
-				case "CLT": // Updated 01-17-2025
-					result += "<!-- Updated 01-17-2025 -->";
+				case "CLT": // Updated 09-11-2025
+					result += "<!-- Updated 09-11-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL220):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KORF COUPN CHSLY6 KCLT\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KORF KOOKI TINKK TORQD MLLET3 KCLT\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORF HPW FAK MOL J24 HVQ YOCKY SKYWA FILPZ4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET3 KCLT\" readonly>"; // CDR 41
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KORF TYI RDU LIB MAJIC4 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>00 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF COUPN CHSLY6 KCLT\" readonly>";
-					result += "<br/>41 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-11-2025
+					result += "<!-- Verified with ATCSCC on 09-11-2025 -->";
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF COUPN CHSLY6 KCLT\" readonly>";
+					result += "<br/>41<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/>63<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/>C1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/>C2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET3 KCLT\" readonly>";
 					break;
 				case "DFW": // Updated 04-28-2025 // Mandatory Routes checked
 					result += "<!-- Updated 04-28-2025 M -->";
