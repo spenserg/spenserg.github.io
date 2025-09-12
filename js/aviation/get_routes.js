@@ -3924,8 +3924,8 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-28-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KJFK RBV Q430 AIR J80 MCI J24 SLN J102 ALS J44 RSK J64 TBC JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
 					result += "<br/><br/>South of Mtn Wave: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 HVQ J78 FAM J98 SGF PER MMB FTI J8 GUP INW DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
-					result += "<br/>ZKC Avoid via FSM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 HVQ Q68 RAMRD ARG FSM IRW PNH J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR P1
-					result += "<br/>ZME Avoid via FAM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 HVQ J78 FAM SGF LBL CIM J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR 6F
+					result += "<br/><br/>FSM/ZKC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 HVQ Q68 RAMRD ARG FSM IRW PNH J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR P1
+					result += "<br/>FAM/ZME Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 HVQ J78 FAM SGF LBL CIM J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR 6F
 					result += "<br/><b style=\"color:orange\">South routes all go through ZDC ..RVB Q430 SAAME J6...<\/b>";
 					result += "<br/><br/>North/ZKC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK DEEZZ5 CANDR J60 DANNR RAV J64 LMN PWE HLC J64 TBC JASSE Q90 DNERO ANJLL4 KLAX\" readonly>"; // CDR 64
 					result += "<br/>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK COATE Q436 RAAKK Q438 RUBYY DABJU J36 BAE MCW ONL J114 DVV ZAKRY Q88 HAKMN ANJLL4 KLAX\" readonly>"; // CDR CW
