@@ -154,9 +154,9 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "DEN": // Updated 01-31-2025
 			result += "<!-- Updated 01-31-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 DICEE BUMMP SSKII3 KDEN\" readonly>";
-			result += "<br/><br/>Night: <input style=\"width:75%\"; value=\"KLAX OSHNN1 BEALE J146 DICEE BUMMP SSKII3 KDEN\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KLAX LAXX1 TRM AVRRY EED J236 TBC SHNPS TBARR3 KDEN\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 DICEE BUMMP SSKII4 KDEN\" readonly>";
+			result += "<br/><br/>Night: <input style=\"width:75%\"; value=\"KLAX OSHNN1 BEALE J146 DICEE BUMMP SSKII4 KDEN\" readonly>";
+			result += "<br/>South: <input style=\"width:75%\"; value=\"KLAX LAXX1 TRM AVRRY EED J236 TBC SHNPS TBARR4 KDEN\" readonly>";
 			result += "<br/>South via ABQ: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 DRK J78 ABQ J13 ALS LARKS3 KDEN\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX SEBBY3 DAG J146 HBU POWDR1 KDEN\" readonly>";
