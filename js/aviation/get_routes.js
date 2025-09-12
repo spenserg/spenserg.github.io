@@ -8718,19 +8718,18 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KTPA TAY CAE RDU RIC SWL VCN9 KPHL\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "PHX": // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
+				case "PHX": // Updated 09-11-2025
+					result += "<!-- Updated 09-11-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KTPA DORMR3 FROOT ROZZI Y280 LEV J86 IAH PEQ EWM DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KTPA ENDED2 LACEN PATOY Q116 JAWJA CABLO DEFUN J2 CEW J50 MCB ACT INK EWM DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KTPA ENDED2 LACEN PATOY Q116 JAWJA CABLO MGM IGB MLC PNH ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KTPA DORMR3 FROOT BUNNZ Y290 LEV J86 ELP DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 ENDED LACEN PATOY Q116 JAWJA CABLO DEFUN J2 IAH J86 ELP DRRVR PINNG1 KPHX\" readonly>"; // CDR E0
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 ENDED LACEN PATOY Q116 VLKNN YAALL J14 LIT J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KTPA SZW CEW SWB FUZ J4 ABI J66 EWM J4 SSO SUNSS8 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KTPA SZW CEW J2 IAH J86 ELP J50 SSO SUNSS8 KPHX\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-11-2025
 					result += "<!-- Verified with ATCSCC on 09-11-2025 -->";
 					result += "<br/>D0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA DORMR3 FROOT BUNNZ Y290 LEV J86 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/>E0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA ENDED2 ENDED LACEN PATOY Q116 JAWJA CABLO DEFUN J2 IAH J86 ELP DRRVR PINNG1 KPHX\" readonly>";
-					break;
 					break;
 			}
 		break; // End of TPA
