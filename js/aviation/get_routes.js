@@ -1036,12 +1036,13 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KBNA RMG AMG CRG OMN ANNEY4 KMIA\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
 					break;
-				case "ORD": // Updated 06-23-2025
-					result += "<!-- Updated 06-23-2025 P -->";
+				case "ORD": // Updated 09-13-2025
+					result += "<!-- Updated 09-13-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL320):</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KBNA KRSTA3 OLSIE IIU HEVAN BONNT VEECK5 KORD\" readonly>";
-					result += "<br/><br/>West (Max FL320)<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS J45 STL MAGOO BFORD BENKY6 KORD\" readonly>";
-					result += "<br/>East (Max FL320)<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA CHADM3 SWAPP ENGRA Q65 RINTE FWA WATSN4 KORD\" readonly>";
+					result += "<br/><br/>East (Max FL320)<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA CHADM3 SWAPP ENGRA Q65 RINTE FWA WATSN4 KORD\" readonly>";
+					result += "<br/>West (Max FL320)<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS ENL CASHN TRTLL6 KORD\" readonly>";
+					result += "<br/><b>BENKY Arvl:  KBNA HGGRD3 TINGS J45 STL MAGOO BFORD BENKY6 KORD<\/b>";
 					result += "<br/><br/>West via SGF: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG SGF IRK SHAIN2 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV (Max FL320)</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KBNA BWG VHP OXI KORD\" readonly>";
