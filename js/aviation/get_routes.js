@@ -2714,15 +2714,18 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW KAYLN3 SMUUV OBK MZV IRK J26 ICT IFI HOFFF VKTRY2 KDFW\" readonly>";
 					result += "<br/>W4<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW BARII3 SINKR IIU BWG SQS YUYUN WHINY4 KDFW\" readonly>";
 					break;
-				case "CLT": // Updated 01-05-2025
-					result += "<!-- Updated 01-05-2025 -->";
+				case "CLT": // Updated 09-13-2025
+					result += "<!-- Updated 09-13-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDTW CLVIN3 STAZE FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDTW LIDDS4 GRIVY HVQ LNDIZ PARQR4 KCLT\" readonly>"; // CDR E1
+					// TODO West
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDTW METRO4 ILLIE ROD J43 VXV LIINN3 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>E1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW LIDDS3 GRIVY HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/>P1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW CLVIN3 STAZE FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-13-2025
+					result += "<!-- Verified with ATCSCC on 09-13-2025 -->";
+					result += "<br/>E1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW LIDDS4 GRIVY HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW CLVIN3 STAZE FLM TAFTT PARQR4 KCLT\" readonly>";
 					break;
 				case "MIA": // Updated 01-05-2025
 					result += "<!-- Updated 01-05-2025 -->";
