@@ -5312,11 +5312,11 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "MSY":
 			switch(arvl) {
-				case "CLT": // Updated 06-14-202
-					result += "<!-- Updated 06-14-2025 P -->";
+				case "CLT": // Updated 09-13-2025
+					result += "<!-- Updated 09-13-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSY CATLN BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KMSY GOOGY TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY GOOGY TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>"; // CDR 0J
 					result += "<br/><br/>CLT NO JONZE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI J2 CEW ALLMA PONZE BANKR5 KCLT\" readonly>";
 					result += "<br/>CLT NO JONZE BANKR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI J2 CEW ALLMA ISUZO CHECR STOCR4 KCLT\" readonly>";
