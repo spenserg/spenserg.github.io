@@ -1768,18 +1768,19 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 
 // RFD skipped
 
-		case "RIC": // Updated 01-28-2025
-			result += "<!-- Updated 01-28-2025 -->";
+		case "RIC": // Updated 09-13-2025
+			result += "<!-- Updated 09-13-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 MAULS MOL SPIDR5 KRIC\" readonly>"; // CDR 0P
-			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS VLKNN BURGG Q60 JAXSN KELCE DUCXS5 KRIC\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC SGF J98 FAM J78 IIU J526 BKW ASBUR DENNY MOL SPIDR5 KRIC\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC FAM J78 IIU Q108 MAULS MOL SPIDR5 KRIC\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN RMG BURGG Q60 JAXSN KELCE DUCXS5 KRIC \" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL5 SQS VUZ GQO PSK FAK KRIC\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>0P (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 MAULS MOL SPIDR5 KRIC\" readonly>";
-			result += "<br/>1N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA SWAPP Q34 MAULS FAK KRIC\" readonly>";
-			result += "<br/>1S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MEI BNA SWAPP Q34 MAULS FAK KRIC\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-13-2025
+			result += "<!-- Verified with ATCSCC on 09-13-2025 -->";
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 MAULS FAK KRIC\" readonly>";
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA SWAPP Q34 MAULS FAK KRIC\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MEI BNA SWAPP Q34 MAULS FAK KRIC\" readonly>";
 			break;
 		case "RNO": // Updated 01-28-2025
 			result += "<!-- Updated 01-28-2025 -->";
