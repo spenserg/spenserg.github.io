@@ -926,9 +926,9 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 04-01-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD NOONY NIGHT NITWT OBH KD63U DTA J148 OAL INYOE DYAMD5 KSFO\"; readonly>"; // Verified 03-01-2025
-			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KORD MYKIE MONNY JORDY ONL J148 DTA RUMPS OAL INYOE DYAMD5 KSFO\" readonly>";
-			result += "<br/>South via GCK: <input style=\"width:75%\"; value=\"KORD PEKUE PIPPN ELYNA STJ J18 GCK J28 MLF RUMPS OAL INYOE DYAMD5 KSFO\" readonly>";
-			result += "<br/>South via ICT: <input style=\"width:75%\"; value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ ICT ALS DRO MLF NILLS OAL INYOE DYAMD5 KSFO\" readonly>";
+			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KORD MYKIE MONNY IANNA FOD ONL J148 DTA RUMPS OAL INYOE DYAMD5 KSFO\" readonly>";
+			result += "<br/>South: <input style=\"width:75%\"; value=\"KORD PEKUE PIPPN ROTTN PWE HLC J64 PUB J28 MLF J80 OAL INYOE DYAMD5 KSFO\" readonly>";
+			result += "<br/><br/>South via ICT: <input style=\"width:75%\"; value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ ICT ALS DRO MLF NILLS OAL INYOE DYAMD5 KSFO\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD PLL ALO FOD ONL J148 OAL MOD9 KSFO\"; readonly>"; // CDR NR
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-01-2025
