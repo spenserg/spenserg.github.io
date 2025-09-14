@@ -8197,13 +8197,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-18-2025
 					result += "<!-- Verified with ATCSCC on 04-18-2025 -->";
 					break;
-				case "ORD": // Updated 01-18-2025
-					result += "<!-- Updated 01-18-2025 -->";
+				case "ORD": // Updated 09-14-2025
+					result += "<!-- Updated 09-14-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 GALLI CZI J82 FSD J16 MCW ZZIPR FYTTE7 KORD\" readonly>";
 					result += "<br/><br/>Night: <input style=\"width:75%\" value=\"KSFO NIITE4 MOGEE Q122 KATES FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN PMD J6 DRK J78 TUL EOS WELTS TRTLL6 KORD\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 JASTI FSD ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 JASTI FSD ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q130 PNH J78 TUL J98 SGF WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/><br/>North via DPR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 GALLI BAM J32 DPR UFFDA Q156 ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/>South via ABQ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN PMD J6 DRK J78 TUL EOS WELTS TRTLL6 KORD\" readonly>";
 					result += "<br/><br/>ORD JVL BDF: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 GALLI MLD J32 CZI J82 FSD J114 GEP DLL MSN JVL CHMPN FYTTE7 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSFO SHOR7 SAC J32 BAM J94 DBQ JVL JVL7 KORD\" readonly>";
