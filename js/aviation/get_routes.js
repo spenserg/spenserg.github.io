@@ -5173,26 +5173,30 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "DFW": // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMSN UIN TUL KLAWW VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>NE Arrival: <input style=\"width:75%\" value=\"KMSN OBK J87 JOT SPI J101 STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
+				case "DFW": // Updated 09-14-2025
+					result += "<!-- Updated 09-14-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 09-14-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMSN UIN TUL KLAWW VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMSN BDF ENL J71 MEM SQS MLU YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT HOFFF VKTRY2 KDFW\" readonly>"; // CDR 2W
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSN DBQ IRK IRW SPS UKW UKW8 KDFW\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>0W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ IRK BUM J87 TUL KLAWW VKTRY2 KDFW\" readonly>";
-					result += "<br/>1W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ IRK MCI TUL HITUG SEEVR4 KDFW\" readonly>";
-					result += "<br/>2W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT HOFFF VKTRY2 KDFW\" readonly>";
-					result += "<br/>3W (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
-					result += "<br/>4W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ IRK MCI ICT IFI HOFFF VKTRY2 KDFW\" readonly>";
-					result += "<br/>6W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ LMN PWE ICT HOFFF VKTRY2 KDFW\" readonly>";
-					result += "<br/>7W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ LMN PWE ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
-					result += "<br/>8W (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ OVR J21 JUDGE ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
-					result += "<br/>W1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI TUL HITUG SEEVR4 KDFW\" readonly>";
-					result += "<br/>W2 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT HOFFF VKTRY2 KDFW\" readonly>";
-					result += "<br/>W4 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT IFI HOFFF VKTRY2 KDFW\" readonly>";
-					result += "<br/>W6 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ LMN PWE ICT HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-14-2025
+					result += "<!-- Verified with ATCSCC on 09-14-2025 -->";
+					result += "<br/>0W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ BUM J87 TUL KLAWW VKTRY2 KDFW\" readonly>";
+					result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI TUL HITUG SEEVR4 KDFW\" readonly>";
+					result += "<br/>2W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/>3W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
+					result += "<br/>6W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ LMN PWE ICT HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/>7W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ LMN PWE ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
+					result += "<br/>8W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ OVR J21 JUDGE ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
+					result += "<br/>W0<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ BUM J87 TUL KLAWW JOVEM6 KDFW\" readonly>";
+					result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI TUL HITUG BRDJE5 KDFW\" readonly>";
+					result += "<br/>W2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT HOFFF JOVEM6 KDFW\" readonly>";
+					result += "<br/>W3<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT IRW IBAKE JOVEM6 KDFW\" readonly>";
+					result += "<br/>W4<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT IFI HOFFF JOVEM6 KDFW\" readonly>";
+					result += "<br/>W6<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ LMN PWE ICT HOFFF JOVEM6 KDFW\" readonly>";
+					result += "<br/>W7<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSN DBQ LMN PWE ICT IRW IBAKE JOVEM6 KDFW\" readonly>";
 					break;
 				case "ORD": // Updated 04-19-2025 // Mandatory Routes checked
 					result += "<!-- Updated 04-19-2025 M -->";
