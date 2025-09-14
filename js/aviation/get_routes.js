@@ -8133,18 +8133,18 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "SFO":
 			switch(arvl) {
-				case "CLT": // Updated 03-16-2025
-					result += "<!-- Updated 03-16-2025 P -->";
+				case "CLT": // Updated 09-14-2025
+					result += "<!-- Updated 09-14-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-16-2025
-					result += "<br/><br/>NRS/HAR: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q130 REANA KD45S KA42W KK42C BNA TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/>Night (10PM to 7AM Local): <input style=\"width:75%\"; value=\"KSFO NIITE4 SYRAH Q128 EDLES KD51W KK45G BNA TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>South/HAR: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q130 REANA KD48Q KD45S KA39Y KK36A KF30E IZAAC Q30 VLKNN TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\"; value=\"KSFO TRUKN2 MOGEE Q122 LCU OCS J94 BFF WYYTE CANIO DSM SPI IIU Q50 CUBIM WILUM PARQR4 KCLT\" readonly>";
-					result += "<br/><br/>North via DPR: <input style=\"width:75%\" value=\"KSFO SFO4 SFO SAC J32 DPR J34 ODI J30 JOT VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
-					result += "<br/>South via ABI: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN PMD J6 DRK SJN J74 CNX HOMET ABI J50 ACT SQS VUZ THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q130 REANA MLF J28 ICT SGF BNA TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/><b>Night (10PM to 7AM Local) use NIITE dptr:  KSFO NIITE4 SYRAH.. <\/b>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 MOGEE Q122 LCU J94 BFF WYYTE OVR J151 STL J8 IIU Q50 CUBIM WILUM PARQR4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q130 PNH ADM J52 SQS HRISN Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/>North via RAP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 UFFDA RWF J34 ODI J30 JOT VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/>South via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN BOILE Q4 ELP J50 ABI J4 FUZ J42 TXK J52  SQS HRISN Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSFO SFO4 SFO LIN J84 MVA J198 ILC J58 MLF J28 ICT SGF J98 FAM VXV LIINN3 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-14-2025
 					break;
 				case "DFW": // Updated 07-29-2025
 					result += "<!-- Updated 07-29-2025 P -->"
@@ -8870,13 +8870,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 		case "TUL":
 			switch(arvl) {
-				case "CLT": // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
+				case "CLT": // Updated 09-14-2025
+					result += "<!-- Updated 09-14-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTUL MAYJI RZC Q36 BNA TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KTUL LIT J14 YAALL VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTUL SGF FAM BWG SKYWA FILPZ4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTUL LIT J14 YAALL VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTUL RZC ARG BNA VXV LIINN3 KCLT\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-14-2025
 					break;
 				case "DFW": // Updated 05-10-2025
 					result += "<!-- Updated 05-10-2025 MP -->";
