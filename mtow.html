@@ -882,6 +882,8 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			break;
 		case "PSP":
 			result += "<br/><br/>PSP - Run VAA for rwy31L";
+			result += "<br/><br/>PSP Flow: <button type='button' id='PSP_standard_left' class='btn" + ((flows['PSP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"PSP\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='PSP_standard_right' class='btn" + ((flows['PSP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"PSP\", 1)'>North</button>";
+			result += "<br/><br/>PSP - HWRRD YUCCA NORTH FLOW // IKNOE JEEON LGANN SOUTH FLOW";
 			break;
 		case "RDM":
 			result += "<br/><br/>RDM - Rwy11/29 N/A for A320 and non-sharklet A321, see 10-7A-2";
