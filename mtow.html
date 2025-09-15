@@ -56,7 +56,7 @@ const P789 = ["8MA", "8MB", "8MC", "8MD"];
 
 const partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "GRR", "MAF", "MSO", "MYR", "PSP", "RAP", "RDM", "SJC"];
 
-var flows = {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"FCA":0,"IAH":0,"JAC":0,"MCO":0,"MIA":0,"MSO":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0};
+var flows = {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"FCA":0,"IAH":0,"JAC":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0};
 
 // Toggle Vars
 var debug_mode = false;
@@ -882,8 +882,8 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			break;
 		case "PSP":
 			result += "<br/><br/>PSP - Run VAA for rwy31L";
-			result += "<br/><br/>PSP Flow: <button type='button' id='PSP_standard_left' class='btn" + ((flows['PSP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"PSP\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='PSP_standard_right' class='btn" + ((flows['PSP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"PSP\", 1)'>North</button>";
 			result += "<br/><br/>PSP - HWRRD YUCCA NORTH FLOW // IKNOE JEEON LGANN SOUTH FLOW";
+			result += "<br/><br/>PSP Flow: <button type='button' id='PSP_standard_left' class='btn" + ((flows['PSP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"PSP\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='PSP_standard_right' class='btn" + ((flows['PSP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"PSP\", 1)'>North</button>";
 			break;
 		case "RDM":
 			result += "<br/><br/>RDM - Rwy11/29 N/A for A320 and non-sharklet A321, see 10-7A-2";
