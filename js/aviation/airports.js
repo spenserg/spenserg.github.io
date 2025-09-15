@@ -87,6 +87,13 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("MSO GRZLY3 MSO HLN", "MSO VICTO1 HLN");
 						result = result.replaceAll("MSO GRZLY3 MSO SKOTT", "MSO VICTO1 SKOTT");
 						break;
+					case "PSP": // PSP South // Rwy 13R
+						// SIDS: IKONE JEEON LGANN 
+						result = result.replaceAll("KPSP HWRRD1 ZELMA", "KPSP IKONE1 ZELMA");
+						result = result.replaceAll("KPSP HWRRD1 EED", "KPSP IKONE1 EED");
+						result = result.replaceAll("KPSP HWRRD1 BLH", "KPSP JEEON1 BLH");
+						result = result.replaceAll("KPSP YUCCA1", "KPSP LGANN1");
+						break;
 					case "RNO": // RNO south // Rwy17
 						result = result.replaceAll("EELZA4", "KLUBS1");
 						result = result.replaceAll("ORRCA TARVR1 KRNO", "ORRCA ORRCA1 KRNO");
@@ -243,6 +250,12 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("MSO VICTO1 LKT", "MSO DIDLY5 LKT");
 						result = result.replaceAll("MSO VICTO1 HLN", "MSO GRZLY3 MSO HLN");
 						result = result.replaceAll("MSO VICTO1 SKOTT", "MSO GRZLY3 MSO SKOTT");
+						break;
+					case "PSP": // PSP North // Rwy 31R
+						// SIDS: HWRRD YUCCA
+						result = result.replaceAll("KPSP IKONE1", "KPSP HWRRD1");
+						result = result.replaceAll("KPSP JEEON1", "KPSP HWRRD1");
+						result = result.replaceAll("KPSP LGANN1", "KPSP YUCCA1");
 						break;
 					case "RNO": // RNO north Rwy35
 						result = result.replaceAll("KLUBS1 KRNO","EELZA4 KRNO");
