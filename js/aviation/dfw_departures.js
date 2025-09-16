@@ -1782,21 +1782,22 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA SWAPP Q34 MAULS FAK KRIC\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MEI BNA SWAPP Q34 MAULS FAK KRIC\" readonly>";
 			break;
-		case "RNO": // Updated 01-28-2025
-			result += "<!-- Updated 01-28-2025 -->";
+		case "RNO": // Updated 09-15-2025
+			result += "<!-- Updated 09-15-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW HRPER3 HULZE FTI J58 RSK ILC MVA SCOLA SCOLA1 KRNO\" readonly>"; // CDR 0P
-			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK J50 ELP J86 BLD J92 BTY KENNO SCOLA1 KRNO\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE ALS DVC MLF MVA SCOLA SCOLA1 KRNO\" readonly>";
-			result += "<br/><br/>North via EKR: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS LBL LAA BRK EKR J173 TCH J154 BAM LLC ANAHO2 KRNO\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE ZAROS Q128  JSICA MVA SCOLA SCOLA1 KRNO\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK J50 ELP Q13 HOUZZ KENNO SCOLA1 KRNO\" readonly>";
+			result += "<br/><br/>North via SLC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE LAA BRK EKR J173 TCH J154 BAM LLC ANAHO2 KRNO\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 TXO TCC J76 FTI J58 MLF MVA RYANN2 KRNO\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>0P (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HRPER3 HULZE FTI J58 RSK ILC MVA SCOLA SCOLA1 KRNO\" readonly>";
-			result += "<br/>1N (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 PNH J58 RSK ILC MVA SCOLA SCOLA1 KRNO\" readonly>";
-			result += "<br/>1S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT J15 RSK ILC MVA SCOLA SCOLA1 KRNO\" readonly>";
-			result += "<br/>2S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF INK J15 RSK ILC MVA SCOLA SCOLA1 KRNO\" readonly>";
-			result += "<br/>3S (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME J15 RSK ILC MVA SCOLA SCOLA1 KRNO\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-15-2025
+			result += "<!-- Verified with ATCSCC on 09-15-2025 -->";
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO TCC J76 FTI J58 RSK ILC MVA RYANN2 KRNO\" readonly>";
+			result += "<br/>1N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 PNH J58 RSK ILC MVA RYANN2 KRNO\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT J15 RSK ILC MVA RYANN2 KRNO\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF INK J15 RSK ILC MVA RYANN2 KRNO\" readonly>";
+			result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST PEQ CME J15 RSK ILC MVA RYANN2 KRNO\" readonly>";
 			break;
 		case "ROC": // Updated 01-28-2025
 			result += "<!-- Updated 01-28-2025 -->";
