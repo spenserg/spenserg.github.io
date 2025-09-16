@@ -103,6 +103,7 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("WADOL4 KRNO", "WINRZ4 KRNO");
 						// RNO SIDS
 						result = result.replaceAll("KRNO ALPYN1 YERIN","KRNO ZEFFR9 PESKE");
+						result = result.replaceAll("KRNO SPRKS1 FMG BLKJK","KRNO ZEFFR9 BLKJK");
 						result = result.replaceAll("KRNO PVINE5 PVINE", "KRNO SPRKS1 FMG");
 						result = result.replaceAll("KRNO PVINE5", "KRNO SPRKS1 FMG");
 						break;
