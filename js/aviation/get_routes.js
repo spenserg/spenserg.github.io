@@ -7488,10 +7488,11 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 			switch(arvl) {
 				case "DFW": // Updated 01-17-2025
 					result += "<!-- Updated 01-17-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KRNO ZEFFR9 PESKE MVA KITTN Q164 ROCCY Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>Avoid ZLC: <input style=\"width:75%\" value=\"KRNO RENO1 FMG J92 BLD J72 TXO TURKI VKTRY2 KDFW\" readonly>";
-					result += "<br/>South via ELP: <input style=\"width:75%\" value=\"KRNO RENO1 FMG J92 BLD J72 PGS INW J86 ELP J50 INK GEEKY BOOVE7 KDFW\" readonly>";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-15-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KRNO ZEFFR9 PESKE MVA JSICA Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRNO ZEFFR9 BLKJK LLC J32 BAM J154 TCH J56 CHE FQF J20 LAA TOTOE MMB J98 IRW IBAKE VKTRY2 KDFW\" readonly>";
+					result += "<br/>South/ZLC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRNO ZEFFR9 PESKE OAL J92 BLD J72 TXO TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>South via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRNO ZEFFR9 PESKE OAL J92 BLD J72 PGS INW J86 ELP J50 INK GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/>DFW WEST: <input style=\"width:75%\" value=\"KRNO ZEFFR9 PESKE MVA MLF J28 ICT TUL HITUG SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KRNO RENO1 FMG J92 BLD J72 TXO TURKI UKW8 KDFW\" readonly>";
