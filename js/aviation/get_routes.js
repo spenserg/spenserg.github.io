@@ -9129,10 +9129,27 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"CYVR HUH MWH LEZLE LKT OCS DBL TBE PNH UKW8 KDFW \" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";  // No CDRs as of 09-15-2025
 					break;
-
-// TODO YVR-LAX
-// TODO YVR-ORD
-
+				case "LAX": // Updated 09-15-2025
+					result += "<!-- Updated 09-15-2025 MP -->"
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-15-2025
+					result += "<br/><br/>CFS: <input style=\"width:75%\" value=\"CYVR YVR J5 SEA JINMO Q7 JAGWA BURGL IRNMN2 KLAX \" readonly>";
+					result += "<br/><b style=\"color:orange\">IRNMN2 arvl only good if LAX is landing west<\/b>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J5 SEA J523 IMB Q35 WINEN Q73 GUNTR Q96 PURSE BOGET2 KLAX\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J5 SEA J1 OAK BURGL IRNMN2 KLAX\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>";  // No CDRs as of 09-15-2025
+					break;
+				case "ORD": // Updated 09-15-2025
+					result += "<!-- Updated 09-15-2025 MP -->"
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-15-2025
+					result += "<br/><br/>CFS: <input style=\"width:75%\"; value=\"CYVR YVR J52 GEG J136 BIL J16 FSD FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J52 GEG J136 MLP J70 LWT MLS J90 RWF HSTIN Q156 ZZIPR FYTTE7 KORD \" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J5 SEA J20 FQF J80 MCI J26 IRK BENKY6 KORD\" readonly>";
+					result += "<br/><br/>North via FAR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J52 GEG J136 MLP J36 HILGR Q140 CESNA SHIKY FYTTE7 KORD \" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"CYVR YVR J52 GEG J136 BIL J16 FSD MCW JVL1 KORD\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>";  // No CDRs as of 09-15-2025
+					break;
 			}
 		break; // End of YVR
 
