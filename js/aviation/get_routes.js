@@ -71,10 +71,10 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KABQ J6 TCC J76 SPS UKW8 KDFW\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-21-2025
 					result += "<!-- Verified with ATCSCC on 02-21-2025 -->";
-					result += "<br/>BG<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ CNX CME FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/>BG<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ MNZNO3 CME FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
 					result += "<br/>BV<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ DOOKK3 TXO TURKI VKTRY2 KDFW\" readonly>";
-					result += "<br/>VK<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ CNX CME BGS GEEKY BOOVE7 KDFW\" readonly>";
-					result += "<br/>WT<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ CNX J15 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
+					result += "<br/>VK<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ MNZNO3 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/>WT<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ MNZNO3 CME J15 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
 					break;
 				case "LAX": // Updated 05-07-2025
 					result += "<!-- Updated 05-07-2025 -->";
@@ -98,9 +98,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-07-2025
 					result += "<!-- Verified with ATCSCC on 05-07-2025 -->";
 					result += "<br/>B1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ RDRNR3 ZUN J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
-					result += "<br/>B2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ ABQ J13 FQF BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/>JB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ ABQ J13 FQF BFF J94 ONL J114 GEP TVC WYNDE3 KORD\" readonly>";
-					result += "<br/>JV<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ FTI J18 GCK J96 IRK BENKY6 KORD\" readonly>";
+					result += "<br/>B2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ ABQ3 ABQ J13 FQF BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/>JB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ ABQ3 ABQ J13 FQF BFF J94 ONL J114 GEP TVC WYNDE3 KORD\" readonly>";
+					result += "<br/>JV<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ FYSTA3 FTI J18 GCK J96 IRK BENKY6 KORD\" readonly>";
 					break;
 
 // TODO ABQ-PHL
