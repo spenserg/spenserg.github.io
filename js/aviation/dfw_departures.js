@@ -437,7 +437,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-08-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS LBL LAA OZZZY5 KCOS\" readonly>";
 			result += "<br/>West: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 TBE DBRY5 KCOS\" readonly>";
-			result += "<br/><b style=\"color:orange\">As of 05-06-2025 Fkeys throws Mandatory Route violation for HUDAD dptrs to ZDV, even CDR 0P<\/b>";
+			result += "<br/><b style=\"color:orange\">As of 05-06-2025 Fkeys throws a Mando Route violation for HUDAD dptrs to ZDV, but ok to file for wx dev<\/b>";
 			result += "<br/>West via ABQ: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN CME ABQ J13 ALS DBRY5 KCOS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 PNH J17 TBE DBRY5 KCOS\" readonly>";
