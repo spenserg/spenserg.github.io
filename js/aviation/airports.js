@@ -92,6 +92,7 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KPSP HWRRD1 ZELMA", "KPSP IKONE1 ZELMA");
 						result = result.replaceAll("KPSP HWRRD1 EED", "KPSP IKONE1 EED");
 						result = result.replaceAll("KPSP HWRRD1 BLH", "KPSP JEEON1 BLH");
+						result = result.replaceAll("KPSP HWRRD1 TRM", "KPSP JEEON1 TRM");
 						result = result.replaceAll("KPSP YUCCA1", "KPSP LGANN1");
 						break;
 					case "RNO": // RNO south // Rwy17
