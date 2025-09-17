@@ -7148,19 +7148,22 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>ME<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP HWRRD1 BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/>SE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP HWRRD1 TRM V137 IPL J2 GBN J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
 					break;
-				case "ORD": // Updated 01-17-2025
-					result += "<!-- Updated 01-17-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KPSP CATH1 PSP V370 TNP J10 RSK J44 ALS J102 SLN J96 IRK BENKY6 KORD\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KPSP TNP EED BCE J100 EKR ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+				case "ORD": // Updated 09-17-2025
+					result += "<!-- Updated 09-17-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-17-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPSP HWRRD1 EED J236 TBC J64 RSK J44 ALS J102 SLN J96 IRK BENKY6 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPSP HWRRD1 ZELMA Q73 GUNTR Q96 KIMMR CHE LAR J157 BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPSP HWRRD1 BLH J169 TFD J50 SSO J4 EWM J26 IRK BENKY6 KORD\" readonly>";
+					result += "<br/><br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPSP HWRRD1 BLH J169 TFD J50 SSO J4 EWM J66 BGS SPS TUL J98 SGF WELTS TRTLL6 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPSP CATH1 PSP V370 TNP PKE J96 IRK BDF8 KORD\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>F1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP CATH1 PSP V370 TNP PKE DRK J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
-					result += "<br/>F2 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP CATH1 PSP V370 TNP JOTNU ZELMA HAKMN LAKRR PROMT LARVE EKR BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/>JB (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP CATH1 PSP V370 TNP JOTNU ZELMA HAKMN LAKRR PROMT LARVE EKR BFF J94 ONL J114 GEP DLL MSN JAKSA MOOPS FYTTE FYTTE7 KORD\" readonly>";
-					result += "<br/>JV (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP CATH1 PSP V370 TNP PKE DRK J96 IRK BENKY6 KORD\" readonly>";
-					result += "<br/>JW (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP CATH1 PSP V370 TNP JOTNU ZELMA HAKMN LAKRR PROMT LARVE EKR BFF J94 ONL J114 GEP TVC WYNDE3 KORD\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-17-2025
+					result += "<!-- Verified with ATCSCC on 09-17-2025 -->";
+					result += "<br/>F1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP PSP V370 TNP PKE DRK J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP PSP V370 TNP JOTNU ZELMA HAKMN LAKRR PROMT LARVE EKR BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/>JB<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP PSP V370 TNP JOTNU ZELMA HAKMN LAKRR PROMT LARVE EKR BFF J94 ONL J114 GEP DLL MSN JAKSA MOOPS FYTTE FYTTE7 KORD\" readonly>";
+					result += "<br/>JV<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP TNP PKE DRK J96 IRK BENKY6 KORD\" readonly>";
+					result += "<br/>JW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP PSP V370 TNP JOTNU ZELMA HAKMN LAKRR PROMT LARVE EKR BFF J94 ONL J114 GEP TVC WYNDE3 KORD\" readonly>";
 					break;
 				case "PHX": // Updated 09-14-2025
 					result += "<!-- Updated 09-14-2025 P -->";
@@ -7171,8 +7174,8 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-14-2025
 					result += "<!-- Verified with ATCSCC on 09-14-2025 -->";
-					result += "<br/>ME<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP TRM BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/>SE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP TRM V137 IPL J2 HOGGZ HYDRR1 KPHX\" readonly>";
+					result += "<br/>ME<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP HWRRD1 TRM BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/>SE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP HWRRD1 TRM V137 IPL J2 HOGGZ HYDRR1 KPHX\" readonly>";
 					break;
 			}
 		break; // End of PSP
