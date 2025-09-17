@@ -825,9 +825,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>Run VAA when hot"; // TODO How hot? Source?
 			break;
 		case "EGE":
-			result += "<br/><br/>EGE Rwy 25 is preferred, even with tailwind";
-			result += "<br/>EGE VAA 25X for icing conditions 1000 - 10,000 Feet";
-			result += "<br/>EGE ARFF manages snow plow ops and notams";
+			result += "<br/><br/>EGE - Rwy 25 is preferred, even with tailwind";
+			result += "<br/>EGE - VAA 25X for icing conditions 1000 - 10,000 Feet";
+			result += "<br/>EGE - ARFF manages snow plow ops and notams";
 			break;
 		case "EYW":
 			result += "<br/><br/>EYW - Check VAA if wet or departing Rwy 9";
@@ -855,7 +855,7 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>JAC - Tailwind or Contaminated Rwy takeoff N/A";
 			result += "<br/>JAC - Always check VAA, Rwy19 is better";
 			result += "<br/><br/>JAC Flow: <button type='button' id='JAC_standard_left' class='btn" + ((flows['JAC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"JAC\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='JAC_standard_right' class='btn" + ((flows['JAC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"JAC\", 1)'>North</button>";
-			result += "<br/>JAC - ALPIN/TETON S FLOW (rwy19) // DIVYD/GEYSER N FLOW (rwy1)";
+			result += "<br/>JAC - ALPIN|TETON S FLOW (rwy19) // DIVYD|GEYSR N FLOW (rwy1)";
 			break;
 		case "LAX":
 			if (ac_type.includes("321")) {
@@ -897,8 +897,8 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>RDM - Rwy11/29 N/A for A320 and non-sharklet A321, see 10-7A-2";
 			break;
 		case "RNO":
-			result += "<br/><br/>Use 10-7 Pages and SIDS for takeoff mins";
-			result += "<br/>Max climb gradient 525 feet per NM; Some south departures exceed 525 ft/nm (see 10-7C)";
+			result += "<br/><br/>RNO - Use 10-7 Pages and SIDS for takeoff mins";
+			result += "<br/>RNO - Max climb gradient 525 feet per NM; Some south departures exceed 525 ft/nm (see 10-7C)";
 			result += "<br/><br/>RNO Flow: <button type='button' id='RNO_standard_left' class='btn" + ((flows['RNO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='RNO_standard_right' class='btn" + ((flows['RNO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 1)'>North</button>";
 			result += "<br/>RNO - ALPYN N FLOW (rwy35L) // ZEFFR S FLOW (rwy17R)";
 			break;
@@ -931,7 +931,7 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/><br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
 			result += "<br/>SJC - B737 MAX and A32F NEO exempt from curfew (see 10-7A-2)";
 			result += "<br/><br/>SJC Flow: <button type='button' id='SJC_standard_left' class='btn" + ((flows['SJC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SJC\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='SJC_standard_right' class='btn" + ((flows['SJC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SJC\", 1)'>South</button>";
-			result += "<br/>SJC S Flow ALMDN|BMRNG|TECKY (rwy12) // N Flow LOUPE|SJC3|SPTNS (rwy30)";
+			result += "<br/>SJC S Flow ALMDN|BMRNG|TECKY (rwy12)<br/> SJC N Flow LOUPE|SJC3|SPTNS (rwy30)";
 			break;
 		case "SLC":
 			result += "<br/><br/>SLC - Run VAA in summer";
@@ -1021,15 +1021,16 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			break;
 		case "EGE":
 			result += "<br/><br/>EGE Can handle 3 acft max: 2 gates + deice pad. Expect station to call for delay.";
-			result += "<br/>EGE ARFF manages snow plow ops and notams";
-			result += "<br/><br/>EGE: Send RAIM Check RNP .11 // LAWS above 37C";
-			result += "<br/>EGE Night: MALSR and PAPI required for night arrivals.";
-			result += "<br/>EGE Rwy 7 and Visual Rwy 25 N/A after Civil Twilight";
+			result += "<br/>EGE - ARFF manages snow plow ops and notams";
+			result += "<br/>EGE - Send RAIM Check RNP .11 // LAWS above 37C";
+			result += "<br/><br/>EGE - MALSR and PAPI required for night arrivals.";
+			result += "<br/>EGE - Rwy 7 and Visual Rwy 25 N/A after Civil Twilight";
 			break;
 		case "EYW":
-			result += "<br/><br/>Wet/Dry definitions FOM 2.1.6";
-			result += "<br/>EYW - Max crosswind 20 knots (see 10-7B)";
-			result += "<br/><br/>EYW - Papi and GPS required at night (see 10-7B)";
+			result += "<br/><br/>EYW - Max crosswind 20 knots (see 10-7B)";
+			result += "<br/>EYW - Papi and GPS required at night (see 10-7B)";
+			result += "<br/>EYW - Wet/Dry definitions FOM 2.1.6";
+			result += "<br/>EYW - CA needs 75 hrs in AC type// FAM page review required";
 			break;
 		case "GEG":
 			result += "<br/><br/>GEG - Run LAWS above 35C";
@@ -1063,9 +1064,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>MSO - Run LAWS above 35C";
 			break;
 		case "MTJ":
-			result += "<br/><br/>MTJ No Control Tower";
-			result += "<br/>MTJ RWY 13/31 N/A";
-			result += "<br/>MTJ Night: Rwy 35 N/A, no circle to land";
+			result += "<br/><br/>MTJ - No Control Tower";
+			result += "<br/>MTJ - Rwy 13/31 N/A";
+			result += "<br/>MTJ - At night: Rwy 35 N/A; no circle to land";
 			break;
 		case "PSP":
 			result += "<br/><br/>PSP - No ILS procedures, do not plan RNAV apch for alternates";
@@ -1114,10 +1115,10 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>TUS - Night: Visual appr N/A (see 10-7B)";
 			break;
 		case "YEG":
-			result += "<br/>Verify arvl route is listed in the CFS (Canada Flight Supplement)";
+			result += "<br/><br/>Verify arvl route is listed in the CFS (Canada Flight Supplement)";
 			break;
 		case "YOW":
-			result += "<br/>Verify arvl route is listed in the CFS (Canada Flight Supplement)";
+			result += "<br/><br/>Verify arvl route is listed in the CFS (Canada Flight Supplement)";
 			break;
 		case "YUL":
 			result += "<br/><br/>YUL - Curfew rstr 0100L - 0700L, Extensions authorized";
