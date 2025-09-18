@@ -6697,10 +6697,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 03-10-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPHL STOEN Q75 SLOJO Q103 CYNTA SHFTY6 KRSW\" readonly>"; // CDR PH
-					result += "<br/<br/>OW: <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ Q131 WAALT Y289 BAHAA HIBAC SHFTY6 KRSW\" readonly>"; // CDR AR
-					result += "<br/>West: <input style=\"width:75%\" value=\"KPHL STOEN Q75 SLOJO Q103 CYNTA SHFTY6 KRSW\" readonly>"; // CDR PH
-					result += "<br/>West via HVQ: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ J85 SPA IRQ CYNTA SHFTY6 KRSW\" readonly>"; // CDR J6
-					result += "<br/>NW Arrival: <input style=\"width:75%\"; value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 PUPYY TAY PLYER TYNEE4 KRSW\" readonly>";
+					result += "<br/><br/>OW: <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ Q131 WAALT Y289 BAHAA HIBAC SHFTY6 KRSW\" readonly>"; // CDR AR
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 ALEAN VXV THRSR HONID Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
+					result += "<br/><br/>West/ZDC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 LEJOY GEFFS HVQ J85 SPA IRQ CYNTA SHFTY6 KRSW\" readonly>"; // CDR J6
 					result += "<br/><br/>ATLANTIC S1: <input style=\"width:75%\"; value=\"KPHL OOD TEBEE HAYDO SIE WICKE LYNUS CUMBY LOZER WHOOS WEAKK BAHAA HIBAC SHFTY6 KRSW\" readonly>";
 					result += "<br/>VACAPES S1: <input style=\"width:75%\"; value=\"KPHL OOD TEBEE HAYDO SIE B24 CORNE ECG WEAKK BAHAA HIBAC SHFTY6 KRSW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -7240,6 +7239,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPWM NUBLE4 CCC TOPRR Q167 ZIZZI KNUKK ATR LAFLN DEALE3 KDCA\" readonly>";
 					result += "<br/>Y5<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPWM HSKEL3 BAUER SYR J59 PSB SKILS5 KDCA\" readonly>";
 					break;
+
+// TODO PWM-PHL
+
 			}
 		break; // End of PWM
 
