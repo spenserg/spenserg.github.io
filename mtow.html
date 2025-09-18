@@ -110,6 +110,7 @@ function update_cdr_text(input_id = null, coord_req = -1) {
 	var result = "Unable to process route string // No changes made. Input_ID = \"" + input_id + "\", coord_req = \"" + coord_req + "\"";
 	if (input_id != null) {
 		var coord_req_text = ((coord_req == 1) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ");
+		$("#cdrdescbr_" + input_id).val($("#cdrdesc_" + input_id).val() + "</br>");
 		if (coord_req == -1) { coord_req_text = ""; }
 		result = "result += \"<br/>" + ($("#cdrdesc_" + input_id).val()) + coord_req_text + "<input style=\\\"width:75%\\\" value=\\\"" + ($("#cdrstr_" + input_id).val()) + "\\\" readonly>\"; \/\/ CDR " + input_id;
 		$("#cdrcp_" + input_id).val(result);
@@ -169,7 +170,7 @@ function compute (str_override = "") {
 	// TODO: remove exclamation points in multi-edit
 	//console.log(fkeystxt);
 
-	if ($("#outbound").val() == "debug") { debug_mode = !debug_mode; }
+	if ($("#outbound").val() == "debug") { debug_mode = !debug_mode; output = "Debug mode: " + (debug_mode ? "ON" : "OFF"); }
 
 	$("#ob_copy").val($("#outbound").val());
 	$("#total").html("");
@@ -193,8 +194,9 @@ function compute (str_override = "") {
 	var land_wgt_limited = false;
 	// For Testing Station Info
 	// XXXYYY | x = dptr | y = arr
-	if (fkeystxt.replaceAll(" ","").length == 6) {
-		fkeystxt = fkeystxt.replaceAll(" ","");
+	// xxx - YYY | x = dptr | y = arr
+	if (fkeystxt.replaceAll(" ","").replaceAll("-","").length == 6) {
+		fkeystxt = fkeystxt.replaceAll("-","").replaceAll(" ","");
 		testing = true;
 	}
 
@@ -461,9 +463,6 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		} else if (dptr == "KDFW" && z[1] == "0P") { // DFW
 			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0P";
 			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR 0P', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0P"};
-		} else if (dptr == "KORD" && z[1] == "0E") { // ORD
-			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0E";
-			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR 0E', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0E"};
 		} else if (dptr == "KPHL" && z[1] == "PH") { // PHL
 			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR PH";
 			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR PH', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR PH"};
@@ -516,6 +515,8 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		playbook_str += sortable[i][3] + textarea_tabs;
 	}
 
+console.log(cdr_str);
+	
 	var new_cdr_str = "";
 	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly/g;	
 	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) {
@@ -527,8 +528,9 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		// Route Str = cdrstr_xxx || Description = cdrdesc_xxx || CopyPaste = cdrcp_xxx
 		new_cdr_str += "<br/>CDR " + z[1] + z[2].replaceAll("\\", "") + ": <input id=\"cdrstr_" + z[1] + "\" class=\"cdr_input\" style=\"width:50%\" " + z[3].replaceAll("\\", "") + " readonly>";
 		if (debug_mode) {
-			new_cdr_str += "&nbsp;&nbsp;Desc: <input id=\"cdrdesc_" + z[1] + "\" style=\"width:15%\" value=\"XXX\" onchange=\"update_cdr_text('" + z[1] + "'," + ((z[2].includes("Coord Req")) ? 'true' : 'false') + ")\" } /><br/>" +
-			z[1] + ": <input id=\'cdrcp_" + z[1] + "\' style=\'width:75%\' value=\'" +
+			new_cdr_str += "&nbsp;&nbsp;Desc: <input id=\"cdrdesc_" + z[1] + "\" style=\"width:15%\" value=\"XXX\" onchange=\"update_cdr_text('" + z[1] + "'," + ((z[2].includes("Coord Req")) ? 'true' : 'false') + ")\" } />" +
+			"&nbsp;&nbsp;<input id=\"cdrdescbr_" + z[1] + "\" style=\"width:15%\" value=\"<br/>XXX\" readonly><br/>" +
+			z[1] +": <input id=\'cdrcp_" + z[1] + "\' style=\'width:75%\' value=\'" +
 			"result += \"<br/>XXX" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ") + 
 			"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
 		}
@@ -546,7 +548,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 
 	// Top large box
 	output += '<textarea rows="8" cols="80">' + "case \"" + arvl + "\":" + ' // Updated ' + today_str + mr_text + textarea_tabs +
-		'result += \"<!-- Updated ' + today_str + ' MP -->\";' + textarea_tabs +
+		'result += \"<!-- Updated ' + today_str + ' P -->\";' + textarea_tabs +
 		'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref + textarea_tabs +
 		playbook_str + 
 		((non_rnav.length == 0) ? "// " : "") + 'result += \"<br/><br/><b>Non RNAV</b>\";' +
