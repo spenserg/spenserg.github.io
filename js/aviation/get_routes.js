@@ -5441,8 +5441,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 01-16-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMTJ HBU3 HBU J206 ALS PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>SW Arrival: <input style=\"width:75%\" value=\"KMTJ HBU3 HBU ALS TCC GEEKY BOOVE7 KDFW\" readonly>";
-					result += "<br/>Via ABQ: <input style=\"width:75%\" value=\"KMTJ MTJ2 MTJ RSK J15 ABQ J72 TXO TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"HBU3 HBU KANON GOSIP Q154 NOSEW DCT MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/>West: <input style=\"width:75%\" value=\"KMTJ HBU3 HBU ALS TCC GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/>South via ABQ: <input style=\"width:75%\" value=\"KMTJ MTJ2 MTJ RSK J15 ABQ J72 TXO TURKI VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMTJ MTJ2 MTJ HBU J206 ALS PNH UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
