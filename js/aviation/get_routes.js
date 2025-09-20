@@ -6267,7 +6267,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 				case "LAX": // Updated 03-10-2025
 					result += "<!-- Updated 03-10-2025 -->";
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 STL J134 ICT LBL CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR ST
-					result += "<br/><br/>PTW/North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 HVE PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>"; // CDR 60
+					result += "<br/><br/>PTW/North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB MAYZE JOT J60 HVE PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>"; // CDR 60
 					result += "<br/>STOEN/South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 BFOLO FIBER HRISN IZAAC EIC J4 ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>"; // CDR EM
 					result += "<br/><br/>DITCH/North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL DITCH Q437 HNNAH Q450 JFK CFB Q818 WOZEE Q935 HOCKE BAE J16 MCW J148 DTA MLF WINEN Q73 HAKMN ANJLL4 KLAX\" readonly>"; // CDR 95
 					result += "<br/>South via HRV<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 NIOLA GRGIA ARNNY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT FST ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>"; // CDR EP
