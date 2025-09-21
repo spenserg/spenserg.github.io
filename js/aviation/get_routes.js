@@ -4845,6 +4845,18 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KMCI CHIEF8 STJ PWE MCK J44 FQF J10 RSK GUP BUNTR3 KPHX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
+				case "PHL": // Updated 09-21-2025
+					result += "<!-- Updated 09-21-2025 P -->"
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KMCI LAKES5 SPI J80 AIR JST BOJID4 KPHL \" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI ROYAL2 BODYN JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI RACER8 BUM J112 IIU Q108 SITTR Q34 GVE PAATS4 KPHL\" readonly>";
+					result += "<br/><br/>BNA<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI RACER8 BUM RZC ARG J46 BNA SWAPP Q34 GVE PAATS4 KPHL\" readonly>";
+					result += "<br/>IIU<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI RACER8 BUM J112 FAM J78 IIU Q108 SITTR Q34 GVE PAATS4 KPHL\" readonly>";
+					result += "<br/>VUZ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI RACER8 DOSOA J25 TUL LIT J14 YAALL VLKNN THRSR TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>";  // No CDRs as of 09-21-2025
+					break; 
 			}
 		break; // End of MCI
 
