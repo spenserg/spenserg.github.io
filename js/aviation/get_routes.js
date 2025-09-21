@@ -6304,13 +6304,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed as of 03-04-2025
 					break;
-				case "MCI": // Updated 03-03-2025
-					result += "<!-- Updated 03-03-2025 -->";
+				case "MCI": // Updated 09-21-2025
+					result += "<!-- Updated 09-21-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPHL MXE PENSY J110 AIR J80 SPI EUING RUDDH3 KMCI\" readonly>"; // CDR PH
-					result += "<br/><br/>North/ZID Avoid: <input style=\"width:75%\"; value=\"KPHL PTW SARAA RAV PSB J60 JOT J26 BDF BULET RUDDH3 KMCI\"; readonly>"; // CDR 60
-					result += "<br/>South/ZOB Avoid: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 COLNS Q176 STL EUING RUDDH3 KMCI\" readonly>"; // CDR J6
-					result += "<br/><input style=\"width:75%\"; value=\"KPHL STOEN REEFI EMI MRB J6 COLNS Q176 STL EUING RUDDH3 KMCI\" readonly>";
+					result += "<br/><br/>North/PTW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB MAYZE JOT BDF BULET RUDDH3 KMCI\" readonly>";
+					result += "<br/>South/ZOB Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 COLNS Q176 STL EUING RUDDH3 KMCI\" readonly>";
 					result += "<br/><br/>DITCH/North: <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL DITCH Q437 HNNAH LAAYK Q436 HERBA JHW DJB J60 JOT J26 BDF BULET RUDDH3 KMCI\" readonly>"; // CDR 36
 					result += "<br/>STOEN/South: <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL STOEN GVE PERRI HVQ OCASE PXV TWRAY J98 SGF NELVY MHOMS3 KMCI\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
