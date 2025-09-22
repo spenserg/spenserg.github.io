@@ -289,6 +289,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 							"&nbsp;&nbsp;<button type='button' id='LAX_standard_middle' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>" +
 							 "&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 2) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 2)'>Curfew</button>";
 			result += "<br/>LAX - ANJLL W FLOW // BIGBR E FLOW";
+			break;
 		case "MCO":
 			result += "<br/><br/>MCO Flow: <button type='button' id='MCO_standard_left' class='btn" + ((flows['MCO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='MCO_standard_right' class='btn" + ((flows['MCO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 1)'>North</button>";
 			result += "<br/>MCO - SNFLD N FLOW // GTOUT S FLOW // GRNCH|PRICY|ALYNA BOTH";
@@ -380,6 +381,36 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	return result;
 }
 
+change_flow = function (airport = null, new_config = null, override_duplicated = false) {
+	airport = ((airport == null) ? null : airport.toUpperCase(0));
+	if ((override_duplicated && airport != null) || ([0,1,2].includes(new_config) && flows[airport] !== undefined)) {
+		flows[airport] = new_config;
+		$('input').each(function() {
+			$(this).val(change_flow_str(airport, new_config, $(this).val()));
+		});
+		if (new_config == 0) { // Left clicked
+			$("#" + airport + "_standard_left").addClass("selected");
+			$("#" + airport + "_standard_right").removeClass("selected");
+			if (["SFO","LAX"].includes(airport)) {
+				$("#" + airport + "_standard_middle").removeClass("selected");
+			}
+		} else if (new_config == 1) { // Right clicked (middle for SFO and LAX)
+			$("#" + airport + "_standard_left").removeClass("selected");
+			if (["SFO","LAX"].includes(airport)) {
+				$("#" + airport + "_standard_right").removeClass("selected");
+				$("#" + airport + "_standard_middle").addClass("selected");
+			} else {
+				$("#" + airport + "_standard_right").addClass("selected");
+			}
+		} else if (new_config == 2) { // right clicked (SFO and LAX)
+			$("#" + airport + "_standard_left").removeClass("selected");
+			$("#" + airport + "_standard_middle").removeClass("selected");
+			$("#" + airport + "_standard_right").addClass("selected");
+		}
+	} else if (!override_duplicated && debug_mode) { console.log("Unknown new_config: " + new_config);
+	} else if (debug_mode) { console.log("Click registered, but no change detected"); }
+}
+
 change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 	if (airport != "XXX" && [0,1,2].includes(new_config)) {
 		if (new_config == 0) { // Left clicked
@@ -447,7 +478,25 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						break;
 					case "LAX": // LAX West // Rwy 24/25
 						result = result.replaceAll("BIGBR3 KLAX", "ANJLL4 KLAX");
-						result = result.replaceAll("MDNYT2 KLAX", "ANJLL4 KLAX");
+						result = result.replaceAll("OTOOL MDNYT2 KLAX", "OTOOL ANJLL4 KLAX");
+						result = result.replaceAll("HAKMN MDNYT2 KLAX", "HAKMN ANJLL4 KLAX");
+						result = result.replaceAll("DNERO MDNYT2 KLAX", "DNERO ANJLL4 KLAX");
+						result = result.replaceAll("CGNEY MDNYT2 KLAX", "CGNEY ANJLL4 KLAX");
+						result = result.replaceAll("BRUEN2 KLAX", "HLYWD1 KLAX");
+						result = result.replaceAll("FNNDA MDNYT2 KLAX", "FNNDA HLYWD1 KLAX");
+						result = result.replaceAll("GABBL MDNYT2 KLAX", "GABBL HLYWD1 KLAX");
+						result = result.replaceAll("ESTWD MDNYT2 KLAX", "ESTWD HLYWD1 KLAX");
+						result = result.replaceAll("AMMOR MDNYT2 KLAX", "AMMOR OLAAA2 KLAX");
+						result = result.replaceAll("ZUUMA4 KLAX", "IRNMN2 KLAX");
+						// result = result.replaceAll("FICKY LEENA8 KLAX", "FICKY GOATZ2 KLAX");
+						// result = result.replaceAll("ROSIN LEENA8 KLAX", "ROSIN GOATZ2 KLAX");
+						
+						// NON RNAV
+						result = result.replaceAll("HEC BASET5 KLAX", "HEC J6 PMD SADDE8 KLAX");
+						result = result.replaceAll("PGS BASET5 KLAX", "PGS J64 HEC J6 PMD SADDE8 KLAX");
+						result = result.replaceAll("JLI BASET5 KLAX", "JLI OCEAN3 KLAX");
+						result = result.replaceAll("TNP BASET5 KLAX", "TNP SEAVU2 KLAX");
+						result = result.replaceAll("MOOR4 KLAX", "SADDE8 KLAX");
 						break;
 					case "MCO": // MCO south // Rwy17 Rwy18
 						result = result.replaceAll("SNFLD3 KMCO", "GTOUT1 KMCO");
@@ -615,7 +664,28 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						break;
 					case "LAX": // LAX east // Rwy 6/7
 						result = result.replaceAll("ANJLL4 KLAX", "BIGBR3 KLAX");
-						result = result.replaceAll("MDNYT2 KLAX", "BIGBR3 KLAX");
+						result = result.replaceAll("OTOOL MDNYT2 KLAX", "OTOOL BIGBR3 KLAX");
+						result = result.replaceAll("HAKMN MDNYT2 KLAX", "HAKMN BIGBR3 KLAX");
+						result = result.replaceAll("DNERO MDNYT2 KLAX", "DNERO BIGBR3 KLAX");
+						result = result.replaceAll("CGNEY MDNYT2 KLAX", "CGNEY BIGBR3 KLAX");
+						result = result.replaceAll("HLYWD1 KLAX", "BRUEN2 KLAX");
+						result = result.replaceAll("FNNDA MDNYT2 KLAX", "FNNDA BRUEN2 KLAX");
+						result = result.replaceAll("GABBL MDNYT2 KLAX", "GABBL BRUEN2 KLAX");
+						result = result.replaceAll("ESTWD MDNYT2 KLAX", "ESTWD BRUEN2 KLAX");
+						result = result.replaceAll("IRNMN2 KLAX", "ZUUMA4 KLAX");
+						// result = result.replaceAll("FICKY GOATZ2 KLAX", "FICKY LEENA8 KLAX");
+						// result = result.replaceAll("ROSIN GOATZ2 KLAX", "ROSIN LEENA8 KLAX");
+						result = result.replaceAll("AMMOR OLAAA2 KLAX", "AMMOR MDNYT2 KLAX");
+						
+						// result = result.replaceAll("HUULL2 KLAX", ""); // TODO
+						// result = result.replaceAll("RYDRR2 KLAX", ""); // TODO
+
+						// NON RNAV
+						result = result.replaceAll("PGS J64 HEC J6 PMD SADDE8 KLAX", "PGS BASET5 KLAX");
+						result = result.replaceAll("HEC J6 PMD SADDE8 KLAX", "HEC BASET5 KLAX");
+						result = result.replaceAll("JLI BASET5 KLAX", "JLI OCEAN3 KLAX");
+						result = result.replaceAll("TNP BASET5 KLAX", "TNP SEAVU2 KLAX");
+						result = result.replaceAll("SADDE8 KLAX", "MOOR4 KLAX");
 						break;
 					case "MCO": // MCO north // Rwy35 Rwy36
 						result = result.replaceAll("GTOUT1 KMCO", "SNFLD3 KMCO");
@@ -716,8 +786,20 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 		} else if (new_config == 2) {
 				switch(airport) {
 					case "LAX": // Noise Abatement Procedures
-						result = result.replaceAll("ANJLL4", "MDNYT2");
-						result = result.replaceAll("BIGBR3", "MDNYT2");
+						result = result.replaceAll("ANJLL4 KLAX", "MDNYT2 KLAX");
+						result = result.replaceAll("BIGBR3 KLAX", "MDNYT2 KLAX");
+						result = result.replaceAll("BRUEN2 KLAX", "MDNYT2 KLAX");
+						result = result.replaceAll("HLYWD1 KLAX", "MDNYT2 KLAX");
+						result = result.replaceAll("OLAAA2 KLAX", "MDNYT2 KLAX");
+						result = result.replaceAll("FICKY LEENA8 KLAX", "FICKY GOATZ2 KLAX");
+						result = result.replaceAll("ROSIN LEENA8 KLAX", "ROSIN GOATZ2 KLAX");
+						result = result.replaceAll("AMMOR OLAAA2 KLAX", "AMMOR MDNYT2 KLAX");
+
+						// NON RNAV
+						result = result.replaceAll("PGS BASET5 KLAX", "PGS J64 HEC J6 PMD SADDE8 KLAX");
+						result = result.replaceAll("HEC BASET5 KLAX", "HEC J6 PMD SADDE8 KLAX");
+						result = result.replaceAll("JLI BASET5 KLAX", "JLI OCEAN3 KLAX");
+						result = result.replaceAll("MOOR4 KLAX", "SADDE8 KLAX");
 						break;
 					case "SFO": // SFO dpting 10LR or 19LR  // SAHEY 
 						// South
