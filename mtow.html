@@ -864,9 +864,7 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 				result += "<br/><br/>A321 - File OSHNN instead of ORKAS";
 			} else {
 				result += "<br/><br/>LAX curfew 2100L - 0700L // File OSHNN instead of ORKAS";
-			}
-			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>";
-			result += "<br/>LAX - ANJLL W FLOW // BIGBR E FLOW";			
+			}	
 			break;
 		case "LGA":
 /* TODO Im pretty sure pier weights arent a thing anymore
@@ -1056,6 +1054,9 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 		case "LAS":
 			result += "<br/><br/>LAS - Run LAWS above 35C";
 			break;
+		case "LAX":
+			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>";
+			result += "<br/>LAX - ANJLL W FLOW // BIGBR E FLOW";
 		case "MCO":
 			result += "<br/><br/>MCO Flow: <button type='button' id='MCO_standard_left' class='btn" + ((flows['MCO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='MCO_standard_right' class='btn" + ((flows['MCO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 1)'>North</button>";
 			result += "<br/>MCO - SNFLD N FLOW // GTOUT S FLOW // GRNCH|PRICY|ALYNA BOTH";
