@@ -125,36 +125,6 @@ function update_rte_text() {
 	$('#3box_desc2').val('<br\/>' + $('#3box_desc').val());
 }
 
-function change_flow(airport = null, new_config = null, override_duplicated = false) {
-	airport = ((airport == null) ? null : airport.toUpperCase(0));
-	if ((override_duplicated && airport != null) || ([0,1,2].includes(new_config) && flows[airport] !== undefined)) {
-		flows[airport] = new_config;
-		$('input').each(function() {
-			$(this).val(change_flow_str(airport, new_config, $(this).val()));
-		});
-		if (new_config == 0) { // Left clicked
-			$("#" + airport + "_standard_left").addClass("selected");
-			$("#" + airport + "_standard_right").removeClass("selected");
-			if (airport == "SFO") {
-				$("#" + airport + "_standard_middle").removeClass("selected");
-			}
-		} else if (new_config == 1) { // Right clicked (middle for SFO)
-			$("#" + airport + "_standard_left").removeClass("selected");
-			if (airport == "SFO") {
-				$("#" + airport + "_standard_right").removeClass("selected");
-				$("#" + airport + "_standard_middle").addClass("selected");
-			} else {
-				$("#" + airport + "_standard_right").addClass("selected");
-			}
-		} else if (new_config == 2) { // right clicked (SFO)
-			$("#" + airport + "_standard_left").removeClass("selected");
-			$("#" + airport + "_standard_middle").removeClass("selected");
-			$("#" + airport + "_standard_right").addClass("selected");
-		}
-	} else if (!override_duplicated && debug_mode) { console.log("Unknown new_config: " + new_config);
-	} else if (debug_mode) { console.log("Click registered, but no change detected"); }
-}
-
 function compute (str_override = "") {
 	var output = "Check the input box and make sure you pasted the right thing.";
 	var reg;
