@@ -226,16 +226,16 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>CDRS</b>";
 			result += "<br/>W3 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR BFF FOD DBQ KG75M DAFLU J70 LVZ LENDY8 KJFK\" readonly>";
 			break;
-		case "LAS": // Updated 06-17-2025
-			result += "<!-- Updated 06-17-2025 P -->";
+		case "LAS": // Updated 09-22-2025
+			result += "<!-- Updated 09-22-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL250):</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX ORCKA5 MISEN RNDRZ3 KLAS\" readonly>";
+			result += "<br/><b style=\"color:orange\">Max FL290 for all flights from SCT Tracon to L30, see <a href=\"https://laartcc.org/document/required-internal-routes\" target=\"_blank\">ZLA Required Routes<\/a> Section 5.4<\/b>";
 			// result += "<br/><br/>LAX East Flow: <input style=\"width:75%\"; value=\"KLAX GARDY4 MISEN RNDRZ3 KLAS\" readonly>";
 			// result += "<br/>Night: <input style=\"width:75%\"; value=\"KLAX OSHNN1 MISEN RNDRZ3 KLAS\" readonly>";
-			result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE EED UNPAS BLD KLAS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX SEBBY3 DAG LARKK1 KLAS\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-17-2025
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-22-2025
 			break;
 		case "MCO": // Updated 05-07-2025 // Mandatory Routes checked
 			result += "<!-- Updated 05-07-2025 MP -->";
@@ -386,9 +386,12 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>J2: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX ORCKA5 LAS J146 DVC PUB J64 HLC PWE LMN MZV JOT J146 IDEAS TAMDE GRIVY JESEY5 KPIT\" readonly>";
 			result += "<br/>MC: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J96 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
 			break;
-
-			// TODO LAX-PSP
-
+		case "PSP": // Updated 09-22-2025
+			result += "<!-- Updated 09-22-2025 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM KPSP\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // TODDO
+			break;
 		case "RDU": // Updated 01-31-2025
 			result += "<!-- Updated 01-31-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
