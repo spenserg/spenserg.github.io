@@ -4356,6 +4356,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 06-17-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLAS RADYR2 BLAQQ SHTNR ANJLL4 KLAX\" readonly>";
+					result += "<br/><b style=\"color:orange\">Max FL280 for all flights from L30 to SCT Tracon, see <a href=\"https://laartcc.org/document/required-internal-routes\" target=\"_blank\">ZLA Required Routes<\/a> Section 5.4<\/b>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KLAS RADYR2 LVELL TNP BASET5 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLAS HEC BASET5 KLAX\" readonly>";
@@ -4439,6 +4440,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLAS BLD COYOT5 KPHX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-09-2025
+					break;
+				case "SAN": // Updated 09-22-2025
+					result += "<!-- 09-22-2025 MP -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL260):</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KLAS RAYDR2 LVELL LUCKI1 KSAN\" readonly>";
+					result += "<br/><b style=\"color:orange\">Max FL280 for all flights from L30 to SCT Tracon, see <a href=\"https://laartcc.org/document/required-internal-routes\" target=\"_blank\">ZLA Required Routes<\/a> Section 5.4<\/b>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KLAS MCCRN8 TNP BARET5 KSAN\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-22-2025
 					break;
 			}
 		break; // End of LAS
@@ -7699,6 +7709,17 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>SE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/>TN<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP J86 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
 					result += "<br/>UK<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAN ZZOOO4 TGOLD PXR J18 SJN J74 TXO TURKI VKTRY2 KDFW\" readonly>";
+					break;
+				case "LAS": // Updated 09-22-2025
+					result += "<!-- Updated 09-22-2025 -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL250):</b>";
+					result += "<br/>West Flow/Rwy 27: <input style=\"width:75%\" value=\"KSAN PADRZ2 CHKNN SEBBY YELLAH MISEN RNDRZ4 KLAS\" readonly>";
+					result += "<br/>East Flow/Rwy 9: <input style=\"width:75%\" value=\"KSAN ECHOO2 SLI SEBBY YELLAH MISEN RNDRZ4 KLAS\" readonly>";
+					result += "<br/><b style=\"color:orange\">Max FL290 for all flights from SCT Tracon to L30, see <a href=\"https://laartcc.org/document/required-internal-routes\" target=\"_blank\">ZLA Required Routes<\/a> Section 5.4<\/b>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/>West Flow/Rwy 27: <input style=\"width:75%\" value=\"KSAN PEBLE6 SXC LAX DAG LARKK1 KLAS\" readonly>";
+					result += "<br/>East Flow/Rwy 9: <input style=\"width:75%\" value=\"KSAN FALCC1 SLI POM DAG LARKK1 KLAS\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-22-2025
 					break;
 				case "LAX": // Updated 01-17-2025
 					result += "<!-- Updated 01-17-2025 -->";
