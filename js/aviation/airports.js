@@ -153,7 +153,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				result += "<br/>Rwy19L N/A and rwy19R N/A for B787 and B777 (See comply memo)";
 			}
 			result += "<br/>SFO curfew (2100-0700L): Dptrs to northeast use NIITE";
-			result += "<br/><br/>SFO Dptg: <button type='button' id='SFO_standard_left' class='btn" + ((flows['SFO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SFO\", 0)'>1L/1R</button>&nbsp;&nbsp;<button type='button' id='SFO_standard_middle' class='btn" + ((flows['SFO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SFO\", 1)'>28L/28R</button>&nbsp;&nbsp;<button type='button' id='SFO_standard_right' class='btn" + ((flows['SFO'] == 2) ? " selected" : "") + "' onclick='change_flow(\"SFO\", 2)'>10LR/19LR</button>";
+			result += "<br/><br/>SFO Dptg: <button type='button' id='SFO_standard_left' class='btn" + ((flows['SFO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SFO\", 0)'>1L/1R</button>" +
+				"&nbsp;&nbsp;<button type='button' id='SFO_standard_middle' class='btn" + ((flows['SFO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SFO\", 1)'>28L/28R</button>" +
+				"&nbsp;&nbsp;<button type='button' id='SFO_standard_right' class='btn" + ((flows['SFO'] == 2) ? " selected" : "") + "' onclick='change_flow(\"SFO\", 2)'>10LR/19LR</button>";
 			result += "<br/>SFO - Rwy1 NIITE|SEGUL|SSTIK // GNNRR|NIITE|SEGUL|SNTNA|WESLA Rwy28 // SAHEY Rwy19";
 			result += "<br/>Make sure SID matches rwy in use. TRUKN is good on all runways;";
 			break;
@@ -283,7 +285,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>LAS - Run LAWS above 35C";
 			break;
 		case "LAX":
-			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>";
+			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>" +
+							"&nbsp;&nbsp;<button type='button' id='LAX_standard_middle' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>" +
+							 "&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 2) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 2)'>Curfew</button>";
 			result += "<br/>LAX - ANJLL W FLOW // BIGBR E FLOW";
 		case "MCO":
 			result += "<br/><br/>MCO Flow: <button type='button' id='MCO_standard_left' class='btn" + ((flows['MCO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='MCO_standard_right' class='btn" + ((flows['MCO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 1)'>North</button>";
