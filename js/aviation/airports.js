@@ -75,6 +75,9 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KJAC DIVYD2 JEDHY", "KJAC JEDHY"); // All other JEDHY
 						result = result.replaceAll("KJAC GEYSR6 DNW", "KJAC DNW");
 						break;
+					case "LAX": // LAX West // Rwy 24/25
+						result = result.replaceAll("BIGBR3 KLAX", "ANJLL4 KLAX");
+						break;
 					case "MCO": // MCO south // Rwy17 Rwy18
 						result = result.replaceAll("SNFLD3 KMCO", "GTOUT1 KMCO");
 						break;
@@ -238,6 +241,9 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KJAC TETON3 IDA", "KJAC DIVYD2 HUKET IDA");
 						result = result.replaceAll("KJAC DNW", "KJAC DIVYD2 DNW");
 						result = result.replaceAll("KJAC JEDHY", "KJAC DIVYD2 JEDHY"); // All other JEDHY
+						break;
+					case "LAX": // LAX east // Rwy 6/7
+						result = result.replaceAll("ANJLL4 KLAX", "BIGBR3 KLAX");
 						break;
 					case "MCO": // MCO north // Rwy35 Rwy36
 						result = result.replaceAll("GTOUT1 KMCO", "SNFLD3 KMCO");
