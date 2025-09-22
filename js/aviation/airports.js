@@ -77,6 +77,7 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						break;
 					case "LAX": // LAX West // Rwy 24/25
 						result = result.replaceAll("BIGBR3 KLAX", "ANJLL4 KLAX");
+						result = result.replaceAll("MDNYT2 KLAX", "ANJLL4 KLAX");
 						break;
 					case "MCO": // MCO south // Rwy17 Rwy18
 						result = result.replaceAll("SNFLD3 KMCO", "GTOUT1 KMCO");
@@ -244,6 +245,7 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						break;
 					case "LAX": // LAX east // Rwy 6/7
 						result = result.replaceAll("ANJLL4 KLAX", "BIGBR3 KLAX");
+						result = result.replaceAll("MDNYT2 KLAX", "BIGBR3 KLAX");
 						break;
 					case "MCO": // MCO north // Rwy35 Rwy36
 						result = result.replaceAll("GTOUT1 KMCO", "SNFLD3 KMCO");
@@ -343,6 +345,10 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 				}
 		} else if (new_config == 2) {
 				switch(airport) {
+					case "LAX": // Noise Abatement Procedures
+						result = result.replaceAll("ANJLL4", "MDNYT2");
+						result = result.replaceAll("BIGBR3", "MDNYT2");
+						break;
 					case "SFO": // SFO dpting 10LR or 19LR  // SAHEY 
 						// South
 						result = result.replaceAll("KSFO WESLA5", "KSFO SAHEY4");
