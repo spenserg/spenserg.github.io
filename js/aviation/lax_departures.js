@@ -390,6 +390,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 09-22-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM KPSP\" readonly>";
+			result += "<br/><b>For all routing restrictions, see <a href=\"https://laartcc.org/document/required-internal-routes\" target=\"_blank\">ZLA Required Routes<\/a> Section 5.4<\/b>";
 			// result += "<br/><br/><b>CDRS</b>"; // TODDO
 			break;
 		case "RDU": // Updated 01-31-2025
