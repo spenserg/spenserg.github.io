@@ -860,10 +860,11 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			result += "<br/>JAC - ALPIN|TETON S FLOW (rwy19) // DIVYD|GEYSR N FLOW (rwy1)";
 			break;
 		case "LAX":
+			result += "<br/><br/>LAX curfew 2100L - 0700L, see <a href=\"https://www.lawa.org/media/30137\" target=\"_blank\">KLAX Noise Abatement Procedures<\/a>";
 			if (ac_type.includes("321")) {
-				result += "<br/><br/>A321 - File OSHNN instead of ORKAS";
+				result += "<br/>A321 - File OSHNN instead of ORKAS";
 			} else {
-				result += "<br/><br/>LAX curfew 2100L - 0700L // File OSHNN instead of ORKAS";
+				result += "<br/>Departures after 2100L, file OSHNN instead of ORKAS";
 			}	
 			break;
 		case "LGA":
