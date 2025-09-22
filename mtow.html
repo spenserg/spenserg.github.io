@@ -366,7 +366,7 @@ function compute (str_override = "") {
 		}
 
 		// Airport Specific
-		output = airport_extra(result[1], result[2], result[5], ac_type, output);
+		output = airport_extra(flows, result[1], result[2], result[5], ac_type, output);
 	} else if (debug_mode && regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null) {
 		console.log("flifo parse error");
 	}
