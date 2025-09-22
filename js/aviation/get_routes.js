@@ -4441,6 +4441,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><input style=\"width:75%\" value=\"KLAS BLD COYOT5 KPHX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-09-2025
 					break;
+				case "PSP": // Updated 09-22-2025
+					result += "<!-- Updated 09-22-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KLAS RADYR2 BLAQQ ZELMA RDBUL1 KPSP\" readonly>";
+					result += "<br/><b>For all route restrictions, see <a href=\"https://laartcc.org/document/required-internal-routes\" target=\"_blank\">ZLA Required Routes<\/a> Section 5.4<\/b>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KLAS MCCRN8 TNP CLOWD CLOWD1 KPSP\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-22-2025
+					break;
 				case "SAN": // Updated 09-22-2025
 					result += "<!-- 09-22-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL260):</b>";
@@ -7169,6 +7178,12 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>JE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP HWRRD1 BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/>ME<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP HWRRD1 BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/>SE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPSP HWRRD1 TRM V137 IPL J2 GBN J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					break;
+				case "LAS": // Updated 09-22-2025
+					result += "<!-- Updated 09-22-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KPSP HWRRD1 FUSBL TNP RNDRZ4 KLAS\" readonly>";
+					result += "<br/><b>For all route restrictions, see <a href=\"https://laartcc.org/document/required-internal-routes\" target=\"_blank\">ZLA Required Routes<\/a> Section 5.4<\/b>";
 					break;
 				case "ORD": // Updated 09-17-2025
 					result += "<!-- Updated 09-17-2025 P -->";
