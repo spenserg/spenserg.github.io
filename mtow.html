@@ -56,7 +56,7 @@ const P789 = ["8MA", "8MB", "8MC", "8MD"];
 
 const partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "GRR", "MAF", "MSO", "MYR", "PSP", "RAP", "RDM", "SJC"];
 
-var flows = {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"FCA":0,"IAH":0,"JAC":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0};
+var flows = {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0};
 
 // Toggle Vars
 var debug_mode = false;
@@ -865,6 +865,8 @@ function airport_extra (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null,
 			} else {
 				result += "<br/><br/>LAX curfew 2100L - 0700L // File OSHNN instead of ORKAS";
 			}
+			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>";
+			result += "<br/>LAX - ANJLL W FLOW // BIGBR E FLOW";			
 			break;
 		case "LGA":
 /* TODO Im pretty sure pier weights arent a thing anymore
