@@ -507,13 +507,13 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	}
 
 	// Add SIDS LAX
-	new_cdr_str = new_cdr_str.replace("KLAX LAS", "KLAX ORCKA5 LAS");
-	new_cdr_str = new_cdr_str.replace("KLAX BEALE", "KLAX ORCKA5 BEALE");
-	new_cdr_str = new_cdr_str.replace("KLAX CLEEE", "KLAX DOTSS2 CLEEE");
-	new_cdr_str = new_cdr_str.replace("KLAX CNERY", "KLAX DOTSS2 CNERY");
-	new_cdr_str = new_cdr_str.replace("KLAX BLH", "KLAX BLH");
-	new_cdr_str = new_cdr_str.replace("KLAX TCATE", "KLAX PNDAH2 TCATE");
-	new_cdr_str = new_cdr_str.replace("KLAX FICKY", "KLAX ZILLI5 FICKY");
+	new_cdr_str = new_cdr_str.replaceAll("KLAX LAS", "KLAX ORCKA5 LAS");
+	new_cdr_str = new_cdr_str.replaceAll("KLAX BEALE", "KLAX ORCKA5 BEALE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAX CLEEE", "KLAX DOTSS2 CLEEE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAX CNERY", "KLAX DOTSS2 CNERY");
+	// new_cdr_str = new_cdr_str.replaceAll("KLAX BLH", "KLAX BLH"); // todo non rnav qqq
+	new_cdr_str = new_cdr_str.replaceAll("KLAX TCATE", "KLAX PNDAH2 TCATE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAX FICKY", "KLAX ZILLI5 FICKY");
 
 	var faa_result = merge_faa_pref(result_arr, today_str);
 
