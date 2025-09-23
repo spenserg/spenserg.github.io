@@ -887,15 +887,16 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ MGMRY CATLN Q56 SJI MNSTR1 KMSY\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD ZIEBR YOCKY BWG MHZ MCB TRSSH1 KMSY\" readonly>";
 			break;
-		case "MYR": // Updated 02-06-2025
-			result += "<!-- Updated 02-06-2025 -->";
+		case "MYR": // Updated 09-23-2025
+			result += "<!-- Updated 09-23-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL230):</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM KMYR\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY KMYR\" readonly>"; // CDR RP
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT LILLS3 LILLS KMYR\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>BA (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 RDU V136 CRE KMYR\" readonly>";
-			result += "<br/>RP (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY KMYR\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-23-2025
+			result += "<!-- Verified with ATCSCC on 09-23-2025 -->";
+			result += "<br/>BA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 RDU V136 CRE KMYR\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY KMYR\" readonly>";
 			break;
 		case "OKC":
 			result += "<br/><br/><b>Faa Pref Route:</b>";
