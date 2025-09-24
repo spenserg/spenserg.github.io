@@ -110,7 +110,7 @@ function update_cdr_text(input_id = null, coord_req = -1) {
 	var result = "Unable to process route string // No changes made. Input_ID = \"" + input_id + "\", coord_req = \"" + coord_req + "\"";
 	if (input_id != null) {
 		var coord_req_text = ((coord_req == 1) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ");
-		$("#cdrdescbr_" + input_id).val($("#cdrdesc_" + input_id).val() + "</br>");
+		$("#cdrdescbr_" + input_id).val("</br>" + $("#cdrdesc_" + input_id).val());
 		if (coord_req == -1) { coord_req_text = ""; }
 		result = "result += \"<br/>" + ($("#cdrdesc_" + input_id).val()) + coord_req_text + "<input style=\\\"width:75%\\\" value=\\\"" + ($("#cdrstr_" + input_id).val()) + "\\\" readonly>\"; \/\/ CDR " + input_id;
 		$("#cdrcp_" + input_id).val(result);
