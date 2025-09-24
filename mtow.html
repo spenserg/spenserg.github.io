@@ -506,6 +506,35 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		}
 	}
 
+	// Add SIDS BFL
+	new_cdr_str = new_cdr_str.replaceAll("KBFL EHF", "KBFL MARIC4 EHF");
+	new_cdr_str = new_cdr_str.replaceAll("KBFL PMD", "KBFL MARIC4 LHS PMD");
+	// Add SIDS BUR
+	new_cdr_str = new_cdr_str.replaceAll("KBUR BLH", "KBUR SLAPP2 BLH");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR CSTRO", "KBUR OROSZ2 CSTRO");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR DVC", "KBUR SLAPP2 LAS J146 DVC");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR HEC", "KBUR SLAPP2 HEC");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR LAS", "KBUR SLAPP2 LAS");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR PMD TRM BLH", "KBUR SLAPP2 BLH");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR PMD TRM", "KBUR VNY3 VNY TRM");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR TRM", "KBUR VNY3 VNY TRM");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR PMD", "KBUR VNY3 PMD");
+	// Add SIDS LAS
+	new_cdr_str = new_cdr_str.replaceAll("KLAS GUP", "KLAS NIITZ4 SSKEE GUP");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS INW", "KLAS NIITZ4 SSKEE INW");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS TBC", "KLAS NIITZ4 HOCEE TBC");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS DVC", "KLAS GIDGT3 TUKRR DVC");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS PGS",   "KLAS HOOVR8 PGS");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS VERKN", "KLAS GIDGT3 VERKN");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS TUKRR", "KLAS GIDGT3 TUKRR");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS SSKEE", "KLAS NIITZ4 SSKEE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS SSKEE", "KLAS NIITZ4 HOCEE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS ZAYNE", "KLAS RASLR3 ZAYNE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS FRNCK", "KLAS RATPK3 FRNCK");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS JAYSN", "KLAS LOHLA3 JAYSN");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS KENNO", "KLAS JOHKR5 KENNO");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS LVELL", "KLAS RADYR2 LVELL");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS HEC",   "KLAS RADYR2 HEC");
 	// Add SIDS LAX
 	new_cdr_str = new_cdr_str.replaceAll("KLAX LAS", "KLAX ORCKA5 LAS");
 	new_cdr_str = new_cdr_str.replaceAll("KLAX BEALE", "KLAX ORCKA5 BEALE");
@@ -514,6 +543,45 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	// new_cdr_str = new_cdr_str.replaceAll("KLAX BLH", "KLAX BLH"); // todo non rnav qqq
 	new_cdr_str = new_cdr_str.replaceAll("KLAX TCATE", "KLAX PNDAH2 TCATE");
 	new_cdr_str = new_cdr_str.replaceAll("KLAX FICKY", "KLAX ZILLI5 FICKY");
+	// Add SIDS ONT
+	new_cdr_str = new_cdr_str.replaceAll("KONT BLH", "KONT RAJEE4 MTBAL CNERY BLH");
+	new_cdr_str = new_cdr_str.replaceAll("KONT DVC", "KONT SNSHN5 LAS J146 DVC");
+	new_cdr_str = new_cdr_str.replaceAll("KONT EHF", "KONT SNSHN5 EHF");
+	new_cdr_str = new_cdr_str.replaceAll("KONT LAS", "KONT SNSHN5 LAS");
+	new_cdr_str = new_cdr_str.replaceAll("KONT AVRRY", "KONT RAJEE4 AVRRY");
+	new_cdr_str = new_cdr_str.replaceAll("KONT MTBAL", "KONT RAJEE4 MTBAL");
+	// Add SIDS PSP
+	new_cdr_str = new_cdr_str.replaceAll("KPSP BLH", "KPSP HWRRD1 BLH");
+	new_cdr_str = new_cdr_str.replaceAll("KPSP PMD", "KPSP LGANN1 PMD");
+	new_cdr_str = new_cdr_str.replaceAll("KPSP PSP", "KPSP CATH1 PSP");
+	new_cdr_str = new_cdr_str.replaceAll("KPSP TNP", "KPSP CATH1 PSP V370 TNP");
+	new_cdr_str = new_cdr_str.replaceAll("KPSP TRM", "KPSP HWRRD1 TRM");
+	// Add SIDS SAN
+	new_cdr_str = new_cdr_str.replaceAll("KSAN FTI", "KSAN TGOLD PXR J18 FTI");
+	new_cdr_str = new_cdr_str.replaceAll("KSAN GBN", "KSAN ZZOOO4 GBN");
+	new_cdr_str = new_cdr_str.replaceAll("KSAN IKAYE", "KSAN PADRZ2 IKAYE");
+	new_cdr_str = new_cdr_str.replaceAll("KSAN LAX EHF", "KSAN PADRZ7 EHF");
+	new_cdr_str = new_cdr_str.replaceAll("KSAN MTBAL", "KSAN ZZOOO4 MTBAL");
+	new_cdr_str = new_cdr_str.replaceAll("KSAN TGOLD", "KSAN ZZOOO4 TGOLD");
+	// Add SIDS SBA // TODO
+	// new_cdr_str = new_cdr_str.replaceAll("KSBA KPTIN", "KSBA  KPTIN");
+	// new_cdr_str = new_cdr_str.replaceAll("KSBA LAS", "KSBA  LAS");
+	// new_cdr_str = new_cdr_str.replaceAll("KSBA PMD", "KSBA  PMD");
+	// Add SIDS SBP // TODO
+	// new_cdr_str = new_cdr_str.replaceAll("KSBP LAS", "KSBP  LAS");
+	// new_cdr_str = new_cdr_str.replaceAll("KSBP PMD", "KSBP  PMD");
+	// Add SIDS SNA
+	new_cdr_str = new_cdr_str.replaceAll("KSNA AVRRY", "KSNA PIGGN3 AVRRY");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA BEALE", "KSNA FINZZ3 BEALE");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA BLH", "KSNA PIGGN3 CNERY BLH");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA CNERY", "KSNA PIGGN3 CNERY");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA TCATE", "KSNA PIGGN3 TCATE");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA DVC", "KSNA FINZZ3 LAS J146 DVC");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA EHF", "KSNA HHERO3 EHF");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA LAS", "KSNA FINZZ3 LAS");
+	
+	
+	
 
 	var faa_result = merge_faa_pref(result_arr, today_str);
 
