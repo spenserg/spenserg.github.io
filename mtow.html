@@ -498,8 +498,8 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		// Route Str = cdrstr_xxx || Description = cdrdesc_xxx || CopyPaste = cdrcp_xxx
 		new_cdr_str += "<br/>CDR " + z[1] + z[2].replaceAll("\\", "") + ": <input id=\"cdrstr_" + z[1] + "\" class=\"cdr_input\" style=\"width:50%\" " + z[3].replaceAll("\\", "") + " readonly>";
 		if (debug_mode) {
-			new_cdr_str += "&nbsp;&nbsp;Desc: <input id=\"cdrdesc_" + z[1] + "\" style=\"width:15%\" value=\"XXX\" onchange=\"update_cdr_text('" + z[1] + "'," + ((z[2].includes("Coord Req")) ? 'true' : 'false') + ")\" } />" +
-			"&nbsp;&nbsp;<input id=\"cdrdescbr_" + z[1] + "\" style=\"width:15%\" value=\"<br/>XXX\" readonly><br/>" +
+			new_cdr_str += "&nbsp;&nbsp;Desc: <input id=\"cdrdesc_" + z[1] + "\" style=\"width:10%\" value=\"XXX\" onchange=\"update_cdr_text('" + z[1] + "'," + ((z[2].includes("Coord Req")) ? 'true' : 'false') + ")\" } />" +
+			"&nbsp;&nbsp;<input id=\"cdrdescbr_" + z[1] + "\" style=\"width:10%\" value=\"<br/>XXX\" readonly><br/>" +
 			z[1] +": <input id=\'cdrcp_" + z[1] + "\' style=\'width:75%\' value=\'" +
 			"result += \"<br/>XXX" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ") + 
 			"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
