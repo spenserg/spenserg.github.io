@@ -8062,8 +8062,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 03-17-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-17-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KSAV SMALZ WIGVO DBN MCN VUZ J14 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>SE Arrival: <input style=\"width:75%\" value=\"KSAV SMALZ WIGVO DBN MGM MEI MHZ MLU YUYUN BEREE3 KDFW\" readonly>"; // South
-					result += "<br/>Gulf Coast: <input style=\"width:75%\" value=\"KSAV ALLMA DUYER MCB J50 AEX PNUTS BEREE3 KDFW\" readonly>"; // Coastal
+					// TODO North
+					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSAV SMALZ WIGVO MGM MEI MHZ MLU YUYUN BEREE3 KDFW\" readonly>"; // South
+					result += "<br/><br/>South via AEX: <input style=\"width:75%\" value=\"KSAV ALLMA DUYER MCB J50 AEX PNUTS BEREE3 KDFW\" readonly>"; // Coastal
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/>NE Arrival: <input style=\"width:75%\" value=\"KSAV DBN MCN LGC VUZ J14 LIT FINGR9 KDFW\" readonly>";
 					result += "<br/>SE Arrival: <input style=\"width:75%\" value=\"KSAV AMG SZW DEFUN J2 SJI MCB AEX YEAGR4 KDFW\" readonly>"; // South
