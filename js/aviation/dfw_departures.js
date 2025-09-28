@@ -1463,17 +1463,17 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 PNH J17 PUB DBL J206 OCS J52 LKT KMSO\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-17-2025
 			break;
-		case "MSP": // Updated 09-23-2025
-			result += "<!-- Updated 09-23-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW BLECO8 ZEMMA PER PWE OVR ROKKK NITZR3 KMSP\" readonly>"; // CDR 0P
+		case "MSP": // Updated 09-28-2025
+			result += "<!-- Updated 09-28-2025 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 09-28-2025
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J25 DSM HELLO BLUEM4 KMSP\" readonly>";
 			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J101 STL IOW MNOSO BLUEM4 KMSP\" readonly>";
 			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ADM TOTOE GCK HLC OBH FSD SSWAN TORGY3 KMSP\" readonly>";
 			result += "<br/><b>HUDAD Dptr: <input style=\"width:17em\" value=\"KDFW HUDAD2 HUDAD PNH TOTOE\" readonly> ..<\/b>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 TUL J25 DSM MCW KASPR7 KMSP\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-23-2025
-			result += "<!-- Verified with ATCSCC on 09-23-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-28-2025
+			result += "<!-- Verified with ATCSCC on 09-28-2025 -->";
 			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW BLECO8 ZEMMA PER PWE OVR ROKKK NITZR3 KMSP\" readonly>";
 			result += "<br/>1E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT SGF J41 OVR ROKKK NITZR3 KMSP\" readonly>";
 			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J26 ICT PWE OVR ROKKK NITZR3 KMSP\" readonly>";
