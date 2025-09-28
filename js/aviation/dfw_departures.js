@@ -1466,7 +1466,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "MSP": // Updated 09-28-2025
 			result += "<!-- Updated 09-28-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 09-28-2025
-			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J25 DSM HELLO BLUEM4 KMSP\" readonly>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J25 MCI ROKKK NITZR3 KMSP\" readonly>";
 			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J101 STL IOW MNOSO BLUEM4 KMSP\" readonly>";
 			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ADM TOTOE GCK HLC OBH FSD SSWAN TORGY3 KMSP\" readonly>";
 			result += "<br/><b>HUDAD Dptr: <input style=\"width:17em\" value=\"KDFW HUDAD2 HUDAD PNH TOTOE\" readonly> ..<\/b>";
