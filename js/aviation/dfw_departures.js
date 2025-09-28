@@ -605,9 +605,10 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 09-23-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV WWODD HANBL3 KDTW\" readonly>"; // CDR 0P
-			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J87 IRK IOW DBQ BAE PORZL RKCTY2 KDTW\" readonly>"; // CDR MZ
+			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL J19 RBS GIJ HOSSA HAYLL3 KDTW\" readonly>"; // CDR MZ
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 KONGO Q145 HVQ Q147 JAMOX KLYNK3 KDTW\" readonly>";
-			result += "<br/><br/>South via VUZ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN GQO SMTTH Q67 HNN JAMOX KLYNK3 KDTW\" readonly>";
+			result += "<br/></br>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J87 IRK IOW DBQ BAE PORZL RKCTY2 KDTW\" readonly>";
+			result += "<br/>South via VUZ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN GQO SMTTH Q67 HNN JAMOX KLYNK3 KDTW\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 LIT J131 PXV VHP FWA KDTW\" readonly>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 TUL J87 IRK IOW DBQ BAE KDTW\" readonly>";
