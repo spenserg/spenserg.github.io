@@ -19,6 +19,18 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
 	flows = ((Object.keys(flows).length == 0) ? {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0} : flows);
 
+	// 27K for 737-NGs
+	if (["738K", "738R"].includes(ac_type) && ["BDL","BJX","BOS","BUR","BZN","DCA","DEN","GUA","HDN","LAS","LGA","MDE","MEX","PHX","PSP","QRO","RDU","RNO","RTB","SBA","SBP","SJO","SJU","SNA","STT","SXM"].includes(dptr)) {
+		result += "<br/><b>" + dptr + " - 27K Available for N" + tail + "<\/b>";
+	}
+	// A321 IAE Non-Sharklet Thrust Bump
+	if (["PHX","DEN","LAS","CLT"].includes(dptr)) {
+		if (["507","508","510","519","521","523","524","534","535","536","537","538","539","540","542","543","544","545","546","549","551","552","553","554","556","557","558","559","560","561","562","563","567","568","572","573","575","576","578","579","580","581","582","583","584","585","586","587","912","913","914","915","916","917","918","919","920","921","922","923","924","925","926","927","970","971","972","973","974","975","976","977","978","979","980","981","982"].includes(tail)) {
+			// Source: FOS COMMAND "TC*10"
+			result += "<br/><b>" + dptr + " - Thrust Bump Available for N" + tail + "<\/b>";
+		}
+	}
+
 	switch(dptr) {
 		case "ABQ":
 			result += "<br/><br/>ABQ Flow: <button type='button' id='ABQ_standard_left' class='btn" + ((flows['ABQ'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 0)'>East</button>&nbsp;&nbsp;<button type='button' id='ABQ_standard_right' class='btn" + ((flows['ABQ'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 1)'>West</button>";
