@@ -133,7 +133,7 @@ function compute (str_override = "") {
 	var wide_ci_min = 40;
 	var wide_ci_max = 300;
 	var exc_regex = /\n\!\n/g;
-	var fkeystxt = ((str_override != 0 && str_override.trim().length > 0) ? str_override : $("#outbound").val().replaceAll("!",""));
+	var fkeystxt = ((str_override != 0 && str_override.trim().length > 0) ? str_override : $("#outbound").val());
 	var routes_arr = {'faa_pref' : null, 'non_rnav' : null, 'cdrs' : {} };
 	var mr_text = ((mandatory_routes_checked) ? " // Mandatory Routes checked" : "");
 
