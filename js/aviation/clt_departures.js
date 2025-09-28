@@ -890,7 +890,8 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "MYR": // Updated 09-23-2025
 			result += "<!-- Updated 09-23-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL230):</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM TASTY KMYR\" readonly>"; // CDR RP
+			result += "<br/><input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM KMYR\" readonly>"; // CDR RP
+			result += "<br/><b>As of 2025-09-28, CDP RP includes TASTY but flights usually turn at or before UNJAM<\/b>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT LILLS3 LILLS KMYR\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-23-2025
