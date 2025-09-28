@@ -1877,8 +1877,9 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "SAV": // Updated 09-27-2025
 			result += "<!-- Updated 09-27-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD MERDN Q184 ARNNY FRDDO KSAV\" readonly>"; // CDR 0P
+			// result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"FORCK3 FORCK MHZ MERDN Q184 ARNNY FRDDO DBN V154 OCONE T408 LOTTS KSAV\" readonly>";
+			result += "<br/><b>As of 09-28-2025, Pref route goes DBN DCT KSAV but crews are always rerouted via LOTTS<\/b>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEM J66 RMG LOTTS SAV KSAV\" readonly>";
 			result += "<br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB CEW ALLMA KSAV\" readonly>";
 			result += "<br/><br/>South/OW Gulf<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP HRV Q105 REDFN Y280 REMIS PIE CRG SAV KSAV\" readonly>";
