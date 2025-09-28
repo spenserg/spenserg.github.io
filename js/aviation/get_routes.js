@@ -5520,11 +5520,11 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 				case "DFW": // Updated 09-23-2025
 					result += "<!-- Updated 09-23-2025 P -->"
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-23-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KMYR GRD GQO MEM J66 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KMYR CHS DBN MGM J20 MHZ YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMYR GRD GQO MEM J66 LIT FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMYR CHS DBN MGM MEI MHZ MLU YUYUN BEREE3 KDFW\" readonly>";
-					result += "<br/><br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMYR CHS SAV AMG CABLO DEFUN J2 CEW J50 AEX PNUTS BEREE3 KDFW\" readonly>";
-					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					result += "<br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMYR CHS SAV AMG CABLO DEFUN J2 CEW J50 AEX PNUTS BEREE3 KDFW\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KMYR CHS DBN MGM MEI MHZ CQY3 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";  // No CDRs as of 09-23-2025
 					break;
 			}
