@@ -102,8 +102,16 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>JB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ ABQ3 ABQ J13 FQF BFF J94 ONL J114 GEP TVC WYNDE3 KORD\" readonly>";
 					result += "<br/>JV<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ FYSTA3 FTI J18 GCK J96 IRK BENKY6 KORD\" readonly>";
 					break;
+				case "PHL": // Updated 09-29-2025
+					result += "<!-- Updated 09-29-2025 P -->"
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-29-2025
 
-// TODO ABQ-PHL
+					// TODO // ONLY ONE FOS ROUTE:
+					// ABQ FTI.J19-ICT.J26-MCI.J80-CREEP-TRAKK.J152-JST PHL
+					
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>";  // No CDRs as of 09-29-2025
+					break;
 
 				case "PHX": // Updated 02-21-2025
 					result += "<!-- Updated 02-21-2025 -->";
@@ -123,7 +131,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 		case "AGS":
 			switch(arvl) {
 
-// TODO AGS-BOS
+// TODO AGS-BOS // NO FOS ROUTES
 
 				case "CLT": // Updated 01-30-2025
 					result += "<!-- Updated 01-30-2025 -->";
@@ -143,10 +151,24 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
 
-// TODO AGS-MIA
-// TODO AGS-ORD
-// TODO AGS-PHL
+// TODO AGS-MIA // NO FOS ROUTES
+// TODO AGS-ORD // NO FOS ROUTES
 
+/* TODO
+
+				case "ORD": // Updated 09-29-2025
+					result += "<!-- Updated 09-29-2025 P -->"
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>";  // No CDRs as of 09-29-2025
+					break;
+FOS ROUTES
+result += "<br/><input style=\"width:75%\"; value=\"KAGS IRQ VXV J43 FLM BONNT ESSPO5 KORD\" readonly>";
+result += "<br/><input style=\"width:75%\"; value=\"KAGS IRQ J99 IIU HEVAN BONNT VEECK5 KORD\" readonly>";
+result += "<br/><input style=\"width:75%\"; value=\"KAGS CHATT6 CHATT SPA J83 APE FBC NOLNN ESSPO4 KORD\" readonly>";
+result += "<br/><input style=\"width:75%\"; value=\"KAGS IRQ HRS HCH RAMRD FAM FTZ TRTLL6 KORD\" readonly>";
+*/
 			}
 		break; // End of AGS
 
@@ -264,7 +286,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>YZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KALB PAYGE Q822 GONZZ FARGN CHAAP Q436 EMMMA WYNDE3 KORD\" readonly>";
 					break;
 
-// TODO ALB-PHL
+// TODO ALB-PHL // NO FOS ROUTES
 
 			}
 		break; // End of ALB
@@ -438,6 +460,11 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 			switch(arvl) {
 
 // TODO AUS-ATL
+/* FOS ROUTES
+result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI LFK AEX MERDN ORRKK GNDLF2 KATL\" readonly>";
+result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 JAYJO TNV AEX MEI DUUCK ORRKK HOBTT2 KATL\" readonly>";
+result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI LFK AEX MERDN ORRKK HOBTT2 KATL\" readonly>";
+*/
 
 				case "CLT":// Updated 06-03-2025
 					result += "<!-- Updated 06-03-2025 P -->";
