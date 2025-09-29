@@ -807,13 +807,17 @@ function decs_route(input = null, cdr_list = null) {
 	var today = new Date();
 	var tmp_arvl_arr = sortable[0][3].split(" ");
 	var tmp_res_mid = "";
-	var tmp_res_all = "";
+	var tmp_res_all = [];
+	var dptr_tmp = "";
+	var arvl_tmp = "";
 	for (let i = 0; i < sortable.length; ++i) {
 		tmp_res_mid += "<br/>" + sortable[i][3] + "<br/>" + sortable[i][2] + "<br/><hr>";
 		if (sortable[i][0] != null) {
 			textarea_cdr_arr.push(sortable[i][4]);
 		}
-		tmp_res_all += sortable[i][3] + "\n";
+		dptr_tmp = sortable[i][3].substring(0,4);
+		arvl_tmp = sortable[i][3].substring(sortable[i][3].length - 4);
+		tmp_res_all.push(sortable[i][3]);
 	}
 	var tmp_zz_todaystr = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
 	result += '<br/><textarea rows="5">case "' + convert_iata(tmp_arvl_arr[tmp_arvl_arr.length - 1]) + '": // Updated ' + tmp_zz_todaystr + textarea_tabs +
@@ -826,9 +830,9 @@ function decs_route(input = null, cdr_list = null) {
 		result += 'result += "<br/><br/><b>CDRS</b>";' + textarea_tabs + textarea_cdr_arr.join(textarea_tabs);
 	}
 	result += textarea_tabs + 'break; </textarea><br/>';
-	result += '<br/><textarea rows="5">\/\* TODO - FOS ROUTES:\n' + tmp_res_all + '\n\*\/</textarea>';
+	result += '<br/><textarea rows="5">\/\* TODO - FOS ROUTES: ' + dptr_tmp + ' - ' + arvl_tmp + '\n' + tmp_res_all.join("\n") + '\n\*\/</textarea>';
 	result += tmp_res_mid;
-	result += '<textarea rows="15" cols="80">' + textarea_cdr_arr.join(textarea_tabs) + '</textarea><br/><br/>';
+	result += '<textarea rows="15" cols="80">' + textarea_cdr_arr.join(textarea_tabs) + '\n</textarea><br/><br/>';
 	return result;
 }
 
