@@ -306,14 +306,14 @@ function compute (str_override = "") {
 		} else if (["738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "773W", "7878", "7879", "789P"].includes(ac_type)) {
 			if (ac_type == "738R") {
 				// SFP - Cat C under certain conditions
-				output += "C [if flaps 40 using straight-in apch] // circle-to-land Cat D<br/>";
+				output += "C [flaps 40 straight-in] // Cat D [circle-to-land]";
 			} else {
 				// Cat D
 				output += "D"; // 141-165 Kts
 			}
 		} else { output += "Unknown"; }
 		// Cost Index
-		output += "&nbsp;&nbsp;||&nbsp;&nbsp;ci: ";
+		output += ((ac_type == "738R") ? "<br/>" : "&nbsp;&nbsp;||&nbsp;") + "&nbsp;ci: ";
 		if (["319S", "H319", "319W", "A320", "H205", "738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N"].includes(ac_type)) {
 			// Narrow Body
 			output += narrow_ci_min + " - " + narrow_ci_max + " (lower/slower/lighter)";
