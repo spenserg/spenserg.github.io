@@ -576,9 +576,6 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	new_cdr_str = new_cdr_str.replaceAll("KSNA DVC", "KSNA FINZZ3 LAS J146 DVC");
 	new_cdr_str = new_cdr_str.replaceAll("KSNA EHF", "KSNA HHERO3 EHF");
 	new_cdr_str = new_cdr_str.replaceAll("KSNA LAS", "KSNA FINZZ3 LAS");
-	
-	
-	
 
 	var faa_result = merge_faa_pref(result_arr, today_str);
 
@@ -597,7 +594,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		((non_rnav.length == 0) ? "// " : "") + 'result += \"<br/><br/><b>Non RNAV</b>\";' +
 		((non_rnav.length == 0) ? " // TODDO" : (textarea_tabs + non_rnav)) +
 		'</textarea><br/><br/>' +
-		'<textarea rows="15" cols="80">' + playbook_str + '</textarea><br/><br/>' +
+		((playbook_str.length > 0) ? ('<textarea rows="8" cols="80">result += \"<br/><br/><b>Playbooks:</b>\";\n' + playbook_str.trim() + '</textarea><br/><br/>') : "") +
 		'<textarea rows="15" cols="80">' + 'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
 		'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
 		cdr_str + textarea_tabs + "break;</textarea><br/><br/>" + new_cdr_str +
