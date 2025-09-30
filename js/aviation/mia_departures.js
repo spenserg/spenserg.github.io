@@ -43,6 +43,14 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS TAZER MARCI LEV LCH WEEED WLEEE7 KAUS\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY MGMRY GARTS LCH WEEED WLEEE7 KAUS\" readonly>";
 			break;
+
+/* TODO - FOS ROUTES: KMIA - KAVL
+KMIA FLMGO1 STYMY Q77 TEUFL TWINS PLYRR KAVL
+KMIA ALTNN1 DUCEN Q87 VIYAP Q69 GURGE Q93 JEPEX SUG KAVL
+KMIA HURCN3 KPASA Q99 CAMJO PLYRR KAVL
+KMIA FOLZZ2 ALYRA GRUBR AR16 SEELO OGGRE Y436 PITRW SPA KAVL
+*/
+
 		case "BDL": // Updated 02-07-2025
 			result += "<!-- Updated 02-07-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -368,6 +376,9 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>PW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA PELCN Y309 FLRDA SAGGY CHIEZ Q161 KALDA Q167 YAZUU HEADI ROBER BELTT MAD MOBBS T295 TALCO HELON FLOSI FLOSI4 KEWR\" readonly>";
 			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC Q129 AARNN QUART PHLBO4 KEWR\" readonly>";
 			break;
+
+// MIA-EYW SKIPPED
+
 		case "GRR": // Updated 02-23-2025
 			result += "<!-- Updated 02-23-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -802,6 +813,12 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 BLAAN Q69 RICCS LEJOY DEMME5 KPIT\" readonly>";
 			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC Q129 PYTON LEJOY DEMME5 KPIT\" readonly>";
 			break;
+
+/* TODO - FOS ROUTES: KMIA - KPNS
+KMIA GLADZ3 BAGGS REMIS DTSRE PNSRB KPNS
+KMIA ORL J20 SZW J2 CEW KPNS
+*/
+
 		case "RDU": // Updated 05-31-2025
 			result += "<!-- Updated 05-31-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -1024,6 +1041,12 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 BLAAN Q69 RICCS JST ELZ BEEPS NABOR KSYR\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 BLAAN Q69 RICCS JST ELZ BEEPS NABOR KSYR\" readonly>";
 			break;
+
+/* TODO MIA-TLH
+MIA.HURCN4.SMELZ.DCT.JAWJA.DCT.TLH
+MIA.HURCN4.KPASA.Q118.BRUTS.DCT.TLH
+*/
+			
 		case "TPA": // Updated 02-27-2025 // Mandatory Routes checked
 			result += "<!-- Updated 02-27-2025 M -->";
 			result += "<br/><br/><b>Faa Pref Route: (Avg FL200-230)</b>";
@@ -1067,6 +1090,12 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 CAMJO WIGVO ODF KTYS\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR BRUTS Q118 THRSR KTYS\" readonly>";
 			break;
+
+/* TODO MIA-XNA
+MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.DRABK.DCT.DEFUN.DCT.MGM.DCT.UJM.DCT.RZC.DCT.XNA
+MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.CABLO.DCT.MEI.DCT.LIT.DCT.RZC.DCT.XNA
+*/
+
 		case "YUL": // Updated 07-30-2025
 			result += "<!-- Updated 07-30-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
