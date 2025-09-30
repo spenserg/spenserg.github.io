@@ -384,7 +384,7 @@ function compute (str_override = "") {
 			// Bottom text box
 			// output += '<br/><br/><input style=\'width:75%\' value=\'case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
 			// output += '<br/><input style=\'width:75%\' value=\'result += \"<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->\";\' readonly>';
-			output += '<hr><textarea rows="8" cols="80">case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + tmp_textarea_tabs +
+			output += '<hr><textarea rows="8" cols="80"> // Updated ' + tmp_today_str + mr_text + tmp_textarea_tabs +
 				'result += "<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->";</textarea>';
 				// + tmp_textarea_tabs + 'result += "<br/><br/><b>Faa Pref Route:</b>";</textarea>';
 			output += '<br/><button onclick=\"toggle_mandatory_routes()\">Turn ' + (mandatory_routes_checked ? "OFF" : "ON") + ' Mandatory Routes</button>';
