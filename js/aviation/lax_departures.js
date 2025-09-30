@@ -339,6 +339,11 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM PKE J78 DRK J78 ABQ J72 TXO J72 SPS TXK ELD MEI OTK LEESE3 KMCO\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2025
 			break;
+
+/* TODO CLT-MDT
+LAX.SEBBY3.DAG.J100.OBK.J584.CRL.J34.DJB.DCT.EWC.DCT.JST.J152.HAR.DCT.MDT
+*/
+
 		case "MIA": // Updated 06-03-2025
 			result += "<!-- Updated 06-03-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-02-2025
@@ -549,6 +554,15 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM J236 EED FLG TBE BUM KOOOP1 KSTL\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
+
+			/* TODO - FOS ROUTES: KLAX - KTUL
+KLAX ORCKA5 LAS J146 DVC PUB J28 GCK PER KTUL
+KLAX DOTSS2 CLEEE PKE J74 IRW IFI KTUL
+KLAX DOTSS2 CLEEE PKE J74 IRW IRW IFI KTUL
+KLAX LAXX1 IPL J2 GBN J50 SSO J4 INK SPS ADM KTUL
+KLAX MZB V66 MESCA T310 SSO V94 TQA IRW KTUL
+*/
+
 		case "TUS": // Updated 02-01-2025
 			result += "<!-- Updated 02-01-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -557,6 +571,20 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM J169 TFD DINGO6 KTUS\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
+
+/* TODO - FOS ROUTES: KCLT - KXNA
+KCLT BOBZY5 BNA Q36 RZC KXNA
+KCLT BOBZY5 BNA J45 PLESS J78 FAM J98 SGF KXNA
+KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN LOBBS J41 MEM RZC KXNA
+KCLT JOJJO5 CUBIM Q50 IIU J78 FAM J98 SGF KXNA
+KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN XESSS LIT RZC KXNA
+KCLT BEAVY6 GANDT NOKIE MGMRY MEI SQS LIT KXNA
+KCLT ESTRR5 IPTAY CHOPZ THRSR GAD MEM RZC KXNA
+KCLT JOJJO5 JOJJO DOOGE IIU FAM KXNA
+KCLT BOBZY5 BNA RZC KXNA
+KCLT WEAZL5 CLAWD HVQ J8 IIU FAM KXNA
+*/
+
 		case "YVR": // Updated 01-31-2025
 			result += "<!-- Updated 01-31-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
