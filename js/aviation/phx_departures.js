@@ -51,6 +51,18 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J2 FST DILLO LAIKS4 KAUS\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM CNX J15 JCT KAUS\" readonly>";
 			break;
+
+/* TODO - FOS ROUTES: KPHX - KBFL
+KPHX KEENS3 HRRBR CURIV J212 DECAS J65 PMD FASTO2 KBFL
+KPHX KEENS3 HRRBR J212 DECAS LHS FASTO2 KBFL
+KPHX KEENS3 HRRBR CURIV J212 DECAS J65 AERRO LHS FASTO2 KBFL
+KPHX KEENS3 BLH J65 AERRO LHS FASTO2 KBFL
+KPHX FYRBD1 MOHAK J2 GWIRE JLI PDZ PMD FASTO2 KBFL
+KPHX KEENS3 HRRBR PMD FASTO2 KBFL
+KPHX QUAKY1 GCN PGS J64 HEC J6 PMD FASTO2 KBFL
+KPHX ZEPER2 RRSTA EED J6 PMD FASTO2 KBFL
+*/
+
 		case "BNA": // Updated 02-05-2025
 			result += "<!-- Updated 02-05-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -731,6 +743,9 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN EED TNP KPSP\" readonly>";
 			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED TNP KPSP\" readonly>";
 			break;
+
+// TODO PHX-RDM // NO FOS ROUTES
+
 		case "RDU": // Updated 07-20-2025
 			result += "<!-- Updated 07-20-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
