@@ -87,7 +87,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 				case "ORD": // Updated 05-07-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-07-2025 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KABQ FYSTA3 FTI J18 GCK J96 IRK BENKY6 KORD\" readonly>"; // CDR JV
+					result += "<br/><input style=\"width:75%\" value=\"KABQ FYSTA3 FTI KENTO J18 GCK J96 IRK BENKY6 KORD\" readonly>"; // CDR JV
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ ATOMK3 ATOMK ALS J13 FQF J10 LBF KP72C FOD MYRRS FYTTE7 KORD\" readonly>"; // CDR B2
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ RDRNR3 ZUN J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>"; // CDR B1
 					result += "<br/><br/>ORD BDF 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ RDRNR3 ZUN J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
