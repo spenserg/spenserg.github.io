@@ -8245,15 +8245,18 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<br/>S1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT CKB VXV MEM LIT FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/>W1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT DILNE AEROS APE J186 BULEY J91 VXV MEM LIT FEWWW SEEVR4 KDFW\" readonly>";
 					break;
-				case "MIA": // Updated 01-17-2025
-					result += "<!-- Updated 01-17-2025 -->";
+				case "MIA": // Updated 09-30-2025
+					result += "<!-- Updated 09-30-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPIT CKB COBBE DANCO Q103 SLOJO EFFAY Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>";
-					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KPIT CKB COBBE DANCO Q103 SLOJO Q75 ENEME Q65 DOFFY Q79 WULFF RSW PALMZ2 KMIA\" readonly>";
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPIT JST PYTON Q129 YERBA SKARP Y313 HOAGG BNFSH3 KMIA\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPIT DILNE APE FLM ENGRA Q65 LORNN THRSR HONID FROGZ4 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPIT CKB PSK CLT CAE GURGE ISUZO WOPNR KENLL OMN ANNEY4 KMIA\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>W1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT AHTIY BURGS HVQ SPA TWINS ALLMA BULZI Q81 ENDEW BROMO FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-30-2025
+					result += "<!-- Verified with ATCSCC on 09-30-2025 -->";
+					result += "<br/>P1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT CKB COBBE PSK GSO Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>";
+					result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT AHTIY BURGS HVQ SPA TWINS ALLMA BULZI Q81 ENDEW BROMO FROGZ4 KMIA\" readonly>";
 					break;
 				case "ORD": // Updated 08-25-2025
 					result += "<!-- Updated 08-25-2025 P -->";
