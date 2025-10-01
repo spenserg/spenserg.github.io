@@ -747,8 +747,8 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT DLF FST J86 ELP J50 BLH J65 PMD J65 LANDO TTE ALTTA9 KFAT\" readonly>";
 			result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT FST J86 ELP J50 BLH J65 PMD J65 LANDO TTE ALTTA9 KFAT\" readonly>";
 			break;
-		case "FCA":
-		case "GPI":
+		case "FCA": // Updated 06-29-2025
+		case "GPI": // Updated 06-29-2025
 			result += "<!-- Updated 06-29-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-29-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW IFI GCK GLD SNY CZI BIL J13 GTF KGPI \" readonly>";
