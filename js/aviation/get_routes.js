@@ -9937,18 +9937,20 @@ KPHL STOEN Q75 SLOJO Q103 PUPYY KYYUU LUBBR3 KSRQ
 					result += "<br/><input style=\"width:75%\"; value=\"KSTL GATWY1 JIGSY Q176 GBEES FLM J24 HVQ BUCKO NUMMY3 KDCA\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-10-2025
 					break;
-				case "DFW": // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
+				case "DFW":  // Updated 09-30-2025
+					result += "<!-- Updated 09-30-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSTL JAHNY6 MAP RZC FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KSTL BRAKK5 HLV BUM ICT HOFFF VKTRY2 KDFW\" readonly>";
-					result += "<br/>East: <input style=\"width:75%\" value=\"KSTL BERYY5 LIT YUYUN WHINY4 KDFW\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL BERYY5 LIT YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL BRAKK5 HLV BUM ICT HOFFF VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSTL LINDY8 VIH RZC FSM FINGR9 KDFW\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-30-2025
+					/*
 					result += "<br/>LY (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSTL JAHNY6 MAP RZC FSM RRNET SEEVR4 KDFW\" readonly>";
 					result += "<br/>PL (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSTL CHUUC6 ARG FSM RRNET SEEVR4 KDFW\" readonly>";
 					result += "<br/>ZA (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSTL BRAKK5 HLV BUM HITUG SEEVR4 KDFW\" readonly>";
+					*/
 					break;
 				case "LAX": // Updated 01-19-2025
 					result += "<!-- Updated 01-19-2025 -->";
