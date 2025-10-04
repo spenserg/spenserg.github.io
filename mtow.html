@@ -157,6 +157,9 @@ function compute (str_override = "") {
 	// VAA App
 	regw = /(PERMANENT AIRPORT ANALYSIS)/g;
 
+	// Briefing
+	regv = /PAGE\s1\s([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+\n/g;
+	
 	var testing = false;
 	var land_wgt_limited = false;
 	// For Testing Station Info
@@ -178,6 +181,8 @@ function compute (str_override = "") {
 		output = cdr_parse(fkeystxt);
 	} else if ((result = regw.exec(fkeystxt)) != null) {
 		output = vaa_parse(fkeystxt);
+	} else if ((result = regv.exec(fkeystxt)) != null) {
+		output = briefing_parse(fkeystxt);
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
@@ -334,7 +339,7 @@ function compute (str_override = "") {
 
 		// Airport Specific
 		output = airport_extra(flows, result[1], result[2], result[5], ac_type, output);
-	} else if (debug_mode && regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null) {
+	} else if (debug_mode && regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null && regv.exec(fkeystxt) == null) {
 		console.log("flifo parse error");
 	}
 
@@ -345,7 +350,7 @@ function compute (str_override = "") {
 	}
 
 	// Routes
-	if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null && regw.exec(fkeystxt) == null && result != null) {
+	if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null && regw.exec(fkeystxt) == null && regv.exec(fkeystxt) == null && result != null) {
 		output = get_routes(result[1], result[2], result[5], ac_type, output);
 		$("#outbound").val("");
 		if (debug_mode) {
@@ -391,7 +396,7 @@ function compute (str_override = "") {
 			output += '</div>';
 		}
 	}
-	
+
 	$("#total").html('<br/>' + output);
 	if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regw.exec(fkeystxt) == null && result != null) {
 		change_flow(((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1]), flows[((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1])], true);
@@ -833,6 +838,26 @@ function decs_route(input = null, cdr_list = null) {
 	result += '<br/><textarea rows="5">\/\* TODO - FOS ROUTES: ' + dptr_tmp + ' - ' + arvl_tmp + '\n' + tmp_res_all.join("\n") + '\n\*\/</textarea>';
 	result += tmp_res_mid;
 	result += '<textarea rows="15" cols="80">' + textarea_cdr_arr.join(textarea_tabs) + '\n</textarea><br/><br/>';
+	return result;
+}
+
+function briefing_parse(fkeystxt = "") {
+	var result = "briefing recognized // unable to parse";
+	var tmp_regv = /PAGE\s1\s([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+\n/g;
+
+	if ((z = (tmp_regv.exec(fkeystxt))) != null) {
+		result = '<textarea rows="5" cols="80">' + z[3] + '\t' + z[1] + '\t' + z[2] + 
+		'\t' + "" + // Tail num
+		'\t' + parseInt(z[5]) + // paf lbs
+		'\t' + parseInt(z[6]) + // paf mins
+		'\t' + (parseInt(z[6])/parseInt(z[5])).toFixed(2) + // mins per 1 lb
+		'</textarea><br/>';
+		/*
+		while(null != (z = tmp_regv.exec(fkeystxt))) {
+			
+		}
+		*/
+	}
 	return result;
 }
 
