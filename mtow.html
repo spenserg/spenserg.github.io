@@ -851,6 +851,8 @@ function briefing_parse(fkeystxt = "") {
 		'\t' + parseInt(z[5]) + // paf lbs
 		'\t' + parseInt(z[6]) + // paf mins
 		'\t' + (parseInt(z[6])/parseInt(z[5])).toFixed(2) + // mins per 1 lb
+		'\t' + "" + // Actual arvl fuel
+		'\t' + "" + // Actual arvl mins
 		'</textarea><br/>';
 		/*
 		while(null != (z = tmp_regv.exec(fkeystxt))) {
