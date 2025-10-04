@@ -158,7 +158,7 @@ function compute (str_override = "") {
 	regw = /(PERMANENT AIRPORT ANALYSIS)/g;
 
 	// Briefing
-	regv = /PAGE\s1\s([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+\n/g;
+	regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+\n/g;
 	
 	var testing = false;
 	var land_wgt_limited = false;
@@ -843,7 +843,7 @@ function decs_route(input = null, cdr_list = null) {
 
 function briefing_parse(fkeystxt = "") {
 	var result = "briefing recognized // unable to parse";
-	var tmp_regv = /PAGE\s1\s([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+\n/g;
+	var tmp_regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+/g;
 
 	if ((z = (tmp_regv.exec(fkeystxt))) != null) {
 		result = '<textarea rows="5" cols="80">' + z[3] + '\t' + z[1] + '\t' + z[2] + 
