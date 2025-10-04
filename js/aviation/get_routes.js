@@ -7032,12 +7032,13 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 MOL FLASK OZZZI1 KATL\" readonly>";
 					result += "<br/>PS<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB HVQ HLRRY ONDRE1 KATL\" readonly>";
 					break;
-				case "AUS": // Updated 07-07-2025
-					result += "<!-- Updated 07-07-2025 P -->";
+				case "AUS":  // Updated 10-04-2025
+					result += "<!-- Updated 10-04-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 AEX LFK WEEED WLEEE7 KAUS\" readonly>"; // CDR PH
-					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA J64 MAINE PXV J131 LIT TXK BROBB WINDU SEWZY6 KAUS\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ JEDER Q80 FAREV UJM Q31 JODOX JIGAM WINDU SEWZY6 KAUS\" readonly>";
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 SESUE SAV AMG DEFUN J2 LCH Q24 MOLLR DBOYS WLEEE7 KAUS\" readonly>";
+					result += "<br/><br/>North via FWA<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA J64 FWA BVT AXC STL J8 SGF J98 TUL J87 CVE BROBB WINDU SEWZY6 KAUS\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPHL MXE PENSY FLIRT MRB PERKS HVQ BNA MEM TXK WINDU BLEWE5 KAUS\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-07-2025
