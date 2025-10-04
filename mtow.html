@@ -843,24 +843,61 @@ function decs_route(input = null, cdr_list = null) {
 
 function briefing_parse(fkeystxt = "") {
 	var result = "briefing recognized // unable to parse";
-	var tmp_regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+/g;
+	var tmp_regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})\n[^\/]+\/(\d+)\s([^\/]+)\/[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+/g;
 
+	/*
+	* 1 - Dptr
+	* 2 - Arvl
+	* 3 - Flight #
+	* 4 - Desk #
+	* 5 - Date (Day only)
+	* 6 - Tail #
+	* 7 - PAF Lbs
+	* 8 - PAF Mins
+	* 9 - Fuel Ladder Text
+	*/
 	if ((z = (tmp_regv.exec(fkeystxt))) != null) {
-		result = '<textarea rows="5" cols="80">' + z[3] + '\t' + z[1] + '\t' + z[2] + 
-		'\t' + "" + // Tail num
-		'\t' + parseInt(z[5]) + // paf lbs
-		'\t' + parseInt(z[6]) + // paf mins
-		'\t' + (parseInt(z[6])/parseInt(z[5])).toFixed(2) + // mins per 1 lb
-		'\t' + "" + // Actual arvl fuel
-		'\t' + "" + // Actual arvl mins
-		'</textarea><br/>';
+		result = '<textarea rows="5" cols="80">' + z[3] + '\t' + z[1] + '\t' + z[2] + '\t' + z[6] + 
+		'\t' + parseInt(z[7]) + // paf lbs
+		'\t' + parseInt(z[8]) + // paf mins
+		'\t' + (parseInt(z[8])/parseInt(z[7])).toFixed(2) + // mins per 1 lb
+		'\t' + "" + // RPT PAF mins
+		'\t' + '=IF(OFFSET(INDIRECT(ADDRESS(ROW(), COLUMN())),0,-1)<>"",ABS(OFFSET(INDIRECT(ADDRESS(ROW(), COLUMN())),0,-3)-OFFSET(INDIRECT(ADDRESS(ROW(), COLUMN())),0,-1)),"--")' + '\t'; // Delta RPAF || APAF
+		var taxi_regex = /\-{5}\nTAXI[^\n\d]+(\d+)\s(\d+)[^\d]/g;
+		if ((y = (taxi_regex.exec(z[9]))) != null) {
+			result += '=IF(OFFSET(INDIRECT(ADDRESS(ROW(), COLUMN())),0,-2)<>"",ABS((OFFSET(INDIRECT(ADDRESS(ROW(), COLUMN())),0,-4)-' + parseInt(y[2]) + ')),"--")\t'; // Delta RPAF || APAF
+		} else { result += ' \t'; }
+		result += ' \t \t \t \t'; // Rptd ON Time // Rptd IN /Time / Rptd IN Fuel // RPT AAF Mins
+		
+		// TODO Delta AAF inc Taxi // Delta AAF
+		
+		result += '</textarea><br/>';
+		
 		/*
-		while(null != (z = tmp_regv.exec(fkeystxt))) {
-			
-		}
+		while(null != (z = tmp_regv.exec(fkeystxt))) {}
 		*/
+
+		// console.log(z);
 	}
 	return result;
+/*
+ARPT FUEL TIME DIST
+ENRT BRN SAT 005446 0047 244
+--------------------------------------------------------------------
+RSV 05538 0045
+MAF 00332 0004
+ALTN NONE 00000 0000
+--------------------------------------------------------------------
+MIN T/O 011316
+--------------------------------------------------------------------
+BASELINE 01184 0015
+--------------------------------------------------------------------
+TAXI DFW 00598 0025
+RLS FUEL DFW 013098
+--------------------------------------------------------------------
+ADMIN 00946 0011
+TOTAL DFW 014044
+*/
 }
 
 Array.prototype.unique = function() {
