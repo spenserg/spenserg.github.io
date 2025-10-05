@@ -6595,22 +6595,32 @@ KMSN WAITS OBK TTH IIU Q108 SITTR Q34 GVE PAATS4 KPHL
 
 // TODO MSY-ORD
 					
-				case "PHL": // MSY-PHL // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
+				case "PHL": // MSY-PHL // Updated 10-05-2025
+					result += "<!-- Updated 10-05-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSY CATLN Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 GVE PAATS4 KPHL\" readonly>";
-					result += "<br/><br/>MGM 3: <input style=\"width:75%\" value=\"KMSY CATLN FRDDO NOKIE TWINS BLAAN Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY MCB WINAP Q40 MAULS GVE PAATS4 KPHL\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>"; // CDR 0C
+					result += "<br/><br/>North via JST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMSY MCB MEMFS PXV RINTE JST BOJID4 KPHL\" readonly>"; // CDR 2T
+					result += "<br/><br/><b>Playbooks:</b>";
+					result += "<br/><br/>CEW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>HITMN<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 MAULS BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>JOT 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>";
+					result += "<br/>MGM 3<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMSY CATLN FRDDO NOKIE TWINS BLAAN Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>VLKNN<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY CATLN Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSY GCV MGM LGC ODF SPA GSO BEARI FAK SWL VCN9 KPHL\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>0B (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 GVE PAATS4 KPHL\" readonly>";
-					result += "<br/>0D (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J30 TRAKK J152 JST BOJID4 KPHL\" readonly>";
-					result += "<br/>0E (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>";
-					result += "<br/>0T (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN MGMRY TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/>1P (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/>2T (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS PXV RINTE JST BOJID4 KPHL\" readonly>";
-					result += "<br/>7T (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 MAULS BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-05-2025
+					result += "<!-- Verified with ATCSCC on 10-05-2025 -->";
+					result += "<br/>0B<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 GVE PAATS4 KPHL\" readonly>";
+					result += "<br/>0C<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY SJI CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>0D<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J30 TRAKK J152 JST BOJID4 KPHL\" readonly>";
+					result += "<br/>0E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>";
+					result += "<br/>0T<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN MGMRY TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>2G<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN FRDDO NOKIE TWINS BLAAN Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>2T<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS PXV RINTE JST BOJID4 KPHL\" readonly>";
+					result += "<br/>2V<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>7T<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 MAULS BBDOL PAATS4 KPHL\" readonly>";
 					break;
 				case "PHX": // MSY-PHX // Updated 01-16-2025
 					result += "<!-- Updated 01-16-2025 -->";
