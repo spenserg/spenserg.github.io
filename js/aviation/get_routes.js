@@ -6537,23 +6537,33 @@ KMSN WAITS OBK TTH IIU Q108 SITTR Q34 GVE PAATS4 KPHL
 					result += "<br/>1P<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MEI JAMMR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/>7T<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 					break;
-				case "DCA": // MSY-DCA // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
+				case "DCA": // MSY-DCA // Updated 10-05-2025
+					result += "<!-- Updated 10-05-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSY CATLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
-					result += "<br/><br/>North/West: <input style=\"width:75%\" value=\"KMSY MCB J35 SQS HITMN Q34 SITTR TRUPS5 KDCA\" readonly>";
-					result += "<br/><br/>MGM 1: PLAYBOOK MGM 2 : <input style=\"width:75%\" value=\"KMSY CATLN FRDDO KBLER KELLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
-					result += "<br/>MGM 3: <input style=\"width:75%\" value=\"KMSY CATLN FRDDO NOKIE TWINS BLAAN Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MCB MHZ VUZ ODF KTOWN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI CEW ALLMA TEEEM Q109 PANDY SARKY Q113 AARNN WAVES CAPSS3 KDCA\" readonly>"; // CDR 0C
+					result += "<br/></br>North via ROD<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMSY MCB MEMFS PXV RINTE APE J30 LUISE FRDMM6 KDCA\" readonly>"; // CDR 2T
+					result += "<br/><br/><b>Playbooks:</b>";
+					result += "<br/><br/>CEW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI CEW ALLMA TEEEM Q109 PANDY SARKY Q113 AARNN WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>JOT 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J146 WOOST J34 BUCKO FRDMM6 KDCA\" readonly>";
+					result += "<br/>MGM 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY CATLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>MGM 3<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMSY CATLN FRDDO NOKIE TWINS BLAAN Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>VLKNN<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY CATLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>0B: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 SITTR TRUPS5 KDCA\" readonly>";
-					result += "<br/>0E: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J146 WOOST J34 BUCKO FRDMM6 KDCA\" readonly>";
-					result += "<br/>0G: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN FRDDO NOKIE TWINS BLAAN Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
-					result += "<br/>0T: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN MGMRY KBLER KELLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
-					result += "<br/>1P (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
-					result += "<br/>2T (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS PXV RINTE APE J30 LUISE FRDMM6 KDCA\" readonly>";
-					result += "<br/>3P (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN FRDDO NOKIE TWINS BLAAN Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
-					result += "<br/>7T (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 SITTR TRUPS5 KDCA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-05-2025
+					result += "<!-- Verified with ATCSCC on 10-05-2025 -->";
+					result += "<br/>0C<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY SJI CEW ALLMA TEEEM Q109 PANDY SARKY Q113 AARNN WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>0D<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J30 LUISE FRDMM6 KDCA\" readonly>";
+					result += "<br/>0E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J146 WOOST J34 BUCKO FRDMM6 KDCA\" readonly>";
+					result += "<br/>0M<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>0T<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN MGMRY KBLER KELLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>0V<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>1P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>2G<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN FRDDO NOKIE TWINS BLAAN Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>2T<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS PXV RINTE APE J30 LUISE FRDMM6 KDCA\" readonly>";
+					result += "<br/>2V<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>9B<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 SITTR TRUPS5 KDCA\" readonly>";
 					break;
 				case "DFW": // MSY-DFW // Updated 01-16-2025
 					result += "<!-- Updated 01-16-2025 -->";
@@ -6574,13 +6584,30 @@ KMSN WAITS OBK TTH IIU Q108 SITTR Q34 GVE PAATS4 KPHL
 					result += "<br/>9N (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MHZ JRHED SEEVR4 KDFW\" readonly>";
 					result += "<br/>9S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MHZ JRHED SEEVR4 KDFW\" readonly>";
 					break;
-				case "LGA": // MSY-LGA // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
+				case "LGA": // MSY-LGA // Updated 10-05-2025
+					result += "<!-- Updated 10-05-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSY CATLN Q22 BURGG Q60 HURTS PROUD2 KLGA\" readonly>";
-					result += "<br/><br/>North/West: <input style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q29 DUTSH DJB CXR J146 MIP MIP4 KLGA\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY MCB WINAP Q40 MISLE RMG BURGG Q60 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI CEW ALLMA TEEEM Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>"; // CDR 0C
+					result += "<br/><br/>North via ROD<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS PXV RINTE KLYNE Q29 WWSHR TEESY J146 ETG MIP4 KLGA\" readonly>";
+					result += "<br/><br/><b>Playbooks:</b>";
+					result += "<br/><br/>CEW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY SJI CEW ALLMA TEEEM Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>HITMN<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 GVE PROUD2 KLGA\" readonly>";
+					result += "<br/>JOT 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J146 ETG MIP4 KLGA\" readonly>";
+					result += "<br/>MGM 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY CATLN Q22 BURGG Q60 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>MGM 3<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSY CATLN FRDDO NOKIE TWINS BLAAN Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-05-2025
+					result += "<!-- Verified with ATCSCC on 10-05-2025 -->";
+					result += "<br/>0C<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY SJI CEW ALLMA TEEEM Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>0E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS STL J101 SPI JOT J146 ETG MIP4 KLGA\" readonly>";
+					result += "<br/>0T<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN MGMRY TWOUP Q22 BURGG Q60 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>2G<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN FRDDO NOKIE TWINS BLAAN Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>2T<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB MEMFS PXV RINTE KLYNE Q29 WWSHR TEESY J146 ETG MIP4 KLGA\" readonly>";
+					result += "<br/>2V<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY CATLN Q22 BURGG Q60 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>9T<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSY MCB J35 XESSS MEMFS Q34 GVE PROUD2 KLGA\" readonly>";
+					break;
 					break;
 				case "MIA": // MSY-MIA // Updated 01-28-2025
 					result += "<!-- Updated 01-28-2025 -->";
