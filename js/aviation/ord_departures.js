@@ -112,8 +112,8 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\"; value=\"KORD RBS ENL J71 MEM VUZ KBHM\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-		case "BNA": // ORD-BNA // Updated 07-26-2025
-			result += "<!-- Updated 07-26-2025 -->";
+		case "BNA": // ORD-BNA  // Updated 10-05-2025
+			result += "<!-- Updated 10-05-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL300/320):</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD CMSKY CARYN CYBIL TONES RYYMN3 KBNA\" readonly>";
 			result += "<br/><b>As of 2025-10-05, listed FAA Pref route is CDR 6S, but CDR 6S is marked Coord Rqd<\/b>";
