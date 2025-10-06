@@ -8497,6 +8497,26 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD PUT NELIE Q75 GVE AIROW CHSLY6 KCLT\" readonly>";
 					result += "<br/>T7<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD JUMPR RIFLE HEADI Q97 SAWED GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
 					break;
+				case "DCA": // Updated 10-06-2025
+					result += "<!-- Updated 10-06-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KPVD JUMPR RIFLE Q167 ZIZZI KNUKK ATR LAFLN DEALE3 KDCA\" readonly>";
+					result += "<br/></br>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPVD PUT NELIE Q75 MXE CLIPR3 KDCA\" readonly>"; // CDR PB
+					result += "<br/></br>West via PSB<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPVD PUT CTR CAM SYR J59 PSB SKILS5 KDCA\" readonly>"; // CDR Y5
+					result += "<br/><br/><b>Playbooks:</b>";
+					result += "<br/>DC NORTH<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPVD PUT CTR CAM SYR J59 PSB SKILS5 KDCA\" readonly>";
+					result += "<br/>DC NORTH 2<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPVD JUMPR RIFLE Q167 ZIZZI KNUKK ATR LAFLN DEALE3 KDCA\" readonly>";
+					result += "<br/>ZBW CZU TO ZDC<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPVD PUT CTR CAM PUPPY MEMMS PSB SKILS5 KDCA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-06-2025
+					result += "<!-- Verified with ATCSCC on 10-06-2025 -->";
+					result += "<br/>29<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD PUT CTR CAM Q822 GONZZ Q29 JHW CXR AIR J34 BUCKO FRDMM6 KDCA\" readonly>";
+					result += "<br/>N4<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD PUT CTR HNK J49 PSB SKILS5 KDCA\" readonly>";
+					result += "<br/>PB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD PUT NELIE Q75 MXE CLIPR3 KDCA\" readonly>";
+					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD JUMPR RIFLE Q167 ZIZZI KNUKK ATR LAFLN DEALE3 KDCA\" readonly>";
+					result += "<br/>PM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD PUT CTR CAM PUPPY MEMMS PSB SKILS5 KDCA\" readonly>";
+					result += "<br/>Y5<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD PUT CTR CAM SYR J59 PSB SKILS5 KDCA\" readonly>";
+					break;
 			}
 		break; // End of PVD
 
