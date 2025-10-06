@@ -474,9 +474,11 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 			return (x[0].localeCompare(y[0]));
 		});
 	}
+	/* Add extra <br> at the beginning; function now obsolete
 	if (sortable.length > 0) {
 		sortable[0][3] = sortable[0][3].replace('result += \"<br/>', 'result += \"<br/><br/>');
 	}
+	*/
 	result_arr['other'] = sortable;
 
 	result_arr['arvl'] = ((arvl.length == 4) ? arvl.substring(1, 4) : arvl);
@@ -599,7 +601,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		((non_rnav.length == 0) ? "// " : "") + 'result += \"<br/><br/><b>Non RNAV</b>\";' +
 		((non_rnav.length == 0) ? " // TODDO" : (textarea_tabs + non_rnav)) +
 		'</textarea><br/><br/>' +
-		((playbook_str.length > 0) ? ('<textarea rows="8" cols="80">result += \"<br/><br/><b>Playbooks:</b>\";\n' + playbook_str.trim() + '</textarea><br/><br/>') : "") +
+		((playbook_str.length > 0) ? ('<textarea rows="8" cols="80">result += \"<br/><br/><b>Playbooks:</b>\";' + textarea_tabs + playbook_str.trim().replace("<br/><br/>","<br/>") + '</textarea><br/><br/>') : "") +
 		'<textarea rows="15" cols="80">' + 'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
 		'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
 		cdr_str + textarea_tabs + "break;</textarea><br/><br/>" + new_cdr_str +
