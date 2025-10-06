@@ -2436,7 +2436,7 @@ DCA.SCRAM6.GLANC.DCT.COLZI.DCT.SUG.DCT.AVL // MAX FL220
 					result += "<br/>BM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE GGRNT JRIZZ DPK DPK3 KBDL\" readonly>";
 					result += "<br/>YK<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL HEADI BELTT MAD BRISS KBDL\" readonly>";
 					break;
-				case "BGR": // Updated 10-06-2025
+				case "BGR": // DCA-BGR // Updated 10-06-2025
 					result += "<!-- Updated 10-06-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA SOOKI5 SWANN BROSS Q419 RBV Q22 FOXWD BOS KBGR\" readonly>"; // CDR 00
@@ -3133,7 +3133,7 @@ KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI ORCHA JORDN JORDN2 KPVD
 KDCA AMEEE1 SCOOB SAWED Q97 ZJAAY Q167 ORCHA JORDN JORDN2 KPVD
 KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI ORCHA JORDN JORDN2 KPVD
 */
-				case "PVD": // Updated 10-06-2025
+				case "PVD": // DCA-PVD // Updated 10-06-2025
 					result += "<!-- Updated 10-06-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA SOOKI5 SWANN BROSS Q419 RBV Q430 CREEL ORCHA JORDN JORDN2 KPVD\" readonly>"; // CDR 00
@@ -8497,9 +8497,9 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD PUT NELIE Q75 GVE AIROW CHSLY6 KCLT\" readonly>";
 					result += "<br/>T7<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPVD JUMPR RIFLE HEADI Q97 SAWED GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
 					break;
-				case "DCA": // Updated 10-06-2025
+				case "DCA": // PVD-DCA // Updated 10-06-2025
 					result += "<!-- Updated 10-06-2025 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPVD JUMPR RIFLE Q167 ZIZZI KNUKK ATR LAFLN DEALE3 KDCA\" readonly>";
 					result += "<br/></br>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPVD PUT NELIE Q75 MXE CLIPR3 KDCA\" readonly>"; // CDR PB
 					result += "<br/></br>West via PSB<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPVD PUT CTR CAM SYR J59 PSB SKILS5 KDCA\" readonly>"; // CDR Y5
