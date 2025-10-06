@@ -73,20 +73,18 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>4S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI FAM J137 LIT J101 LFK WEEED WLEEE7 KAUS\" readonly>";
 			result += "<br/>5S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV J131 FUZ WINDU SEWZY6 KAUS\" readonly>";
 			break;
-		case "BDL": // ORD-BDL // Updated 02-20-2025
-			result += "<!-- Updated 02-20-2025 -->";
+		case "BDL": // ORD-BDL  // Updated 10-05-2025
+			result += "<!-- Updated 10-05-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD DUFEE ELX HAAKK DOXXY SOSIC JHW Q82 MEMMS WILET STELA1 KBDL\" readonly>"; // CDR 0E
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK NOTAP KAPUX TULEG ALB STELA1 KBDL\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR Q34 RBV Q419 DPK DPK3 KBDL\" readonly>";
-			result += "<br/><br/>CAN NOTAP EAST 3: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK NOTAP RADEN BUGSY ALB STELA1 KBDL\" readonly>";
-			result += "<br/>MACER 1: <input style=\"width:75%\"; value=\"KORD TAAYZ PECOK DAYYY RUBKI SIKBO TULEG RKA STELA1 KBDL\" readonly>";
-			result += "<br/>MACER 2: <input style=\"width:75%\"; value=\"KORD SQUIB HAUCK HRRSH HOCKE SIKBO TULEG RKA STELA1 KBDL\" readonly>";
-			result += "<br/>MACER 3: <input style=\"width:75%\"; value=\"KORD SQUIB HAUCK HRRSH HOCKE SIKBO AHPAH HANKK AUDIL STELA1 KBDL\" readonly>";
+			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK DAYYY RUBKI SIKBO AHPAH HANKK AUDIL STELA1 KBDL\" readonly>"; // CDR C4
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR Q34 RBV Q419 DPK DPK3 KBDL\" readonly>";
+			result += "<br/><br/><b>Playbooks:</b>";
+			result += "<br/>CAN NOTAP EAST 3<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK NOTAP RADEN BUGSY ALB STELA1 KBDL\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD ELX CRL J554 JHW HNK STELA1 KBDL\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-20-2025
-			result += "<!-- Verified with ATCSCC on 02-20-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-05-2025
+			result += "<!-- Verified with ATCSCC on 10-05-2025 -->";
 			result += "<br/>0E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DUFEE ELX HAAKK DOXXY SOSIC JHW Q82 MEMMS WILET STELA1 KBDL\" readonly>";
 			result += "<br/>0N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE Q935 AUDIL STELA1 KBDL\" readonly>";
 			result += "<br/>C0<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK DAYYY RUBKI SIKBO TULEG ALB STELA1 KBDL\" readonly>";
@@ -117,20 +115,21 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "BNA": // ORD-BNA // Updated 07-26-2025
 			result += "<!-- Updated 07-26-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL300/320):</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD CMSKY CARYN CYBIL PXV GUMMA RYYMN2 KBNA\" readonly>";
-			result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL YACKS RYYMN2 KBNA\" readonly>";
-			result += "<br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE HYK GUMMA RYYMN2 KBNA\" readonly>"; // CDR 2E
+			result += "<br/><input style=\"width:75%\"; value=\"KORD CMSKY CARYN CYBIL TONES RYYMN3 KBNA\" readonly>";
+			result += "<br/><b>As of 2025-10-05, listed FAA Pref route is CDR 6S, but CDR 6S is marked Coord Rqd<\/b>";
+			result += "<br/></br>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE LOONE RYYMN3 KBNA\" readonly>"; // Based on CDR 2E
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF ARG LOPPY CHSNE3 KBNA\" readonly>"; // CDR 0W
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD CMSKY CARYN CYBIL PXV J73 KBNA\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-26-2025
-			result += "<!-- Verified with ATCSCC on 07-26-2025 -->";
-			result += "<br/>0E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME SEWTO FWA LULOU RYYMN2 KBNA\" readonly>";
-			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV GUMMA RYYMN2 KBNA\" readonly>";
-			result += "<br/>0W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF ARG LOPPY CHSNE2 KBNA\" readonly>";
-			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU LULOU RYYMN2 KBNA\" readonly>";
-			result += "<br/>2E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE HYK GUMMA RYYMN2 KBNA\" readonly>";
-			result += "<br/>4S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE GUMMA RYYMN2 KBNA\" readonly>";
-			result += "<br/>6S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI YACKS RYYMN2 KBNA\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-05-2025
+			result += "<!-- Verified with ATCSCC on 10-05-2025 -->";
+			result += "<br/>0E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME SEWTO FWA TONES RYYMN3 KBNA\" readonly>";
+			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL TONES RYYMN3 KBNA\" readonly>";
+			result += "<br/>0W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF ARG LOPPY CHSNE3 KBNA\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM CUTRR RYYMN3 KBNA\" readonly>";
+			result += "<br/>2E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE LOONE RYYMN3 KBNA\" readonly>";
+			result += "<br/>4S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE TONES RYYMN3 KBNA\" readonly>";
+			result += "<br/>6S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI PLESS SOKOL RYYMN3 KBNA\" readonly>";
 			break;
 		case "BOS": // ORD-BOS // Updated 01-17-2025
 			result += "<!-- Updated 01-17-2025 -->";
