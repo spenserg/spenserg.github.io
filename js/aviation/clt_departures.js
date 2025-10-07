@@ -631,7 +631,7 @@ KCLT BOBZY5 BNA Q36 RZC PER TOTOE LAA J52 FQF CKW DNW KJAC
 			result += "<br/><input style=\"width:75%\" value=\"KCLT BARMY5 TYI Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>"; // CDR RP
 			result += "<br/><b style=\"color:orange\">CDR RP is .. TYI ORF SAWED.. FAA Pref is ..TYI Q64 SAWED.. but its the same route<\/b>";
 			result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM DEDDY Y436 DIZNY WHOOS Y494 YAALE Y495 CAMRN CAMRN5 KJFK\" readonly>";
-			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>"; // CDR JJ
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD KLYNE Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>"; // CDR JJ
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 MERIL TYI ORF RADDS SIE CAMRN5 KJFK\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-07-2025
