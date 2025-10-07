@@ -429,7 +429,7 @@ KPHX ZEPER2 RRSTA EED J6 PMD FASTO2 KBFL
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ J18 SLN J24 MCI J80 SPI KOLTS WWODD RINTE KLYNE Q29 WWSHR JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK J64 PUB GLD J146 IOW OBK J94 PMM J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J50 ABI J42 TXK Q34 RBV KJFK\" readonly>";
+			result += "<br/>South: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J50 ABI J42 TXK Q34 RBV SIE CAMRN5 KJFK\" readonly>";
 			result += "<br/><br/>CEW: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J86 IAH J2 CEW ALLMA TEEEM Q109 DFENC SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
 			result += "<br/>JOT 1: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA TXC HCT J60 JOT ELX SVM J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/>JOT 2: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK ALS PUB J64 HLC PWE LMN MZV JOT ELX SVM J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
