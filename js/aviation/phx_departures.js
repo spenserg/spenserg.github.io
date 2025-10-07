@@ -424,30 +424,30 @@ KPHX ZEPER2 RRSTA EED J6 PMD FASTO2 KBFL
 			// result += "<br/><br/><b>Non RNAV</b>";			
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-		case "JFK": // PHX-JFK // Updated 02-21-2025
-			result += "<!-- Updated 02-21-2025 -->";
+		case "JFK": // PHX-JFK // Updated 10-07-2025
+			result += "<!-- Updated 10-07-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ J18 SLN J24 MCI J80 SPI KOLTS WWODD RINTE KLYNE Q29 WWSHR JHW J70 LVZ LENDY8 KJFK\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK J64 PUB GLD J146 IOW OBK J94 PMM J70 LVZ LENDY8 KJFK\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ J18 SLN J24 MCI J80 SPI KOLTS WWODD RINTE KLYNE Q29 WWSHR JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK J64 PUB GLD J146 IOW OBK J94 PMM J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J50 ABI J42 TXK Q34 RBV KJFK\" readonly>";
 			result += "<br/><br/>CEW: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J86 IAH J2 CEW ALLMA TEEEM Q109 DFENC SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
-			result += "<br/>JOT 1: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA TXC HCT J60 JOT ELX SVM J70 LVZ LENDY8 KJFK\" readonly>";
-			result += "<br/>JOT 2: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK ALS PUB J64 HLC PWE LMN MZV JOT ELX SVM J70 LVZ LENDY8 KJFK\" readonly>";
+			result += "<br/>JOT 1: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA TXC HCT J60 JOT ELX SVM J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+			result += "<br/>JOT 2: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK ALS PUB J64 HLC PWE LMN MZV JOT ELX SVM J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/>MGM 1: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE EWM J66 ABI J4 FUZ Q184 ARNNY FRDDO FIGEY Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
 			result += "<br/>MGM 2: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J86 IAH J2 LCH J138 SJI Q56 CATLN FRDDO FIGEY Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
-			result += "<br/>SPI: <span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 SLN J24 MCI J80 VHP ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
+			result += "<br/>SPI: <span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 SLN J24 MCI J80 VHP ROD KLYNE Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/>VLKNN<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR FIGEY Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
 			result += "<br/>VUZ: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J50 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR FIGEY Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX SJN9 SJN GUP J102 ALS PUB GLD OBH DSM DBQ J100 OBK J584 CRL J554 JHW J70 LVZ LENDY8 KJFK\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-21-2025
-			result += "<!-- Verified with ATCSCC on 02-21-2025 -->";
-			result += "<br/>BR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO ACH LBL ICT BUM STL VHP ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-07-2025
+			result += "<!-- Verified with ATCSCC on 10-07-2025 -->";
+			result += "<br/>BR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO ACH TOTOE ICT BUM STL VHP ROD KLYNE Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/>EC<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 PHASE EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR FIGEY Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
 			result += "<br/>EZ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 PHASE EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR FIGEY Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
-			result += "<br/>FS<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 SLN J24 MCI J80 VHP ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
-			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS PUB J64 HLC PWE LMN MZV JOT ELX SVM J70 LVZ LENDY8 KJFK\" readonly>";
-			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO ONM ACH LBL ICT BUM STL VHP ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
+			result += "<br/>FS<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 SLN J24 MCI J80 VHP ROD KLYNE Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS PUB J64 HLC PWE LMN MZV JOT ELX SVM J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO ONM ACH TOTOE ICT BUM STL VHP ROD KLYNE Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			break;
 		case "LAS": // PHX-LAS // Updated 05-09-2025 // Mandatory Routes checked
 			result += "<!-- Updated 05-09-2025 MP -->";
