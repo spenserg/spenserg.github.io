@@ -634,10 +634,10 @@ KCLT BOBZY5 BNA Q36 RZC PER TOTOE LAA J52 FQF CKW DNW KJAC
 			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>"; // CDR JJ
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 MERIL TYI ORF RADDS SIE CAMRN5 KJFK\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-28-2025
-			result += "<!-- Verified with ATCSCC on 04-28-2025 -->";
-			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV FLM ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
-			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD KLYNE Q29 JHW J70 LVZ LENDY8 KJFK\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-07-2025
+			result += "<!-- Verified with ATCSCC on 10-07-2025 -->";
+			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV FLM ROD KLYNE Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD KLYNE Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 TYI ORF SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD SITTR Q108 SIE CAMRN5 KJFK\" readonly>";
 			break;
