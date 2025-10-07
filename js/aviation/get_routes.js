@@ -3124,35 +3124,27 @@ KDCA AMEEE1 SCOOB GUILD Q409 ISUZO CABLO CEW PENSI KPNS
 KDCA CLTCH3 FLASK COLZI Q52 CHOPZ MGMRY CEW PENSI KPNS
 */
 
-					/* TODO - FOS ROUTES: DCA-PVD
-KDCA SOOKI5 SWANN BROSS Q419 RBV Q430 CREEL ORCHA JORDN JORDN2 KPVD
-KDCA SOOKI5 SWANN BROSS Q419 RBV Q430 CREEL ORCHA JORDN JORDN2 KPVD
-KDCA HORTO4 JERES Q221 BIGEO ARRKK WIPOR4 KPVD
-KDCA HORTO4 JERES J211 LEONI WEVEL ELZ VIEEW MEMMS WIPOR4 KPVD
-KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI ORCHA JORDN JORDN2 KPVD
-KDCA AMEEE1 SCOOB SAWED Q97 ZJAAY Q167 ORCHA JORDN JORDN2 KPVD
-KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI ORCHA JORDN JORDN2 KPVD
-*/
+
 				case "PVD": // DCA-PVD // Updated 10-06-2025
 					result += "<!-- Updated 10-06-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KDCA SOOKI5 SWANN BROSS Q419 RBV Q430 CREEL ORCHA JORDN JORDN2 KPVD\" readonly>"; // CDR 00
-					result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI ORCHA JORDN JORDN2 KPVD\" readonly>"; // CDR 20
+					result += "<br/><input style=\"width:75%\" value=\"KDCA SOOKI5 SWANN BROSS Q419 RBV Q430 CREEL HTO JORDN2 KPVD\" readonly>"; // CDR 00
+					result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI HTO JORDN2 KPVD\" readonly>"; // CDR 20
 					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA HORTO4 JERES Q221 BIGEO ARRKK WIPOR4 KPVD\" readonly>"; // CDR 10
 					result += "<br/><br/><b>Playbooks:</b>";
-					result += "<br/>SOUTH TO ZBW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI ORCHA JORDN JORDN2 KPVD\" readonly>";
+					result += "<br/>SOUTH TO ZBW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI HTO JORDN2 KPVD\" readonly>";
 					result += "<br/>WEVEL<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA HORTO4 JERES J211 LEONI WEVEL ELZ VIEEW MEMMS WIPOR4 KPVD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-06-2025
 					result += "<!-- Verified with ATCSCC on 10-06-2025 -->";
-					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA SOOKI5 SWANN BROSS Q419 RBV Q430 CREEL ORCHA JORDN JORDN2 KPVD\" readonly>";
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA SOOKI5 SWANN BROSS Q419 RBV Q430 CREEL HTO JORDN2 KPVD\" readonly>";
 					result += "<br/>10<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA HORTO4 JERES Q221 BIGEO ARRKK WIPOR4 KPVD\" readonly>";
 					result += "<br/>11<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA HORTO4 JERES J211 LEONI WEVEL ELZ VIEEW MEMMS WIPOR4 KPVD\" readonly>";
-					result += "<br/>20<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI ORCHA JORDN JORDN2 KPVD\" readonly>";
-					result += "<br/>40<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB SAWED Q97 ZJAAY Q167 ORCHA JORDN JORDN2 KPVD\" readonly>";
-					result += "<br/>46<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI ORCHA JORDN JORDN2 KPVD\" readonly>";
-					result += "<br/>BM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI ORCHA JORDN JORDN2 KPVD\" readonly>";
-					result += "<br/>YK<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI ORCHA JORDN JORDN2 KPVD\" readonly>";
+					result += "<br/>20<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI HTO JORDN2 KPVD\" readonly>";
+					result += "<br/>40<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB SAWED Q97 ZJAAY Q167 HTO JORDN2 KPVD\" readonly>";
+					result += "<br/>46<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI HTO JORDN2 KPVD\" readonly>";
+					result += "<br/>BM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI HTO JORDN2 KPVD\" readonly>";
+					result += "<br/>YK<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA DOCTR5 AGARD DONIL DIDIO JODOE HEADI HTO JORDN2 KPVD\" readonly>";
 					break;
 				case "PWM": // DCA-PWM // Updated 08-22-2025
 					result += "<!-- Updated 08-22-2025 P -->";
