@@ -17,7 +17,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX SEBBY3 DAG INW ZUN ACH PNH IRW FSM MEM J41 VUZ KATL\" readonly>";
 			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>EW (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO EWM J66 ABI J4 FUZ Q184 MERDN ORRKK HOBTT2 KATL\" readonly>";
+			result += "<br/>EW (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 FUZ Q184 MERDN ORRKK HOBTT2 KATL\" readonly>";
 			result += "<br/>KT (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J50 ELP FST J138 SAT Q24 LSU SHYRE HOBTT2 KATL\" readonly>";
 			result += "<br/>WR (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM MEM HUTCC KNSAW RUSSA GLAVN1 KATL\" readonly>";
 			break;
@@ -69,12 +69,12 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 DRK J96 GUP FTI EZEEE TUL J46 BNA TAZZA FILPZ4 KCLT\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 DVC PUB J28 ICT ARG TAZZA FILPZ4 KCLT\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO EWM J66 ABI J4 FUZ MEMFS TAZZA FILPZ4 KCLT\" readonly>";
+			result += "<br/>South: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 FUZ MEMFS TAZZA FILPZ4 KCLT\" readonly>";
 			result += "<br/>South via VLKNN: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 FUZ IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM PKE J78 IRW J98 TUL J46 VXV LIINN3 KCLT\" readonly>";
 			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>NF (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
+			result += "<br/>NF (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 			result += "<br/>NJ (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM MEMFS Q34 HITMN TAZZA FILPZ4 KCLT\" readonly>";
 			break;
 		case "CMH": // LAX-CMH // Updated 01-31-2025
