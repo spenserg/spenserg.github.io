@@ -36,10 +36,10 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "BNA": // LAX-BNA // Updated 06-14-2025
 			result += "<!-- Updated 06-14-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-14-2025
-			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 DRK J6 LIT MEM CHSNE2 KBNA\" readonly>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 DRK J6 LIT MEMFS CHSNE3 KBNA\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J96 GCK J110 BUM J112 FAM GUMMA RYYMN2 KBNA\" readonly>";
-			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 FUZ J42 TXK MEM CHSNE2 KBNA\" readonly>";
-			result += "<br/><br/>South via LCH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J86 IAH J2 LCH J22 MEI VUZ TINCA CHSNE2 KBNA\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 FUZ J42 TXK MEMFS CHSNE3 KBNA\" readonly>";
+			result += "<br/><br/>South via LCH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J86 IAH J2 LCH J22 MEI VUZ KISTS CHSNE3 KBNA\" readonly>";
 			result += "<br/>North via HYS<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS J146 DVC J197 HGO J24 HYS BUM YACKS RYYMN2 KBNA\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM J78 IRW FSM MEM KBNA\" readonly>";
