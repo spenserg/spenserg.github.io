@@ -190,7 +190,7 @@ function compute (str_override = "") {
 	} else if ((result = regv.exec(fkeystxt)) != null) {
 		output = briefing_parse(fkeystxt);
 	} else if ((result = regu.exec(fkeystxt)) != null) {
-		output = cdrdoc_parse(fkeystxt);
+		output = cdrdoc_parse(fkeystxt, true);
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
@@ -1137,7 +1137,365 @@ function cdrdoc_parse (text = "", as_text = false) {
 	if (!first_arvl || !first_dptr) {
 		result_str += '\n\t\t\t}\n\t\tbreak;\n\t}\n\treturn result;\n}';
 	}
-	return (return_null ? null : (as_text ? ('<br/><textarea>' + result_str + '</textarea>') : result));
+	return (return_null ? null : (as_text ? ('<br/><textarea>' + add_sids_and_stars_to_cdrs(result_str) + '</textarea>') : result));
+}
+
+function add_sids_and_stars_to_cdrs (result = "") {
+	// SIDS
+	result = result.replaceAll("KABQ CNX", ""); // TODO
+	result = result.replaceAll("KABQ TCC", ""); // TODO
+	result = result.replaceAll("KABQ FTI", "KABQ FYSTA3 FTI");
+	result = result.replaceAll("KABQ ALS", "KABQ ATOMK3 ATOMK ALS");
+	result = result.replaceAll("KABQ ABQ", "KABQ ABQ3 ABQ");
+	result = result.replaceAll("KABQ ONM", ""); // TODO
+	result = result.replaceAll("KABQ TXO", "KABQ MNZNO3 TXO");
+
+	// KATL
+	result = result.replaceAll("KATL KAJIN", ""); // TODO
+	result = result.replaceAll("KATL SMLTZ", ""); // TODO
+
+	// KBFL
+	result = result.replaceAll("KBFL EHF", "KBFL MARIC4 EHF");
+	result = result.replaceAll("KBFL PMD", "KBFL MARIC4 LHS PMD");
+
+	// KBOS
+	result = result.replaceAll("KBOS GLYDE", ""); // TODO
+	result = result.replaceAll("KBOS BOSOX", ""); // TODO
+	result = result.replaceAll("KBOS BURDY", ""); // TODO
+	result = result.replaceAll("KBOS BLZZR", "KBOS BLZZR6 BLZZR");
+
+	// KBUR
+	result = result.replaceAll("KBUR LAS", "KBUR SLAPP2 LAS");
+	result = result.replaceAll("KBUR HEC", "KBUR SLAPP2 HEC");
+	result = result.replaceAll("KBUR BLH", "KBUR SLAPP2 BLH");
+	result = result.replaceAll("KBUR DVC", "KBUR SLAPP2 LAS J146 DVC");
+	result = result.replaceAll("KBUR CSTRO", "KBUR OROSZ2 CSTRO");
+	result = result.replaceAll("KBUR PMD TRM BLH", "KBUR SLAPP2 BLH");
+	result = result.replaceAll("KBUR PMD TRM", "KBUR VNY3 VNY TRM");
+	result = result.replaceAll("KBUR TRM", "KBUR VNY3 VNY TRM");
+	result = result.replaceAll("KBUR PMD", "KBUR VNY3 PMD");
+
+	// KCLE
+	result = result.replaceAll("KCLE BONZZ", ""); // TODO
+
+	// KCVG
+	result = result.replaceAll("KCVG HVQ", "KCVG GIPLE7 HVQ");
+	result = result.replaceAll("KCVG IIU", ""); // TODO
+	result = result.replaceAll("KCVG SITTR", ""); // TODO
+	result = result.replaceAll("KCVG HYK", ""); // TODO
+	result = result.replaceAll("KCVG RIKLE", ""); // TODO
+	result = result.replaceAll("KCVG JODUB", ""); // TODO
+	result = result.replaceAll("KCVG DQN", ""); // TODO
+	result = result.replaceAll("KCVG TRFWA", ""); // TODO
+
+	// KDEN
+	result = result.replaceAll("KDEN LUFSE", ""); // TODO
+	result = result.replaceAll("KDEN GLL", ""); // TODO
+
+	// KELP
+	result = result.replaceAll("KELP RUTER", ""); // TODO
+	result = result.replaceAll("KELP EWM", ""); // TODO
+	result = result.replaceAll("KELP ELP", ""); // TODO
+	result = result.replaceAll("KELP FST", ""); // TODO
+	result = result.replaceAll("KELP DRK", ""); // TODO
+
+	// KEWR
+	result = result.replaceAll("KEWR PARKE", ""); // TODO
+	result = result.replaceAll("KEWR BREZY", ""); // TODO
+	result = result.replaceAll("KEWR ZIMMZ", ""); // TODO
+	result = result.replaceAll("KEWR BDR", ""); // TODO
+	result = result.replaceAll("KEWR HAAYS", ""); // TODO
+	result = result.replaceAll("KEWR BIGGY", ""); // TODO
+	result = result.replaceAll("KEWR ELVAE", ""); // TODO
+	result = result.replaceAll("KEWR NEION", ""); // TODO
+	result = result.replaceAll("KEWR LANNA", ""); // TODO
+	result = result.replaceAll("KEWR NEWEL", ""); // TODO
+	result = result.replaceAll("KEWR COATE", ""); // TODO
+	result = result.replaceAll("KEWR GAYEL", ""); // TODO
+	result = result.replaceAll("KEWR MERIT", ""); // TODO
+	result = result.replaceAll("KEWR GREKI", ""); // TODO
+	result = result.replaceAll("KEWR BETTE", ""); // TODO
+	result = result.replaceAll("KEWR BAYYS", ""); // TODO
+	result = result.replaceAll("KEWR ELIOT", ""); // TODO
+	result = result.replaceAll("KEWR WAVEY", ""); // TODO
+
+	// KFAY
+	result = result.replaceAll("KFAY HINTZ", ""); // TODO
+	result = result.replaceAll("KFAY RDU", ""); // TODO
+	result = result.replaceAll("KFAY JROSS", ""); // TODO
+	result = result.replaceAll("KFAY TORQD", ""); // TODO
+
+	// KFNT
+	result = result.replaceAll("KFNT DERLO", ""); // TODO
+	result = result.replaceAll("KFNT HHRNT", ""); // TODO
+	result = result.replaceAll("KFNT MBS", ""); // TODO
+	result = result.replaceAll("KFNT MONEE", ""); // TODO
+	result = result.replaceAll("KFNT HUBBY", ""); // TODO
+	result = result.replaceAll("KFNT KAYYS", ""); // TODO
+	result = result.replaceAll("KFNT SMUUV", ""); // TODO
+
+	// KFWA
+	result = result.replaceAll("KFWA MIE", ""); // TODO
+	result = result.replaceAll("KFWA PWE", ""); // TODO
+	result = result.replaceAll("KFWA IIU", ""); // TODO
+	result = result.replaceAll("KFWA APE", ""); // TODO
+	result = result.replaceAll("KFWA PXV", ""); // TODO
+	result = result.replaceAll("KFWA ROD", ""); // TODO
+	result = result.replaceAll("KFWA RBS", ""); // TODO
+	result = result.replaceAll("KFWA PNT", ""); // TODO
+	result = result.replaceAll("KFWA OVR", ""); // TODO
+	result = result.replaceAll("KFWA LNK", ""); // TODO
+	result = result.replaceAll("KFWA JOT", ""); // TODO
+	result = result.replaceAll("KFWA BVT", ""); // TODO
+	result = result.replaceAll("KFWA FAM", ""); // TODO
+	result = result.replaceAll("KFWA WHETT", ""); // TODO
+
+	// KGRR
+	result = result.replaceAll("KGRR FWA", ""); // TODO
+	result = result.replaceAll("KGRR OBK", ""); // TODO
+	result = result.replaceAll("KGRR APE", ""); // TODO
+	result = result.replaceAll("KGRR OLYEE", ""); // TODO
+	result = result.replaceAll("KGRR BAE", ""); // TODO
+	result = result.replaceAll("KGRR SMUUV", ""); // TODO
+	result = result.replaceAll("KGRR PXV", ""); // TODO
+	result = result.replaceAll("KGRR VIO", ""); // TODO
+
+	// KIND
+	result = result.replaceAll("KIND OKK", ""); // TODO
+	result = result.replaceAll("KIND BVT", ""); // TODO
+	result = result.replaceAll("KIND DQN", ""); // TODO
+	result = result.replaceAll("KIND SHB", ""); // TODO
+	result = result.replaceAll("KIND OOM", ""); // TODO
+	result = result.replaceAll("KIND TTH", ""); // TODO
+	result = result.replaceAll("KIND PXV", ""); // TODO
+	result = result.replaceAll("KIND MIE", ""); // TODO
+	result = result.replaceAll("KIND DROSE", ""); // TODO
+	result = result.replaceAll("KIND BONNT", ""); // TODO
+	result = result.replaceAll("KIND VHP", ""); // TODO
+
+	// KJFK
+	result = result.replaceAll("KJFK BAYYS", ""); // TODO
+	result = result.replaceAll("KJFK COATE", ""); // TODO
+	result = result.replaceAll("KJFK BDR", ""); // TODO
+	result = result.replaceAll("KJFK HAAYS", ""); // TODO
+	result = result.replaceAll("KJFK RBV", ""); // TODO
+	result = result.replaceAll("KJFK WAVEY", ""); // TODO
+	result = result.replaceAll("KJFK NEION", ""); // TODO
+	result = result.replaceAll("KJFK GAYEL", ""); // TODO
+	result = result.replaceAll("KJFK SHIPP", ""); // TODO
+	result = result.replaceAll("KJFK MERIT", ""); // TODO
+	result = result.replaceAll("KJFK GREKI", ""); // TODO
+	result = result.replaceAll("KJFK BETTE", ""); // TODO
+	result = result.replaceAll("KJFK DIXIE", ""); // TODO
+	result = result.replaceAll("KJFK WHITE", ""); // TODO
+	result = result.replaceAll("KJFK ARD", ""); // TODO
+
+	// KLAS
+	result = result.replaceAll("KLAS GUP", "KLAS NIITZ4 SSKEE GUP");
+	result = result.replaceAll("KLAS INW", "KLAS NIITZ4 SSKEE INW");
+	result = result.replaceAll("KLAS TBC", "KLAS NIITZ4 HOCEE TBC");
+	result = result.replaceAll("KLAS DVC", "KLAS GIDGT3 TUKRR DVC");
+	result = result.replaceAll("KLAS PGS",   "KLAS HOOVR8 PGS");
+	result = result.replaceAll("KLAS VERKN", "KLAS GIDGT3 VERKN");
+	result = result.replaceAll("KLAS TUKRR", "KLAS GIDGT3 TUKRR");
+	result = result.replaceAll("KLAS SSKEE", "KLAS NIITZ4 SSKEE");
+	result = result.replaceAll("KLAS HOCEE", "KLAS NIITZ4 HOCEE");
+	result = result.replaceAll("KLAS ZAYNE", "KLAS RASLR3 ZAYNE");
+	result = result.replaceAll("KLAS FRNCK", "KLAS RATPK3 FRNCK");
+	result = result.replaceAll("KLAS JAYSN", "KLAS LOHLA3 JAYSN");
+	result = result.replaceAll("KLAS KENNO", "KLAS JOHKR5 KENNO");
+	result = result.replaceAll("KLAS LVELL", "KLAS RADYR2 LVELL");
+	result = result.replaceAll("KLAS HEC",   "KLAS RADYR2 HEC");
+	result = result.replaceAll("KLAS DRK", ""); // TODO
+	result = result.replaceAll("KLAS BCE", ""); // TODO
+	result = result.replaceAll("KLAS TBC", ""); // TODO
+	result = result.replaceAll("KLAS BIKKR", ""); // TODO
+
+	// KLAX
+	result = result.replaceAll("KLAX LAS", "KLAX ORCKA5 LAS");
+	result = result.replaceAll("KLAX BEALE", "KLAX ORCKA5 BEALE");
+	result = result.replaceAll("KLAX CLEEE", "KLAX DOTSS2 CLEEE");
+	result = result.replaceAll("KLAX CNERY", "KLAX DOTSS2 CNERY");
+	// result = result.replaceAll("KLAX BLH", "KLAX BLH"); // todo non rnav qqq
+	result = result.replaceAll("KLAX TCATE", "KLAX PNDAH2 TCATE");
+	result = result.replaceAll("KLAX FICKY", "KLAX ZILLI5 FICKY");
+	result = result.replaceAll("KLAX DVC", ""); // TODO
+	result = result.replaceAll("KLAX CSTRO", ""); // TODO
+	result = result.replaceAll("KLAX IKAYE", ""); // TODO
+
+	// KLGA
+	result = result.replaceAll("KLGA BAYYS", ""); // TODO
+	result = result.replaceAll("KLGA ZIMMZ", ""); // TODO
+	result = result.replaceAll("KLGA HAAYS", ""); // TODO
+	result = result.replaceAll("KLGA BDR", ""); // TODO
+	result = result.replaceAll("KLGA BIGGY", ""); // TODO
+	result = result.replaceAll("KLGA PARKE", ""); // TODO
+	result = result.replaceAll("KLGA WHITE", ""); // TODO
+	result = result.replaceAll("KLGA NEION", ""); // TODO
+	result = result.replaceAll("KLGA LANNA", ""); // TODO
+	result = result.replaceAll("KLGA NEWEL", ""); // TODO
+	result = result.replaceAll("KLGA JFK", ""); // TODO
+	result = result.replaceAll("KLGA MERIT", ""); // TODO
+	result = result.replaceAll("KLGA COATE", ""); // TODO
+	result = result.replaceAll("KLGA GREKI", ""); // TODO
+	result = result.replaceAll("KLGA GAYEL", ""); // TODO
+	result = result.replaceAll("KLGA BETTE", ""); // TODO
+	result = result.replaceAll("KLGA ELIOT", ""); // TODO
+	result = result.replaceAll("KLGA BREZY", ""); // TODO
+
+	// KMSP
+	result = result.replaceAll("KMSP GEP", ""); // TODO
+	result = result.replaceAll("KMSP HYR", ""); // TODO
+	result = result.replaceAll("KMSP DLH", ""); // TODO
+
+	// KMSY
+	result = result.replaceAll("KMSY AEX", ""); // TODO
+	result = result.replaceAll("KMSY NTCHZ", ""); // TODO
+	result = result.replaceAll("KMSY PAYTN", ""); // TODO
+	result = result.replaceAll("KMSY CEW", ""); // TODO
+	result = result.replaceAll("KMSY SJI", ""); // TODO
+	result = result.replaceAll("KMSY MCB", ""); // TODO
+	result = result.replaceAll("KMSY JEPEG", ""); // TODO
+	result = result.replaceAll("KMSY CATLN", ""); // TODO
+	result = result.replaceAll("KMSY MEI", ""); // TODO
+	result = result.replaceAll("KMSY LBY", ""); // TODO
+	result = result.replaceAll("KMSY IAH", ""); // TODO
+	result = result.replaceAll("KMSY KCEEE", ""); // TODO
+	result = result.replaceAll("KMSY LFT", ""); // TODO
+	result = result.replaceAll("KMSY BLVNS", ""); // TODO
+	result = result.replaceAll("KMSY LAMMY", ""); // TODO
+	result = result.replaceAll("KMSY TBD", ""); // TODO
+	result = result.replaceAll("KMSY REDFN", ""); // TODO
+	result = result.replaceAll("KMSY SQS", ""); // TODO
+
+	// KONT
+	result = result.replaceAll("KONT JLI", ""); // TODO
+	result = result.replaceAll("KONT BLH", "KONT RAJEE4 MTBAL CNERY BLH");
+	result = result.replaceAll("KONT DVC", "KONT SNSHN5 LAS J146 DVC");
+	result = result.replaceAll("KONT EHF", "KONT SNSHN5 EHF");
+	result = result.replaceAll("KONT LAS", "KONT SNSHN5 LAS");
+	result = result.replaceAll("KONT AVRRY", "KONT RAJEE4 AVRRY");
+	result = result.replaceAll("KONT MTBAL", "KONT RAJEE4 MTBAL");
+
+	// KPHX
+	result = result.replaceAll("KPHX PXR", ""); // TODO
+	result = result.replaceAll("KPHX JUDTH", ""); // TODO
+	result = result.replaceAll("KPHX TMACK", ""); // TODO
+
+	// KPIT
+	result = result.replaceAll("KPIT AHTIY", ""); // TODO
+	result = result.replaceAll("KPIT DILNE", ""); // TODO
+	result = result.replaceAll("KPIT TYROO", ""); // TODO
+	result = result.replaceAll("KPIT EWC", ""); // TODO
+	result = result.replaceAll("KPIT CKB", ""); // TODO
+	result = result.replaceAll("KPIT KEMAN", ""); // TODO
+	result = result.replaceAll("KPIT BSV", ""); // TODO
+	result = result.replaceAll("KPIT MGW", ""); // TODO
+	result = result.replaceAll("KPIT JST", ""); // TODO
+
+	// KPSP
+	result = result.replaceAll("KPSP BLH", "KPSP HWRRD1 BLH");
+	result = result.replaceAll("KPSP PMD", "KPSP LGANN1 PMD");
+	result = result.replaceAll("KPSP PSP", "KPSP CATH1 PSP");
+	result = result.replaceAll("KPSP TNP", "KPSP CATH1 PSP V370 TNP");
+	result = result.replaceAll("KPSP TRM", "KPSP HWRRD1 TRM");
+
+	// KPVD
+	result = result.replaceAll("KPVD PUT", ""); // TODO
+	result = result.replaceAll("KPVD JUMPR", ""); // TODO
+	result = result.replaceAll("KPVD PVD", ""); // TODO
+	result = result.replaceAll("KPVD SEY", ""); // TODO
+
+	// KPWM
+	result = result.replaceAll("KPWM ALB", ""); // TODO
+	result = result.replaceAll("KPWM GDM", ""); // TODO
+
+	// KRDU
+	result = result.replaceAll("KRDU CATAR", ""); // TODO
+
+	// KRIC
+	result = result.replaceAll("KRIC HPW", ""); // TODO
+	result = result.replaceAll("KRIC HOUKY", ""); // TODO
+	result = result.replaceAll("KRIC HCM", ""); // TODO
+	result = result.replaceAll("KRIC GVE", ""); // TODO
+
+	// KROC
+	result = result.replaceAll("KROC GEE", ""); // TODO
+	result = result.replaceAll("KROC BURST", ""); // TODO
+	result = result.replaceAll("KROC BEEPS", ""); // TODO
+	result = result.replaceAll("KROC GOATR", ""); // TODO
+	result = result.replaceAll("KROC AIRCO", ""); // TODO
+	result = result.replaceAll("KROC HANKK", ""); // TODO
+	result = result.replaceAll("KROC AUDIL", ""); // TODO
+	result = result.replaceAll("KROC CFB", ""); // TODO
+
+	// KRSW
+	result = result.replaceAll("KRSW DYLYN", ""); // TODO
+	result = result.replaceAll("KRSW MOOKY", ""); // TODO
+	result = result.replaceAll("KRSW CHARO", ""); // TODO
+	result = result.replaceAll("KRSW AABER", ""); // TODO
+	result = result.replaceAll("KRSW MARCI", ""); // TODO
+
+	// KSAN
+	result = result.replaceAll("KSAN IPL", ""); // TODO
+	result = result.replaceAll("KSAN FTI", "KSAN TGOLD PXR J18 FTI");
+	result = result.replaceAll("KSAN GBN", "KSAN ZZOOO4 GBN");
+	result = result.replaceAll("KSAN IKAYE", "KSAN PADRZ2 IKAYE");
+	result = result.replaceAll("KSAN LAX EHF", "KSAN PADRZ7 EHF");
+	result = result.replaceAll("KSAN MTBAL", "KSAN ZZOOO4 MTBAL");
+	result = result.replaceAll("KSAN TGOLD", "KSAN ZZOOO4 TGOLD");
+
+	// KSBA
+	result = result.replaceAll("KSBA LAS", ""); // TODO
+	result = result.replaceAll("KSBA KPTIN", ""); // TODO
+	result = result.replaceAll("KSBA PMD", ""); // TODO
+
+	// KSBP
+	result = result.replaceAll("KSBP LAS", ""); // TODO
+	result = result.replaceAll("KSBP PMD", ""); // TODO
+
+	// KSBY
+	result = result.replaceAll("KSBY OUTLA", ""); // TODO
+	result = result.replaceAll("KSBY SAWED", ""); // TODO
+	result = result.replaceAll("KSBY LAFLN", ""); // TODO
+
+	// KSNA
+	result = result.replaceAll("KSNA AVRRY", "KSNA PIGGN3 AVRRY");
+	result = result.replaceAll("KSNA BEALE", "KSNA FINZZ3 BEALE");
+	result = result.replaceAll("KSNA BLH", "KSNA PIGGN3 CNERY BLH");
+	result = result.replaceAll("KSNA CNERY", "KSNA PIGGN3 CNERY");
+	result = result.replaceAll("KSNA TCATE", "KSNA PIGGN3 TCATE");
+	result = result.replaceAll("KSNA DVC", "KSNA FINZZ3 LAS J146 DVC");
+	result = result.replaceAll("KSNA EHF", "KSNA HHERO3 EHF");
+	result = result.replaceAll("KSNA LAS", "KSNA FINZZ3 LAS");
+
+	// KTUS
+	result = result.replaceAll("KTUS SSO", ""); // TODO
+	result = result.replaceAll("KTUS GBN", ""); // TODO
+
+	// CYOW
+	result = result.replaceAll("CYOW OLIGO", ""); // TODO
+	result = result.replaceAll("CYOW YOW", ""); // TODO
+	result = result.replaceAll("CYOW TUKIR", ""); // TODO
+	result = result.replaceAll("CYOW ART", ""); // TODO
+
+	// CYQB
+	result = result.replaceAll("CYQB UDBAM", ""); // TODO
+	result = result.replaceAll("CYQB PENTU", ""); // TODO
+
+	// CYUL
+	result = result.replaceAll("CYUL TAMKO", ""); // TODO
+	result = result.replaceAll("CYUL KESKA", ""); // TODO
+	result = result.replaceAll("CYUL FAWNS", ""); // TODO
+	result = result.replaceAll("CYUL BOBKI", ""); // TODO
+
+	// CYYZ
+	result = result.replaceAll("CYYZ OLAMO", ""); // TODO
+	result = result.replaceAll("CYYZ VERDO", ""); // TODO
+	result = result.replaceAll("CYYZ NUGOP", ""); // TODO
+	result = result.replaceAll("CYYZ TULEK", ""); // TODO
+
+	return result;
 }
 
 </script>
