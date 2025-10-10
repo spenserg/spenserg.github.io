@@ -159,15 +159,21 @@ function compute (str_override = "") {
 
 	// Briefing
 	regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+\n/g;
+
+	// All CDRs doc // FAA download
+	regu = /RCode\tOrig\tDest\tDepFix\tRoute String\tDCNTR\tACNTR\tTCNTRs\tCoordReq\tPlay\tNavEqp/g;
 	
 	var testing = false;
 	var land_wgt_limited = false;
+	var parse_ab = (((result = rega.exec(fkeystxt)) != null) || ((result = regb.exec(fkeystxt)) != null));
+
 	// For Testing Station Info
 	// XXXYYY | x = dptr | y = arr
 	// xxx - YYY | x = dptr | y = arr
 	if (fkeystxt.replaceAll(" ","").replaceAll("-","").length == 6) {
 		fkeystxt = fkeystxt.replaceAll("-","").replaceAll(" ","");
 		testing = true;
+		parse_ab = true;
 	}
 
 	tmp_rslt = regb.exec(fkeystxt);
@@ -183,9 +189,12 @@ function compute (str_override = "") {
 		output = vaa_parse(fkeystxt);
 	} else if ((result = regv.exec(fkeystxt)) != null) {
 		output = briefing_parse(fkeystxt);
+	} else if ((result = regu.exec(fkeystxt)) != null) {
+		output = cdrdoc_parse(fkeystxt);
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
+		parse_found = true;
 		if (!testing) {
 			mlwa = parseInt(result[2]) - parseInt(result[1]); // Takeoff weight buffer
 			mlwb = parseInt(result[5]) - parseInt(result[4]); // Landing weight buffer
@@ -339,7 +348,7 @@ function compute (str_override = "") {
 
 		// Airport Specific
 		output = airport_extra(flows, result[1], result[2], result[5], ac_type, output);
-	} else if (debug_mode && regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null && regv.exec(fkeystxt) == null) {
+	} else if (debug_mode && parse_ab) {
 		console.log("flifo parse error");
 	}
 
@@ -350,7 +359,7 @@ function compute (str_override = "") {
 	}
 
 	// Routes
-	if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regc.exec(fkeystxt) == null && regw.exec(fkeystxt) == null && regv.exec(fkeystxt) == null && result != null) {
+	if (regz.exec(fkeystxt) == null && (testing || parse_ab)) {
 		output = get_routes(result[1], result[2], result[5], ac_type, output);
 		$("#outbound").val("");
 		if (debug_mode) {
@@ -398,7 +407,7 @@ function compute (str_override = "") {
 	}
 
 	$("#total").html('<br/>' + output);
-	if (regz.exec(fkeystxt) == null && regy.exec(fkeystxt) == null && regw.exec(fkeystxt) == null && result != null) {
+	if (parse_ab && result != null) {
 		change_flow(((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1]), flows[((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1])], true);
 		change_flow(((result[2].length == 4) ? (result[2].substr(1, 4)) : result[2]), flows[((result[2].length == 4) ? (result[2].substr(1, 4)) : result[2])], true);
 	}
