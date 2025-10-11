@@ -7418,6 +7418,17 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT BRNAN Q42 PSYKO KOZAR BONZZ2 KDTW\" readonly>";
 					result += "<br/>PS<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB CIP EEEZI BONZZ BONZZ2 KDTW\" readonly>";
 					break;
+				case "EYW": // PHL-EYW  // Updated 10-11-2025
+					result += "<!-- Updated 10-11-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/>OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"PHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ Q131 WAALT Y289 BAHAA AR17 HIBAC EBAYY FNTSY1 EYW\" readonly>";
+					result += "<br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"PHL OOD TEBEE HAYDO TRPOD Q409 CRPLR PAACK Q97 EBAYY FNTSY1 EYW\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"PHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ SKARP Y313 HOAGG PERMT ZFP BR69V MAYKO FNTSY1 KEYW\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN Q75 ENEME FNTSY1 KEYW\" readonly>";
+					result += "<br/><br/>West via VXV<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ SPAYD VXV THRSR HONID Q81 BULZI KRAKN1 KEYW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-11-2025
+					break;
 				case "FLL": // PHL-FLL // Updated 03-02-2025
 					result += "<!-- Updated 03-02-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -7760,6 +7771,8 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<!-- Updated 03-10-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 NIOLA MERDN TRSSH1 KMSY\" readonly>"; // CDR PH
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 SESUE PANDY TWINS NOKIE FRDDO ARNNY Q184 KWANE MERDN TRSSH1 KMSY\" readonly>"; // CDR CH
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ Q68 SOPIE MEM J35 MCB TRSSH1 KMSY\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ VXV NIOLA MERDN TRSSH1 KMSY\"; readonly>"; // CDR J6
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-10-2025
@@ -8390,18 +8403,20 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT BSV MAYZE CPONE JOT J60 HVE PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>";
 					result += "<br/>S1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT AHTIY BURGS HNN BICKS Q176 BUM J110 RSK J64 TBC JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
 					break;
-				case "PHX": // PIT-PHX // Updated 01-17-2025
-					result += "<!-- Updated 01-17-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KPIT DILNE TVTRN ROD SNKPT Q42 LCOLN IRK J96 CIM ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KPIT AGC BURGS HNN IIU J78 PXV Q25 MEEOW J66 FUZ J4 INK J50 ELP DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/><br/>BUM: <input style=\"width:75%\" value=\"KPIT AHTIY BURGS HNN Q176 BUM ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>FAM: <input style=\"width:75%\" value=\"KPIT AHTIY BURGS HNN IIU J78 FAM J98 SGF PER MMB FTI J244 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>STL: <input style=\"width:75%\" value=\"KPIT DILNE TVTRN ROD VHP STL BUM ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
+				case "PHX": // PIT-PHX  // Updated 10-11-2025
+					result += "<!-- Updated 10-11-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-11-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPIT DILNE TVTRN ROD VHP J110 BUM Q176 CIM J96 GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPIT APE ROD JOT J60 LNK J146 GLD PUB J64 RSK J10 FLG MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPIT AGC BURGS HVQ Q68 LITTR TXK J42 ABI J66 EWM DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/><br/>BUM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPIT AHTIY BURGS HNN Q176 TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>FAM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPIT AHTIY BURGS HNN IIU J78 FAM J98 SGF PER MMB FTI J244 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>IRK<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPIT DILNE TVTRN ROD SNKPT Q42 LCOLN IRK J96 CIM ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPIT DILNE TVTRN ROD PXV FAM J78 ZUN BUNTR3 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>P1: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT DILNE TVTRN ROD VHP J24 STL BUM ICT TOTOE FTI BUKKO ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-11-2025
+					result += "<!-- Verified with ATCSCC on 10-11-2025 -->";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPIT DILNE TVTRN ROD VHP J24 STL BUM ICT TOTOE FTI BUKKO ZUN EAGUL6 KPHX\" readonly>";
 					break;
 			}
 		break; // End of PIT
