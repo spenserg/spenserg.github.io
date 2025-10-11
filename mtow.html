@@ -144,6 +144,8 @@ function compute (str_override = "") {
 	rega = /TOW\n(\d+)\n(\d+)\n([^\n]*)\nLDW\n(\d+)\n(\d+)\n/g;
 	regb = /light\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AA[LT]([\dA-Z]+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,\n\.]+)[\,\n\.][^\n]*\n[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
 
+	tmp_rslt = regb.exec(fkeystxt);
+	
 	// ATCSCC CDRS
 	// https://www.fly.faa.gov/rmt/cdm_operational_coded_departur.jsp
 	regc = /\d\t([^\t]{8})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])\t(\d)\t/g;
