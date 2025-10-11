@@ -162,7 +162,7 @@ function compute (str_override = "") {
 
 	// All CDRs doc // FAA download
 	regu = /RCode\tOrig\tDest\tDepFix\tRoute String\tDCNTR\tACNTR\tTCNTRs\tCoordReq\tPlay\tNavEqp/g;
-	
+
 	var testing = false;
 	var land_wgt_limited = false;
 	var parse_ab = (((rega.exec(fkeystxt)) != null) || ((regb.exec(fkeystxt)) != null));
@@ -174,9 +174,8 @@ function compute (str_override = "") {
 		fkeystxt = fkeystxt.replaceAll("-","").replaceAll(" ","");
 		testing = true;
 	}
-
-	tmp_rslt = regb.exec(fkeystxt);
-
+	var reg_a_result = rega.exec(fkeystxt);
+	
 	if ((result = regz.exec(fkeystxt)) != null) {
 		output = decs_route(fkeystxt, routes_arr['cdr_list']);
 	} else if ((result = regc.exec(fkeystxt)) != null) {
@@ -190,9 +189,10 @@ function compute (str_override = "") {
 		output = briefing_parse(fkeystxt);
 	} else if ((result = regu.exec(fkeystxt)) != null) {
 		output = cdrdoc_parse(fkeystxt, true);
-	} else if (testing || (tmp_rslt !== null && ((result = rega.exec(fkeystxt)) != null))) {
+	} else if (testing || (((tmp_rslt = regb.exec(fkeystxt)) != null) && reg_a_result != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
+		result = reg_a_result;
 		if (!testing) {
 			mlwa = parseInt(result[2]) - parseInt(result[1]); // Takeoff weight buffer
 			mlwb = parseInt(result[5]) - parseInt(result[4]); // Landing weight buffer
@@ -287,7 +287,7 @@ function compute (str_override = "") {
 	} else if (debug_mode) {
 		console.log("regb parse error");
 	}
-	if (testing || (tmp_rslt != null)) {
+	if (testing || (tmp_rslt !== null)) {
 		/*
 	 	*	1 - Dptr Station
 	 	*	2 - Arvl Station
