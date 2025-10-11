@@ -177,9 +177,6 @@ function compute (str_override = "") {
 
 	tmp_rslt = regb.exec(fkeystxt);
 
-	console.log(tmp_rslt);
-	console.log(rega.exec(fkeystxt));
-
 	if ((result = regz.exec(fkeystxt)) != null) {
 		output = decs_route(fkeystxt, routes_arr['cdr_list']);
 	} else if ((result = regc.exec(fkeystxt)) != null) {
@@ -194,9 +191,6 @@ function compute (str_override = "") {
 	} else if ((result = regu.exec(fkeystxt)) != null) {
 		output = cdrdoc_parse(fkeystxt, true);
 	} else if (testing || (tmp_rslt !== null && ((result = rega.exec(fkeystxt)) != null))) {
-
-		console.log("CORRECT SORT");
-		
 		var mlwa = 7777;
 		var mlwb = 7777;
 		if (!testing) {
