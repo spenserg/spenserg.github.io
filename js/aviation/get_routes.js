@@ -8363,7 +8363,7 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					break;
 				case "PHL": // PIT-PHL // Updated 05-27-2025
 					result += "<!-- Updated 05-27-2025 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL230):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPIT JST BOJID4 KPHL\" readonly>";
 					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPIT EWC WOMBT PSB BOJID4 KPHL\" readonly>"; // CDR N1
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPIT MGW MAULS Q34 GVE PAATS4 KPHL\" readonly>"; // CDR S1
