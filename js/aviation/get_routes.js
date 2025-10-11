@@ -3946,28 +3946,31 @@ KELP J86 RUTER J13 FQF BFF J94 ONL FOD MYRRS FYTTE7 KORD
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
 
-					/* TODO - FOS ROUTES: EYW-DCA
+/* TODO - FOS ROUTES: EYW-DCA
 KEYW BUFTT1 MATLK Q87 RAYVO Q113 AARNN WAVES CAPSS3 KDCA
 KEYW TUNSL Y262 ZFP LENDS GRUBR Y299 SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA
 KEYW BUFTT1 JAYMC Q110 SHEEK Q118 KPASA Q99 OGRAE FUUFF WAVES CAPSS3 KDCA
 KEYW BUFTT1 JAYMC Q110 SHEEK Q118 KPASA Q99 CAMJO SPA J85 NEALS SITTR TRUPS5 KDCA
 */
 
-				case "DFW": // EYW-DFW // Updated 01-09-2025
-					result += "<!-- Updated 01-09-2025 -->";
+				case "DFW": // EYW-DFW  // Updated 10-11-2025
+					result += "<!-- Updated 10-11-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KEYW BUFTT1 GUFFS THMPR Y290 BLVNS Q105 HRV J58 AEX PNUTS WHINY4 KDFW\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KEYW BUFTT1 GUFFS THMPR Y290 LEV J86 IAH CRIED WHINY4 KDFW\" readonly>";
-					result += "<br/>Non OW: <input style=\"width:75%\" value=\"KEYW BUFTT1 JAYMC Q116 JAWJA CABLO DEFUN J2 CEW J50 AEX PNUTS WHINY4 KDFW\" readonly>";
-					result += "<br/>Full OW: <input style=\"width:75%\" value=\"KEYW DTSRP PNSLO TBDRL KELPP A766 SBI CRIED BEREE3 KDFW\" readonly>";
-					// result += "<br/><br/><b>Non RNAV</b>";
-					// result += "<br/><br/><b>CDRS</b>";
+					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEYW BUFTT1 JAYMC Q116 JAWJA CABLO DEFUN J2 CEW J50 AEX PNUTS BEREE3 KDFW\" readonly>";
+					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEYW BUFTT1 JAYMC Q116 VLKNN YAALL J14 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEYW BUFTT1 GUFFS THMPR Y290 LEV J86 IAH CRIED BEREE3 KDFW\" readonly>";
+					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEYW DTSRP PNSLO TBDRL KELPP A766 SBI CRIED BEREE3 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-11-2025
 					break;
-/* TODO EYW-MIA
-EYW.BUFTT1.BUFTT.DCT.SNDBR.SNDBR3.MIA
-EYW.DCT.CARNU.DVALL4.MIA
-*/
-
+				case "MIA": // EYW-DFW  // Updated 10-11-2025
+					result += "<!-- Updated 10-11-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KEYW BUFTT1 BUFTT CARNU SNDBR SNDBR3 KMIA\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KEYW CARNU DVALL4 kMIA\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-11-2025
+					break;
 				case "PHL": // EYW-PHL // Updated 09-30-2025
 					result += "<!-- Updated 09-30-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
