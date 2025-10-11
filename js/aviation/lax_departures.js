@@ -465,7 +465,7 @@ LAX.SEBBY3.DAG.J100.OBK.J584.CRL.J34.DJB.DCT.EWC.DCT.JST.J152.HAR.DCT.MDT
 		case "PIT": // LAX-PIT  // Updated 10-11-2025
 			result += "<!-- Updated 10-11-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE DRK J96 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE DRK J96 CIM Q176 STL J24 VHP APE CTW FEWGA7 KPIT\" readonly>";
 			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR BFF J94 ONL Q122 VIGGR DBQ J94 OBK GIJ J146 WOOST GRIVY JESEY5 KPIT\" readonly>"; // Based on CDR BK
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM ARG BWG HNN FEWGA7 KPIT\" readonly>";
 			result += "<br/></br>North via ABR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR MBW RAP ABR GRB FNT TAMDE GRIVY JESEY5 KPIT\" readonly>"; // CDR GR
