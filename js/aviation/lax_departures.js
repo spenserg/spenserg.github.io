@@ -462,21 +462,28 @@ LAX.SEBBY3.DAG.J100.OBK.J584.CRL.J34.DJB.DCT.EWC.DCT.JST.J152.HAR.DCT.MDT
 			result += "<br/>ME<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH HYDRR1 KPHX\" readonly>";
 			result += "<br/>SE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX PNDAH2 TCATE IPL J2 HOGGZ HYDRR1 KPHX\" readonly>";
 			break;
-		case "PIT": // LAX-PIT // Updated 01-31-2025
-			result += "<!-- Updated 01-31-2025 -->";
+		case "PIT": // LAX-PIT  // Updated 10-11-2025
+			result += "<!-- Updated 10-11-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 DVC J197 HGO J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
-			result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 IRW RZC CGI IIU HNN FEWGA7 KPIT\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE EED J236 TBC J128 HBU J146 GLD J146 IOW J146 IDEAS TAMDE GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE DRK J96 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
+			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR BFF J94 ONL Q122 VIGGR DBQ J94 OBK GIJ J146 WOOST GRIVY JESEY5 KPIT\" readonly>"; // Based on CDR BK
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM ARG BWG HNN FEWGA7 KPIT\" readonly>";
+			result += "<br/></br>North via ABR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR MBW RAP ABR GRB FNT TAMDE GRIVY JESEY5 KPIT\" readonly>"; // CDR GR
+			result += "<br/>South via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 ABI BYP LIT BWG HNN FEWGA7 KPIT\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 DVC J146 GLD J146 IOW J146 WOOST J34 DJB GRIVY JESEY5 KPIT\" readonly>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>B1: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR MBW RAP RWF J34 BAE J34 CRL TAMDE GRIVY JESEY5 KPIT\" readonly>";
-			result += "<br/>B2: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR MBW RAP J82 FSD J16 BAE J34 CRL TAMDE GRIVY JESEY5 KPIT\" readonly>";
-			result += "<br/>BK: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR BFF J94 ONL FOD DBQ OBK GIJ J146 IDEAS TAMDE GRIVY JESEY5 KPIT\" readonly>";
-			result += "<br/>GR: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR MBW RAP ABR GEP FNT TAMDE GRIVY JESEY5 KPIT\" readonly>";
-			result += "<br/>J2: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX ORCKA5 LAS J146 DVC PUB J64 HLC PWE LMN MZV JOT J146 IDEAS TAMDE GRIVY JESEY5 KPIT\" readonly>";
-			result += "<br/>MC: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J96 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-11-2025
+			result += "<!-- Verified with ATCSCC on 10-11-2025 -->";
+			result += "<br/>B1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR MBW RAP RWF J34 BAE J34 CRL TAMDE GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/>B2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR MBW RAP J82 FSD J16 BAE J34 CRL TAMDE GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/>BK<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR BFF J94 ONL FOD DBQ J94 OBK GIJ J146 IDEAS TAMDE GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/>GR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR MBW RAP ABR GRB FNT TAMDE GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/>J1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CLEEE EED J236 TBC RSK DVV J60 JOT J146 WOOST J34 DJB GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/>J2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DVC PUB J64 HLC PWE LMN MZV JOT J146 IDEAS TAMDE GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/>MC<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CLEEE PKE DRK J96 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
+			result += "<br/>PX<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CLEEE PKE DRK J96 GUP FTI EZEEE MMB PER SGF J98 FAM J78 PXV J78 IIU HNN FEWGA7 KPIT\" readonly>";
+			result += "<br/>SP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CLEEE PKE DRK J96 SLN J24 MCI J80 SPI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
+			result += "<br/>VH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CLEEE PKE DRK J96 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
 			break;
 		case "PSP": // LAX-PSP // Updated 09-22-2025
 			result += "<!-- Updated 09-22-2025 P -->";
