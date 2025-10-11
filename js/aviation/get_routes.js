@@ -7421,9 +7421,9 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 				case "EYW": // PHL-EYW  // Updated 10-11-2025
 					result += "<!-- Updated 10-11-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/>OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"PHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ Q131 WAALT Y289 BAHAA AR17 HIBAC EBAYY FNTSY1 EYW\" readonly>";
-					result += "<br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"PHL OOD TEBEE HAYDO TRPOD Q409 CRPLR PAACK Q97 EBAYY FNTSY1 EYW\" readonly>";
-					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"PHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ SKARP Y313 HOAGG PERMT ZFP BR69V MAYKO FNTSY1 KEYW\" readonly>";
+					result += "<br/>OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ Q131 WAALT Y289 BAHAA AR17 HIBAC EBAYY FNTSY1 KEYW\" readonly>";
+					result += "<br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 CRPLR PAACK Q97 EBAYY FNTSY1 KEYW\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ SKARP Y313 HOAGG PERMT ZFP BR69V MAYKO FNTSY1 KEYW\" readonly>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN Q75 ENEME FNTSY1 KEYW\" readonly>";
 					result += "<br/><br/>West via VXV<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ SPAYD VXV THRSR HONID Q81 BULZI KRAKN1 KEYW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
