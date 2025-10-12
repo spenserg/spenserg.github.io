@@ -143,8 +143,6 @@ function compute (str_override = "") {
 	$("#total").html("");
 	rega = /TOW\n(\d+)\n(\d+)\n([^\n]*)\nLDW\n(\d+)\n(\d+)\n/g;
 	regb = /light\n\n([A-Z]{4})\n+[^\n]+\n[^\n]+\n\n[^\n]+\n\n([A-Z]{4})[\s\S]+AA[LT]([\dA-Z]+)\n\!\nC I\:[^\(]+\([^\s]+\s([^\,\n\.]+)[\,\n\.][^\n]*\n[\s\S]+\)\n([A-Za-z0-9]{3})\nMEL/g;
-
-	tmp_rslt = regb.exec(fkeystxt);
 	
 	// ATCSCC CDRS
 	// https://www.fly.faa.gov/rmt/cdm_operational_coded_departur.jsp
@@ -167,7 +165,7 @@ function compute (str_override = "") {
 
 	var testing = false;
 	var land_wgt_limited = false;
-	var parse_ab = (((rega.exec(fkeystxt)) != null) || ((regb.exec(fkeystxt)) != null));
+	var tmp_rslt = regb.exec(fkeystxt);
 
 	// For Testing Station Info
 	// XXXYYY | x = dptr | y = arr
@@ -176,7 +174,6 @@ function compute (str_override = "") {
 		fkeystxt = fkeystxt.replaceAll("-","").replaceAll(" ","");
 		testing = true;
 	}
-	var reg_a_result = rega.exec(fkeystxt);
 	
 	if ((result = regz.exec(fkeystxt)) != null) {
 		output = decs_route(fkeystxt, routes_arr['cdr_list']);
@@ -191,10 +188,9 @@ function compute (str_override = "") {
 		output = briefing_parse(fkeystxt);
 	} else if ((result = regu.exec(fkeystxt)) != null) {
 		output = cdrdoc_parse(fkeystxt, true);
-	} else if (testing || (((tmp_rslt = regb.exec(fkeystxt)) != null) && reg_a_result != null)) {
+	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
-		result = reg_a_result;
 		if (!testing) {
 			mlwa = parseInt(result[2]) - parseInt(result[1]); // Takeoff weight buffer
 			mlwb = parseInt(result[5]) - parseInt(result[4]); // Landing weight buffer
@@ -348,7 +344,7 @@ function compute (str_override = "") {
 
 		// Airport Specific
 		output = airport_extra(flows, result[1], result[2], result[5], ac_type, output);
-	} else if (debug_mode && parse_ab) {
+	} else if (debug_mode && (rega.exec(fkeystxt) != null) && (regb.exec(fkeystxt) != null)) {
 		console.log("flifo parse error");
 	}
 
@@ -359,7 +355,7 @@ function compute (str_override = "") {
 	}
 
 	// Routes
-	if (regz.exec(fkeystxt) == null && (testing || parse_ab)) {
+	//if (regz.exec(fkeystxt) == null && (testing || (rega.exec(fkeystxt) != null))) {
 		output = get_routes(result[1], result[2], result[5], ac_type, output);
 		$("#outbound").val("");
 		if (debug_mode) {
@@ -404,10 +400,10 @@ function compute (str_override = "") {
 			output += '<br/><button onclick=\"toggle_mandatory_routes()\">Turn ' + (mandatory_routes_checked ? "OFF" : "ON") + ' Mandatory Routes</button>';
 			output += '</div>';
 		}
-	}
+	//}
 
 	$("#total").html('<br/>' + output);
-	if (parse_ab && result != null) {
+	if (result != null && (rega.exec(fkeystxt) != null) && (regb.exec(fkeystxt) != null)) {
 		change_flow(((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1]), flows[((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1])], true);
 		change_flow(((result[2].length == 4) ? (result[2].substr(1, 4)) : result[2]), flows[((result[2].length == 4) ? (result[2].substr(1, 4)) : result[2])], true);
 	}
