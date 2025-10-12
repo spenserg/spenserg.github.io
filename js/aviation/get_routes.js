@@ -7219,9 +7219,9 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<br/>RA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW CHLSE T449 CFB GTOWN PONCT JFUND2 KBOS\" readonly>";
 					result += "<br/>SC<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DITCH Q437 HNNAH Q450 JFK ONDEC JFUND2 KBOS\" readonly>";
 					break;
-				case "BTV": // Updated 10-12-2025
+				case "BTV": // PHL-BTV // Updated 10-12-2025
 					result += "<!-- Updated 10-12-2025 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL290):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPHL DITCH LUIGI HNNAH LLUND BIZEX CAM KBTV\" readonly>"; // CDR PH
 					result += "<br/></br>West/PTW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW CHLSE DIANO T212 LAAYK T291 DANZI ALB KBTV\" readonly>"; // CDR PT
 					result += "<br/><br/>West via SYR<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL PTW CHLSE T449 CFB GTOWN KBTV\" readonly>"; // CDR RA
