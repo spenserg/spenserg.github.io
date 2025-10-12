@@ -4482,21 +4482,26 @@ HSV.DCT.MSL.DCT.FAM.DCT.FTZ.TRTLL5.ORD
 
 		case "IAD":
 			switch(arvl) {
-				case "CLT": // IAD-CLT // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
+				case "CLT": // IAD-CLT // Updated 10-12-2025
+					result += "<!-- Updated 10-12-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIAD SCRAM6 GLANC AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB COUPN CHSLY6 KCLT\" readonly>"; // CDR 32
+					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIAD RNLDI4 OTTTO Q80 WISTA LNDIZ PARQR4 KCLT\" readonly>"; // CDR 60
+					result += "<br/></br>SE Arvl<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB GUILD Q409 OKNEE MLLET3 KCLT\" readonly>"; // CDR C1
+					result += "<br/><br/>CLT NO CHSLY<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIAD FLUKY HANEY GVE LYH MAJIC4 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>00 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD SCRAM6 GLANC AIROW CHSLY6 KCLT\" readonly>";
-					result += "<br/>32 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB COUPN CHSLY6 KCLT\" readonly>";
-					result += "<br/>40 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
-					result += "<br/>41 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
-					result += "<br/>55 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD CLTCH3 MAULS Q40 FEEDS CITUS WILUM PARQR4 KCLT\" readonly>";
-					result += "<br/>60 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD RNLDI4 OTTTO Q80 WISTA LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/>63 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD RNLDI4 OTTTO Q68 HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/>C1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-12-2025
+					result += "<!-- Verified with ATCSCC on 10-12-2025 -->";
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD SCRAM6 GLANC AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/>32<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB COUPN CHSLY6 KCLT\" readonly>";
+					result += "<br/>40<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/>41<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/>55<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD CLTCH3 MAULS Q40 FEEDS CITUS WILUM PARQR4 KCLT\" readonly>";
+					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD RNLDI4 OTTTO Q80 WISTA LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>63<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD RNLDI4 OTTTO Q68 HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>C1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAD JCOBY4 SCOOB GUILD Q409 OKNEE MLLET3 KCLT\" readonly>";
 					break;
 				case "DFW": // IAD-DFW // Updated 06-14-2025 // Mandatory Routes checked
 					result += "<!-- Updated 06-14-2025 P -->";
