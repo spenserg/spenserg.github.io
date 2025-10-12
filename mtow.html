@@ -394,7 +394,7 @@ function compute (str_override = "") {
 			// Bottom text box
 			// output += '<br/><br/><input style=\'width:75%\' value=\'case "' + convert_iata(result[2]) + '": // Updated ' + tmp_today_str + mr_text + '\' readonly>';
 			// output += '<br/><input style=\'width:75%\' value=\'result += \"<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->\";\' readonly>';
-			output += '<hr><textarea rows="8" cols="80"> // Updated ' + tmp_today_str + mr_text + tmp_textarea_tabs +
+			output += '<hr><textarea rows="8" cols="80"> // ' + ((result[1].length == 3) ? result[1] : convert_iata(result[1])) + '-' + ((result[2].length == 3) ? result[2] : convert_iata(result[2])) + ' // Updated ' + tmp_today_str + mr_text + tmp_textarea_tabs +
 				'result += "<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->";</textarea>';
 				// + tmp_textarea_tabs + 'result += "<br/><br/><b>Faa Pref Route:</b>";</textarea>';
 			output += '<br/><button onclick=\"toggle_mandatory_routes()\">Turn ' + (mandatory_routes_checked ? "OFF" : "ON") + ' Mandatory Routes</button>';
@@ -403,14 +403,16 @@ function compute (str_override = "") {
 	//}
 
 	$("#total").html('<br/>' + output);
+	/*
 	if (result != null && (rega.exec(fkeystxt) != null) && (regb.exec(fkeystxt) != null)) {
 		change_flow(((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1]), flows[((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1])], true);
 		change_flow(((result[2].length == 4) ? (result[2].substr(1, 4)) : result[2]), flows[((result[2].length == 4) ? (result[2].substr(1, 4)) : result[2])], true);
 	}
+	*/
 	if (!input_boxes_shown) { $("#input_boxes").hide(); }
 }
 
-function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}, 'non_rnav' : {}, 'cdrs' : {}}) {
+function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {}, 'non_rnav' : {}, 'cdrs' : {}}) {
 	if (input == null) { return ""; }
 	var today = new Date();
 	var today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + String(today.getFullYear());
@@ -600,7 +602,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 		today_str + '\' readonly><br/><br/>';
 
 	// Top large box
-	output += '<textarea rows="8" cols="80">' + "case \"" + arvl + "\":" + ' // Updated ' + today_str + mr_text + textarea_tabs +
+	output += '<textarea rows="8" cols="80">' + "case \"" + arvl + '\": // ' + dptr + '-' + arvl + ' // Updated ' + today_str + mr_text + textarea_tabs +
 		'result += \"<!-- Updated ' + today_str + ' P -->\";' + textarea_tabs +
 		'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref + textarea_tabs + 
 		((non_rnav.length == 0) ? "// " : "") + 'result += \"<br/><br/><b>Non RNAV</b>\";' +
@@ -615,7 +617,7 @@ function cdr_parse(input = null, to_array = false, result_arr = {'faa_pref' : {}
 	return output;
 }
 
-function merge_faa_pref(result_arr = {}) {
+function merge_faa_pref (result_arr = {}) {
 	var textarea_tabs = ((["CLT","DFW","LAX","MIA","ORD","PHX","KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(dptr)) ? "\n\t\t\t" : "\n\t\t\t\t\t");
 	var errors = "";
 	var warnings = "";
@@ -832,7 +834,9 @@ function decs_route(input = null, cdr_list = null) {
 		tmp_res_all.push(sortable[i][3]);
 	}
 	var tmp_zz_todaystr = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + today.getFullYear();
-	result += '<br/><textarea rows="5">case "' + convert_iata(tmp_arvl_arr[tmp_arvl_arr.length - 1]) + '": // Updated ' + tmp_zz_todaystr + textarea_tabs +
+	result += '<br/><textarea rows="5">case "' + convert_iata(tmp_arvl_arr[tmp_arvl_arr.length - 1]) +
+		'": // ' + convert_iata(tmp_arvl_arr[0]) + '-' + convert_iata(tmp_arvl_arr[tmp_arvl_arr.length - 1]) +
+		' // Updated ' + tmp_zz_todaystr + textarea_tabs +
 		'result += "<!-- Updated ' + tmp_zz_todaystr + (mandatory_routes_checked ? " M" : " ") + 'P -->"' + textarea_tabs +
 		'result += "<br/><br/><b>Faa Pref Route:</b>";' + textarea_tabs +
 		faa_pref + textarea_tabs + '// result += "<br/><br/><b>Non RNAV</b>"; // TODDO' + textarea_tabs;
