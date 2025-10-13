@@ -6430,8 +6430,9 @@ MDT.DCT.ETX.DCT.SPOTZ.Q480.IGN.DCT.PROVI.ROBUC3.BOS
 					result += "<!-- Updated 09-14-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 09-14-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMSN UIN TUL KLAWW VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMSN BDF ENL J71 MEM SQS MLU YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSN UIN SGF FSM RRNET SEEVR4 KDFW\" readonly>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSN DBQ ROEZZ MCI ICT HOFFF VKTRY2 KDFW\" readonly>"; // CDR 2W
+					result += "<br/><br/>SE Arvl<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMSN BDF ENL J71 MEM SQS MLU YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSN DBQ IRK IRW SPS UKW UKW8 KDFW\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-14-2025
@@ -9828,7 +9829,7 @@ KPWM NUBLE4 CCC MANTA Q439 BRIGS JIIMS4 KPHL
 				case "ORD": // SMF-ORD // Updated 07-27-2025
 					result += "<!-- Updated 07-27-2025 P -->"
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-27-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSMF RVRCT4 MACUS Q124 BVL J154 OCS BFF ONL Q122 KATES FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSMF RVRCT4 MACUS Q122 VIGGR MYRRS FYTTE7 KORD\" readonly>";
 					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSMF RVRCT4 RALEY MVA J198 ILC J80 MLF J28 PUB LAA J102 SLN J96 IRK BENKY6 KORD \" readonly>";
 					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSMF RVRCT4 MACUS BAM J32 ABR J70 BAE LYNNI ERNNY8 KORD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
