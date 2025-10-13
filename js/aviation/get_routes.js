@@ -6465,14 +6465,17 @@ KMSN JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL
 KMSN WAITS OBK TTH IIU Q108 SITTR Q34 GVE PAATS4 KPHL
 */
 					
-				case "PHX": // MSN-PHX // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMSN DBQ LNK J146 GLD ALS J102 GUP EAGUL6 KPHX\" readonly>";
+				case "PHX": // SNA-PHX // Updated 10-13-2025
+					result += "<!-- Updated 10-13-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-13-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMSN DBQ LNK J146 GLD ALS J102 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KMSN MCW ONL PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSN UIN SGF J78  IRW J6 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>MCW/CIM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MCW OBH MCK LAA TBE CIM J96 GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSN UIN SGF RZC ADM ABI J66 EWM PINNG1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSN MCW ONL PUB ALS J102 GUP BUNTR3 KPHX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-13-2025
 					break;
 			}
 		break; // End of MSN
