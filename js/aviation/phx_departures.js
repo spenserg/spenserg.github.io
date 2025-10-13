@@ -949,7 +949,7 @@ KPHX ZEPER2 RRSTA JAWSY TTRUE LUCKI1 KSAN
 			break;
 		case "SNA": // PHX-SNA // Updated 09-14-2025
 			result += "<!-- Updated 09-14-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR EMLLD ROOBY3 KSNA\" readonly>";
 			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED DSNEE6 KSNA\" readonly>"; // CDR ZE
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX FYRBD1 MOHAK J2 GWIRE JLI V458 PACIF SLI KSNA\" readonly>"; // CDR FY
