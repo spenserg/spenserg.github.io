@@ -1074,28 +1074,25 @@ KORD RAYNR BRTMN TAAYZ PECOK DAYYY RUBKI KENLU TULEG WAYGO CAM CDOGG4 KPWM
 KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO TULEG WAYGO CAM CDOGG4 KPWM
 KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO AHPAH CAM CDOGG4 KPWM
 */
-
-			/* TODO - FOS ROUTES: KORD - KRDU
-KORD MOBLE ADIME SEWTO FWA J149 ROD HVQ BKW FRIKY ALDAN4 KRDU
-KORD EARND ELANR EMMLY ETAME EMEGE FLM ECB ZOOMS FRIKY ALDAN4 KRDU
-KORD EARND ELANR EMMLY ETAME EMEGE FLM BKW FRIKY ALDAN4 KRDU
-KORD EARND ELANR EMMLY ETAME EMEGE FLM BLF FRIKY ALDAN4 KRDU
-KORD VHP J24 HVQ ROA KRDU
-KORD MOBLE ADIME OTENS ANEWA WAAHU JAMOX BKW FRIKY ALDAN4 KRDU
-KORD MOBLE ADIME OTENS MAYZE APE SPAYD BKW FRIKY ALDAN4 KRDU
-KORD EARND ELANR EMMLY ERECO IIU Q50 CUBIM KPASS ALDAN4 KRDU
-KORD GIJ VIZXO AGC ESL GVE MELTN ALDAN4 KRDU
-KORD ELX CRL CXR IHD GVE MELTN ALDAN4 KRDU
-KORD DENNT DARCY DREGS DUMGE SWAPP PSK FRIKY ALDAN4 KRDU
-KORD EARND ELANR EMMLY ERECO IIU J99 VXV PYRES DMSTR2 KRDU
-KORD EARND ELANR EMMLY ETAME EMEGE FLM SITTR FRIKY ALDAN4 KRDU
-KORD MOBLE ADIME OTENS ANEWA APE HVQ SITTR FRIKY ALDAN4 KRDU
-KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR FRIKY ALDAN4 KRDU
-KORD DENNT DARCY DREGS DUMGE SCOTO SWAPP VXV KPASS ALDAN4 KRDU
-KORD CMSKY CARYN CYBIL PXV HITMN VXV KPASS ALDAN4 KRDU
-KORD BACEN BLOKR BEKKI ENL PLESS Q19 HITMN VXV KPASS ALDAN4 KRDU
-KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR FRIKY ALDAN4 KRDU
-*/
+		case "RDU": // KORD-RDU // Updated 10-14-2025
+			result += "<!-- Updated 10-14-2025 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM SITTR FRIKY ALDAN4 KRDU\" readonly>"; // CDR 0S
+			result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE HVQ SITTR FRIKY ALDAN4 KRDU\" readonly>"; // Based on CDR 2E
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN VXV KPASS ALDAN4 KRDU\" readonly>"; // CDR 5S
+			result += "<br/><br/>SE Avrl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL TILMN J73 BNA RMG IRQ PYRES DMSTR2 KRDU\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD VHP J24 HVQ ROA KRDU\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-14-2025
+			result += "<!-- Verified with ATCSCC on 10-14-2025 -->";
+			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM SITTR FRIKY ALDAN4 KRDU\" readonly>";
+			result += "<br/>2E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE HVQ SITTR FRIKY ALDAN4 KRDU\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR FRIKY ALDAN4 KRDU\" readonly>";
+			result += "<br/>4S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DUMGE SCOTO SWAPP VXV KPASS ALDAN4 KRDU\" readonly>";
+			result += "<br/>5S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN VXV KPASS ALDAN4 KRDU\" readonly>";
+			result += "<br/>6S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL PLESS Q19 HITMN VXV KPASS ALDAN4 KRDU\" readonly>";
+			result += "<br/>M1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR FRIKY ALDAN4 KRDU\" readonly>";
+			break;
 
 // TODO ORD-RIC // ORD.DCT.EARND.DCT.ELANR.DCT.EMMLY.DCT.ETAME.DCT.EMEGE.DCT.FLM.J24.MOL.SPIDR4.RIC
 
