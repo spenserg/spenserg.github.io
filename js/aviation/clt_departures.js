@@ -534,7 +534,7 @@ KCLT BNA J46 TUL J78 TCC MIERA2 KABQ
 			break;
 		case "IAD": // Updated 10-12-2025
 			result += "<!-- Updated 10-12-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL210):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KILNS5 AUDII DORRN CAVLR6 KIAD\" readonly>"; // CDR RP
 			result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KRITR6 FILDS PSK ROCKA BURTT KILMR OTTTO GIBBZ GIBBZ5 KIAD\" readonly>"; // CDR KR
 			result += "<br/><br/>WATRS<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT BEAVY6 JENDO DEDDY Y436 DIZNY WHOOS Y494 HOBOH Y488 WEBBB Y484 YETTI Y495 CAMRN RBV HYPER9 KIAD\" readonly>";
