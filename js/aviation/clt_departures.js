@@ -511,7 +511,7 @@ KCLT BNA J46 TUL J78 TCC MIERA2 KABQ
 			break;
 		case "GSP": // CLT-GSP // Updated 02-06-2025
 			result += "<!-- Updated 02-06-2025 -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL100):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY SPA KGSP\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT CLT3 HARAY SPA KGSP\" readonly>";
