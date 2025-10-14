@@ -7995,9 +7995,9 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					break;
 				case "RDU": // PHL-RDU // Updated 03-10-2025
 					result += "<!-- Updated 03-10-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL240):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD TAQLE2 KRDU\" readonly>";
-					result += "<br/><br/>DQO TUNNEL SW (Max FL230): <input style=\"width:75%\" value=\"KPHL DQO BELAY MORTY LITME HIRCK JDUBB MELTN ALDAN4 KRDU\" readonly>";
+					result += "<br/><br/>DQO TNL SW (Max FL230)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL DQO BELAY MORTY LITME HIRCK JDUBB MELTN ALDAN4 KRDU\" readonly>";
 					result += "<br/>PHLYER SOUTH 1 (Max FL060)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL OOD ENO T224 TAPPA HOUKY TAQLE2 KRDU\" readonly>";
 					result += "<br/>PHLYER SOUTH 2 (Max FL080)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD TAQLE2 KRDU\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
