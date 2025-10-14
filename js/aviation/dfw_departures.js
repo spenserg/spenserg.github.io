@@ -978,9 +978,9 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "IAD": // DFW-IAD // Updated 10-12-2025
 			result += "<!-- Updated 10-12-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 HITMN JARLO GIBBZ5 IAD\" readonly>";
-			result += "<br/><b>This is also ok: KDFW ZACHH4 BSKAT LIT SOPIE Q68 SPAYD JARLO GIBBZ5 KIAD<\/b>";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // FAA pref seems wrong
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 HITMN JARLO GIBBZ5 KIAD\" readonly>";
+			result += "<br/><b>Pref is KDFW ZACHH4 BSKAT LIT SOPIE Q68 SPAYD JARLO GIBBZ5 KIAD .. not sure why its using Q68 if arvl is JARLO<\/b>";
 			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL J110 AIR J162 MGW GIBBZ5 KIAD\" readonly>"; // Based on CDR J3
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN TWOUP Q22 BURGG Q60 JAXSN DORRN CAVLR6 KIAD\" readonly>"; // Based on CDR WM
 			result += "<br/></br>South via CEW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW ALLMA TEEEM Q99 OGRAE BZNGA DORRN CAVLR6 KIAD\" readonly>"; // Based on CDR WC
