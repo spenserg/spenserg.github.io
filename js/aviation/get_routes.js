@@ -3183,7 +3183,7 @@ KDCA CLTCH3 FLASK COLZI Q52 CHOPZ MGMRY CEW PENSI KPNS
 					break;
 				case "RDU": // KDCA-RDU // Updated 10-14-2025
 					result += "<!-- Updated 10-14-2025 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL220):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA JDUBB4 MELTN ALDAN4 KRDU\" readonly>"; // CDR 00
 					result += "<br/></br>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDCA AMEEE1 COLIN TAPPA HOUKY TAQLE2 KRDU\" readonly>"; // CDR 01
 					result += "<br/><br/><b>Non RNAV</b>";
