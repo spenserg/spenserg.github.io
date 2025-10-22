@@ -15,21 +15,17 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "ABQ": // CLT-ABQ // Updated 10-22-2025
 			result += "<!-- Updated 10-22-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-22-2025
-			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL MMB TAMEY SNDIA4 KABQ\" readonly>";
+			result += "<br/><br/>TUL: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL MMB TAMEY SNDIA4 KABQ\" readonly>";
+			result += "<br/>IRW: <input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY GQO KM30M MEM KM30I KOMMA J6 TCC KIIDD COLTR4 KABQ\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM Q50 IIU J8 STL Q176 TOTOE TAMEY SNDIA4 KABQ\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK SPS J72 TXO RECKN COLTR4 KABQ\" readonly>";
 			result += "<br/><br/>North via SPI<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE Q93 HEVAN VHP J80 MCI J24 SLN J102 ALS DATME SNDIA4 KABQ\" readonly>";
-			
+			result += "<br/>South via IAH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ MGMRY CATLN Q22 GUSTI IAH J86 JCT J15 INK FANGZ LZZRD4 KABQ\" readonly>";
+			result += "<br/><br/>South/ZTL Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS CAE SAV AMG DEFUN J2 IAH J86 JCT J15 INK FANGZ LZZRD4 KABQ\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// KCLT BNA J46 TUL J78 TCC MIERA2 KABQ
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-22-2025
 			break;
-
-/* TODO - FOS ROUTES: KCLT - KABQ
-KCLT BOBZY5 BNA J46 TUL IRW J74 TXO MIERA2 KABQ
-KCLT BOBZY5 BNA MEM FSM IRW TCC KIIDD COLTR4 KABQ
-KCLT BOBZY5 BNA MEM J66 LIT J6 TCC KIIDD COLTR4 KABQ
-KCLT BNA J46 TUL J78 TCC MIERA2 KABQ
-*/
-
 		case "ACY": // CLT-ACY // Updated 02-20-2025
 			result += "<!-- Updated 02-20-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -606,18 +602,14 @@ KCLT BNA J46 TUL J78 TCC MIERA2 KABQ
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE HAGAL GIIBS4 KIND\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HNN PLASH SNKPT2 KIND\" readonly>";
 			break;
-
-/* TODO - FOS ROUTES: KCLT - KJAC
-KCLT JOJJO5 DOOGE IIU J8 STL J24 MCI TKO LEWOY Q148 JUGIV DNW KJAC
-KCLT JOJJO5 DOOGE Q93 OCASE BDF MCW J16 FSD J82 RAP JYMBO DNW KJAC
-KCLT JOJJO5 DOOGE IIU J8 STL J151 RAP JYMBO DNW KJAC
-KCLT JOJJO5 DOOGE IIU J8 STL J24 MCI TKO LEWOY Q148 JUGIV IDECA VUGUY KJAC
-KCLT BOBZY5 BNA SGF ICT HYS HLC SNY DDY JYMBO DNW KJAC
-KCLT JOJJO5 DOOGE IIU J8 STL J24 MCI J80 CUGGA Q148 MBW CKW DNW KJAC
-KCLT JOJJO5 CUBIM Q50 IIU J89 OBK J90 MCW J16 FSD J82 RAP JYMBO DNW KJAC
-KCLT BOBZY5 BNA Q36 RZC ICT J28 GCK HGO J52 FQF CKW DNW KJAC
-KCLT BOBZY5 BNA Q36 RZC PER TOTOE LAA J52 FQF CKW DNW KJAC
-*/
+		 case "JAC": // CLT-JAC // Updated 10-22-2025
+			result += "<!-- Updated 10-22-2025 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-22-2025
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE IIU J8 STL J24 MCI TKO LEWOY Q148 JUGIV DNW KJAC\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE Q93 HEVAN BVT DBQ MCW J16 FSD J82 RAP JYMBO DNW KJAC\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA Q36 RZC PER GCK J154 DVV CKW DNW KJAC\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-22-2025
+			break;
 
 // CLT-JAN skipped
 
@@ -682,7 +674,7 @@ KCLT BOBZY5 BNA Q36 RZC PER TOTOE LAA J52 FQF CKW DNW KJAC
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM Q50 IIU J8 STL Q176 CIM J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK J42 ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 			result += "<br/><br/>North via STL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE Q93 HEVAN VHP J80 MCI J24 SLN J102 ALS J44 RSK J10 FLG HIPPI GABBL HLYWD1 KLAX\" readonly>";
-			result += "<br/>South via IAH<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ MGMRY CATLN Q22 GUSTI Q56 HRV J2 IAH J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/>South via IAH<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ MGMRY CATLN Q22 GUSTI IAH J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 			result += "<br/>South/ZTL Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS CAE SAV AMG DEFUN J2 IAH J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 			// result += "<br/><br/>ABI: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC EIC J4 ABI EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 			result += "<br/><br/>HNKR 1+2<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC SUTTN J52 TXK BYP UKW HNKER CNX J74 SJN J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
