@@ -137,8 +137,12 @@ function compute (str_override = "") {
 	var routes_arr = {'faa_pref' : null, 'non_rnav' : null, 'cdrs' : {} };
 	var mr_text = ((mandatory_routes_checked) ? " // Mandatory Routes checked" : "");
 
-	if ($("#outbound").val() == "debug") { debug_mode = !debug_mode; output = "Debug mode: " + (debug_mode ? "ON" : "OFF"); }
-	
+	if ($("#outbound").val() == "debug") {
+		debug_mode = !debug_mode;
+		$("#total").html('<br/> Debug mode: ' + (debug_mode ? "ON" : "OFF"));
+		return;
+	}
+
 	$("#ob_copy").val($("#outbound").val());
 	$("#total").html("");
 	rega = /TOW\n(\d+)\n(\d+)\n([^\n]*)\nLDW\n(\d+)\n(\d+)\n/g;
@@ -174,7 +178,7 @@ function compute (str_override = "") {
 		fkeystxt = fkeystxt.replaceAll("-","").replaceAll(" ","");
 		testing = true;
 	}
-	
+
 	if ((result = regz.exec(fkeystxt)) != null) {
 		output = decs_route(fkeystxt, routes_arr['cdr_list']);
 	} else if ((result = regc.exec(fkeystxt)) != null) {
