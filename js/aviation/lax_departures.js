@@ -336,11 +336,22 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM PKE J78 DRK J78 ABQ J72 TXO J72 SPS TXK ELD MEI OTK LEESE3 KMCO\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2025
 			break;
-
-/* TODO CLT-MDT
-LAX.SEBBY3.DAG.J100.OBK.J584.CRL.J34.DJB.DCT.EWC.DCT.JST.J152.HAR.DCT.MDT
-*/
-
+		case "MDT": // LAX-MDT // Updated 10-22-2025
+			result += "<!-- Updated 05-02-2025 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-22-2025
+			result += "<br/><br/>NRP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J96 SLN J24 MCI J80 VHP ROD J152 HAR KMDT\" readonly>";
+			result += "<br/><br/>ORCKA: <input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 WOOST J34 DJB EWC JST J152 HAR KMDT\" readonly>";
+			result += "<br/>OSHNN: <input style=\"width:75%\"; value=\"KLAX OSHNN1 BEALE J146 WOOST J34 DJB EWC JST J152 HAR KMDT\" readonly>";
+			result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM MEMFS Q34 SITTR ESL BAMMY T299 HAR KMDT\" readonly>";
+			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR BFF J94 ONL FOD DBQ J94 OBK GIJ J146 CXR EWC JST J152 HAR KMDT\" readonly>";
+			// result += "<br/><br/>BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR MBW RAP J82 FSD J16 BAE J34 DJB EWC JST J152 HAR KMDT\" readonly>";
+			// result += "<br/>JOT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE EED J236 TBC RSK DVV J60 JOT J146 WOOST J34 DJB EWC JST J152 HAR KMDT\" readonly>";
+			result += "<br/><br/>SGF<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J96 CIM Q176 TOTOE SGF J98 FAM J78 IIU Q108 SITTR ESL BAMMY T299 HAR KMDT\" readonly>";
+			result += "<br/>SPI<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J96 SLN J24 MCI J80 VHP ROD J152 HAR KMDT\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX SEBBY3 DAG J100 OBK J584 CRL J34 DJB EWC JST J152 HAR KMDT\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-22-2025
+			break;
 		case "MIA": // LAX-MIA // Updated 06-03-2025
 			result += "<!-- Updated 06-03-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-02-2025
@@ -558,15 +569,15 @@ LAX.SEBBY3.DAG.J100.OBK.J584.CRL.J34.DJB.DCT.EWC.DCT.JST.J152.HAR.DCT.MDT
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM J236 EED FLG TBE BUM KOOOP1 KSTL\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-
-			/* TODO - FOS ROUTES: KLAX - KTUL
-KLAX ORCKA5 LAS J146 DVC PUB J28 GCK PER KTUL
-KLAX DOTSS2 CLEEE PKE J74 IRW IFI KTUL
-KLAX DOTSS2 CLEEE PKE J74 IRW IRW IFI KTUL
-KLAX LAXX1 IPL J2 GBN J50 SSO J4 INK SPS ADM KTUL
-KLAX MZB V66 MESCA T310 SSO V94 TQA IRW KTUL
-*/
-
+		 case "TUL": // LAX-TUL // Updated 10-22-2025
+			result += "<!-- Updated 10-22-2025 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-22-2025
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J96 DRK J6 IRW OKM KTUL\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS J146 DVC PUB J28 GCK PER KTUL\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 EWM J66 ABI ADM KTUL\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>"; // KLAX LAXX1 IPL J2 GBN J50 SSO J4 INK SPS ADM KTUL
+			// result += "<br/><br/><b>Low Level</b>"; // KLAX MZB V66 MESCA T310 SSO V94 TQA IRW KTUL
+			break;
 		case "TUS": // LAX-TUS // Updated 02-01-2025
 			result += "<!-- Updated 02-01-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -575,20 +586,6 @@ KLAX MZB V66 MESCA T310 SSO V94 TQA IRW KTUL
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM J169 TFD DINGO6 KTUS\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-
-/* TODO - FOS ROUTES: KCLT - KXNA
-KCLT BOBZY5 BNA Q36 RZC KXNA
-KCLT BOBZY5 BNA J45 PLESS J78 FAM J98 SGF KXNA
-KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN LOBBS J41 MEM RZC KXNA
-KCLT JOJJO5 CUBIM Q50 IIU J78 FAM J98 SGF KXNA
-KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN XESSS LIT RZC KXNA
-KCLT BEAVY6 GANDT NOKIE MGMRY MEI SQS LIT KXNA
-KCLT ESTRR5 IPTAY CHOPZ THRSR GAD MEM RZC KXNA
-KCLT JOJJO5 JOJJO DOOGE IIU FAM KXNA
-KCLT BOBZY5 BNA RZC KXNA
-KCLT WEAZL5 CLAWD HVQ J8 IIU FAM KXNA
-*/
-
 		case "YVR": // LAX-YVR // Updated 01-31-2025
 			result += "<!-- Updated 01-31-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
