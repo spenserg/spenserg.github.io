@@ -12,6 +12,16 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KRITR6 FILDS ILLSA COURG REEES T299 DUMMR KABE\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ PSB MIP KABE\" readonly>";
 			break;
+		case "ABQ": // CLT-ABQ // Updated 10-22-2025
+			result += "<!-- Updated 10-22-2025 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-22-2025
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL MMB TAMEY SNDIA4 KABQ\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM Q50 IIU J8 STL Q176 TOTOE TAMEY SNDIA4 KABQ\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK SPS J72 TXO RECKN COLTR4 KABQ\" readonly>";
+			result += "<br/><br/>North via SPI<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE Q93 HEVAN VHP J80 MCI J24 SLN J102 ALS DATME SNDIA4 KABQ\" readonly>";
+			
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-22-2025
+			break;
 
 /* TODO - FOS ROUTES: KCLT - KABQ
 KCLT BOBZY5 BNA J46 TUL IRW J74 TXO MIERA2 KABQ
