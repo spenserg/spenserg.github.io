@@ -1505,7 +1505,19 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE IIU FAM KXNA\" readonly>";
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA RZC KXNA\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ J8 IIU FAM KXNA\" readonly>";
-			break;
+			break;			
+/* TODO - FOS ROUTES: KCLT - KXNA
+KCLT BOBZY5 BNA Q36 RZC KXNA
+KCLT BOBZY5 BNA J45 PLESS J78 FAM J98 SGF KXNA
+KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN LOBBS J41 MEM RZC KXNA
+KCLT JOJJO5 CUBIM Q50 IIU J78 FAM J98 SGF KXNA
+KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN XESSS LIT RZC KXNA
+KCLT BEAVY6 GANDT NOKIE MGMRY MEI SQS LIT KXNA
+KCLT ESTRR5 IPTAY CHOPZ THRSR GAD MEM RZC KXNA
+KCLT JOJJO5 JOJJO DOOGE IIU FAM KXNA
+KCLT BOBZY5 BNA RZC KXNA
+KCLT WEAZL5 CLAWD HVQ J8 IIU FAM KXNA
+*/
 		case "YYC": // CLT-YYC // Updated 02-06-2025
 			result += "<!-- Updated 02-06-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
