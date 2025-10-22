@@ -2931,18 +2931,19 @@ DCA.CLTCH3.FLASK.DCT.ODF.DCT.MGM.DCT.MGM
 					result += "<br/>AR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB EARZZ SKARP Y313 HOAGG BNFSH3 KMIA\" readonly>";
 					result += "<br/>ML<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB PAACK Q97 EBAYY MOGAE BNFSH3 KMIA\" readonly>";
 					break;
-				case "MSY": // DCA-MSY // Updated 01-04-2025
-					result += "<!-- Updated 01-04-2025 -->";
+				case "MSY": // DCA-MSY // Updated 10-22-2025
+					result += "<!-- Updated 10-22-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 NIOLA MERDN TRSSH1 KMSY\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB COUPN TYI Q64 CATLN Q56 HRV KMSY\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 FAREV BNA WAKOL Q34 MEMFS XESSS J35 MCB TRSSH1 KMSY\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 FAREV HITMN Q32 CRAMM SQS J35 MCB TRSSH1 KMSY\" readonly>"; // Based on CDR 60
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDCA SCRAM6 GLANC COLZI Q52 CHOPZ MGMRY CATLN Q56 SJI MNSTR1 KMSY\" readonly>"; // CDR 50
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>00: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 NIOLA MERDN TRSSH1 KMSY\" readonly>";
-					result += "<br/>40 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB GUILD Q409 SESUE PANDY TWINS NOKIE MGMRY CATLN Q56 SJI MNSTR1 KMSY\" readonly>";
-					result += "<br/>50 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA SCRAM6 GLANC COLZI Q52 CHOPZ MGMRY CATLN Q56 SJI MNSTR1 KMSY\" readonly>";
-					result += "<br/>60 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 JONEN TONIO VXV VLKNN MERDN TRSSH1 KMSY\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-22-2025
+					result += "<!-- Verified with ATCSCC on 10-22-2025 -->";
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 NIOLA MERDN TRSSH1 KMSY\" readonly>";
+					result += "<br/>40<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB GUILD Q409 SESUE PANDY TWINS NOKIE MGMRY CATLN Q56 SJI MNSTR1 KMSY\" readonly>";
+					result += "<br/>50<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA SCRAM6 GLANC COLZI Q52 CHOPZ MGMRY CATLN Q56 SJI MNSTR1 KMSY\" readonly>";
+					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 JONEN TONIO VXV VLKNN MERDN TRSSH1 KMSY\" readonly>";
 					break;
 				case "MSN": // DCA-MSN // Updated 04-19-2025 // Mandatory Routes checked
 					result += "<!-- Updated 04-19-2025 M -->";
@@ -2967,19 +2968,6 @@ KDCA HORTO4 BUFFR Q178 DJB FNT IDIOM MUSCL3 KMSP
 KDCA HORTO4 BUFFR Q178 DJB FNT GRB COLDD BAINY3 KMSP
 KDCA REBLL5 OTTTO Q176 HNN FLM J24 VHP JOT MNOSO BLUEM4 KMSP
 KDCA HORTO4 BUFFR Q178 DJB ZOHAN SAW DLH GGULL BAINY3 KMSP
-*/
-
-					/* TODO - FOS ROUTES: DCA-MSY
-KDCA SCRAM6 GLANC BURGG Q22 CATLN SJI MNSTR1 KMSY
-KDCA SCRAM6 GLANC COLZI Q52 CHOPZ MGMRY SJI MNSTR1 KMSY
-KDCA CLTCH3 MAULS Q40 NIOLA MERDN TRSSH1 KMSY
-KDCA AMEEE1 SCOOB COUPN TYI Q64 CATLN Q56 HRV KMSY
-KDCA REBLL5 OTTTO Q80 FAREV HITMN Q139 VLKNN MERDN TRSSH1 KMSY
-KDCA REBLL5 OTTTO Q80 FAREV BNA WAKOL Q34 MEMFS XESSS J35 MCB TRSSH1 KMSY
-KDCA CLTCH3 MAULS Q40 NIOLA MERDN TRSSH1 KMSY
-KDCA AMEEE1 SCOOB GUILD Q409 SESUE PANDY TWINS NOKIE MGMRY CATLN Q56 SJI MNSTR1 KMSY
-KDCA SCRAM6 GLANC COLZI Q52 CHOPZ MGMRY CATLN Q56 SJI MNSTR1 KMSY
-KDCA REBLL5 OTTTO Q80 JONEN TONIO VXV VLKNN MERDN TRSSH1 KMSY
 */
 
 				case "OKC": // DCA-OKC // Updated 08-05-2025
