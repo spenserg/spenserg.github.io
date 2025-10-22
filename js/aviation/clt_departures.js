@@ -765,6 +765,8 @@ KCLT BOBZY5 BNA Q36 RZC PER TOTOE LAA J52 FQF CKW DNW KJAC
 			result += "<!-- Updated 04-16-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KRITR6 FILDS ILLSA COURG BAMMY T299 HAR KMDT\" readonly>"; // CDR RP
+			result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KILNS5 AUDII THEOO COURG BAMMY T299 HAR KMDT\" readonly>"; // CDR KL
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE ECB AIR JST HAR KMDT\" readonly>"; // CDR JJ
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 MERIL RDU FAK BRV EMI KMDT\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-16-2025
