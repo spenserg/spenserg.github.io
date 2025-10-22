@@ -2937,6 +2937,7 @@ DCA.CLTCH3.FLASK.DCT.ODF.DCT.MGM.DCT.MGM
 					result += "<br/><input style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 NIOLA MERDN TRSSH1 KMSY\" readonly>";
 					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 FAREV HITMN Q32 CRAMM SQS J35 MCB TRSSH1 KMSY\" readonly>"; // Based on CDR 60
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDCA SCRAM6 GLANC COLZI Q52 CHOPZ MGMRY CATLN Q56 SJI MNSTR1 KMSY\" readonly>"; // CDR 50
+					result += "<br/><br/>South/ZTL Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB GUILD Q409 SESUE SAV AMG DEFUN J2 SJI MNSTR1 KMSY\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-22-2025
 					result += "<!-- Verified with ATCSCC on 10-22-2025 -->";
