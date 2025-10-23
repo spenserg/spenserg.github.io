@@ -208,11 +208,11 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-29-2025
 			break;
-		case "BOS": // DFW-BOS // Updated 04-19-2025
-			result += "<!-- Updated 04-19-2025 -->";
+		case "BOS": // DFW-BOS // Updated 10-02-2025
+			result += "<!-- Updated 10-02-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 RBV Q419 JFK ROBUC3 KBOS\" readonly>"; // CDR 0P
-			result += "<br/><b style=\"color:orange\">Triggers a mandatory route violation but it's good to file. Verified with ATC 04-19-2025<\/b>";
+			result += "<br/><b style=\"color:orange\">Triggers a mandatory route violation but it's good to file. Verified with ATC 10/02/2025<\/b>";
 			result += "<br/><br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR TWOUP Q22 RBV Q419 JFK ROBUC3 KBOS\" readonly>"; // CDR 1P
 			result += "<br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL VHP ROD KLYNE Q29 JHW Q82 PONCT JFUND2 KBOS\" readonly>"; // CDR J3
 			result += "<br/><br/><b>Non RNAV</b>";
