@@ -174,7 +174,7 @@ KPHX ZEPER2 RRSTA EED J6 PMD FASTO2 KBFL
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-25-2025
 			result += "<br/><br/><input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO CNX MMB SGF J98 FAM J78 PLESS TERGE SARGO4 KCVG\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK ALS J102 SLN J24 MCI STL DAAVE SARGO4 KCVG\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KPHX STRRM1 TUS J2 ELP J50 ABI J66 LIT J137 FAM DAAVE SARGO4 KCVG\" readonly>";
+			result += "<br/>South: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J50 ABI J66 LIT J137 FAM DAAVE SARGO4 KCVG\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-25-2025
 			result += "<!-- Verified with ATCSCC on 03-25-2025 -->";
@@ -227,7 +227,7 @@ KPHX ZEPER2 RRSTA EED J6 PMD FASTO2 KBFL
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE EWM J4 INK GEEKY SOCKK4 KDFW\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX J74 TXO TURKI VKTRY2 KDFW\" readonly>"; // CDR BR
 			// result += "<br/><br/>DFW BGTOE: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
-			// result += "<br/>DFW WEST: <input style=\"width:75%\"; value=\"KPHX STRRM1 TUS J2 ELP J86 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
+			// result += "<br/>DFW WEST: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J86 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX SJN9 ABQ J72 TXO UKW8 KDFW\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-17-2025
