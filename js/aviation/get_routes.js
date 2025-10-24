@@ -5706,20 +5706,22 @@ KLGA JFK SHIPP Y487 ISLES ACK FERNZ OOSHN5 KBOS
 					result += "<!-- Updated 01-12-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLGA BIGGY Q75 GVE AIROW CHSLY6 KCLT\" readonly>";
-					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KLGA WHITE Q409 CRPLR COUPN CHSLY6 KCLT\" readonly>";
-					result += "<br/>West: <input style=\"width:75%\" value=\"KLGA COATE Q436 DGRAF J49 PSB Q71 GEFFS HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/>Full OW: <input style=\"width:75%\" value=\"KLGA JFK SHIPP Y488 STERN Y493 TUBBS DIZNY Y436 PITRW STOCR4 KCLT\" readonly>";
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA WHITE Q409 OKNEE MLLET3 KCLT\" readonly>"; // CDR KA
+					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA ZIMMZ Q42 MIKYG Q480 AIR HVQ LNDIZ PARQR4 KCLT\" readonly>"; // CDR 80
+					result += "<br/><b>East/West Rte: KLGA WHITE Q409 CRPLR COUPN CHSLY6 KCLT<\/b>";
+					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA JFK SHIPP Y488 STERN Y493 TUBBS DIZNY Y436 PITRW STOCR4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLGA LANNA J48 MOL LYH MAJIC4 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>48 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA LANNA J48 MOL AIROW CHSLY6 KCLT\" readonly>";
-					result += "<br/>60 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 DJB J85 HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/>80 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA ZIMMZ Q42 MIKYG Q480 AIR HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/>J6 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA PARKE J6 HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/>KA: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA WHITE Q409 OKNEE MLLET3 KCLT\" readonly>";
-					result += "<br/>NE (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEION Q232 DARBO J49 PSB J60 DJB ROD FLM TAFTT PARQR4 KCLT\" readonly>";
-					result += "<br/>PH (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA BIGGY Q75 GVE AIROW CHSLY6 KCLT\" readonly>";
-					result += "<br/>PS: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 PSB HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-24-2025
+					result += "<!-- Verified with ATCSCC on 10-24-2025 -->";
+					result += "<br/>48<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA LANNA J48 MOL AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 DJB Q147 HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>80<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA ZIMMZ Q42 MIKYG Q480 AIR HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>J6<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA PARKE J6 HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>KA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA WHITE Q409 OKNEE MLLET3 KCLT\" readonly>";
+					result += "<br/>NE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEION Q232 DARBO J49 PSB J60 DJB ROD FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA BIGGY Q75 GVE AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/>PS<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 PSB HVQ LNDIZ PARQR4 KCLT\" readonly>";
 					break;
 				case "DCA": // LGA-DCA // Updated 06-19-2025
 					result += "<!-- Updated 06-19-2025 -->";
