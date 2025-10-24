@@ -869,17 +869,22 @@ KAVP DGRAF Q436 EMMMA WYNDE2 KORD
 					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CTR CAM Q822 FNT WYNDE3 KORD\" readonly>";
 					result += "<br/>YZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CTR CAM Q822 GONZZ FARGN CHAAP Q436 EMMMA WYNDE3 KORD\" readonly>";
 					break;
-
-// TODO BDL-PHL
-/* TODO - FOS ROUTES:
-KBDL VEERS WEETS V249 SBJ ARD KPHL
-KBDL MAD BEADS T358 BRIGS ACY V184 OOD KPHL
-KBDL CTR DNY SPUDS7 KPHL
-KBDL MOBBS T295 LVZ ETX PTW KPHL
-KBDL MAD BEADS T320 BRIGS ACY V184 OOD KPHL
-KBDL CSTL9 CCC MANTA Q439 BRIGS JIIMS4 KPHL
-*/
-
+				case "PHL": // KBDL-PHL // Updated 10-24-2025
+					result += "<!-- Updated 10-24-2025 P -->";
+					result += "<br/><br/><b>Avg FL160:</b>"; // No FAA pref route as of 10-24-2025
+					result += "<br/>VEERS: <input style=\"width:75%\"; value=\"KBDL VEERS WEETS V249 SBJ ARD KPHL\"; readonly>";
+					result += "<br/></br>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBDL CSTL9 CCC MANTA Q439 BRIGS JIIMS4 KPHL\" readonly>"; // CDR PJ
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBDL CTR DNY SPUDS7 KPHL\" readonly>"; // CDR D1
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KBDL CTR DNY SPUDS7 KPHL\"; readonly>"; // CDR D1
+					result += "<br/><input style=\"width:75%\"; value=\"KBDL MAD BEADS T358 BRIGS ACY V184 OOD KPHL\"; readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-24-2025
+					result += "<!-- Verified with ATCSCC on 10-24-2025 -->";
+					result += "<br/>D1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CTR DNY SPUDS7 KPHL\" readonly>";
+					result += "<br/>EL<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL MOBBS T295 LVZ ETX PTW KPHL\" readonly>";
+					result += "<br/>EW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL MAD BEADS T320 BRIGS ACY V184 OOD KPHL\" readonly>";
+					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBDL CSTL9 CCC MANTA Q439 BRIGS JIIMS4 KPHL\" readonly>";
+					break;
 			}
 		break; // End of BDL
 
