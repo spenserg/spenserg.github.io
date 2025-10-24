@@ -676,7 +676,8 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "MSY": // KMIA-MSY // Updated 10-24-2025
 			result += "<!-- Updated 10-24-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 BLVNS Q105 HRV KMSY\" readonly>"; // CDR G0
+			result += "<br/><input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV KMSY\" readonly>"; // Based on CDR G0
+			result += "<br/><b>As of 10-24-2025, CDR G0 is .. GLADZ4 BAGGS Y290 BLVNS.. <\/b>";
 			result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 SJI MNSTR1 KMSY\" readonly>"; // CDR H0
 			result += "<br/>North/Hurricane<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 WIGVO IRQ J99 VXV J46 BNA MEM J35 MCB TRSSH1 KMSY\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
