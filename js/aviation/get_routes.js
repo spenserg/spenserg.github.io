@@ -1000,18 +1000,33 @@ result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI LFK AEX ME
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-
-// TODO BGR-LGA
-/* TODO - FOS ROUTES:
-KBGR BGR CAM V123 ALB HAARP3 KLGA
-*/
-
+				case "LGA": // BGR-LGA // Updated 10-25-2025
+					result += "<!-- Updated 10-25-2025 -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBGR BGR CAM V123 ALB HAARP4 KLGA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-24-2025
+					result += "<!-- Verified with ATCSCC on 10-24-2025 -->";
+					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBGR ALB HAARP4 KLGA\" readonly>";
+					result += "<br/>PP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBGR ALB NOBBI5 KLGA\" readonly>";
+					break;
+				case "ORD": // KBGR-ORD // Updated 10-24-2025
+					result += "<!-- Updated 10-24-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBGR GONZZ Q822 FNT WYNDE3 KORD\" readonly>"; // CDR PJ
+					result += "<br/><br/>LAKE ERIE WEST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBGR GONZZ FARGN CHAAP Q436 KAYYS WYNDE3 KORD\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-24-2025
+					result += "<!-- Verified with ATCSCC on 10-24-2025 -->";
+					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBGR GONZZ Q822 FNT WYNDE3 KORD\" readonly>";
+					result += "<br/>YZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBGR GONZZ FARGN CHAAP Q436 KAYYS WYNDE3 KORD\" readonly>";
+					break;
+					
 // TODO BGR-ORD
 /* TODO - FOS ROUTES:
 KBGR GONZZ CHAAP Q436 KAYYS WYNDE3 KORD
 KBGR BTV ART IGSEB Q913 DERLO Q822 FNT WYNDE2 KORD
 KBGR CABCI Q913 DERLO Q822 FNT WYNDE2 KORD
-KBGR GONZZ Q822 FNT WYNDE2 KORD
 KBGR GONZZ Q29 DORET DJB ZANLA WATSN4 KORD
 */
 
@@ -1019,7 +1034,7 @@ KBGR GONZZ Q29 DORET DJB ZANLA WATSN4 KORD
 					result += "<!-- Updated 09-28-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBGR BEEKN Q439 BRIGS JIIMS4 KPHL\" readonly>"; // CDR PJ
-					// TODO East
+					// TODO East Route
 					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBGR BGR FRIAR J49 ALB DNY SLATT6 KPHL \" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KBGR CAM ALB DNY SPUDS7 KPHL\"; readonly>"; // CDR D1
