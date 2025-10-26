@@ -1369,22 +1369,23 @@ KORD PLL ALO FOD ONL J94 LLC J32 SAC KSMF
 			result += "<br/>8S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J151 VUZ ACORI MAATY5 KTPA\" readonly>";
 			result += "<br/>SB<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE BWG HITMN ACORI MAATY5 KTPA\" readonly>";
 			break;
-
-/* TODO - FOS ROUTES: KORD - KTUL
-KORD RBS STL J8 SGF VINTA3 KTUL
-KORD MZV IRK MCI KTUL
-KORD RBS V191 TOY V88 SGF VINTA3 KTUL
-KORD ACITO ADELL ARLYN STL J8 SGF VINTA3 KTUL
-KORD ACITO ADELL ARLYN STL V14 SGF VINTA3 KTUL
-KORD PEKUE PIGGG QUANE CARET ROEZZ MCI J25 TUL KTUL
-KORD PEKUE PIGGG QUANE CARET ROEZZ SGF VINTA3 KTUL
-KORD CMSKY CARYN CYBIL PXV J78 FAM J98 SGF VINTA3 KTUL
-KORD MYKIE MONNY JORDY OVR J21 ICT J182 COODY KTUL
-KORD ACITO ADELL ARLYN STL J8 SGF VINTA3 KTUL
-KORD BACEN BLOKR BEKKI ENL FAM J78 TUL KTUL
-KORD CMSKY CARYN CYBIL PXV J78 TUL KTUL
-*/
-
+		case "TUL": // KORD-TUL // Updated 10-25-2025
+			result += "<!-- Updated 10-25-2025 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J8 SGF VINTA3 KTUL\" readonly>"; // CDR 0S
+			result += "<br/></br>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN LMN MCI J25 TUL KTUL\" readonly>"; // CDR 2W
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL FAM J78 TUL KTUL\" readonly>"; // CDR 4S
+			result += "<br/><br/>North via OVR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MYKIE MONNY JORDY OVR J21 ICT J182 COODY KTUL\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD MZV IRK MCI KTUL\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-25-2025
+			result += "<!-- Verified with ATCSCC on 10-25-2025 -->";
+			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J8 SGF VINTA3 KTUL\" readonly>";
+			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ BUM J87 TUL KTUL\" readonly>";
+			result += "<br/>2W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN LMN MCI J25 TUL KTUL\" readonly>";
+			result += "<br/>4S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL FAM J78 TUL KTUL\" readonly>";
+			result += "<br/>5S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV J78 TUL KTUL\" readonly>";
+			break;
 		case "TUS": // ORD-TUS // Updated 07-18-2025 // Mandatory Routes checked
 			result += "<!-- Updated 07-18-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
