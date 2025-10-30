@@ -2217,13 +2217,13 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX4 TUL J98 SGF BAYLI J181 BDF BAE KTVC\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-		case "TYS": // DFW-TYS // Updated 04-16-2025
-			result += "<!-- Updated 04-16-2025 -->";
+		case "TYS": // // DFW-TYS // Updated 10-30-2025
+			result += "<!-- Updated 10-30-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEM TAZZA KTYS\" readonly>";
-			result += "<br/><b style=\"color:orange\">ATC prefers ...MEM-TAZZA-KTYS<\/b>";
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC ARG J46 BNA KTYS\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS GQO KTYS\" readonly>";
+			result += "<br/><b>ATC prefers ...MEM-TAZZA-KTYS<\/b>";
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC ARG J46 BNA KTYS\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS GQO KTYS\" readonly>";
 			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MCB MERDN VLKNN VXV KTYS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 LIT BNA KTYS\" readonly>";
