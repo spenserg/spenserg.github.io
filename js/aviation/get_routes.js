@@ -10692,16 +10692,15 @@ KTPA ENDED2 LACEN BRUTS Q118 THRSR BURGG Q22 BEARI FAK BRV AML J220 FORTT MIP MI
 
 		case "TYS":
 			switch(arvl) {
-				case "CLT": // TYS-CLT // Updated 04-16-2025
-					result += "<!-- Updated 04-16-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+				case "CLT": // TYS-CLT // Updated 10-30-2025
+					result += "<!-- Updated 10-30-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL230):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTYS COMDY FILPZ4 KCLT\" readonly>";
-					result += "<br/><b style=\"color:orange\">Might need to disable proc alt limits or use KTYS-VXV-COMDY...<\/b>";
+					result += "<br/><b>Might need to disable proc alt limits or use KTYS-VXV-COMDY...<\/b>";
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KTYS ODF BANKR BANKR5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTYS VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-16-2025
-					result += "<!-- Verified with ATCSCC on 04-16-2025 -->";
 					break;
 				case "DFW": // TYS-DFW // Updated 05-27-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-27-2025 MP -->";
