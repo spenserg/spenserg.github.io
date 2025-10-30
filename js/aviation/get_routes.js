@@ -1130,14 +1130,14 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-20-2025
 					break;
-
-// TODO BIL-PHX
-/* TODO - FOS ROUTES:
-KBIL SYMPL BPI LEGBE HVE TBC PXR KPHX
-KBIL J713 BOY EKR RSK GUP ZUN EAGUL6 KPHX
-KBIL DBS J9 FFU J11 DRK BRUSR1 KPHX
-*/
-
+				case "PHX": // BIL-PHX // Updated 10-29-2025
+					result += "<!-- Updated 10-29-2025 -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-29-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBIL BIL DNW FFU J11 BCE CORKR TENTS BRUSR1 KPHX\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBIL BIL J713 BOY EKR MTJ RSK GUP EAGUL6 KPHX\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-29-2025
+					break;
 			}
 		break; // End of BIL
 
@@ -1165,14 +1165,26 @@ KBIL DBS J9 FFU J11 DRK BRUSR1 KPHX
 					result += "<br/><input style=\"width:75%\" value=\"KBNA MEM LIT FINGR9 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
 					break;
-
-// TODO BNA-JFK
-/* TODO - FOS ROUTES:
-KBNA J42 RBV KJFK
-*/
-
-// TODO BNA-LAS // one fos route // BNA.DCT.ARG.J46.TUL.DCT.IFI.DCT.BGD.J8.GUP.J72.PGS.ISHEE1.LAS
-
+				case "JFK": // BNA-JFK // Updated 10-29-2025
+					result += "<!-- Updated 10-29-2025 -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"BNA TAZMO3 BURME VXV IDDAA Q64 SAWED Q108 SIE CAMRN5 JFK\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"BNA KRSTA3 OLSIE IIU ROD DJB JHW Q476 WLKES PUCKY1 JFK\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA TIPPN3 BRXTN RMG AHN YUTEE Q172 OKNEE Q409 GUILD Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-29-2025
+					break;
+				case "LAS": // BNA-LAS // Updated 10-29-2025
+					result += "<!-- Updated 10-29-2025 -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-29-2025
+					result += "<br/>NRP: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG FSM IRW AGGIY Q162 HAHAA RKSTR4 KLAS\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS Q19 STL J24 MCI J80 HLC HGO J197 DVC TYEGR CHOWW4 KLAS\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY3 ACKEE SQS SUTTN J52 TXK SPS J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
+					// KBNA PARDN3 NAKIY SGF ICT RSK J64 TBC SQIRE RKSTR4 KLAS
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBNA ARG J46 TUL IFI BGD FTI J8 GUP J72 PGS ISHEE2 KLAS\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-29-2025
+					break;
 				case "LAX": // BNA-LAX // Updated 05-19-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-19-2025 MP -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-19-2025
