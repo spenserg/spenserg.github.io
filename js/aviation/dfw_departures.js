@@ -1360,7 +1360,8 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 04-18-2025 M -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW NELYN6 SAT J25 CRP KMFE\" readonly>"; // CDR 0P
-			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV PSX J29 CRP KMFE\" readonly>";
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV ELA CRP KMFE\" readonly>";
+			PSX J29 
 			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 DOSXX SJT JCT SAT J25 CRP KMFE\" readonly>"; // CDR 1W
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW JPOOL7 SAT J21 LRD V17 KMFE\" readonly>";
