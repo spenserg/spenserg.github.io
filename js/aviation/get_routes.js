@@ -1022,9 +1022,7 @@ result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI LFK AEX ME
 					result += "<br/>YZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBGR GONZZ FARGN CHAAP Q436 KAYYS WYNDE3 KORD\" readonly>";
 					break;
 					
-// TODO BGR-ORD
-/* TODO - FOS ROUTES:
-KBGR GONZZ CHAAP Q436 KAYYS WYNDE3 KORD
+/* BGR-ORD FOS ROUTES:
 KBGR BTV ART IGSEB Q913 DERLO Q822 FNT WYNDE2 KORD
 KBGR CABCI Q913 DERLO Q822 FNT WYNDE2 KORD
 KBGR GONZZ Q29 DORET DJB ZANLA WATSN4 KORD
@@ -1057,12 +1055,13 @@ KBGR GONZZ Q29 DORET DJB ZANLA WATSN4 KORD
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-20-2025
 					break;
-
-// TODO BHM-DCA
-/* TODO - FOS ROUTES:
-KBHM CHEHA ATL KELLN Q56 KIWII WAVES CAPSS3 KDCA
-*/
-
+				case "DCA": // BHM-DCA // Updated 10-29-2025
+					result += "<!-- Updated 10-29-2025 -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBHM CHEHA ATL KELLN Q56 KIWII WAVES CAPSS3 KDCA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-29-2025
+					break;
 				case "DFW": // BHM-DFW // Updated 06-20-2025
 					result += "<!-- Updated 06-20-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -1084,18 +1083,25 @@ KBHM CHEHA ATL KELLN Q56 KIWII WAVES CAPSS3 KDCA
 					result += "<br/><input style=\"width:75%\" value=\"KBHM LGC GEF CTY PIE PALMZ2 KMIA\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-20-2025
 					break;
+				case "OKC": // BHM-OKC // Updated 10-29-2025
+					result += "<!-- Updated 10-29-2025 -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBHM VUZ J14 IRW KOKC\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-29-2025
+					break;
+				case "ORD": // BHM-ORD // Updated 10-29-2025
+					result += "<!-- Updated 10-29-2025 -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"BHM KELCC FTZ TRTLL6 ORD\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBHM RHETT BNA STREP FWA WATSN4 KORD\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-29-2025
+					break;
 
-// TODO BHM-OKC // one fos route // BHM.DCT.VUZ.J14.OKC
-
-// TODO BHM-ORD
-/* TODO - FOS ROUTES:
-KBHM RHETT BNA STREP FWA WATSN4 KORD
-KBHM KELCC FTZ TRTLL6 KORD
-*/
-
-// TODO BHM-PHL
-/* TODO - FOS ROUTES:
-KBHM MRICA GAD SITTR Q34 GVE PAATS3 KPHL
+/* BHM-PHL skipped
+FOS ROUTES:
+KBHM MRICA GAD SITTR Q34 GVE PAATS4 KPHL
 KBHM CHEHA THRSR BURGG Q22 BEARI BBDOL PAATS4 KPHL
 KBHM RHETT RQZ BWG CVG APE JST BOJID2 KPHL
 KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
