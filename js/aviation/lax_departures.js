@@ -48,7 +48,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "BOS": // LAX-BOS // Updated 01-31-2025
 			result += "<!-- Updated 01-31-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 DVC J146 GLD PWE LMN J64 ALBRT J18 JOT J146 GIJ J554 JHW Q82 PONCT JFUND2 KBOS\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 DVC J146 GLD PWE LMN MZV J18 JOT J146 GIJ J554 JHW Q82 PONCT JFUND2 KBOS\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS BAWER LARVE EKR MBW RAP J158 ABR J32 DLH J140 SSM OXASA POLTY BUGSY ENE OOSHN5 KBOS\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR TWOUP Q22 RBV Q419 JFK ROBUC3 KBOS\" readonly>";
 			result += "<br/><br/>BAE 1: <input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS BAWER LARVE EKR MBW RAP RWF J34 BAE HOCKE Q816 KELTI NABOR PONCT JFUND2 KBOS\" readonly>";
