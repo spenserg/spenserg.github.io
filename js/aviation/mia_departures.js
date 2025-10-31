@@ -858,18 +858,18 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 TEEEM PETTO DMSTR2 KRDU\" readonly>";
 			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC BLOGS3 KRDU\" readonly>";
 			break;
-		case "RIC": // MIA-RIC // Updated 05-31-2025
-			result += "<!-- Updated 005-31-2025 P -->";
+		case "RIC": // MIA-RIC // Updated 10-30-2025
+			result += "<!-- Updated 10-30-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/>Non OW: <input style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 LCAPE NOWAE NEAVL DUCXS5 KRIC\" readonly>"; // CDR A0
-			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC ZORDO Q111 RUKRR NEAVL DUCXS5 KRIC\" readonly>"; // CDR Z0
+			result += "<br/><input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC ZORDO Q111 RUKRR NEAVL DUCXS5 KRIC\" readonly>"; // CDR Z0
+			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 LCAPE NOWAE NEAVL DUCXS5 KRIC\" readonly>"; // CDR A0
 			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 POLYY DADDS NOWAE NEAVL DUCXS5 KRIC\" readonly>"; // CDR H2
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-31-2025
-			result += "<!-- Verified with ATCSCC on 05-31-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-30-2025
+			result += "<!-- Verified with ATCSCC on 10-30-2025 -->";
 			result += "<br/>A0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 LCAPE NOWAE NEAVL DUCXS5 KRIC\" readonly>";
 			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO Q99 POLYY DADDS NOWAE NEAVL DUCXS5 KRIC\" readonly>";
-			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 POLYY DADDS NOWAE NEAVL DUCXS5 KRIC\" readonly>";
+			result += "<br/>H0<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 POLYY DADDS NOWAE NEAVL DUCXS5 KRIC\" readonly>";
 			result += "<br/>K2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 KLADA UPACE SEELO GARIC ZORDO Q111 RUKRR NEAVL DUCXS5 KRIC\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 POLYY DADDS NOWAE NEAVL DUCXS5 KRIC\" readonly>";
 			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC ZORDO Q111 RUKRR NEAVL DUCXS5 KRIC\" readonly>";
