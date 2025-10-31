@@ -9782,14 +9782,14 @@ KPWM NUBLE4 CCC MANTA Q439 BRIGS JIIMS4 KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KSEA SUMMA JINMO Q7 JAGWA BURGL IRNMN2 KLAX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					break;
-				case "MIA": // SEA-MIA // Updated 07-18-2025
-					result += "<!-- Updated 07-18-2025 P -->";
+				case "MIA": // SEA-MIA // Updated 10-30-2025
+					result += "<!-- Updated 10-30-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-18-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSEA MONTN2 SEA NORMY J90 MWH DLN DDY BFF SGF MEMFS MGMRY ACORI FROGZ4 KMIA\" readonly>";
-					result += "<br/><br/>OW: <input style=\"width:75%\" value=\"KSEA SUMMA2 BKE PIH J20 LAA TOTOE MMB J98 IRW J20 EIC SWEUP HRV Q105 BLVNS Q102 GAWKS FROGZ4 KMIA\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KSEA MONTN2 SEA ZADON ZELAK ZIRAN MLP J136 BIL J151 STL Q19 HITMN THRSR HONID FROGZ4 KMIA\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KSEA SUMMA2 BKE J54 PIH J20 LAA TOTOE MMB J98 IRW J20 EIC MHZ MERDN DEFUN FROGZ4 KMIA\" readonly>";
-					result += "<br/>Coastal: <input style=\"width:75%\" value=\"KSEA SUMMA2 SUMMA WANTA J523 IMB NEERO WINEN CORKR BAVPE J86 ELP J86 LEV Y290 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>Q148: <input style=\"width:75%\" value=\"KSEA MONTN2 SEA NORMY J90 MWH FINUT Q148 KIRKE ICT J182 RZC ECIGE Q128 JILLS MGM ACORI FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>North/J136<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSEA MONTN2 SEA NORMY J70 MLP J136 BIL J151 STL J45 BNA J73 LGC HONID FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>South/J20<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSEA MONTN2 SEA J20 LAA MMB J98 IRW J20 EIC SWEUP HRV Q105 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/>South/Q154<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSEA SUMMA2 SUMMA Q154 HEATR SPS J58 HRV Q105 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>Coastal<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSEA SUMMA2 LKV J5 FMG J92 BLD J72 CUTRO J86 LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSEA MONTN2 SEA NORMY J90 MWH LKT J52 DBS J175 CYS GLD J182 ICT RZC MEM J41 MGM SZW PIE PALMZ2 KMIA\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-18-2025
