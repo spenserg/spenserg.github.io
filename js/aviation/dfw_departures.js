@@ -1356,13 +1356,13 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC BRBBQ3 KMEM\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MCB MEVEE HOBRK4 KMEM\" readonly>";
 			break;
-		case "MFE": // DFW-MFE // Updated 04-18-2025 // Mandatory Routes checked
-			result += "<!-- Updated 04-18-2025 M -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW NELYN6 SAT J25 CRP KMFE\" readonly>"; // CDR 0P
+		case "MFE": // DFW-MFE // Updated 10-30-2025
+			result += "<!-- Updated 10-30-2025 -->";
 			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV ELA CRP KMFE\" readonly>";
-			PSX J29 
-			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 DOSXX SJT JCT SAT J25 CRP KMFE\" readonly>"; // CDR 1W
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 SAT J21 LRD FATOR KMFE\" readonly>";
+			result += "<br/><b>As of 10/30/25, Fkeys will red brick if you use V17 too close to KMFE (Min FL310 in 5D NAV) // just plan direct ELIZA/FATOR<\/b>";
+			result += "<br/><br/>East via AEX<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP AEX LCH J22 CRP KMFE\" readonly>";
+			result += "<br/>West via JCT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 DOSXX SJT JCT SAT J25 CRP KMFE\" readonly>"; // CDR 1W
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW JPOOL7 SAT J21 LRD V17 KMFE\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-11-2025
