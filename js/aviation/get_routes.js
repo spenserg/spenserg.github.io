@@ -1250,7 +1250,7 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 			switch(arvl) {
 				case "DFW": // BOI-DFW // Updated 07-11-2025
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-12-2025
-					result += "<br/><br/>Q154: <input style=\"width:75%\" value=\"KBOI BOI3 BOI BYI Q154 NOSEW MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>Q154: <input style=\"width:75%\" value=\"KBOI BOI3 BOI ROARR BYI Q154 NOSEW MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI3 BOI J163 OCS J52 HGO EZEEE MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"BOI3 BOI J15 TCH HVE RSK J58 PNH MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><b>For SW Arrival: ...RSK J15 CME BGS GEEKY BOOVE7 KDFW<\/b>";
