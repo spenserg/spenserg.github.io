@@ -26,7 +26,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "AUS": // MIA-AUS // Updated 08-05-2025
 			result += "<!-- Updated 08-05-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS Y290 BACCA ROZZI Y280 LEV LCH WEEED WLEEE7 KAUS\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV LCH WEEED WLEEE7 KAUS\" readonly>";
 			result += "<br/><b style=\"color:orange\">FAA pref is KMIA BNGOS4 DOLIE Y280 LEV.. but it gets rerouted to the above<\/b>";
 			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 LCH Q24 MOLLR DBOYS WLEEE7 KAUS\" readonly>";
 			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 VLKNN YAALL J14 LIT J66 BYP WINDU SEWZY6 KAUS\" readonly>";
