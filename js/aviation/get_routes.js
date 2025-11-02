@@ -2485,14 +2485,14 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/>KN<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCVG KENLN6 SHIPR TAFTT PARQR4 KCLT\" readonly>";
 					result += "<br/>PR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCVG HYK GZG BTSEY2 KCLT\" readonly>";
 					break;
-
-					/* TODO - FOS ROUTES: CVG-DCA
-KCVG GIPLE7 HVQ TRUPS5 KDCA
-KCVG BNGLE5 RIKLE APE AIR J34 BUCKO FRDMM6 KDCA
-KCVG GIPLE7 HVQ TRUPS5 KDCA
-KCVG KENLN6 SHIPR SITTR TRUPS5 KDCA
-*/
-
+				case "DCA": // CVG-DCA // Updated 11-01-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KCVG GIPLE7 HVQ TRUPS5 KDCA\" readonly>";
+					result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCVG BNGLE5 RIKLE APE AIR J34 BUCKO FRDMM6 KDCA\" readonly>"; // CDR BN
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCVG KENLN6 SHIPR SITTR TRUPS5 KDCA\" readonly>"; // CDR KN
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-01-2025
+					break;
 				case "DFW": // CVG-DFW // Updated 08-21-2025
 					result += "<!-- Updated 08-21-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
