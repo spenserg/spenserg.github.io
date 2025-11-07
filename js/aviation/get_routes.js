@@ -3548,15 +3548,15 @@ KDCA WYNGS5 RAMAY Q72 HACKS UKATS DLAMP8 KSDF
 					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q176 HNN EWC ELZ NABOR KSYR\" readonly>";
 					result += "<br/>65<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA WYNGS5 RAMAY J149 SINDE EWC ELZ NABOR KSYR\" readonly>";
 					break;
-				case "TPA": // DCA-TPA // Updated 04-10-2025
-					result += "<!-- Updated 04-10-2025 -->";
+				case "TPA": // DCA-TPA // Updated 11-07-2025
+					result += "<!-- Updated 11-07-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 TEUFL BAAMF DADES2 KTPA\" readonly>";
-					result += "<br/><br/>Coastal <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB GUILD Q409 PUPYY BAAMF DADES2 KTPA\" readonly>"; // CDR 41
+					result += "<br/><br/>East <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB GUILD Q409 PUPYY BAAMF DADES2 KTPA\" readonly>"; // CDR 41
+					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ SPAYD VXV THRSR HONID MAATY5 KTPA\" readonly>";
 					result += "<br/>OW <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB EARZZ Q131 WAALT Y289 BAHAA HIBAC DADES2 KTPA\" readonly>"; // CDR AR
-					result += "<br/>West <input style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 TEUFL BAAMF DADES2 KTPA\" readonly>"; // CDR 00
-					result += "<br/><br/>NO J75 1: <input style=\"width:75%\" value=\"KDCA AMEEE1 COLIN SCOOB GUILD Q409 PUPYY BAAMF DADES2 KTPA\" readonly>";
-					result += "<br/>NO Q75 3: <input style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ J85 SPA BAAMF DADES2 KTPA\" readonly>";
+					result += "<br/><br/>NO J75 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB GUILD Q409 PUPYY BAAMF DADES2 KTPA\" readonly>";
+					result += "<br/>NO Q75 3<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ J85 SPA BAAMF DADES2 KTPA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA AML GVE GSO CAE AMG TAY LAL BRDGE BRDGE9 KTPA\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-10-2025
