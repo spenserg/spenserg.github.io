@@ -7910,10 +7910,11 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<br/>P2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 ALEAN Q66 LITTR KOMMA IRW J6 PNH J58 FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
 					result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>";
 					break;
-				case "LAX": // PHL-LAX // Updated 03-10-2025
-					result += "<!-- Updated 03-10-2025 -->";
+				case "LAX": // PHL-LAX // Updated 11-07-2025
+					result += "<!-- Updated 11-07-2025 P -->";
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 STL J134 ICT LBL CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR ST
-					result += "<br/><br/>PTW/North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB MAYZE JOT J60 HVE PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>"; // CDR 60
+					result += "<br/><br/>PTW/North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB MAYZE JOT J87 MZV WELKY Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/><b>J60: .. JOT J60 HVE PROMT Q88 HAKMN ANJLL4 KLAX<\/b>"; // CDR 60
 					result += "<br/>STOEN/South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 BFOLO FIBER HRISN IZAAC EIC J4 ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>"; // CDR EM
 					result += "<br/><br/>DITCH/North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL DITCH Q437 HNNAH Q450 JFK CFB Q818 WOZEE Q935 HOCKE BAE J16 MCW J148 DTA MLF WINEN Q73 HAKMN ANJLL4 KLAX\" readonly>"; // CDR 95
 					result += "<br/>South via HRV<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 NIOLA GRGIA ARNNY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT FST ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>"; // CDR EP
@@ -10670,20 +10671,26 @@ KTPA ENDED2 LACEN BRUTS Q118 THRSR BURGG Q22 BEARI FAK BRV AML J220 FORTT MIP MI
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "PHL": // TPA-PHL // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
+				case "PHL": // TPA-PHL // Updated 11-07-2025
+					result += "<!-- Updated 11-07-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTPA BAYPO2 CAMJO Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/><br/>OW: <input style=\"width:75%\" value=\"KTPA MLB LENDS GRUBR Y299 SEELO WAALT Q131 PRONI Q117 SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
-					result += "<br/>West: <input style=\"width:75%\" value=\"KTPA BAYPO2 CAMJO IRQ SPA PSK JST BOJID4 KPHL\" readonly>";
-					result += "<br/>Full OW: <input style=\"width:75%\" value=\"KTPA CROWD MZULO HESTA ETECK PELCN ROWSY Y494 VIRST Y494 SILLY LYNUS B24 DASHA JIIMS4 KPHL\" readonly>";
-					result += "<br/><br/>ATLANTIC NORTH 1: <input style=\"width:75%\" value=\"KTPA CROWD8 CROWD MLB ETECK OZENA ROWSY OTTNG HAAYY WICKE DASHA JIIMS4 KPHL\" readonly>";
-					result += "<br/>FL TO NE 2: <input style=\"width:75%\" value=\"KTPA BAYPO2 CAMJO TWINS BURGG Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/>FL TO NE 3: <input style=\"width:75%\" value=\"KTPA BAYPO2 CAMJO TWINS SPA J83 APE JST BOJID4 KPHL\" readonly>";
-					result += "<br/>FL TO NE 4: <input style=\"width:75%\" value=\"KTPA CROWD MZULO HESTA ETECK GRUBR OGGRE Y436 PITRW LCAPE ALWZZ OGRAE Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/><br/>OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA CROWD8 CROWD CRMIN MZULO HESTA LENDS PELCN Y309 FLRDA IDOLS SKARP Q101 KALDA ZJAAY JIIMS4 KPHL\" readonly>";
+					// FOS RTE: KTPA MLB LENDS GRUBR Y299 SEELO WAALT Q131 PRONI Q117 SAWED Q97 ZJAAY JIIMS4 KPHL
+					result += "<br/>West/ZDC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 LACEN BRUTS Q118 THRSR VXV KONGO Q71 EMNEM JST BOJID4 KPHL\" readonly>";
+					// FOS RTE: KTPA BAYPO2 CAMJO IRQ SPA BKW GEFFS Q71 EMNEM JST BOJID4 KPHL
+					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA CROWD8 CROWD MZULO HESTA ETECK PELCN ROWSY Y494 VIRST Y494 SILLY LYNUS B24 DASHA JIIMS4 KPHL\" readonly>";
+					result += "<br/><br/>ATL NORTH 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA CROWD8 CROWD MLB ETECK OZENA ROWSY OTTNG HAAYY WICKE DASHA JIIMS4 KPHL\" readonly>";
+					result += "<br/>FL TO NE 2<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA BAYPO2 CAMJO TWINS BURGG Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>FL TO NE 3<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA BAYPO2 CAMJO TWINS SPA J83 APE JST BOJID4 KPHL\" readonly>";
+					result += "<br/>FL TO NE 4<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA CROWD MZULO HESTA ETECK GRUBR OGGRE Y436 PITRW LCAPE ALWZZ OGRAE Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTPA TAY CAE RDU RIC SWL VCN9 KPHL\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-07-2025
+					result += "<!-- Verified with ATCSCC on 11-07-2025 -->";
+					result += "<br/>B0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA BAYPO2 CAMJO Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>C0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA CROWD8 CROWD CRMIN MZULO HESTA LENDS PELCN Y309 FLRDA IDOLS SKARP Q101 KALDA ZJAAY JIIMS4 KPHL\" readonly>";
+					break;
 					break;
 				case "PHX": // TPA-PHX // Updated 09-11-2025
 					result += "<!-- Updated 09-11-2025 P -->";
