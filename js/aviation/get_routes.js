@@ -4345,7 +4345,7 @@ FAR.V2-GEP.V82-RST.V24-LNR.V97-JVL ORD
 					result += "<br/><br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFLL FEALX2 ETECK GRUBR Y299 SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA\" readonly>"; // CDR X0
 					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFLL HROCK2 KPASA Q99 CAMJO Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>"; // CDR H2
 					result += "<br/><br/>West via HVQ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFLL HROCK2 KPASA Q118 THRSR VXV TONIO HVQ TRUPS5 KDCA\" readonly>";
-					result += "<br/>WATRS<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFLL FEALX2 ETECK PELCN ROWSY Y494 VIRST Y494 SILLY LYNUS B24 DASHA ATR LAFLN DEALE3 KDCA\" readonly>";
+					result += "<br/>WATRS<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFLL FEALX2 ETECK PELCN ROWSY Y494 SILLY LYNUS B24 DASHA ATR LAFLN DEALE3 KDCA\" readonly>";
 					//result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-02-2025
 					result += "<!-- Verified with ATCSCC on 06-02-2025 -->";
@@ -4355,7 +4355,6 @@ FAR.V2-GEP.V82-RST.V24-LNR.V97-JVL ORD
 					result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
 					result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL SNAPR2 SNAPR HEYDR SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA\" readonly>";
 					result += "<br/>X0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL FEALX2 ETECK GRUBR Y299 SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA\" readonly>";
-					break;
 					break;
 				case "DFW": // FLL-DFW // Updated 06-10-2025
 					result += "<!-- Updated 06-10-2025 P -->";
@@ -4383,6 +4382,24 @@ FAR.V2-GEP.V82-RST.V24-LNR.V97-JVL ORD
 					result += "<br/>R3<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL REGAE2 REGAE CRUZN TAZER MARCI REDFN Q105 HRV J58 AEX PNUTS BEREE3 KDFW\" readonly>";
 					result += "<br/>X2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL FEALX2 ETECK GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR VLKNN IZAAC YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/>X3<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL FEALX2 ETECK GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR VLKNN IZAAC YUYUN WHINY4 KDFW\" readonly>";
+					break;
+				case "LGA": // KFLL-LGA // Updated 11-07-2025
+					result += "<!-- Updated 11-07-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KFLL FEALX2 ETECK GRUBR Y299 SEELO GARIC Q107 HURTS PROUD2 KLGA\" readonly>"; // CDR X0
+					result += "<br/></br>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFLL AGERS1 DUCEN Q87 HURTS PROUD2 KLGA\" readonly>"; // CDR A0
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFLL HROCK2 KPASA Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>"; // CDR H0
+					result += "<br/><br/>East/Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFLL FEALX2 ETECK PELCN ROWSY Y494 YAALE Y495 OWENZ FATON HOFFI KEYED BDR PRENO KLGA\" readonly>";
+					result += "<br/>West via CVG<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFLL HROCK2 KPASA Q118 VOSTK ROD KLYNE Q29 WWSHR TEESY J146 ETG MIP4 KLGA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-07-2025
+					result += "<!-- Verified with ATCSCC on 11-07-2025 -->";
+					result += "<br/>A0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL AGERS1 DUCEN Q87 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL GLADZ4 SHAQQ KNOST DEANR CAMJO Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL HROCK2 KPASA Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL SNAPR2 SNAPR HEYDR SEELO GARIC Q107 HURTS PROUD2 KLGA\" readonly>";
+					result += "<br/>X0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL FEALX2 ETECK GRUBR Y299 SEELO GARIC Q107 HURTS PROUD2 KLGA\" readonly>";
 					break;
 				case "ORD": // FLL-ORD // Updated 07-07-2025
 					result += "<!-- Updated 07-07-2025 MP -->";
