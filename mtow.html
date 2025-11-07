@@ -406,6 +406,9 @@ function compute (str_override = "") {
 		}
 	//}
 
+	output = change_flow_str(((result[1].length == 3) ? result[1] : convert_iata(result[1])), flows[((result[1].length == 3) ? result[1] : convert_iata(result[1]))], output);
+	output = change_flow_str(((result[2].length == 3) ? result[2] : convert_iata(result[2])), flows[((result[2].length == 3) ? result[2] : convert_iata(result[2]))], output);
+	
 	$("#total").html('<br/>' + output);
 	/*
 	if (result != null && (rega.exec(fkeystxt) != null) && (regb.exec(fkeystxt) != null)) {
