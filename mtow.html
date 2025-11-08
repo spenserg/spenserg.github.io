@@ -438,12 +438,20 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	var cdr_str = "";
 	var playbooks = {};
 	var mr_text = ((mandatory_routes_checked) ? " // Mandatory Routes checked" : "");
+	var num_ok_to_file = 0;
+	var only_one_ok_to_file_pref = {};
 	while(null != (z = reg_tmp.exec(input))) {
 		dptr = z[2].substring(0, 4);
 		arvl = z[3].substring(1, 4);
 		var textarea_tabs = ((["KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(dptr)) ? "\n\t\t\t" : "\n\t\t\t\t\t");
 		var file_status = "<span style=\\\"color:" + ((z[5] == "Y") ? "red\\\"> (Coord Req)" : "green\\\"> (Ok to File)") + "<\/span>";
-
+		if (z[5] != "Y") {
+			num_ok_to_file++;
+			if (num_ok_to_file == 1) {
+				only_one_ok_to_file_pref = {'route' : z[4], 'notes' : ('CDR ' + z[1]), 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR " + z[1]};;
+			}
+		}
+		
 		// FAA Pref
 		if (dptr == "KCLT" && z[1] == "RP") { // CLT
 			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR RP";
@@ -478,6 +486,12 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		// CDRs
 		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";";
 		result_arr['cdrs'][z[1]] = {'route' : z[4], 'notes' : ("CDR " + z[1]), 'verified' : today_str, 'result_str' : ("result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";") };
+	}
+
+	if (num_ok_to_file == 1 && !["KCLT","KDCA","KDFW","KPHL"].includes(dptr)) {
+		faa_pref = only_one_ok_to_file_pref['result_str'];
+		result_arr['faa_pref'] = only_one_ok_to_file_pref;
+		if (debug_mode) { console.log("Only one ok-to-file CDR found"); }
 	}
 
 	// Sort Playbooks
