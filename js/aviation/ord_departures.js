@@ -363,7 +363,8 @@ ORD.DCT.GIJ.V55.DQN.DCT.DAY
 		case "DFW": // ORD-DFW // Updated 05-26-2025 // Mandatory Routes checked
 			result += "<!-- Updated 05-26-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD ACITO ADELL ARLYN STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KORD ACITO ADELL ARLYN STL FSM RRNET SEEVR4 KDFW\" readonly>";
+			result += "<br/><b>Pref route is .. STL RZC FSM .. but dct FSM follows Q27<\/b>";
 			result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI ICT HOFFF VKTRY2 KDFW\" readonly>"; // CDR 2W
 			result += "<br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL FAM J137 LIT FEWWW SEEVR4 KDFW\" readonly>"; // Based on CDR 2S
 			result += "<br/><br/>West via OVR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE OVR J21 JUDGE ICT IRW IBAKE VKTRY2 KDFW\" readonly>"; // CDR 8W
