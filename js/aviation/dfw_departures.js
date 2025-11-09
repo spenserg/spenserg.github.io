@@ -1806,7 +1806,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "RIC": // DFW-RIC // Updated 09-13-2025
 			result += "<!-- Updated 09-13-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 MAULS MOL SPIDR5 KRIC\" readonly>"; // CDR 0P
+			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 DENNY MOL SPIDR5 KRIC\" readonly>"; // Based on CDR 0P
 			result += "<br/><b>As of 10-30-2025, CDRs use ...MAULS FAK direct KRIC. Use MOL SPIDR5<\/b>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC FAM J78 IIU Q108 MAULS MOL SPIDR5 KRIC\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN RMG BURGG Q60 JAXSN KELCE DUCXS5 KRIC \" readonly>";
