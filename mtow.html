@@ -469,7 +469,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 				only_one_ok_to_file_pref = {'route' : z[4], 'notes' : ('CDR ' + z[1]), 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR " + z[1]};;
 			}
 		}
-		
+
 		// FAA Pref
 		if (dptr == "KCLT" && z[1] == "RP") { // CLT
 			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR RP";
@@ -487,7 +487,30 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 
 		// Playbook
 		z[7] = z[7].trim();
-		if (z[7].length > 0) {
+
+		// Shorten CDR names
+		z[7] = z[7].replace("DOMESTIC HARP", "DOM HARP");
+		z[7] = z[7].replace("OHIO VALLEY", "OHIO VLY");
+		z[7] = z[7].replace("DQO TUNNEL", "DQO TNL");
+		z[7] = z[7].replace("TO FLORIDA", "TO FL");
+		z[7] = z[7].replace("FLORIDA TO", "FL TO");
+		
+		z[7] = z[7].replace(" SOUTHWEST", " SW");
+		z[7] = z[7].replace(" NORTHWEST", " NW");
+		z[7] = z[7].replace(" SOUTHEAST", " SE");
+		z[7] = z[7].replace(" NORTHEAST", " NE");
+
+		z[7] = z[7].replace(" SOUTH WEST", " SW");
+		z[7] = z[7].replace(" NORTH WEST", " NW");
+		z[7] = z[7].replace(" SOUTH EAST", " SE");
+		z[7] = z[7].replace(" NORTH EAST", " NE");
+		
+		z[7] = z[7].replace(" NORTH FLOW", " N");
+		z[7] = z[7].replace(" SOUTH FLOW", " S");
+		z[7] = z[7].replace(" NORTH", " N");
+		z[7] = z[7].replace(" SOUTH", " S");
+		
+		if (z[7].length > 0 && z[7].substring(0,3) != "GA ") {
 			playbooks[z[7]] = {'route' : z[4], 'desc' : z[7], 'coord_req' : ((z[5] == "N") ? false : true),
 						 'result_str' : ("result += \"<br/>" + z[7] + file_status + ": <input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";") };
 		}
