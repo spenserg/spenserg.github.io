@@ -827,6 +827,828 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 	return result;
 }
 
+weather_cam = function (str = null) {
+	switch (str) {
+		case "ABE":
+		case "KABE":
+			return ""; // TODO
+			break;
+		case "ABI":
+		case "KABI":
+			return ""; // TODO
+			break;
+		case "ABQ":
+		case "KABQ":
+			return ""; // TODO
+			break;
+		case "ACT":
+		case "KACT":
+			return ""; // TODO
+			break;
+		case "ACY":
+		case "KACY":
+			return ""; // TODO
+			break;
+		case "AFW":
+		case "KAFW":
+			return ""; // TODO
+			break;
+		case "AGS":
+		case "KAGS":
+			return ""; // TODO
+			break;
+		case "ALB":
+		case "KALB":
+			return ""; // TODO
+			break;
+		case "AMA":
+		case "KAMA":
+			return ""; // TODO
+			break;
+		case "ATL":
+		case "KATL":
+			return ""; // TODO
+			break;
+		case "AUS":
+		case "KAUS":
+			return ""; // TODO
+			break;
+		case "AVL":
+		case "KAVL":
+			return ""; // TODO
+			break;
+		case "AVP":
+		case "KAVP":
+			return ""; // TODO
+			break;
+		case "AZA":
+		case "KIWA":
+			return ""; // TODO
+			break;
+		case "BDL":
+		case "KBDL":
+			return ""; // TODO
+			break;
+		case "BFI":
+		case "KBFI":
+			return ""; // TODO
+			break;
+		case "BFL":
+		case "KBFL":
+			return ""; // TODO
+			break;
+		case "BGR":
+		case "KBGR":
+			return ""; // TODO
+			break;
+		case "BHM":
+		case "KBHM":
+			return ""; // TODO
+			break;
+		case "BIL":
+		case "KBIL":
+			return ""; // TODO
+			break;
+		case "BLV":
+		case "KBLV":
+			return ""; // TODO
+			break;
+		case "BNA":
+		case "KBNA":
+			return ""; // TODO
+			break;
+		case "BOI":
+		case "KBOI":
+			return ""; // TODO
+			break;
+		case "BOS":
+		case "KBOS":
+			return ""; // TODO
+			break;
+		case "BRO":
+		case "KBRO":
+			return ""; // TODO
+			break;
+		case "BTR":
+		case "KBTR":
+			return ""; // TODO
+			break;
+		case "BTV":
+		case "KBTV":
+			return ""; // TODO
+			break;
+		case "BUF":
+		case "KBUF":
+			return ""; // TODO
+			break;
+		case "BUR":
+		case "KBUR":
+			return ""; // TODO
+			break;
+		case "BWI":
+		case "KBWI":
+			return ""; // TODO
+			break;
+		case "BZN":
+		case "KBZN":
+			return ""; // TODO
+			break;
+		case "CAE":
+		case "KCAE":
+			return ""; // TODO
+			break;
+		case "CAK":
+		case "KCAK":
+			return ""; // TODO
+			break;
+		case "CHS":
+		case "KCHS":
+			return ""; // TODO
+			break;
+		case "CID":
+		case "KCID":
+			return ""; // TODO
+			break;
+		case "CLE":
+		case "KCLE":
+			return ""; // TODO
+			break;
+		case "CLT":
+		case "KCLT":
+			return ""; // TODO
+			break;
+		case "CMH":
+		case "KCMH":
+			return ""; // TODO
+			break;
+		case "CNW":
+		case "KCNW":
+			return ""; // TODO
+			break;
+		case "COS":
+		case "KCOS":
+			return ""; // TODO
+			break;
+		case "COU":
+		case "KCOU":
+			return ""; // TODO
+			break;
+		case "CPR":
+		case "KCPR":
+			return ""; // TODO
+			break;
+		case "CRP":
+		case "KCRP":
+			return ""; // TODO
+			break;
+		case "CVG":
+		case "KCVG":
+			return ""; // TODO
+			break;
+		case "CYS":
+		case "KCYS":
+			return ""; // TODO
+			break;
+		case "DAB":
+		case "KDAB":
+			return ""; // TODO
+			break;
+		case "DAL":
+		case "KDAL":
+			return ""; // TODO
+			break;
+		case "DAY":
+		case "KDAY":
+			return ""; // TODO
+			break;
+		case "DCA":
+		case "KDCA":
+			return ""; // TODO
+			break;
+		case "DEN":
+		case "KDEN":
+			return ""; // TODO
+			break;
+		case "DFW":
+		case "KDFW":
+			return ""; // TODO
+			break;
+		case "DLH":
+		case "KDLH":
+			return ""; // TODO
+			break;
+		case "DRO":
+		case "KDRO":
+			return ""; // TODO
+			break;
+		case "DSM":
+		case "KDSM":
+			return ""; // TODO
+			break;
+		case "DTW":
+		case "KDTW":
+			return ""; // TODO
+			break;
+		case "ECP":
+		case "KECP":
+			return ""; // TODO
+			break;
+		case "EGE":
+		case "KEGE":
+			return ""; // TODO
+			break;
+		case "ELP":
+		case "KELP":
+			return ""; // TODO
+			break;
+		case "EUG":
+		case "KEUG":
+			return ""; // TODO
+			break;
+		case "EVV":
+		case "KEVV":
+			return ""; // TODO
+			break;
+		case "EWR":
+		case "KEWR":
+			return ""; // TODO
+			break;
+		case "EYW":
+		case "KEYW":
+			return ""; // TODO
+			break;
+		case "FAR":
+		case "KFAR":
+			return ""; // TODO
+			break;
+		case "FAT":
+		case "KFAT":
+			return ""; // TODO
+			break;
+		case "FCA":
+		case "KGPI":
+			return ""; // TODO
+			break;
+		case "FLL":
+		case "KFLL":
+			return ""; // TODO
+			break;
+		case "FNT":
+		case "KFNT":
+			return ""; // TODO
+			break;
+		case "FOE":
+		case "KFOE":
+			return ""; // TODO
+			break;
+		case "FSD":
+		case "KFSD":
+			return ""; // TODO
+			break;
+		case "GEG":
+		case "KGEG":
+			return ""; // TODO
+			break;
+		case "GGG":
+		case "KGGG":
+			return ""; // TODO
+			break;
+		case "GJT":
+		case "KGJT":
+			return ""; // TODO
+			break;
+		case "GNV":
+		case "KGNV":
+			return ""; // TODO
+			break;
+		case "GPT":
+		case "KGPT":
+			return ""; // TODO
+			break;
+		case "GRB":
+		case "KGRB":
+			return ""; // TODO
+			break;
+		case "GRK":
+		case "KGRK":
+			return ""; // TODO
+			break;
+		case "GRR":
+		case "KGRR":
+			return ""; // TODO
+			break;
+		case "GSO":
+		case "KGSO":
+			return ""; // TODO
+			break;
+		case "GSP":
+		case "KGSP":
+			return ""; // TODO
+			break;
+		case "GTF":
+		case "KGTF":
+			return ""; // TODO
+			break;
+		case "GUC":
+		case "KGUC":
+			return ""; // TODO
+			break;
+		case "HDN":
+		case "KHDN":
+			return ""; // TODO
+			break;
+		case "HOU":
+		case "KHOU":
+			return ""; // TODO
+			break;
+		case "HRL":
+		case "KHRL":
+			return ""; // TODO
+			break;
+		case "HSV":
+		case "KHSV":
+			return ""; // TODO
+			break;
+		case "IAD":
+		case "KIAD":
+			return ""; // TODO
+			break;
+		case "IAH":
+		case "KIAH":
+			return ""; // TODO
+			break;
+		case "ICT":
+		case "KICT":
+			return ""; // TODO
+			break;
+		case "IFP":
+		case "KIFP":
+			return ""; // TODO
+			break;
+		case "ILM":
+		case "KILM":
+			return ""; // TODO
+			break;
+		case "IND":
+		case "KIND":
+			return ""; // TODO
+			break;
+		case "JAC":
+		case "KJAC":
+			return ""; // TODO
+			break;
+		case "JAN":
+		case "KJAN":
+			return ""; // TODO
+			break;
+		case "JAX":
+		case "KJAX":
+			return ""; // TODO
+			break;
+		case "JFK":
+		case "KJFK":
+			return ""; // TODO
+			break;
+		case "LAS":
+		case "KLAS":
+			return ""; // TODO
+			break;
+		case "LAW":
+		case "KLAW":
+			return ""; // TODO
+			break;
+		case "LAX":
+		case "KLAX":
+			return ""; // TODO
+			break;
+		case "LBB":
+		case "KLBB":
+			return ""; // TODO
+			break;
+		case "LCH":
+		case "KLCH":
+			return ""; // TODO
+			break;
+		case "LEX":
+		case "KLEX":
+			return ""; // TODO
+			break;
+		case "LGA":
+		case "KLGA":
+			return ""; // TODO
+			break;
+		case "LIT":
+		case "KLIT":
+			return ""; // TODO
+			break;
+		case "LNK":
+		case "KLNK":
+			return ""; // TODO
+			break;
+		case "LRD":
+		case "KLRD":
+			return ""; // TODO
+			break;
+		case "MAF":
+		case "KMAF":
+			return ""; // TODO
+			break;
+		case "MCI":
+		case "KMCI":
+			return ""; // TODO
+			break;
+		case "MCO":
+		case "KMCO":
+			return ""; // TODO
+			break;
+		case "MDT":
+		case "KMDT":
+			return ""; // TODO
+			break;
+		case "MDW":
+		case "KMDW":
+			return ""; // TODO
+			break;
+		case "MEM":
+		case "KMEM":
+			return ""; // TODO
+			break;
+		case "MFE":
+		case "KMFE":
+			return ""; // TODO
+			break;
+		case "MGM":
+		case "KMGM":
+			return ""; // TODO
+			break;
+		case "MHT":
+		case "KMHT":
+			return ""; // TODO
+			break;
+		case "MIA":
+		case "KMIA":
+			return "https://www.miamiairportcam.com/";
+			break;
+		case "MKE":
+		case "KMKE":
+			return ""; // TODO
+			break;
+		case "MLB":
+		case "KMLB":
+			return ""; // TODO
+			break;
+		case "MLI":
+		case "KMLI":
+			return ""; // TODO
+			break;
+		case "MOB":
+		case "KMOB":
+			return ""; // TODO
+			break;
+		case "MRY":
+		case "KMRY":
+			return ""; // TODO
+			break;
+		case "MSN":
+		case "KMSN":
+			return ""; // TODO
+			break;
+		case "MSO":
+		case "KMSO":
+			return ""; // TODO
+			break;
+		case "MSP":
+		case "KMSP":
+			return ""; // TODO
+			break;
+		case "MSY":
+		case "KMSY":
+			return ""; // TODO
+			break;
+		case "MTJ":
+		case "KMTJ":
+			return ""; // TODO
+			break;
+		case "MWH":
+		case "KMWH":
+			return ""; // TODO
+			break;
+		case "MYR":
+		case "KMYR":
+			return ""; // TODO
+			break;
+		case "OKC":
+		case "KOKC":
+			return ""; // TODO
+			break;
+		case "OMA":
+		case "KOMA":
+			return ""; // TODO
+			break;
+		case "ONT":
+		case "KONT":
+			return ""; // TODO
+			break;
+		case "ORD":
+		case "KORD":
+			return ""; // TODO
+			break;
+		case "ORF":
+		case "KORF":
+			return ""; // TODO
+			break;
+		case "PAE":
+		case "KPAE":
+			return ""; // TODO
+			break;
+		case "PBI":
+		case "KPBI":
+			return ""; // TODO
+			break;
+		case "PDX":
+		case "KPDX":
+			return ""; // TODO
+			break;
+		case "PHL":
+		case "KPHL":
+			return ""; // TODO
+			break;
+		case "PHX":
+		case "KPHX":
+			return ""; // TODO
+			break;
+		case "PIE":
+		case "KPIE":
+			return ""; // TODO
+			break;
+		case "PIH":
+		case "KPIH":
+			return ""; // TODO
+			break;
+		case "PIT":
+		case "KPIT":
+			return ""; // TODO
+			break;
+		case "PNS":
+		case "KPNS":
+			return ""; // TODO
+			break;
+		case "PSM":
+		case "KPSM":
+			return ""; // TODO
+			break;
+		case "PSP":
+		case "KPSP":
+			return ""; // TODO
+			break;
+		case "PUB":
+		case "KPUB":
+			return ""; // TODO
+			break;
+		case "PVD":
+		case "KPVD":
+			return ""; // TODO
+			break;
+		case "PWM":
+		case "KPWM":
+			return ""; // TODO
+			break;
+		case "RAP":
+		case "KRAP":
+			return ""; // TODO
+			break;
+		case "RDM":
+		case "KRDM":
+			return ""; // TODO
+			break;
+		case "RDU":
+		case "KRDU":
+			return ""; // TODO
+			break;
+		case "RFD":
+		case "KRFD":
+			return ""; // TODO
+			break;
+		case "RIC":
+		case "KRIC":
+			return ""; // TODO
+			break;
+		case "RNO":
+		case "KRNO":
+			return ""; // TODO
+			break;
+		case "ROC":
+		case "KROC":
+			return ""; // TODO
+			break;
+		case "ROW":
+		case "KROW":
+			return ""; // TODO
+			break;
+		case "RST":
+		case "KRST":
+			return ""; // TODO
+			break;
+		case "RSW":
+		case "KRSW":
+			return ""; // TODO
+			break;
+		case "SAN":
+		case "KSAN":
+			return ""; // TODO
+			break;
+		case "SAT":
+		case "KSAT":
+			return ""; // TODO
+			break;
+		case "SAV":
+		case "KSAV":
+			return ""; // TODO
+			break;
+		case "SBA":
+		case "KSBA":
+			return ""; // TODO
+			break;
+		case "SBN":
+		case "KSBN":
+			return ""; // TODO
+			break;
+		case "SBP":
+		case "KSBP":
+			return ""; // TODO
+			break;
+		case "SDF":
+		case "KSDF":
+			return ""; // TODO
+			break;
+		case "SEA":
+		case "KSEA":
+			return ""; // TODO
+			break;
+		case "SFB":
+		case "KSFB":
+			return ""; // TODO
+			break;
+		case "SFO":
+		case "KSFO":
+			return ""; // TODO
+			break;
+		case "SGF":
+		case "KSGF":
+			return ""; // TODO
+			break;
+		case "SHV":
+		case "KSHV":
+			return ""; // TODO
+			break;
+		case "SJC":
+		case "KSJC":
+			return ""; // TODO
+			break;
+		case "SLC":
+		case "KSLC":
+			return ""; // TODO
+			break;
+		case "SMF":
+		case "KSMF":
+			return ""; // TODO
+			break;
+		case "SNA":
+		case "KSNA":
+			return ""; // TODO
+			break;
+		case "SPS":
+		case "KSPS":
+			return ""; // TODO
+			break;
+		case "SRQ":
+		case "KSRQ":
+			return ""; // TODO
+			break;
+		case "STL":
+		case "KSTL":
+			return ""; // TODO
+			break;
+		case "STS":
+		case "KSTS":
+			return ""; // TODO
+			break;
+		case "SWF":
+		case "KSWF":
+			return ""; // TODO
+			break;
+		case "SYR":
+		case "KSYR":
+			return ""; // TODO
+			break;
+		case "TLH":
+		case "KTLH":
+			return ""; // TODO
+			break;
+		case "TPA":
+		case "KTPA":
+			return ""; // TODO
+			break;
+		case "TUL":
+		case "KTUL":
+			return ""; // TODO
+			break;
+		case "TUS":
+		case "KTUS":
+			return ""; // TODO
+			break;
+		case "TVC":
+		case "KTVC":
+			return ""; // TODO
+			break;
+		case "TYS":
+		case "KTYS":
+			return ""; // TODO
+			break;
+		case "VPS":
+		case "KVPS":
+			return ""; // TODO
+			break;
+		case "XNA":
+		case "KXNA":
+			return ""; // TODO
+			break;
+		case "YEG":
+		case "CYEG":
+			return ""; // TODO
+			break;
+		case "YFB":
+		case "CYFB":
+			return ""; // TODO
+			break;
+		case "YHM":
+		case "CYHM":
+			return ""; // TODO
+			break;
+		case "YHZ":
+		case "CYHZ":
+			return ""; // TODO
+			break;
+		case "YJT":
+		case "CYJT":
+			return ""; // TODO
+			break;
+		case "YKM":
+		case "KYKM":
+			return ""; // TODO
+			break;
+		case "YOW":
+		case "CYOW":
+			return ""; // TODO
+			break;
+		case "YQB":
+		case "CYQB":
+			return ""; // TODO
+			break;
+		case "YQM":
+		case "CYQM":
+			return ""; // TODO
+			break;
+		case "YQX":
+		case "CYQX":
+			return ""; // TODO
+			break;
+		case "YUL":
+		case "CYUL":
+			return ""; // TODO
+			break;
+		case "YVR":
+		case "CYVR":
+			return ""; // TODO
+			break;
+		case "YXY":
+		case "CYXY":
+			return ""; // TODO
+			break;
+		case "YYC":
+		case "CYYC":
+			return ""; // TODO
+			break;
+		case "YYR":
+		case "CYYR":
+			return ""; // TODO
+			break;
+		case "YYT":
+		case "CYYT":
+			return ""; // TODO
+			break;
+		case "YYZ":
+		case "CYYZ":
+			return ""; // TODO
+			break;
+		case "YZF":
+		case "CYZF":
+			return ""; // TODO
+			break;
+	}
+	return "";
+}
+
 convert_iata = function (str = null) {
 	if (typeof str === 'string' || str instanceof String) {
 		if (str.length == 3) { return str; }
