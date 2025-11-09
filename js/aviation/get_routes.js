@@ -5125,7 +5125,7 @@ KILM RDU BBDOL PAATS4 KPHL
 			switch(arvl) {
 				case "CLT": // IND-CLT // Updated 08-25-2025
 					result += "<!-- Updated 08-25-2025 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL310/330):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIND DAWNN1 IIU SKYWA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND MAREO5 BDOCK HVQ PSK CHSLY CHSLY6 KCLT\" readonly>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIND OOM5 PXV J29 TINGS KM33M GOOGY J41 VUZ THRSR BESTT JONZE5 KCLT\" readonly>";
