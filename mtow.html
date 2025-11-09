@@ -525,20 +525,16 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 			return (x[0].localeCompare(y[0]));
 		});
 	}
-	/* Add extra <br> at the beginning; function now obsolete
-	if (sortable.length > 0) {
-		sortable[0][3] = sortable[0][3].replace('result += \"<br/>', 'result += \"<br/><br/>');
-	}
-	*/
 	result_arr['other'] = sortable;
-
 	result_arr['arvl'] = ((arvl.length == 4) ? arvl.substring(1, 4) : arvl);
 	result_arr['dptr'] = ((dptr.length == 4) ? dptr.substring(1, 4) : dptr);
 
-	var playbook_str = "";
+	sortable[0][3] = sortable[0][3].replace('result += \"<br/>', 'result += \"<br/><br/>');
+	var tmp_playbook_arr = [];
 	for (var i = 0; i < sortable.length; i++) {
-		playbook_str += sortable[i][3] + textarea_tabs;
+		tmp_playbook_arr.push(sortable[i][3]);
 	}
+	var playbook_str = tmp_playbook_arr.join(textarea_tabs);
 
 // console.log(cdr_str);
 	
@@ -648,11 +644,19 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	// Top large box
 	output += '<textarea rows="8" cols="80">' + "case \"" + arvl + '\": // ' + convert_iata(dptr) + '-' + arvl + ' // Updated ' + today_str + mr_text + textarea_tabs +
 		'result += \"<!-- Updated ' + today_str + ' P -->\";' + textarea_tabs +
-		'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref + textarea_tabs + 
+		'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref + '</textarea><br/><br/>';
+	output += '<textarea rows="8" cols="80">' +
 		((non_rnav.length == 0) ? "// " : "") + 'result += \"<br/><br/><b>Non RNAV</b>\";' +
-		((non_rnav.length == 0) ? " // TODDO" : (textarea_tabs + non_rnav)) +
-		'</textarea><br/><br/>' +
-		((playbook_str.length > 0) ? ('<textarea rows="8" cols="80">result += \"<br/><br/><b>Playbooks:</b>\";' + textarea_tabs + playbook_str.trim().replace("<br/><br/>","<br/>") + '</textarea><br/><br/>') : "") +
+		((non_rnav.length == 0) ? " // TODDO" : (textarea_tabs + non_rnav));
+	if (sortable.length > 0) {
+		output += textarea_tabs;
+		if (sortable.length > 3) {
+			output += '\"<br/><br/><b>Playbooks:</b>\"' + textarea_tabs + playbook_str.trim().replace("<br/><br/>","<br/>")
+		} else {
+			output += playbook_str;
+		}
+	}
+	output += '</textarea><br/><br/>' +
 		'<textarea rows="15" cols="80">' + 'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
 		'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
 		cdr_str + textarea_tabs + "break;</textarea><br/><br/>" + new_cdr_str +
