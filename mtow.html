@@ -678,10 +678,13 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 			output += playbook_str.replace("<br/>","<br/><br/>"); // Only replace first (top)
 		}
 	}
-	output += '</textarea><br/><br/>' +
-		'<textarea rows="15" cols="80">' + 'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
+	output += textarea_tabs +
+		'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
 		'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
-		cdr_str + textarea_tabs + "break;</textarea><br/><br/>" + new_cdr_str +
+		cdr_str + textarea_tabs + 'break;</textarea><br/><br/><textarea rows="15" cols="80">' +
+		'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
+		'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
+		cdr_str + textarea_tabs + 'break;</textarea><br/><br/>' + new_cdr_str +
 		'<br/><br/><button onclick=\"clear_input(0)\">Clear</button>';
 	if (to_array) { return result_arr; }
 	return output;
