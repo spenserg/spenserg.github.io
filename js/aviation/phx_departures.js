@@ -292,7 +292,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "EWR": // PHX-EWR // Updated 08-06-2025
 			result += "<!-- Updated 08-06-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK PUB GLD J146 LNK OVR DSM EVOTE NELLS KEEHO J584 SLT FQM3 KEWR\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK PUB GLD J146 GIJ J554 CRL J584 SLT FQM3 KEWR\" readonly>";
 			result += "<br/><br/>South via VUZ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR TWOUP Q22 UMBRE QUART PHLBO4 KEWR\" readonly>"; // CDR EC
 			result += "<br/>South via CEW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J86 IAH J2 CEW ALLMA TEEEM Q99 QUART PHLBO4 KEWR\" readonly>"; // CDR EW
 			result += "<br/><br/>BNA<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ J6 PNH IRW FSM MEMFS Q34 GVE PHLBO4 KEWR\" readonly>";
