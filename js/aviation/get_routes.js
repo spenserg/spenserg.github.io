@@ -10803,8 +10803,7 @@ KPHL STOEN Q75 SLOJO Q103 PUPYY KYYUU LUBBR3 KSRQ
 					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSTL JAHNY6 MAP SGF J98 TUL IFI PNH J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSTL OZARK8 HLV MCI J24 SLN J96 GUP BUNTR3 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>ZA (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSTL BRAKK5 HLV MCI J24 SLN J102 ZUN EAGUL6 KPHX\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-10-2025
 					break;
 			}
 		break; // End of STL
