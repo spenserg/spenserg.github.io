@@ -673,7 +673,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	if (sortable.length > 0) {
 		output += textarea_tabs;
 		if (sortable.length > 3) {
-			output += '\"<br/><br/><b>Playbooks:</b>\"' + textarea_tabs + playbook_str;
+			output += 'result += \"<br/><br/><b>Playbooks:</b>\";' + textarea_tabs + playbook_str;
 		} else {
 			output += playbook_str.replace("<br/>","<br/><br/>"); // Only replace first (top)
 		}
