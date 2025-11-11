@@ -1099,7 +1099,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 11-10-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-16-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA MCB J50 CEW J2 DEFUN CABLO ZOOSS MARQO3 KJAX\" readonly>"; // CDR 0P
-			result += "<br/>OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA HRV Q105 REDFN Y280 REMIS PIE ORL POGIE2 KJAX\" readonly>";
+			result += "<br/><br/>OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA HRV Q105 REDFN Y280 REMIS PIE ORL POGIE2 KJAX\" readonly>";
 			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD MEI MGMRY CABLO CAPPS MARQO3 KJAX\" readonly>";
 			result += "<br/><br/>COWBOY EAST 1 (FL230 until LCH)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 DEFUN CABLO CAPPS MARQO3 KJAX\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
