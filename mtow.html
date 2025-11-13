@@ -1210,6 +1210,9 @@ function cdrdoc_parse (text = "", as_text = false) {
 	if (!first_arvl || !first_dptr) {
 		result_str += '\n\t\t\t}\n\t\tbreak;\n\t}\n\treturn result;\n}';
 	}
+
+	console.log(result);
+	
 	return (return_null ? null : (as_text ? ('<br/><textarea>' + add_sids_and_stars_to_cdrs(result_str) + '</textarea>') : result));
 }
 
