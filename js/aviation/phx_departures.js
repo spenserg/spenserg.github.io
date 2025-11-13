@@ -526,10 +526,11 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J2 FST J86 IAH J2 DEFUN GRNCH5 KMCO\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM CNX J15 IAH J2 DEFUN GRNCH5 KMCO\" readonly>";
 			break;
-		case "MEM": // PHX-MEM // Updated 06-10-2025
-			result += "<!-- Updated 06-10-2025 P -->";
+		case "MEM": // PHX-MEM // Updated 11-13-2025
+			result += "<!-- Updated 11-13-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-10-2025
-			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ J6 KOMMA LITTR HOBRK4 KMEM\" readonly>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ J6 IRW FSM BRBBQ3 KMEM\" readonly>";
+			result += "<br/><b>South Arvl: .. ABQ J6 IRW FSM BRBBQ3 KMEM<\/b>";
 			result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J50 ABI J42 TXK HOBRK4 KMEM\" readonly>";
 			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK J110 GCK J28 ICT J182 RZC BRBBQ3 KMEM\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
