@@ -768,14 +768,14 @@ result += "<br/><input style=\"width:75%\"; value=\"KAUS ILEXY4 ZENZI LFK AEX ME
 
 		case "AVP":
 			switch(arvl) {
-				case "CLT": // AVP-CLT // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
+				case "CLT": // CLT-AVP // Updated 11-13-2025
+					result += "<!-- Updated 11-13-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KAVP LVZ LRP GVE AIROW CHSLY6 KCLT\" readonly>";
-					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KAVP LVZ T212 SEG BURNI TYROO HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KAVP LVZ T212 DIANO V499 LRP GVE AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/><br/>West/ZDC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAVP LVZ T212 SEG JST PSYKO Q71 WISTA LNDIZ PARQR4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KAVP LVZ LRP GVE LYH MAJIC4 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-13-2025
 					break;
 				case "ORD": // AVP-ORD // Updated 10-25-2025
 					result += "<!-- Updated 10-25-2025 -->";
