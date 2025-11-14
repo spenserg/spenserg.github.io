@@ -1217,27 +1217,31 @@ function cdrdoc_parse (text = "", as_text = false) {
 }
 
 function add_sids_and_stars_to_cdrs (result = "") {
-	// SIDS
+	// ABQ
+	/*
 	result = result.replaceAll("KABQ CNX", ""); // TODO
 	result = result.replaceAll("KABQ TCC", ""); // TODO
+	esult = result.replaceAll("KABQ ONM", ""); // TODO
+	*/
 	result = result.replaceAll("KABQ FTI", "KABQ FYSTA3 FTI");
 	result = result.replaceAll("KABQ ALS", "KABQ ATOMK3 ATOMK ALS");
 	result = result.replaceAll("KABQ ABQ", "KABQ ABQ3 ABQ");
-	result = result.replaceAll("KABQ ONM", ""); // TODO
 	result = result.replaceAll("KABQ TXO", "KABQ MNZNO3 TXO");
 
 	// KATL
-	result = result.replaceAll("KATL KAJIN", ""); // TODO
-	result = result.replaceAll("KATL SMLTZ", ""); // TODO
+	result = result.replaceAll("KATL KAJIN STNGA", "KATL KAJIN2 STNGA");
+	result = result.replaceAll("KATL KAJIN", "KATL KAJIN2 KAJIN");
+	result = result.replaceAll("KATL SMLTZ WALET", "KATL SMLTZ3 WALET");
+	result = result.replaceAll("KATL SMLTZ", "KATL SMLTZ3 SMLTZ");
 
 	// KBFL
 	result = result.replaceAll("KBFL EHF", "KBFL MARIC4 EHF");
 	result = result.replaceAll("KBFL PMD", "KBFL MARIC4 LHS PMD");
 
 	// KBOS
-	result = result.replaceAll("KBOS GLYDE", ""); // TODO
-	result = result.replaceAll("KBOS BOSOX", ""); // TODO
-	result = result.replaceAll("KBOS BURDY", ""); // TODO
+	// result = result.replaceAll("KBOS GLYDE", ""); // TEC routes
+	// result = result.replaceAll("KBOS BOSOX", ""); // TEC routes
+	// result = result.replaceAll("KBOS BURDY", ""); // TEC routes
 	result = result.replaceAll("KBOS BLZZR", "KBOS BLZZR6 BLZZR");
 
 	// KBUR
@@ -1252,39 +1256,43 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KBUR PMD", "KBUR VNY3 PMD");
 
 	// KCLE
-	result = result.replaceAll("KCLE BONZZ", ""); // TODO
+	// result = result.replaceAll("KCLE BONZZ", ""); // CLE-DTW
 
 	// KCVG
 	result = result.replaceAll("KCVG HVQ", "KCVG GIPLE7 HVQ");
-	result = result.replaceAll("KCVG IIU", ""); // TODO
-	result = result.replaceAll("KCVG SITTR", ""); // TODO
-	result = result.replaceAll("KCVG HYK", ""); // TODO
-	result = result.replaceAll("KCVG RIKLE", ""); // TODO
-	result = result.replaceAll("KCVG JODUB", ""); // TODO
-	result = result.replaceAll("KCVG DQN", ""); // TODO
-	result = result.replaceAll("KCVG TRFWA", ""); // TODO
+	result = result.replaceAll("KCVG JODUB", "KCVG GIPLE7 JODUB");
+	result = result.replaceAll("KCVG SITTR", "KCVG GIPLE7 SITTR");
+	result = result.replaceAll("KCVG IIU", "KCVG KENLN6 SHIPR IIU");
+	result = result.replaceAll("KCVG RIKLE", "KCVG BNGLE5 RIKLE");
+	result = result.replaceAll("KCVG TRFWA", "KCVG SILKS6 TRFWA");
+	// result = result.replaceAll("KCVG DQN", ""); // CVG-DTW
+	// result = result.replaceAll("KCVG HYK", ""); // CVG-CLT/LGA
 
 	// KDEN
-	result = result.replaceAll("KDEN LUFSE", ""); // TODO
-	result = result.replaceAll("KDEN GLL", ""); // TODO
+	// result = result.replaceAll("KDEN LUFSE", ""); // DEN-PUB/COS
+	// result = result.replaceAll("KDEN GLL", ""); // DEN-CYS
 
 	// KELP
+	result = result.replaceAll("KELP FST", "KELP NEVUE3 FST");
+/*
 	result = result.replaceAll("KELP RUTER", ""); // TODO
 	result = result.replaceAll("KELP EWM", ""); // TODO
 	result = result.replaceAll("KELP ELP", ""); // TODO
-	result = result.replaceAll("KELP FST", ""); // TODO
 	result = result.replaceAll("KELP DRK", ""); // TODO
+*/
 
 	// KEWR
-	result = result.replaceAll("KEWR PARKE", ""); // TODO
+	result = result.replaceAll("KEWR PARKE", "KEWR PORTT4 PARKE");
+	result = result.replaceAll("KEWR BIGGY", "KEWR PORTT4 BIGGY");
+	result = result.replaceAll("KEWR LANNA", "KEWR PORTT4 LANNA");
+	result = result.replaceAll("KEWR ELIOT", "KEWR PORTT4 ELIOT");
+/*
 	result = result.replaceAll("KEWR BREZY", ""); // TODO
 	result = result.replaceAll("KEWR ZIMMZ", ""); // TODO
 	result = result.replaceAll("KEWR BDR", ""); // TODO
 	result = result.replaceAll("KEWR HAAYS", ""); // TODO
-	result = result.replaceAll("KEWR BIGGY", ""); // TODO
 	result = result.replaceAll("KEWR ELVAE", ""); // TODO
 	result = result.replaceAll("KEWR NEION", ""); // TODO
-	result = result.replaceAll("KEWR LANNA", ""); // TODO
 	result = result.replaceAll("KEWR NEWEL", ""); // TODO
 	result = result.replaceAll("KEWR COATE", ""); // TODO
 	result = result.replaceAll("KEWR GAYEL", ""); // TODO
@@ -1292,16 +1300,18 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KEWR GREKI", ""); // TODO
 	result = result.replaceAll("KEWR BETTE", ""); // TODO
 	result = result.replaceAll("KEWR BAYYS", ""); // TODO
-	result = result.replaceAll("KEWR ELIOT", ""); // TODO
 	result = result.replaceAll("KEWR WAVEY", ""); // TODO
+*/
 
+/*
 	// KFAY
 	result = result.replaceAll("KFAY HINTZ", ""); // TODO
 	result = result.replaceAll("KFAY RDU", ""); // TODO
 	result = result.replaceAll("KFAY JROSS", ""); // TODO
 	result = result.replaceAll("KFAY TORQD", ""); // TODO
+*/
 
-	// KFNT
+/* KFNT
 	result = result.replaceAll("KFNT DERLO", ""); // TODO
 	result = result.replaceAll("KFNT HHRNT", ""); // TODO
 	result = result.replaceAll("KFNT MBS", ""); // TODO
@@ -1309,8 +1319,9 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KFNT HUBBY", ""); // TODO
 	result = result.replaceAll("KFNT KAYYS", ""); // TODO
 	result = result.replaceAll("KFNT SMUUV", ""); // TODO
+*/
 
-	// KFWA
+/* KFWA
 	result = result.replaceAll("KFWA MIE", ""); // TODO
 	result = result.replaceAll("KFWA PWE", ""); // TODO
 	result = result.replaceAll("KFWA IIU", ""); // TODO
@@ -1325,8 +1336,9 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KFWA BVT", ""); // TODO
 	result = result.replaceAll("KFWA FAM", ""); // TODO
 	result = result.replaceAll("KFWA WHETT", ""); // TODO
+*/
 
-	// KGRR
+/* KGRR
 	result = result.replaceAll("KGRR FWA", ""); // TODO
 	result = result.replaceAll("KGRR OBK", ""); // TODO
 	result = result.replaceAll("KGRR APE", ""); // TODO
@@ -1335,19 +1347,23 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KGRR SMUUV", ""); // TODO
 	result = result.replaceAll("KGRR PXV", ""); // TODO
 	result = result.replaceAll("KGRR VIO", ""); // TODO
+*/
 
 	// KIND
-	result = result.replaceAll("KIND OKK", ""); // TODO
-	result = result.replaceAll("KIND BVT", ""); // TODO
-	result = result.replaceAll("KIND DQN", ""); // TODO
-	result = result.replaceAll("KIND SHB", ""); // TODO
-	result = result.replaceAll("KIND OOM", ""); // TODO
-	result = result.replaceAll("KIND TTH", ""); // TODO
-	result = result.replaceAll("KIND PXV", ""); // TODO
-	result = result.replaceAll("KIND MIE", ""); // TODO
-	result = result.replaceAll("KIND DROSE", ""); // TODO
-	result = result.replaceAll("KIND BONNT", ""); // TODO
-	result = result.replaceAll("KIND VHP", ""); // TODO
+	/*
+	result = result.replaceAll("KIND OKK FWA", ""); // TODO
+	result = result.replaceAll("KIND OKK CRL", ""); // TODO
+	*/
+	result = result.replaceAll("KIND BVT", "KIND MEARZ7 BVT");
+	result = result.replaceAll("KIND DQN", "KIND MAREO5 MAREO DQN");
+	result = result.replaceAll("KIND PXV", "KIND OOM5 PXV");
+	// result = result.replaceAll("KIND SHB", ""); // IND-CVG
+	// result = result.replaceAll("KIND OOM", ""); // IND-CVG
+	// result = result.replaceAll("KIND TTH", "");  // IND-CVG
+	// result = result.replaceAll("KIND MIE", ""); // IND-MDW/MKE
+	// result = result.replaceAll("KIND DROSE", ""); // IND-MDW
+	// result = result.replaceAll("KIND BONNT", ""); // IND-ORD
+	// result = result.replaceAll("KIND VHP", ""); // IND-STL
 
 	// KJFK
 	result = result.replaceAll("KJFK BAYYS", ""); // TODO
