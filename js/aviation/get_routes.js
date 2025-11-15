@@ -6804,21 +6804,19 @@ KLGA JFK SHIPP Y487 ISLES ACK FERNZ OOSHN5 KBOS
 					result += "<br/><input style=\"width:75%\" value=\"KMCO OMN CRG SAV CHS FLO RASLN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-27-2025
 					break;
-				case "DCA": // MCO-DCA // Updated 10-05-2025
-					result += "<!-- Updated 10-05-2025 P -->";
+				case "DCA": // MCO-DCA // Updated 11-14-2025
+					result += "<!-- Updated 11-14-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Routes:</b>";
-					result += "<br/>OW: <input style=\"width:75%\" value=\"KMCO MZULO3 LENDS GRUBR Y299 SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA\" readonly>"; // CDR M0
-					result += "<br/>Non OW: <input style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q87 RAYVO Q113 AARNN WAVES CAPSS3 KDCA\" readonly>"; // CDR V0
-					result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS BRUTS Q118 THRSR BOBBD TONIO Q34 SITTR TRUPS5 KDCA\" readonly>"; // CDR R3
+					result += "<br/><input style=\"width:75%\" value=\"KMCO MZULO3 LENDS GRUBR Y299 SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA\" readonly>"; // CDR M0
+					result += "<br/></br>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q87 RAYVO Q113 AARNN WAVES CAPSS3 KDCA\" readonly>"; // CDR V0
+					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS BRUTS Q118 THRSR BOBBD TONIO Q34 SITTR TRUPS5 KDCA\" readonly>"; // CDR R3
 					result += "<br/>East/Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO MZULO3 ETECK PELCN ROWSY Y494 SILLY LYNUS B24 DASHA ATR LAFLN DEALE3 KDCA\" readonly>";
-					result += "<br/><br/><b>Playbooks:</b>";
-					result += "<br/><br/>FLORIDA TO NE 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q87 RAYVO Q113 AARNN WAVES CAPSS3 KDCA\" readonly>";
-					result += "<br/>FLORIDA TO NE 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS BRUTS Q118 THRSR BOBBD TONIO Q34 SITTR TRUPS5 KDCA\" readonly>";
-					result += "<br/>FLORIDA TO NE 4<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO MZULO3 LENDS OGGRE PITRW SARKY Q113 AARNN WAVES CAPSS3 KDCA\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMCO CRG VIYAP SAV CHS FLO RDU RIC IRONS7 KDCA\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-05-2025
-					result += "<!-- Verified with ATCSCC on 10-05-2025 -->";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					result += "<br/><br/>FL TO NE 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q87 RAYVO Q113 AARNN WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>FL TO NE 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS BRUTS Q118 THRSR BOBBD TONIO Q34 SITTR TRUPS5 KDCA\" readonly>";
+					result += "<br/>FL TO NE 4<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO MZULO3 LENDS OGGRE PITRW SARKY Q113 AARNN WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-14-2025
+					result += "<!-- Verified with ATCSCC on 11-14-2025 -->";
 					result += "<br/>M0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMCO MZULO3 LENDS GRUBR SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA\" readonly>";
 					result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMCO MZULO3 LENDS OGGRE PITRW SARKY Q113 AARNN WAVES CAPSS3 KDCA\" readonly>";
 					result += "<br/>R2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS WILON CAMJO Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
