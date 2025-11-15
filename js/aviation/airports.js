@@ -104,7 +104,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				result += "<br/>A321 - File OSHNN instead of ORKAS";
 			} else {
 				result += "<br/>Departures after 2100L, file OSHNN instead of ORKAS";
-			}	
+			}
+			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>West</button>";
+			result += "<br/>LAX usually West flow // E Flow (rwy6/7) - LAXX/GARDY/TRTON";
 			break;
 		case "LGA":
 /* TODO Im pretty sure pier weights arent a thing anymore
@@ -489,6 +491,27 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KJAC GEYSR6 DNW", "KJAC DNW");
 						break;
 					case "LAX": // LAX West // Rwy 24/25
+						// SIDS
+/* TODO
+						result = result.replaceAll("KLAX DOTSS2 CNERY", "");
+						result = result.replaceAll("KLAX DOTSS2 CLEEE", "");
+						result = result.replaceAll("KLAX OSHNN1 BEALE", "KLAX GARDY4 BEALE");
+						result = result.replaceAll("KLAX OSHNN1 MISEN", "");
+						result = result.replaceAll("KLAX PNDAH2 TCATE", "");
+						result = result.replaceAll("KLAX PNDAH2 OTAYY", "");
+						result = result.replaceAll("KLAX SEBBY3 DAG", "");
+						result = result.replaceAll("KLAX PNDAH2 TCATE", "");
+						result = result.replaceAll("KLAX SKWRL2 GMN", "");
+						result = result.replaceAll("KLAX SKWRL2 VALEY", "");
+						result = result.replaceAll("KLAX STHBY1 MISEN", "");
+						result = result.replaceAll("KLAX STHBY1 BEALE", "KLAX GARDY4 BEALE");
+						result = result.replaceAll("KLAX STHBY1 CLEEE", "");
+						result = result.replaceAll("KLAX STHBY1 CNERY", "");
+						result = result.replaceAll("KLAX STHBY1 TCATE", "");
+						result = result.replaceAll("KLAX STHBY1 OTAYY", "");
+						result = result.replaceAll("KLAX ZILLI5 FICKY", "");
+*/
+						// STARS
 						result = result.replaceAll("BIGBR3 KLAX", "ANJLL4 KLAX");
 						result = result.replaceAll("OTOOL MDNYT2 KLAX", "OTOOL ANJLL4 KLAX");
 						result = result.replaceAll("HAKMN MDNYT2 KLAX", "HAKMN ANJLL4 KLAX");
