@@ -1822,7 +1822,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "RNO": // DFW-RNO // Updated 09-15-2025
 			result += "<!-- Updated 09-15-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW HRPER3 HULZE FTI J58 RSK ILC MVA RYANN2 KRNO\" readonly>"; // CDR 0P
+			result += "<br/><input style=\"width:75%\" value=\"KDFW HRPER3 HULZE FTI J58 RSK ILC MVA SCOLA1 KRNO\" readonly>"; // CDR 0P
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE ZAROS Q128 JSICA MVA RYANN2 KRNO\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK J50 ELP Q13 HOUZZ KENNO SCOLA1 KRNO\" readonly>";
 			result += "<br/><br/>North via SLC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE LAA BRK EKR J173 TCH J154 BAM LLC ANAHO2 KRNO\" readonly>";
