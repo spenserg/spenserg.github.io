@@ -796,14 +796,15 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-15-2025
 			result += "<!-- Verified with ATCSCC on 04-15-2025 -->";
 			break;
-		case "FSD": // DFW-FSD // Updated 04-15-2025
-			result += "<!-- Updated 04-15-2025 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-15-2025
+		case "FSD": // DFW-FSD // Updated 11-25-2025
+			result += "<!-- Updated 11-25-2025 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 11-25-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW J21 ICT LNK FSD KFSD\" readonly>";
-			result += "<br/><br/>West: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH HLC OBH KFSD\" readonly>";
-			result += "<br/>East: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC MCI OVR KFSD\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-15-2025
-			result += "<!-- Verified with ATCSCC on 04-15-2025 -->";
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC MCI OVR KFSD\" readonly>";
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK MCK ONL KFSD\" readonly>";
+			result += "<br/><br/>East via LIT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT VIH IRK J45 FSD KFSD\" readonly>";
+			result += "<br/>West via PNH<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH HLC OBH KFSD\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-25-2025
 			break;
 		case "FSM": // KDFW-FSM // Updated 10-22-2025
 			result += "<!-- Updated 10-22-2025 P -->";
