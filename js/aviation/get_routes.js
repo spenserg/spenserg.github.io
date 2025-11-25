@@ -11097,15 +11097,15 @@ KPHL STOEN Q75 SLOJO Q103 PUPYY KYYUU LUBBR3 KSRQ
 
 		case "SYR":
 			switch(arvl) {
-				case "CLT": // SYR-CLT // Updated 09-07-2025
-					result += "<!-- Updated 09-07-2025 P -->";
+				case "CLT": // SYR-CLT // Updated 11-24-2025
+					result += "<!-- Updated 11-24-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSYR SYR T307 STUBN PSB Q71 GEFFS HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/><br/>West/ZNY Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSYR SYR V84 BEEPS ELZ BFD EWC AIR CLNTN Q145 HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSYR SYR PTAKI STUBN PSB J61 EMI J48 CSN GVE AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KSYR PTAKI STUBN PSB Q71 GEFFS HVQ LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSYR SYR PTAKI STUBN PSB J61 EMI J48 CSN GVE AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/>West/ZDC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSYR SYR V84 BEEPS JHW FOXEE Q145 HVQ LNDIZ PARQR4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSYR SYR PTAKI STUBN PSB HVQ GZG BTSEY2 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-07-2025
+					result += "<br/><input style=\"width:75%\" value=\"KSYR SYR J59 PSB HVQ GZG BTSEY2 KCLT\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-24-2025
 					break;
 				case "DCA": // SYR-DCA // Updated 09-06-2025
 					result += "<!-- Updated 09-06-2025 P -->"
