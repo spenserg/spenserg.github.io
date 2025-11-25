@@ -10616,18 +10616,19 @@ KPWM NUBLE4 CCC MANTA Q439 BRIGS JIIMS4 KPHL
 
 		case "SJC":
 			switch(arvl) {
-				case "DFW": // SJC-DFW // Updated 05-30-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-16-2025 MP -->";
+				case "DFW": // SJC-DFW // Updated 11-25-2025
+					result += "<!-- Updated 11-25-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSJC SPTNS1 TECKY NTELL OAL ILC BCE RSK DIXAN Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><b style=\"color:orange\">Specify flight level at NTELL- SID requires exactly 5000 ft at SPTNS, specifying fl before NTELL will red brick<\/b>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE AVE J6 PMD J65 DECAS BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
-					result += "<br/>NE Arrival: <input style=\"width:75%\" value=\"KSJC BMRNG4 SYRAH Q128 JSICA MLF J28 ICT TUL HITUG SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>DFW BGTOE: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE AVE J6 PMD BLH J169 TFD J50 ELP FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
-					result += "<br/>DFW WEST: <input style=\"width:75%\" value=\"KSJC BMRNG4 SYRAH Q128 JSICA MLF J28 ICT TUL HITUG SEEVR4 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KSJC SPTNS1 TECKY NTELL OAL Q136 KATTS Q164 ROCCY Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><b style=\"color:orange\">SID requires exactly 5000 ft at SPTNS, specifying fl before NTELL will red brick<\/b>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSJC LOUPE1 SYRAH Q128 ZAROS MMB HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE AVE J6 PMD J65 DECAS BLH J169 TFD J50 SSO J4 INK GEEKY SOCKK4 KDFW\" readonly>";
+					result += "<br/><br/>NE Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSJC LOUPE1 SYRAH Q128 ZAROS GCK ICT TUL HITUG BRDJE5 KDFW\" readonly>";
+					result += "<br/><br/>DFW BGTOE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE AVE J6 PMD BLH J169 TFD J50 ELP FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/>DFW WEST<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSJC LOUPE1 SYRAH Q128 JSICA MLF J28 ICT TUL HITUG BRDJE5 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSJC SJC3 AVE J6 EED J6 DRK J78 ABQ J72 TXO UKW8 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-25-2025
 					break;
 				case "PHX": // SJC-PHX // Updated 07-17-2025
 					result += "<!-- Updated 07-17-2025 P -->";
