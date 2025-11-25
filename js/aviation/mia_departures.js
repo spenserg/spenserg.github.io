@@ -520,7 +520,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV J58 FUZ TXO J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW MHZ ELD TXK SPS J72 ABQ J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
-			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV J86 ELP J86 INW HAHAA RKSTR4 KLAS\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV J86 INW HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 MEMFS TUL MMB FTI J8 GUP HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ M580 MINOW HRVLK KELPP MUSYL SAT J138 FST J86 INW HAHAA RKSTR4 KLAS\" readonly>";
 			result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP KH87A FST J2 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
