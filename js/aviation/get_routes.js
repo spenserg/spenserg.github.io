@@ -4190,17 +4190,20 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/>W1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW KAYLN3 SMUUV RBS J19 STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
 					result += "<br/>W2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW KAYLN3 SMUUV OBK MZV IRK J26 ICT IFI HOFFF VKTRY2 KDFW\" readonly>";
 					break;
-
-/* TODO - FOS ROUTES: DTW-LGA
-KDTW PAVYL3 ESSBE PSB MIP4 KLGA
-KDTW PAVYL3 ESSBE CXR J146 ETG MIP4 KLGA
-KDTW ZETTR4 TANKO Q818 DERLO Q935 FABEN RKA HAARP4 KLGA
-KDTW HHOWE4 LNCON JHW VAAPE NABOR RKA HAARP4 KLGA
-KDTW ZETTR4 SIKBO ALVID ART SYR RKA HAARP4 KLGA
-KDTW PAVYL3 ESSBE CXR J146 ETG MIP4 KLGA
-KDTW HHOWE4 LNCON JHW GEE HANKK RKA HAARP4 KLGA
-*/
-
+				case "LGA": // DTW-LGA // Updated 11-25-2025
+					result += "<!-- Updated 11-25-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KDTW PAVYL3 ESSBE CXR J146 ETG MIP4 KLGA\" readonly>"; // CDR P1
+					result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDTW HHOWE4 LNCON JHW GEE HANKK RKA HAARP4 KLGA\" readonly>"; // CDR P2
+					result += "<br/><br/>North via YYZ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDTW ZETTR4 TANKO Q818 DERLO Q935 FABEN RKA HAARP4 KLGA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-25-2025
+					result += "<!-- Verified with ATCSCC on 11-25-2025 -->";
+					result += "<br/>BS<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW HHOWE4 LNCON JHW VAAPE NABOR RKA HAARP4 KLGA\" readonly>";
+					result += "<br/>N1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW ZETTR4 SIKBO ALVID ART SYR RKA HAARP4 KLGA\" readonly>";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW PAVYL3 ESSBE CXR J146 ETG MIP4 KLGA\" readonly>";
+					result += "<br/>P2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW HHOWE4 LNCON JHW GEE HANKK RKA HAARP4 KLGA\" readonly>";
+					break;
 				case "MIA": // DTW-MIA // Updated 01-05-2025
 					result += "<!-- Updated 01-05-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -4271,8 +4274,13 @@ KDTW HHOWE4 LNCON JHW GEE HANKK RKA HAARP4 KLGA
 					result += "<br/><input style=\"width:75%\" value=\"KECP PZD PONZE BANKR5 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRS on file as of 03-01-2025
 					break;
-
-/* TODO ECP-DCA
+				case "DCA": // ECP-DCA // Updated 11-25-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KECP CAMJO Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-25-2025
+					break;
+/* FOS ROUTES ECP-DCA
 ECP.DCT.DAWWN.DCT.LAYUH.DCT.KTOWN.Q56.KIWII.DCT.WAVES.CAPSS3.DCA
 ECP.DCT.JOHNN.Q118.THRSR.DCT.BOBBD.DCT.TONIO.Q34.SITTR.TRUPS5.DCA
 ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
@@ -4342,26 +4350,32 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 					result += "<br/><br/><b>CDRS</b>";
 					result += "<br/>JE (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KELP J26 CME TXO TURKI VKTRY2 KDFW\" readonly>";
 					break;
-
-/* TODO - FOS ROUTES: ELP-LAX
-KELP ATKNN5 FLOGS SSO J4 WLVRN ESTWD HLYWD1 KLAX
-KELP JCOXX2 HBACK SSO J4 WLVRN ESTWD HLYWD1 KLAX
-KELP ATKNN5 NOCHI OLIIN J2 IPL AMMOR OLAAA2 KLAX
-KELP ATKNN5 GREBE J86 PYRIT J78 DRK J231 HIPPI GABBL HLYWD1 KLAX
-*/
-
+				case "LAX": // ELP-LAX // Updated 11-25-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KELP ATKNN5 FLOGS SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KELP ATKNN5 GREBE J86 PYRIT J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KELP ATKNN5 NOCHI OLIIN J2 IPL AMMOR OLAAA2 KLAX\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KELP JCOXX2 HBACK SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-25-2025
+					break;
+					
 					/* TODO - FOS ROUTES: ELP-ORD
 KELP LATVE3 CME J26 IRK SHAIN2 KORD
+
 KELP LATVE3 CME KA30Y KK45C MCI IRK BENKY6 KORD
-KELP LATVE3 CME J26 IRK BENKY6 KORD
-KELP SUMMY CME TCC GCK J96 IRK BENKY6 KORD
 KELP LATVE3 CME TXO J74 IRW BUM IRK BENKY6 KORD
 KELP LATVE3 CME CDS IRW J98 SGF J8 STL J101 SPI BFORD BENKY6 KORD
 KELP LATVE3 CME TCC GCK OVR DSM BFORD BENKY6 KORD
 KELP LATVE3 CME J166 SPS IRW J98 SGF WELTS TRTLL6 KORD
 KELP LATVE3 CME TCC GCK HYS FOD MYRRS FYTTE7 KORD
+
+KELP SUMMY CME TCC GCK J96 IRK BENKY6 KORD
+
 KELP ATKNN5 SLNNK ONM J104 FTI J18 SLN J96 IRK BENKY6 KORD
+
 KELP TDOWN3 SFL INK J4 FUZ LIT J180 FTZ TRTLL6 KORD
+
 KELP J86 RUTER J13 FQF BFF J94 ONL FOD MYRRS FYTTE7 KORD
 */
 
