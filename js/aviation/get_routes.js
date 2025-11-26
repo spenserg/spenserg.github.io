@@ -11420,17 +11420,18 @@ KTYS VXV SPA J47 CAE J51 SAV J103 MILIE J79 OMN HILEY4 KMIA
 					result += "<br/><input style=\"width:75%\" value=\"KVPS CORKY GONDR SHAKK WUDEE LORNN VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-10-2025
 					break;
-				case "DFW": // VPS-DFW // Updated 01-24-2025
-					result += "<!-- Updated 01-24-2025 -->";
+				case "DFW": // VPS-DFW // Updated 11-26-2025
+					result += "<!-- Updated 11-26-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KVPS CEW J50 AEX PNUTS BEREE3 KDFW\" readonly>";
-					result += "<br/><b style=\"color:orange\">Route .. CEW MCB PNUTS .. if SUA is active<\/b>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KVPS CEW J2 LSU LFK CRIED WHINY4 KDFW\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KVPS CEW MEI SQS FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/>SW Arrival: <input style=\"width:75%\" value=\"KVPS CEW SJI Q56 PEKON J86 SPURS AGJ GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KVPS CEW MCB PNUTS BEREE3 KDFW\" readonly>";
+					// result += "<br/><b style=\"color:orange\">Route .. CEW MCB PNUTS .. if SUA is active<\/b>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KVPS CEW MEI SQS FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KVPS CEW J2 LSU LFK CRIED WHINY4 KDFW\" readonly>";
+					result += "<br/><br/>North via MEM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"VPS CEW PIGON VUZ J151 BEATS MEM J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/>SW Arvl<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KVPS CEW SJI Q56 PEKON J86 SPURS AGJ GUTZZ BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KVPS CEW J50 MCB AEX YEAGR4 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-26-2025
 					break;
 			}
 		break; // End of VPS
