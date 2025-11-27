@@ -1722,7 +1722,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 09-28-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-28-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB SJI V241 PENSI KPNS\" readonly>"; // CDR 0P
-			result += "<br/><b style=\"color:orange\">As of 2025-09-29, FAA uses V198 and Fkeys MR use V241 but it's literally the same airway<\/b>";
+			result += "<br/><b style=\"color:orange\">As of 2025-09-29, FAA uses V198 and Fkeys MR use V241 but it's the same airway<\/b>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD MHZ SJI V241 PENSI KPNS\" readonly>";
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 SJI V241 PENSI KPNS\" readonly>";
 			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 SJI V241 PENSI KPNS\" readonly>";
