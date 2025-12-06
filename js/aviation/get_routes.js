@@ -5462,12 +5462,14 @@ KIAH RITAA7 PSX CARTI HFMAN DLF ELP SSO BXK ESTWD HLYWD1 KLAX
 
 		case "ICT":
 			switch(arvl) {
-
-					/* TODO - FOS ROUTES: ICT-CLT
-KICT SGF BNA TAZZA FILPZ3 KCLT
-KICT BUM J112 FAM BWG SKYWA FILPZ3 KCLT
-KICT J182 RZC Q36 BNA J46 VXV LIINN3 KCLT
-*/
+				case "CLT": // ICT-CLT // Updated 12-06-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 12-06-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KICT SGF BNA TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KICT BUM J112 FAM BWG SKYWA FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KICT J182 RZC ARG J46 VXV LIINN3 KCLT\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-06-2025
+					break;
 
 // TODO ICT-DCA // ICT.DCT.SGF.J98.FAM.J78.HVQ.TRUPS2.DCA
 
