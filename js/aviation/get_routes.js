@@ -11447,7 +11447,6 @@ KTPA ENDED2 LACEN BRUTS Q118 THRSR BURGG Q22 BEARI FAK BRV AML J220 FORTT MIP MI
 					result += "<br/><input style=\"width:75%\" value=\"KTUL FSM FINGR9 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-10-2025
 					break;
-				
 				case "TUL": // TUL-TUL // Updated 01-19-2025
 					result += "<!-- Updated 01-19-2025 -->";
 					result += "<br/><br/><b>MTC FCF:</b>";
