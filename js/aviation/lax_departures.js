@@ -11,15 +11,15 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "ATL": // LAX-ATL // Updated 02-01-2025
 			result += "<!-- Updated 02-01-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 IRW FSM MEM HUTCC KNSAW RUSSA GLAVN1 KATL\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 IRW FSM MEM HUTCC KNSAW RUSSA GLAVN2 KATL\" readonly>";
 			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS J146 DVC PUB J28 ICT SGF BNA NEWBB IHAVE MTHEW CHPPR1 KATL\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J50 SSO J4 MHZ MEI DUUCK ORRKK HOBTT2 KATL\" readonly>";
+			result += "<br/>South: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J50 SSO J4 MHZ MEI DUUCK ORRKK HOBTT3 KATL\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX SEBBY3 DAG INW ZUN ACH PNH IRW FSM MEM J41 VUZ KATL\" readonly>";
 			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>EW (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 FUZ Q184 MERDN ORRKK HOBTT2 KATL\" readonly>";
-			result += "<br/>KT (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J50 ELP FST J138 SAT Q24 LSU SHYRE HOBTT2 KATL\" readonly>";
-			result += "<br/>WR (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM MEM HUTCC KNSAW RUSSA GLAVN1 KATL\" readonly>";
+			result += "<br/>EW (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 FUZ Q184 MERDN ORRKK HOBTT3 KATL\" readonly>";
+			result += "<br/>KT (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J50 ELP FST J138 SAT Q24 LSU SHYRE HOBTT3 KATL\" readonly>";
+			result += "<br/>WR (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM MEM HUTCC KNSAW RUSSA GLAVN2 KATL\" readonly>";
 			break;
 		case "AUS": // LAX-AUS // Updated 01-10-2025
 			result += "<!-- Updated 01-10-2025 -->";
