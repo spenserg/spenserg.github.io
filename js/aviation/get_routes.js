@@ -9090,7 +9090,7 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					break;
 				case "SAN": // PHL-SAN // Updated 12-08-2025
 					result += "<!-- Updated 12-08-2025 P -->";
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ J78 FAM J98 SGF PER MMB FTI J18 HOGGZ LUCKI1 KSAN\" readonly>"; // CDR 6F
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ J78 FAM J98 SGF PER MMB ACH J231 SJN J18 HOGGZ LUCKI1 KSAN\" readonly>"; // Based on CDR 6F
 					result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 AIR J80 MCI J24 SLN J18 HOGGZ LUCKI1 KSAN\" readonly>"; // CDR 80
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ Q68 RAMRD ARG FSM IRW PNH J78 PKE LUCKI1 KSAN\" readonly>"; // CDR P1
 					result += "<br/></br>North via JOT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB CPONE JOT J60 HVE PROMT Q88 HAKMN Q73 LVELL LUCKI1 KSAN\" readonly>"; // CDR 60
