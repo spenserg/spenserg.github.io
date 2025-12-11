@@ -439,21 +439,21 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>SK<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL SMKEY2 BOBBD Q71 KONGO Q34 GVE PAATS4 KPHL\" readonly>";
 					result += "<br/>VR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL VRSTY3 NOKIE TWINS BLAAN Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
 					break;
-				case "PHX": // ATL-PHX // Updated 05-07-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-07-2025 MP -->";
+				case "PHX": // ATL-PHX // Updated 12-11-2025
+					result += "<!-- Updated 12-11-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref but this is what Delta usually files and what ZTL probably expects
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KATL NASSA2 YAALL J14 LIT J6 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KATL NASSA2 YAALL J14 IRW J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL PENCL2 JAACE BNA KM42K OSW LBL CIM J96 GUP EAGUL6 KPHX\" readonly>"; // Based on CDR PE
-					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL NASSA2 VUZ SQS J52 TXK FUZ ABI J50 ELP DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/>South via HRV<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL POUNC2 GRGIA ARNNY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT J86 ELP DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KATL NASSA2 NASSA VLKNN Q30 IZAAC SUTTN J52 TXK FUZ ABI J50 ELP DRRVR PINNG1 KPHX\" readonly>";
+					// result += "<br/>South via HRV<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL POUNC2 GRGIA ARNNY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT J86 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/>GTH<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL NASSA2 VUZ SQS J52 TXK BYP UKW GTH TXO J72 ABQ J78 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>LEV WEST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL POUNC2 GRGIA ARNNY SJI LEV BOWFN HOODO PSX CARTI HFMAN DLF KOBLE MRF ELP DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KATL WETWO VLKNN Q30 IZAAC KF24G KF27A ZUN BUNTR3 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-07-2025
-					result += "<!-- Verified with ATCSCC on 05-07-2025 -->";
+					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+					// result += "<br/><input style=\"width:75%\" value=\"KATL WETWO VLKNN Q30 IZAAC KF24G KF27A ZUN BUNTR3 KPHX\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 12-11-2025
+					result += "<!-- Verified with ATCSCC on 12-11-2025 -->";
 					result += "<br/>HA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL HAALO3 SARGE GARTS AEX LFK J50 ABI J4 EWM DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/>PE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL PENCL2 JAACE BNA ARG RZC PER LBL CIM ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>PE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL PENCL2 JAACE BNA ARG RZC PER TOTOE CIM ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>RP<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL NASSA2 VUZ HRISN Q30 IZAAC TXK J131 FUZ J66 EWM DRRVR PINNG1 KPHX\" readonly>";
 					break;
 			}
