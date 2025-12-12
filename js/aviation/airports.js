@@ -438,8 +438,8 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KABQ FYSTA3 JLPNO", "KABQ  GRZZZ4 POPRR");
 						break;
 					case "ATL": // ATL west
-						result = result.replaceAll("SITTH2 KATL", "JJEDI3 KATL");
-						result = result.replaceAll("GNDLF2 KATL", "HOBTT2 KATL");
+						result = result.replaceAll("SITTH3 KATL", "JJEDI4 KATL");
+						result = result.replaceAll("GNDLF3 KATL", "HOBTT3 KATL");
 						break;
 					case "BZN": // BZN southeast / Rwy12
 						result = result.replaceAll("KBZN MEADO2 DBS", "KBZN BGSKY2 DBS");
