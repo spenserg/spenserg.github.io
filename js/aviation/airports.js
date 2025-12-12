@@ -17,7 +17,7 @@ vaa_parse = function (fkeystxt = "") {
 airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, result = "") {
 	dptr = ((dptr.length == 4) ? (dptr.substr(1, 4)) : dptr);
 	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
-	flows = ((Object.keys(flows).length == 0) ? {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0} : flows);
+	flows = ((Object.keys(flows).length == 0) ? {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"ELP":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0} : flows);
 
 	// 27K for 737-NGs
 	if (["738K", "738R"].includes(ac_type) && ["BDL","BJX","BOS","BUR","BZN","DCA","DEN","GUA","HDN","LAS","LGA","MDE","MEX","PHX","PSP","QRO","RDU","RNO","RTB","SBA","SBP","SJO","SJU","SNA","STT","SXM"].includes(dptr)) {
@@ -69,6 +69,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>EGE - Rwy 25 is preferred, even with tailwind";
 			result += "<br/>EGE - VAA 25X for icing conditions 1000 - 10,000 Feet";
 			result += "<br/>EGE - ARFF manages snow plow ops and notams";
+			break;
+		case "ELP":
+			result += "<br/><br/>ELP Flow: <button type='button' id='ELP_standard_left' class='btn" + ((flows['ELP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ELP\", 0)'>SW Rwy 22</button>&nbsp;&nbsp;<button type='button' id='ELP_standard_right' class='btn" + ((flows['ELP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ELP\", 1)'>NE Rwy 4</button>";
 			break;
 		case "EYW":
 			result += "<br/><br/>EYW - Check VAA if wet or departing Rwy 9";
@@ -465,6 +468,11 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("VCTRZ2 KDTW", "HAYLL3 KDTW");
 						result = result.replaceAll("RKCTY2 KDTW", "KKISS2 KDTW");
 						break;
+					case "ELP": // ELP SW // Rwy22
+						result = result.replaceAll("KELP JCOXX2 SLNNK", "KELP ATKNN5 SLNNK");
+						result = result.replaceAll("KELP JCOXX2 GREBE", "KELP ATKNN5 GREBE");
+						result = result.replaceAll("KELP JCOXX2 HBACK", "KELP ATKNN5 FLOGS");
+						result = result.replaceAll("KELP JCOXX2 TELKE", "KELP ATKNN5 NOCHI");
 					case "FCA":
 					case "GPI": // FCA North // Rwy2
 						result = result.replaceAll("KGPI GPI1 CHOTE", "KGPI RIDDG1 SKOTT CHOTE");
