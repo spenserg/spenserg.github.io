@@ -4373,7 +4373,7 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 				case "PHX": // ELP-PHX // Updated 01-09-2025
 					result += "<!-- Updated 01-09-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KELP JCOXX2 HBACK DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KELP ATKNN5 ATKNN DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KELP ATKNN5 GREBE J86 VERNO EAGUL EAGUL6 KPHX\" readonly>";
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KELP ATKNN5 NOCHI TUS HOTTT PINNG1 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
