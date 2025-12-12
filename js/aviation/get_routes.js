@@ -4332,18 +4332,19 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 
 		case "ELP":
 			switch(arvl) {
-				case "DFW": // ELP-DFW // Updated 01-09-2025
-					result += "<!-- Updated 01-09-2025 -->";
+				case "DFW": // ELP-DFW // Updated 12-11-2025
+					result += "<!-- Updated 12-11-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KELP TDOWN3 SFL INK GEEKY BOOVE7 KDFW\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KELP LATVE3 CME TXO TURKI VKTRY2 KDFW\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KELP NEVUE3 FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
-					result += "<br/><br/>DFW BOOVE: <input style=\"width:75%\" value=\"KELP LATVE3 CME TXO TURKI VKTRY2 KDFW\" readonly>";
-					result += "<br/>DFW WEST: <input style=\"width:75%\" value=\"KELP NEVUE3 FST J86 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KELP LATVE3 CME TXO TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KELP NEVUE3 FST JCT GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/><br/>DFW BOOVE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KELP LATVE3 CME TXO TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/>DFW WEST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KELP NEVUE3 FST J86 JCT CWK TNV STUFT BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KELP ELP J50 INK ACT YEAGR4 KDFW\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>JE (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KELP J26 CME TXO TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 12-11-2025
+					result += "<!-- Verified with ATCSCC on 12-11-2025 -->";
+					result += "<br/>JE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KELP ELP J26 CME TXO TURKI VKTRY2 KDFW\" readonly>";
 					break;
 				case "LAX": // ELP-LAX // Updated 11-25-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -7143,19 +7144,26 @@ KLGA JFK SHIPP Y487 ISLES ACK FERNZ OOSHN5 KBOS
 
 		case "MDT":
 			switch(arvl) {
-
-/* TODO MDT-BOS
-MDT-ETX.J80-BAF-BOS
-MDT.DCT.ETX.DCT.SPOTZ.Q480.IGN.DCT.PROVI.ROBUC3.BOS
+				case "BOS": // MDT-BOS // Updated 12-11-2025
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 12-11-2025
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMDT GAAPP KIACK HNK PONCT JFUND2 KBOS\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMDT SAX MERIT ROBUC3 KBOS\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-11-2025
+					break;
+/* FOS ROUTES
+KMDT ETX J80 BAF KBOS
+KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 */
-
-				case "CLT": // MDT-CLT // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
+				case "CLT": // MDT-CLT // Updated 12-11-2025
+					result += "<!-- Updated 12-11-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMDT HAR LDN AIROW CHSLY6 KCLT\" readonly>";
-					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KMDT HAR JST AIR LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMDT VINNY EMI GVE AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMDT HAR JST AIR LNDIZ PARQR4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMDT LRP SACRI Q75 GVE LYH MAJIC4 KCLT\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-11-2025
 					break;
 				case "DFW": // MDT-DFW // Updated 01-16-2025
 					result += "<!-- Updated 01-16-2025 -->";
