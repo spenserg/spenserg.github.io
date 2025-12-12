@@ -84,7 +84,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEMFS HUTCC KNSAW RUSSA GLAVN2 KATL\" readonly>";
 			result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD MERDN ORRKK HOBTT3 KATL\" readonly>"; // CDR 0P
 			result += "<br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG MEM HUTCC KNSAW RUSSA GLAVN2 KATL\" readonly>"; // CDR 1N
-			result += "<br/><b style=\"color:orange\">CDR is ..ARG MEM HUTCC.. but mandatory route is ..ARG MEMFS HUTCC..<\/b>";
+			// result += "<br/><b style=\"color:orange\">CDR is ..ARG MEM HUTCC.. but mandatory route is ..ARG MEMFS HUTCC..<\/b>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 EIC MHZ MEI VUZ KATL\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 12-11-2025
