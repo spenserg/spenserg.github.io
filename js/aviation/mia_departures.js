@@ -563,20 +563,21 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "LGA": // MIA-LGA // Updated 02-23-2025
 			result += "<!-- Updated 02-23-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/>OW: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC Q107 HURTS PROUD2 KLGA\" readonly>"; // CDR Z0
-			result += "<br/>Non OW: <input style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 HURTS PROUD2 KLGA\" readonly>"; // CDR A0
-			result += "<br/>Full OW: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA ROWSY Y494 YAALE Y495 OWENZ FATON HOFFI KEYED BDR PRENO KLGA\" readonly>"; // CDR DW			
-			result += "<br/><br/>Aviod ZDC: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q99 CAMJO TWINS HVQ GEFFS Q71 PSB MIP4 KLGA\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC Q107 HURTS PROUD2 KLGA\" readonly>"; // CDR Z0
+			result += "<br/></br>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 HURTS PROUD2 KLGA\" readonly>"; // CDR A0
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>"; // CDR H0
+			result += "<br/></br>East/WATRS<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA ROWSY Y494 YAALE Y495 OWENZ FATON HOFFI KEYED EEGOR PRENO KLGA\" readonly>"; // CDR DW
+			result += "<br/>West/ZDC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 WIGVO SPA J85 HVQ GEFFS Q71 PSB MIP4 KLGA\" readonly>";
 			result += "<br/><br/>ATLANTIC NORTH 1: <input style=\"width:75%\"; value=\"KMIA FOLZZ3 GOZZR ETECK OZENA TUBBS ROBBB NAALA HOBOH WEBBB KENDA PRLJM KEYED EEGOR PRENO KLGA\" readonly>";
 			result += "<br/>FL TO NE 3: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA Q118 THRSR RAFTN FLM J43 ROD KLYNE Q29 WWSHR TEESY J146 ETG MIP4 KLGA\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA MIA9 FLMGO ORL SAV FLO RDU RIC PXT KORRY4 KLGA\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-23-2025
-			result += "<!-- Verified with ATCSCC on 02-23-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 12-12-2025
+			result += "<!-- Verified with ATCSCC on 12-12-2025 -->";
 			result += "<br/>A0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 HURTS PROUD2 KLGA\" readonly>";
-			result += "<br/>DW<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA ROWSY Y494 YAALE Y495 OWENZ FATON HOFFI KEYED BDR PRENO KLGA\" readonly>";
+			result += "<br/>DW<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA ROWSY Y494 YAALE Y495 OWENZ FATON HOFFI KEYED EEGOR PRENO KLGA\" readonly>";
 			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
-			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
+			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
 			result += "<br/>K2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 KLADA UPACE SEELO GARIC Q107 HURTS PROUD2 KLGA\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
 			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC Q107 HURTS PROUD2 KLGA\" readonly>";
