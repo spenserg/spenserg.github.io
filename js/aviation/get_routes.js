@@ -4352,7 +4352,7 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KELP ATKNN5 GREBE J86 PYRIT J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KELP ATKNN5 NOCHI OLIIN J2 IPL AMMOR OLAAA2 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KELP JCOXX2 HBACK SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KELP SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-25-2025
 					break;
 				case "ORD": // ELP-ORD // Updated 11-26-2025
@@ -4372,7 +4372,7 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 					break;
 				case "PHX": // ELP-PHX // Updated 01-09-2025
 					result += "<!-- Updated 01-09-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KELP ATKNN5 ATKNN DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KELP ATKNN5 GREBE J86 VERNO EAGUL EAGUL6 KPHX\" readonly>";
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KELP ATKNN5 NOCHI TUS HOTTT PINNG1 KPHX\" readonly>";
