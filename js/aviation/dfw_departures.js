@@ -1706,8 +1706,9 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "PIT": // DFW-PIT // Updated 12-12-2025
 			result += "<!-- Updated 12-12-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV IIU HNN FEWGA7 KPIT\" readonly>"; // CDR 0P
+			// result += "<br/><br/><b>Faa Pref Route:</b>";
+			// Pref route: KDFW ZACHH4 BSKAT LIT J131 PXV IIU HNN FEWGA7 KPIT
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT SOPIE Q68 YOCKY HNN FEWGA7 KPIT\" readonly>"; // Based on CDR 0P
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL J24 VHP APE CTW FEWGA7 KPIT\" readonly>";
 			result += "<br/><b>Avoid ZID: .. STL RBS FWA DJB GRIVY JESEY5 KPIT<\/b>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN GQO SMTTH Q67 HNN FEWGA7 KPIT\" readonly>";
