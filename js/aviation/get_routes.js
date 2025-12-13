@@ -7407,13 +7407,16 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 
 		case "MSN":
 			switch(arvl) {
-				case "CLT": // MSN-CLT // Updated 01-16-2025
-					result += "<!-- Updated 01-16-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMSN WAITS OBK CADIZ J89 BVT IIU SKYWA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KMSN WAITS PMM FWA HNN LNDIZ PARQR4 KCLT\" readonly>";
-					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>";
+				case "CLT": // MSN-CLT // Updated 12-13-2025
+					result += "<!-- Updated 12-13-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 12-13-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMSN WAITS OBK GUS FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSN WAITS PMM FWA HNN LNDIZ PARQR4 KCLT\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSN WAITS OBK CADIZ J89 BVT IIU SKYWA FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>SW Arvl<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMSN UIN FAM J151 VUZ THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KMSN WAITS OBK VHP FLM HMV LIINN3 KCLT\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-13-2025
 					break;
 				case "DFW": // MSN-DFW // Updated 09-14-2025
 					result += "<!-- Updated 09-14-2025 P -->";
@@ -10675,16 +10678,17 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KSFO SFO4 SFO LIN J84 MVA J198 ILC J58 MLF J28 ICT SGF J98 FAM VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-14-2025
 					break;
-				case "DFW": // SFO-DFW // Updated 07-29-2025
-					result += "<!-- Updated 07-29-2025 P -->"
+				case "DFW": // SFO-DFW // Updated 12-13-2025
+					result += "<!-- Updated 12-13-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-29-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KSFO TRUKN2 SYRAH Q128 JSICA Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><b>After 2200L use NIITE4 dptr: KSFO NIITE4 SYRAH...<\/b>";
-					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN BOILE Q4 ELP J50 INK GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 MOGEE Q124 WAATS MTU J240 HBU PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN BOILE Q4 ELP J50 INK GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KSFO SFO4 SFO LIN J84 MVA J198 ILC J58 PNH UKW5 KDFW\" readonly>";
 					result += "<br/><input style=\"width:75%\"; value=\"KSFO BSR MQO FLW PMD J65 BLH J50 SSO J4 INK ACT YEAGR4 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-29-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-13-2025
 					break; 
 				case "JFK": // SFO-JFK // Updated 08-28-2025
 					result += "<!-- Updated 08-28-2025 P -->"
@@ -10916,14 +10920,14 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-27-2025
 					break;
-				case "PHX": // SMF-PHX // Updated 04-30-2025 // Mandatory Routes checked
-					result += "<!-- Updated 04-30-2025 PCM -->";
+				case "PHX": // SMF-PHX // Updated 12-13-2025
+					result += "<!-- Updated 12-13-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSMF RVRCT4 SHUFL LIDAT J92 BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KSMF RVRCT4 RALEY MVA J198 ILC BCE J11 CORKR TENTS BRUSR1 KPHX\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KSMF FTHIL3 FRA EHF J65 PMD BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KSMF RVRCT4 SHUFL Q13 WOTRO BRUSR1 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSMF SCTWN4 RALEY ILC WINEN Q35 CORKR TENTS BRUSR1 KPHX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSMF FTHIL3 FRA EHF J65 PMD BLH HYDRR1 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed as of 04-30-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-13-2025
 					break;
 			}
 		break; // End of SMF
