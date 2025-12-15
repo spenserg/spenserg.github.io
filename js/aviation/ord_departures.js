@@ -1428,20 +1428,22 @@ KORD PLL ALO FOD ONL J94 LLC J32 SAC KSMF
 			result += "<br/>CD<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK NOTAP YEE TULEG KSYR\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO TULEG KSYR\" readonly>";
 			break;
-		case "TPA": // ORD-TPA // Updated 04-08-2025
-			result += "<!-- Updated 04-08-2025 -->";
+		case "TPA": // ORD-TPA // Updated 12-15-2025
+			result += "<!-- Updated 12-15-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI MAATY5 KTPA\" readonly>"; // CDR 0S
-			result += "<br/>East via SPA: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM SPA TEUFL BAAMF DADES2 KTPA\" readonly>";
-			// KORD SQS HRV Q105 REDFN Y280 CHRGE RAYZZ3 KTPA
-			result += "<br/><br/>OHIO VALLEY TO FLORIDA 1 <span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE BWG HITMN ACORI MAATY5 KTPA\" readonly>";
+			result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE BWG HITMN ACORI MAATY5 KTPA\" readonly>";
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF MERDN DEFUN MAATY5 KTPA\" readonly>"; // CDR 1W
+			result += "<br/></br>East via APE<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE Q149 BURGG BAAMF DADES2 KTPA\" readonly>"; // CDR 2E
+			result += "<br/>West/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL J71 MEM J35 HRV Q105 REDFN Y280 CHRGE RAYZZ3 KTPA\" readonly>";
+			result += "<br/></br>OH VLY TO FL 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE BWG HITMN ACORI MAATY5 KTPA\" readonly>"; // CDR SB
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO			
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-08-2025
-			result += "<!-- Verified with ATCSCC on 04-08-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 12-15-2025
+			result += "<!-- Verified with ATCSCC on 12-15-2025 -->";
 			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI MAATY5 KTPA\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM J43 VXV THRSR HONID MAATY5 KTPA\" readonly>";
 			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF MERDN DEFUN MAATY5 KTPA\" readonly>";
-			result += "<br/>2E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE J83 SPA BAAMF DADES2 KTPA\" readonly>";
+			result += "<br/>2E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE Q149 BURGG BAAMF DADES2 KTPA\" readonly>";
 			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU J99 VXV THRSR HONID MAATY5 KTPA\" readonly>";
 			result += "<br/>2W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI SGF MERDN DEFUN MAATY5 KTPA\" readonly>";
 			result += "<br/>6S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL PLESS Q19 HITMN ACORI MAATY5 KTPA\" readonly>";
