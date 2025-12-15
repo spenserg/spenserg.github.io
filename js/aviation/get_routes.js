@@ -9220,7 +9220,7 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 				case "SFO": // PHL-SFO // Updated 12-15-2025
 					result += "<!-- Updated 12-15-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 AIR J80 OAL INYOE DYAMD5 KSFO\" readonly>"; // CDR 80
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 VHP J80 MCI J24 HGO HBU J28 MLF J80 OAL INYOE DYAMD5 KSFO\" readonly>"; // Based on CDR 80
 					result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB CPONE JOT J60 DBL J80 OAL INYOE DYAMD5 KSFO\" readonly>"; // CDR 60
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ Q68 RAMRD ARG IRW PNH RSK J58 ILC J80 OAL INYOE DYAMD5 KSFO\" readonly>"; // CDR BW
 					result += "<br/></br>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB J34 BAE J70 AUGER HUFFR DKOTA Q138 RICCO MLD J32 LLC LEGGS BDEGA4 KSFO\" readonly>"; // CDR RK
