@@ -488,6 +488,11 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		// Playbook
 		z[7] = z[7].trim();
 
+		// Known Playbooks
+		if (z[2] == "KDFW" && z[4].includes("TNV IAH LCH")) { z[7] = "COWBOY EAST (FL230 TO LCH)"; }
+		if (z[2] == "KDFW" && z[4].includes("HOARY JCT FST")) { z[7] = "COWBOY WEST 1 (FL220 TO JCT)"; }
+		if (z[2] == "KDFW" && z[4].includes("HOARY SAT DLF FST")) { z[7] = "COWBOY WEST 2 (FL220 TO SAT)"; }
+
 		// Shorten CDR names
 		z[7] = z[7].replace("DOMESTIC HARP", "DOM HARP");
 		z[7] = z[7].replace("OHIO VALLEY", "OHIO VLY");
@@ -525,7 +530,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		}
 
 		// CDRs
-		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";";
+		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ " + z[7].trim();
 		result_arr['cdrs'][z[1]] = {'route' : z[4], 'notes' : ("CDR " + z[1]), 'verified' : today_str, 'result_str' : ("result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";") };
 	}
 
@@ -557,25 +562,29 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		tmp_playbook_arr.push(sortable[i][3]);
 	}
 	var playbook_str = tmp_playbook_arr.join(textarea_tabs);
-
-// console.log(cdr_str);
-	
 	var new_cdr_str = "";
-	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly/g;	
+
+	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly\>\"\;\s\/\/\s([^\n]*)/g;
 	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) {
 
 		// z[1] = CDR name
 		// z[2] = Coord Rqd -or- OK to file
 		// z[3] = route string as input value
-
+		// z[4] = Playbook name (blank if none)
+		
 		// Route Str = cdrstr_xxx || Description = cdrdesc_xxx || CopyPaste = cdrcp_xxx
 		new_cdr_str += "<br/>CDR " + z[1] + z[2].replaceAll("\\", "") + ": <input id=\"cdrstr_" + z[1] + "\" class=\"cdr_input\" style=\"width:50%\" " + z[3].replaceAll("\\", "") + " readonly>";
 		if (debug_mode) {
 			new_cdr_str += "&nbsp;&nbsp;Desc: <input id=\"cdrdesc_" + z[1] + "\" style=\"width:10%\" value=\"XXX\" onchange=\"update_cdr_text('" + z[1] + "'," + ((z[2].includes("Coord Req")) ? 'true' : 'false') + ")\" } />" +
 			"&nbsp;&nbsp;<input id=\"cdrdescbr_" + z[1] + "\" style=\"width:10%\" value=\"<br/>XXX\" readonly><br/>" +
-			z[1] +": <input id=\'cdrcp_" + z[1] + "\' style=\'width:75%\' value=\'" +
+			z[1] + ": <input id=\'cdrcp_" + z[1] + "\' style=\'width:75%\' value=\'" +
 			"result += \"<br/>XXX" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ") + 
 			"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
+			if (z[4].trim().length > 0) {
+				new_cdr_str += z[4] + ": <input style=\'width:75%\' value=\'" +
+					"result += \"<br/>" + z[4] + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ") + 
+					"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
+			}
 		}
 	}
 
