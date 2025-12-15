@@ -11407,7 +11407,7 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KTPA DORMR3 FROOT ROZZI Y280 REDFN Q105 HRV J58 AEX PNUTS WHINY4 KDFW\" readonly>"; // CDR D0
 					result += "<br/></br>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 ENDED LACEN PATOY Q116 JAWJA CABLO DEFUN J2 CEW J50 AEX PNUTS BEREE3 KDFW\" readonly>"; // CDR E0
 					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 LACEN PATOY Q116 MEMFS LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA DORMR3 CIGAR DTSRJ ALGAE PEGLG VUH IAH CRIED BEREE3 KDFW\" readonly>";					
+					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA DORMR3 CIGAR DTSCK ALGAE PEGLG VUH IAH CRIED BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTPA SZW CEW J50 MCB MLU YEAGR4 KDFW\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 12-15-2025
@@ -11418,7 +11418,6 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 					result += "<br/>D1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA DORMR3 FROOT ROZZI Y280 REDFN Q105 HRV J58 AEX PNUTS BEREE3 KDFW\" readonly>";
 					result += "<br/>E0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA ENDED2 ENDED LACEN PATOY Q116 JAWJA CABLO DEFUN J2 CEW J50 AEX PNUTS BEREE3 KDFW\" readonly>";
 					result += "<br/>E1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA ENDED2 ENDED LACEN PATOY Q116 JAWJA CABLO DEFUN J2 CEW J50 AEX PNUTS WHINY4 KDFW\" readonly>";
-					break;
 					break;
 				case "LGA": // TPA-LGA // Updated 12-11-2025
 					result += "<!-- Updated 12-11-2025 P -->";
@@ -11480,13 +11479,14 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 					result += "<br/>B0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA BAYPO2 CAMJO Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
 					result += "<br/>C0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA CROWD8 CROWD CRMIN MZULO HESTA LENDS PELCN Y309 FLRDA IDOLS SKARP Q101 KALDA ZJAAY JIIMS4 KPHL\" readonly>";
 					break;
-					break;
-				case "PHX": // TPA-PHX // Updated 09-11-2025
-					result += "<!-- Updated 09-11-2025 P -->";
+				case "PHX": // TPA-PHX // Updated 12-15-2025
+					result += "<!-- Updated 12-15-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTPA DORMR3 FROOT ROZZI Y280 LEV J86 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 ENDED LACEN PATOY Q116 JAWJA CABLO DEFUN J2 IAH J86 ELP DRRVR PINNG1 KPHX\" readonly>"; // CDR E0
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 ENDED LACEN PATOY Q116 VLKNN YAALL J14 LIT J6 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 ENDED LACEN PATOY Q116 VLKNN YAALL J14 LIT J6 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA DORMR3 CIGAR DTSCK ALGAE PEGLG PSX SAT J138 FST J86 ELP DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA DORMR3 CIGAR DTSCK ALGAE PEGLG CRP KH87A FST J2 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTPA SZW CEW J2 IAH J86 ELP J50 SSO SUNSS8 KPHX\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-11-2025
