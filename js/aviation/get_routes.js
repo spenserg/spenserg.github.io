@@ -3851,10 +3851,10 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/><br/><b>CDRS</b>";
 					result += "<br/>40: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB COUPN BEETN JIMAR DEEEZ Q409 PUPYY KYYUU LUBBR3 KSRQ\" readonly>";
 					result += "<br/>52: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 FLASK COREX SPA KYYUU LUBBR3 KSRQ\" readonly>";
-					result += "<br/>53: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 ALEAN VXV THRSR HONID BANGZ1 KSRQ\" readonly>";
+					result += "<br/>53: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 ALEAN VXV THRSR HONID BANGZ2 KSRQ\" readonly>";
 					result += "<br/>55: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 FLASK COREX SPA WIGVO Q77 TEUFL KYYUU LUBBR3 KSRQ\" readonly>";
 					result += "<br/>60: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q80 WISTA NEALS J85 SPA KYYUU LUBBR3 KSRQ\" readonly>";
-					result += "<br/>62: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ SPAYD VXV THRSR HONID BANGZ1 KSRQ\" readonly>";
+					result += "<br/>62: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q68 HVQ SPAYD VXV THRSR HONID BANGZ2 KSRQ\" readonly>";
 					result += "<br/>72: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA JDUBB4 RRSIN GSO Q75 SLOJO Q103 PUPYY KYYUU LUBBR3 KSRQ\" readonly>";
 					break;
 				case "STL": // DCA-STL // Updated 11-13-2025
@@ -9272,7 +9272,7 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-11-2025
 					result += "<!-- Verified with ATCSCC on 03-11-2025 -->";
 					result += "<br/>48<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 MOL FLASK COREX SPA KYYUU LUBBR3 KSRQ\" readonly>";
-					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB ROD J43 VXV THRSR HONID BANGZ1 KSRQ\" readonly>";
+					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB ROD J43 VXV THRSR HONID BANGZ2 KSRQ\" readonly>";
 					result += "<br/>80<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 AIR HVQ J85 SPA KYYUU LUBBR3 KSRQ\" readonly>";
 					result += "<br/>DQ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DQO BELAY MORTY LITME HIRCK JDUBB RRSIN GSO Q75 SLOJO Q103 PUPYY KYYUU LUBBR3 KSRQ\" readonly>";
 					result += "<br/>J6<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ J85 SPA KYYUU LUBBR3 KSRQ\" readonly>";
@@ -11127,14 +11127,14 @@ KMYR FLO HENBY GARDN JST BOJID3 KPHL
 KPHL STOEN Q75 SLOJO Q103 PUPYY KYYUU LUBBR3 KSRQ
 KPHL STOEN Q75 SLOJO Q103 PUPYY KYYUU LUBBR3 KSRQ
 KPHL STOEN REEFI EMI J48 MOL FLASK GOWBE BURGG KYYUU LUBBR3 KSRQ
-KPHL STOEN REEFI EMI J48 CSN FANPO Q40 ALEAN VXV THRSR HONID BANGZ1 KSRQ
+KPHL STOEN REEFI EMI J48 CSN FANPO Q40 ALEAN VXV THRSR HONID BANGZ2 KSRQ
 KPHL MXE PENSY J110 AIR HVQ J85 SPA IRQ KYYUU LUBBR3 KSRQ
-KPHL MXE PENSY J110 FLIRT J6 HVQ SPAYD VXV THRSR HONID BANGZ1 KSRQ
+KPHL MXE PENSY J110 FLIRT J6 HVQ SPAYD VXV THRSR HONID BANGZ2 KSRQ
 KPHL PTW SARAA RAV J64 BURNI QUARM AIR HVQ J85 SPA IRQ KYYUU LUBBR3 KSRQ
-KPHL MXE PENSY J110 AIR HVQ SPAYD VXV THRSR HONID BANGZ1 KSRQ
-KPHL PTW SARAA RAV J64 BURNI QUARM AIR HVQ SPAYD VXV THRSR HONID BANGZ1 KSRQ
+KPHL MXE PENSY J110 AIR HVQ SPAYD VXV THRSR HONID BANGZ2 KSRQ
+KPHL PTW SARAA RAV J64 BURNI QUARM AIR HVQ SPAYD VXV THRSR HONID BANGZ2 KSRQ
 KPHL STOEN REEFI EMI J48 MOL FLASK COREX SPA KYYUU LUBBR3 KSRQ
-KPHL PTW SARAA RAV PSB J60 DJB ROD J43 VXV THRSR HONID BANGZ1 KSRQ
+KPHL PTW SARAA RAV PSB J60 DJB ROD J43 VXV THRSR HONID BANGZ2 KSRQ
 KPHL MXE PENSY J110 AIR HVQ J85 SPA KYYUU LUBBR3 KSRQ
 KPHL DQO BELAY MORTY LITME HIRCK JDUBB RRSIN GSO Q75 SLOJO Q103 PUPYY KYYUU LUBBR3 KSRQ
 KPHL MXE PENSY J110 FLIRT J6 HVQ J85 SPA KYYUU LUBBR3 KSRQ
