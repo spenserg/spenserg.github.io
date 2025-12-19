@@ -1245,23 +1245,23 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "SAT": // CLT-SAT // Updated 07-26-2025
 			result += "<!-- Updated 07-26-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR JAMMR MERDN AEX CAAGE QERVO2 KSAT\" readonly>";
-			result += "<br/><br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS FISHO Q75 TEEEM ALLMA CEW J2 LCH CAAGE QERVO2 KSAT\" readonly>";
-			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA ARG TXK LLEAD QERVO2 KSAT\" readonly>";
-			result += "<br/><b>If wx over TXK: .. BNA ARG LIT J101 LFK CAAGE QERVO2 KSAT<\/b>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR JAMMR MERDN AEX CAAGE QERVO3 KSAT\" readonly>";
+			result += "<br/><br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS FISHO Q75 TEEEM ALLMA CEW J2 LCH CAAGE QERVO3 KSAT\" readonly>";
+			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA ARG TXK LLEAD QERVO3 KSAT\" readonly>";
+			result += "<br/><b>If wx over TXK: .. BNA ARG LIT J101 LFK CAAGE QERVO3 KSAT<\/b>";
 			result += "<br/><br/>North via TUL: <input style=\"width:75%\" value=\"KCLT BOBZY5 BNA J46 TUL J25 CWK MARCS2 KSAT\" readonly>";
-			result += "<br/><b>NW Arrival: .. TUL J78 IRW ABI WEELS TRVLL DNKIN1 KSAT<\/b>";
+			result += "<br/><b>NW Arrival: .. TUL J78 IRW ABI WEELS TRVLL DNKIN2 KSAT<\/b>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT SPA CHOPZ MGMRY CATLN SJI LSU LCH IAH IDU KSAT\" readonly>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 DEBIE CHOPZ MGMRY CATLN SJI LSU LCH IAH IDU MARCS2 KSAT\" readonly>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY5 BNA MEM TXK ACT MARCS2 KSAT\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-01-2025
 			result += "<!-- Verified with ATCSCC on 05-01-2025 -->";
-			result += "<br/>BE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DBN MEI AEX CAAGE QERVO2 KSAT\" readonly>";
-			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA MEM TXK LLEAD QERVO2 KSAT\" readonly>";
-			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM BWG BNA MEM TXK LLEAD QERVO2 KSAT\" readonly>";
-			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR JAMMR MERDN AEX CAAGE QERVO2 KSAT\" readonly>";
-			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ BWG BNA MEM TXK LLEAD QERVO2 KSAT\" readonly>";
+			result += "<br/>BE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT DBN MEI AEX CAAGE QERVO3 KSAT\" readonly>";
+			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BNA MEM TXK LLEAD QERVO3 KSAT\" readonly>";
+			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM BWG BNA MEM TXK LLEAD QERVO3 KSAT\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR JAMMR MERDN AEX CAAGE QERVO3 KSAT\" readonly>";
+			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HVQ BWG BNA MEM TXK LLEAD QERVO3 KSAT\" readonly>";
 			break;
 		case "SAV": // CLT-SAV // Updated 09-30-2025
 			result += "<!-- Updated 09-30-2025 P -->";
