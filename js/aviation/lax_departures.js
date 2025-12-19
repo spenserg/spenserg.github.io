@@ -586,14 +586,14 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "SAT": // LAX-SAT // Updated 02-01-2025
 			result += "<!-- Updated 02-01-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 FST MOPPP DNKIN1 KSAT\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 ABQ J72 TXO GTH PRTZY POPPO1 KSAT\" readonly>";
-			result += "<br/>NE Arrival: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 ABQ J72 TXO BOBVE NILBE QERVO1 KSAT\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 FST MOPPP DNKIN2 KSAT\" readonly>";
+			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 ABQ J72 TXO GTH PRTZY POPPO2 KSAT\" readonly>";
+			result += "<br/>NE Arrival: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 ABQ J72 TXO BOBVE NILBE QERVO3 KSAT\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>AU: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP MRF MOPPP DNKIN1 KSAT\" readonly>";
-			result += "<br/>ME: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 FST MOPPP DNKIN1 KSAT\" readonly>";
-			result += "<br/>SE: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX PNDAH2 TCATE IPL J2 GBN J50 ELP J2 FST MOPPP DNKIN1 KSAT\" readonly>";
+			result += "<br/>AU: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP MRF MOPPP DNKIN2 KSAT\" readonly>";
+			result += "<br/>ME: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 FST MOPPP DNKIN2 KSAT\" readonly>";
+			result += "<br/>SE: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX PNDAH2 TCATE IPL J2 GBN J50 ELP J2 FST MOPPP DNKIN2 KSAT\" readonly>";
 			break;
 		case "SEA": // LAX-SEA // Updated 01-31-2025
 			result += "<!-- Updated 01-31-2025 -->";
