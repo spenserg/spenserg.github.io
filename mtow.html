@@ -588,80 +588,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 			}
 		}
 	}
-
-	// Add SIDS BFL
-	new_cdr_str = new_cdr_str.replaceAll("KBFL EHF", "KBFL MARIC4 EHF");
-	new_cdr_str = new_cdr_str.replaceAll("KBFL PMD", "KBFL MARIC4 LHS PMD");
-	// Add SIDS BUR
-	new_cdr_str = new_cdr_str.replaceAll("KBUR BLH", "KBUR SLAPP2 BLH");
-	new_cdr_str = new_cdr_str.replaceAll("KBUR CSTRO", "KBUR OROSZ2 CSTRO");
-	new_cdr_str = new_cdr_str.replaceAll("KBUR DVC", "KBUR SLAPP2 LAS J146 DVC");
-	new_cdr_str = new_cdr_str.replaceAll("KBUR HEC", "KBUR SLAPP2 HEC");
-	new_cdr_str = new_cdr_str.replaceAll("KBUR LAS", "KBUR SLAPP2 LAS");
-	new_cdr_str = new_cdr_str.replaceAll("KBUR PMD TRM BLH", "KBUR SLAPP2 BLH");
-	new_cdr_str = new_cdr_str.replaceAll("KBUR PMD TRM", "KBUR VNY3 VNY TRM");
-	new_cdr_str = new_cdr_str.replaceAll("KBUR TRM", "KBUR VNY3 VNY TRM");
-	new_cdr_str = new_cdr_str.replaceAll("KBUR PMD", "KBUR VNY3 PMD");
-	// Add SIDS LAS
-	new_cdr_str = new_cdr_str.replaceAll("KLAS GUP", "KLAS NIITZ4 SSKEE GUP");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS INW", "KLAS NIITZ4 SSKEE INW");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS TBC", "KLAS NIITZ4 HOCEE TBC");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS DVC", "KLAS GIDGT3 TUKRR DVC");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS PGS",   "KLAS HOOVR8 PGS");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS VERKN", "KLAS GIDGT3 VERKN");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS TUKRR", "KLAS GIDGT3 TUKRR");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS SSKEE", "KLAS NIITZ4 SSKEE");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS SSKEE", "KLAS NIITZ4 HOCEE");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS ZAYNE", "KLAS RASLR3 ZAYNE");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS FRNCK", "KLAS RATPK3 FRNCK");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS JAYSN", "KLAS LOHLA3 JAYSN");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS KENNO", "KLAS JOHKR5 KENNO");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS LVELL", "KLAS RADYR2 LVELL");
-	new_cdr_str = new_cdr_str.replaceAll("KLAS HEC",   "KLAS RADYR2 HEC");
-	// Add SIDS LAX
-	new_cdr_str = new_cdr_str.replaceAll("KLAX LAS", "KLAX ORCKA5 LAS");
-	new_cdr_str = new_cdr_str.replaceAll("KLAX BEALE", "KLAX ORCKA5 BEALE");
-	new_cdr_str = new_cdr_str.replaceAll("KLAX CLEEE", "KLAX DOTSS2 CLEEE");
-	new_cdr_str = new_cdr_str.replaceAll("KLAX CNERY", "KLAX DOTSS2 CNERY");
-	// new_cdr_str = new_cdr_str.replaceAll("KLAX BLH", "KLAX BLH"); // todo non rnav qqq
-	new_cdr_str = new_cdr_str.replaceAll("KLAX TCATE", "KLAX PNDAH2 TCATE");
-	new_cdr_str = new_cdr_str.replaceAll("KLAX FICKY", "KLAX ZILLI5 FICKY");
-	// Add SIDS ONT
-	new_cdr_str = new_cdr_str.replaceAll("KONT BLH", "KONT RAJEE4 MTBAL CNERY BLH");
-	new_cdr_str = new_cdr_str.replaceAll("KONT DVC", "KONT SNSHN5 LAS J146 DVC");
-	new_cdr_str = new_cdr_str.replaceAll("KONT EHF", "KONT SNSHN5 EHF");
-	new_cdr_str = new_cdr_str.replaceAll("KONT LAS", "KONT SNSHN5 LAS");
-	new_cdr_str = new_cdr_str.replaceAll("KONT AVRRY", "KONT RAJEE4 AVRRY");
-	new_cdr_str = new_cdr_str.replaceAll("KONT MTBAL", "KONT RAJEE4 MTBAL");
-	// Add SIDS PSP
-	new_cdr_str = new_cdr_str.replaceAll("KPSP BLH", "KPSP HWRRD1 BLH");
-	new_cdr_str = new_cdr_str.replaceAll("KPSP PMD", "KPSP LGANN1 PMD");
-	new_cdr_str = new_cdr_str.replaceAll("KPSP PSP", "KPSP CATH1 PSP");
-	new_cdr_str = new_cdr_str.replaceAll("KPSP TNP", "KPSP CATH1 PSP V370 TNP");
-	new_cdr_str = new_cdr_str.replaceAll("KPSP TRM", "KPSP HWRRD1 TRM");
-	// Add SIDS SAN
-	new_cdr_str = new_cdr_str.replaceAll("KSAN FTI", "KSAN TGOLD PXR J18 FTI");
-	new_cdr_str = new_cdr_str.replaceAll("KSAN GBN", "KSAN ZZOOO4 GBN");
-	new_cdr_str = new_cdr_str.replaceAll("KSAN IKAYE", "KSAN PADRZ2 IKAYE");
-	new_cdr_str = new_cdr_str.replaceAll("KSAN LAX EHF", "KSAN PADRZ7 EHF");
-	new_cdr_str = new_cdr_str.replaceAll("KSAN MTBAL", "KSAN ZZOOO4 MTBAL");
-	new_cdr_str = new_cdr_str.replaceAll("KSAN TGOLD", "KSAN ZZOOO4 TGOLD");
-	// Add SIDS SBA // TODO
-	// new_cdr_str = new_cdr_str.replaceAll("KSBA KPTIN", "KSBA  KPTIN");
-	// new_cdr_str = new_cdr_str.replaceAll("KSBA LAS", "KSBA  LAS");
-	// new_cdr_str = new_cdr_str.replaceAll("KSBA PMD", "KSBA  PMD");
-	// Add SIDS SBP // TODO
-	// new_cdr_str = new_cdr_str.replaceAll("KSBP LAS", "KSBP  LAS");
-	// new_cdr_str = new_cdr_str.replaceAll("KSBP PMD", "KSBP  PMD");
-	// Add SIDS SNA
-	new_cdr_str = new_cdr_str.replaceAll("KSNA AVRRY", "KSNA PIGGN3 AVRRY");
-	new_cdr_str = new_cdr_str.replaceAll("KSNA BEALE", "KSNA FINZZ3 BEALE");
-	new_cdr_str = new_cdr_str.replaceAll("KSNA BLH", "KSNA PIGGN3 CNERY BLH");
-	new_cdr_str = new_cdr_str.replaceAll("KSNA CNERY", "KSNA PIGGN3 CNERY");
-	new_cdr_str = new_cdr_str.replaceAll("KSNA TCATE", "KSNA PIGGN3 TCATE");
-	new_cdr_str = new_cdr_str.replaceAll("KSNA DVC", "KSNA FINZZ3 LAS J146 DVC");
-	new_cdr_str = new_cdr_str.replaceAll("KSNA EHF", "KSNA HHERO3 EHF");
-	new_cdr_str = new_cdr_str.replaceAll("KSNA LAS", "KSNA FINZZ3 LAS");
+	new_cdr_str = add_sids_and_stars_to_cdrs(new_cdr_str);
 
 	var faa_result = merge_faa_pref(result_arr, today_str);
 
@@ -1377,6 +1304,7 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	// result = result.replaceAll("KIND VHP", ""); // IND-STL
 
 	// KJFK
+	/*
 	result = result.replaceAll("KJFK BAYYS", ""); // TODO
 	result = result.replaceAll("KJFK COATE", ""); // TODO
 	result = result.replaceAll("KJFK BDR", ""); // TODO
@@ -1392,6 +1320,7 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KJFK DIXIE", ""); // TODO
 	result = result.replaceAll("KJFK WHITE", ""); // TODO
 	result = result.replaceAll("KJFK ARD", ""); // TODO
+	*/
 
 	// KLAS
 	result = result.replaceAll("KLAS GUP", "KLAS NIITZ4 SSKEE GUP");
@@ -1409,10 +1338,12 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KLAS KENNO", "KLAS JOHKR5 KENNO");
 	result = result.replaceAll("KLAS LVELL", "KLAS RADYR2 LVELL");
 	result = result.replaceAll("KLAS HEC",   "KLAS RADYR2 HEC");
+	/*
 	result = result.replaceAll("KLAS DRK", ""); // TODO
 	result = result.replaceAll("KLAS BCE", ""); // TODO
 	result = result.replaceAll("KLAS TBC", ""); // TODO
 	result = result.replaceAll("KLAS BIKKR", ""); // TODO
+	*/
 
 	// KLAX
 	result = result.replaceAll("KLAX LAS", "KLAX ORCKA5 LAS");
@@ -1422,36 +1353,43 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	// result = result.replaceAll("KLAX BLH", "KLAX BLH"); // todo non rnav qqq
 	result = result.replaceAll("KLAX TCATE", "KLAX PNDAH2 TCATE");
 	result = result.replaceAll("KLAX FICKY", "KLAX ZILLI5 FICKY");
-	result = result.replaceAll("KLAX DVC", ""); // TODO
-	result = result.replaceAll("KLAX CSTRO", ""); // TODO
-	result = result.replaceAll("KLAX IKAYE", ""); // TODO
+	result = result.replaceAll("KLAX DVC", "KLAX ORCKA5 BEALE J146 DVC");
+	result = result.replaceAll("KLAX CSTRO", "KLAX LADYJ4 CSTRO");
+	// result = result.replaceAll("KLAX IKAYE", ""); // TODO
 
 	// KLGA
-	result = result.replaceAll("KLGA BAYYS", ""); // TODO
-	result = result.replaceAll("KLGA ZIMMZ", ""); // TODO
-	result = result.replaceAll("KLGA HAAYS", ""); // TODO
+	/*
+	result = result.replaceAll("KLGA CCC", ""); // TODO
 	result = result.replaceAll("KLGA BDR", ""); // TODO
-	result = result.replaceAll("KLGA BIGGY", ""); // TODO
-	result = result.replaceAll("KLGA PARKE", ""); // TODO
-	result = result.replaceAll("KLGA WHITE", ""); // TODO
-	result = result.replaceAll("KLGA NEION", ""); // TODO
-	result = result.replaceAll("KLGA LANNA", ""); // TODO
-	result = result.replaceAll("KLGA NEWEL", ""); // TODO
-	result = result.replaceAll("KLGA JFK", ""); // TODO
+	result = result.replaceAll("KLGA BAYYS", ""); // TODO
 	result = result.replaceAll("KLGA MERIT", ""); // TODO
-	result = result.replaceAll("KLGA COATE", ""); // TODO
 	result = result.replaceAll("KLGA GREKI", ""); // TODO
 	result = result.replaceAll("KLGA GAYEL", ""); // TODO
-	result = result.replaceAll("KLGA BETTE", ""); // TODO
+	result = result.replaceAll("KLGA HAAYS", ""); // TODO
+	result = result.replaceAll("KLGA NEION", ""); // TODO
+	result = result.replaceAll("KLGA COATE", ""); // TODO
+	result = result.replaceAll("KLGA NEWEL", ""); // TODO
 	result = result.replaceAll("KLGA ELIOT", ""); // TODO
+	result = result.replaceAll("KLGA ZIMMZ", ""); // TODO
+	result = result.replaceAll("KLGA PARKE", ""); // TODO
+	result = result.replaceAll("KLGA LANNA", ""); // TODO
+	result = result.replaceAll("KLGA BIGGY", ""); // TODO
+	result = result.replaceAll("KLGA WHITE", ""); // TODO
+	result = result.replaceAll("KLGA JFK", ""); // TODO
+	result = result.replaceAll("KLGA BETTE", ""); // TODO
 	result = result.replaceAll("KLGA BREZY", ""); // TODO
-
+	*/
+	
 	// KMSP
-	result = result.replaceAll("KMSP GEP", ""); // TODO
-	result = result.replaceAll("KMSP HYR", ""); // TODO
+	/* MSP9 DPTR
+	result = result.replaceAll("KMSP GEP BRNRD FAR", ""); // TODO
+	result = result.replaceAll("KMSP GEP BRNRD DLH", ""); // TODO
 	result = result.replaceAll("KMSP DLH", ""); // TODO
+	result = result.replaceAll("KMSP HYR", ""); // TODO
+	*/
 
 	// KMSY
+	/* NO SIDS MSY
 	result = result.replaceAll("KMSY AEX", ""); // TODO
 	result = result.replaceAll("KMSY NTCHZ", ""); // TODO
 	result = result.replaceAll("KMSY PAYTN", ""); // TODO
@@ -1470,9 +1408,10 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KMSY TBD", ""); // TODO
 	result = result.replaceAll("KMSY REDFN", ""); // TODO
 	result = result.replaceAll("KMSY SQS", ""); // TODO
+	*/
 
 	// KONT
-	result = result.replaceAll("KONT JLI", ""); // TODO
+	// result = result.replaceAll("KONT JLI", ""); // TODO
 	result = result.replaceAll("KONT BLH", "KONT RAJEE4 MTBAL CNERY BLH");
 	result = result.replaceAll("KONT DVC", "KONT SNSHN5 LAS J146 DVC");
 	result = result.replaceAll("KONT EHF", "KONT SNSHN5 EHF");
@@ -1481,11 +1420,14 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KONT MTBAL", "KONT RAJEE4 MTBAL");
 
 	// KPHX
+	/*
 	result = result.replaceAll("KPHX PXR", ""); // TODO
 	result = result.replaceAll("KPHX JUDTH", ""); // TODO
 	result = result.replaceAll("KPHX TMACK", ""); // TODO
+	*/
 
 	// KPIT
+	/* NO SIDS PIT
 	result = result.replaceAll("KPIT AHTIY", ""); // TODO
 	result = result.replaceAll("KPIT DILNE", ""); // TODO
 	result = result.replaceAll("KPIT TYROO", ""); // TODO
@@ -1495,6 +1437,7 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KPIT BSV", ""); // TODO
 	result = result.replaceAll("KPIT MGW", ""); // TODO
 	result = result.replaceAll("KPIT JST", ""); // TODO
+	*/
 
 	// KPSP
 	result = result.replaceAll("KPSP BLH", "KPSP HWRRD1 BLH");
@@ -1504,25 +1447,30 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KPSP TRM", "KPSP HWRRD1 TRM");
 
 	// KPVD
+	/* NO SIDS PVD
 	result = result.replaceAll("KPVD PUT", ""); // TODO
 	result = result.replaceAll("KPVD JUMPR", ""); // TODO
 	result = result.replaceAll("KPVD PVD", ""); // TODO
 	result = result.replaceAll("KPVD SEY", ""); // TODO
+	*/
 
 	// KPWM
+	/* PWM6 SID
 	result = result.replaceAll("KPWM ALB", ""); // TODO
 	result = result.replaceAll("KPWM GDM", ""); // TODO
+	*/
 
 	// KRDU
-	result = result.replaceAll("KRDU CATAR", ""); // TODO
+	// result = result.replaceAll("KRDU CATAR", ""); // TODO
 
-	// KRIC
+	/* KRIC
 	result = result.replaceAll("KRIC HPW", ""); // TODO
 	result = result.replaceAll("KRIC HOUKY", ""); // TODO
 	result = result.replaceAll("KRIC HCM", ""); // TODO
 	result = result.replaceAll("KRIC GVE", ""); // TODO
+	*/
 
-	// KROC
+	/* KROC
 	result = result.replaceAll("KROC GEE", ""); // TODO
 	result = result.replaceAll("KROC BURST", ""); // TODO
 	result = result.replaceAll("KROC BEEPS", ""); // TODO
@@ -1531,16 +1479,19 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KROC HANKK", ""); // TODO
 	result = result.replaceAll("KROC AUDIL", ""); // TODO
 	result = result.replaceAll("KROC CFB", ""); // TODO
+	*/
 
 	// KRSW
+	/*
 	result = result.replaceAll("KRSW DYLYN", ""); // TODO
 	result = result.replaceAll("KRSW MOOKY", ""); // TODO
 	result = result.replaceAll("KRSW CHARO", ""); // TODO
 	result = result.replaceAll("KRSW AABER", ""); // TODO
 	result = result.replaceAll("KRSW MARCI", ""); // TODO
-
+	*/
+	
 	// KSAN
-	result = result.replaceAll("KSAN IPL", ""); // TODO
+	// result = result.replaceAll("KSAN IPL", ""); // TODO
 	result = result.replaceAll("KSAN FTI", "KSAN TGOLD PXR J18 FTI");
 	result = result.replaceAll("KSAN GBN", "KSAN ZZOOO4 GBN");
 	result = result.replaceAll("KSAN IKAYE", "KSAN PADRZ2 IKAYE");
@@ -1549,18 +1500,22 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KSAN TGOLD", "KSAN ZZOOO4 TGOLD");
 
 	// KSBA
+	/*
 	result = result.replaceAll("KSBA LAS", ""); // TODO
 	result = result.replaceAll("KSBA KPTIN", ""); // TODO
 	result = result.replaceAll("KSBA PMD", ""); // TODO
+	*/
 
 	// KSBP
-	result = result.replaceAll("KSBP LAS", ""); // TODO
-	result = result.replaceAll("KSBP PMD", ""); // TODO
+	// result = result.replaceAll("KSBP LAS", ""); // TODO
+	result = result.replaceAll("KSBP PMD", "KSBP DERBB MARIC PMD");
 
 	// KSBY
+	/*
 	result = result.replaceAll("KSBY OUTLA", ""); // TODO
 	result = result.replaceAll("KSBY SAWED", ""); // TODO
 	result = result.replaceAll("KSBY LAFLN", ""); // TODO
+	*/
 
 	// KSNA
 	result = result.replaceAll("KSNA AVRRY", "KSNA PIGGN3 AVRRY");
@@ -1573,10 +1528,11 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KSNA LAS", "KSNA FINZZ3 LAS");
 
 	// KTUS
-	result = result.replaceAll("KTUS SSO", ""); // TODO
-	result = result.replaceAll("KTUS GBN", ""); // TODO
+	result = result.replaceAll("KTUS SSO", "KTUS WLDKT4 SSO");
+	result = result.replaceAll("KTUS GBN", "KTUS WLDKT4  GBN");
 
 	// CYOW
+	/*
 	result = result.replaceAll("CYOW OLIGO", ""); // TODO
 	result = result.replaceAll("CYOW YOW", ""); // TODO
 	result = result.replaceAll("CYOW TUKIR", ""); // TODO
@@ -1597,8 +1553,84 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("CYYZ VERDO", ""); // TODO
 	result = result.replaceAll("CYYZ NUGOP", ""); // TODO
 	result = result.replaceAll("CYYZ TULEK", ""); // TODO
-
+*/
 	return result;
 }
 
 </script>
+
+<!--
+// Add SIDS BFL
+	new_cdr_str = new_cdr_str.replaceAll("KBFL EHF", "KBFL MARIC4 EHF");
+	new_cdr_str = new_cdr_str.replaceAll("KBFL PMD", "KBFL MARIC4 LHS PMD");
+	// Add SIDS BUR
+	new_cdr_str = new_cdr_str.replaceAll("KBUR BLH", "KBUR SLAPP2 BLH");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR CSTRO", "KBUR OROSZ2 CSTRO");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR DVC", "KBUR SLAPP2 LAS J146 DVC");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR HEC", "KBUR SLAPP2 HEC");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR LAS", "KBUR SLAPP2 LAS");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR PMD TRM BLH", "KBUR SLAPP2 BLH");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR PMD TRM", "KBUR VNY3 VNY TRM");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR TRM", "KBUR VNY3 VNY TRM");
+	new_cdr_str = new_cdr_str.replaceAll("KBUR PMD", "KBUR VNY3 PMD");
+	// Add SIDS LAS
+	new_cdr_str = new_cdr_str.replaceAll("KLAS GUP", "KLAS NIITZ4 SSKEE GUP");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS INW", "KLAS NIITZ4 SSKEE INW");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS TBC", "KLAS NIITZ4 HOCEE TBC");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS DVC", "KLAS GIDGT3 TUKRR DVC");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS PGS",   "KLAS HOOVR8 PGS");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS VERKN", "KLAS GIDGT3 VERKN");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS TUKRR", "KLAS GIDGT3 TUKRR");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS SSKEE", "KLAS NIITZ4 SSKEE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS SSKEE", "KLAS NIITZ4 HOCEE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS ZAYNE", "KLAS RASLR3 ZAYNE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS FRNCK", "KLAS RATPK3 FRNCK");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS JAYSN", "KLAS LOHLA3 JAYSN");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS KENNO", "KLAS JOHKR5 KENNO");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS LVELL", "KLAS RADYR2 LVELL");
+	new_cdr_str = new_cdr_str.replaceAll("KLAS HEC",   "KLAS RADYR2 HEC");
+	// Add SIDS LAX
+	new_cdr_str = new_cdr_str.replaceAll("KLAX LAS", "KLAX ORCKA5 LAS");
+	new_cdr_str = new_cdr_str.replaceAll("KLAX BEALE", "KLAX ORCKA5 BEALE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAX CLEEE", "KLAX DOTSS2 CLEEE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAX CNERY", "KLAX DOTSS2 CNERY");
+	// new_cdr_str = new_cdr_str.replaceAll("KLAX BLH", "KLAX BLH"); // todo non rnav qqq
+	new_cdr_str = new_cdr_str.replaceAll("KLAX TCATE", "KLAX PNDAH2 TCATE");
+	new_cdr_str = new_cdr_str.replaceAll("KLAX FICKY", "KLAX ZILLI5 FICKY");
+	// Add SIDS ONT
+	new_cdr_str = new_cdr_str.replaceAll("KONT BLH", "KONT RAJEE4 MTBAL CNERY BLH");
+	new_cdr_str = new_cdr_str.replaceAll("KONT DVC", "KONT SNSHN5 LAS J146 DVC");
+	new_cdr_str = new_cdr_str.replaceAll("KONT EHF", "KONT SNSHN5 EHF");
+	new_cdr_str = new_cdr_str.replaceAll("KONT LAS", "KONT SNSHN5 LAS");
+	new_cdr_str = new_cdr_str.replaceAll("KONT AVRRY", "KONT RAJEE4 AVRRY");
+	new_cdr_str = new_cdr_str.replaceAll("KONT MTBAL", "KONT RAJEE4 MTBAL");
+	// Add SIDS PSP
+	new_cdr_str = new_cdr_str.replaceAll("KPSP BLH", "KPSP HWRRD1 BLH");
+	new_cdr_str = new_cdr_str.replaceAll("KPSP PMD", "KPSP LGANN1 PMD");
+	new_cdr_str = new_cdr_str.replaceAll("KPSP PSP", "KPSP CATH1 PSP");
+	new_cdr_str = new_cdr_str.replaceAll("KPSP TNP", "KPSP CATH1 PSP V370 TNP");
+	new_cdr_str = new_cdr_str.replaceAll("KPSP TRM", "KPSP HWRRD1 TRM");
+	// Add SIDS SAN
+	new_cdr_str = new_cdr_str.replaceAll("KSAN FTI", "KSAN TGOLD PXR J18 FTI");
+	new_cdr_str = new_cdr_str.replaceAll("KSAN GBN", "KSAN ZZOOO4 GBN");
+	new_cdr_str = new_cdr_str.replaceAll("KSAN IKAYE", "KSAN PADRZ2 IKAYE");
+	new_cdr_str = new_cdr_str.replaceAll("KSAN LAX EHF", "KSAN PADRZ7 EHF");
+	new_cdr_str = new_cdr_str.replaceAll("KSAN MTBAL", "KSAN ZZOOO4 MTBAL");
+	new_cdr_str = new_cdr_str.replaceAll("KSAN TGOLD", "KSAN ZZOOO4 TGOLD");
+	// Add SIDS SBA // TODO
+	// new_cdr_str = new_cdr_str.replaceAll("KSBA KPTIN", "KSBA  KPTIN");
+	// new_cdr_str = new_cdr_str.replaceAll("KSBA LAS", "KSBA  LAS");
+	// new_cdr_str = new_cdr_str.replaceAll("KSBA PMD", "KSBA  PMD");
+	// Add SIDS SBP // TODO
+	// new_cdr_str = new_cdr_str.replaceAll("KSBP LAS", "KSBP  LAS");
+	// new_cdr_str = new_cdr_str.replaceAll("KSBP PMD", "KSBP  PMD");
+	// Add SIDS SNA
+	new_cdr_str = new_cdr_str.replaceAll("KSNA AVRRY", "KSNA PIGGN3 AVRRY");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA BEALE", "KSNA FINZZ3 BEALE");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA BLH", "KSNA PIGGN3 CNERY BLH");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA CNERY", "KSNA PIGGN3 CNERY");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA TCATE", "KSNA PIGGN3 TCATE");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA DVC", "KSNA FINZZ3 LAS J146 DVC");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA EHF", "KSNA HHERO3 EHF");
+	new_cdr_str = new_cdr_str.replaceAll("KSNA LAS", "KSNA FINZZ3 LAS");
+-->
