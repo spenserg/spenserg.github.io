@@ -490,9 +490,9 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		z[7] = z[7].trim();
 
 		// Known Playbooks
-		if (z[2] == "KDFW" && z[4].includes("TNV IAH LCH")) { z[7] = "COWBOY EAST (FL230 TO LCH)"; }
-		if (z[2] == "KDFW" && z[4].includes("HOARY JCT FST")) { z[7] = "COWBOY WEST 1 (FL220 TO JCT)"; }
-		if (z[2] == "KDFW" && z[4].includes("HOARY SAT DLF FST")) { z[7] = "COWBOY WEST 2 (FL220 TO SAT)"; }
+		if (z[2] == "KDFW" && z[4].includes("TNV IAH LCH")) { z[7] = "COWBOY EAST 1 (FL230 to LCH)"; }
+		if (z[2] == "KDFW" && z[4].includes("HOARY JCT FST")) { z[7] = "COWBOY WEST 1 (FL220 ti JCT)"; }
+		if (z[2] == "KDFW" && z[4].includes("HOARY SAT DLF FST")) { z[7] = "COWBOY WEST 2 (FL220 to SAT)"; }
 
 		// Shorten CDR names
 		z[7] = z[7].replace("DOMESTIC HARP", "DOM HARP");
@@ -531,8 +531,13 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		}
 
 		// CDRs
-		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ " + z[7].trim();
-		result_arr['cdrs'][z[1]] = {'route' : z[4], 'notes' : ("CDR " + z[1]), 'verified' : today_str, 'result_str' : ("result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";") };
+		cdr_str += textarea_tabs + "result += \"<br/>" + z[1] + file_status + ": <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";" + ((z[7].trim().length > 0) ? (" // " + z[7]) : "");
+		result_arr['cdrs'][z[1]] = {
+			'route' : z[4],
+			'notes' : ("CDR " + z[1]),
+			'verified' : today_str,
+			'result_str' : cdr_str
+		}
 	}
 
 	if (num_ok_to_file == 1 && !["KCLT","KDCA","KDFW","KPHL"].includes(dptr)) {
@@ -565,7 +570,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	var playbook_str = tmp_playbook_arr.join(textarea_tabs);
 	var new_cdr_str = "";
 
-	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly\>\"\;\s\/\/\s([^\n]*)/g;
+	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly\>\"\;[\n\/\s]*([^\s\/\n]*)/g;
 	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) {
 
 		// z[1] = CDR name
@@ -605,8 +610,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		'result += \"<!-- Updated ' + today_str + ' P -->\";' + textarea_tabs +
 		'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref + '</textarea><br/><br/>';
 	output += '<textarea rows="8" cols="80">' +
-		((non_rnav.length == 0) ? "// " : "") + 'result += \"<br/><br/><b>Non RNAV</b>\";' +
-		((non_rnav.length == 0) ? " // TODDO" : (textarea_tabs + non_rnav));
+		((non_rnav.length == 0) ? "// " : "") + 'result += \"<br/><br/><b>Non RNAV</b>\"; // TODDO';
 	if (sortable.length > 0) {
 		output += textarea_tabs;
 		if (sortable.length > 3) {
