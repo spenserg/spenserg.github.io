@@ -929,20 +929,23 @@ KORD PMPKN NEATO DLLAN RONIC BAE DREAR KMSN
 			result += "<br/>5N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE EAU9 KMSP\" readonly>";
 			result += "<br/>NN<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BAE EAU9 KMSP\" readonly>";
 			break;
-
-/* TODO - FOS ROUTES: KORD - KMSY
-KORD BACEN BLOKR BEKKI ENL J71 MEM J35 MCB RYTHM4 KMSY
-KORD BACEN BLOKR BEKKI ENL J71 MEM J35 MCB TRSSH1 KMSY
-KORD DENNT DARCY DREGS PXV J73 BNA IGB MCB TRSSH1 KMSY
-KORD ACITO ADELL ARLYN STL J101 LIT AEX LSU AWDAD1 KMSY
-KORD EARND ELANR EMMLY ERECO IIU J99 VXV VUZ MERDN TRSSH1 KMSY
-KORD MZV IRK SGF RZC TXK AEX LSU AWDAD1 KMSY
-KORD ACITO ADELL ARLYN STL FAM MEM J35 MCB TRSSH1 KMSY
-KORD BACEN BLOKR BEKKI ENL J71 MEM J35 MCB TRSSH1 KMSY
-KORD PEKUE PIGGG QUANE CARET ROEZZ SGF LIT MCB TRSSH1 KMSY
-KORD EARND ELANR EMMLY ERECO IIU BNA IGB MCB TRSSH1 KMSY
-KORD CMSKY CARYN CYBIL PXV HITMN Q139 VLKNN MERDN TRSSH1 KMSY
-*/
+		case "MSY": // ORD-MSY // Updated 12-19-2025
+			result += "<!-- Updated 12-19-2025 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL J71 MEM J35 MCB TRSSH1 KMSY\" readonly>"; // CDR 1S
+			result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM VXV VUZ MERDN TRSSH1 KMSY\" readonly>";
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF LIT MCB TRSSH1 KMSY\" readonly>"; // CDR 1W
+			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+			// KORD MZV IRK SGF RZC TXK AEX LSU AWDAD1 KMSY
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 12-19-2025
+			result += "<!-- Verified with ATCSCC on 12-19-2025 -->";
+			result += "<br/>0S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL FAM MEM J35 MCB TRSSH1 KMSY\" readonly>"; // 
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL J71 MEM J35 MCB TRSSH1 KMSY\" readonly>"; // 
+			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF LIT MCB TRSSH1 KMSY\" readonly>"; // 
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU BNA IGB MCB TRSSH1 KMSY\" readonly>"; // 
+			result += "<br/>5S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN Q139 VLKNN MERDN TRSSH1 KMSY\" readonly>"; // 
+			break;
+// FOS ROUTE: KORD DENNT DARCY DREGS PXV J73 BNA IGB MCB TRSSH1 KMSY
 
 			/* TODO - FOS ROUTES: KORD - KOKC
 KORD MZV IRK BUM SEGLR KOKC
