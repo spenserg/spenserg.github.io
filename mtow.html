@@ -570,7 +570,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	var playbook_str = tmp_playbook_arr.join(textarea_tabs);
 	var new_cdr_str = "";
 
-	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly\>\"\;[\/\s]*([^\s\/\n]*)/g;
+	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly\>\"\;[\/ ]*([^\s\/\n]*)/g;
 	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) {
 
 		// z[1] = CDR name
@@ -607,10 +607,14 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 
 	// Top large box
 	output += '<textarea rows="8" cols="80">' + "case \"" + arvl + '\": // ' + convert_iata(dptr) + '-' + arvl + ' // Updated ' + today_str + mr_text + textarea_tabs +
-		'result += \"<!-- Updated ' + today_str + ' P -->\";' + textarea_tabs +
-		'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref + '</textarea><br/><br/>';
+		'result += \"<!-- Updated ' + today_str + ' P -->\";';
+	if (faa_pref.trim().length > 0) {
+		output += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
+	}
+	output += '</textarea><br/><br/>';
 	output += '<textarea rows="8" cols="80">' +
-		((non_rnav.length == 0) ? "// " : "") + 'result += \"<br/><br/><b>Non RNAV</b>\"; // TODDO';
+		//((non_rnav.length == 0) ? "// " : "") +
+		'// result += \"<br/><br/><b>Non RNAV</b>\"; // TODDO';
 	if (sortable.length > 0) {
 		output += textarea_tabs;
 		if (sortable.length > 3) {
