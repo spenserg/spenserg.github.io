@@ -5501,16 +5501,17 @@ KGSP MCN SPLSH CHRGE MATCY FROGZ1 KMIA
 					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KILM TYI WAVES CAPSS3 KDCA\" readonly>";
 					result += "<br/>10<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KILM RREGG JAMIE TRPOD LAFLN DEALE3 KDCA\" readonly>";
 					break;					
-				case "DFW": // ILM-DFW // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
+				case "DFW": // ILM-DFW // Updated 12-21-2025
+					result += "<!-- Updated 12-21-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KILM FLO KOFRR ODF GQO MEM J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>SE Arrival: <input style=\"width:75%\" value=\"KILM FLO CAE IRQ THRSR VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KILM RDU PSK IIU J112 FAM RZC AXXEE SEEVR4 KDFW\" readonly>";
-					result += "<br/>Gulf: <input style=\"width:75%\" value=\"KILM CHS SAV ALLMA CEW MCB PNUTS WHINY4 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KILM FLO ODF GQO MEM J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KILM FAY VXV J46 BNA LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KILM FLO CAE IRQ THRSR VLKNN Q30 IZAAC YUYUN WHINY4 KDFW\" readonly>";
+					result += "<br/><br/>North via IIU<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KILM RDU PSK ZIEBR Q108 IIU J112 FAM RZC AXXEE BRDJE5 KDFW\" readonly>";
+					result += "<br/>South/ZME Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KILM CHS SAV ALLMA CEW MCB PNUTS BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KILM FLO ODF GQO MEM J66 LIT FINGR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-21-2025
 					break;
 				case "ORD": // ILM-ORD // Updated 12-07-2025
 					result += "<!-- Updated 12-07-2025 P -->";
