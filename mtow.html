@@ -285,7 +285,7 @@ function compute (str_override = "") {
 				output += "&nbsp;&nbsp;&nbsp;<b style='color:orange'>Method 1 in use</b>";
 			}
 		}
-		if (["321T", "A321", "321K", "321R", "321N", "321X", "321E"].includes(ac_type)) { // 321E (Neos) are ok
+		if (["A321", "321K", "321R", "321N", "321X"].includes(ac_type)) { // 321T and A321E (Neos) are ok
 			reg_fob = /TOTAL[^\d]*(\d+)[^\d]/g;
 			var unnecessary_var = reg_fob.exec(fkeystxt);
 			if (unnecessary_var && parseInt(unnecessary_var[1]) > 47000) {
