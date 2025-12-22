@@ -570,7 +570,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	var playbook_str = tmp_playbook_arr.join(textarea_tabs);
 	var new_cdr_str = "";
 
-	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly\>\"\;[\/ ]*([^\s\/\n]*)/g;
+	reg_tmp_cdrstr = /result\s\+\=\s\"\<br\/\>([^\<]+)(\<span\sstyle[^\>]+\>\s\([^\)]+\)\<\/span\>)\:\s\<[^\>]+\s(value\=\\\"[^\"]+\")\sreadonly\>\"\;[\/ ]*([^\n]*)/g;
 	while(null != (z = reg_tmp_cdrstr.exec(cdr_str))) {
 
 		// z[1] = CDR name
