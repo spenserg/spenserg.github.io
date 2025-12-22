@@ -1047,16 +1047,15 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT SGF KICT\" readonly>";
 			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J26 ICT KICT\" readonly>";
 			break;
-		case "ILM": // DFW-ILM // Updated 04-17-2025
-			result += "<!-- Updated 04-17-2025 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-17-2025
-			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KDFW TRYTN4 LOOSE MEM GQO SPA FAY ILM KILM\" readonly>";
-			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK HARES MEI J20 MGM MCN VAN KILM\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC FAM J112 IIU PSK RDU KILM\" readonly>";
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 EIC SQS VUZ RMG IRQ FLO KILM\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-17-2025
-			result += "<!-- Verified with ATCSCC on 04-17-2025 -->";
+		case "ILM": // DFW-ILM // Updated 12-21-2025
+			result += "<!-- Updated 12-21-2025 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 12-21-2025
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS VUZ AHN QUIWE FLO JAYDB KILM\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEM GQO SPA FAY ILM KILM\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK HARES MEI J20 MGM MCN VAN KILM\" readonly>";
+			result += "<br/><br/>North via IIU<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC FAM J112 IIU PSK RDU KILM\" readonly>";
+			result += "<br/>South/ZME Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA MCB J50 CEW J2 DEFUN CABLO AMG TEEEM Q109 PANDY KILM\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-21-2025
 			break;
 		case "IND": // DFW-IND // Updated 04-16-2025
 			result += "<!-- Updated 04-16-2025 -->";
