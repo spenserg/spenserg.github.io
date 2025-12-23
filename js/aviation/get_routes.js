@@ -7200,8 +7200,13 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 					result += "<br/><input style=\"width:75%\" value=\"KMDT AIR CVG PXV J131 LIT FINGR9 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-
-// TODO MDT-ORD // MDT.DCT.HAR.V33..J64.EWC.DCT.MAINE.DCT.ZANLA.WATSN1.ORD
+				case "ORD": // MDT-ORD // Updated 12-23-2025
+					result += "<!-- Updated 12-23-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KMDT HAR V33 MCMAN Q62 WATSN WATSN4 KORD\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-23-2025
+					break;
 			}
 		break; // End of MDT
 
@@ -11650,14 +11655,24 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KTYS SYI MEM J66 LIT BYP WILBR9 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-07-2025
 					break;
-
-				// TODO MIA
-/* TODO - FOS ROUTES:
-KTYS VXV SPA J47 CAE J51 SAV J103 MILIE J79 OMN HILEY4 KMIA
-*/
-
-// TODO ORD // one fos route // TYS-SWAPP.J89-KURTZ-VHP-MZZ ORD
-
+				case "MIA": // TYS-MIA // Updated 12-23-2025
+					result += "<!-- Updated 12-23-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KTYS LORNN THRSR HONID FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTYS VXV SPA CAE WURFL Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-23-2025
+					break;
+				case "ORD": // TYS-ORD // Updated 12-23-2025
+					result += "<!-- Updated 12-23-2025 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KTYS VXV HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTYS VXV HVQ APE FWA WATSN4 KORD\" readonly>";
+					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTYS BNA FAM FTZ TRTLL6 KORD\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// KTYS SWAPP J89 KURTZ VHP MZZ KORD
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-23-2025
+					break;
 			}
 		break; // End of TYS
 
