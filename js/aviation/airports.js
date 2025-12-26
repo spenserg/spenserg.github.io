@@ -216,7 +216,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "YVR":
 		case "YYC":
 		case "YYZ":
-			result += "<br/><br/>Verify departure is listed in the CFS (Canada Flight Supplement) or clearance will deny you on pushback";
+			result += "<br/><br/>Canadian required departures are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 	}
 
@@ -370,28 +370,28 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/>TUS - Night: Visual appr N/A (see 10-7B)";
 			break;
 		case "YEG":
-			result += "<br/><br/>Verify arvl route is listed in the CFS (Canada Flight Supplement)";
+			result += "<br/><br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 		case "YOW":
-			result += "<br/><br/>Verify arvl route is listed in the CFS (Canada Flight Supplement)";
+			result += "<br/><br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 		case "YUL":
 			result += "<br/><br/>YUL - Curfew rstr 0100L - 0700L, Extensions authorized";
-			result += "<br/>Verify arvl route is listed in the CFS (Canada Flight Supplement)";
+			result += "<br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 		case "YVR":
 			result += "<br/><br/>YVR - Curfew rstr 0000L - 0600L, Extensions authorized";
 			result += "<br/>YVR - Rwy 13/31 N/A";
-			result += "<br/>Verify arvl route is listed in the CFS (Canada Flight Supplement)";
+			result += "<br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 		case "YYC":
 			result += "<br/><br/>YYC - If alt needed: Check Customs for YEG; GEG is a good backup";
-			result += "<br/>Verify arvl route is listed in the CFS (Canada Flight Supplement)";
+			result += "<br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 		case "YYZ":
 			result += "<br/><br/>YYZ - Curfew 0030-0630L; Extensions authorized (else pay fine)";
 			result += "<br/>Airbus and Boeing are Stage 3 acft";
-			result += "<br/>Verify arvl route is listed in the CFS (Canada Flight Supplement)";
+			result += "<br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 	}
 	result = add_sara_rmks(arvl, result);
