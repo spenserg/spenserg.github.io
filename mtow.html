@@ -185,6 +185,35 @@ function compute (str_override = "") {
 		testing = true;
 	}
 
+	// CCCZ table
+	if (fkeystxt.includes("QUALITY CONTROL DISPLAY") || fkeystxt.includes("END-OF-DISPLAY")) {
+		if (regt.exec(fkeystxt) != null) {
+			var tmp_output_arr = [];
+			var tmp_output_arr_2 = [];
+			var tmp_check_for_duplicates = {};
+			regt = /\d+\/\d+\s([A-Z]{3})\-([A-Z]{3})/g;
+			while (null != (z = regt.exec(fkeystxt))) {
+				if (tmp_check_for_duplicates[(z[1] + "-" + z[2])] != 1) {
+					tmp_output_arr.push((z[1] + "-" + z[2]));
+					tmp_check_for_duplicates[(z[1] + "-" + z[2])] = 1;
+				}
+				if (tmp_check_for_duplicates[z[1]] != 1) {
+					tmp_output_arr_2.push(z[1]);
+					tmp_check_for_duplicates[z[1]] = 1;
+				}
+				if (tmp_check_for_duplicates[z[2]] != 1) {
+					tmp_output_arr_2.push(z[2]);
+					tmp_check_for_duplicates[z[2]] = 1;
+				}
+			}
+			tmp_output_arr.sort();
+			tmp_output_arr_2.sort();
+			$("#total").html('<br/><textarea rows="8" cols="80">' + tmp_output_arr.join("\n") + '</textarea><br/><br/>' +
+				'<textarea rows="8" cols="80">' + tmp_output_arr_2.join("\n") + '</textarea>');
+			return;
+		}
+	}
+
 	if ((result = regz.exec(fkeystxt)) != null) {
 		output = decs_route(fkeystxt, routes_arr['cdr_list']);
 	} else if ((result = regc.exec(fkeystxt)) != null) {
