@@ -11212,16 +11212,16 @@ KPHL OOD TEBEE HAYDO TRPOD Q409 PUPYY KYYUU LUBBR3 KSRQ
 
 		case "STL":
 			switch(arvl) {
-				case "CLT": // STL-CLT // Updated 08-22-2025
-					result += "<!-- Updated 08-22-2025 P -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 08-22-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSTL TEDDD5 HILTS PXV KM42O SKYWA FILPZ4 KCLT\" readonly>";
-					// result += "<br/><input style=\"width:75%\" value=\"KSTL DRUSE5 BNA TAZZA FILPZ4 KCLT\" readonly>";
+				case "CLT": // STL-CLT // Updated 12-27-2025
+					result += "<!-- Updated 12-27-2025 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 12-27-2025
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSTL TEDDD5 HILTS PXV KI45O SKYWA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL JHART7 DOBLR CAROL J134 GBEES FLM TAFTT PARQR4 KCLT\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL CHUUC6 MYERZ MEMFS Q116 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL DRUSE5 BNA TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>SW Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL CHUUC6 MYERZ MEMFS Q116 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSTL PLESS5 BNA VXV LIINN3 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed as of 03-17-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 12-27-2025
 					break;
 				case "DCA": // STL-DCA // Updated 05-10-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-10-2025 MP -->";
