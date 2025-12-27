@@ -212,6 +212,14 @@ function compute (str_override = "") {
 				'<textarea rows="8" cols="80">' + tmp_output_arr_2.join("\n") + '</textarea>');
 			return;
 		}
+	} // End of CCCZ Table
+
+	// All CDRs Doc
+	if (fkeystxt.includes("RCode") || fkeystxt.includes("DepFix")) {
+		if (regu.exec(fkeystxt) != null) {
+			$("#total").html(cdrdoc_parse(fkeystxt, true));
+			return;
+		}
 	}
 
 	if ((result = regz.exec(fkeystxt)) != null) {
@@ -225,8 +233,6 @@ function compute (str_override = "") {
 		output = vaa_parse(fkeystxt);
 	} else if ((result = regv.exec(fkeystxt)) != null) {
 		output = briefing_parse(fkeystxt);
-	} else if ((result = regu.exec(fkeystxt)) != null) {
-		output = cdrdoc_parse(fkeystxt, true);
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
