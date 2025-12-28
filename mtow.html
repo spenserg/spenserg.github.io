@@ -1155,49 +1155,76 @@ function clear_input (type = -1) {
 	$("#total").html("");
 }
 
-function cdrdoc_parse (text = "", as_text = false) {
-	var return_null = false;
-	var result = {};
+function cdrdoc_parse (text = "") {
+	var result = '<br/><textarea rows="8" cols="80">';
+	/*
 	var result_str = 'get_computed_cdrs = function(dptr = \"XXX\", arvl = \"YYY\") {\n' +
 		'\tdptr = ((dptr.length == 4) ? (dptr.substr(1, 4)) : dptr);\n' +
 		'\tarvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);\n' +
 		'\tvar result = \"\";\n\n\tswitch(dptr) {\n';
-
+	*/
 	var reg_tmp = /([A-Z]{3})([A-Z]{3})([^\t]{2})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])/g;
 
-	var first_arvl = true;
-	var first_dptr = true;
-	
-	while(null != (z = reg_tmp.exec(text))) {
-		if (result[z[1]] == null) {
-			result[z[1]] = {};
-			if (first_dptr) { first_dptr = false; }
-			else {
-				result_str += '\n\t\t\t}\n\t\tbreak;\n';
-			}
-			result_str += '\n\t\tcase \"' + z[1] + '\":\n\t\t\tswitch (arvl) {';
-			first_arvl = true;
-		}
-		if (result[z[1]][z[2]] == null) {
-			result[z[1]][z[2]] = {};
-			if (first_arvl) { first_arvl = false; }
-			else {
-				result_str += '\n\t\t\t\t\tbreak;';
-			}
-			result_str += '\n\t\t\t\tcase \"' + z[2] + '\":';
-		}
-		if (result[z[1]][z[2]][z[3]] == null) {
-			result[z[1]][z[2]][z[3]] = [z[6], z[7]];
-			result_str += '\n\t\t\t\t\tresult += \"<br/>' + z[3] + '<span style=\\\"color:' + ((z[7] == "Y") ? 'green\\\"> (OK to File)' : 'red\\\"> (Coord Req)') + '</span>: <input class=\\\"cdr_input\\\" style=\\\"width:75%\\\" value=\\\"' + z[6] + '\\\" readonly>\";';
-		} else { console.log("Duplicate found: " + z[1] + z[2] + z[3]); }
-	}
-	if (!first_arvl || !first_dptr) {
-		result_str += '\n\t\t\t}\n\t\tbreak;\n\t}\n\treturn result;\n}';
-	}
+	var tmp_sids = {};
+	var tmp_stars = {};
+	var sid_apts = [];
+	var star_apts = [];
 
-	console.log(result);
-	
-	return (return_null ? null : (as_text ? ('<br/><textarea>' + add_sids_and_stars_to_cdrs(result_str) + '</textarea>') : result));
+	while(null != (z = reg_tmp.exec(text))) {
+		/* 
+		* 1 - Dptr (3 letters)
+		* 2 - Arvl (3 letters)
+		* 3 - CDR name (2 letters)
+		* 4 - Dptr (4 letters)
+		* 5 - Arvl (4 letters)
+		* 6 - Full route string
+		* 7 - Coord Rqd (Y/N)
+		*/
+		var route_pieces = z[6].replace((z[4] + " "),"").replace((" " + z[5]),"").split(" ");
+		if (route_pieces.length > 2) {
+			// var d_split = /([^/d/s]+\d+)/g;
+			if (/[^\d\s]+\d+/.test(route_pieces[0])) {
+				if (tmp_sids[z[1]] == null) {
+					tmp_sids[z[1]] = [];
+					sid_apts.push(z[1]);
+				}
+				tmp_sids[z[1]].push(route_pieces[0]);
+			}
+			if (/[^\d\s]+\d+/.test(route_pieces[route_pieces.length - 1])) {
+				if (tmp_stars[z[2]] == null) {
+					tmp_stars[z[2]] = [];
+					star_apts.push(z[2]);
+				}
+				tmp_stars[z[2]].push(route_pieces[route_pieces.length - 1]);
+			}
+			// result += route_pieces[0] + "\t" + route_pieces[route_pieces.length - 1] + "\n";
+		}
+	}
+	sid_apts.sort();
+	for (let i = 0; i < sid_apts.length; i++) {
+		result += '\t\tcase "' + sid_apts[i] + '":\n\t\t\treturn ["';
+		let s1 = new Set(tmp_sids[sid_apts[i]]);
+		tmp_sids[sid_apts[i]] = [...s1];
+		tmp_sids[sid_apts[i]].sort();
+		result += tmp_sids[sid_apts[i]].join('","') + '"];\n\t\t\tbreak;\n';
+	}
+	result += '</textarea><br/><br/><textarea rows="8" cols="80">';
+
+	star_apts.sort();
+	for (let i = 0; i < star_apts.length; i++) {
+		result += '\t\tcase "' + star_apts[i] + '":\n\t\t\treturn ["';
+		let s1 = new Set(tmp_stars[star_apts[i]]);
+		tmp_stars[star_apts[i]] = [...s1];
+		tmp_stars[star_apts[i]].sort();
+		result += tmp_stars[star_apts[i]].join('","') + '"];\n\t\t\tbreak;\n';
+	}
+	return result + '</textarea><br/><br/>';
+}
+
+function get_sid_list(airport = "XXX") {
+	switch (airport) {
+		
+	}
 }
 
 function add_sids_and_stars_to_cdrs (result = "") {
