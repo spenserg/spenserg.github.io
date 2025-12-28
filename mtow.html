@@ -173,6 +173,9 @@ function compute (str_override = "") {
 	// All CDRs doc // FAA download
 	regu = /RCode\tOrig\tDest\tDepFix\tRoute String\tDCNTR\tACNTR\tTCNTRs\tCoordReq\tPlay\tNavEqp/g;
 
+	// CCCZ
+	regt = /\d+\/\d+\s([A-Z]{3})\-([A-Z]{3})/g;
+	
 	var testing = false;
 	var land_wgt_limited = false;
 	var tmp_rslt = regb.exec(fkeystxt);
@@ -191,7 +194,6 @@ function compute (str_override = "") {
 			var tmp_output_arr = [];
 			var tmp_output_arr_2 = [];
 			var tmp_check_for_duplicates = {};
-			regt = /\d+\/\d+\s([A-Z]{3})\-([A-Z]{3})/g;
 			while (null != (z = regt.exec(fkeystxt))) {
 				if (tmp_check_for_duplicates[(z[1] + "-" + z[2])] != 1) {
 					tmp_output_arr.push((z[1] + "-" + z[2]));
