@@ -971,8 +971,8 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "STL": // PHX-STL // Updated 11-26-2025
 			result += "<!-- Updated 11-26-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 11-26-2025
-			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ FTI TOTOE Q176 BUM KOOOP1 KSTL\" readonly>";
-			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS J110 BUM KOOOP1 KSTL\" readonly>"; // CDR MR
+			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ FTI TOTOE Q176 BUM KAYLA3 KSTL\" readonly>";
+			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS J110 BUM KAYLA3 KSTL\" readonly>"; // CDR MR
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE EWM J4 ABI ADM RZC SGF KAYLA3 KSTL\" readonly>";
 			result += "<br/><br/>North via MCK<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK J10 FQF J44 MCK PWE IRK LORLE3 KSTL\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
