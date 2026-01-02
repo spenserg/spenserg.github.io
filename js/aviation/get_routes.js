@@ -1147,103 +1147,107 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 
 		case "BNA":
 			switch(arvl) {
-				case "CLT": // BNA-CLT // Updated 05-19-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-19-2025 MP -->";
+				case "CLT": // BNA-CLT // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL270):</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBNA TAZMO3 BURME COMDY FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA FLAME3 GENDE BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA CHADM3 SWAPP SKYWA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>North via IIU<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA KRSTA3 OLSIE IIU FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBNA TAZMO4 BURME COMDY FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA KRSTA4 OLSIE YOCKY TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA FLAME4 GENDE GSU BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA VXV LIINN3 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-02-2026
 					break;
-				case "DFW": // BNA-DFW // Updated 05-19-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-19-2025 MP -->";
+				case "DFW": // BNA-DFW // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBNA DANLS3 SPKER LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA DRURY3 ACKEE SQS YUYUN WHINY4 KDFW\" readonly>";
-					result += "<br/>NW arrival: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG MADES KLAWW VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>DFW EAST 2 SOUTH: <input style=\"width:75%\" value=\"KBNA DRURY3 DRURY SQS AEX DAS IAH CRGER GUTZZ BOOVE7 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBNA DANLS4 TPEEE LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER PXV J78 TUL KLAWW VKTRY2 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY4 JALAR SQS YUYUN WHINY4 KDFW\" readonly>";
+					result += "<br/><br/>DFW EAST 2 SOUTHQ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA DRURY4 JALAR SQS AEX DAS IAH CRGER GUTZZ SOCKK4 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA MEM LIT FINGR9 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
 					break;
-				case "JFK": // BNA-JFK // Updated 10-29-2025
-					result += "<!-- Updated 10-29-2025 -->";
+				case "JFK": // BNA-JFK // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBNA TAZMO3 BURME VXV IDDAA Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA KRSTA3 OLSIE IIU ROD DJB JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
-					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA TIPPN3 BRXTN RMG AHN YUTEE Q172 OKNEE Q409 GUILD Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBNA TAZMO4 BURME VXV IDDAA Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA KRSTA4 OLSIE IIU ROD DJB JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA TIPPN4 DENST RMG AHN YUTEE Q172 OKNEE Q409 GUILD Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-29-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-02-2026
 					break;
-				case "LAS": // BNA-LAS // Updated 10-29-2025
-					result += "<!-- Updated 10-29-2025 -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-29-2025
-					result += "<br/>NRP: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG FSM IRW AGGIY Q162 HAHAA RKSTR4 KLAS\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS Q19 STL J24 MCI J80 HLC HGO J197 DVC TYEGR CHOWW4 KLAS\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY3 ACKEE SQS SUTTN J52 TXK SPS J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
-					// KBNA PARDN3 NAKIY SGF ICT RSK J64 TBC SQIRE RKSTR4 KLAS
+				case "LAS": // BNA-LAS // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-02-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA PARDN4 HODJS ARG J46 TUL AGGIY Q162 GUP HAHAA RKSTR4 KLAS\" readonly>";
+					result += "<br/>ZKC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA PARDN4 HODJS ARG KF33E IRW J14 PNH J6 ZUN HAHAA RKSTR4 KLAS\" readonly>";
+					result += "<br/><b>If weather ARG-RZC, replace /ARG KF33E/ with /KM33K/</b>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA PARDN4 NAKIY SGF ICT GCK J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY4 JALAR SQS TXK SPS J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
+					result += "<br/><br/>North via MCI<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER PXV STL J24 MCI J80 HLC HGO J197 DVC TYEGR CHOWW4 KLAS\" readonly>";
+					result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY4 JALAR CRAMM Q32 ELD FUZ J42 ABI J66 EWM J4 SSO ELLDA RKSTR4 KLAS\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA ARG J46 TUL IFI BGD FTI J8 GUP J72 PGS ISHEE2 KLAS\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-29-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-02-2026
 					break;
-				case "LAX": // BNA-LAX // Updated 05-19-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-19-2025 MP -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-19-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG KF33E IRW J6 ZUN GABBL HLYWD1 KLAX\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA DRURY3 HAGIE MHZ AEX J50 ACT INK J50 GBN J104 TNP BASET5 KLAX\" readonly>";
-					result += "<br/><b style=\"color:orange\">For ZFW avoidance use ...AEX J50 LFK JCT J86 ELP...<\/b>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS J45 STL J24 MCI J80 HLC HGO J197 DVC PEEWE Q98 HAKMN KLAX\" readonly>";
-					// result += "<br/>HAR via ICT: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS ICT RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
-					// ^ cuts through a small corner of ZAB
-					// result += "<br/><br/>ABI: <input style=\"width:75%\" value=\"KBNA DANLS3 SPKER SQS EIC J4 ABI EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
-					// result += "<br/>PNH 1: <input style=\"width:75%\" value=\"KBNA DANLS3 SPKER MEM J66 LIT J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+				case "LAX": // BNA-LAX // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-02-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA PARDN4 HODJS ARG KF33E IRW J6 ZUN GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA PARDN4 NAKIY SGF ICT GCK J110 RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY4 JALAR LIT J14 IRW J78 DRK GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>North via HLC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER PXV STL J24 MCI J80 HLC SKWYR Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY4 JALAR CRAMM Q32 ELD FUZ J42 ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBNA ARG J46 TUL IFI BGD FTI J8 GUP J72 PGS BASET5 KLAX\" readonly>";
+					// result += "<br/><b style=\"color:orange\">For ZFW avoidance use ...AEX J50 LFK JCT J86 ELP...<\/b>";
+					// result += "<br/><br/>ABI: <input style=\"width:75%\" value=\"KBNA DANLS4 TPEEE SQS EIC J4 ABI EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					// result += "<br/>PNH 1: <input style=\"width:75%\" value=\"KBNA DANLS4 TPEEE MEM J66 LIT J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA J46 TUL J78 PKE J104 TNP BASET5 KLAX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-02-2026
 					break;
-				case "MIA": // BNA-MIA // Updated 10-05-2025
-					result += "<!-- Updated 10-05-2025 P -->";
+				case "MIA": // BNA-MIA // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBNA FLAME3 FLAME ACORI FROGZ4 KMIA\" readonly>";
-					result += "<br/><b style=\"color:orange\">Anything other than what is listed above will trigger a Mandatory Route violation<\/b>";
-					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA TIPPN3 BRXTN RMG MCN CRG DEBRL CSTAL3 KMIA\" readonly>";
-					result += "<br/><br/>East via SPA: <input style=\"width:75%\" value=\"KBNA TAZMO3 BURME VXV SPA QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>";
-					result += "<br/>West via HRV: <input style=\"width:75%\" value=\"KBNA DRURY3 JALAR IGB MEI J31 HRV Q105 BLVNS Y290 BAGGS RSW PALMZ2 KMIA\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBNA FLAME4 GENDE ACORI FROGZ4 KMIA\" readonly>";
+					// result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA TIPPN4 DENST RMG MCN CRG DEBRL CSTAL3 KMIA\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA TAZMO4 BURME VXV SPA QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>";
+					result += "<br/>West/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY4 JALAR MEI J31 HRV Q105 BLVNS Y290 BAGGS RSW PALMZ2 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA RMG AMG CRG OMN ANNEY4 KMIA\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-02-2026
 					break;
-				case "ORD": // BNA-ORD // Updated 09-13-2025
-					result += "<!-- Updated 09-13-2025 P -->";
+				case "ORD": // BNA-ORD // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL320):</b>";
-					result += "<br/><input style=\"width:75%\"; value=\"KBNA KRSTA3 OLSIE IIU HEVAN BONNT VEECK5 KORD\" readonly>";
-					result += "<br/><br/>East (Max FL320)<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA CHADM3 SWAPP ENGRA Q65 RINTE FWA WATSN4 KORD\" readonly>";
-					result += "<br/>West (Max FL320)<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS ENL CASHN TRTLL6 KORD\" readonly>";
-					result += "<br/><b>BENKY Arvl: KBNA HGGRD3 TINGS J45 STL MAGOO BFORD BENKY6 KORD<\/b>";
-					result += "<br/><br/>West via SGF: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG SGF IRK SHAIN2 KORD\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KBNA KRSTA4 OLSIE IIU HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/><br/>East (Max FL320)<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA CHADM4 MUNNY ENGRA Q65 RINTE FWA WATSN4 KORD\" readonly>";
+					result += "<br/>West (Max FL320)<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA PARDN4 NAKIY FAM FTZ TRTLL6 KORD\" readonly>";
+					// result += "<br/><b>BENKY Arvl: KBNA HGGRD3 TINGS J45 STL MAGOO BFORD BENKY6 KORD<\/b>";
+					result += "<br/><br/>West via SGF<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA PARDN4 HODJS ARG SGF IRK SHAIN2 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV (Max FL320)</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KBNA BWG VHP OXI KORD\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-23-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-02-2026
 					break;
-				case "PHL": // BNA-PHL // Updated 05-19-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-19-2025 MP -->";
+				case "PHL": // BNA-PHL // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBNA CHADM3 SWAPP Q34 GVE PAATS4 KPHL\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA TIPPN3 BRXTN RMG TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA GDOGG3 FAPER VHP ROD J152 JST BOJID4 KPHL\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBNA CHADM4 MUNNY TONIO Q34 GVE PAATS4 KPHL\" readonly>";
+					
+					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA TIPPN4 DENST RMG TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER VHP ROD J152 JST BOJID4 KPHL\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
 					break;
 				case "PHX": // BNA-PHX // Updated 05-19-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-19-2025 MP -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-19-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA DANLS3 SPKER FSM IRW J78 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA DRURY3 ACKEE CRAMM Q32 ELD FUZ J4 ABI J66 EWM DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA PARDN3 HODJS ARG J46 TUL MMB CIM RSK J161 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/><br/>South via AEX: <input style=\"width:75%\" value=\"KBNA DRURY3 HAGIE MHZ AEX J50 ACT INK J4 EWM DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA DANLS4 TPEEE FSM IRW J78 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KBNA DRURY4 JALAR CRAMM Q32 ELD FUZ J4 ABI J66 EWM DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\" value=\"KBNA PARDN4 HODJS ARG J46 TUL MMB CIM RSK J161 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>South via AEX: <input style=\"width:75%\" value=\"KBNA DRURY4 HAGIE MHZ AEX J50 ACT INK J4 EWM DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><b style=\"color:orange\">For ZFW avoidance use ...AEX J50 LFK JCT J86 FST EWM...<\/b>";
 					result += "<br/>NW Arrival: <input style=\"width:75%\" value=\"KBNA HGGRD3 TINGS J45 STL J24 MCI J80 GLD J146 HBU J128 GCN TENTS KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
@@ -7125,14 +7129,15 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2025
 					break;
-				case "MIA": // MCO-MIA // Updated 01-15-2025
-					result += "<!-- Updated 01-15-2025 -->";
+				case "MIA": // MCO-MIA // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL230):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMCO DDANY3 DDANY CSTAL3 KMIA\" readonly>";
-					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KMCO FSHUN3 PLUMR SABEE FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO FSHUN4 PLUMR SABEE FROGZ4 KMIA\" readonly>";
+					result += "<br/><b>Avoids FCA 17,18,19,20</b>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMCO TRV ANNEY4 KMIA\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-02-2026
 					break;
 				case "ORD": // MCO-ORD // Updated 05-07-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-07-2025 P -->";
@@ -7150,14 +7155,25 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "PHL": // MCO-PHL // Updated 01-15-2025
 					result += "<!-- Updated 01-15-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q87 JROSS Q135 RREGG Q117 SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
-					result += "<br/><br/>OW: <input style=\"width:75%\" value=\"KMCO MZULO3 ETECK PELCN Y309 FLRDA IDOLS SKARP Q101 TUGGR KALDA ZJAAY JIIMS4 KPHL\" readonly>";
-					result += "<br/>Full OW: <input style=\"width:75%\" value=\"KMCO MZULO3 ETECK PELCN ROWSY Y494 SILLY LYNUS B24 DASHA JIIMS4 KPHL\" readonly>";
-					result += "<br/><br/>ATLANTIC NORTH 1: <input style=\"width:75%\" value=\"KMCO MZULO3 ETECK OZENA ROWSY OTTNG HAAYY WICKE DASHA JIIMS4 KPHL\" readonly>";
-					result += "<br/>FLORIDA TO NE 4: <input style=\"width:75%\" value=\"KMCO MZULO3 ETECK GRUBR OGGRE Y436 PITRW LCAPE ALWZZ OGRAE Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KMCO MZULO3 ETECK PELCN Y309 FLRDA IDOLS SKARP Q101 KALDA ZJAAY JIIMS4 KPHL\" readonly>"; // CDR M0
+					result += "<br/></br>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q87 JROSS Q135 RREGG Q117 SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>"; // CDR V0
+					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS WILON CAMJO Q99 PEETT BBDOL PAATS4 KPHL\" readonly>"; // CDR R2
+					result += "<br/><br/>Full OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO MZULO3 ETECK PELCN ROWSY Y494 SILLY LYNUS B24 DASHA JIIMS4 KPHL\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMCO GUANO CRG VIYAP SAV CHS ILM ORF SWL VCN9 KPHL\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KMCO GUANO CRG VIYAP SAV CHS ILM ORF SWL KPHL\" readonly>";
+					result += "<br/><br/>ATLANTIC NORTH 1: <input style=\"width:75%\" value=\"KMCO MZULO3 ETECK OZENA ROWSY OTTNG HAAYY WICKE DASHA JIIMS4 KPHL\" readonly>";
+					result += "<br/>FL TO NE 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q87 ALWZZ OGRAE Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>FL TO NE 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO JEEMY4 PAINN SHRKS Q77 WIGVO IRQ BURGG Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>FL TO NE 4<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO MZULO3 LENDS OGGRE PITRW JOHAR Q109 DFENC SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-02-2026
+					result += "<!-- Verified with ATCSCC on 01-02-2026 -->";
+					result += "<br/>J2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMCO JEEMY4 PAINN SHRKS Q77 WIGVO IRQ BURGG Q22 BEARI BBDOL PAATS4 KPHL\" readonly>"; // FL TO NE 2
+					result += "<br/>M0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMCO MZULO3 ETECK PELCN Y309 FLRDA IDOLS SKARP Q101 KALDA ZJAAY JIIMS4 KPHL\" readonly>";
+					result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMCO MZULO3 LENDS OGGRE PITRW LCAPE ALWZZ OGRAE Q99 PEETT BBDOL PAATS4 KPHL\" readonly>"; // FL TO NE 4
+					result += "<br/>M3<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMCO MZULO3 LENDS OGGRE PITRW JOHAR Q109 DFENC SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>"; // FL TO NE 4
+					result += "<br/>R2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS WILON CAMJO Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>V0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q87 JROSS Q135 RREGG Q117 SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
+					result += "<br/>V1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMCO FATHE4 VIYAP Q87 JROSS Q87 ALWZZ OGRAE Q99 PEETT BBDOL PAATS4 KPHL\" readonly>"; // FL TO NE 1
 					break;
 				case "PHX": // MCO-PHX // Updated 05-07-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-07-2025 MP -->";
