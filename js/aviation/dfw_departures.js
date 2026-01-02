@@ -807,7 +807,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>West via PNH<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH HLC OBH KFSD\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-25-2025
 			break;
-		case "FSM": // KDFW-FSM // Updated 10-22-2025
+		case "FSM": // DFW-FSM // Updated 10-22-2025
 			result += "<!-- Updated 10-22-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW AKUNA9 MLC KFSM\" readonly>"; // CDR 0P
@@ -2227,7 +2227,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX4 TUL J98 SGF BAYLI J181 BDF BAE KTVC\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-		case "TYS": // // DFW-TYS // Updated 10-30-2025
+		case "TYS": // DFW-TYS // Updated 10-30-2025
 			result += "<!-- Updated 10-30-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEM TAZZA KTYS\" readonly>";
