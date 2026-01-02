@@ -44,7 +44,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS TAZER MARCI LEV LCH WEEED WLEEE7 KAUS\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY MGMRY GARTS LCH WEEED WLEEE7 KAUS\" readonly>";
 			break;
-		case "AVL": // KMIA-AVL // Updated 10-22-2025
+		case "AVL": // MIA-AVL // Updated 10-22-2025
 			result += "<!-- Updated 10-22-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 10-22-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 TEUFL TWINS PLYRR KAVL\" readonly>"; // CDR F0
@@ -679,7 +679,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO THRSR Q79 IIU J89 OBK KAMMA KKILR3 KMSP\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY AHN BNA MNOSO BLUEM4 KMSP\" readonly>";
 			break;
-		case "MSY": // KMIA-MSY // Updated 10-24-2025
+		case "MSY": // MIA-MSY // Updated 10-24-2025
 			result += "<!-- Updated 10-24-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV KMSY\" readonly>"; // Based on CDR G0
@@ -832,7 +832,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 BLAAN Q69 RICCS LEJOY DEMME5 KPIT\" readonly>";
 			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC Q129 PYTON LEJOY DEMME5 KPIT\" readonly>";
 			break;
-		case "PNS": // KMIA-PNS // Updated 10-22-2025
+		case "PNS": // MIA-PNS // Updated 10-22-2025
 			result += "<!-- Updated 10-22-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN PENSI KPNS\" readonly>"; // CDR H0
@@ -1074,7 +1074,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 BLAAN Q69 RICCS JST ELZ BEEPS NABOR KSYR\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 BLAAN Q69 RICCS JST ELZ BEEPS NABOR KSYR\" readonly>";
 			break;
-		case "TLH": // KMIA-TLH // Updated 10-22-2025
+		case "TLH": // MIA-TLH // Updated 10-22-2025
 			result += "<!-- Updated 10-22-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA KTLH\" readonly>"; // CDR H0
