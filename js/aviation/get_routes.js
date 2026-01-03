@@ -4078,18 +4078,18 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 
 		case "DEN":
 			switch(arvl) {
-				case "CLT": // DEN-CLT // Updated 01-04-2025
-					result += "<!-- Updated 01-04-2025 -->";
+				case "CLT": // DEN-CLT // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KDEN EXTAN7 SHAYK SLN BUM BNA TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN EEONS8 WYNDM PWE STJ STL PXV SKYWA FILPZ4 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KDEN EXTAN7 SHAYK SLN BUM BNA TAZZA FILPZ4 KCLT\" readonly>"; // CDR E1
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN EEONS8 WYNDM LNK J60 IOW RBS VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN SLEEK2 SLEEK GCK J28 ICT SGF BNA TAZZA FILPZ4 KCLT\" readonly>"; // Based on CDR S1
 					result += "<br/><br/>North via JOT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN CHUWY1 CHUWY ONL Q122 VIGGR ALO JOT BVT J89 IIU SKYWA FILPZ4 KCLT\" readonly>";
 					result += "<br/>South/ZKC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN SLEEK2 SLEEK KENTO EZEEE IRW J14 VUZ THRSR PHIIL CNTLR JONZE5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDEN PLAIN2 GCK J28 ICT ARG VXV LIINN3 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-14-2025
-					result += "<!-- Verified with ATCSCC on 11-14-2025 -->";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-02-2026
+					result += "<!-- Verified with ATCSCC on 01-02-2026 -->";
 					result += "<br/>E1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN EXTAN7 SHAYK SLN BUM BNA TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/>N1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN CHUWY1 CHUWY ONL ENL PXV SKYWA FILPZ4 KCLT\" readonly>";
 					result += "<br/>S1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN SLEEK2 SLEEK SGF BNA TAZZA FILPZ4 KCLT\" readonly>";
@@ -4143,19 +4143,20 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/>S1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN SLEEK2 SLEEK PER RZC MERDN DEFUN FROGZ4 KMIA\" readonly>";
 					result += "<br/>W1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN BAYLR6 TEHRU MTJ CIM END RZC MERDN DEFUN FROGZ4 KMIA\" readonly>";
 					break;
-				case "ORD": // DEN-ORD // Updated 01-04-2025
-					result += "<!-- Updated 01-04-2025 -->";
+				case "ORD": // DEN-ORD // Updated 01-02-2026
+					result += "<!-- Updated 01-02-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDEN EMMYS8 ZIRKL PWE IRK BENKY6 KORD\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDEN CHUWY1 CHUWY FSD MCW ZZIPR FYTTE7 KORD\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KDEN PLAIN2 GCK PER EOS WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN CHUWY1 CHUWY ONL FOD MYRRS FYTTE7 KORD\" readonly>"; // CDR N1
+					result += "<br/>South: <input style=\"width:75%\" value=\"KDEN SLEEK2 SLEEK GCK J96 IRK BENKY6 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDEN PLAIN2 HCT OBH MCW JVL1 KORD\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>E1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN EEONS8 WYNDM OBH FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/>N1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN CHUWY1 CHUWY ONL FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/>S1: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN SLEEK2 SLEEK GCK IRK BENKY6 KORD\" readonly>";
-					result += "<br/>W1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN ZIMMR3 CHNGY CHE DDRTH ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-02-2026
+					result += "<!-- Verified with ATCSCC on 01-02-2026 -->";
+					result += "<br/>E1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN EEONS8 WYNDM OBH FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/>N1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN CHUWY1 CHUWY ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/>S1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN SLEEK2 SLEEK GCK IRK BENKY6 KORD\" readonly>";
+					result += "<br/>W1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDEN ZIMMR3 CHNGY CHE DDRTH ONL FOD MYRRS FYTTE7 KORD\" readonly>";
 					break;
 				case "PHL": // DEN-PHL // Updated 01-04-2025
 					result += "<!-- Updated 01-04-2025 -->";
