@@ -385,16 +385,14 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>W6<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J78 PXV ROD DJB JHW Q476 WLKES PUCKY1 KJFK\" readonly>"; // 
 			result += "<br/>XC<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO CUS AGNID OBGIY SLENA PSX HOODO BOWFN LEV SJI J2 CEW ALLMA TEEEM Q109 DFENC SAWED Q108 SIE CAMRN5 KJFK\" readonly>"; // 
 			break;
-		case "LAS": // LAX-LAS // Updated 09-22-2025
-			result += "<!-- Updated 09-22-2025 P -->";
+		case "LAS": // LAX-LAS // Updated 01-10-2026
+			result += "<!-- Updated 01-10-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL250):</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX ORCKA5 MISEN RNDRZ3 KLAS\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX ORCKA5 MISEN RNDRZ4 KLAS\" readonly>";
 			result += "<br/><b style=\"color:orange\">Max FL290 for all flights from SCT Tracon to L30, see <a href=\"https://laartcc.org/document/required-internal-routes\" target=\"_blank\">ZLA Required Routes<\/a> Section 5.4<\/b>";
-			// result += "<br/><br/>LAX East Flow: <input style=\"width:75%\"; value=\"KLAX GARDY4 MISEN RNDRZ3 KLAS\" readonly>";
-			// result += "<br/>Night: <input style=\"width:75%\"; value=\"KLAX OSHNN1 MISEN RNDRZ3 KLAS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX SEBBY3 DAG LARKK1 KLAS\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-22-2025
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-10-2026
 			break;
 		case "MCO": // LAX-MCO // Updated 11-24-2025
 			result += "<!-- Updated 11-24-2025 P -->";
