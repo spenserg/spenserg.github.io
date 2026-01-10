@@ -31,10 +31,11 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		}
 	}
 
+	var show_flow_info = "";
 	switch(dptr) {
 		case "ABQ":
 			result += "<br/><br/>ABQ Flow: <button type='button' id='ABQ_standard_left' class='btn" + ((flows['ABQ'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 0)'>East</button>&nbsp;&nbsp;<button type='button' id='ABQ_standard_right' class='btn" + ((flows['ABQ'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 1)'>West</button>";
-			result += "<br/>ABQ - DOOKK WEST FLOW // MNZNO EAST FLOW";
+			show_flow_info = "East Rwy8: GRZZZ, JEMEZ, MNZNO, RDRNR<br/>West Rwy26: ADYOS, ATOMK, BOSQE, DOOKK, FYSTA";
 			break;
 		case "BFL":
 			result += "<br/><br/>BFL - 12R/30L N/A, see 10-7A";
@@ -51,7 +52,10 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "BZN":
 			result += "<br/><br/>BZN - Run VAA above 25C; Rwy30 is about 3k lbs better";
 			result += "<br/><br/>BZN Flow: <button type='button' id='BZN_standard_left' class='btn" + ((flows['BZN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='BZN_standard_right' class='btn" + ((flows['BZN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 1)'>NW Rwy 30</button>";
-			result += "<br/>BZN - MEADO NW FLOW (rwy30) // BGSKY BOBKT SE FLOW (rwy12)";
+			show_flow_info = "NW Rwy30: MEADO<br/>SE Rwy12: BGSKY, BOBKT";
+			break;
+		case "CLT":
+			show_flow_info = "North Rwy36C/36R<br/>South Rwy18C/18L";
 			break;
 		case "COS":
 			result += "<br/><br/>COS - LAWS above 10C";
@@ -65,6 +69,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "DEN":
 			result += "<br/><br/>Run VAA when hot"; // TODO How hot? Source?
 			break;
+		case "DFW":
+			show_flow_info = "North Rwy36R/35L<br/>South Rwy18L/17R";
+			break;
 		case "EGE":
 			result += "<br/><br/>EGE - Rwy 25 is preferred, even with tailwind";
 			result += "<br/>EGE - VAA 25X for icing conditions 1000 - 10,000 Feet";
@@ -72,6 +79,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 		case "ELP":
 			result += "<br/><br/>ELP Flow: <button type='button' id='ELP_standard_left' class='btn" + ((flows['ELP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ELP\", 0)'>SW Rwy 22</button>&nbsp;&nbsp;<button type='button' id='ELP_standard_right' class='btn" + ((flows['ELP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ELP\", 1)'>NE Rwy 4</button>";
+			show_flow_info = "SW Rwy22: ATKNN<br/>NE Rwy4: JCOXX<br/>BOTH: LATVE, NEVUE, TDOWN";
 			break;
 		case "EYW":
 			result += "<br/><br/>EYW - Check VAA if wet or departing Rwy 9";
@@ -82,24 +90,18 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "FAT":
 			result += "<br/><br/>FAT - Run VAA if departing Rwy29L";
 			break;
-/*
-		case "FCA":
-		case "GPI":
-			result += "<br/><br/>FCA/KGPI Flow: <button type='button' id='FCA_standard_left' class='btn" + ((flows['FCA'] == 0) ? " selected" : "") + "' onclick='change_flow(\"FCA\", 0)'>North Rwy 2</button>&nbsp;&nbsp;<button type='button' id='FCA_standard_right' class='btn" + ((flows['FCA'] == 1) ? " selected" : "") + "' onclick='change_flow(\"FCA\", 1)'>South Rwy 20</button>";
-			break;
-*/
 		case "GJT":
 			result += "<br/><br/>GJT - Run VAA above 25C";
 			break;
 		case "IAH":
 			result += "<br/><br/>IAH Flow: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East</button>";
-			// TODO result += "<br/>IAH -  W FLOW (rwy26) //  E FLOW (rwy8/9)";
+			// show_flow_info = "NW Rwy33: <br/>SE Rwy15: BNDTO, GUMBY, PITZZ<br/>ALL: FLYZA, INDIE, LURIC, MMUGS, RITAA, STRYA, STYCK, WYLSN";
 			break;
 		case "JAC":
 			result += "<br/><br/>JAC - Tailwind or Contaminated Rwy takeoff N/A";
 			result += "<br/>JAC - Always check VAA, Rwy19 is better";
 			result += "<br/><br/>JAC Flow: <button type='button' id='JAC_standard_left' class='btn" + ((flows['JAC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"JAC\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='JAC_standard_right' class='btn" + ((flows['JAC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"JAC\", 1)'>North</button>";
-			result += "<br/>JAC - ALPIN|TETON S FLOW (rwy19) // DIVYD|GEYSR N FLOW (rwy1)";
+			show_flow_info = "S Rwy19: ALPIN, TETON<br/>N Rwy1: DIVYD, GEYSR";
 			break;
 		case "LAX":
 			result += "<br/><br/>LAX curfew 2100L - 0700L, see <a href=\"https://www.lawa.org/media/30137\" target=\"_blank\">KLAX Noise Abatement Procedures<\/a>";
@@ -109,7 +111,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				result += "<br/>Departures after 2100L, file OSHNN instead of ORKAS";
 			}
 			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>West</button>";
-			result += "<br/>LAX usually West flow // E Flow (rwy6/7) - LAXX/GARDY/TRTON";
+			show_flow_info = "West Rwy24L/25R<br/>E Rwy 6R/7L: LAXX/GARDY/TRTON";
 			break;
 		case "LGA":
 /* TODO Im pretty sure pier weights arent a thing anymore
@@ -126,19 +128,23 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 		case "MSO":
 			result += "<br/><br/>MSO Flow: <button type='button' id='MSO_standard_left' class='btn" + ((flows['MSO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"MSO\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='MSO_standard_right' class='btn" + ((flows['MSO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"MSO\", 1)'>NW Rwy 30</button>";
-			result += "<br/>MSO - DIDLY NW FLOW (rwy30) // MZULA/VICTO SE FLOW (rwy12)";
+			show_flow_info = "NW Rwy30: DIDLY<br/>SE Rwy 12: MZULA, VICTO";
 			break;
 		case "MTJ":
 			result += "<br/><br/>MTJ - Rwy 13/31 N/A"; // TODO: Source?
 			break;
+		case "ORD":
+			show_flow_info = "West Rwy28R/22L<br/>East Rwy9R/10L";
+			break;
 		case "PHX":
 			result += "<br/><br/>PHX - Make sure flow matches TPS; Usually departing into the sun (East in AMs, West in PMs)";
 			result += "<br/>PHX - Rwy 26/8 usually available for dptr (operational necessity) if tower notified in advance";
+			show_flow_info = "West Rwy25R<br/>East Rwy7L";
 			break;
 		case "PSP":
 			result += "<br/><br/>PSP - Run VAA for Rwy 31L";
 			result += "<br/><br/>PSP Flow: <button type='button' id='PSP_standard_left' class='btn" + ((flows['PSP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"PSP\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='PSP_standard_right' class='btn" + ((flows['PSP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"PSP\", 1)'>North</button>";
-			result += "<br/>PSP - HWRRD/YUCCA N FLOW (rwy31L) // IKNOE/JEEON/LGANN S FLOW (rwy13R)";
+			show_flow_info = "North Rwy31L: HWRRD, YUCCA<br/>South Rwy 13R: IKNOE, JEEON, LGANN";
 			break;
 		case "RDM":
 			result += "<br/><br/>RDM - Rwy11/29 N/A for A320 and non-sharklet A321, see 10-7A-2";
@@ -147,7 +153,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>RNO - Use 10-7 Pages and SIDS for takeoff mins";
 			result += "<br/>RNO - Max climb gradient 525 feet per NM; Some south departures exceed 525 ft/nm (see 10-7C)";
 			result += "<br/><br/>RNO Flow: <button type='button' id='RNO_standard_left' class='btn" + ((flows['RNO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='RNO_standard_right' class='btn" + ((flows['RNO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 1)'>North</button>";
-			result += "<br/>RNO - ALPYN N FLOW (rwy35L) // ZEFFR S FLOW (rwy17R)";
+			show_flow_info = "North Rwy35L: ALPYN<br/>South Rwy17R: ZEFFR";
 			break;
 		case "SAN":
 			result += "<br/><br/>SAN - East Flow (Rwy9): Takeoff Mins 600-2 // BORDER SID lower mins";
@@ -162,7 +168,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "SBP":
 			result += "<br/><br/>SBP - Mountains off Rwy11; Watch winds and run VAA";
 			result += "<br/><br/>SBP Flow: <button type='button' id='SBP_standard_left' class='btn" + ((flows['SBP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SBP\", 0)'>East Rwy 11</button>&nbsp;&nbsp;<button type='button' id='SBP_standard_right' class='btn" + ((flows['SBP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SBP\", 1)'>West Rwy 29</button>";
-			result += "<br/>SBP - CREPE W FLOW (rwy29) // AVILA/WYNNR E FLOW (rwy11)";
+			show_flow_info = "West Rwy29: CREPE<br/>East Rwy11: AVILA, WYNNR";
 			break;
 		case "SFO":
 			result += "<br/>";
@@ -173,24 +179,24 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>SFO Dptg: <button type='button' id='SFO_standard_left' class='btn" + ((flows['SFO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SFO\", 0)'>1L/1R</button>" +
 				"&nbsp;&nbsp;<button type='button' id='SFO_standard_middle' class='btn" + ((flows['SFO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SFO\", 1)'>28L/28R</button>" +
 				"&nbsp;&nbsp;<button type='button' id='SFO_standard_right' class='btn" + ((flows['SFO'] == 2) ? " selected" : "") + "' onclick='change_flow(\"SFO\", 2)'>10LR/19LR</button>";
-			result += "<br/>SFO - Rwy1 NIITE|SEGUL|SSTIK // GNNRR|NIITE|SEGUL|SNTNA|WESLA Rwy28 // SAHEY Rwy19";
 			result += "<br/>Make sure SID matches rwy in use. TRUKN is good on all runways;";
+			show_flow_info = "Rwy 1L/1R: NIITE, SEGUL, SSTIK<br/>Rwy28: GNNRR, NIITE, SEGUL, SNTNA, WESLA<br/>Rwy19: SAHEY";
 			break;
 		case "SJC":
 			result += "<br/><br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
 			result += "<br/>SJC - B737 MAX and A32F NEO exempt from curfew (see 10-7A-2)";
 			result += "<br/><br/>SJC Flow: <button type='button' id='SJC_standard_left' class='btn" + ((flows['SJC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SJC\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='SJC_standard_right' class='btn" + ((flows['SJC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SJC\", 1)'>South</button>";
-			result += "<br/>SJC S Flow ALMDN|BMRNG|TECKY (rwy12)<br/> SJC N Flow LOUPE|SJC3|SPTNS (rwy30)";
+			show_flow_info = "South Rwy12: ALMDN, BMRNG, TECKY<br/>North Rwy30: LOUPE, SJC3, SPTNS";
 			break;
 		case "SLC":
 			result += "<br/><br/>SLC - Run VAA in summer";
 			result += "<br/><br/>SLC Flow: <button type='button' id='SLC_standard_left' class='btn" + ((flows['SLC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SLC\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='SLC_standard_right' class='btn" + ((flows['SLC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SLC\", 1)'>South</button>";
-			result += "<br/>SLC - ARCHZ|SEVYR N FLOW (rwy34) // ZIONZ S FLOW (rwy16) // RUGGD|DEZRT BOTH";
+			show_flow_info = "North Rwy34/35: ARCHZ, SEVYR<br/>South Rwy16: ZIONZ<br/>Both: RUGGD, DEZRT";
 			break;
 		case "SMF":
 			result += "<br/><br/>SMF - Run VAA above 25C";
 			result += "<br/><br/>SMF Flow: <button type='button' id='SMF_standard_left' class='btn" + ((flows['SMF'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SMF\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='SMF_standard_right' class='btn" + ((flows['SMF'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SMF\", 1)'>South</button>";
-			result += "<br/>SMF - RVRCT N FLOW (rwy35) // SCTWN S FLOW (rwy 17)";
+			show_flow_info = "North Rwy35: RVRCT<br/>South Rwy17: SCTWN";
 			break;
 		case "SNA":
 			result += "<br/>";
@@ -201,11 +207,11 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/>SNA - Check VAA, especially when wet";
 			result += "<br/>SNA - Curfew rstr: takeoff N/A without approval 2155-0700L (0800L on Sundays), 15 min extension possible";
 			result += "<br/><br/>SNA Flow: <button type='button' id='SNA_standard_left' class='btn" + ((flows['SNA'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SNA\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='SNA_standard_right' class='btn" + ((flows['SNA'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SNA\", 1)'>North</button>";
-			result += "<br/>SNA - HOBOW|MIKAA N FLOW (rwy 2L) // FINZZ|HHERO|STAYY S FLOW (rwy 20R) // PIGGN Both";
+			show_flow_info = "North Rwy2L: HOBOW, MIKAA<br/>South Rwy20R: FINZZ, HHERO, STAYY<br/>Both: PIGGN";
 			break;
 		case "TUS":
 			result += "<br/><br/>TUS Flow: <button type='button' id='TUS_standard_left' class='btn" + ((flows['TUS'] == 0) ? " selected" : "") + "' onclick='change_flow(\"TUS\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='TUS_standard_right' class='btn" + ((flows['TUS'] == 1) ? " selected" : "") + "' onclick='change_flow(\"TUS\", 1)'>NW Rwy 30</button>";
-			result += "<br/>TUS - WLDKT N FLOW (rwy30) // BURRO S FLOW (rwy12) // TUS9 all";
+			show_flow_info = "North Rwy30: WLDKT<br/>South Rwy12: BURRO, STAYY<br/>Both: TUS9";
 			break;
 		case "VPS":
 			result += "<br/><br/>VPS - If arresting cables are inop, use B runways for TPS";
@@ -218,6 +224,10 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "YYZ":
 			result += "<br/><br/>Canadian required departures are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
+	}
+	if (show_flow_info.length > 0) {
+		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='flow_desc_button' onclick='$(\"#flow_desc_text\").toggle(); $(\"#flow_desc_button\").text(($(\"#flow_desc_button\").text().includes(\"Show\")) ? \"Hide SIDS\" : \"Show SIDS\");'>Show SIDS</button>";
+		result += "<div id='flow_desc_text' style='display:none'>" + show_flow_info + "</div>";
 	}
 
 	switch(arvl) {
