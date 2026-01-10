@@ -55,7 +55,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			show_flow_info = "NW Rwy30: MEADO<br/>SE Rwy12: BGSKY, BOBKT";
 			break;
 		case "CLT":
-			show_flow_info = "North Rwy36C/36R<br/>South Rwy18C/18L";
+			// show_flow_info = "North Rwy36C/36R<br/>South Rwy18C/18L";
 			break;
 		case "COS":
 			result += "<br/><br/>COS - LAWS above 10C";
@@ -70,7 +70,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>Run VAA when hot"; // TODO How hot? Source?
 			break;
 		case "DFW":
-			show_flow_info = "North Rwy36R/35L<br/>South Rwy18L/17R";
+			// show_flow_info = "North Rwy36R/35L<br/>South Rwy18L/17R";
 			break;
 		case "EGE":
 			result += "<br/><br/>EGE - Rwy 25 is preferred, even with tailwind";
@@ -134,12 +134,12 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>MTJ - Rwy 13/31 N/A"; // TODO: Source?
 			break;
 		case "ORD":
-			show_flow_info = "West Rwy28R/22L<br/>East Rwy9R/10L";
+			// show_flow_info = "West Rwy28R/22L<br/>East Rwy9R/10L";
 			break;
 		case "PHX":
 			result += "<br/><br/>PHX - Make sure flow matches TPS; Usually departing into the sun (East in AMs, West in PMs)";
 			result += "<br/>PHX - Rwy 26/8 usually available for dptr (operational necessity) if tower notified in advance";
-			show_flow_info = "West Rwy25R<br/>East Rwy7L";
+			// show_flow_info = "West Rwy25R<br/>East Rwy7L";
 			break;
 		case "PSP":
 			result += "<br/><br/>PSP - Run VAA for Rwy 31L";
