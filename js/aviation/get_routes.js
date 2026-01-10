@@ -7624,17 +7624,18 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 
 		case "MSP":
 			switch(arvl) {
-				case "CLT": // MSP-CLT // Updated 02-23-2025
-					result += "<!-- Updated 02-23-2025 -->";
+				case "CLT": // MSP-CLT // Updated 01-10-2026
+					result += "<!-- Updated 01-10-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><br/><input style=\"width:75%\" value=\"KMSP ZMBRO7 ODI J30 JOT VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KMSP COULT7 DLL J34 BAE J89 OBK FWA J178 APE HVQ LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KMSP RST1 ALO STL Q19 HITMN TAZZA FILPZ4 KCLT\" readonly>"; // CDR S2
-					result += "<br/>SW Arrival: <input style=\"width:75%\" value=\"KMSP ORSKY3 ONTIJ DABOY SGF MEMFS VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMSP ZMBRO7 ODI J30 JOT VHP FLM TAFTT PARQR4 KCLT\" readonly>"; // CDR E3
+					result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSP WLSTN7 GRB PMM FWA FLM TAFTT PARQR4 KCLT\" readonly>"; // CDR E1
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSP RST1 ALO STL Q19 HITMN TAZZA FILPZ4 KCLT\" readonly>"; // CDR S2
+					result += "<br/><br/>North via DJB<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSP WLSTN7 GRB VIO J34 DJB J85 HVQ LNDIZ PARQR4 KCLT\" readonly>"; // Based on CDR N2
+					result += "<br/>SW Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSP ORSKY3 ONTIJ J21 OVR J41 VUZ THRSR BESTT JONZE5 KCLT\" readonly>"; // Based on CDR S3
 					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMSP DLH IWD GRB PMM FWA FLM TAFTT PARQR4 KCLT\" readonly>"; // CDR N2
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-23-2025
-					result += "<!-- Verified with ATCSCC on 02-23-2025 -->";
+					result += "<br/><input style=\"width:75%\" value=\"KMSP ALO J233 STL J45 BNA J46 VXV LIINN3 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-10-2026
+					result += "<!-- Verified with ATCSCC on 01-10-2026 -->";
 					result += "<br/>E1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP WLSTN7 GRB PMM FWA FLM TAFTT PARQR4 KCLT\" readonly>";
 					result += "<br/>E2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP COULT7 DLL OBK FLM TAFTT PARQR4 KCLT\" readonly>";
 					result += "<br/>E3<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP ZMBRO7 ODI J30 JOT VHP FLM TAFTT PARQR4 KCLT\" readonly>";
@@ -7685,25 +7686,29 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 					result += "<br/>S3 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP ORSKY3 ONTIJ POCIR MYRRS FYTTE7 KORD\" readonly>";
 					result += "<br/>W1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP SCHEP1 RXANN DURWN FOD MYRRS FYTTE7 KORD\" readonly>";
 					break;
-				case "PHX": // MSP-PHX // Updated 01-04-2025
-					result += "<!-- Updated 01-04-2025 -->";
+				case "PHX": // MSP-PHX // Updated 01-10-2026
+					result += "<!-- Updated 01-10-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMSP SCHEP1 RXANN TEYOU ONL LBF PUB ALS J102 GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KMSP ORSKY3 ONTIJ OVR GCK J96 CIM ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KMSP LEINY6 LEINY VIVID BFF DVC CORKR TENTS BRUSR1 KPHX\" readonly>";
-					result += "<br/><br/>EAGUL 2: <input style=\"width:75%\" value=\"KMSP SCHEP1 RXANN TEYOU LLUKY PUB J64 RSK FLG DUTEY MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KMSP SCHEP1 RXANN TEYOU LLUKY PUB ALS J102 GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSP LEINY6 LEINY VIVID Q88 CHUWY BJC HBU J10 RSK GUP EAGUL6 KPHX\" readonly>"; // Based on CDR W2
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSP ORSKY3 ONTIJ OVR SLN GCK CIM ZUN EAGUL6 KPHX\" readonly>"; // Based on CDR S3
+					result += "<br/><br/>North via RAP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSP LEINY6 LEINY RAP J158 DDY J107 URNUW J11 CORKR TENTS BRUSR1 KPHX\" readonly>";
+					result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSP RST1 ALO ROEZZ BUM J87 TUL ADM BGS J66 EWM PINNG PINNG1 KPHX\" readonly>";
+					result += "<br/><br/>PNH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMSP RST1 ALO ROEZZ BUM PER PNH J6 ABQ J78 ZUN EAGUL6 KPHX\" readonly>";
+					// result += "<br/><br/>EAGUL 2: <input style=\"width:75%\" value=\"KMSP SCHEP1 RXANN TEYOU LLUKY PUB J64 RSK FLG DUTEY MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMSP ONL LBF PUB ALS J102 GUP BUNTR3 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>E2 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP COULT7 DLL BRIBE DBQ ROTTN PWE HLC J64 PUB ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>E3 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP ZMBRO7 ODI J30 SIBER DBQ DSM LNK J146 GLD PUB ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>N1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP GEP BRNRD FAR DPR BFF DVV ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>P1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP SCHEP1 RXANN TEYOU LLUKY PUB ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>S2 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP RST1 ALO DSM LNK J146 GLD PUB ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>S3 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP ORSKY3 ONTIJ OVR LNK J146 GLD PUB ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>W1 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP SCHEP1 RXANN TEYOU LLUKY PUB ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>W2 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP LEINY6 LEINY VIVID PUB ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>W3 (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP KBREW2 FAR ABR PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-10-2026
+					result += "<!-- Verified with ATCSCC on 01-10-2026 -->";
+					result += "<br/>E2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP COULT7 DLL BRIBE DBQ ROTTN PWE HLC J64 PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>E3<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP ZMBRO7 ODI J30 SIBER DBQ DSM LNK J146 GLD PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>N1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP GEP BRNRD FAR DPR BFF DVV ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP SCHEP1 RXANN TEYOU LLUKY PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>S2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP RST1 ALO DSM LNK J146 GLD PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>S3<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP ORSKY3 ONTIJ OVR LNK J146 GLD PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>W1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP SCHEP1 RXANN TEYOU LLUKY PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>W2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP LEINY6 LEINY VIVID PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>W3<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMSP KBREW2 FAR ABR PUB ALS GUP EAGUL6 KPHX\" readonly>";
 					break;
 			}
 		break; // End of MSP
