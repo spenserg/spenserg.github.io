@@ -5227,15 +5227,16 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-26-2025
 					break;
-				case "DFW": // GSP-DFW // Updated 04-29-2025 // Mandatory Routes checked
-					result += "<!-- Updated 04-29-2025 M -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KGSP HRS GQO MEM J66 LIT FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KGSP ODF RMG VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\"; value=\"KGSP BWALL2 JLENA VXV J46 ARG RRNET SEEVR4 KDFW\" readonly>";
+				case "DFW": // GSP-DFW // Updated 01-10-2026
+					result += "<!-- Updated 01-10-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KGSP HRS GQO MEM J66 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGSP BWALL2 JLENA VXV J46 ARG RRNET BRDJE5 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGSP IPTAY CHOPZ THRSR VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
+					// result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KGSP ODF RMG VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KGSP HRS GQO MEM J66 LIT FINGR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed as of 04-29-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-10-2026
 					break;
 				case "MIA": // GSP-MIA // Updated 11-26-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
