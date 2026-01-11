@@ -2338,20 +2338,21 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE PFLYD1 MAAJR ETG MIP4 KLGA\" readonly>";
 					result += "<br/>P2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE PFLYD1 JASEE JHW GEE HANKK RKA HAARP4 KLGA\" readonly>";
 					break;
-				case "MIA": // CLE-MIA // Updated 07-14-2025
-					result += "<!-- Updated 07-14-2025 P -->";
+				case "MIA": // CLE-MIA // Updated 01-11-2026
+					result += "<!-- Updated 01-11-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KCLE CAVVS5 APE J83 SPA QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KCLE CAVVS5 APE Q149 BURGG QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>";
 					result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLE CAVVS5 APE JONEN KTRYN VXV THRSR HONID FROGZ4 KMIA\" readonly>";
 					result += "<br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLE KKIDS1 EWC EMNEM Q103 SLOJO EFFAY Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>";
 					result += "<br/><br/>West via BNA<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLE ZAAPA6 SINKR IIU BNA J73 LGC HONID FROGZ4 KMIA\" readonly>";
 					result += "<br/>East/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLE KKIDS1 EWC JST PYTON Q129 YERBA SKARP Y313 HOAGG BNFSH3 KMIA\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-14-2025
-					result += "<!-- Verified with ATCSCC on 07-14-2025 -->";
-					result += "<br/>E1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE KKIDS1 NUSMM HVQ SPA ALLMA BULZI Q81 ENDEW BROMO FROGZ4 KMIA\" readonly>";
-					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE CAVVS5 APE J83 SPA QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-11-2026
+					result += "<!-- Verified with ATCSCC on 01-11-2026 -->";
+					result += "<br/>E1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE KKIDS1 NUSMM HVQ Q147 BURGG ALLMA BULZI Q81 ENDEW BROMO FROGZ4 KMIA\" readonly>";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE CAVVS5 APE Q149 BURGG QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>";
 					result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLE ZAAPA6 SINKR FLM J43 VXV THRSR HONID FROGZ4 KMIA\" readonly>";
+					break;
 					break;
 				case "ORD": // CLE-ORD // Updated 07-14-2025
 					result += "<!-- Updated 07-14-2025 P -->";
@@ -4749,13 +4750,13 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEYW DTSRP PNSLO TBDRL KELPP A766 SBI CRIED BEREE3 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-11-2025
 					break;
-				case "MIA": // EYW-MIA // Updated 10-11-2025
-					result += "<!-- Updated 10-11-2025 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KEYW BUFTT1 BUFTT CARNU SNDBR SNDBR3 KMIA\" readonly>";
+				case "MIA": // EYW-MIA // Updated 01-11-2026
+					result += "<!-- Updated 01-11-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL170):</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KEYW BUFTT1 BUFTT PYREX SNDBR3 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KEYW CARNU DVALL4 kMIA\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-11-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-11-2026
 					break;
 				case "PHL": // EYW-PHL // Updated 09-30-2025
 					result += "<!-- Updated 09-30-2025 P -->";
