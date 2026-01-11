@@ -853,17 +853,20 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J2 FST MOPPP DNKIN2 KSAT\" readonly>"; // 
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM CNX J15 FUSCO TRVLL DNKIN2 KSAT\" readonly>"; // 
 			break;
-		case "SBA": // PHX-SBA // Updated 02-05-2025
-			result += "<!-- Updated 02-05-2025 -->";
+		case "SBA": // PHX-SBA // Updated 01-10-2026
+			result += "<!-- Updated 01-10-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR J212 PSP PORPS PITBL1 KSBA\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>FY (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FYRBD1 MOHAK J2 IPL OCN LAX RZS KSBA\" readonly>";
-			result += "<br/>KE: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR PSP PORPS PITBL1 KSBA\" readonly>";
-			result += "<br/>QU: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN PGS J64 HEC PITBL1 KSBA\" readonly>";
-			result += "<br/>ZE: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED HEC PITBL1 KSBA\" readonly>";
-			result += "<br/>ZZ: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR PSP PORPS PITBL1 KSBA\" readonly>";
+			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED HEC PITBL2 KSBA\" readonly>"; // CDR ZE
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX FYRBD1 MOHAK J2 IPL OCN LAX RZS KSBA\" readonly>"; // CDR FY
+			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-10-2026
+			result += "<!-- Verified with ATCSCC on 01-10-2026 -->";
+			result += "<br/>FY<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FYRBD1 MOHAK J2 IPL OCN LAX RZS KSBA\" readonly>";
+			result += "<br/>KE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR PSP PORPS PITBL2 KSBA\" readonly>";
+			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN PGS J64 HEC PITBL2 KSBA\" readonly>";
+			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED HEC PITBL2 KSBA\" readonly>";
+			result += "<br/>ZZ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR PSP PORPS PITBL2 KSBA\" readonly>";
 			break;
 		case "SBP": // PHX-SBP // Updated 02-05-2025
 			result += "<!-- Updated 02-05-2025 -->";
