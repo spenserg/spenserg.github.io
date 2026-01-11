@@ -596,15 +596,15 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 FTI J18 JOT KMKE\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 FTI J18 JOT KMKE\" readonly>";
 			break;
-		case "MRY": // PHX-MRY // Updated 05-09-2025 // Mandatory Routes checked
-			result += "<!-- Updated 05-09-2025 MP -->";
+		case "MRY": // PHX-MRY // Updated 01-10-2026
+			result += "<!-- Updated 01-10-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR J212 DECAS J65 PMD J6 ROBIE KMRY\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR J212 DECAS J65 PMD J6 AVE WIGGL KMRY\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BTY CZQ SNS KMRY\" readonly>"; // Based on CDR ZE
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX FYRBD1 MOHAK J2 MZB J1 AVE SNS KMRY\" readonly>"; // CDR FY
 			// result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-09-2025
-			result += "<!-- Verified with ATCSCC on 05-09-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-10-2026
+			result += "<!-- Verified with ATCSCC on 01-10-2026 -->";
 			result += "<br/>FY<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FYRBD1 MOHAK J2 MZB J1 AVE SNS KMRY\" readonly>";
 			result += "<br/>KE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR DECAS J65 LANDO AVE SNS KMRY\" readonly>";
 			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED J6 PMD J65 LANDO AVE SNS KMRY\" readonly>";
@@ -750,25 +750,25 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 ONM ACH TOTOE ICT BUM STL J110 VHP ROD J152 JST BOJID4 KPHL\" readonly>";
 			result += "<br/>TM (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 ONM ACH TOTOE ICT BUM STL J110 VHP ROD J152 JST BOJID4 KPHL\" readonly>";
 			break;
-		case "PIT": // PHX-PIT // Updated 02-05-2025
-			result += "<!-- Updated 02-05-2025 -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ J18 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK J64 PUB HCT OBH MCW J16 BAE J34 DJB GRIVY JESEY5 KPIT\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J50 INK J4 FUZ J42 TXK Q34 TONIO HNN FEWGA7 KPIT\" readonly>";
-			result += "<br/><br/>BNA: <input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO CNX J74 IRW FSM MEMFS Q34 HITMN IIU HNN FEWGA7 KPIT\" readonly>";
-			result += "<br/>GRB: <input style=\"width:75%\"; value=\"KPHX QUAKY1 GCN BCE J100 EKR MBW RAP ABR GRB FNT DJB GRIVY JESEY5 KPIT\" readonly>";
-			result += "<br/>PXV: <input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO ACH EZEEE MMB PER SGF J98 FAM J78 PXV J78 IIU HNN FEWGA7 KPIT\" readonly>";
-			result += "<br/>IIU: <input style=\"width:75%\"; value=\"KPHX BROAK1 MAXXO ACH EZEEE MMB PER SGF J98 FAM J78 PXV J78 IIU HNN FEWGA7 KPIT\" readonly>";
-			result += "<br/>JOT 1: <input style=\"width:75%\"; value=\"KPHX MRBIL1 JARPA RSK J10 HBU J206 DBL J60 JOT J146 WOOST J34 DJB GRIVY JESEY5 KPIT\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
-			result += "<br/><br/><b>CDRS</b>";
-			result += "<br/>BR (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX J74 IRW J78 IIU HNN FEWGA7 KPIT\" readonly>";
-			result += "<br/>CM (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 CME TXO J74 IRW J78 IIU HNN FEWGA7 KPIT\" readonly>";
-			result += "<br/>EC: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 ECLPS KATMN SSO J104 ONM CNX J74 IRW J78 IIU HNN FEWGA7 KPIT\" readonly>";
-			result += "<br/>FC: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 GCK J96 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
-			result += "<br/>QU (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS J102 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
-			result += "<br/>TM (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 ONM CNX J74 IRW J78 IIU HNN FEWGA7 KPIT\" readonly>";
+		case "PIT": // PHX-PIT // Updated 01-10-2026
+			result += "<!-- Updated 01-10-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 01-10-2026
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>"; // Based on CDR FC
+			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS J102 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>"; // CDR MR
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX FORPE1 ABQ J6 IRW FSM ARG LAJUG Q68 YOCKY HNN FEWGA7 KPIT\" readonly>";
+			result += "<br/><br/>North via JOT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK PUB HLC ATIJA Q90 WELKY MZV J87 JOT DJB GRIVY JESEY5 KPIT\" readonly>";
+			result += "<br/>South via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J50 INK J4 FUZ J42 TXK Q34 TONIO HNN FEWGA7 KPIT\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-10-2026
+			result += "<!-- Verified with ATCSCC on 01-10-2026 -->";
+			result += "<br/>BR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX J74 IRW J78 IIU HNN FEWGA7 KPIT\" readonly>";
+			result += "<br/>CM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 CME TXO J74 IRW J78 IIU HNN FEWGA7 KPIT\" readonly>";
+			result += "<br/>EC<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 ECLPS KATMN SSO J104 ONM CNX J74 IRW J78 IIU HNN FEWGA7 KPIT\" readonly>";
+			result += "<br/>FC<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 GCK J96 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>"; // MCI
+			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS J102 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
+			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 JARPA RSK ALS J102 SLN J24 MCI J80 VHP APE CTW FEWGA7 KPIT\" readonly>";
+			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J26 MCI J80 VHP APE KPIT\" readonly>";
+			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 ONM CNX J74 IRW J78 IIU HNN FEWGA7 KPIT\" readonly>";
 			break;
 		case "PSP": // PHX-PSP // Updated 09-14-2025
 			result += "<!-- Updated 09-14-2025 P -->";
