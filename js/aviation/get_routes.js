@@ -4782,6 +4782,20 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-17-2025
 					result += "<!-- Verified with ATCSCC on 03-17-2025 -->";
 					break;
+				case "ORD": // FAR-ORD // Updated 11-26-2025
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KFAR HSTIN Q156 ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAR FAR J140 DLH OVETE ERNNY8 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFAR FAR FSD OVR IRK BENKY6 KORD\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-26-2025
+					break;
+/* FOS ROUTES: FAR-ORD
+KFAR FAR J36 ODI LARVA KORD
+KFAR FAR J140 DLH J89 OBK KORD
+KFAR FAR J36 GEP J25 MCW JVL1 ORD
+KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
+*/
 			}
 		break; // End of FAR
 
@@ -4798,20 +4812,13 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 					result += "<br/><input style=\"width:75%\" value=\"KFAT OAL J92 BTY BLD J72 TXO UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-17-2025
 					break;
-				case "ORD": // FAR-ORD // Updated 11-26-2025
+				case "LAX": // FAT-LAX // Updated 01-10-2026
+					result += "<!-- Updated 01-10-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KFAR HSTIN Q156 ZZIPR FYTTE7 KORD\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAR FAR J140 DLH OVETE ERNNY8 KORD\" readonly>";
-					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFAR FAR FSD OVR IRK BENKY6 KORD\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KFAT BULL3 NTELL FRAME PONDD TAFTO MUPTT IRNMN2 KLAX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-26-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-10-2026
 					break;
-/* FOS ROUTES: FAR-ORD
-KFAR FAR J36 ODI LARVA KORD
-KFAR FAR J140 DLH J89 OBK KORD
-KFAR FAR J36 GEP J25 MCW JVL1 ORD
-KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
-*/
 				case "PHX": // FAT-PHX // Updated 06-23-2025
 					result += "<!-- Updated 06-23-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -7530,6 +7537,14 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 					result += "<br/><input style=\"width:75%\" value=\"KMRY SNS FRA OAL MLF DVC CIM PNH UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-09-2025
 					break;
+				case "LAX": // MRY-LAX // Updated 01-10-2026
+					result += "<!-- Updated 01-10-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KMRY MRY BSR LIBBO TOKIO HUULL2 KLAX\" readonly>";
+					result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KMRY MQO SXC LEENA8 KLAX\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-10-2026
+					break;
 				case "PHX": // MRY-PHX // Updated 01-16-2025
 					result += "<!-- Updated 01-16-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -8264,6 +8279,13 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 					result += "<br/>South: <input style=\"width:75%\" value=\"KPDX WHAMY5 KOATA REO KU66K BCE DEANN DEXTR ZUN KAPEY ELP J86 FST KOBLE KINEY THX LAMMY KLAMS HOOCK BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "LAX": // PDX-LAX // Updated 01-10-2026
+					result += "<!-- Updated 01-10-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KPDX CASCD4 JUDAH JUNEJ Q7 JAGWA BURGL IRNMN2 KLAX\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-10-2026
 					break;
 				case "PHX": // PDX-PHX // Updated 01-17-2025
 					result += "<!-- Updated 01-17-2025 -->";
@@ -10784,11 +10806,12 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 					result += "<br/><input style=\"width:75%\" value=\"KSEA MONTN2 SEA NORMY J90 MWH LKT J52 OCS J163 CHE PUB TBE PNH UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "LAX": // SEA-LAX // Updated 01-18-2025
-					result += "<!-- Updated 01-18-2025 -->";
+				case "LAX": // SEA-LAX // Updated 01-10-2026
+					result += "<!-- Updated 01-10-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSEA SUMMA JINMO Q7 JAGWA BURGL IRNMN2 KLAX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-10-2026
 					break;
 				case "MIA": // SEA-MIA // Updated 10-30-2025
 					result += "<!-- Updated 10-30-2025 P -->";
@@ -10875,16 +10898,14 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 					result += "<br/><input style=\"width:75%\"; value=\"KSFO LIN J84 EKR AKO PWE UIN SPI VHP ROD DJB JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 08-28-2025
 					break;
-				case "LAX": // SFO-LAX // Updated 04-01-2025
-					result += "<!-- Updated 04-01-2025 -->";
+				case "LAX": // SFO-LAX // Updated 01-10-2026
+					result += "<!-- Updated 01-10-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/>SFO 1L/1R: <input style=\"width:75%\"; value=\"KSFO SSTIK5 SUSEY EBAYE BURGL IRNMN2 KLAX\" readonly>";
-					result += "<br/>SFO 28L/28R: <input style=\"width:75%\"; value=\"KSFO WESLA5 SUSEY EBAYE BURGL IRNMN2 KLAX\" readonly>";
-					result += "<br/>After 2200L: <input style=\"width:75%\"; value=\"KSFO NIITE4 SYRAH BURGL IRNMN2 KLAX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KSFO SSTIK5 SUSEY EBAYE BURGL IRNMN2 KLAX\" readonly>";
+					result += "<br/><br/>After 2200L: <input style=\"width:75%\"; value=\"KSFO NIITE4 SYRAH BURGL IRNMN2 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KSFO OFFSH2 RZS SADDE8 KLAX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-01-2025
-					result += "<!-- Verified with ATCSCC on 04-01-2025 -->";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-10-2026
 					break;
 				case "MIA": // SFO-MIA // Updated 04-18-2025
 					result += "<!-- Updated 04-18-2025 P -->";
@@ -10977,6 +10998,13 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSJC SJC3 AVE J6 EED J6 DRK J78 ABQ J72 TXO UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-25-2025
+					break;
+				case "LAX": // SJC-LAX // Updated 01-10-2026
+					result += "<!-- Updated 01-10-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KSJC SPTNS1 VLREE EBAYE BURGL IRNMN2 KLAX\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-10-2026
 					break;
 				case "PHX": // SJC-PHX // Updated 07-17-2025
 					result += "<!-- Updated 07-17-2025 P -->";
@@ -11074,10 +11102,12 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 					result += "<br/><input style=\"width:75%\" value=\"KSMF MVA ILC J58 FTI J76 SPS UKW UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-27-2025
 					break;
-				case "LAX": // SMF-LAX // Updated 01-18-2025
-					result += "<!-- Updated 01-18-2025 -->";
+				case "LAX": // SMF-LAX // Updated 01-10-2026
+					result += "<!-- Updated 01-10-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSMF FTHIL3 FRA REBRG IRNMN2 KLAX\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-10-2026
 					break;
 				case "ORD": // SMF-ORD // Updated 07-27-2025
 					result += "<!-- Updated 07-27-2025 P -->"
