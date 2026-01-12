@@ -4753,9 +4753,9 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 				case "MIA": // EYW-MIA // Updated 01-11-2026
 					result += "<!-- Updated 01-11-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL170):</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KEYW BUFTT1 BUFTT PYREX SNDBR3 KMIA\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KEYW BUFTT1 BUFTT CARNU SANDBR SNDBR3 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KEYW CARNU DVALL4 kMIA\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KEYW CARNU DVALL4 KMIA\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-11-2026
 					break;
 				case "PHL": // EYW-PHL // Updated 09-30-2025
