@@ -19,6 +19,17 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
 	flows = ((Object.keys(flows).length == 0) ? {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"ELP":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0} : flows);
 
+	// Weather Cameras
+	var tmp_cams = get_weather_cams(arvl);
+	if (tmp_cams.length > 0) {
+		if (tmp_cams[0].length > 0) {
+			result += "<br/>" + arvl + " Live Weathercams: ";
+			for (let i = 0; i < tmp_cams.length; i++) {
+				result += "<a href='" + tmp_cams[i] + "' target='_blank'>Camera " + (i+1) + "</a>&nbsp;&nbsp;";
+			}
+		}
+	}
+
 	// 27K for 737-NGs
 	if (["738K", "738R"].includes(ac_type) && ["BDL","BJX","BOS","BUR","BZN","DCA","DEN","GUA","HDN","LAS","LGA","MDE","MEX","PHX","PSP","QRO","RDU","RNO","RTB","SBA","SBP","SJO","SJU","SNA","STT","SXM"].includes(dptr)) {
 		result += "<br/><b>" + dptr + " - 27K Available for N" + tail + "<\/b>";
