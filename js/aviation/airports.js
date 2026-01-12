@@ -121,7 +121,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			} else {
 				result += "<br/>Departures after 2100L, file OSHNN instead of ORKAS";
 			}
-			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>West</button>";
+			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>";
 			show_flow_info = "West Rwy24L/25R<br/>E Rwy 6R/7L: LAXX/GARDY/TRTON";
 			break;
 		case "LGA":
@@ -322,15 +322,8 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "LAS":
 			result += "<br/><br/>LAS - Run LAWS above 35C";
 			break;
-		case "LAX":
-			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>" +
-							"&nbsp;&nbsp;<button type='button' id='LAX_standard_middle' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>" +
-							 "&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 2) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 2)'>Curfew</button>";
-			// result += "<br/>LAX - ANJLL W FLOW // BIGBR E FLOW";
-			break;
 		case "MCO":
 			result += "<br/><br/>MCO Flow: <button type='button' id='MCO_standard_left' class='btn" + ((flows['MCO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='MCO_standard_right' class='btn" + ((flows['MCO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 1)'>North</button>";
-			result += "<br/>MCO - SNFLD N FLOW // GTOUT S FLOW // GRNCH|PRICY|ALYNA BOTH";
 			show_flow_info = "North Rwy35/36: SNFLD<br/>South Rwy17/18: GTOUT<br/>Both: GRNCH, PRICY, ALYNA";
 			break;
 		case "MFE":
@@ -498,8 +491,9 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 					case "ELP": // ELP SW // Rwy22
 						result = result.replaceAll("KELP JCOXX2 SLNNK", "KELP ATKNN5 SLNNK");
 						result = result.replaceAll("KELP JCOXX2 GREBE", "KELP ATKNN5 GREBE");
-						result = result.replaceAll("KELP JCOXX2 HBACK", "KELP ATKNN5 ATKNN");
-						result = result.replaceAll("KELP JCOXX2 TELKE", "KELP ATKNN5 ATKNN");
+						result = result.replaceAll("KELP JCOXX2 HBACK", "KELP ATKNN5 FLOGS");
+						result = result.replaceAll("KELP JCOXX2 TELKE", "KELP ATKNN5 NOCHI");
+						result = result.replaceAll("KELP JCOXX2 JCOXX", "KELP ATKNN5 ATKNN");
 					case "FCA":
 					case "GPI": // FCA North // Rwy2
 						result = result.replaceAll("KGPI GPI1 CHOTE", "KGPI RIDDG1 SKOTT CHOTE");
@@ -518,12 +512,13 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						break;
 					case "JAC": // JAC South // Rwy19 // ALPIN/TETON
 						result = result.replaceAll("KJAC DIVYD2 HUKET IDA", "KJAC ALPIN4 IDA"); // HUKET via IDA first
-						result = result.replaceAll("KJAC DIVYD2 HUKET", "KJAC TETON3 IDA HUKET"); // All else HUKET via IDA
-						result = result.replaceAll("KJAC DIVYD2 DNW", "KJAC DNW");
-						result = result.replaceAll("KJAC DIVYD2 BOY", "KJAC ALPIN BPI BOY");
+						result = result.replaceAll("KJAC DIVYD2 HUKET", "KJAC ALPIN4 IDA HUKET"); // All else HUKET via IDA
+						result = result.replaceAll("KJAC DIVYD2 DNW BPI", "KJAC ALPIN4 BPI");
+						result = result.replaceAll("KJAC DIVYD2 DNW", "KJAC ALPIN4 BPI"); // All Else
+						result = result.replaceAll("KJAC DIVYD2 BOY", "KJAC ALPIN4 BPI BOY");
 						result = result.replaceAll("KJAC DIVYD2 JEDHY BPI", "KJAC ALPIN4 BPI"); // BPI via JEDHY
-						result = result.replaceAll("KJAC DIVYD2 JEDHY", "KJAC JEDHY"); // All other JEDHY
-						result = result.replaceAll("KJAC GEYSR6 DNW", "KJAC DNW");
+						result = result.replaceAll("KJAC DIVYD2 JEDHY", "KJAC ALPIN4 KICNE"); // All other JEDHY
+						result = result.replaceAll("KJAC GEYSR6 DNW", "KJAC TETON3 KICNE");
 						break;
 					case "LAX": // LAX West // Rwy 24/25
 						// SIDS
@@ -679,8 +674,8 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KABQ MNZNO3 LAMSE", "KABQ BOSQE3 LAMSE");
 						break;
 					case "ATL": // ATL east
-						result = result.replaceAll("JJEDI3 KATL", "SITTH2 KATL");
-						result = result.replaceAll("HOBTT2 KATL", "GNDLF2 KATL");
+						result = result.replaceAll("JJEDI4 KATL", "SITTH3 KATL");
+						result = result.replaceAll("HOBTT3 KATL", "GNDLF3 KATL");
 						break;
 					case "BZN": // BZN northwest / Rwy30
 						result = result.replaceAll("KBZN BGSKY2 DBS", "KBZN MEADO2 DBS");
@@ -707,6 +702,12 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("HAYLL3 KDTW", "VCTRZ2 KDTW");
 						result = result.replaceAll("KKISS2 KDTW", "RKCTY2 KDTW");
 						break;
+					case "ELP": // ELP NE // Rwy24
+						result = result.replaceAll("KELP ATKNN5 SLNNK", "KELP JCOXX2 SLNNK");
+						result = result.replaceAll("KELP ATKNN5 GREBE", "KELP JCOXX2 GREBE");
+						result = result.replaceAll("KELP ATKNN5 FLOGS", "KELP JCOXX2 HBACK");
+						result = result.replaceAll("KELP ATKNN5 NOCHI", "KELP JCOXX2 TELKE");
+						result = result.replaceAll("KELP ATKNN5 ATKNN", "KELP JCOXX2 JCOXX");
 					case "FCA":
 					case "GPI": // FCA North // Rwy2
 						result = result.replaceAll("KGPI RIDDG1 SKOTT CHOTE", "KGPI GPI1 CHOTE");
@@ -724,13 +725,14 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KIAH MMUGS4", "KIAH GUMBY3");
 						break;
 					case "JAC": // JAC North // Rwy1 // DIVYD/GEYSR
-						result = result.replaceAll("KJAC ALPIN BPI BOY", "KJAC DIVYD2 BOY");
+						result = result.replaceAll("KJAC ALPIN4 BPI BOY", "KJAC DIVYD2 BOY");
 						result = result.replaceAll("KJAC ALPIN4 BPI", "KJAC DIVYD2 JEDHY BPI");
 						result = result.replaceAll("KJAC ALPIN4 IDA", "KJAC DIVYD2 HUKET IDA");
+						result = result.replaceAll("KJAC ALPIN4 KICNE", "KJAC DIVYD2 JEDHY");
 						result = result.replaceAll("KJAC TETON3 IDA HUKET", "KJAC DIVYD2 HUKET");
 						result = result.replaceAll("KJAC TETON3 IDA", "KJAC DIVYD2 HUKET IDA");
-						result = result.replaceAll("KJAC DNW", "KJAC DIVYD2 DNW");
-						result = result.replaceAll("KJAC JEDHY", "KJAC DIVYD2 JEDHY"); // All other JEDHY
+						result = result.replaceAll("KJAC TETON3 KICNE", "KJAC DIVYD2 HUKET IDA");
+						result = result.replaceAll("KJAC DNW", "KJAC GEYSR6 DNW");
 						break;
 					case "LAX": // LAX east // Rwy 6/7
 						result = result.replaceAll("ANJLL4 KLAX", "BIGBR3 KLAX");
