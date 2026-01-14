@@ -1240,8 +1240,8 @@ function get_sid_list(airport = "XXX") {
 	}
 }
 
-function check_page_for_errors (text = "") {
-	var errors = [];
+check_page_for_errors = function(text = "") {
+	var errors = {'repeated_token':[], 'repeated_token_cdr':[], 'misc':[]};
 	var by_date = [];
 	var result = "";
 	var dptr = "";
@@ -1259,53 +1259,86 @@ function check_page_for_errors (text = "") {
 				*/
 				by_date.push([(tmp_xdd[2] + "-" + tmp_xdd[1]), tmp_xdd[4]]);
 				if (tmp_xdd[1].localeCompare(tmp_xdd[3]) != 0) {
-					errors.push("Check City Pair: " + tmp_xdd[2] + "-" + tmp_xdd[1] + " // " + tmp_xdd[2] + tmp_xdd[3]);
+					errors['misc'].push("Check City Pair: " + tmp_xdd[2] + "-" + tmp_xdd[1] + " // " + tmp_xdd[2] + tmp_xdd[3]);
 				}
 				dptr = tmp_xdd[2];
 				dest = tmp_xdd[1];
-			} else if (!cases[i].includes("return result;")) {
-				errors.push('Problem with first line:<textarea rows="8" cols="80">' + cases[i] + '</textarea>');
+			} else if (!cases[i].includes("return result;") &&
+					   cases[i].trim().localeCompare("}") != 0 &&
+					   cases[i].trim().localeCompare("arvl, tail, ac_type, result") != 0 &&
+					   cases[i].trim().localeCompare("/*") != 0 &&
+					   !(/\/\/\s*[A-Z]{3}\sskipped/g.test(cases[i].trim()))
+					) {
+				errors['misc'].push('Problem with first line: "' + cases[i] + '"');
 			}
 			regee = /\tresult\s\+\=\s\"\<[\<\>br\/]+\>([^\:\<]*)[^\n]*\<input[^\>]+value\=\\\"([^\"]+)\\\"/g;
 			while ((tmp_xee = regee.exec(cases[i])) !== null) {
 				if (cases[i].match(/result\s\+\=\s\"\<[\<\>br\/]+\>([^\:\<]*)[^\n]*\<input[^\>]+value\=\\\"([^\"]+)\"/g).length != cases[i].match(/\<input\s/g).length) {
-					errors.push('Number of inputs dont match (' + cases[i].match(/\tresult\s\+\=\s\"\<[\<\>br\/]+\>([^\:\<]*)[^\n]*\<input[^\>]+value\=\\\"([^\"]+)\"/g).length + ' vs ' + cases[i].match(/\<input\s/g).length + ') <textarea rows="8" cols="80">' + cases[i] + '</textarea>');
+					errors['misc'].push('Number of inputs dont match (' + cases[i].match(/\tresult\s\+\=\s\"\<[\<\>br\/]+\>([^\:\<]*)[^\n]*\<input[^\>]+value\=\\\"([^\"]+)\"/g).length + ' vs ' + cases[i].match(/\<input\s/g).length + ') <textarea rows="8" cols="80">' + cases[i] + '</textarea>');
 				}
 				var tmp_pieces = tmp_xee[2].split(" ");
+				if (convert_iata(tmp_pieces[0]) == null && tmp_pieces[0].trim().length != 0) {
+					if (tmp_pieces[0].trim().length != 0) {
+						errors['misc'].push('Unknown Origin: "' + tmp_pieces[0] + '": "' + tmp_xee[2] + '"');
+					}
+				} else {
+					if (convert_iata(tmp_pieces[0]).localeCompare(dptr) != 0) {
+						errors['misc'].push("Check city pair (" + tmp_pieces[0] + " || " + dptr + "): " + tmp_xee[2]);
+					}
+				}
+				if (convert_iata(tmp_pieces[tmp_pieces.length - 1]) == null) {
+					if (tmp_pieces[tmp_pieces.length - 1].trim().length != 0) {
+						errors['misc'].push('Unknown Destination "' + tmp_pieces[tmp_pieces.length - 1] + '": "' + tmp_xee[2] + '"');
+					}
+				} else {
+					if (convert_iata(tmp_pieces[tmp_pieces.length - 1]).localeCompare(dest) != 0) {
+						errors['misc'].push("Check city pair (" + tmp_pieces[tmp_pieces.length - 1] + " || " + dest + "): " + tmp_xee[2]);
+					}
+				}
 				var super_tmp_obj = {};
 				for (let j = 0; j < tmp_pieces.length; j++) {
+					if (/\d/.test(tmp_pieces[j])) {
+						// token contains number
+
+						// TODO check SID/STAR number
+
+					} else {
+						// token does not contain number
+						var tmp_token_length = tmp_pieces[j].trim().length;
+						if (tmp_token_length != 0 && tmp_token_length != 3 && tmp_token_length != 5) {
+							if (tmp_token_length != 4 || convert_iata(tmp_pieces[j]) == null) {
+								errors['misc'].push('Unknown token type: "' + tmp_pieces[j] + '"' + " || " + tmp_xee[2]);
+							}
+						}
+					}
 					if (tmp_pieces[j].trim().length == 0) {
-						errors.push('Blank space in Route String: "' + tmp_xee[2] + '"');
+						errors['misc'].push('Blank space in Route String: "' + tmp_xee[2] + '"');
 					} else {
 						if (super_tmp_obj[tmp_pieces[j]] != null) {
-							errors.push('Repeated Token "' + tmp_pieces[j] + '": "' +
-										((tmp_pieces[j].localeCompare(tmp_pieces[j - 2]) != 0) ?
-										 	tmp_xee[2] :
-										 	tmp_xee[2].replace((tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1]),
-																('<span style="color:red">' + tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1] + "</span>")
-											)
-										) +
-										((tmp_pieces[j].localeCompare(tmp_pieces[j - 2]) != 0) ?
-										 	"" :
-										 	('<br/><b>Suggested Route: "' + tmp_xee[2].replace((tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1]),
-											('<span style="color:orange">' + tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j + 1] + "</span>")) +
-											'"</b>'))
-							);
+							// J86 is a shortcut for part of J2
+							// BYP-ABI is a shortcut in J66
+							if (!tmp_xee[2].includes(" J2 JCT J86 IAH J2 ") &&
+								!tmp_xee[2].includes(" J2 FST J86 IAH J2 ") &&
+								!tmp_xee[2].includes(" J66 BYP ABI J66 ") &&
+								!tmp_xee[2].includes(" J60 DJB CPONE JOT J60 ")
+													)) {
+								// Check for duplicate airways
+								// Highlight unnecessary estensions and provide suggestions
+								errors['repeated_token' + ((tmp_xee[0].includes('cdr_input')) ? '_cdr' : '')].push('Repeated Token "' + tmp_pieces[j] + '": "' +
+											((tmp_pieces[j].localeCompare(tmp_pieces[j - 2]) != 0) ?
+											 	tmp_xee[2] :
+											 	tmp_xee[2].replace((tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1]),
+																	('<span style="color:red">' + tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1] + "</span>")
+												)
+											) + '"' +
+											((tmp_pieces[j].localeCompare(tmp_pieces[j - 2]) != 0) ?
+											 	"" :
+											 	('<br/><b>Suggested Route: "' + tmp_xee[2].replace((tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1]),
+												('<span style="color:orange">' + tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j + 1] + "</span>")) +
+												'"</b>'))
+								);
+							}
 						} else { super_tmp_obj[tmp_pieces[j]] = 1; }
-						if (convert_iata(tmp_pieces[0]) == null) {
-							errors.push('Unknown Origin: "' + tmp_pieces[0] + '": "' + tmp_xee[2] + '"');
-						} else {
-							if (convert_iata(tmp_pieces[0]).localeCompare(dptr) != 0) {
-								errors.push("Check city pair (" + tmp_pieces[0] + " || " + dptr + "): " + tmp_xee[2]);
-							}
-						}
-						if (convert_iata(tmp_pieces[tmp_pieces.length - 1]) == null) {
-							errors.push('Unknown Destination "' + tmp_pieces[tmp_pieces.length - 1] + '": "' + tmp_xee[2] + '"');
-						} else {
-							if (convert_iata(tmp_pieces[tmp_pieces.length - 1]).localeCompare(dest) != 0) {
-								errors.push("Check city pair (" + tmp_pieces[tmp_pieces.length - 1] + " || " + dest + "): " + tmp_xee[2]);
-							}
-						}
 					}
 				}
 			}
@@ -1313,9 +1346,64 @@ function check_page_for_errors (text = "") {
 	}
 
 	result = "TODO sort city pairs by date completed";
-	
-	return '<br/><textarea rows="8" cols="80">' + result + '</textarea>' +
-		((errors.length == 0) ? "No Errors" : errors.join("<br/><br/>"));
+
+	var error_str = "<br/>";
+	/*
+	* 'misc'
+	* 'repeated_token'
+	* 'repeated_token_cdr'
+	*/
+	if (errors['misc'].length > 0) {
+		error_str += "<br/>" + errors['misc'].join("<br/>") + "<br/>";
+	}
+	if (errors['repeated_token'].length > 0) {
+		error_str += "<br/><b>Token Errors:</b><br/>" + errors['repeated_token'].join("<br/>") + "<br/>";
+	}
+	if (errors['repeated_token_cdr'].length > 0) {
+		error_str += "<br/><b>CDR Token Errors:</b><br/>" + errors['repeated_token_cdr'].join("<br/>") + "<br/>";
+	}
+	return '<br/><textarea rows="8" cols="50">' + result + '</textarea><br/>' + ((error_str.length == 0) ? "<br/>No Errors" : error_str);
+}
+
+function remove_common_cdr_redundancies(result = "") {
+	// J routes
+	result = result.replaceAll("TUS J2 ELP J2 FST", "TUS J2 FST"); // J2
+	result = result.replaceAll("CRUSR J6 PNH J6 EED", "CRUSR J6 EED"); // J6
+	result = result.replaceAll("CRUSR J6 PNH J6 DRK J6 HEC", "CRUSR J6 HEC"); // J6
+	result = result.replaceAll("VUZ J14 DWINE J14 PNH", "VUZ J14 PNH"); // J14
+	result = result.replaceAll("SJN J18 GCK J18 MZV", "SJN J18 MZV"); // J18
+	result = result.replaceAll("FTI J18 GCK J18 MZV", "FTI J18 MZV"); // J18
+	result = result.replaceAll("SLN J24 MCI J24 STL", "SLN J24 STL"); // J24
+	result = result.replaceAll("JOT J30 APE J30 LUISE", "JOT J30 LUISE"); // J30
+	result = result.replaceAll("RWF J34 BAE J34 DJB", "RWF J34 DJB"); // J34
+	result = result.replaceAll("RWF J34 BAE J34 CRL", "RWF J34 CRL"); // J34
+	result = result.replaceAll("GBN J50 SSO J50 ACT", "GBN J50 ACT"); // J50
+	result = result.replaceAll("BLH J50 GBN J50 SSO", "BLH J50 SSO"); // J50
+	result = result.replaceAll("BLH J65 PMD J65 LANDO", "BLH J65 LANDO"); // J65
+	result = result.replaceAll(" J66 ABI J4 FUZ ", " J66 FUZ "); // J66
+	result = result.replaceAll("BAE J70 GEP J70 ABR", "BAE J70 ABR"); // J70
+	result = result.replaceAll("BAE J70 GEP J70 MLP", "BAE J70 MLP"); // J70
+	result = result.replaceAll("ABQ J72 TXO J72 SPS", "ABQ J72 SPS"); // J72
+	result = result.replaceAll("FAM J78 PNH J78 PKE", "FAM J78 PKE"); // J78
+	result = result.replaceAll("FAM J78 PXV J78 IIU", "FAM J78 IIU"); // J78
+	result = result.replaceAll("PKE J78 DRK J78 ABQ", "PKE J78 ABQ"); // J78
+	result = result.replaceAll("MCI J80 SPI J80 VHP", "MCI J80 VHP"); // J80
+	result = result.replaceAll("DBQ J94 OBK J94 FNT", "DBQ J94 FNT"); // J94
+	result = result.replaceAll("DBQ J94 OBK J94 PMM", "DBQ J94 PMM"); // J94
+	result = result.replaceAll("AIR J110 STL J110 RSK", "AIR J110 RSK"); // J110
+	result = result.replaceAll("HBU J146 GLD J146 LNK", "HBU J146 LNK"); // J146
+	result = result.replaceAll("ONL J151 RAP J151 BIL", "ONL J151 BIL"); // J151
+	result = result.replaceAll("GIJ J554 CRL J554 JHW", "GIJ J554 JHW"); // J554
+
+	// Q routes
+	result = result.replaceAll("TWOUP Q22 RBV Q22 LLUND", "TWOUP Q22 LLUND"); // Q22
+	result = result.replaceAll("SJI Q56 CATLN Q56 KELLN", "SJI Q56 KELLN"); // Q56
+	result = result.replaceAll("SJI Q56 CATLN Q56 KIWII", "SJI Q56 KIWII"); // Q56
+	result = result.replaceAll("GSO Q75 SLOJO Q75 TEEEM", "GSO Q75 TEEEM"); // Q75
+	result = result.replaceAll("BLAAN Q99 POLYY Q99 OGRAE", "BLAAN Q99 OGRAE"); // Q99
+	result = result.replaceAll("KPASA Q99 CAMJO Q99 OGRAE", "KPASA Q99 OGRAE"); // Q99
+	result = result.replaceAll("KPASA Q99 CAMJO Q99 BLAAN", "KPASA Q99 BLAAN"); // Q99
+	result = result.replaceAll("KONGO Q145 HVQ Q145 FOXEE", "KONGO Q145 FOXEE"); // Q145
 }
 
 function add_sids_and_stars_to_cdrs (result = "") {
