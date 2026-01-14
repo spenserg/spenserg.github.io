@@ -217,7 +217,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "CLT": // MIA-CLT // Updated 05-10-2025 // Mandatory Routes checked
 			result += "<!-- Updated 05-10-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 VIYAP DCT CHECR STOCR4 KCLT\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KMIA ALTNN2 DUCEN Q87 VIYAP CHECR STOCR4 KCLT\" readonly>";
 			result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 CAMJO TWINS PONZE BANKR5 KCLT\" readonly>"; // CDR H2
 			result += "<br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 PITRW STOCR4 KCLT\" readonly>"; // CDR Z0
 			result += "<br/><br/><b>Non RNAV</b>";
