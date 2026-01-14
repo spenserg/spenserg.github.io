@@ -1264,81 +1264,94 @@ check_page_for_errors = function (text = "") {
 				dptr = tmp_xdd[2];
 				dest = tmp_xdd[1];
 			} else if (!cases[i].includes("return result;") &&
-					   cases[i].trim().localeCompare("}") != 0 &&
-					   cases[i].trim().localeCompare("arvl, tail, ac_type, result") != 0 &&
-					   // cases[i].trim().localeCompare("/*") != 0 &&
+					   !cases[i].trim().localeCompare("}") != 0 &&
+					   !cases[i].trim().localeCompare("arvl, tail, ac_type, result") != 0 &&
 					   !(/\/\/\s*[A-Z]{3}\sskipped/g.test(cases[i].trim()))
 			) {
 				errors['misc'].push('Problem with first line: "' + cases[i] + '"');
 			}
 			regee = /\tresult\s\+\=\s\"\<[\<\>br\/]+\>([^\:\<]*)[^\n]*\<input[^\>]+value\=\\\"([^\"]+)\\\"/g;
 			while ((tmp_xee = regee.exec(cases[i])) !== null) {
-				if (cases[i].match(/result\s\+\=\s\"\<[\<\>br\/]+\>([^\:\<]*)[^\n]*\<input[^\>]+value\=\\\"([^\"]+)\"/g).length != cases[i].match(/\<input\s/g).length) {
-					errors['misc'].push('Number of inputs dont match (' + cases[i].match(/\tresult\s\+\=\s\"\<[\<\>br\/]+\>([^\:\<]*)[^\n]*\<input[^\>]+value\=\\\"([^\"]+)\"/g).length + ' vs ' + cases[i].match(/\<input\s/g).length + ') <textarea rows="8" cols="80">' + cases[i] + '</textarea>');
-				}
-				var tmp_pieces = tmp_xee[2].split(" ");
-				if (convert_iata(tmp_pieces[0]) == null && tmp_pieces[0].trim().length != 0) {
-					if (tmp_pieces[0].trim().length != 0) {
-						errors['misc'].push('Unknown Origin: "' + tmp_pieces[0] + '": "' + tmp_xee[2] + '"');
+				if (tmp_xee[2].substring(0, 4) != "KTUL" || tmp_xee[2].substring(tmp_xee[2].length - 4) != "KTUL") { // Ignore TUL-TUL flights
+					if (cases[i].match(/result\s\+\=\s\"\<[\<\>br\/]+\>([^\:\<]*)[^\n]*\<input[^\>]+value\=\\\"([^\"]+)\"/g).length != cases[i].match(/\<input\s/g).length) {
+						errors['misc'].push('Number of inputs dont match (' + cases[i].match(/\tresult\s\+\=\s\"\<[\<\>br\/]+\>([^\:\<]*)[^\n]*\<input[^\>]+value\=\\\"([^\"]+)\"/g).length + ' vs ' + cases[i].match(/\<input\s/g).length + ') <textarea rows="8" cols="80">' + cases[i] + '</textarea>');
 					}
-				} else {
-					if (convert_iata(tmp_pieces[0]).localeCompare(dptr) != 0) {
-						errors['misc'].push("Check city pair (" + tmp_pieces[0] + " || " + dptr + "): " + tmp_xee[2]);
-					}
-				}
-				if (convert_iata(tmp_pieces[tmp_pieces.length - 1]) == null) {
-					if (tmp_pieces[tmp_pieces.length - 1].trim().length != 0) {
-						errors['misc'].push('Unknown Destination "' + tmp_pieces[tmp_pieces.length - 1] + '": "' + tmp_xee[2] + '"');
-					}
-				} else {
-					if (convert_iata(tmp_pieces[tmp_pieces.length - 1]).localeCompare(dest) != 0) {
-						errors['misc'].push("Check city pair (" + tmp_pieces[tmp_pieces.length - 1] + " || " + dest + "): " + tmp_xee[2]);
-					}
-				}
-				var super_tmp_obj = {};
-				for (let j = 0; j < tmp_pieces.length; j++) {
-					if (/\d/.test(tmp_pieces[j])) {
-						// token contains number
-
-						// TODO check SID/STAR number
-
+					var tmp_pieces = tmp_xee[2].split(" ");
+					if (convert_iata(tmp_pieces[0]) == null && tmp_pieces[0].trim().length != 0) {
+						if (tmp_pieces[0].trim().length != 0) {
+							errors['misc'].push('Unknown Origin: "' + tmp_pieces[0] + '": "' + tmp_xee[2] + '"');
+						}
 					} else {
-						// token does not contain number
-						var tmp_token_length = tmp_pieces[j].trim().length;
-						if (tmp_token_length != 0 && tmp_token_length != 3 && tmp_token_length != 5) {
-							if (tmp_token_length != 4 || convert_iata(tmp_pieces[j]) == null) {
-								errors['misc'].push('Unknown token type: "' + tmp_pieces[j] + '"' + " || " + tmp_xee[2]);
-							}
+						if (convert_iata(tmp_pieces[0]).localeCompare(dptr) != 0) {
+							errors['misc'].push("Check city pair (" + tmp_pieces[0] + " || " + dptr + "): " + tmp_xee[2]);
 						}
 					}
-					if (tmp_pieces[j].trim().length == 0) {
-						errors['misc'].push('Blank space in Route String: "' + tmp_xee[2] + '"');
+					if (convert_iata(tmp_pieces[tmp_pieces.length - 1]) == null) {
+						if (tmp_pieces[tmp_pieces.length - 1].trim().length != 0) {
+							errors['misc'].push('Unknown Destination "' + tmp_pieces[tmp_pieces.length - 1] + '": "' + tmp_xee[2] + '"');
+						}
 					} else {
-						if (super_tmp_obj[tmp_pieces[j]] != null) {
-							// J86 is a shortcut for part of J2
-							// BYP-ABI is a shortcut in J66
-							if (!tmp_xee[2].includes(" J2 JCT J86 IAH J2 ") &&
-								!tmp_xee[2].includes(" J2 FST J86 IAH J2 ") &&
-								!tmp_xee[2].includes(" J66 BYP ABI J66 ") &&
-								!tmp_xee[2].includes(" J60 DJB CPONE JOT J60 ")
-							) {
-								// Check for duplicate airways
-								// Highlight unnecessary estensions and provide suggestions
-								errors['repeated_token' + ((tmp_xee[0].includes('cdr_input')) ? '_cdr' : '')].push('Repeated Token "' + tmp_pieces[j] + '": "' +
-											((tmp_pieces[j].localeCompare(tmp_pieces[j - 2]) != 0) ?
-											 	tmp_xee[2] :
-											 	tmp_xee[2].replace((tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1]),
-																	('<span style="color:red">' + tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1] + "</span>")
-												)
-											) + '"' +
-											((tmp_pieces[j].localeCompare(tmp_pieces[j - 2]) != 0) ?
-											 	"" :
-											 	('<br/><b>Suggested Route: "' + tmp_xee[2].replace((tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1]),
-												('<span style="color:orange">' + tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j + 1] + "</span>")) +
-												'"</b>'))
-								);
+						if (convert_iata(tmp_pieces[tmp_pieces.length - 1]).localeCompare(dest) != 0) {
+							errors['misc'].push("Check city pair (" + tmp_pieces[tmp_pieces.length - 1] + " || " + dest + "): " + tmp_xee[2]);
+						}
+					}
+					var super_tmp_obj = {};
+					for (let j = 0; j < tmp_pieces.length; j++) {
+						if (/\d/.test(tmp_pieces[j])) {
+							// token contains number
+	
+							// TODO check SID/STAR number
+	
+						} else {
+							// token does not contain number
+							var tmp_token_length = tmp_pieces[j].trim().length;
+							if (tmp_token_length != 0 && tmp_token_length != 3 && tmp_token_length != 5) {
+								if (tmp_token_length != 4 || convert_iata(tmp_pieces[j]) == null) {
+									errors['misc'].push('Unknown token type: "' + tmp_pieces[j] + '"' + " || " + tmp_xee[2]);
+								}
 							}
-						} else { super_tmp_obj[tmp_pieces[j]] = 1; }
+						}
+						if (tmp_pieces[j].trim().length == 0) {
+							errors['misc'].push('Blank space in Route String: "' + tmp_xee[2] + '"');
+						} else {
+							if (super_tmp_obj[tmp_pieces[j]] != null) {
+								var skip_error = false;
+								if (tmp_pieces[j] == "J60") {
+									if (tmp_xee[2].includes(" J60 DJB CPONE JOT J60 ")) { skip_error = true; }
+								}
+	
+								if (!skip_error) {
+									if (errors['repeated_token' + ((tmp_xee[0].includes('cdr_input')) ? '_cdr' : '')][tmp_pieces[j]] == null) {
+										errors['repeated_token' + ((tmp_xee[0].includes('cdr_input')) ? '_cdr' : '')][tmp_pieces[j]] = [];
+									}
+	
+									// J86 is a shortcut for part of J2
+									// BYP-ABI is a shortcut in J66
+									/*
+									if (!tmp_xee[2].includes(" J2 JCT J86 IAH J2 ") &&
+										!tmp_xee[2].includes(" J2 FST J86 IAH J2 ") &&
+										!tmp_xee[2].includes(" J66 BYP ABI J66 ") &&
+										!tmp_xee[2].includes(" J60 DJB CPONE JOT J60 ")
+									) {
+									*/
+										// Check for duplicate airways
+										// Highlight unnecessary estensions and provide suggestions
+										errors['repeated_token' + ((tmp_xee[0].includes('cdr_input')) ? '_cdr' : '')][tmp_pieces[j]].push('Repeated Token "' + tmp_pieces[j] + '": "' +
+													((tmp_pieces[j].localeCompare(tmp_pieces[j - 2]) != 0) ?
+													 	tmp_xee[2] :
+													 	tmp_xee[2].replace((tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1]),
+																			('<span style="color:red">' + tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1] + "</span>")
+														)
+													) + '"' +
+													((tmp_pieces[j].localeCompare(tmp_pieces[j - 2]) != 0) ?
+													 	"" :
+													 	('<br/><b>Suggested Route: "' + tmp_xee[2].replace((tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j - 1] + " " + tmp_pieces[j] + " " + tmp_pieces[j + 1]),
+														('<span style="color:orange">' + tmp_pieces[j - 3] + " " + tmp_pieces[j - 2] + " " + tmp_pieces[j + 1] + "</span>")) +
+														'"</b>'))
+										);
+								}
+							} else { super_tmp_obj[tmp_pieces[j]] = 1; }
+						}
 					}
 				}
 			}
@@ -1356,13 +1369,27 @@ check_page_for_errors = function (text = "") {
 	if (errors['misc'].length > 0) {
 		error_str += "<br/>" + errors['misc'].join("<br/>") + "<br/>";
 	}
-	if (errors['repeated_token'].length > 0) {
-		error_str += "<br/><b>Token Errors:</b><br/>" + errors['repeated_token'].join("<br/>") + "<br/>";
+
+	var tmp_title = false;
+	for (var airway in errors['repeated_token']) {
+		if (!tmp_title) {
+			tmp_title = true;
+			error_str += "<br/><b>Token Errors:</b><br/>";
+		}
+		// Key is k, value is array[k]
+		error_str += errors['repeated_token'][airway].join("<br/>") + "<br/><br/>";
 	}
-	if (errors['repeated_token_cdr'].length > 0) {
-		error_str += "<br/><b>CDR Token Errors:</b><br/>" + errors['repeated_token_cdr'].join("<br/>") + "<br/>";
+
+	tmp_title = false;
+	for (var airway in errors['repeated_token_cdr']) {
+		if (!tmp_title) {
+			tmp_title = true;
+			error_str += "<br/><br/><b>CDR Token Errors:</b><br/>";
+		}
+		// Key is k, value is array[k]
+		error_str += errors['repeated_token_cdr'][airway].join("<br/>") + "<br/><br/>";
 	}
-	return '<br/><textarea rows="8" cols="50">' + result + '</textarea><br/>' + ((error_str.length == 0) ? "<br/>No Errors" : error_str);
+	return '<br/><br/><textarea rows="8" cols="50">' + result + '</textarea>' + ((error_str.length == 0) ? "<br/><br/>No Errors" : error_str);
 }
 
 function remove_common_cdr_redundancies(result = "") {
