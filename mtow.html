@@ -1313,6 +1313,8 @@ check_page_for_errors = function (text = "") {
 						}
 						if (tmp_pieces[j].trim().length == 0) {
 							errors['misc'].push('Blank space in Route String: "' + tmp_xee[2] + '"');
+						} else if (tmp_pieces[j] == "DCT") {
+							errors['misc'].push('"DCT" in route string: "' + tmp_xee[2] + '"');
 						} else {
 							if (super_tmp_obj[tmp_pieces[j]] != null) {
 								var skip_error = false;
