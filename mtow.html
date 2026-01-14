@@ -1240,7 +1240,7 @@ function get_sid_list(airport = "XXX") {
 	}
 }
 
-check_page_for_errors = function(text = "") {
+check_page_for_errors = function (text = "") {
 	var errors = {'repeated_token':[], 'repeated_token_cdr':[], 'misc':[]};
 	var by_date = [];
 	var result = "";
@@ -1266,9 +1266,9 @@ check_page_for_errors = function(text = "") {
 			} else if (!cases[i].includes("return result;") &&
 					   cases[i].trim().localeCompare("}") != 0 &&
 					   cases[i].trim().localeCompare("arvl, tail, ac_type, result") != 0 &&
-					   cases[i].trim().localeCompare("/*") != 0 &&
+					   // cases[i].trim().localeCompare("/*") != 0 &&
 					   !(/\/\/\s*[A-Z]{3}\sskipped/g.test(cases[i].trim()))
-					) {
+			) {
 				errors['misc'].push('Problem with first line: "' + cases[i] + '"');
 			}
 			regee = /\tresult\s\+\=\s\"\<[\<\>br\/]+\>([^\:\<]*)[^\n]*\<input[^\>]+value\=\\\"([^\"]+)\\\"/g;
@@ -1321,7 +1321,7 @@ check_page_for_errors = function(text = "") {
 								!tmp_xee[2].includes(" J2 FST J86 IAH J2 ") &&
 								!tmp_xee[2].includes(" J66 BYP ABI J66 ") &&
 								!tmp_xee[2].includes(" J60 DJB CPONE JOT J60 ")
-													)) {
+							) {
 								// Check for duplicate airways
 								// Highlight unnecessary estensions and provide suggestions
 								errors['repeated_token' + ((tmp_xee[0].includes('cdr_input')) ? '_cdr' : '')].push('Repeated Token "' + tmp_pieces[j] + '": "' +
