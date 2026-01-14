@@ -1051,6 +1051,7 @@ convert_iata = function (str = null) {
 				case "EDDF": return "FRA";break;
 				case "UCFM": return "FRU";break;
 				case "KFSD": return "FSD";break;
+				case "KFSM": return "FSM";break;
 				case "MWCR": return "GCM";break;
 				case "MMGL": return "GDL";break;
 				case "UHMM": return "GDX";break;
@@ -1537,6 +1538,7 @@ convert_icao = function (str = null) {
 				case "FRA": return "EDDF";break;
 				case "FRU": return "UCFM";break;
 				case "FSD": return "KFSD";break;
+				case "FSM": return "KFSM";break;
 				case "GCM": return "MWCR";break;
 				case "GDL": return "MMGL";break;
 				case "GDX": return "UHMM";break;
