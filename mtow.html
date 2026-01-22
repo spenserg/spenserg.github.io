@@ -267,7 +267,7 @@ function compute (str_override = "") {
 			output += '<span style="color:';
 			if (mlwa <= 2000) {
 				output += 'red';
-			} else if (mlwa <= 4000) {
+			} else if (mlwa < 4000) {
 				output += 'orange';
 			} else {
 				output += 'green';
@@ -300,7 +300,7 @@ function compute (str_override = "") {
 			output += '<span style="color:';
 			if (mlwb <= 2000) {
 				output += 'red';
-			} else if (mlwb <= 5000) {
+			} else if (mlwb < 4000) {
 				output += 'orange';
 			} else {
 				output += 'green';
