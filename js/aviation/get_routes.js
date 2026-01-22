@@ -11659,13 +11659,17 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 					result += "<br/>B0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA BAYPO2 CAMJO Q99 POLYY DADDS Q87 HURTS PROUD2 KLGA\" readonly>";
 					result += "<br/>C0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA CROWD8 CROWD CRMIN MZULO HESTA LENDS GRUBR Y299 SEELO GARIC Q107 HURTS PROUD2 KLGA\" readonly>";
 					break;
-				case "MIA": // TPA-MIA // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KTPA GANDY8 SABEE FROGZ4 KMIA\" readonly>";
-					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KTPA LAL GREAD CSTAL3 KMIA\" readonly>";
+				case "MIA": // TPA-MIA // Updated 01-22-2026
+					result += "<!-- Updated 01-22-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL250):</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KTPA GANDY8 SABEE FROGZ4 KMIA\" readonly>"; // CDR G0
+					result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA CROWD8 CROWD CRMIN DDANY CSTAL3 KMIA\" readonly>"; // CDR C2
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTPA RSW PALMZ2 KMIA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-22-2026
+					result += "<!-- Verified with ATCSCC on 01-22-2026 -->";
+					result += "<br/>C2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA CROWD8 CROWD CRMIN DDANY CSTAL3 KMIA\" readonly>";
+					result += "<br/>G0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KTPA GANDY8 SABEE FROGZ4 KMIA\" readonly>";
 					break;
 				case "MCO": // TPA-MCO // Updated 06-28-2025
 					result += "<!-- Updated 06-28-2025 MP -->"
