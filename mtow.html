@@ -557,6 +557,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		if (z[2] == "KDFW" && z[4].includes("TNV IAH LCH")) { z[7] = "COWBOY EAST 1 (FL230 to LCH)"; }
 		if (z[2] == "KDFW" && z[4].includes("HOARY JCT FST")) { z[7] = "COWBOY WEST 1 (FL220 ti JCT)"; }
 		if (z[2] == "KDFW" && z[4].includes("HOARY SAT DLF FST")) { z[7] = "COWBOY WEST 2 (FL220 to SAT)"; }
+		// if (z[2] == "KDFW" && z[4].includes("KDFW NELYN6 SAT FST")) { z[7] = "COWBOY WEST 2 (FL220 to SAT)"; }
 
 		// Shorten CDR names
 		z[7] = z[7].replace("DOMESTIC HARP", "DOM HARP");
