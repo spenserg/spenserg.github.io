@@ -300,20 +300,20 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>2S (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 GEP BRNRD FAR DPR BFF DVV KCOS\" readonly>";
 			result += "<br/>4N (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN DNIKA TAAYZ PETTY GRB GEP BRNRD FAR DPR BFF DVV KCOS\" readonly>";
 			break;
-		case "CVG": // ORD-CVG // Updated 10-22-2025
-			result += "<!-- Updated 10-22-2025 P -->";
+		case "CVG": // ORD-CVG // Updated 01-23-2026
+			result += "<!-- Updated 01-23-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL250):</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD EARND ELANR CEGRM7 KCVG\" readonly>";
-			result += "<br/></br>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI DAAVE SARGO4 KCVG\" readonly>"; // CDR 6S
-			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME SEWTO FWA ZEKUS ARBAS RID MEEKR KCVG\" readonly>"; // CDR 1E
+			result += "<br/><input style=\"width:75%\"; value=\"KORD EARND ELANR CEGRM8 KCVG\" readonly>";
+			result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME SEWTO FWA ZEKUS ARBAS RID MEEKR KCVG\" readonly>"; // CDR 1E
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI DAAVE SARGO5 KCVG\" readonly>"; // CDR 6S
 			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD EON LCOLN VHP KCVG\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-25-2025
-			result += "<!-- Verified with ATCSCC on 08-25-2025 -->";
-			result += "<br/>0S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR CEGRM7 KCVG\" readonly>";
+			result += "<br/><input style=\"width:75%\"; value=\"KORD EON BVT VHP CEGRM KCVG\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-23-2026
+			result += "<!-- Verified with ATCSCC on 01-23-2026 -->";
+			result += "<br/>0S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR CEGRM8 KCVG\" readonly>";
 			result += "<br/>1E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME SEWTO FWA ZEKUS ARBAS RID MEEKR KCVG\" readonly>";
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB VIO SVM DJB SAVVI TIGRR4 KCVG\" readonly>";
-			result += "<br/>6S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI DAAVE SARGO4 KCVG\" readonly>";
+			result += "<br/>6S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI DAAVE SARGO5 KCVG\" readonly>";
 			result += "<br/>NR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EON BVT MACES CRYME ARIVR CEGRM KCVG\" readonly>";
 			break;
 		case "DAY": // ORD-DAY // Updated 11-14-2025
