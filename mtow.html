@@ -178,6 +178,9 @@ function compute (str_override = "") {
 
 	// get_routes OR xxx_departures
 	regr = /case \"([A-Z]{3})\"\:[^\n]+Updated\s*([\d\-]{10})/g;
+
+	// dex all list
+	regq = /[^\n]+[idce]ae\n[^\-]+ \- \([A-Za-z\d\,\s]+\) \[[^\]]\]/g;
 	
 	var testing = false;
 	var land_wgt_limited = false;
@@ -233,6 +236,12 @@ function compute (str_override = "") {
 			$("#total").html(check_page_for_errors(fkeystxt));
 			return;
 		}
+	}
+
+	// dex all list
+	if (regq.exec(fkeystxt) != null && debug) {
+		$("#total").html(dex_parse(fkeystxt));
+		return;
 	}
 
 	if ((result = regz.exec(fkeystxt)) != null) {
@@ -1839,6 +1848,98 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("CYYZ NUGOP", ""); // TODO
 	result = result.replaceAll("CYYZ TULEK", ""); // TODO
 */
+	return result;
+}
+
+dex_parse = function(fkeys_text = "") {
+	var result = "";
+	var result2 = "";
+	var spec_info = [];
+	var errors = [];
+	var families = fkeys_text.split("\n\n");
+	for (let i = 0; i < families.length; i++) {
+		var cur_family = families[i].split("\n").shift();
+		if (!cur_family.includes("ceae") && !cur_family.includes("idae")) {
+			errors.push('Uncommon Family Name Suffix: "' + cur_family + '"');
+		}
+		families[i] = families[i].replace(cur_family + "\n", "");
+		var fam_text = families[i].split("\n");
+		var cur_species = "";
+
+// console.log(fam_text);
+		
+		for (let j = 0; j < fam_text.length; j++) {
+			if (!(/[\(\)\[\]]/.test(fam_text[j]))) {
+				if (!(/\t/.test(fam_text[j]))) {
+					cur_species = fam_text[j].trim();
+				} else { errors.push('Tab before Family: "' + fam_text[j] + '"'); }
+			} else {
+				var tmp_spec_reg = /([^\(\n]+) \- \(([^\)]+)\) \[([^\]])*\] ([^\n]*)/g;
+				k = tmp_spec_reg.exec(fam_text[j]);
+
+// console.log(k);
+				
+				if (cur_species == "" || !(/\t[^\t]*\s\-\s\(/.test(k[0]))) {
+					// No tab at front // new species
+					cur_species = k[1].trim();
+				}
+				var cur_spec_pieces = cur_species.split(" ");
+
+				var cur_country = "US";
+				var cur_state = "";
+				var cur_location = "";
+				if ((/\{([A-Z]+)\}/.test(k[4]))) {
+					cur_country = (/\{([A-Z]+)\}/.exec(fam_text[j]))[1];
+					cur_state = "--";
+					cur_location = k[4].replace(" {" + cur_country + "}", "");
+				} else {
+					// US location
+					var tmp_loc_pieces = k[4].split(", ");
+					cur_state = tmp_loc_pieces.pop().trim();
+					cur_location = tmp_loc_pieces.join(", ");
+				}
+
+				var tmp_info_pieces = k[1].split(",");
+/*
+console.log(cur_species);
+console.log(cur_spec_pieces);
+console.log(tmp_info_pieces);
+console.log(k[1]);
+*/
+				
+				for (let m = 0; m < tmp_info_pieces.length; m++) {
+					var tmp_date = new Date(k[2].replaceAll("Sept ", "September "));
+					spec_info.push([
+						cur_spec_pieces[0], // genus
+						cur_spec_pieces[1], // species
+						cur_family,         // family
+						((cur_species.trim().localeCompare(k[1].trim()) != 0) ? tmp_info_pieces[m].trim() : "--"), // suffix
+						tmp_date.toDateString(), // date
+						k[3],               // is_wild
+						cur_location,       // location
+						cur_state,          // state
+						cur_country         // country
+					]);
+					result += "\n" + cur_spec_pieces[0] + "\t" + cur_spec_pieces[1] + "\t" + cur_family + "\t" +
+						((cur_species.trim().localeCompare(k[1].trim()) != 0) ? tmp_info_pieces[m].trim() : "--") + "\t" +
+						tmp_date.toDateString() + "\t" +  tmp_date.toISOString().substring(0, 10) + // tmp_date.getFullYear() + tmp_date.getMonth() + tmp_date.getDate() + 
+						"\t" + k[3] + "\t" + cur_location + "\t" + cur_state + "\t" + cur_country;
+					result2 += "\n" + cur_spec_pieces[0] + " " + cur_spec_pieces[1] + "\t" + tmp_date.toISOString().substring(0, 10) + "\t" +
+						k[3] + "\t" + cur_location + "\t" + cur_state;
+				}
+			}
+		}
+	}
+
+	/*
+	tmp_regq = //g;
+	while (null != (z = tmp_regq.exec(input)) ) {
+		
+	}
+	*/
+
+	result = '<br/><textarea rows="8" cols="80">' + result2 + '</textarea><br/><br/>';
+	// result = '<br/><textarea rows="8" cols="80">' + result + '</textarea><br/><br/>';
 	return result;
 }
 
