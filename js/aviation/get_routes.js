@@ -1869,6 +1869,7 @@ KBOS SSOXS7 SSOXS Q167 RIFLE HEADI Q97 SAWED GUILD Q409 MRPIT CEELY Q172 YUTEE I
 					result += "<br/></br>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBUF WOZEE NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>"; // CDR N2
 					result += "<br/><b>If you file above route, verify ok on max land wgt for KBUF NOSIK ZOHAN OBSTR WYNDE3 KORD<\/b>";
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBUF JHW DJB WEEVR Q62 WATSN WATSN4 KORD\" readonly>"; // CDR S1
+					result += "<br/><br/>LAKE ERIE WEST<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBUF DAVVK FARGN CHAAP Q436 KAYYS WYNDE3 KORD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-01-2025
 					result += "<!-- Verified with ATCSCC on 11-01-2025 -->";
@@ -10251,6 +10252,20 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 					result += "<br/>North: <input style=\"width:75%\" value=\"KROC ROC WOZEE CRL FWA ENL FSM RRNET SEEVR4 KDFW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>";
+					break;
+				case "ORD": // ROC-ORD // Updated 01-25-2026
+					result += "<!-- Updated 01-25-2026 P -->";
+					result += "<br/><input style=\"width:75%\" value=\"KROC AIRCO DERLO Q822 FNT WYNDE3 KORD\" readonly>"; // CDR P1
+					result += "<br/></br>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KROC BURST JHW DJB WEEVR Q62 WATSN WATSN4 KORD\" readonly>"; // CDR S1
+					result += "<br/></br>LAKE ERIE WEST<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KROC BURST RAAKK Q436 KAYYS WYNDE3 KORD\" readonly>"; // CDR W1
+					result += "<br/>ORD PAITN WATSN<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KROC AIRCO DERLO Q935 HOCKE GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-25-2026
+					result += "<!-- Verified with ATCSCC on 01-25-2026 -->";
+					result += "<br/>N1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KROC AIRCO DERLO Q935 HOCKE GRB SHIKY FYTTE7 KORD\" readonly>"; // ORD PAITN WATSN
+					result += "<br/>N2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KROC AIRCO WOZEE NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KROC AIRCO DERLO Q822 FNT WYNDE3 KORD\" readonly>";
+					result += "<br/>S1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KROC BURST JHW DJB WEEVR Q62 WATSN WATSN4 KORD\" readonly>";
+					result += "<br/>W1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KROC BURST RAAKK Q436 KAYYS WYNDE3 KORD\" readonly>";
 					break;
 			}
 		break; // End of ROC
