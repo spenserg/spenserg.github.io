@@ -1861,6 +1861,10 @@ convert_icao = function (str = null) {
 	return null;
 }
 
+is_atwelve = function (apt = "") {
+	return ["SKBQ","MZBZ","TXKF","CYYC","MUCM","MMUN","SKCG","MHPR","MMCZ","CYEG","MYEF","MYGF","CYQX","CYYR","MWCR","MMGL","MGGT","CYHZ","MUHA","MDPC","MUHG","MKJP","MMLO","MRLB","MDLR","MNMG","MMZO","MMMZ","MMMD","MMMX","MMCU","MMDO","MMHO","MMMM","MMSP","MKJS","MMMY","CYUL","MYNN","MMOX","MPTO","MTPP","MBPV","MDPP","MMPR","MMQT","MHRO","MROC","MMSD","TJSJ","MHLM","MSLP","MUSC","MDST","MUCU","MDSD","CYYT","TIST","CYJT","MMTL","CYYZ","CYVR","MUVR","MMZH","MMBT"].includes(convert_iata(apt));
+}
+
 get_star_array = function(text = "") {
 	// copy paste entire XXX_departures.js page or get_routes.js and this will look for any discrepancies 
 	var result = {};
