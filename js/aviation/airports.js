@@ -19,6 +19,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
 	flows = ((Object.keys(flows).length == 0) ? {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"ELP":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0} : flows);
 
+	// A012
+	if (is_atwelve(arvl)) { result += "<br/><b>" + arvl + " is an A012 Airport<\/b>"; }
+	
 	// Weather Cameras
 	var tmp_cams = get_weather_cams(arvl);
 	if (tmp_cams.length > 0) {
@@ -1862,7 +1865,7 @@ convert_icao = function (str = null) {
 }
 
 is_atwelve = function (apt = "") {
-	return ["SKBQ","MZBZ","TXKF","CYYC","MUCM","MMUN","SKCG","MHPR","MMCZ","CYEG","MYEF","MYGF","CYQX","CYYR","MWCR","MMGL","MGGT","CYHZ","MUHA","MDPC","MUHG","MKJP","MMLO","MRLB","MDLR","MNMG","MMZO","MMMZ","MMMD","MMMX","MMCU","MMDO","MMHO","MMMM","MMSP","MKJS","MMMY","CYUL","MYNN","MMOX","MPTO","MTPP","MBPV","MDPP","MMPR","MMQT","MHRO","MROC","MMSD","TJSJ","MHLM","MSLP","MUSC","MDST","MUCU","MDSD","CYYT","TIST","CYJT","MMTL","CYYZ","CYVR","MUVR","MMZH","MMBT"].includes(convert_iata(apt));
+	return ["SKBQ","MZBZ","TXKF","CYYC","MUCM","MMUN","SKCG","MHPR","MMCZ","CYEG","MYEF","MYGF","CYQX","CYYR","MWCR","MMGL","MGGT","CYHZ","MUHA","MDPC","MUHG","MKJP","MMLO","MRLB","MDLR","MNMG","MMZO","MMMZ","MMMD","MMMX","MMCU","MMDO","MMHO","MMMM","MMSP","MKJS","MMMY","CYUL","MYNN","MMOX","MPTO","MTPP","MBPV","MDPP","MMPR","MMQT","MHRO","MROC","MMSD","TJSJ","MHLM","MSLP","MUSC","MDST","MUCU","MDSD","CYYT","TIST","CYJT","MMTL","CYYZ","CYVR","MUVR","MMZH","MMBT"].includes(convert_icao(apt));
 }
 
 get_star_array = function(text = "") {
