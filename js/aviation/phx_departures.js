@@ -621,7 +621,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "MSP": // PHX-MSP // Updated 01-28-2026
 			result += "<!-- Updated 01-28-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 01-28-2026
-			result += "<br/>NRP: <input style=\"width:75%\" value=\"KPHX FORPE1 ABQ TBE GLD HCT ONL J114 FSD SSWAN KMSP\" readonly>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHX FORPE1 ABQ TBE GLD HCT ONL J114 FSD SSWAN KMSP\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA HBU FQF YANKI J114 FSD SSWAN TORGY3 KMSP\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE EWM J66 ABI ADM TUL J25 DSM RRAZZ NITZR3 KMSP\" readonly>";
 			// result += "<br/><br/>MSP BAINY<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS ONL ROKKK NITZR3 KMSP\" readonly>";
