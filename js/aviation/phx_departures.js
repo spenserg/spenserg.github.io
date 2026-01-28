@@ -618,22 +618,23 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>Non RNAV</b>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-13-2025
 			break;
-		case "MSP": // PHX-MSP // Updated 01-04-2025
-			result += "<!-- Updated 01-04-2025 -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ TBE FSD SSWAN TORGY3 KMSP\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK J10 LBF ONL J114 FSD SSWAN TORGY3 KMSP\" readonly>"; // CDR MR
-			result += "<br/>South: <input style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 FTI TBE LAA GLD OBH FSD SSWAN TORGY3 KMSP\" readonly>"; // CDR ST
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX INW J44 RSK J64 PUB HGO J197 GLD OBH FOD MCW KASPR7 KMSP\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-23-2025
-			result += "<!-- Verified with ATCSCC on 02-23-2025 -->";
-			result += "<br/>BR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO ABQ J18 FTI TBE LAA GLD OBH FSD SSWAN TORGY3 KMSP\" readonly>";
+		case "MSP": // PHX-MSP // Updated 01-28-2026
+			result += "<!-- Updated 01-28-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 01-28-2026
+			result += "<br/>NRP: <input style=\"width:75%\" value=\"KPHX FORPE1 ABQ TBE GLD HCT ONL J114 FSD SSWAN KMSP\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA HBU FQF YANKI J114 FSD SSWAN TORGY3 KMSP\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE EWM J66 ABI ADM TUL J25 DSM RRAZZ NITZR3 KMSP\" readonly>";
+			// result += "<br/><br/>MSP BAINY<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS ONL ROKKK NITZR3 KMSP\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\"; value=\"KPHX INW J44 RSK J64 PUB HGO J197 GLD OBH FOD MCW KASPR7 KMSP\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-28-2026
+			result += "<!-- Verified with ATCSCC on 01-28-2026 -->";
+			result += "<br/>BR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 FTI TBE LAA GLD OBH FSD SSWAN TORGY3 KMSP\" readonly>";
 			result += "<br/>EC<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 ECLPS KATMN SSO J104 FTI TBE LAA GLD OBH FSD SSWAN TORGY3 KMSP\" readonly>";
 			result += "<br/>FR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FORPE1 ABQ J18 FTI TBE LAA GLD OBH FSD SSWAN TORGY3 KMSP\" readonly>";
-			result += "<br/>MB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS ONL ROKKK NITZR3 KMSP\" readonly>";
-			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK J10 LBF ONL J114 FSD SSWAN TORGY3 KMSP\" readonly>";
-			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 JARPA RSK ALS ONL ROKKK NITZR3 KMSP\" readonly>";
+			result += "<br/>MB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK ALS ONL ROKKK NITZR3 KMSP\" readonly>"; // MSP BAINY
+			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK J10 LBF ONL J114 FSD SSWAN TORGY3 KMSP\" readonly>"; // MSP BAINY
+			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 JARPA RSK ALS ONL ROKKK NITZR3 KMSP\" readonly>"; // MSP BAINY
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 FTI TBE LAA GLD OBH FSD SSWAN TORGY3 KMSP\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 FTI TBE LAA GLD OBH FSD SSWAN TORGY3 KMSP\" readonly>";
 			break;
