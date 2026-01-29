@@ -4912,20 +4912,19 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 					result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL SNAPR2 SNAPR HEYDR SEELO OGGRE PITRW STOCR4 KCLT\" readonly>";
 					result += "<br/>X0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL FEALX2 ETECK GRUBR Y299 SEELO OGGRE Y436 PITRW STOCR4 KCLT\" readonly>";
 					break;
-				case "DCA": // FLL-DCA // Updated 06-02-2025 // Mandatory Routes checked
-					result += "<!-- Updated 06-02-2025 MP -->";
+				case "DCA": // FLL-DCA // Updated 01-29-2026
+					result += "<!-- Updated 01-29-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KFLL AGERS1 DUCEN Q87 RAYVO Q113 AARNN WAVES CAPSS3 KDCA\" readonly>"; // CDR A0
-					result += "<br/><br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFLL FEALX2 ETECK GRUBR Y299 SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA\" readonly>"; // CDR X0
-					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFLL HROCK2 KPASA Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>"; // CDR H2
+					result += "<br/><input style=\"width:75%\" value=\"KFLL FEALX2 ETECK GRUBR Y299 SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA\" readonly>"; // CDR X0
+					result += "<br/></br>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFLL AGERS1 DUCEN Q87 RAYVO Q113 AARNN WAVES CAPSS3 KDCA\" readonly>"; // CDR A0
 					result += "<br/><br/>West via HVQ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFLL HROCK2 KPASA Q118 THRSR VXV TONIO HVQ TRUPS5 KDCA\" readonly>";
 					result += "<br/>WATRS<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KFLL FEALX2 ETECK PELCN ROWSY Y494 SILLY LYNUS B24 DASHA ATR LAFLN DEALE3 KDCA\" readonly>";
 					//result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-02-2025
-					result += "<!-- Verified with ATCSCC on 06-02-2025 -->";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-29-2026
+					result += "<!-- Verified with ATCSCC on 01-29-2026 -->";
 					result += "<br/>A0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL AGERS1 DUCEN Q87 RAYVO Q113 AARNN WAVES CAPSS3 KDCA\" readonly>";
 					result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL GLADZ4 SHAQQ KNOST DEANR CAMJO Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
-					result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL HROCK2 KPASA Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
+					result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL HROCK2 KPASA Q99 CAMJO Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
 					result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 OGRAE FUUFF WAVES CAPSS3 KDCA\" readonly>";
 					result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL SNAPR2 SNAPR HEYDR SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA\" readonly>";
 					result += "<br/>X0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KFLL FEALX2 ETECK GRUBR Y299 SEELO GARIC RANAY TANJA WAVES CAPSS3 KDCA\" readonly>";
