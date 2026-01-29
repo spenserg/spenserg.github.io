@@ -7564,18 +7564,18 @@ KMDT ETX SPOTZ Q480 IGN PROVI ROBUC3 KBOS
 					result += "<br/><br/>East: <input style=\"width:75%\" value=\"KMKE LYNNI ERNNY8 KORD\" readonly>";
 					result += "<br/>West: <input style=\"width:75%\" value=\"KMKE ZANDI MADII7 KORD\" readonly>";
 					break;
-				case "PHX": // MKE-PHX // Updated 01-22-2026
-					result += "<!-- Updated 01-22-2026 P -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-22-2026
+				case "PHX": // MKE-PHX // Updated 01-29-2026
+					result += "<!-- Updated 01-29-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-29-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMKE GREAS JAYEX KG75I LNK J146 GLD ALS J102 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMKE GREAS JAYEX MCW J148 ONL YANKI FQF J10 RSK GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS J19 STL Q176 CIM J96 GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS J19 STL Q176 TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>South via IRW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS J19 STL J8 SGF J78 IRW J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS ENL HAKAT Q28 GRAZN FUZ J4 EWM DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMKE DBQ IOW PWE HLC J64 PUB ALS J102 GUP BUNTR3 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-22-2026
-					result += "<!-- Verified with ATCSCC on 01-22-2026 -->";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-29-2026
+					result += "<!-- Verified with ATCSCC on 01-29-2026 -->";
 					result += "<br/>0W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE GREAS JAYEX DBQ IOW PWE HLC J64 RSK FLG DUTEY MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE HAWKN RWF FSD J114 SNY FQF J10 RSK GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS STL SGF IFI DANKS EZEEE FTI BUKKO ZUN EAGUL6 KPHX\" readonly>";
