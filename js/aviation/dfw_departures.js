@@ -1195,16 +1195,17 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-18-2025
 			result += "<!-- Verified with ATCSCC on 04-18-2025 -->";
 			break;
-		case "LBB": // DFW-LBB // Updated 04-18-2025 // Mandatory Routes checked
-			result += "<!-- Updated 04-18-2025 M -->";
+		case "LBB": // DFW-LBB // Updated 01-29-2026
+			result += "<!-- Updated 01-29-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA KLBB\" readonly>"; // CDR 0P
-			result += "<br/><br/>North <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 PNH KLBB\" readonly>"; // CDR 1N
-			result += "<br/>South <span style=\"color:red\">(Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT KLBB\" readonly>"; // CDR 1S
+			result += "<br/></br>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 PNH KLBB\" readonly>"; // CDR 1N
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT KLBB\" readonly>"; // CDR 1S
+			result += "<br/></br>COWBOY WEST (Max FL220)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT KLBB\" readonly>"; // CDR 1S
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 KLBB\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-18-2025
-			result += "<!-- Verified with ATCSCC on 04-18-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-29-2026
+			result += "<!-- Verified with ATCSCC on 01-29-2026 -->";
 			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA KLBB\" readonly>";
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 PNH KLBB\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT KLBB\" readonly>";
