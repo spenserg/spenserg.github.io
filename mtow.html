@@ -690,7 +690,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 			output += playbook_str.replace("<br/>","<br/><br/>"); // Only replace first (top)
 		}
 	}
-	output += textarea_tabs +
+	output +=
 		'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
 		'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
 		cdr_str + textarea_tabs + 'break;</textarea><br/><br/><textarea rows="15" cols="80">' +
