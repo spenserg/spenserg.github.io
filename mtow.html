@@ -434,12 +434,13 @@ function compute (str_override = "") {
 			var today = new Date();
 			var tmp_today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + String(today.getFullYear());
 			regad = /\<\!\-\-\sUpdated\s([\d\-]+)\s([A-Z]*)\s*\-\-\>/g;
-			if ((tmp_xad = regad.exec(output)) !== null) {
-				var tmp_date_obj = new Date(tmp_xad[1]);
-				$("#outbound").val(("Updated " + tmp_xad[1] + "\n Info " +
-					Math.ceil((Date.now() - tmp_date_obj) / 86400000) + " Days Old\n" +
-					tmp_xad[2]).trim()
-				);
+			if (!output.includes("ATCSCC FAQ")) {
+				if ((tmp_xad = regad.exec(output)) !== null) {
+					var tmp_date_obj = new Date(tmp_xad[1]);
+					$("#outbound").val("Updated " + tmp_xad[1] +
+						((fkeystxt.includes("ATCSCC FAQ")) ? "" : ("\nInfo " + Math.ceil((Date.now() - tmp_date_obj) / 86400000) + " Days Old"))
+					);
+				}
 			}
 			var tmp_textarea_tabs = ((["CLT","DFW","LAX","MIA","ORD","PHX"].includes(((result[1].length > 3) ? convert_iata(result[1]) : result[1]))) ? "\n\t\t\t" : "\n\t\t\t\t\t");
 			output += '<br/><br/><button id=\"button_toggle_input_boxes\" onclick=\"toggle_input_boxes()\">' + (input_boxes_shown ? 'Hide' : 'Show') + ' Input Boxes</button>';
