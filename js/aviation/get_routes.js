@@ -4437,29 +4437,36 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 
 		case "EGE":
 			switch(arvl) {
-				case "DFW": // EGE-DFW // Updated 01-09-2025
-					result += "<!-- Updated 01-09-2025 -->";
+				case "DFW": // EGE-DFW // Updated 01-29-2026
+					result += "<!-- Updated 01-29-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KEGE APRES2 RUBAY COORZ KD51W EZEEE MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>GYPSUM: <input style=\"width:75%\" value=\"KEGE GYPSM6 RLG COORZ EZEEE MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KEGE APRES2 RUBAY COORZ FQF J80 GLD J182 ICT J21 IRW IBAKE VKTRY2 KDFW\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KEGE APRES2 RUBAY ZAPAA CNX J15 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
-					break;
-				case "JFK": // EGE-JFK // Updated 01-09-2025
-					result += "<!-- Updated 01-09-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KEGE APRES2 RUBAY DVV J60 JOT GIJ J554 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KEGE APRES2 RUBAY COORZ BRK EZEEE MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><b style=\"color:orange\">The mandatory route uses an NRS waypoint (KD45W) but it never appears in the ATC clearance<\/b>";
+					result += "<br/><br/>GYPSUM<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEGE GYPSM6 RLG COORZ EZEEE MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEGE APRES2 RUBAY COORZ FQF J80 GLD GCK MMB HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEGE APRES2 RUBAY COORZ PUB Q37 IMMAS BGS GEEKY BOOVE7 KDFW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-29-2026
 					break;
-				case "MIA": // EGE-MIA // Updated 01-09-2025
-					result += "<!-- Updated 01-09-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/>OW: <input style=\"width:75%\" value=\"KEGE APRES2 RUBAY FQF LAA TOTOE MMB J98 IRW J20 EIC AEX J58 HRV Q105 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
-					result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KEGE APRES2 RUBAY GLD J182 ICT RZC LITTR MGMRY ACORI FROGZ4 KMIA\" readonly>";
+				case "JFK": // EGE-JFK // Updated 01-29-2026
+					result += "<!-- Updated 01-29-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-29-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KEGE APRES2 RUBAY DVV J60 JOT GIJ J554 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+					//result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KEGE APRES2 BELGN GLL AYOLE Q114 LEONG IOW J146 GIJ J554 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEGE APRES2 BELGN CYS J148 MCW J16 BAE J34 VIO SVM J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEGE RUBAY FQF J80 GLD PENUT Q148 VEGUC Q128 ECIGE MEM J66 RMG HRTWL Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-29-2026
+					break;
+				case "MIA": // EGE-MIA // Updated 01-29-2026
+					result += "<!-- Updated 01-29-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-29-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KEGE RUBAY FQF LAA MMB J98 IRW J20 EIC SWEUP HRV Q105 BLVNS Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>North/Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEGE RUBAY FQF J80 GLD J182 RZC MEM LDK ACORI FROGZ4 KMIA\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEGE RUBAY COORZ PUB PNH J17 ABI AGJ TNV J87 IAH J86 LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
+					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEGE RUBAY COORZ PUB PNH J17 ABI CWK MUSYL KELPP ALGAE MINOW M580 MARCI FROGZ4 KMIA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-29-2026
 					break;
 			}
 		break; // End of EGE
