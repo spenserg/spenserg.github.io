@@ -5523,48 +5523,73 @@ KGSP MCN SPLSH CHRGE MATCY FROGZ1 KMIA
 					result += "<br/>5L<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH HOODO7 HRV SJI J2 DEFUN FROGZ4 KMIA\" readonly>";
 					result += "<br/>5Q<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH HOODO7 LEV Y290 GAWKS FROGZ4 KMIA\" readonly>";
 					break;
-				case "ORD": // IAH-ORD // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
+				case "ORD": // IAH-ORD // Updated 01-30-2026
+					result += "<!-- Updated 01-30-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KIAH INDIE8 TPAKK LIT J180 FTZ TRTLL6 KORD\" readonly>";
-					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KIAH STYCK8 WTSON BYP TUL J87 IRK BENKY6 KORD\" readonly>";
-					result += "<br/>East: <input style=\"width:75%\" value=\"KIAH MMUGS4 LCH J22 MCB MEI VUZ GLAZR Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KIAH INDIE8 TPAKK LIT J180 FTZ TRTLL6 KORD\" readonly>"; // CDR 1X
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH STRYA8 DPATY SQS CRAMM Q32 HITMN Q139 IIU HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH STYCK8 WTSON BYP TUL J87 IRK BENKY6 KORD\" readonly>"; // Based on CDR 0N
+					result += "<br/><br/>East/ZME Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 MGM RMG GLAZR Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					// todo deep west
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIAH ELD1 ELD J29 MEM IIU FWA KORD\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>0B (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
-					result += "<br/>0K (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
-					result += "<br/>0N (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STYCK8 WTSON BYP TUL J25 MCI J26 IRK BENKY6 KORD\" readonly>";
-					result += "<br/>0T (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 INDIE TXK Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
-					result += "<br/>1X (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK LIT J180 FTZ TRTLL6 KORD\" readonly>";
-					result += "<br/>2X (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STRYA8 DPATY SQS FTZ TRTLL6 KORD\" readonly>";
-					result += "<br/>4X (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 LCH LSU MCB SQS FTZ TRTLL6 KORD\" readonly>";
-					result += "<br/>7X (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER JCT ABI IRW SGF WELTS TRTLL6 KORD\" readonly>";
-					result += "<br/>8X (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER JCT ABI IRW SGF WELTS TRTLL6 KORD\" readonly>";
-					result += "<br/>9X (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STYCK8 DOLEY MLC RZC SGF WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/><br/><b>Playbooks:</b>";
+					result += "<br/>ORD JVL 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIAH INDIE8 INDIE TXK Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>ORD NO BENKY 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>ORD NO BENKY FYTTE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>ORD OXI ROYKO 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH STYCK8 WTSON BYP TUL J25 MCI J26 IRK BENKY6 KORD\" readonly>";result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-30-2026
+					result += "<!-- Verified with ATCSCC on 01-30-2026 -->";
+					result += "<br/>0B<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>"; // ORD NO BENKY 1
+					result += "<br/>0K<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>"; // ORD NO BENKY FYTTE
+					result += "<br/>0N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STYCK8 WTSON BYP TUL J25 MCI J26 IRK BENKY6 KORD\" readonly>"; // ORD OXI ROYKO 1
+					result += "<br/>0T<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 INDIE TXK Q34 HITMN HELUB Q118 HEVAN BONNT VEECK5 KORD\" readonly>"; // ORD JVL 2
+					result += "<br/>1X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK LIT J180 FTZ TRTLL6 KORD\" readonly>";
+					result += "<br/>2X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STRYA8 DPATY SQS FTZ TRTLL6 KORD\" readonly>";
+					result += "<br/>3X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 LCH LSU MCB SQS FTZ TRTLL6 KORD\" readonly>";
+					result += "<br/>4X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 LCH LSU MCB SQS FTZ TRTLL6 KORD\" readonly>";
+					result += "<br/>7X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER JCT ABI IRW SGF WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/>8X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH BNDTO6 CRGER JCT ABI IRW SGF WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/>9X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STYCK8 DOLEY MLC RZC SGF WELTS TRTLL6 KORD\" readonly>";
 					break;
 				case "PHL": // IAH-PHL // Updated 01-10-2025
 					result += "<!-- Updated 01-10-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KIAH INDIE8 TPAKK ELD J29 CARIN MEMFS Q34 GVE PAATS4 KPHL\" readonly>";
-					result += "<br/><br/>BNA: <input style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 MEM BNA SWAPP Q34 GVE PAATS4 KPHL\" readonly>";
-					result += "<br/>PHL NO PAATS: <input style=\"width:75%\" value=\"KIAH LURIC8 ORRTH MEM PXV CREEP BLISS J152 JST BOJID4 KPHL\" readonly>";
-					result += "<br/>VUZ: <input style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI SJI Q56 CATLN Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>"; // CDR 4M
+					result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q29 CREEP BLISS J152 JST BOJID4 KPHL\" readonly>"; // CDR 0F
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI AWDAD SJI J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>"; // CDR 4C
+					result += "<br/></br>North via JOT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH STYCK8 WTSON BYP TUL J87 JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>"; // CDR 0E
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIAH LCH5 LSU SJI Q56 CATLN Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>0B: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q34 GVE PAATS4 KPHL\" readonly>";
-					result += "<br/>0D: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STYCK8 WTSON BYP TUL J87 JOT J30 TRAKK J152 JST BOJID4 KPHL\" readonly>";
-					result += "<br/>1D: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK TUL J87 JOT J30 TRAKK J152 JST BOJID4 KPHL\" readonly>";
-					result += "<br/>1E (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK TUL J87 JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>";
-					result += "<br/>2X: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STRYA8 DPATY SQS MEMFS HENSY Q34 GVE PAATS4 KPHL\" readonly>";
-					result += "<br/>3C: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK DHART Q31 PXV ROD J152 JST BOJID4 KPHL\" readonly>";
-					result += "<br/>3M (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/>4C (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI AWDAD SJI J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/>4G: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 CATLN FRDDO NOKIE TWINS BLAAN Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/>4M (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
-					result += "<br/>5X (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH HOODO7 HRV Q56 CATLN Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/><br/><b>Playbooks:</b>";
+					result += "<br/>CEW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI AWDAD SJI J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>HITMN<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q34 GVE PAATS4 KPHL\" readonly>";
+					result += "<br/>JOT 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH INDIE8 TPAKK TUL J87 JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>";
+					result += "<br/>MGM 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>MGM 3<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 CATLN FRDDO NOKIE TWINS BLAAN Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>VLKNN<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-30-2026
+					result += "<!-- Verified with ATCSCC on 01-30-2026 -->";
+					result += "<br/>0B<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q34 GVE PAATS4 KPHL\" readonly>"; // HITMN
+					result += "<br/>0D<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STYCK8 WTSON BYP TUL J87 JOT J30 TRAKK J152 JST BOJID4 KPHL\" readonly>"; // JOT 1
+					result += "<br/>0E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STYCK8 WTSON BYP TUL J87 JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>"; // JOT 1
+					result += "<br/>0F<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q29 CREEP BLISS J152 JST BOJID4 KPHL\" readonly>";
+					result += "<br/>0T<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STYCK8 WTSON BYP MLC RZC STL VHP RINTE JST BOJID4 KPHL\" readonly>";
+					result += "<br/>1D<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK TUL J87 JOT J30 TRAKK J152 JST BOJID4 KPHL\" readonly>"; // JOT 1
+					result += "<br/>1E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK TUL J87 JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>"; // JOT 1
+					result += "<br/>1T<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH INDIE8 TPAKK LIT J101 STL VHP RINTE JST BOJID4 KPHL\" readonly>";
+					result += "<br/>1X<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH LURIC8 HAWES SUTTN J29 CARIN MEMFS Q34 GVE PAATS4 KPHL\" readonly>";
+					result += "<br/>2X<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH STRYA8 DPATY SQS MEMFS HENSY Q34 GVE PAATS4 KPHL\" readonly>";
+					result += "<br/>3C<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI AWDAD SJI J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>"; // CEW
+					result += "<br/>3G<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 CATLN FRDDO NOKIE TWINS BLAAN Q99 PEETT BBDOL PAATS4 KPHL\" readonly>"; // MGM 3
+					result += "<br/>3M<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>"; // MGM 1
+					result += "<br/>3V<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>"; // VLKNN
+					result += "<br/>3X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>4C<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI AWDAD SJI J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>"; // CEW
+					result += "<br/>4G<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 CATLN FRDDO NOKIE TWINS BLAAN Q99 PEETT BBDOL PAATS4 KPHL\" readonly>"; // MGM 3
+					result += "<br/>4M<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>"; // MGM 1
+					result += "<br/>4V<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>"; // VLKNN
+					result += "<br/>4X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH MMUGS4 GUSTI Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
+					result += "<br/>5X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIAH HOODO7 HRV Q56 CATLN Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
 					break;
 				case "PHX": // IAH-PHX // Updated 06-03-2025 // Mandatory Routes checked
 					result += "<!-- Updated 06-03-2025 MP -->";
@@ -5757,15 +5782,20 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>KK<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND OKK FWA CRL J554 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 					result += "<br/>PR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND MAREO5 BDOCK WWSHR Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 					break;
-				case "LAX": // IND-LAX // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KIND ROCKY1 SPI J80 MCI J24 SLN J102 ALS J44 RSK J64 TBC JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KIND MEARZ7 BVT J89 CADIZ JOT J60 DBL CHESZ Q88 HAKMN ANJLL4 KLAX\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KIND OOM5 PXV J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+				case "LAX": // IND-LAX // Updated 01-30-2026
+					result += "<!-- Updated 01-30-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-30-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KIND ROCKY1 STL BUM Q176 CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIND ROCKY1 STL BUM Q176 CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIND OOM5 PXV Q25 ARG FSM IRW J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"
 					result += "<br/><br/>GTH 2: <input style=\"width:75%\" value=\"KIND DAWNN1 MYS RAMRD Q68 LITTR TXK BYP UKW GTH CNX J74 SJN J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-30-2026
+					result += "<!-- Verified with ATCSCC on 01-30-2026 -->";
+					result += "<br/>BG<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND DAWNN1 MYS RAMRD Q68 LITTR DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/>BT<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND MEARZ7 BVT J89 CADIZ JOT J60 HVE PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>";
+					result += "<br/>PR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND ROCKY1 STL BUM ICT TOTOE FTI J244 ZUN J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/>SW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND OOM5 PXV J78 TUL IFI DANKS EZEEE FTI GUP J134 DRK HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					break;
 				case "LGA": // IND-LGA // Updated 12-07-2025
 					result += "<!-- Updated 12-07-2025 P -->";
@@ -5782,17 +5812,17 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>PR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND MAREO5 BDOCK WWSHR TEESY J146 ETG MIP4 KLGA\" readonly>";
 					result += "<br/>SW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND OOM5 PXV HITMN VXV SITTR Q34 GVE PROUD2 KLGA\" readonly>";
 					break;
-				case "MIA": // IND-MIA // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
+				case "MIA": // IND-MIA // Updated 01-30-2026
+					result += "<!-- Updated 01-30-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIND DAWNN1 IIU Q79 THRSR HONID FROGZ4 KMIA\" readonly>";
-					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND DAWNN1 IIU J99 IRQ FISHO Q93 DEBRL CSTAL3 KMIA\" readonly>"; // CDR PR
-					// TODO West route
+					result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND DAWNN1 IIU J99 IRQ FISHO Q93 DEBRL CSTAL3 KMIA\" readonly>"; // CDR PR
+					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND OOM5 PXV DITZL J151 VUZ ACORI FROGZ4 KMIA\" readonly>";
 					result += "<br/><br/>East/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND MAREO5 BDOCK HVQ BKW ROA RDU ILM WAALT AR17 BAHAA HOAGG BNFSH3 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KIND DAWNN1 IIU VXV AMG TAY RSW PALMZ2 KMIA\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-25-2025
-					result += "<!-- Verified with ATCSCC on 08-25-2025 -->";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-30-2026
+					result += "<!-- Verified with ATCSCC on 01-30-2026 -->";
 					result += "<br/>DQ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND DQN FLM J43 VXV THRSR HONID FROGZ4 KMIA\" readonly>";
 					result += "<br/>PR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND DAWNN1 IIU J99 IRQ FISHO Q93 DEBRL CSTAL3 KMIA\" readonly>";
 					result += "<br/>SL<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND ROCKY1 STL Q19 HITMN ACORI FROGZ4 KMIA\" readonly>";
@@ -5851,31 +5881,35 @@ KILM RDU BBDOL PAATS4 KPHL
 
 		case "JAC":
 			switch(arvl) {
-				case "CLT": // JAC-CLT // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KJAC DIVYD2 BOY HIKOX DDY PWE STJ STL PXV OLSIE COMDY FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KJAC ALPIN4 BPI BOY CZI J82 FSD J16 MCW MONNY BDF ERECO FLM TAFTT PARQR4 KCLT\" readonly>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KJAC ALPIN4 BPI SWEAT CYS GLD J182 ICT EOS ARG BNA METWO COMDY FILPZ4 KCLT\" readonly>";
+				case "CLT": // JAC-CLT // Updated 01-30-2026
+					result += "<!-- Updated 01-30-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-30-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KJAC DIVYD2 BOY DDY TST OVR J151 STL PXV SKYWA FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAC DIVYD2 BOY CZI J82 FSD J16 MCW DBQ VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAC DIVYD2 JEDHY BPI OCS J154 AUTIM GLD PENUT Q148 BVO RZC ARG BNA METWO COMDY FILPZ4 KCLT\" readonly>";
+					result += "<br/><br/>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAC DIVYD2 BOY J32 ABR J70 BAE J89 BVT VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/>South via TXK<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAC DIVYD2 JEDHY BPI JNC J15 RSK J58 FTI J76 SPS TXK J52 SQS HRISN Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-30-2026
 					break;
-				case "DFW": // JAC-DFW // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KJAC DIVYD2 DNW BRK EZEEE MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>NE Arrival: <input style=\"width:75%\" value=\"KJAC DIVYD2 DNW LAR GLD J182 ICT HITUG SEEVR4 KDFW\" readonly>";
-					result += "<br/>SW Arrival: <input style=\"width:75%\" value=\"KJAC DIVYD2 DNW BPI JNC J15 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KJAC ALPIN4 BPI OCS CHE PUB TBE PNH SPS UKW8 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+				case "DFW": // JAC-DFW // Updated 01-30-2026
+					result += "<!-- Updated 01-30-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-30-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KJAC DIVYD2 DNW CHE PUB EZEEE MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAC DIVYD2 BOY MBW Q148 BVO HITUG SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAC DIVYD2 JEDHY BPI JNC J15 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KJAC ALPIN4 BPI OCS CHE PUB TBE PNH SPS UKW8 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-30-2026
 					break;
-				case "LAX": // JAC-LAX // Updated 01-10-2025
-					result += "<!-- Updated 01-10-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KJAC ALPIN4 KICNE FFU J9 MLF J107 BLD J60 HEC BASET5 KLAX\" readonly>";
+				case "LAX": // JAC-LAX // Updated 01-30-2026
+					result += "<!-- Updated 01-30-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-30-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KJAC DIVYD2 JEDHY TCH PICHO Q842 WINEN Q73 HAKMN ANJLL4 KLAX\" readonly>";
 					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KJAC ALPIN4 KICNE MLD J158 MVA FRA AVE MOOR4 KLAX\" readonly>";
 					result += "<br/>East: <input style=\"width:75%\" value=\"KJAC GEYSR6 NALSI OCS JNC TBC DRK J231 TNP SEAVU2 KLAX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					//result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-30-2026
 					break;
 				case "ORD": // JAC-ORD // Updated 01-10-2025
 					result += "<!-- Updated 01-10-2025 -->";
