@@ -640,18 +640,17 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>F0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 WAPOM RIDES2 KMCO\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP CCLUB RIDES KMCO\" readonly>";
 			break;
-		case "MEM": // MIA-MEM // Updated 02-23-2025
-			result += "<!-- Updated 02-23-2025 -->";
+		case "MEM": // MIA-MEM // Updated 02-01-2026
+			result += "<!-- Updated 02-01-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 VLKNN WASER VANZE3 KMEM\" readonly>";
-			// result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KMIA HURCN4 KPASA JENIM PATOY DEANR MICES JAWJA CABLO DEFUN J2 CEW J50 MCB MEVEE HOBRK4 KMEM\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 VLKNN WASER VANZE3 KMEM\" readonly>"; // CDR H0
 			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 WIGVO IRQ VXV RAMRD BLUZZ5 KMEM\" readonly>";
-			result += "<br/>West/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV AEX ELD LITTR CONDR4 KMEM\" readonly>";
-			result += "<br/><br/>East/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR VLKNN WASER VANZE3 KMEM\" readonly>";
+			result += "<br/>East/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR VLKNN WASER VANZE3 KMEM\" readonly>";
+			result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV AEX ELD LITTR CONDR4 KMEM\" readonly>";
 			result += "<br/>West/Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW J50 MCB SWB ELD LITTR CONDR4 KMEM\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-17-2025
-			result += "<!-- Verified with ATCSCC on 07-17-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-01-2026
+			result += "<!-- Verified with ATCSCC on 02-01-2026 -->";
 			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS VLKNN WASER VANZE3 KMEM\" readonly>";
 			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR Q116 VLKNN WASER VANZE3 KMEM\" readonly>";
 			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 VLKNN WASER VANZE3 KMEM\" readonly>";
