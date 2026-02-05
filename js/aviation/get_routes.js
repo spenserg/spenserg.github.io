@@ -1,7 +1,6 @@
 get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, result = "") {
-	dptr = ((dptr.length == 4) ? (dptr.substr(1, 4)) : dptr);
-	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
-	// if (arvl != "DFW") { result += "<br/><br/><b>Faa Pref Route:</b>"; }
+	dptr = ((dptr.length == 4) ? convert_iata(dptr) : dptr);
+	arvl = ((arvl.length == 4) ? convert_iata(arvl) : arvl);
 
 	switch(dptr) {
 
