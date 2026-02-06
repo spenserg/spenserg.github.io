@@ -286,12 +286,6 @@ function compute (str_override = "") {
 				output += "&nbsp;&nbsp;&nbsp;<b>Takeoff Wgt Rstr</b>";
 				if ((ci_res = reg_ci.exec(fkeystxt)) != null) {
 					var ci_int = parseInt(ci_res);
-					
-					/*
-					console.log(ci_int);
-					console.log(parseInt(ci_res));
-					*/
-					
 					if (["319S", "H319", "319W", "A320", "H205", "738M", "738K", "738R", "321T", "321X", "A321", "321E", "321K", "321R", "321N"].includes(ac_type)) {
 						// Narrow Body
 						if (ci_int > 20) {
@@ -319,12 +313,6 @@ function compute (str_override = "") {
 				 output += "&nbsp;&nbsp;&nbsp;<b>Land Wgt Rstr</b>";
 				if ((ci_res = reg_ci.exec(fkeystxt)) != null) {
 					var ci_int = parseInt(ci_res);
-
-					/*
-					console.log(ci_int);
-					console.log(parseInt(ci_res));
-					*/
-
 					if (["319S", "H319", "319W", "A320", "H205", "738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X"].includes(ac_type)) {
 						// Narrow Body
 						if (ci_int > 20) {
@@ -519,7 +507,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	var today_str_short = String(today.getMonth() + 1) + "/" + String(today.getDate()) + "/" + String(today.getYear()-100);
 	var reg_tmp = /\d\t[A-Z]{6}([^\t]{2})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])\t(\d)\t([^\n]*)\n/g;
 	var dptr = "KXXX";
-	var arvl = "YYY";
+	var arvl = "KYYY";
 	var faa_pref = "";
 	var non_rnav = "";
 	var non_rnav_coordreq = true;
@@ -529,8 +517,8 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	var num_ok_to_file = 0;
 	var only_one_ok_to_file_pref = {};
 	while(null != (z = reg_tmp.exec(input))) {
-		dptr = z[2].substring(0, 4);
-		arvl = z[3].substring(1, 4);
+		dptr = ((z[2].length != 4) ? convert_iata(z[2]) : z[2]);
+		arvl = ((z[3].length != 4) ? convert_iata(z[3]) : z[3]);
 		var textarea_tabs = ((["KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(dptr)) ? "\n\t\t\t" : "\n\t\t\t\t\t");
 		var file_status = "<span style=\\\"color:" + ((z[5] == "Y") ? "red\\\"> (Coord Req)" : "green\\\"> (Ok to File)") + "<\/span>";
 		if (z[5] != "Y") {
@@ -676,7 +664,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		today_str + '\' readonly><br/><br/>';
 
 	// Top large box
-	output += '<textarea rows="8" cols="80">' + "case \"" + arvl + '\": // ' + convert_iata(dptr) + '-' + arvl + ' // Updated ' + today_str + mr_text + textarea_tabs +
+	output += '<textarea rows="8" cols="80">' + "case \"" + convert_iata(arvl) + '\": // ' + convert_iata(dptr) + '-' + convert_iata(arvl) + ' // Updated ' + today_str + mr_text + textarea_tabs +
 		'result += \"<!-- Updated ' + today_str + ' P -->\";';
 	if (faa_pref.trim().length > 0) {
 		output += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
@@ -970,12 +958,6 @@ function briefing_parse(fkeystxt = "") {
 		// TODO Delta AAF inc Taxi // Delta AAF
 		
 		result += '</textarea><br/>';
-		
-		/*
-		while(null != (z = tmp_regv.exec(fkeystxt))) {}
-		*/
-
-		// console.log(z);
 	}
 	return result;
 /*
@@ -1871,8 +1853,6 @@ dex_parse = function(fkeys_text = "") {
 		var fam_text = families[i].split("\n");
 		var cur_species = "";
 
-// console.log(fam_text);
-		
 		for (let j = 0; j < fam_text.length; j++) {
 			if (!(/[\(\)\[\]]/.test(fam_text[j]))) {
 				if (!(/\t/.test(fam_text[j]))) {
@@ -1882,8 +1862,6 @@ dex_parse = function(fkeys_text = "") {
 				var tmp_spec_reg = /([^\(\n]+) \- \(([^\)]+)\) \[([^\]])*\] ([^\n]*)/g;
 				k = tmp_spec_reg.exec(fam_text[j]);
 
-// console.log(k);
-				
 				if (cur_species == "" || !(/\t[^\t]*\s\-\s\(/.test(k[0]))) {
 					// No tab at front // new species
 					cur_species = k[1].trim();
