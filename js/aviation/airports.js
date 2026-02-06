@@ -238,6 +238,10 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "YYZ":
 			result += "<br/><br/>Canadian required departures are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
+/* Latin Depatures */
+		case "AUA":
+			result += "<br/><br/>AUA - Customs pre-cleared. No issues at arrival station";
+			break;
 	}
 	if (show_flow_info.length > 0) {
 		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='flow_desc_button' onclick='$(\"#flow_desc_text\").toggle(); $(\"#flow_desc_button\").text(($(\"#flow_desc_button\").text().includes(\"Show\")) ? \"Hide SIDS\" : \"Show SIDS\");'>Show SIDS</button>";
