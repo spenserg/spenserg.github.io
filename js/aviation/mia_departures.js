@@ -1182,7 +1182,144 @@ MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.CABLO.DCT.MEI.DCT.LIT.DCT.RZC.DCT.XNA
 			break;
 
 /* Latin Destinations */
-		
+
+		case "BGI": // MIA-BGI // Updated 02-06-2026
+			result += "<!-- Updated 02-06-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 HAGIT Y421 MEEGL ILURI A555 BGI TBPB\" readonly>"; // CDR K0
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y355 ELOPO L451 ANU UA632 BGI TBPB\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP UL577 CDO LRN UW9 MELLA GEECE BNE TBPB\" readonly>"; // Based on CDR W4
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
+			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
+			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 HAGIT Y421 MEEGL ILURI A555 BGI TBPB\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR GLAMS KFFER HAGIT Y421 MEEGL ILURI A555 BGI TBPB\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS KFFER HAGIT Y421 MEEGL ILURI A555 BGI TBPB\" readonly>";
+			result += "<br/>W4<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UL577 CDO LRN UW9 MELLA GEECE BNE TBPB\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y421 MEEGL ILURI A555 BGI TBPB\" readonly>";
+			break;
+		case "GND": // MIA-GND // Updated 02-06-2026
+			result += "<!-- Updated 02-06-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 HAGIT Y421 MEEGL L466 GEECE TGPY\" readonly>"; // CDR K0
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y185 DONQU L454 ILURI UA555 FOF UA324 GND TGPY\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP UL577 CDO LRN UL343 SATOE ANADA UL452 ITLUV TGPY\" readonly>"; // Based on CDR W4
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
+			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
+			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 HAGIT Y421 MEEGL L466 GEECE TGPY\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR GLAMS KFFER HAGIT Y421 MEEGL GEECE TGPY\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS KFFER HAGIT Y421 MEEGL GEECE TGPY\" readonly>";
+			result += "<br/>W4<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UL577 CDO LRN UL343 SATOE ANADA UL452 ITLUV TGPY\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y421 MEEGL GEECE TGPY\" readonly>";
+			break;
+		case "PUJ": // MIA-PUJ // Updated 02-06-2026
+			result += "<!-- Updated 02-06-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 JAGOR RUMFO Y441 JUELE UL463 PTA W28 VOGEP POKE1W MDPC\" readonly>"; // CDR K0
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y185 FARMN L453 ASIVO UW10 PIXAR BETI1W MDPC\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP UL577 CDO UT15 NADAX PALA1W MDPC\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
+			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
+			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 JAGOR RUMFO Y441 JUELE UL463 PTA W28 PNA MDPC\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR GLAMS KFFER RUMFO Y441 JUELE UL463 PTA W28 PNA MDPC\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS KFFER RUMFO Y441 JUELE UL463 PTA W28 PNA MDPC\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y443 RUMFO Y441 JUELE UL463 PTA W28 PNA MDPC\" readonly>";
+			break;
+		case "SDQ": // MIA-SDQ // Updated 02-06-2026
+			result += "<!-- Updated 02-06-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 JAGOR RUMFO Y441 JUELE W38 PTA A554 KODIX KODI2G MDSD\" readonly>"; // CDR K0
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y397 SEKAR UL339 PTA UT20 KODIX KODI2G MDSD\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP OKOSO OKOS2G MDSD\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
+			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
+			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 JAGOR RUMFO Y441 JUELE W38 PTA A554 KODIX KODI2G MDSD\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR GLAMS KFFER RUMFO Y441 JUELE W38 PTA A554 KODIX KODI2G MDSD\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS KFFER RUMFO Y441 JUELE W38 PTA A554 KODIX KODI2G MDSD\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y443 RUMFO Y441 JUELE W38 PTA A554 KODIX KODI2G MDSD\" readonly>";
+			break;
+		case "SJU": // MIA-SJU // Updated 02-06-2026
+			result += "<!-- Updated 02-06-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 BEANO BEANO3 TJSJ\" readonly>"; // CDR K0
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y355 PLING RTE7 SAALR SAALR2 TJSJ\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP UL577 CDO UT15 MELLA JOSHE3 TJSJ\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
+			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
+			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 BEANO BEANO3 TJSJ\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR GLAMS KFFER HAGIT Y290 BEANO BEANO3 TJSJ\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS KFFER HAGIT Y290 BEANO BEANO3 TJSJ\" readonly>";
+			result += "<br/>W4<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UL577 CDO LRN UW9 MELLA G633 MAZ RTE12 JOSHE TJSJ\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y421 HAGIT Y290 BEANO BEANO3 TJSJ\" readonly>";
+			break;
+		case "STI": // MIA-STI // Updated 02-06-2026
+			result += "<!-- Updated 02-06-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 JAGOR RUMFO Y441 JUELE JUEL2P MDST\" readonly>"; // CDR K0
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y397 SEKAR SEKA2P MDST\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP L577 ETBOD W43 BEPAL BEPA2P MDST\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
+			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
+			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 JAGOR RUMFO Y441 JUELE PTA MDST\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR GLAMS KFFER RUMFO Y441 JUELE PTA MDST\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS KFFER RUMFO Y441 JUELE PTA MDST\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y443 RUMFO Y441 JUELE PTA MDST\" readonly>";
+			break;
+		case "STT": // MIA-STT // Updated 02-06-2026
+			result += "<!-- Updated 02-06-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 JETSS TIST\" readonly>"; // CDR K0
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y185 DONQU L454 PANMO JETSS TIST\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP UL577 ANTEX B520 BQN RTE2 TOURO TIST\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
+			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
+			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 JETSS TIST\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR GLAMS KFFER HAGIT Y290 JETSS TIST\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS KFFER HAGIT Y290 JETSS TIST\" readonly>";
+			result += "<br/>W4<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UL577 CDO LRN UW9 MELLA KUTHO TIST\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y421 HAGIT Y290 JETSS TIST\" readonly>";
+			break;
+		case "STX": // MIA-STX // Updated 02-06-2026
+			result += "<!-- Updated 02-06-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 HAGIT Y421 MEEGL TISX\" readonly>"; // CDR K0
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y185 DONQU Y356 MEEGL TISX\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP UA890 ETBOD UL577 CDO UL577 ANTEX L577 STIIV TISX\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
+			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
+			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 HAGIT Y421 MEEGL TISX\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR GLAMS KFFER HAGIT Y421 MEEGL TISX\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS KFFER HAGIT Y421 MEEGL TISX\" readonly>";
+			result += "<br/>W4<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UL577 CDO LRN UW9 MELLA TISX\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y421 MEEGL TISX\" readonly>";
+			break;
+		case "SXM": // MIA-SXM // Updated 02-06-2026
+			result += "<!-- Updated 02-06-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><br/><input style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 SLUGO TNCM\" readonly>"; // CDR K0
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y355 SLUGO TNCM\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP UA890 ETBOD UL577 ANTEX L577 GOUDA TNCM\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
+			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
+			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 SLUGO TNCM\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR GLAMS KFFER HAGIT Y290 SLUGO TNCM\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS KFFER HAGIT Y290 SLUGO TNCM\" readonly>";
+			result += "<br/>W4<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UL577 CDO LRN UW9 MELLA SLUGO TNCM\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y421 HAGIT Y290 SLUGO TNCM\" readonly>";
+			break;
+		case "UVF": // MIA-UVF // Updated 02-06-2026
+			result += "<!-- Updated 02-06-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 HAGIT Y421 MEEGL L466 GEECE TLPL\" readonly>"; // CDR K0
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y355 ELOPO L451 ANU UA312 FOF UA324 BNE TLPL\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP UL577 CDO LRN UW9 MELLA GEECE BNE TLPL\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
+			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
+			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 HAGIT Y421 MEEGL L466 GEECE TLPL\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR GLAMS KFFER HAGIT Y421 MEEGL L466 GEECE TLPL\" readonly>";
+			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS KFFER HAGIT Y421 MEEGL L466 GEECE TLPL\" readonly>";
+			result += "<br/>W4<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UL577 CDO LRN UL343 SATOE GEECE TLPL\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y421 MEEGL L466 GEECE TLPL\" readonly>";
+			break;
 		}
 	return result;
 }
