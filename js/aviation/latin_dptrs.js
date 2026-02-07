@@ -222,8 +222,14 @@ latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result =
 
 		case "CUR": // Willemstad/HATO INTL
 			switch (arvl) {
-				case "DFW": // CUR-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "CLT": // CUR-CLT // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "MIA": // CUR-MIA // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "ORD": // CUR-ORD // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of CUR
@@ -231,23 +237,26 @@ latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result =
 		case "CUU": // Chihuahua/GEN DIV P A ROBERTO FIERRO VIL
 			switch (arvl) {
 				case "DFW": // CUU-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+					result += ""; // TODO
 					break;
 			}
 		break; // End of CUU
 
-		case "CWB": // Curitiba/AFONSO PENA INTL
-			switch (arvl) {
-				case "DFW": // CWB-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
-					break;
-			}
-		break; // End of CWB
-
+// CWB skipped
+			
 		case "CZM": // Cozumel/COZUMEL INTL
 			switch (arvl) {
+				case "CLT": // CZM-CLT // Updated 01-01-1965
+					result += ""; // TODO
+					break;
 				case "DFW": // CZM-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+					result += ""; // TODO
+					break;
+				case "MIA": // CZM-MIA // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "ORD": // CZM-ORD // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of CZM
@@ -255,7 +264,7 @@ latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result =
 		case "DGO": // Durango/DURANGO INTL
 			switch (arvl) {
 				case "DFW": // DGO-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+					result += ""; // TODO
 					break;
 			}
 		break; // End of DGO
@@ -263,31 +272,52 @@ latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result =
 		case "EZE": // Buenos Aires/EZEIZA INTL/MINISTRO PISTARINI
 			switch (arvl) {
 				case "DFW": // EZE-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+					result += ""; // TODO
+					break;
+				case "JFK": // EZE-JFK // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "MIA": // EZE-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of EZE
 
 		case "FDF": // Fort-de-france/AIME CESAIRE
 			switch (arvl) {
-				case "DFW": // FDF-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "MIA": // FDF-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of FDF
 
 		case "FPO": // Freeport/GRAND BAHAMA INTL
 			switch (arvl) {
-				case "DFW": // FPO-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "CLT": // FPO-CLT // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "MIA": // FPO-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of FPO
 
 		case "GCM": // Georgetown/OWEN ROBERTS INTL
 			switch (arvl) {
+				case "CLT": // GCM-CLT // Updated 01-01-1965
+					result += ""; // TODO
+					break;
 				case "DFW": // GCM-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+					result += ""; // TODO
+					break;
+				case "MIA": // GCM-MIA // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "ORD": // GCM-ORD // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "PHL": // GCM-PHL // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of GCM
@@ -295,23 +325,32 @@ latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result =
 		case "GDL": // Guadalajara/MIGUEL HIDALGO Y COSTILLA INTL
 			switch (arvl) {
 				case "DFW": // GDL-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+					result += ""; // TODO
+					break;
+				case "PHX": // GDL-PHX // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of GDL
 
 		case "GEO": // Georgetown/CHEDDI JAGAN INTL
 			switch (arvl) {
-				case "DFW": // GEO-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "JFK": // GEO-JFK // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "MIA": // GEO-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of GEO
 
 		case "GGT": // Exuma/EXUMA INTL
 			switch (arvl) {
-				case "DFW": // GGT-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "CLT": // GGT-CLT // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "MIA": // GGT-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of GGT
@@ -319,15 +358,24 @@ latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result =
 		case "GIG": // Rio De Janeiro/GALEAO-ANTONIO CARLOS JOBIM IN
 			switch (arvl) {
 				case "DFW": // GIG-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+					result += ""; // TODO
+					break;
+				case "JFK": // GIG-JFK // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "MIA": // GIG-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of GIG
 
 		case "GND": // Point Salines/MAURICE BISHOP INTL
 			switch (arvl) {
-				case "DFW": // GND-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "CLT": // GND-CLT // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "MIA": // GND-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of GND
@@ -335,7 +383,13 @@ latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result =
 		case "GRU": // Sao Paulo/GUARULHOS-GOV ANDRE FRANCO MON
 			switch (arvl) {
 				case "DFW": // GRU-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+					result += ""; // TODO
+					break;
+				case "JFK": // GRU-JFK // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "MIA": // GRU-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of GRU
@@ -343,39 +397,45 @@ latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result =
 		case "GUA": // Guatemala City/LA AURORA INTL
 			switch (arvl) {
 				case "DFW": // GUA-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+					result += ""; // TODO
+					break;
+				case "MIA": // GUA-MIA // Updated 01-01-1965
+					result += ""; // TODO
+					break;
+				case "ORD": // GUA-ORD // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of GUA
 
 		case "GYE": // Guayaquil/JOSE JOAQUIN DE OLMEDO INTL
 			switch (arvl) {
-				case "DFW": // GYE-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "MIA": // GYE-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of GYE
 
 		case "HAV": // Havana/JOSE MARTI INTL
 			switch (arvl) {
-				case "DFW": // HAV-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "MIA": // HAV-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of HAV
 
 		case "HMO": // Hermosillo/GEN IGNACIO PESQUEIRA GARCIA I
 			switch (arvl) {
-				case "DFW": // HMO-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "PHX": // HMO-PHX // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of HMO
 
 		case "HOG": // Holguin/FRANK PAIS INTL
 			switch (arvl) {
-				case "DFW": // HOG-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "MIA": // HOG-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of HOG
@@ -383,34 +443,23 @@ latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result =
 		case "HUX": // Bahias de Huatulco/BAHIAS DE HUATULCO INTL
 			switch (arvl) {
 				case "DFW": // HUX-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+					result += ""; // TODO
 					break;
 			}
 		break; // End of HUX
 
-		case "IPC": // Easter Island/MATAVERI INTL
-			switch (arvl) {
-				case "DFW": // IPC-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
-					break;
-			}
-		break; // End of IPC
-
-		case "IQQ": // Iquique/DIEGO ARACENA INTL
-			switch (arvl) {
-				case "DFW": // IQQ-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
-					break;
-			}
-		break; // End of IQQ
+// IPC skipped
+// IQQ skipped
 
 		case "KIN": // Kingston/NORMAN MANLEY INTL
 			switch (arvl) {
-				case "DFW": // KIN-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "MIA": // KIN-MIA // Updated 01-01-1965
+					result += ""; // TODO
 					break;
 			}
 		break; // End of KIN
+
+			/* DONE THRU HERE 2/6/2026 */
 
 		case "LAP": // La Paz/GEN MANUEL MARQUEZ DE LEON INT
 			switch (arvl) {
