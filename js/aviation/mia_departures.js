@@ -1211,6 +1211,11 @@ MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.CABLO.DCT.MEI.DCT.LIT.DCT.RZC.DCT.XNA
 			result += "<br/>W4<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UL577 CDO LRN UL343 SATOE ANADA UL452 ITLUV TGPY\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y421 MEEGL GEECE TGPY\" readonly>";
 			break;
+		case "EZE":
+			// KMIA GWAVA2 URSUS UP406 BILSI UL795 LENAX UL417 NEFTU UP525 RCO UN420 VIR UL404 ISOPO UT672 MULTA UW24 SNT SNT7U SAEZ
+			// KMIA GWAVA2 URSUS UL780 SULNA UT315 TOY UL416 JUA UW57 RCU UW10 SNT SNT7U SAEZ
+			// KMIA KLADA2 BITAC Y290 HAGIT L452 ANADA UG449 POS UM402 VAS UP526 REPAM UZ103 DALAB UL793 GUA UZ129 PAGON SAEZ
+			break;
 		case "PUJ": // MIA-PUJ // Updated 02-06-2026
 			result += "<!-- Updated 02-06-2026 P -->";
 			result += "<br/><br/><b>Standard Route:</b>";
