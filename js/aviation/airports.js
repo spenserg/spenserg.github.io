@@ -25,10 +25,12 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	// Weather Cameras
 	var tmp_cams = get_weather_cams(arvl);
 	if (tmp_cams.length > 0) {
-		if (tmp_cams[0].length > 0) {
-			result += "<br/>" + arvl + " Live Weathercams: ";
-			for (let i = 0; i < tmp_cams.length; i++) {
-				result += "<a href='" + tmp_cams[i] + "' target='_blank'>Camera " + (i+1) + "</a>&nbsp;&nbsp;";
+		if (tmp_cams[0].length > 0) { // At least one item in array
+			if (tmp_cams[0][0].length > 0) { // First item is not default: ["", ""]
+				result += "<br/>Live Weathercams: ";
+				for (let i = 0; i < tmp_cams.length; i++) {
+					result += "<a href='" + tmp_cams[i][0] + "' target='_blank'>" + tmp_cams[i][1] + "</a>&nbsp;&nbsp;";
+				}
 			}
 		}
 	}
@@ -2117,914 +2119,922 @@ get_weather_cams = function (str = null) {
 		case "ABE":
 		case "KABE":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ABI":
 		case "KABI":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ABQ":
 		case "KABQ":
 			return [
-				"https://www.weather.gov/abq/webcam"
+				["https://www.weather.gov/abq/webcam", "NWS Webcam"]
 			];
 			break;
 		case "ACT":
 		case "KACT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ACY":
 		case "KACY":
 			return [
-				"https://www.youtube.com/watch?v=p4bjNK7OM9o",
-				"https://www.youtube.com/watch?v=Gh6ozBVWlwU"
+				["https://www.youtube.com/watch?v=p4bjNK7OM9o", "Ocean City"],
+				["https://www.youtube.com/watch?v=Gh6ozBVWlwU", "Somers Point"]
 			];
 			break;
 		case "AFW":
 		case "KAFW":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "AGS":
 		case "KAGS":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ALB":
 		case "KALB":
 			return [
-				"https://wnyt.com/cdphp-first-warning-cam-downtown-albany/",
-				"https://webpubcontent.gray.tv/walb/images/Albany-first-view.jpg"
+				["https://wnyt.com/cdphp-first-warning-cam-downtown-albany/", "Skyline"]
+				// ,["https://webpubcontent.gray.tv/walb/images/Albany-first-view.jpg", "Image"]
+
 			];
 			break;
 		case "AMA":
 		case "KAMA":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ART":
 		case "KART":
 			return [
-				"https://www.youtube.com/watch?v=L3bYhofjjRU"
+				["https://www.youtube.com/watch?v=L3bYhofjjRU", "Airport"]
 			];
 			break;
 		case "ATL":
 		case "KATL":
 			return [
-				"https://worldcams.tv/united-states/atlanta/airport",
-				"https://www.fox10phoenix.com/webcams-atlanta2"
+				["https://www.fox10phoenix.com/webcams-atlanta2","Airport Cam 1"],
+				["https://worldcams.tv/united-states/atlanta/airport","Airport Cam 2"]
 			];
 			break;
 		case "AUS":
 		case "KAUS":
 			return [
-				"https://www.earthcam.net/projects/abia/terminal/"
+				["https://www.earthcam.net/projects/abia/terminal/","Airport"]
 			];
 			break;
 		case "AVL":
 		case "KAVL":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "AVP":
 		case "KAVP":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "AZA":
 		case "KIWA":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BDA":
 		case "TXKF":
 			return [
-				"https://www.youtube.com/watch?v=ninudy1Bxso"
+				["https://www.youtube.com/watch?v=ninudy1Bxso", "Nonsuch Island"]
 			];
 			break;
 		case "BDL":
 		case "KBDL":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BFI":
 		case "KBFI":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BFL":
 		case "KBFL":
 			return [
-				"https://www.youtube.com/watch?v=TdugPEnluFo" // Mojave, CA
+				["https://www.youtube.com/watch?v=TdugPEnluFo", "Mojave"]
 			]; // TODO
 			break;
 		case "BGR":
 		case "KBGR":
 			return [
-				"https://www.youtube.com/watch?v=v9NWddwu8rw" // Rockport Harbor
+				["https://www.youtube.com/watch?v=v9NWddwu8rw", "Rockport Harbor"]
 			]; // TODO
 			break;
 		case "BHM":
 		case "KBHM":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BIL":
 		case "KBIL":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BLV":
 		case "KBLV":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BNA":
 		case "KBNA":
 			return [
-				"https://www.youtube.com/watch?v=ATbtGvbExP4"
+				["https://www.youtube.com/watch?v=ATbtGvbExP4", "Skyline"]
 			];
 			break;
 		case "BOI":
 		case "KBOI":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BOS":
 		case "KBOS":
 			return [
-				"https://www.youtube.com/watch?v=vdd-TUP3cxs",
-				"https://www.youtube.com/watch?v=yXfcL7DqlR4" // Hanover
+				// "https://www.youtube.com/watch?v=vdd-TUP3cxs",
+				["https://www.youtube.com/watch?v=zmiOmpo27F8", "Skyline"],
+				["https://www.youtube.com/watch?v=yXfcL7DqlR4", "Hanover"],
+				["https://www.youtube.com/watch?v=MhmTJQ7I_hU", "Nahant Bay"]
 			];
 			break;
 		case "BRO":
 		case "KBRO":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BTR":
 		case "KBTR":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BTV":
 		case "KBTV":
 			return [
-				"https://www.youtube.com/watch?v=3NZYi-BCCDY",
-				"https://www.youtube.com/watch?v=JIE0vE51OKU"
+				["https://www.youtube.com/watch?v=3NZYi-BCCDY","Airport South"],
+				["https://www.youtube.com/watch?v=JIE0vE51OKU","Lake Champlain"]
 			];
 			break;
 		case "BUF":
 		case "KBUF":
 			return [
-				"https://www.youtube.com/watch?v=P3EXDEuGNqE", // Buffalo Bills Stadium
-				"https://www.youtube.com/watch?v=J032Ui8Papc" // Fort Niagara
+				["https://www.youtube.com/watch?v=P3EXDEuGNqE", "Buffalo Bills Stadium"],
+				["https://www.youtube.com/watch?v=J032Ui8Papc", "Fort Niagara"],
+				["https://www.youtube.com/watch?v=DnUFAShZKus", "Peace Bridge"]
 			];
 			break;
 		case "BUR":
 		case "KBUR":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BWI":
 		case "KBWI":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "BZN":
 		case "KBZN":
 			return [
-				"https://mediaassets.kbzk.com/kbzk/BZN-Airport.jpg"
+				["https://mediaassets.kbzk.com/kbzk/BZN-Airport.jpg","Still Frames"]
 			]; // TODO
 			break;
 		case "CAE":
 		case "KCAE":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "CAK":
 		case "KCAK":
 			return [
-				"https://g1.ipcamlive.com/player/player.php?alias=63ed3a28704fc&autoplay=1&mute=1"
+				["https://g1.ipcamlive.com/player/player.php?alias=63ed3a28704fc&autoplay=1&mute=1", "Downtown"]
 			];
 			break;
 		case "CHS":
 		case "KCHS":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "CID":
 		case "KCID":
 			return [
-				""
+				["https://www.youtube.com/watch?v=5c5EZJ4tgHY", "Muscatine"]
 			]; // TODO
 			break;
 		case "CLE":
 		case "KCLE":
 			return [
-				"https://www.youtube.com/watch?v=n5Ja0_q2Cos",
-				"https://g1.ipcamlive.com/player/player.php?alias=6400d096802b0&autoplay=1&mute=1",
-				"https://g1.ipcamlive.com/player/player.php?alias=63ed37f2439ce&autoplay=1&mute=1",
-				"https://g1.ipcamlive.com/player/player.php?alias=65aa806e630fa&autoplay=1&mute=1",
-				"https://www.youtube.com/watch?v=ZZevIUr2cTk" // Lorain, OH
+				["https://www.youtube.com/watch?v=n5Ja0_q2Cos", "Terminal Tower"],
+				["https://g1.ipcamlive.com/player/player.php?alias=63ed37f2439ce&autoplay=1&mute=1","Skyline"],
+				// ["https://g1.ipcamlive.com/player/player.php?alias=6400d096802b0&autoplay=1&mute=1",""],
+				["https://g1.ipcamlive.com/player/player.php?alias=65aa806e630fa&autoplay=1&mute=1","Harbor"],
+				["https://www.youtube.com/watch?v=ZZevIUr2cTk", "Lorain"]
 			];
 			break;
 		case "CLT":
 		case "KCLT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "CMH":
 		case "KCMH":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "CNW":
 		case "KCNW":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "COS":
 		case "KCOS":
 			return [
-				"https://www.youtube.com/watch?v=3Yaho-uceGw"
+				["https://www.youtube.com/watch?v=3Yaho-uceGw", "Colorado College"]
 			];
 			break;
 		case "COU":
 		case "KCOU":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "CPR":
 		case "KCPR":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "CRP":
 		case "KCRP":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "CVG":
 		case "KCVG":
 			return [
-				"https://www.youtube.com/watch?v=q5522RsCN00",
-				"https://www.youtube.com/watch?v=KKv3njehEcY"
+				["https://www.youtube.com/watch?v=q5522RsCN00", "Skyline 1"],
+				["https://www.youtube.com/watch?v=KKv3njehEcY", "Skyline 2"]
 			];
 			break;
 		case "CYS":
 		case "KCYS":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "DAB":
 		case "KDAB":
 			return [
-				"https://www.youtube.com/watch?v=xUtYeWxawXg"
+				["https://www.youtube.com/watch?v=xUtYeWxawXg", "Ormond Beach"]
 			];
 			break;
 		case "DAL":
 		case "KDAL":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "DAY":
 		case "KDAY":
 			return [
-				"https://www.youtube.com/watch?v=D9flnb2pQDc"
+				["https://www.youtube.com/watch?v=D9flnb2pQDc", "Beaver Creek"]
 			];
 			break;
 		case "DCA":
 		case "KDCA":
 			return [
-				"https://www.fox5dc.com/skycam-washington-dc-at-the-wharf",
-				"https://www.youtube.com/watch?v=1wV9lLe14aU"
+				["https://www.fox5dc.com/skycam-washington-dc-at-the-wharf", "Airport"],
+				["https://www.youtube.com/watch?v=1wV9lLe14aU", "Potomac"]
 			];
 			break;
 		case "DEN":
 		case "KDEN":
 			return [
-				"https://s3.amazonaws.com/images.repo.mh.wetmet.net/267-02-01/current_thumbnail.jpg"
+				["https://s3.amazonaws.com/images.repo.mh.wetmet.net/267-02-01/current_thumbnail.jpg", "Downtown"]
 			]; // TODO
 			break;
 		case "DFW":
 		case "KDFW":
 			return [
-				"https://www.youtube.com/watch?v=VtpIp7-7-CQ"
+				["https://www.youtube.com/watch?v=tMJ4ZRsiDfI", "Airport Cam 1"],
+				["https://www.fox10phoenix.com/webcams-dallas", "Airport Cam 2"]
 			];
 			break;
 		case "DLH":
 		case "KDLH":
 			return [
-				"https://www.youtube.com/watch?v=Arf54yKFp2Y"
+				["https://www.youtube.com/watch?v=m2wWzo9GmwY", "Skyline"],
+				["https://www.youtube.com/watch?v=Arf54yKFp2Y", "Fairlawn"]
 			];
 			break;
 		case "DRO":
 		case "KDRO":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "DSM":
 		case "KDSM":
 			return [
-				"https://www.youtube.com/watch?v=k1K6jgVsdRI" // Pella Central Park
+				["https://www.youtube.com/watch?v=k1K6jgVsdRI", "Pella Central Park"]
 			]; // TODO
 			break;
 		case "DTW":
 		case "KDTW":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ECP":
 		case "KECP":
 			return [
-				""
-			]; // TODO
+				["https://www.youtube.com/watch?v=51d8Rdt7U7I", "Skyline"],
+				["https://www.youtube.com/watch?v=hzKVRtyl2lU", "Beach"]
+			];
 			break;
 		case "EGE":
 		case "KEGE":
 			return [
-				"https://www.iplivecams.com/live-cams/fly-vail-eagle-county-regional-airport-gypsum-colorado-united-states"
+				["https://www.iplivecams.com/live-cams/fly-vail-eagle-county-regional-airport-gypsum-colorado-united-states", "Airport"]
 			];
 			break;
 		case "ELP":
 		case "KELP":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "EUG":
 		case "KEUG":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "EVV":
 		case "KEVV":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "EWR":
 		case "KEWR":
 			return [
-				"https://www.youtube.com/watch?v=xHLEKR3_8iI", // Coney Island
-				"https://www.youtube.com/watch?v=TsgoxkRFit0" // Summit One
+				["https://www.youtube.com/watch?v=TsgoxkRFit0", "Summit One"],
+				["https://www.youtube.com/watch?v=xHLEKR3_8iI", "Coney Island"]
 			]; // TODO
 			break;
 		case "EYW":
 		case "KEYW":
 			return [
-				"https://www.youtube.com/watch?v=Y5ypYTZs-7o",
-				"https://www.youtube.com/watch?v=HDlmUp4JBLg",
-				"https://www.youtube.com/watch?v=_RxQuhI8_TY" // Big Pine Key
+				["https://www.youtube.com/watch?v=Y5ypYTZs-7o", "Marina"],
+				["https://www.youtube.com/watch?v=HDlmUp4JBLg", "South Point"],
+				["https://www.youtube.com/watch?v=_RxQuhI8_TY", "Big Pine Key"]
 			]; // TODO
 			break;
 		case "FAR":
 		case "KFAR":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "FAT":
 		case "KFAT":
 			return [
-				"https://www.youtube.com/watch?v=NK3S_T0Sabk"
+				["https://www.youtube.com/watch?v=NK3S_T0Sabk","Friant"]
 			]; // TODO
 			break;
 		case "FCA":
 		case "KGPI":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "FLL":
 		case "KFLL":
 			return [
-				"https://www.iplivecams.com/live-cams/hillsboro-lighthouse-preservation-society-pompano-beach-florida-united-states/",
-				"https://www.youtube.com/watch?v=yCn5vANhLfQ",
-				"https://www.youtube.com/watch?v=_tam0-UVAcY"
+				["https://www.youtube.com/watch?v=_tam0-UVAcY", "Skyline"],
+				["https://www.youtube.com/watch?v=Lpm-C_Gz6yM", "Downtown"],
+				["https://www.iplivecams.com/live-cams/hillsboro-lighthouse-preservation-society-pompano-beach-florida-united-states/", "Pompano Beach"],
+				["https://www.youtube.com/watch?v=yCn5vANhLfQ", "Anglins Pier"]
 			];
 			break;
 		case "FNT":
 		case "KFNT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "FOE":
 		case "KFOE":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "FSD":
 		case "KFSD":
 			return [
-				"https://media.psg.nexstardigital.net/kelo/livecams/siouxfallsfallspark.html"
+				["https://media.psg.nexstardigital.net/kelo/livecams/siouxfallsfallspark.html", "Skyline"]
 			];
 			break;
 		case "GEG":
 		case "KGEG":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "GGG":
 		case "KGGG":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "GJT":
 		case "KGJT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "GNV":
 		case "KGNV":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "GPT":
 		case "KGPT":
 			return [
-				"https://www.youtube.com/watch?v=fYsEy6RFskY"
+				["https://www.youtube.com/watch?v=fYsEy6RFskY", "D Iberville"]
 			];
 			break;
 		case "GRB":
 		case "KGRB":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "GRK":
 		case "KGRK":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "GRR":
 		case "KGRR":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "GRU":
 		case "SBGR":
 			return [
-				"https://www.youtube.com/watch?v=9d4EvAwTw1A",
-				"https://www.youtube.com/watch?v=TpgzZopaip0"
+				["https://www.youtube.com/watch?v=9d4EvAwTw1A", "Airport"]
 			];
 		case "GSO":
 		case "KGSO":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "GSP":
 		case "KGSP":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "GTF":
 		case "KGTF":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "GUC":
 		case "KGUC":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "HDN":
 		case "KHDN":
 			return [
-				"https://www.youtube.com/watch?v=2UJDLWcSADk" // Steamboat Springs
+				["https://www.youtube.com/watch?v=2UJDLWcSADk", "Steamboat Springs"]
 			];
 			break;
 		case "HOU":
 		case "KHOU":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "HRL":
 		case "KHRL":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "HSV":
 		case "KHSV":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "IAD":
 		case "KIAD":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "IAH":
 		case "KIAH":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ICT":
 		case "KICT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "IFP":
 		case "KIFP":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ILM":
 		case "KILM":
 			return [
-				"https://www.youtube.com/watch?v=itXoEFJZtD0",
-				"https://www.youtube.com/watch?v=yQG1M1GU_pI"
+				["https://www.youtube.com/watch?v=itXoEFJZtD0","Mercer Pier South"],
+				["https://www.youtube.com/watch?v=yQG1M1GU_pI","Mercer Pier North"]
 			];
 			break;
 		case "IND":
 		case "KIND":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "JAC":
 		case "KJAC":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "JAN":
 		case "KJAN":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "JAX":
 		case "KJAX":
 			return [
-				""
+				["https://www.youtube.com/watch?v=0lox0s8zNcU", "St. Augustine"]
 			]; // TODO
 			break;
 		case "JFK":
 		case "KJFK":
 			return [
-				"https://www.youtube.com/watch?v=0i_lTuIWf_A",
-				"https://www.youtube.com/watch?v=xHLEKR3_8iI", // Coney Island
-				"https://www.youtube.com/watch?v=TsgoxkRFit0" // Summit One
+				// "https://www.youtube.com/watch?v=0i_lTuIWf_A",
+				["https://www.youtube.com/watch?v=xHLEKR3_8iI", "Coney Island"],
+				["https://www.youtube.com/watch?v=TsgoxkRFit0", "Summit One"]
 			];
 			break;
 		case "LAS":
 		case "KLAS":
 			return [
-				"https://www.youtube.com/watch?v=cn8_34TuMaM",
-				"https://www.youtube.com/watch?v=MnyjqGMkzmw"
+				["https://www.youtube.com/watch?v=cn8_34TuMaM", "Rwy 26R/26L"],
+				["https://www.youtube.com/watch?v=MnyjqGMkzmw", "Allegiant Stadium"]
 			];
 			break;
 		case "LAW":
 		case "KLAW":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "LAX":
 		case "KLAX":
 			return [
-				"https://www.youtube.com/watch?v=VjqKog3XwZ8",
-				"https://www.youtube.com/watch?v=UQaSS4_VAV4",
-				"https://www.youtube.com/watch?v=q6zIE0Vb0do",
-				"https://www.youtube.com/watch?v=D4B4MdxLkQo" // Manhattan Beach
+				["https://www.youtube.com/watch?v=VjqKog3XwZ8", "Rwy 24L/24R"],
+				["https://www.youtube.com/watch?v=UQaSS4_VAV4", "Rwy 25L/25R"],
+				["https://www.youtube.com/watch?v=D4B4MdxLkQo", "Manhattan Beach"]
 			];
 			break;
 		case "LBB":
 		case "KLBB":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "LCH":
 		case "KLCH":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "LEX":
 		case "KLEX":
 			return [
-				"https://www.youtube.com/watch?v=q2gnkOo04IE"
+				["https://www.youtube.com/watch?v=q2gnkOo04IE", "Skyline"]
 			];
 			break;
 		case "LGA":
 		case "KLGA":
 			return [
-				"https://www.youtube.com/watch?v=xHLEKR3_8iI", // Coney Island
-				"https://www.youtube.com/watch?v=TsgoxkRFit0" // Summit One
+				["https://www.youtube.com/watch?v=xHLEKR3_8iI", "Coney Island"],
+				["https://www.youtube.com/watch?v=TsgoxkRFit0", "Summit One"]
 			]; // TODO
 			break;
 		case "LIS":
 		case "LPPT":
 			return [
-				"https://www.youtube.com/watch?v=XniwniDY-is"
+				["https://www.youtube.com/watch?v=XniwniDY-is", "Airport"]
 			];
 		case "LIT":
 		case "KLIT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "LNK":
 		case "KLNK":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "LRD":
 		case "KLRD":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MAF":
 		case "KMAF":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MCI":
 		case "KMCI":
 			return [
-				"https://www.youtube.com/watch?v=Ezm7jMHsx5A",
-				"https://www.youtube.com/watch?v=wdl24JBMMis" // Leavenworth
+				["https://www.youtube.com/watch?v=Ezm7jMHsx5A", "Downtown"],
+				["https://www.youtube.com/watch?v=wdl24JBMMis", "Leavenworth"]
 			];
 			break;
 		case "MCO":
 		case "KMCO":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MDT":
 		case "KMDT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MDW":
 		case "KMDW":
 			return [
-				"https://www.youtube.com/watch?v=hb22ynjZPxk"
+				["https://www.youtube.com/watch?v=hb22ynjZPxk", "Airport"]
 			];
 			break;
 		case "MEM":
 		case "KMEM":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MFE":
 		case "KMFE":
 			return [
-				"https://www.youtube.com/watch?v=la1nuQD04B4"
+				// "https://www.youtube.com/watch?v=la1nuQD04B4"
 			];
 			break;
 		case "MGM":
 		case "KMGM":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MHT":
 		case "KMHT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MIA":
 		case "KMIA":
 			return [
-				"https://www.miamiairportcam.com/"
+				["https://www.miamiairportcam.com/", "Airport"]
 			];
 			break;
 		case "MKE":
 		case "KMKE":
 			return [
-				"https://www.youtube.com/watch?v=kqmwfusqmKo",
-				"https://www.youtube.com/watch?v=13j5iZkMpbE" // Sheboygan, WI
+				["https://www.youtube.com/watch?v=kqmwfusqmKo", "Downtown"],
+				["https://www.youtube.com/watch?v=13j5iZkMpbE", "Sheboygan"]
 			];
 			break;
 		case "MLB":
 		case "KMLB":
 			return [
-				""
-			]; // TODO
+				["https://www.youtube.com/watch?v=0bv7YxPWRdw", "Satellite Beach"]
+			];
 			break;
 		case "MLI":
 		case "KMLI":
 			return [
-				"https://www.youtube.com/watch?v=8Rp5JRSQOvk"
+				["https://www.youtube.com/watch?v=8Rp5JRSQOvk", "Bettendorf"]
 			];
 			break;
 		case "MOB":
 		case "KMOB":
 			return [
-				"https://www.youtube.com/watch?v=rjASdnpfONo",
-				"https://www.iplivecams.com/live-cams/sea-n-suds-gulf-shores-alabama-united-states/",
-				"https://www.youtube.com/watch?v=l2em7gqBj00",
-				"https://www.youtube.com/watch?v=N5wWOVOTHmQ",
-				"https://www.youtube.com/watch?v=iQPgyQYfVjQ"
+				["https://www.youtube.com/watch?v=rjASdnpfONo", "Downtown"],
+				["https://www.youtube.com/watch?v=iQPgyQYfVjQ", "USS Alabama"],
+				["https://www.iplivecams.com/live-cams/sea-n-suds-gulf-shores-alabama-united-states/", "Gulf Shores"],
+				// ["https://www.youtube.com/watch?v=l2em7gqBj00", ""],
+				["https://www.youtube.com/watch?v=N5wWOVOTHmQ", "Fairhope"]
 			];
 			break;
 		case "MRY":
 		case "KMRY":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MSN":
 		case "KMSN":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MSO":
 		case "KMSO":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MSP":
 		case "KMSP":
 			return [
-				"https://www.youtube.com/watch?v=FY6WlMjzG2U",
-				"https://www.youtube.com/watch?v=FTC8ZYHJMuw" // Prescott, WI
+				["https://www.youtube.com/watch?v=FY6WlMjzG2U", "Airport"],
+				["https://www.youtube.com/watch?v=FTC8ZYHJMuw", "Prescott"]
 			];
 			break;
 		case "MSY":
 		case "KMSY":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MTJ":
 		case "KMTJ":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MWH":
 		case "KMWH":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "MYR":
 		case "KMYR":
 			return [
-				"https://www.youtube.com/watch?v=UKtfCDXhCq0",
-				"https://www.youtube.com/watch?v=Sf8GYK93u5o",
-				"https://www.youtube.com/watch?v=EaYwBsJERv0", // Surfside Beach
-				"https://www.youtube.com/watch?v=PdudbIiVIKQ"
+				["https://www.youtube.com/watch?v=Sf8GYK93u5o", "Beach"],
+				["https://www.youtube.com/watch?v=UKtfCDXhCq0", "Boardwalk"],
+				["https://www.youtube.com/watch?v=EaYwBsJERv0", "Surfside Beach 1"],
+				["https://www.youtube.com/watch?v=PdudbIiVIKQ", "Surfside Beach 2"]
 			];
 			break;
-		case "NRT":
-		case "RJAA":
-			return [
-				"https://www.youtube.com/watch?v=OuCbntsMsWY"
-			];
 		case "OKC":
 		case "KOKC":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "OMA":
 		case "KOMA":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ONT":
 		case "KONT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ORD":
 		case "KORD":
 			return [
-				"https://www.youtube.com/watch?v=sQxL8t0gtu8"
+				["https://www.youtube.com/watch?v=sQxL8t0gtu8", "Skyline"],
+				["https://www.youtube.com/watch?v=hb22ynjZPxk", "KMDW"]
 			]; // TODO
 			break;
 		case "ORF":
 		case "KORF":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "PAE":
 		case "KPAE":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "PBI":
 		case "KPBI":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "PDX":
 		case "KPDX":
 			return [
-				"https://www.youtube.com/watch?v=bitp5j26JEc"
+				["https://www.youtube.com/watch?v=bitp5j26JEc", "Skyline"]
 			];
 			break;
 		case "PHL":
 		case "KPHL":
 			return [
-				"https://www.youtube.com/watch?v=RH5fgOcO0jg"
+				["https://www.youtube.com/watch?v=RH5fgOcO0jg", "Downtown"]
 			];
 			break;
 		case "PHX":
 		case "KPHX":
 			return [
-				"https://video.nest.com/embedded/live/JS4fe4vuKh",
+				["https://video.nest.com/embedded/live/JS4fe4vuKh", "Skyline"]
 				
 			];
 			break;
 		case "PIE":
 		case "KPIE":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "PIH":
 		case "KPIH":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "PIT":
 		case "KPIT":
 			return [
-				""
+				["", ""]
 			]; // TODO
+			break;
+		case "PMI":
+		case "LEPA":
+			return [
+				["https://www.youtube.com/watch?v=AeFSWxScJ8c", "El Toro"]
+			];
 			break;
 		case "PNS":
 		case "KPNS":
 			return [
-				"https://www.youtube.com/watch?v=ar9SpRynExk",
-				"https://www.youtube.com/watch?v=5Ijk8QsR-nw",
-				"https://www.youtube.com/watch?v=g4fuUj6X7GY" // Orange Beach, AL
-			];
+				["https://www.youtube.com/watch?v=ar9SpRynExk", "Perdido Key"],
+				["https://www.youtube.com/watch?v=5Ijk8QsR-nw", "Orange Beach 1"],
+				["https://www.youtube.com/watch?v=g4fuUj6X7GY", "Orange Beach 2"]
+				];
 			break;
 		case "PSM":
 		case "KPSM":
@@ -3035,384 +3045,385 @@ get_weather_cams = function (str = null) {
 		case "PSP":
 		case "KPSP":
 			return [
-				"https://www.youtube.com/watch?v=K2Ec8r9MHJg"
+				["https://www.youtube.com/watch?v=K2Ec8r9MHJg", "Airport"]
 			];
 			break;
 		case "PUB":
 		case "KPUB":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "PVD":
 		case "KPVD":
 			return [
-				""
+				// ["https://www.youtube.com/watch?v=sp-FHZY95QM", "Nantucket"]
 			]; // TODO
 			break;
 		case "PWM":
 		case "KPWM":
 			return [
-				"https://www.youtube.com/watch?v=-acfCP1ks-c", // Downtown Portland
-				"https://www.youtube.com/watch?v=4muj2V_WCPw" // Old Orchard Beach
+				["https://www.youtube.com/watch?v=-acfCP1ks-c", "Downtown"],
+				["https://www.youtube.com/watch?v=4muj2V_WCPw", "Old Orchard Beach"]
 			];
 			break;
 		case "RAP":
 		case "KRAP":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "RDM":
 		case "KRDM":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "RDU":
 		case "KRDU":
 			return [
-				"https://www.youtube.com/watch?v=qy3TCN2abFc" // Triangle North Executive Airport
+				["https://www.youtube.com/watch?v=qy3TCN2abFc", "KLHZ Airport"]
 			]; // TODO
 			break;
 		case "RFD":
 		case "KRFD":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "RIC":
 		case "KRIC":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "RNO":
 		case "KRNO":
 			return [
-				"https://www.youtube.com/watch?v=V-ERTb6JXrc",
-				"https://www.youtube.com/watch?v=laopqyiYlxg"
+				["https://www.youtube.com/watch?v=V-ERTb6JXrc", "Downtown"],
+				["https://www.youtube.com/watch?v=laopqyiYlxg", "Reno Arch"]
 			];
 			break;
 		case "ROC":
 		case "KROC":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "ROW":
 		case "KROW":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "RST":
 		case "KRST":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "RSW":
 		case "KRSW":
 			return [
-				"https://www.youtube.com/watch?v=Zg1qEHQP-A4",
-				"https://www.youtube.com/watch?v=spyttB6YiaU"
+				["https://www.youtube.com/watch?v=Zg1qEHQP-A4", "Causeway"],
+				["https://www.youtube.com/watch?v=spyttB6YiaU", "Beach Resort"]
 			];
 			break;
 		case "SAN":
 		case "KSAN":
 			return [
-				"https://www.youtube.com/watch?v=277D0mDXTBE",
-				"https://www.youtube.com/watch?v=Pbgm0U1iEvQ"
+				["https://www.youtube.com/watch?v=277D0mDXTBE", "Bay"],
+				["https://www.webcamtaxi.com/en/usa/california/san-diego.html","Downtown"],
+				["https://www.youtube.com/watch?v=Pbgm0U1iEvQ", "Point Loma"]
 			];
 			break;
 		case "SAT":
 		case "KSAT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SAV":
 		case "KSAV":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SBA":
 		case "KSBA":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SBN":
 		case "KSBN":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SBP":
 		case "KSBP":
 			return [
-				"https://www.youtube.com/watch?v=puruJI4u3RM"
+				["https://www.youtube.com/watch?v=puruJI4u3RM", "Pismo Beach"]
 			];
 			break;
 		case "SDF":
 		case "KSDF":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SEA":
 		case "KSEA":
 			return [
-				"https://www.youtube.com/watch?v=2eFJG4Uu0wI",
-				"https://www.youtube.com/watch?v=4cgSE12k9Sc"
+				["https://www.youtube.com/watch?v=2eFJG4Uu0wI", "Airport"],
+				["https://www.youtube.com/watch?v=4cgSE12k9Sc", "Skyline"]
 			];
 			break;
 		case "SFB":
 		case "KSFB":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SFO":
 		case "KSFO":
 			return [
-				"https://www.youtube.com/watch?v=4F88aDCeLAE",
-				"https://w3.mp.lura.live/player/prod/v3/anvload.html?key=eyJhbnZhY2siOiI1VkQ2RXlkNmRqZXdiQ21Od0JGbnNKajE3WUF2R1J3bCIsImV4cGVjdFByZXJvbGwiOnRydWUsImV4cGVjdFByZXJvbGxUaW1lb3V0Ijo1LCJodG1sNSI6dHJ1ZSwibSI6ImNicyIsInBsdWdpbnMiOnsiY29tc2NvcmUiOnsiYzMiOiJzYW5mcmFuY2lzY28uY2JzbG9jYWwuY29tIiwiY2xpZW50SWQiOiIzMDAwMDIzIn0sImRmcCI6eyJjbGllbnRTaWRlIjp7ImFkVGFnVXJsIjoiaHR0cDovL3B1YmFkcy5nLmRvdWJsZWNsaWNrLm5ldC9nYW1wYWQvYWRzP3N6PTJ4Mlx1MDAyNml1PS80MTI4L2Nicy5zZlx1MDAyNmNpdV9zenNcdTAwMjZpbXBsPXNcdTAwMjZnZGZwX3JlcT0xXHUwMDI2ZW52PXZwXHUwMDI2b3V0cHV0PXhtbF92YXN0Mlx1MDAyNnVudmlld2VkX3Bvc2l0aW9uX3N0YXJ0PTFcdTAwMjZ1cmw9W3JlZmVycmVyX3VybF1cdTAwMjZkZXNjcmlwdGlvbl91cmw9W2Rlc2NyaXB0aW9uX3VybF1cdTAwMjZjb3JyZWxhdG9yPVt0aW1lc3RhbXBdIiwia2V5VmFsdWVzIjp7ImNhdGVnb3JpZXMiOiJbW0NBVEVHT1JJRVNdXSIsInByb2dyYW0iOiJbW1BST0dSQU1fTkFNRV1dIiwic2l0ZVNlY3Rpb24iOiJ2aWRlby1leHBlcmllbmNlIn19fSwiaGVhcnRiZWF0QmV0YSI6eyJhY2NvdW50IjoiY2JzbG9jYWwtZ2xvYmFsLXVuaWZpZWQiLCJjaGFwdGVyVHJhY2tpbmciOmZhbHNlLCJjdXN0b21NZXRhZGF0YSI6eyJ2aWRlbyI6eyJjYnNfbWFya2V0Ijoic2FuZnJhbmNpc2NvLmNic2xvY2FsLmNvbSIsImNic19wbGF0Zm9ybSI6ImRlc2t0b3AifX0sImN1c3RvbVRyYWNraW5nU2VydmVyIjoiY2JzZGlnaXRhbG1lZGlhLmQxLnNjLm9tdHJkYy5uZXQiLCJjdXN0b21UcmFja2luZ1NlcnZlclNlY3VyZSI6ImNic2RpZ2l0YWxtZWRpYS5kMS5zYy5vbXRyZGMubmV0Iiwiam9iSWQiOiJzY192YSIsIm1hcmtldGluZ0Nsb3VkSWQiOiI4MjNCQTAzMzU1Njc0OTdGN0YwMDAxMDFAQWRvYmVPcmciLCJwSW5zdGFuY2UiOiJwMCIsInByb2ZpbGUiOiJjYnMiLCJwdWJsaXNoZXJJZCI6ImNic2xvY2FsIiwidHJhY2tpbmdTZXJ2ZXIiOiJjYnNkaWdpdGFsbWVkaWEuaGIub210cmRjLm5ldCIsInZlcnNpb24iOiIxLjUifSwibW9hdCI6eyJjbGllbnRTaWRlIjp7InBhcnRuZXJDb2RlIjoiY2JzbG9jYWxhbnZhdG92aWRlbzE4MTczMjYwOTQzMSJ9fX0sInRva2VuIjoiZGVmYXVsdCIsInYiOiJjNTA5In0",
-				"https://www.youtube.com/watch?v=CXYr04BWvmc"
+				["https://www.youtube.com/watch?v=4F88aDCeLAE", "Airport"],
+				["https://w3.mp.lura.live/player/prod/v3/anvload.html?key=eyJhbnZhY2siOiI1VkQ2RXlkNmRqZXdiQ21Od0JGbnNKajE3WUF2R1J3bCIsImV4cGVjdFByZXJvbGwiOnRydWUsImV4cGVjdFByZXJvbGxUaW1lb3V0Ijo1LCJodG1sNSI6dHJ1ZSwibSI6ImNicyIsInBsdWdpbnMiOnsiY29tc2NvcmUiOnsiYzMiOiJzYW5mcmFuY2lzY28uY2JzbG9jYWwuY29tIiwiY2xpZW50SWQiOiIzMDAwMDIzIn0sImRmcCI6eyJjbGllbnRTaWRlIjp7ImFkVGFnVXJsIjoiaHR0cDovL3B1YmFkcy5nLmRvdWJsZWNsaWNrLm5ldC9nYW1wYWQvYWRzP3N6PTJ4Mlx1MDAyNml1PS80MTI4L2Nicy5zZlx1MDAyNmNpdV9zenNcdTAwMjZpbXBsPXNcdTAwMjZnZGZwX3JlcT0xXHUwMDI2ZW52PXZwXHUwMDI2b3V0cHV0PXhtbF92YXN0Mlx1MDAyNnVudmlld2VkX3Bvc2l0aW9uX3N0YXJ0PTFcdTAwMjZ1cmw9W3JlZmVycmVyX3VybF1cdTAwMjZkZXNjcmlwdGlvbl91cmw9W2Rlc2NyaXB0aW9uX3VybF1cdTAwMjZjb3JyZWxhdG9yPVt0aW1lc3RhbXBdIiwia2V5VmFsdWVzIjp7ImNhdGVnb3JpZXMiOiJbW0NBVEVHT1JJRVNdXSIsInByb2dyYW0iOiJbW1BST0dSQU1fTkFNRV1dIiwic2l0ZVNlY3Rpb24iOiJ2aWRlby1leHBlcmllbmNlIn19fSwiaGVhcnRiZWF0QmV0YSI6eyJhY2NvdW50IjoiY2JzbG9jYWwtZ2xvYmFsLXVuaWZpZWQiLCJjaGFwdGVyVHJhY2tpbmciOmZhbHNlLCJjdXN0b21NZXRhZGF0YSI6eyJ2aWRlbyI6eyJjYnNfbWFya2V0Ijoic2FuZnJhbmNpc2NvLmNic2xvY2FsLmNvbSIsImNic19wbGF0Zm9ybSI6ImRlc2t0b3AifX0sImN1c3RvbVRyYWNraW5nU2VydmVyIjoiY2JzZGlnaXRhbG1lZGlhLmQxLnNjLm9tdHJkYy5uZXQiLCJjdXN0b21UcmFja2luZ1NlcnZlclNlY3VyZSI6ImNic2RpZ2l0YWxtZWRpYS5kMS5zYy5vbXRyZGMubmV0Iiwiam9iSWQiOiJzY192YSIsIm1hcmtldGluZ0Nsb3VkSWQiOiI4MjNCQTAzMzU1Njc0OTdGN0YwMDAxMDFAQWRvYmVPcmciLCJwSW5zdGFuY2UiOiJwMCIsInByb2ZpbGUiOiJjYnMiLCJwdWJsaXNoZXJJZCI6ImNic2xvY2FsIiwidHJhY2tpbmdTZXJ2ZXIiOiJjYnNkaWdpdGFsbWVkaWEuaGIub210cmRjLm5ldCIsInZlcnNpb24iOiIxLjUifSwibW9hdCI6eyJjbGllbnRTaWRlIjp7InBhcnRuZXJDb2RlIjoiY2JzbG9jYWxhbnZhdG92aWRlbzE4MTczMjYwOTQzMSJ9fX0sInRva2VuIjoiZGVmYXVsdCIsInYiOiJjNTA5In0", "Bay Bridge"]
+				// ["https://www.youtube.com/watch?v=CXYr04BWvmc", "Bay Bridge"]
 			]; // TODO
 			break;
 		case "SGF":
 		case "KSGF":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SHV":
 		case "KSHV":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SJC":
 		case "KSJC":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SLC":
 		case "KSLC":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SMF":
 		case "KSMF":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SNA":
 		case "KSNA":
 			return [
-				"https://www.youtube.com/watch?v=AShvF9ILGkc"
+				["https://www.youtube.com/watch?v=AShvF9ILGkc", "Orange Plaza"]
 			];
 			break;
 		case "SPS":
 		case "KSPS":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SRQ":
 		case "KSRQ":
 			return [
-				""
+				["https://www.youtube.com/watch?v=EmHLP80PMU0", "Anna Maria Island"]
 			]; // TODO
 			break;
 		case "STL":
 		case "KSTL":
 			return [
-				"https://www.ksdk.com/airport-cam"
+				["https://www.ksdk.com/airport-cam", "Airport"]
 			];
 			break;
 		case "STS":
 		case "KSTS":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SWF":
 		case "KSWF":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "SYR":
 		case "KSYR":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "TLH":
 		case "KTLH":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "TPA":
 		case "KTPA":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "TUL":
 		case "KTUL":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "TUS":
 		case "KTUS":
 			return [
-				"https://www.youtube.com/watch?v=3CTBXCM_luA"
+				["https://www.youtube.com/watch?v=3CTBXCM_luA", "Skyline"]
 			];
 			break;
 		case "TVC":
 		case "KTVC":
 			return [
-				"https://www.youtube.com/watch?v=EtzcGicoy4I"
+				["https://www.youtube.com/watch?v=EtzcGicoy4I", "Downtown"]
 			];
 			break;
 		case "TYS":
 		case "KTYS":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "VPS":
 		case "KVPS":
 			return [
-				"https://www.youtube.com/watch?v=_9VkcK5vHgY",
-				"https://www.youtube.com/watch?v=xNZBPxx8ykg"
+				["https://www.youtube.com/watch?v=xNZBPxx8ykg", "Beach"],
+				["https://www.youtube.com/watch?v=_9VkcK5vHgY", "Suntex Marina"]
 			];
 			break;
 		case "XNA":
 		case "KXNA":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YEG":
 		case "CYEG":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YFB":
 		case "CYFB":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YHM":
 		case "CYHM":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YHZ":
 		case "CYHZ":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YJT":
 		case "CYJT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YKM":
 		case "KYKM":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YOW":
 		case "CYOW":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YQB":
 		case "CYQB":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YQM":
 		case "CYQM":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YQX":
 		case "CYQX":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YUL":
 		case "CYUL":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YVR":
 		case "CYVR":
 			return [
-				"https://www.youtube.com/watch?v=rxyNjFKwzJA",
-				"https://www.youtube.com/watch?v=GHEmhcWjiTE",
-				"https://www.youtube.com/watch?v=4MK3E9EWDSY"
+				["https://www.youtube.com/watch?v=GHEmhcWjiTE", "Skyline"],
+				["https://www.youtube.com/watch?v=rxyNjFKwzJA", "Harbor"],
+				["https://www.youtube.com/watch?v=4MK3E9EWDSY", "Pier"]
 			];
 			break;
 		case "YXY":
 		case "CYXY":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YYC":
 		case "CYYC":
 			return [
-				"https://www.youtube.com/watch?v=MwcqP3ta6RI",
-				"https://www.youtube.com/watch?v=2udtsRKecyw"
+				["https://www.youtube.com/watch?v=MwcqP3ta6RI", "Skyline"],
+				["https://www.youtube.com/watch?v=2udtsRKecyw", "Downtown"]
 			];
 			break;
 		case "YYR":
 		case "CYYR":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YYT":
 		case "CYYT":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 		case "YYZ":
 		case "CYYZ":
 			return [
-				"https://www.youtube.com/watch?v=TDaxgataBng"
+				["https://www.youtube.com/watch?v=TDaxgataBng", "CN Tower"]
 			];
 			break;
 		case "YZF":
 		case "CYZF":
 			return [
-				""
+				["", ""]
 			]; // TODO
 			break;
 
@@ -3420,29 +3431,41 @@ get_weather_cams = function (str = null) {
 		case "AUA":
 		case "TNCA":
 			return [
-				"https://www.youtube.com/watch?v=_ZXMjk5K0_s"
+				["https://www.youtube.com/watch?v=_ZXMjk5K0_s", "Eagle Beach"]
+			];
+			break;
+		case "CUN":
+		case "MMUN":
+			return [
+				["https://www.youtube.com/watch?v=tlRVK1opGXo", "Royal Sands"]
 			];
 			break;
 		case "KIN":
 		case "MKJP":
 			return [
-				"https://www.youtube.com/watch?v=1nWP1fjBY94",
-				"https://www.youtube.com/watch?v=jVr7_V4Tohw"
+				["https://www.youtube.com/watch?v=jVr7_V4Tohw", "Harbor1"],
+				["https://www.youtube.com/watch?v=1nWP1fjBY94", "Harbor2"]
 			];
 			break;
 		case "SAL":
 		case "MSLP":
 			return [
-				"https://www.youtube.com/watch?v=IitNHCLLeA8"
+				["https://www.youtube.com/watch?v=IitNHCLLeA8", "Skyline"]
 			];
 			break;
 		case "SXM":
 		case "TNCM":
 			return [
-				"https://www.youtube.com/watch?v=LtzkkAeW_Qg",
-				"https://www.youtube.com/watch?v=aBpnLhWvW3A",
-				"https://www.youtube.com/watch?v=rEg487yY9ko",
-				"https://www.youtube.com/watch?v=525dNEryfQ4",
+				["https://www.youtube.com/watch?v=LtzkkAeW_Qg", "Airport"],
+				["https://www.youtube.com/watch?v=aBpnLhWvW3A", "Little Bay"],
+				// ["https://www.youtube.com/watch?v=rEg487yY9ko", "Simpson Bay"],
+				["https://www.youtube.com/watch?v=525dNEryfQ4", "Simpson Bay"]
+			];
+			break;
+		case "ZIH":
+		case "MMZH":
+			return [
+				["https://www.youtube.com/watch?v=WXi5sp4hZ0k", "Marina"]
 			];
 			break;
 
@@ -3452,43 +3475,62 @@ get_weather_cams = function (str = null) {
 		case "ATH":
 		case "LGAV":
 			return [
-				"https://www.youtube.com/watch?v=cRTbQePGwPk"
+				["https://www.youtube.com/watch?v=cRTbQePGwPk", "Skyline"]
 			];
 			break;
 		case "AMS":
 		case "EHAM":
 			return [
-				"https://www.youtube.com/watch?v=2tgHBRFHMm8"
+				["https://www.youtube.com/watch?v=2tgHBRFHMm8", "Central Station"]
 			];
 			break;
 		case "DUB":
 		case "EIDW":
 			return [
-				"https://www.youtube.com/watch?v=oxx7MqjhOpw",
-				"https://www.youtube.com/watch?v=muA0CLPmna4"
+				["https://www.youtube.com/watch?v=oxx7MqjhOpw", "Bay"],
+				["https://www.youtube.com/watch?v=muA0CLPmna4", "Phibsboro"]
 			];
 			break;
+		case "GOA":
+		case "LIMJ":
+			return [
+				["https://www.youtube.com/watch?v=Mw2R0FV7FP8", "Moneglia"]
+			];
+			break;
+
 
 // Pacific
 		case "BNE":
 		case "YBBN":
 			return [
-				"https://www.youtube.com/watch?v=aaIANlqjVoU"
+				["https://www.youtube.com/watch?v=aaIANlqjVoU", "Skyline"]
+			];
+			break;
+		case "FUK":
+		case "RJFF":
+			return [
+				["https://www.youtube.com/watch?v=8RyR0J8zbbU", "Hakata Station"]
 			];
 			break;
 		case "HNL":
 		case "PHNL":
 			return [
-				"https://www.youtube.com/watch?v=jfPjRG7N58g"
+				["https://www.youtube.com/watch?v=jfPjRG7N58g", "Ala Moana"]
+			];
+			break;
+		case "NRT":
+		case "RJAA":
+			return [
+				["https://www.youtube.com/watch?v=OuCbntsMsWY", "Airport"]
 			];
 			break;
 		case "SYD":
 		case "YSSY":
 			return [
-				"https://www.youtube.com/watch?v=5uZa3-RMFos"
+				["https://www.youtube.com/watch?v=5uZa3-RMFos", "Harbor1"],
+				["https://www.youtube.com/watch?v=7pcL-0Wo77U", "Harbor2"],
 			];
 			break;
-
 	}
 	return [""];
 }
