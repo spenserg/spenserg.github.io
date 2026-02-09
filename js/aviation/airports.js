@@ -1873,16 +1873,213 @@ is_atwelve = function (apt = "") {
 }
 
 is_latin = function (apt = "") {
-	if (typeof str === 'string' || str instanceof String) {
+	if (typeof apt === 'string' || apt instanceof String) {
 		return "MST".includes(convert_icao(apt).substring(0,1));
 	}
 	return false;
 }
-is_domestic = function (apt = "") {
-	if (typeof str === 'string' || str instanceof String) {
-		return "KC".includes(convert_icao(apt).substring(0,1));
+is_domestic = function (apt = "", include_canada = true) {
+	if (typeof apt === 'string' || apt instanceof String) {
+		if (include_canada) {
+			return "KC".includes(convert_icao(apt).substring(0,1));
+		} else {
+			return (convert_icao(apt).substring(0,1).localeCompare("K") == 0);
+		}
 	}
 	return false;
+}
+
+get_fir = function (apt = "") {
+	if (typeof apt === 'string' || apt instanceof String) {
+		switch (convert_icao(apt)) {
+			case "KABE": return "ZNY"; break;
+			case "KABI": return "ZFW"; break;
+			case "KABQ": return "ZAB"; break;
+			case "KACT": return "ZFW"; break;
+			case "KACY": return "ZDC"; break;
+			case "KAFW": return "ZFW"; break;
+			case "KAGS": return "ZTL"; break;
+			case "KALB": return "ZBW"; break;
+			case "KAMA": return "ZAB"; break;
+			case "KATL": return "ZTL"; break;
+			case "KAUS": return "ZHU"; break;
+			case "KAVL": return "ZTL"; break;
+			case "KAVP": return "ZNY"; break;
+			case "KBDL": return "ZBW"; break;
+			case "KBFI": return "ZSE"; break;
+			case "KBFL": return "ZLA"; break;
+			case "KBGR": return "ZBW"; break;
+			case "KBHM": return "ZTL"; break;
+			case "KBIL": return "ZLC"; break;
+			case "KBLV": return "ZKC"; break;
+			case "KBNA": return "ZME"; break;
+			case "KBOI": return "ZLC"; break;
+			case "KBOS": return "ZBW"; break;
+			case "KBRO": return "ZHU"; break;
+			case "KBTR": return "ZHU"; break;
+			case "KBTV": return "ZBW"; break;
+			case "KBUF": return "ZOB"; break;
+			case "KBUR": return "ZLA"; break;
+			case "KBWI": return "ZDC"; break;
+			case "KBZN": return "ZLC"; break;
+			case "KCAE": return "ZJX"; break;
+			case "KCAK": return "ZOB"; break;
+			case "KCHS": return "ZJX"; break;
+			case "KCID": return "ZAU"; break;
+			case "KCLE": return "ZOB"; break;
+			case "KCLT": return "ZTL"; break;
+			case "KCMH": return "ZID"; break;
+			case "KCNW": return "ZFW"; break;
+			case "KCOS": return "ZDV"; break;
+			case "KCOU": return "ZKC"; break;
+			case "KCPR": return "ZDV"; break;
+			case "KCRP": return "ZHU"; break;
+			case "KCVG": return "ZID"; break;
+			case "KCYS": return "ZDV"; break;
+			case "KDAB": return "ZJX"; break;
+			case "KDAL": return "ZFW"; break;
+			case "KDAY": return "ZID"; break;
+			case "KDCA": return "ZDC"; break;
+			case "KDEN": return "ZDV"; break;
+			case "KDFW": return "ZFW"; break;
+			case "KDLH": return "ZMP"; break;
+			case "KDRO": return "ZDV"; break;
+			case "KDSM": return "ZMP"; break;
+			case "KDTW": return "ZOB"; break;
+			case "KECP": return "ZJX"; break;
+			case "KEGE": return "ZDV"; break;
+			case "KELP": return "ZAB"; break;
+			case "KEUG": return "ZSE"; break;
+			case "KEVV": return "ZID"; break;
+			case "KEWR": return "ZNY"; break;
+			case "KEYW": return "ZMA"; break;
+			case "KFAR": return "ZMP"; break;
+			case "KFAT": return "ZOA"; break;
+			case "KGPI": return "ZLC"; break;
+			case "KFLL": return "ZMA"; break;
+			case "KFNT": return "ZOB"; break;
+			case "KFOE": return "ZKC"; break;
+			case "KFSD": return "ZMP"; break;
+			case "KGEG": return "ZSE"; break;
+			case "KGGG": return "ZFW"; break;
+			case "KGJT": return "ZDV"; break;
+			case "KGNV": return "ZJX"; break;
+			case "KGPT": return "ZHU"; break;
+			case "KGRB": return "ZMP"; break;
+			case "KGRK": return "ZHU"; break;
+			case "KGRR": return "ZAU"; break;
+			case "KGSO": return "ZTL"; break;
+			case "KGSP": return "ZTL"; break;
+			case "KGTF": return "ZLC"; break;
+			case "KGUC": return "ZDV"; break;
+			case "KHDN": return "ZDV"; break;
+			case "KHOU": return "ZHU"; break;
+			case "KHRL": return "ZHU"; break;
+			case "KHSV": return "ZTL"; break;
+			case "KIAD": return "ZDC"; break;
+			case "KIAH": return "ZHU"; break;
+			case "KICT": return "ZKC"; break;
+			case "KIFP": return "ZLA"; break;
+			case "KILM": return "ZDC"; break;
+			case "KIND": return "ZID"; break;
+			case "KJAC": return "ZLC"; break;
+			case "KJAN": return "ZME"; break;
+			case "KJAX": return "ZJX"; break;
+			case "KJFK": return "ZNY"; break;
+			case "KLAS": return "ZLA"; break;
+			case "KLAW": return "ZFW"; break;
+			case "KLAX": return "ZLA"; break;
+			case "KLBB": return "ZFW"; break;
+			case "KLCH": return "ZHU"; break;
+			case "KLEX": return "ZID"; break;
+			case "KLGA": return "ZNY"; break;
+			case "KLIT": return "ZME"; break;
+			case "KLNK": return "ZMP"; break;
+			case "KLRD": return "ZHU"; break;
+			case "KMAF": return "ZFW"; break;
+			case "KMCI": return "ZKC"; break;
+			case "KMCO": return "ZJX"; break;
+			case "KMDT": return "ZNY"; break;
+			case "KMDW": return "ZAU"; break;
+			case "KMEM": return "ZME"; break;
+			case "KMFE": return "ZHU"; break;
+			case "KMGM": return "ZTL"; break;
+			case "KMHT": return "ZBW"; break;
+			case "KMIA": return "ZMA"; break;
+			case "KMKE": return "ZAU"; break;
+			case "KMLB": return "ZJX"; break;
+			case "KMLI": return "ZAU"; break;
+			case "KMOB": return "ZHU"; break;
+			case "KMRY": return "ZOA"; break;
+			case "KMSN": return "ZAU"; break;
+			case "KMSO": return "ZLC"; break;
+			case "KMSP": return "ZMP"; break;
+			case "KMSY": return "ZHU"; break;
+			case "KMTJ": return "ZDV"; break;
+			case "KMWH": return "ZSE"; break;
+			case "KMYR": return "ZJX"; break;
+			case "KOKC": return "ZFW"; break;
+			case "KOMA": return "ZMP"; break;
+			case "KONT": return "ZLA"; break;
+			case "KORD": return "ZAU"; break;
+			case "KORF": return "ZDC"; break;
+			case "KPAE": return "ZSE"; break;
+			case "KPBI": return "ZMA"; break;
+			case "KPDX": return "ZSE"; break;
+			case "KPHL": return "ZNY"; break;
+			case "KPHX": return "ZAB"; break;
+			case "KPIE": return "ZMA"; break;
+			case "KPIH": return "ZLC"; break;
+			case "KPIT": return "ZOB"; break;
+			case "KPNS": return "ZJX"; break;
+			case "KPSM": return "ZBW"; break;
+			case "KPSP": return "ZLA"; break;
+			case "KPUB": return "ZDV"; break;
+			case "KPVD": return "ZBW"; break;
+			case "KPWM": return "ZBW"; break;
+			case "KRAP": return "ZDV"; break;
+			case "KRDM": return "ZSE"; break;
+			case "KRDU": return "ZDC"; break;
+			case "KRFD": return "ZAU"; break;
+			case "KRIC": return "ZDC"; break;
+			case "KRNO": return "ZOA"; break;
+			case "KROC": return "ZOB"; break;
+			case "KROW": return "ZAB"; break;
+			case "KRST": return "ZMP"; break;
+			case "KRSW": return "ZMA"; break;
+			case "KSAN": return "ZLA"; break;
+			case "KSAT": return "ZHU"; break;
+			case "KSAV": return "ZJX"; break;
+			case "KSBA": return "ZLA"; break;
+			case "KSBN": return "ZAU"; break;
+			case "KSBP": return "ZLA"; break;
+			case "KSDF": return "ZID"; break;
+			case "KSEA": return "ZSE"; break;
+			case "KSFB": return "ZJX"; break;
+			case "KSFO": return "ZOA"; break;
+			case "KSGF": return "ZKC"; break;
+			case "KSHV": return "ZFW"; break;
+			case "KSJC": return "ZOA"; break;
+			case "KSLC": return "ZLC"; break;
+			case "KSMF": return "ZOA"; break;
+			case "KSNA": return "ZLA"; break;
+			case "KSPS": return "ZFW"; break;
+			case "KSRQ": return "ZMA"; break;
+			case "KSTL": return "ZKC"; break;
+			case "KSTS": return "ZOA"; break;
+			case "KSWF": return "ZNY"; break;
+			case "KSYR": return "ZBW"; break;
+			case "KTLH": return "ZJX"; break;
+			case "KTPA": return "ZMA"; break;
+			case "KTUL": return "ZKC"; break;
+			case "KTUS": return "ZAB"; break;
+			case "KTVC": return "ZMP"; break;
+			case "KTYS": return "ZTL"; break;
+			case "KVPS": return "ZJX"; break;
+			case "KXNA": return "ZME"; break;
+			case "KYKM": return "ZSE"; break;
+		}
+	}
 }
 
 get_star_array = function(text = "") {
