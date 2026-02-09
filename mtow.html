@@ -1382,7 +1382,7 @@ check_page_for_errors = function (text = "") {
 		}
 		// Key is k, value is array[k]
 		for (var example in errors['repeated_token'][airway]) {
-			if (!errors['repeated_token'][airway][example].includes("function()")) {
+			if (typeof errors['repeated_token'][airway][example] === 'string' || errors['repeated_token'][airway][example] instanceof String) {
 				error_str += errors['repeated_token'][airway][example] + "<br/>";
 			}
 		}
@@ -1397,7 +1397,7 @@ check_page_for_errors = function (text = "") {
 		}
 		// Key is k, value is array[k]
 		for (var example in errors['repeated_token_cdr'][airway]) {
-			if (!errors['repeated_token_cdr'][airway][example].includes("function()")) {
+			if (typeof errors['repeated_token_cdr'][airway][example] === 'string' || errors['repeated_token_cdr'][airway][example] instanceof String) {
 				error_str += errors['repeated_token_cdr'][airway][example] + "<br/>";
 			}
 		}
