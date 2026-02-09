@@ -10465,16 +10465,15 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KRNO RENO1 FMG J92 BLD J72 TXO TURKI UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-22-2025
 					break;
-				case "PHX": // RNO-PHX // Updated 01-17-2025
-					result += "<!-- Updated 01-17-2025 -->";
+				case "PHX": // RNO-PHX // Updated 02-08-2026
+					result += "<!-- Updated 02-08-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KRNO ZEFFR9 PESKE SHUFL Q13 PRFUM WOTRO BRUSR1 KPHX\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KRNO RENO1 FMG J5 EHF J65 BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KRNO ZEFFR9 PESKE SHUFL Q13 WOTRO BRUSR1 KPHX\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRNO ZEFFR9 BLKJK MACUS Q124 WAATS JNC J15 RSK GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRNO ZEFFR9 DARBI FRA EHF J65 BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KRNO RENO1 FMG J92 BLD COYOT5 KPHX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>";
-					result += "<br/>PB (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KRNO RENO1 FMG J5 EHF J65 BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/>PH (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KRNO RENO1 FMG BTY J92 BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-08-2026
 					break;
 			}
 		break; // End of RNO
@@ -10493,14 +10492,15 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Verified with ATCSCC on 07-07-2025 -->";
 					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KROC BURST HVQ LNDIZ PARQR4 KCLT\" readonly>";
 					break;
-				case "DFW": // ROC-DFW // Updated 01-17-2025
-					result += "<!-- Updated 01-17-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KROC JHW Q29 CREEP KURTZ PXV J131 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KROC JHW EWC AIR HVQ VXV GQO SQS YUYUN WHINY4 KDFW\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KROC ROC WOZEE CRL FWA ENL FSM RRNET SEEVR4 KDFW\" readonly>";
+				case "DFW": // ROC-DFW // Updated 02-08-2026
+					result += "<!-- Updated 02-08-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 02-08-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KROC BURST JHW Q29 CREEP KURTZ PXV J131 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KROC BURST JHW J554 GIJ RBS J19 STL FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KROC BURST FOXEE Q145 HVQ Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>South via VUZ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KROC BURST FOXEE Q145 KONGO VXV VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-08-2026
 					break;
 				case "ORD": // ROC-ORD // Updated 01-25-2026
 					result += "<!-- Updated 01-25-2026 P -->";
