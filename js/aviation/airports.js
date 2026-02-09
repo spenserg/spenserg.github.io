@@ -1383,9 +1383,9 @@ convert_iata = function (str = null) {
 
 convert_icao = function (str = null) {
 	if (typeof str === 'string' || str instanceof String) {
-		if (str.length == 4) { return str; }
+		if (str.length == 4) { return str.toUpperCase(); }
 		else if (str.length == 3) {
-			switch (str) {
+			switch (str.toUpperCase()) {
 				case "AAR": return "EKAH";break;
 				case "ABE": return "KABE";break;
 				case "ABI": return "KABI";break;
@@ -1870,6 +1870,19 @@ convert_icao = function (str = null) {
 
 is_atwelve = function (apt = "") {
 	return ["SKBQ","MZBZ","TXKF","CYYC","MUCM","MMUN","SKCG","MHPR","MMCZ","CYEG","MYEF","MYGF","CYQX","CYYR","MWCR","MMGL","MGGT","CYHZ","MUHA","MDPC","MUHG","MKJP","MMLO","MRLB","MDLR","MNMG","MMZO","MMMZ","MMMD","MMMX","MMCU","MMDO","MMHO","MMMM","MMSP","MKJS","MMMY","CYUL","MYNN","MMOX","MPTO","MTPP","MBPV","MDPP","MMPR","MMQT","MHRO","MROC","MMSD","TJSJ","MHLM","MSLP","MUSC","MDST","MUCU","MDSD","CYYT","TIST","CYJT","MMTL","CYYZ","CYVR","MUVR","MMZH","MMBT"].includes(convert_icao(apt));
+}
+
+is_latin = function (apt = "") {
+	if (typeof str === 'string' || str instanceof String) {
+		return "MST".includes(convert_icao(apt).substring(0,1));
+	}
+	return false;
+}
+is_domestic = function (apt = "") {
+	if (typeof str === 'string' || str instanceof String) {
+		return "KC".includes(convert_icao(apt).substring(0,1));
+	}
+	return false;
 }
 
 get_star_array = function(text = "") {
