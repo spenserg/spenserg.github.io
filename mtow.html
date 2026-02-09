@@ -1381,7 +1381,12 @@ check_page_for_errors = function (text = "") {
 			error_str += "<br/><b>Token Errors:</b><br/>";
 		}
 		// Key is k, value is array[k]
-		error_str += errors['repeated_token'][airway].join("<br/>") + "<br/><br/>";
+		for (var example in errors['repeated_token'][airway]) {
+			if (!errors['repeated_token'][airway][example].includes("function()")) {
+				error_str += errors['repeated_token'][airway][example] + "<br/>";
+			}
+		}
+		error_str += "<br/>";
 	}
 
 	tmp_title = false;
@@ -1391,7 +1396,12 @@ check_page_for_errors = function (text = "") {
 			error_str += "<br/><br/><b>CDR Token Errors:</b><br/>";
 		}
 		// Key is k, value is array[k]
-		error_str += errors['repeated_token_cdr'][airway].join("<br/>") + "<br/><br/>";
+		for (var example in errors['repeated_token_cdr'][airway]) {
+			if (!errors['repeated_token_cdr'][airway][example].includes("function()")) {
+				error_str += errors['repeated_token_cdr'][airway][example] + "<br/>";
+			}
+		}
+		error_str += "<br/>";
 	}
 	return '<br/><br/><textarea rows="8" cols="50">' + result + '</textarea>' + ((error_str.length == 0) ? "<br/><br/>No Errors" : error_str);
 }
