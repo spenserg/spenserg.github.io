@@ -11,7 +11,8 @@
 </head>
 
 <body>
-	<embed src="/photodex/photodex_all.txt" id="photodex_all_txt" hidden>
+	<embed src="/photodex/photodex_all.txt" id="photodex_all_txt">
+	<br/><br/>
 	Search Term: <input id="test_1" type="text" style="width:75%" />
 	<br/><br/>
 <!--
@@ -24,12 +25,18 @@
 </body>
 
 <script>
+$("#photodex_all_txt").load("photodex/photodex_all.txt");
+	
   compute = function() {
 	  var keyword = $("#test_1").val();
-	  var all_text = $("#photodex_all_txt").val();
+	  var all_text = $("#photodex_all_txt").text();
 	  var result = "";
+
+	  console.log(all_text);
+	  console.log(keyword);
+	  
 	  let rega = new RegExp(String.raw`\n([^\n]*${keyword}[^\n]*)\n`, "g");
-	  while(null != (z = rega.exec())) {
+	  while(null != (z = rega.exec(all_text))) {
 		  result += z + "\n";
 	  }
 	  $("#result").text(result);
