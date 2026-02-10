@@ -1,0 +1,4476 @@
+Updated 01_21_2026
+
+Lumbricidae
+Eisenia foetida - (Sept 5, 2013) [S] Used in Toxicology lab experiment, TN
+
+Ixodidae
+Dermacentor variabilis
+	1 - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+	2 - (July 31, 2019) [W] Dunlap, TN
+Ixodes scapularis - (May 11, 2019) [W] Campbell Falls State Park, Norfolk, CT
+
+Agelenidae
+Agelenopsis naevia - (July 18, 2013) [W] Skymont Scout Camp, Altamount, TN
+Eratigena atrica
+	1 - (Aug 8, 2015) [W] Federal Way, WA
+	2 - (Aug 19, 2017) [W] Federal Way, WA
+
+Amaurobiidae
+Callobius sp
+	A1,A2 - (July 13, 2016) [W] Dash Point State Park, Kent, WA
+
+Anyphaenidae
+Hibana sp
+	1,2 - (June 23, 2016) [W] Skymont Scout Camp, Altamont, TN
+Hibana velox - (June 1, 2020) [W] Yulee, FL
+
+Araneidae
+Araneus diadematus
+	1,2 - (Sept 23, 2015) [W] Federal Way, WA
+	3 - (Oct 8, 2015) [W] Highline College, Federal Way, WA
+Argiope aurantia
+	1,2 - (July 27, 2019) [W] Dunlap, TN
+	3 - (Sept 11, 2019) [W] Dunlap, TN
+	4 - (Aug 1, 2019) [W] Dunlap, TN
+Argiope keyserlingi
+	1 - (Dec 28, 2015) [W] Royal Botanic Garden, Sydney {AU}
+	2 - (Jan 8, 2016) [W] Lone Pine Koala Sanctuary, Brisbane {AU}
+Cyrtophora moluccensis - (Jan 8, 2016) [W] Lone Pine Koala Sanctuary, Brisbane {AU}
+Eriophora ravilla - (Sept 22, 2020) [W] Fort Clinch State Park, Amelia Island, FL
+Gasteracantha cancriformis
+	female - (Apr 18, 2015) [W] Lady Lake, FL
+	male - (Mar 16, 2020) [W] Fernandina Beach, FL
+Larinioides cornutus
+	1 - (July 26, 2014) [W] Red Bank, TN
+	2 - (June 6, 2016) [W] Skymont Scout Camp, Altamount, TN
+Micrathena gracilis
+	1 - (July 27, 2014) [W] Baylor, Chattanooga, TN
+	2,3 - (Aug 3, 2019) [W] Fernandina Beach, FL
+Micrathena sagittata
+	1,2 - (Sept 12, 2019) [W] Dunlap, TN
+Neoscona crucifera
+	1,2 - (Sept 14, 2019) [W] Dunlap, TN
+Neoscona domiciliorum - (Sept 22, 2020) [W] Fort Clinch State Park, Amelia Island, FL
+Verrucosa arenata - (Sept 21, 2013) [W] Reflection Riding Arboretum, Chattanooga, TN
+
+Cybaeidae
+Cybaeus sp - (Jan 24, 2016) [W] Federal Way, WA
+
+Filistatidae
+Kukulcania hibernalis
+	1,2 - (Aug 3, 2019) [W] Fernandina Beach, FL
+	3 - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+
+Linyphiidae
+Florinda coccinea - (Mar 30, 2020) [W] Fernandina Beach, FL
+Unknown sp - (Apr 18, 2016) [W] Federal Way, WA
+
+Lycosidae
+Pardosa sp
+	A1 - (May 28, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+	B1 - (June 9, 2016) [W] Skymont Scout Camp, Altamount, TN
+Rabidosa hentzi - (Apr 19, 2015) [W] Lady Lake, FL
+
+Nephilidae
+Trichonephila clavipes
+	1,2,3 - (Apr 18, 2015) [W] Lady Lake, FL
+Nephila plumipes
+	1 - (Jan 8, 2016) [W] Lone Pine Koala Sanctuary {AU}
+	2 - (Jan 6, 2016) [W] South Bank, Brisbane {AU}
+
+Oxyopidae
+Peucetia viridans - (Sept 22, 2020) [W] Fort Clinch State Park, Amelia Island, FL
+
+Philodromidae
+Philodromus sp
+	1 - (Apr 3, 2016) [W] Rock Creek Park, Washington, DC
+	2 - (Apr 9, 2016) [W] Augusta National Golf Course, Augusta, GA
+	3 - (Apr 18, 2016) [W] Federal Way, WA
+
+Pholcidae
+Holocnemus pluchei
+	1,2 - (June 17, 2021) [W] Fort Worth Zoo, Fort Worth, TX
+
+Pisauridae
+Dolomedes albineus
+	1 - (June 11, 2016) [W] Skymont Scout Camp, Altamont, TN
+	2 - (May 15, 2016) [W] Dunlap, TN
+Dolomedes tenebrosus
+	1,2 - (May 8, 2019) [W] Spice Bush Swamp, Hartford, CT
+Pisaurina mira - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+
+Salticidae
+Anasaitis canosa
+	1,2 - (Apr 9, 2019) [W] Lady Lake, FL
+	3 - (Apr 25, 2020) [W] Fernandina Beach, FL
+Eris sp - (Apr 1, 2016) [W] National Zoo, Washington, DC
+Evarcha proszynskii
+	1,2 - (Dec 10, 2015) [W] Federal Way, WA
+Hentzia palmarum - (May 15, 2016) [W] Dunlap, TN
+Lyssomanes viridis
+	1 - (Oct 30, 2013) [W] University of Tennessee at Chattanooga, TN
+	2 - (Mar 16, 2020) [W] Fernandina Beach, FL
+	3,4 - (June 18, 2020) [W] Fernandina Beach, FL
+Metacyrba taeniola
+	ssp taeniola 1,ssp taeniola 2,ssp taeniola 3 - (June 17, 2021) [W] Fort Worth Zoo, Fort Worth, TX
+Phidippus audax
+	1,2 - (June 18, 2016) [W] Dunlap, TN
+Platycryptus undatus - (Aug 16, 2024) [W] Carver Langston, Washington, DC
+
+Sparassidae
+Heteropoda venatoria - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+
+Tetragnathidae
+Leucauge argyrobapta - (May 28, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+Leucauge granulata
+	1,2 - (Jan 8, 2016) [W] Lone Pine Koala Sanctuary {AU}
+Leucauge venusta
+	1,2 - (May 23, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+	3 - (May 8, 2019) [W] Spice Bush Swamp, West Hartford, CT
+Metellina curtisi - (Aug 11, 2017) [W] Kent, WA
+Tetragnatha versicolor - (Sept 12, 2019) [W] Dunlap, TN
+
+Theraphosidae
+Brachypelma smithi - (July 31, 2013) [W] National Zoo, Washington, DC
+Grammostola sp - (July 31, 2013) [W] National Zoo, Washington, DC
+Pelinobius muticus - (Oct 19, 2013) [W] Chattanooga Zoo, TN
+
+Theridiidae
+Latrodectus mactans - (July 18, 2013) [W] Skymont Scout Camp, Altamount, TN
+Parasteatoda sp - (Aug 5, 2016) [W] Federal Way, WA
+Steatoda grossa
+	1,2 - (Feb 21, 2016) [W] Federal Way, WA
+Theridion sp - (May 2, 2016) [W] Federal Way, WA
+
+Thomisidae
+Misumena vatia
+	1,2 - (July 16, 2016) [W] Soos Creek, Kent, WA
+Xysticus sp
+	1,2 - (June 23, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Sclerosomatidae
+Leiobunum aldrichi - (May 23, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+Leiobunum sp - (May 23, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+
+Caraboctonidae
+Hadrurus arizonensis - (July 31, 2013) [W] National Zoo, Washington, DC
+
+Scorpionidae
+Pandinus imperator - (July 31, 2013) [W] National Zoo, Washington, DC
+
+Vaejovidae
+Vaejovis carolinianus
+	1,2 - (July 10, 2012) [W] Wilder Drive, Signal Mountain, TN
+
+Mastigoproctus giganteus - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Paradoxoosomatidae
+Oxidus gracilis - (June 14, 2015) [W] Mountain Creek Road, Chattanooga, TN
+
+Xystodesmidae
+Harpaphe haydeniana
+	1,2 - (May 30, 2016) [W] Kent, WA
+
+Archotermopsidae
+Zootermopsis sp
+	1,2 - (May 30, 2016) [W] Steel Lake, Federal Way, WA
+
+Blaberidae
+Blaberus giganteus
+	1 - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+Eublaberus prosticus - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+Gromphadorhina portentosa - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+
+Blattidae
+Periplaneta americana - (Sept 12, 2013) [W] , 5th Street, UT Chattanooga, TN
+
+Corydiidae
+Therea petiveriana - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+
+Ectobiidae
+Parcoblatta sp - (June 9, 2016) [W] Skymont Scout Camp, Altamount, TN
+Pseudomops septentrionalis - (June 14, 2015) [W] Mountain Creek Road, Chattanooga, TN
+
+Buprestidae
+Agrilus lecontei
+	1,2 - (May 15, 2016) [W] Dunlap, TN
+
+Cantharidae
+Chauliognathus basalis
+	1,2 - (July 29, 2015) [W] Boulder, CO
+Chauliognathus marginatus
+	1 - (May 28, 2014) [W] Dunlap, TN
+	2,3 - (June 21, 2015) [W] Dunlap, TN
+Chauliognathus pensylvanicus
+	1,2 - (Sept 15, 2013) [W] Dunlap, TN
+Rhagonycha fulva - (July 16, 2016) [W] Soos Creek Trail, Kent, WA
+Rhagonycha sp - (May 15, 2016) [W] Dunlap, TN
+
+Carabidae
+Calosoma scrutator - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+Cicindela depressula
+	ssp depressula - (Aug 10, 2015) [W] Mount Rainier, Pierce County, WA
+Cicindela sexguttata - (May 28, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+Nebria sp
+	1,2,3 - (Jan 22, 2016) [W] Federal Way, WA
+
+Cerambycidae
+Graphisurus fasciatus - (June 13, 2016) [W] Skymont Scout Camp, Altamount, TN
+Monochamus scutellatus - (Aug 4, 2015) [W] Grand Teton National Park, WY
+Moneilema gigas
+	1 - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+	2 - (June 19, 2024) [S] Audubon Insectarium, New Orleans, LA
+Prionus sp - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Chrysomelidae
+Calligrapha scalaris - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+Colaspis sp - (June 21, 2015) [W] Dunlap, TN
+Labidomera clivicollis
+	1,2 - (Mar 20, 2015) [S] Audubon Insectarium New Orleans, LA
+Plagiometriona clavata - (June 12, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Coccinellidae
+Brachiacantha ursina - (May 28, 2014) [W] Dunlap, TN
+Coccinella septempunctata - (Apr 14, 2016) [W] Federal Way, WA
+Harmonia axyridis
+	1 - (Aug 17, 2013) [W] Wilder Drive, Signal Mountain, TN
+	2,3,4 - (Sept 18, 2013) [W] Riverwalk, Chattanooga, TN
+Psyllobora vigintimaculata - (July 13, 2016) [W] Dash Point State Park, Kent, WA
+
+Curculionidae
+Odontocorynus umbellae
+	1,2 - (July 21, 2019) [W] Dunlap, TN
+
+Dryophthoridae
+Macrochirus praetor - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+
+Dytiscidae
+Cybister fimbriolatus - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+Thermonectus marmoratus - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+
+Elateridae
+Alaus oculatus
+	1 - (May 12, 2022) [W] Centennial Park, Dallas, TX
+	2 - (June 13, 2018) [W] West Hartford, CT
+Conoderus lividus - (June 8, 2016) [W] Dunlap, TN
+Melanotus sp - (June 13, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Lucanidae
+Serrognathus titanus - (June 19, 2024) [S] Audubon Insectarium, New Orleans, LA
+Sinodendron rugosum
+	1,2 - (May 12, 2016) [W] Federal Way, WA
+
+Lycidae
+Calopteron discrepans - (Apr 19, 2015) [W] Lady Lake, FL
+
+Meloidae
+Lytta aenea - (Apr 3, 2015) [W] Rhea County, TN
+
+Passalidae
+Odontotaenius disjunctus
+	1 - (May 23, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+	2 - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+
+Scarabaeidae
+Anomalacra innuba - (Apr 18, 2020) [W] Fernandina Beach, FL
+Cotinis nitida - (July 21, 2019) [W] Dunlap, TN
+Dicronorrhina derbyana - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+Dynastes hercules
+	1 - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+	2 - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+Dynastes tityus
+	1,2 - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+Eudicella gralli
+	1 - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+	2 - (June 19, 2024) [S] Audubon Insectarium, New Orleans, LA
+Euphoria fulgida - (May 28, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+Euphoria sepulcralis
+	1,2,3 - (Mar 16, 2020) [W] Fernandina Beach, FL
+Exomala orientalis - (June 30, 2019) [W] Salmon River, Cromwell, CT
+Goliathus goliatus - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+Mecynorrhina ugandensis - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+Pachnoda sinuata - (June 19, 2024) [S] Audubon Insectarium, New Orleans, LA
+Pelidnota punctata - (Apr 1, 2018) [W] Tampa, FL
+Popillia japonica
+	1,2 - (June 21, 2015) [W] Dunlap, TN
+
+Tenebrionidae
+Cryptoglossa verrucosa - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+
+Asilidae
+Diogmites sp
+	A1 - (June 21, 2015) [W] Dunlap, TN
+	B1 - (July 16, 2019) [W] Dunlap, TN
+Laphria sp - (May 28, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+Neoitamus flavofemoratus - (June 15, 2020) [W] Cromwell, CT
+
+Bibionidae
+Plecia nearctica - (Apr 18, 2015) [W] Lady Lake, FL
+
+Bombyliidae
+Villa sp - (May 28, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+
+Calliphoridae
+Pollenia sp - (Aug 10, 2017) [W] Kent, WA
+
+Culicidae
+Aedes albopictus - (June 4, 2016) [W] East Ridge, TN
+Psorophora ferox - (Sept 21, 2020) [W] Fernandina Beach, FL
+
+Chironomidae
+Cricotopus sp - (Apr 3, 2016) [W] Rock Creek Park, Washington, DC
+Glyptotendipes sp - (July 16, 2014) [W] Red Bank, TN
+
+Dolichopodidae
+Amblypsilopus sp - (Apr 18, 2015) [W] Lady Lake, FL
+Condylostylus comatus
+	1,2 - (June 9, 2016) [W] Skymont Scout Camp, Altamount, TN
+Condylostylus patibulatus - (Mar 16, 2020) [W] Fernandina Beach, FL
+
+Micropezidae
+Rainieria antennaepes
+	1,2,3 - (June 9, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Mydidae
+Phyllomydas parvulus
+	1,2 - (Mar 27, 2018) [W] Cypress Point Park, Tampa, FL
+Phyllomydas quercus - (Apr 18, 2015) [W] Lady Lake, FL
+
+Psilidae
+Loxocera cylindrica - (May 15, 2016) [W] Dunlap, TN
+
+Rhagionidae
+Chrysopilus thoracicus
+	1 - (May 28, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+	2,3 - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+Chrysopilus tomentosus - (July 13, 2016) [W] Dash Point State Park, Kent, WA
+
+Syrphidae
+Eupeodes fumipennis - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+Eupeodes sp
+	1,2 - (Aug 30, 2019) [W] Dunlap, TN
+Toxomerus politus - (July 27, 2019) [W] Dunlap, TN
+
+Tabanidae
+Chrysops flavidus - (June 13, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Tipulidae
+Tipula furca - (May 15, 2015) [W] Dunlap, TN
+
+Acanaloniidae
+Acanalonia conica
+	1,2 - (Sept 18, 2013) [W] Riverwalk, Chattanooga, TN
+
+Cercopidae
+Prosapia bicincta
+	1 - (July 27, 2019) [W] Dunlap, TN
+	2 - (July 16, 2014) [W] Red Bank, TN
+
+Cicadellidae
+Cuerna costalis
+	1 - (July 24, 2019) [W] Dunlap, TN
+	2 - (June 21, 2015) [W] Dunlap, TN
+Draeculacephala robinsoni
+	1,2,3 - (May 15, 2016) [W] Dunlap, TN
+Graphocephala atropunctata
+	1,2 - (Apr 20, 2016) [W] Saltwater State Park, Kent, WA
+Jikradia olitoria - (June 12, 2020) [W] Fernandina Beach, FL
+Tylozygus bifidus - (June 4, 2016) [W] Dunlap, TN
+
+Cicadidae
+Megatibicen resh - (June 14, 2023) [W] Fort Worth, TX
+Neotibicen pruinosus - (Sept 3, 2015) [W] UTC, Chattanooga, TN
+
+Clastopteridae
+Clastoptera querci - (June 23, 2020) [W] Fernandina Beach, FL
+
+Coreidae
+Acanthocephala declivis
+	1,2 - (Sept 18, 2013) [W] Riverwalk, Chattanooga, TN
+Acanthocephala femorata
+	1,2 - (Sept 14, 2019) [W] Dunlap, TN
+Leptoglossus occidentalis - (Feb 17, 2018) [S] Moscarillos Garden Shoppe, Hartford, CT
+
+Gelastocoridae
+Gelastocoris oculatus - (June 9, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Miridae
+Prepops insitivus - (Apr 19, 2015) [W] Lady Lake, FL
+
+Pentatomidae
+Chinavia hilaris - (July 7, 2019) [W] GW State Park, Washington, DC
+Halyomorpha halys - (Sept 18, 2013) [W] Riverwalk, Chattanooga, TN
+Proxys punctulatus - (June 23, 2020) [W] Fernandina Beach, FL
+
+Reduviidae
+Apiomerus spissipes - (July 29, 2015) [W] Boulder, CO
+Arilus cristatus
+	1 - (Oct 29, 2019) [W] Dunlap, TN
+	2,3 - (Apr 17, 2020) [W] Fernandina Beach, FL
+Phymata sp - (May 28, 2020) [W] Fernandina Beach, FL
+Platymeris biguttatus - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Zelus longipes - (Aug 3, 2019) [W] Fernandina Beach, FL
+Zelus luridus - (Oct 12, 2013) [W] Wilder Drive, Signal Mountain, TN
+
+Rhopalidae
+Boisea trivittata - (Nov 17, 2013) [W] Redoubt soccer fields, Chattanooga, TN
+
+Apidae
+Apis mellifera
+	ligustica,1,2 - (June 21, 2015) [W] Dunlap, TN
+Bombus griseocollis - (May 15, 2016) [W] Dunlap, TN
+Bombus melanopygus - (Apr 30, 2016) [W] Federal Way, WA
+Bombus mixtus
+	1,2 - (May 12, 2016) [W] Federal Way, WA
+Bombus sp - (May 30, 2016) [W] Steel Lake, Kent, WA
+Bombus nevadensis - (Aug 1, 2015) [W] Boulder, CO
+Bombus pensylvanicus - (Sept 15, 2016) [W] Louis Armstrong Park, New Orleans, LA
+Ceratina sp - (May 28, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+Xylocopa micans
+	1,2 - (Sept 22, 2020) [W] Fernandina Beach, FL
+Xylocopa virginica
+	1 - (Sept 10, 2013) [W] Boling Apartments, UT Chattanooga, TN
+	2 - (Mar 16, 2020) [W] Fernandina Beach, FL
+
+Chrysididae
+Chrysis sp - (Apr 3, 2020) [W] Fernandina Beach, FL
+
+Crabronidae
+Liris argentatus - (Apr 9, 2019) [W] Lady Lake, FL
+Sphecius speciosus - (Sept 13, 2013) [W] Harding College, Searcy, AR
+
+Formicidae
+Atta cephalotes - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+Camponotus castaneus
+	1 - (Sept 18, 2013) [W] Holt Hall, UT Chattanooga, TN
+	2 - (June 4, 2016) [W] Fort Oglethorpe, TN
+Camponotus decipiens
+	1,2 - (June 23, 2020) [W] Fernandina Beach, FL
+Camponotus floridanus
+	1,2 - (Apr 19, 2015) [W] Lady Lake, FL
+Camponotus nearcticus - (May 8, 2019) [W] Spice Bush Swamp, Hartford, CT
+Camponotus sp - (Mar 23, 2020) [W] Fernandina Beach, FL
+Formica fusca
+	1,2 - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+Formica obscuripes - (Apr 16, 2016) [W] Coos Creek Trail, Kent, WA
+Formica subsericea - (June 4, 2016) [W] Fort Oglethorpe, TN
+Pogonomyrmex badius
+	1,2 - (Sept 22, 2020) [W] Fernandina Beach, FL
+Pseudomyrmex gracilis - (Mar 31, 2020) [W] Fernandina Beach, FL
+Pseudomyrmex sp - (Mar 23, 2020) [W] Fernandina Beach, FL
+Lasius pallitarsis
+	1,2 - (May 30, 2016) [W] Kent, WA
+Solenopsis invicta - (Mar 5, 2021) [W] Campion Trail, Irving, TX
+
+Halictidae
+Halictus ligatus
+	1 - (Sept 10, 2019) [W] Dunlap, TN
+	2 - (May 28, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+
+Ichneumonidae
+Xorides calidus - (June 9, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Mutillidae
+Dasymutilla occidentalis
+	1,2 - (July 27, 2015) [W] Abilene, KS
+
+Pompilidae
+Psorthaspis sanguinea - (Aug 2, 2020) [W] Fernandina Beach, FL
+Tachypompilus ferrugineus
+	1 - (Sept 21, 2020) [W] Fernandina Beach, FL
+	ssp ferrugineus - (May 28, 2020) [W] Fernandina Beach, FL
+
+Scoliidae
+Colpa octomaculata
+	ssp hermione 1,ssp hermione 2,ssp hermione 3 - (Sept 24, 2020) [W] Fernandina Beach, FL
+Dielis plumipes
+	ssp fossulana 1,ssp fossulana 2 - (Sept 21, 2020) [W] Fernandina Beach, FL
+Scolia dubia
+	1,2 - (Sept 14, 2019) [W] Dunlap, TN
+
+Sphecidae
+Chalybion californicum - (July 27, 2019) [W] Dunlap, TN
+Chalybion sp
+	1,2 - (Sept 6, 2025) [W] Euless, TX
+Sceliphron caementarium - (July 27, 2015) [W] near Lander Park Carousel, Abilene, KS
+Sphex pensylvanicus - (July 27, 2015) [W] near Lander Park Carousel, Abilene, KS
+Vespidae
+Dolichovespula maculata
+	1,2,3 - (July 16, 2016) [W] Soos Creek Park, Kent, WA
+Mischocyttarus mexicanus
+	1 - (Apr 18, 2015) [W] Lady Lake, FL
+	ssp cubicola - (Mar 23, 2020) [W] Fernandina Beach, FL
+Monobia quadridens - (July 27, 2015) [W] near Lander Park Carousel, Abilene, KS
+Polistes carolina - (Aug 4, 2014) [W] Baylor School, Chattanooga, TN
+Polistes dominula - (June 7, 2015) [W] National Zoo, Washington, DC
+Polistes exclamans - (June 4, 2016) [W] Dunlap, TN
+Polistes fuscatus
+	1,2 - (Sept 15, 2016) [W] Woldenburg Park, New Orleans, LA
+Polistes sp - (Apr 19, 2015) [W] Lady Lake, FL
+Vespula squamosa - (Sept 29, 2013) [W] UT Chattanooga, TN
+
+Arctiidae
+Haploa clymene - (June 19, 2016) [W] Skymont Scout Camp, Altamount, TN
+Hypoprepia fucosa - (June 6, 2014) [W] Middle Valley, TN
+Spilosoma virginica
+	1,2 - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+	caterpillar - (Sept 9, 2019) [W] Dunlap, TN
+
+Crambidae
+Blepharomastix ranalis
+	1,2 - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+Desmia sp - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+Elophila gyralis - (June 6, 2016) [W] Skymont Scout Camp, Altamount, TN
+Epipagis fenestralis
+	1,2 - (July 24, 2019) [W] Dunlap, TN
+Neodactria sp - (June 4, 2016) [W] Dunlap, TN
+Microcrambus elegans - (June 13, 2016) [W] Skymont Scout Camp, Altamount, TN
+Pyrausta californicalis - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+Udea rubigalis
+	1 - (July 16, 2014) [W] Red Bank, TN
+	2 - (June 4, 2016) [W] Dunlap, TN
+Urola nivalis - (May 15, 2016) [W] Dunlap, TN
+
+Cossidae
+Prionoxystus robiniae - (June 25, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Erebidae
+Allotria elonympha
+	1 - (June 22, 2016) [W] Skymont Scout Camp, Altamount, TN
+	2 - (June 8, 2016) [W] Skymont Scout Camp, Altamount, TN
+Anticarsia gemmatalis - (Sept 22, 2020) [W] Fernandina Beach, FL
+Bleptina sp - (Apr 9, 2019) [W] Lady Lake, FL
+Caenurgina sp - (Apr 12, 2019) [W] Dunlap, TN
+Caenurgina erechtea - (June 21, 2015) [W] Dunlap, TN
+Catocala epione - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+Catocala ultronia
+	1,2,3 - (June 4, 2016) [W] Dunlap, TN
+Haploa sp - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+Hyphantria cunea - (June 30, 2019) [W] West Hartford, CT
+Lymantria dispar - (June 15, 2019) [W] River Highland, Cromwell, CT
+Renia fraternalis - (Mar 30, 2020) [W] Fernandina Beach, FL
+Renia sp - (Apr 19, 2015) [W] Lady Lake, FL
+Tyria jacobaeae - (June 29, 2017) [W] Kent, WA
+Virbia sp - (June 21, 2015) [W] Dunlap, TN
+Zale galbanata - (June 16, 2016) [W] Skymont Scout Camp, Altamount, TN
+Zale lunata - (June 22, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Geometridae
+Anacamptodes defectaria - (Apr 21, 2020) [W] Fernandina Beach, FL
+Costaconvexa centrostrigaria
+	1 - (June 22, 2016) [W] Skymont Scout Camp, Altamount, TN
+	2 - (May 15, 2016) [W] Dunlap, TN
+Ectropis crepuscularia - (June 22, 2016) [W] Skymont Scout Camp, Altamount, TN
+Episemasia solitaria - (Apr 6, 2020) [W] Fernandina Beach, FL
+Eubaphe mendica - (June 16, 2016) [W] Skymont Scout Camp, Altamount, TN
+Eulithis sp
+	1 - (June 25, 2016) [W] Skymont Scout Camp, Altamount, TN
+	2 - (Apr 21, 2020) [W] Fernandina Beach, FL
+Eutrapela clemataria
+	1,2 - (June 12, 2020) [W] Fernandina Beach, FL
+Heliomata cycladata - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+Iridopsis defectaria - (Apr 21, 2020) [W] Fernandina Beach, FL
+Lytrosis unitaria - (June 16, 2016) [W] Skymont Scout Camp, Altamount, TN
+Metarranthis homuraria
+	1,2 - (Aug 8, 2014) [W] Willow Creek Apts, Red Bank, TN
+Mesoleuca gratulata - (Apr 16, 2016) [W] Soos Creek Trail, Kent, WA
+Prochoerodes lineola - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+Scopula limboundata - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN 
+Speranza pustularia - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Hesperiidae
+Ancyloxypha numitor - (Aug 4, 2014) [W] Baylor School, Chattanooga, TN
+Atalopedes campestris
+	1,2,3 - (Sept 10, 2013) [W] near UPD, UT Chattanooga, TN
+Epargyreus clarus - (May 23, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+Erynnis horatius
+	1 - (Apr 19, 2015) [W] Lady Lake, FL
+	2 - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+Hylephila phyleus
+	1 - (Sept 21, 2013) [W] UT Chattanooga, TN
+	2 - (Sept 15, 2016) [W] Louis Armstrong Park, New Orleans, LA
+Lerema accius
+	1,2 - (Sept 12, 2019) [W] Dunlap, TN
+	3 - (Mar 29, 2020) [W] Fernandina Beach, FL
+Urbanus proteus - (Aug 27, 2020) [W] Fernandina Beach, FL
+
+Lasiocampidae
+Malacosoma disstria
+	1,2 - (Mar 31, 2020) [W] Fernandina Beach, FL
+
+Lycaenidae
+Celastrina echo
+	var echo - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+Celastrina neglecta - (June 15, 2015) [W] Shelby Park, Nashville, TN
+Cupido comyntas
+	1 - (Sept 18, 2013) [W] near cemetery, UT Chattanooga, TN
+	2 - (June 4, 2016) [W] Dunlap, TN
+Lycaena phlaeas - (July 13, 2019) [W] Dunlap, TN
+Prosotas dubiosa - (Jan 6, 2016) [W] South Bank, Brisbane {AU}
+Strymon melinus - (July 29, 2015) [W] Boulder, CO
+
+Lymantriidae
+Orgyia leucostigma - (Sept 18, 2013) [W] Riverwalk, Chattanooga, TN
+
+Noctuidae
+Chytolita morbidalis - (May 28, 2014) [W] Prentice Cooper State Park, Chattanooga, TN
+Eudryas grata - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+Galgula partita
+	1,2 - (Apr 12, 2019) [W] Dunlap, TN
+Polygrammate hebraeicum - (June 25, 2016) [W] Skymont Scout Camp, Altamount, TN
+Ponometia candefacta - (June 21, 2015) [W] Dunlap, TN
+Lacinipolia renigera
+	1,2 - (May 14, 2016) [W] Dunlap, TN
+Spodoptera albula - (Aug 10, 2018) [W] Dunlap, TN
+Spodoptera ornithogalli - (July 16, 2019) [W] Dunlap, TN
+
+Nymphalidae
+Agraulis vanillae
+	1,2 - (July 24, 2019) [W] Dunlap, TN
+Anartia jatrophae - (May 2, 2015) [W] Caladesi Island, FL
+Asterocampa celtis - (Sept 7, 2013) [W] 5th Street, UT Chattanooga, TN
+Caligo memnon - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Danaus plexippus
+	1,2 - (Apr 29, 2015) [W] Sunken Gardens, Tampa, FL
+Dryas iulia - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Euptoieta claudia
+	1,2 - (July 29, 2015) [W] Boulder, CO
+Heliconius cydno - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Heliconius erato - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Heliconius hecale - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Heliconius numata
+	ssp bicoloratus - (June 19, 2024) [S] Audubon Insectarium, New Orleans, LA
+Hermeuptychia sosybius
+	1 - (Sept 18, 2013) [W] Riverwalk, Chattanooga, TN
+	2 - (Mar 31, 2020) [W] Fernandina Beach, FL
+Idea leuconoe - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Junonia coenia
+	1 - (Nov 9, 2017) [W] Dunlap, TN
+	2 - (Apr 19, 2015) [W] Lady Lake, FL
+Libytheana carinenta - (Sept 18, 2013) [W] Riverwalk, Chattanooga, TN
+Limenitis archippus - (Sept 15, 2013) [W] Dunlap, TN
+Limenitis arthemis
+	ssp astyanax 1,ssp astyanax 2 - (Sept 2, 2013) [W] Suck Creek, Chattanooga, TN
+Morpho peleides - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+Myscelia cyaniris - (June 19, 2024) [S] Audubon Insectarium, New Orleans, LA
+Parthenos sylvia - (June 19, 2024) [S] Audubon Insectarium, New Orleans, LA
+Phyciodes phaon - (Dec 13, 2015) [W] Yulee, FL
+Phyciodes tharos
+	1 - (Aug 4, 2014) [W] Baylor School, Chattanooga, TN
+	2 - (July 13, 2019) [W] Dunlap, TN
+Phyciodes sp
+	1,2 - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+Polygonia interrogationis - (May 16, 2016) [W] University of Tennessee, Chattanooga, TN
+Vanessa atalanta - (July 16, 2016) [W] Soos Creek Park, Kent, WA
+
+Papilionidae
+Battus philenor
+	larva - (Aug 4, 2014) [W] Baylor School, Chattanooga, TN
+	1,2,3 - (June 19, 2016) [W] Skymont Scout Camp, Altamount, TN
+Papilio aegeus
+	female - (Dec 27, 2015) [W] Royal Botanic Garden, Sydney {AU}
+	male - (Jan 10, 2016) [W] Brisbane Botanic Garden, Brisbane {AU}
+Papilio appalachiensis - (June 19, 2016) [W] Skymont Scout Camp, Altamount, TN
+Papilio troilus
+	1 - (Mar 31, 2020) [W] Fernandina Beach, FL
+	2 - (July 13, 2019) [W] Dunlap, TN
+
+Pieridae
+Abaeis nicippe
+	1 - (Sept 15, 2013) [W] Dunlap, TN
+	2 - (July 24, 2019) [W] Dunlap, TN
+	3 - (July 21, 2019) [W] Dunlap, TN
+Ascia monuste - (Apr 29, 2015) [W] Weedon Island Preserve, St. Petersburg, FL
+Colias philodice - (July 27, 2015) [W] Chapman, KS
+Eurema daira - (Mar 23, 2020) [W] Fernandina Beach, FL
+Phoebis sennae
+	1 - (Sept 14, 2013) [W] Dunlap, TN
+	2 - (Sept 22, 2020) [W] Fernandina Beach, FL
+Pieris rapae
+	1,2 - (Sept 21, 2016) [W] National Botanic Garden, Washington, DC
+	3 - (Apr 3, 2016) [W] Rock Creek Park, Washington, DC
+
+Pyralidae
+Pyralis farinalis - (June 14, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Saturniidae
+Actias luna
+	1 - (Aug 7, 2014) [W] Willow Creek Apartments, Red Bank, TN
+	2 - (Aug 27, 2014) [W] Red Bank, TN
+	3 - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+Anisota sp - (June 22, 2016) [W] Skymont Scout Camp, Altamount, TN
+Automeris io - (Aug 3, 2019) [W] Fernandina Beach, FL
+Automeris sp
+	1,2 - (Sept 15, 2016) [W] New Orleans, LA
+Dryocampa rubicunda - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Sphingidae
+Amorpha juglandis - (June 9, 2016) [W] Skymont Scout Camp, Altamount, TN
+Ceratomia undulosa - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+Dolba hyloeus - (May 25, 2025) [W] Fort Worth, TX
+Hyles lineata
+	1,2 - (Sept 16, 2013) [W] Harding College, Searcy, AR
+
+Tineidae
+Acrolophus propingua - (June 9, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Tortricidae
+Acleris curvalana - (June 16, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Yponomeutidae
+Atteva aurea
+	1,2 - (June 5, 2016) [W] Chattanooga, TN
+
+Zygaenidae
+Pyromorpha dimidiata - (June 15, 2019) [W] River Highland, Cromwell, CT
+
+Deroplatyidae
+Deroplatys desiccata
+	1 - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+	2 - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+
+Mantidae
+Stagmomantis carolina
+	1 - (Sept 2, 2018) [W] Bradley International Airport, Windsor Locks, CT
+	2 - (July 21, 2019) [W] Dunlap, TN
+Tenodera sinensis
+	1,2 - (Aug 4, 2014) [W] Baylor School, Chattanooga, TN
+	3 - (Aug 23, 2018) [W] Bradley International Airport, Windsor Locks, CT
+
+Thespidae
+Thesprotia graminis
+	1 - (Mar 23, 2020) [W] Fernandina Beach, FL
+	2 - (Mar 10, 2020) [W] Fernandina Beach, FL
+
+Panorpidae
+Panorpa sp - (Sept 12, 2019) [W] Dunlap, TN
+
+Corydalidae
+Neohermes concolor - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Aeshnidae
+Rhionaeschna californica - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+
+Calopterygidae
+Calopteryx maculata
+	female 1,female 2,male 1,male 2,male 3 - (June 14, 2015) [W] Mountain Creek Road, Chattanooga, TN
+
+Coenagrionidae
+Argia tibialis
+	1,2 - (June 14, 2015) [W] Mountain Creek Road, Chattanooga, TN
+Argia translata - (June 17, 2021) [W] Fort Worth Zoo, Fort Worth, TX
+Enallagma civile - (Oct 4, 2020) [W] Senter Park, Irving, TX
+Enallagma sp - (Aug 10, 2017) [W] Federal Way, WA
+Ischnura cervula - (Apr 16, 2016) [W] Soos Creek Trail, Kent, WA
+Ischnura erratica - (Apr 16, 2016) [W] Soos Creek Trail, Kent, WA
+
+Gomphidae
+Dromogomphus spinosus - (Sept 9, 2019) [W] Dunlap, TN
+
+Lestidae
+Archilestes grandis - (June 17, 2021) [W] Fort Worth Zoo, Fort Worth, TX
+Lestes congener - (Aug 10, 2017) [W] Federal Way, WA
+
+Libellulidae
+Celithemis elisa
+	1,3 - (June 9, 2016) [W] Skymont Scout Camp, Altamount, TN
+	2 - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+Celithemis fasciata
+	1 - (June 8, 2016) [W] Skymont Scout Camp, Altamount, TN
+	2 - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+Dythemis velox - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Erythemis simplicicollis
+	male - (July 27, 2014) [W] Baylor Lake, Chattanooga, TN
+	female 1 - (Sept 20, 2013) [W] Baylor Lake, Chattanooga, TN
+	female 2 - (Apr 19, 2015) [W] Lady Lake, FL
+Erythrodiplax berenice - (Apr 29, 2015) [W] Weedon Island Preserve, St. Petersburg, FL
+Erythrodiplax minuscula - (Mar 16, 2020) [W] Fernandina Beach, FL
+Libellula croceipennis
+	1,2,3 - (June 17, 2021) [W] Fort Worth Zoo, Fort Worth, TX
+Libellula cyanea - (June 14, 2015) [W] Mountain Creek Road, Chattanooga, TN
+Libellula incesta
+	male 1 - (Aug 31, 2013) [W] Base of Signal Mtn, Chattanooga, TN
+	male 2 - (July 27, 2014) [W] Baylor Lake, Chattanooga, TN
+	female - (Aug 31, 2013) [W] Base of Signal Mtn, Chattanooga, TN
+Libellula luctuosa
+	male - (July 27, 2014) [W] Baylor Lake, Chattanooga, TN
+	female1,female2 - (July 16, 2019) [W] Dunlap, TN
+Libellula vibrans
+	1,2 - (Aug 31, 2013) [W] Base of Signal Mtn, Chattanooga, TN
+Orthemis ferruginea - (Oct 4, 2020) [W] Senter Park, Irving, TX
+Pachydiplax longipennis
+	male 1,male 2,female 2 - (Apr 19, 2015) [W] Lady Lake, FL
+	male 3 - (Aug 16, 2020) [W] Fernandina Beach, FL
+	female 1 - (June 5, 2019) [W] Salmon River, Cromwell, CT
+Perithemis tenera
+	1 - (Sept 24, 2020) [W] Fernandina Beach, FL
+	2 - (June 15, 2015) [W] Shelby Park, Nashville, TN
+Plathemis lydia
+	1,2 - (Aug 31, 2013) [W] Base of Signal Mtn, Chattanooga, TN
+Sympetrum illotum
+	1,2,3 - (July 16, 2016) [W] Soos Creek Trail, Kent, WA
+Sympetrum semicinctum - (July 29, 2015) [W] Boulder, CO
+Tramea carolina
+	1,2 - (Apr 29, 2015) [W] Weedon Island Preserve, St. Petersburg, FL
+
+Lindeniidae
+Ictinogomphus australis - (Jan 8, 2016) [W] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Acrididae
+Achurum carinatum - (Apr 19, 2015) [W] Lady Lake, FL
+Chortophaga viridifasciata
+	ssp australior - (Sept 23, 2020) [W] Fernandina Beach, FL
+Dissosteira carolina - (Sept 12, 2019) [W] Dunlap, TN
+Melanoplus differentialis - (Aug 23, 2018) [W] BDL Airport, Windsor Locks, CT
+Melanoplus femurrubrum - (Sept 4, 2019) [W] Dunlap, TN
+Melanoplus sp
+	A1 - (Aug 10, 2018) [W] Dunlap, TN
+	B1 - (July 16, 2019) [W] Dunlap, TN
+Orphulella pelidna - (Apr 19, 2015) [W] Lady Lake, FL
+Paroxya clavuliger - (Aug 4, 2014) [W] Dunlap, TN
+Psinidia fenestralis - (Sept 23, 2020) [W] Fernandina Beach, FL
+Schistocerca americana
+	1 - (Aug 30, 2019) [W] Dunlap, TN
+	2 - (Sept 4, 2019) [W] Dunlap, TN
+Spharagemon marmoratum
+	ssp picta - (Apr 19, 2015) [W] Lady Lake, FL
+Trachyrhachys kiowa - (July 29, 2015) [W] Boulder, CO
+
+Gryllidae
+Allonemobius sp - (June 21, 2015) [W] Dunlap, TN
+Gryllus sp - (Mar 31, 2020) [W] Fernandina Beach, FL
+
+Rhaphidophoridae
+Diestrammena asynamora - (Dec 6, 2010) [W] Mountain Creek Apartments, Chattanooga, TN
+
+Romaleidae
+Romalea microptera
+	1,2 - (Apr 19, 2015) [W] Lady Lake, FL
+	3 - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+
+Tettigoniidae
+Eumegalodon blanchardi - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+Pterophylla camellifolia
+	1,2 - (June 12, 2016) [W] Skymont Scout Camp, Altamount, TN
+Scudderia furcata - (June 17, 2021) [W] Fort Worth Zoo, Fort Worth, TX
+
+Diapheromeridae
+Diapheromera carolina - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Heteropterygidae
+Heteropteryx dilatata - (Mar 6, 2024) [W] Albuquerque Bugarium, Albuquerque, NM
+
+Lonchodidae
+Eurycantha calcarata - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+
+Phasmatidae
+Extatosoma tiaratum - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Pseudophasmatidae
+Anisomorpha buprestoides
+	1 - (Sept 22, 2020) [W] Fort Clinch State Park, Amelia Island, FL
+	2 - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+Anisomorpha ferruginea - (Oct 4, 2013) [W] near Challenger Field, UT Chattanooga, TN
+Peruphasma schultei - (July 22, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Phyllidae
+Phyllium celebicum - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+
+Spirostreptidae
+Archispirostreptus gigas - (Oct 19, 2013) [S] Chattanooga Zoo, Chattanooga, TN
+
+Cambaridae
+Procambarus clarkii - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+
+Diogenidae
+Petrochirus diogenes - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Gecarcinidae
+Cardisoma guanhumi - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Grapsidae
+Grapsus tenuicrustatus
+	1,2 - (Dec 21, 2015) [W] Waikiki Beach, HI
+
+Inachidae
+Macrocheira kaempferi
+	1 - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+
+Menippidae
+Menippe mercenaria - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+
+Munididae
+Pleuroncodes planipes - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+
+Ocypodidae
+Uca pilator - (Apr 29, 2015) [W] Weedon Island Preserve, St. Petersburg, FL
+
+Palaemonidae
+Macrobrachium rosenbergii - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Palinuridae
+Panulirus argus
+	1 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+	2 - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+
+Pandalidae
+Pandalus platyceros - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Penaeidae
+Farfantepenaeus aztecus - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Portunidae
+Callinectes sapidus - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Scyllaridae
+Parribacus antarcticus - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Armadillidiidae
+Armadillidium vulgare
+	1,2 - (Apr 14, 2016) [W] Federal Way, WA
+
+Acanthuridae
+Acanthurus bahianus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Acanthurus chirurgus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Acanthurus leucosternon
+	1 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Acanthurus pyroferus - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+Acanthurus tennenti - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Acanthurus triostegus
+	1,2 - (Dec 20, 2015) [W] Waikiki Beach, Honolulu, HI
+Acanthurus xanthopterus - (Dec 20, 2015) [W] Waikiki Beach, Honolulu, HI
+Naso lituratus
+	1,2 - (Dec 20, 2015) [W] Waikiki Beach, HI
+Paracanthurus hepatus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Zebrasoma flavescens - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Pomacanthidae
+Genicanthus bellus - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+Pomacanthus imperator - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+
+Acipenseridae
+Acipenser fulvescens - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Acipenser gueldenstaedtii - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Scaphirhynchus platorynchus
+	1,2 - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+
+Polyodontidae
+Polyodon spathula
+	1 - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (July 26, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Amiidae
+Amia calva - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Anguillidae
+Anguilla reinhardtii
+	1 - (Dec 28, 2015) [W] Royal Botanic Garden, Sydney {AU}
+	2,3 - (Jan 10, 2016) [W] Brisbane Botanic Garden, Brisbane {AU}
+
+Congridae
+Gorgasia preclara - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Heteroconger hassi - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Heteroconger sp - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Muraenidae
+Gymnothorax moringa - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Batrachoididae
+Opsanus tau - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+
+Belonidae
+Strongylura marina - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Holocentridae
+Holocentrus adscensionis
+	1 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+	2 - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+
+Carangidae
+Caranx melampygus - (Dec 20, 2015) [W] Waikiki Beach, Honolulu, HI
+
+Anostomidae
+Leporinus fasciatus - (July 30, 2013) [S] National Zoo, Washington, DC
+
+Characidae
+Gymnocorymbus ternetzi - (July 30, 2013) [S] National Zoo, Washington, DC
+Hemigrammus bleheri - (Jan 5, 2015) [S] National Zoo, Washington, DC
+Paracheirodon axelrodi - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Prochilodontidae
+Semaprochilodus insignis - (July 30, 2013) [S] National Zoo, Washington, DC
+Semaprochilodus taeniurus - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Serrasalmidae
+Colossoma macropomum - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+Metynnis hypsauchen - (July 26, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Pygocentrus cariba - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Pygocentrus nattereri - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Cichlidae
+Amphilophus citrinellus - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Cichla ocellaris
+	1 - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+Cyphotilapia frontosa - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Haplotaxodon microlepis - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Herichthys cyanoguttatus - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Heros severus
+	ssp rotkeil - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Julidochromis regani - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Maylandia zebra - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Melanochromis parallelus
+	female,male - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Mesonauta festivus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Parachromis dovii - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Parachromis managuensis - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Pelmatolapia mariae - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Pterophyllum sp - (July 30, 2013) [S] National Zoo, Washington, DC
+Symphysodon aequifasciatus
+	1,2 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Symphysodon sp - (July 30, 2013) [S] National Zoo, Washington, DC
+
+Botiidae
+Botia kubotai - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Chromobotia macracanthus - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Cyprinidae
+Balantiocheilos melanopterus - (Aug 17, 2013) [S] Walmart Pet Center, Chattanooga, TN
+Ctenopharyngodon idella - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Clinostomus funduloides - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Cyprinella galactura - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Luxilus coccogenis - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Notropis stilbius - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Sahyadria denisonii - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Systomus tetrazona - (Aug 17, 2013) [S] Walmart Pet Center, Chattanooga, TN
+
+Fundulidae
+Fundulus similis - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Esocidae
+Esox lucius - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Gymnotidae
+Electrophorus electricus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Labridae
+Lachnolaimus maximus - (Mar 6, 2024) [S] Albuquerque Bugarium, Albuquerque, NM
+Thalassoma lunare - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+
+Lepisosteidae
+Atractosteus spatula
+	1 - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Lepisosteus oculatus - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Lepisosteus osseus
+	1,2 - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Ogcocephalidae
+Ogcocephalus sp - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Mugilidae
+Neomyxus leuciscus - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Mormyridae
+Gnathonemus petersi - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Osteoglossidae
+Arapaima gigas
+	1,2 - (July 30, 2013) [S] National Zoo, Washington, DC
+Scleropages formosus - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+
+Anarhichadidae
+Anarrhichthys ocellatus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Ambassidae
+Parambassis pulcinella - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Apogonidae
+Pterapogon kauderni - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Blenniidae
+Ecsenius midas - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Carangidae
+Selene vomer - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Trachinotus falcatus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Centropomidae
+Centropomus undecimalis - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Centrarchidae
+Enneacanthus chaetodon - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Lepomis auritus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Lepomis macrochirus
+	1 - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+Lepomis marginatus - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+Lepomis megalotis - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Pomoxis nigromaculatus - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Chaetodontidae
+Chaetodon auriga - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Chaetodon capistratus - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Chaetodon ephippium - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Chaetodon miliaris - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+Chaetodon ocellatus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Chaetodon quadrimaculatus - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Chaetodon striatus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Chaetodon unimaculatus - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Forcipiger flavissimus
+	1 - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+	2 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Cirrhitidae
+Paracirrhites arcatus - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Cryptacanthodidae
+Cryptacanthodes gigantea - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Embiotocidae
+Cymatogaster aggregata - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Micrometrus aurora - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+
+Ephippidae
+Chaetodipterus faber - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+
+Haemulidae
+Anisotremus virginicus - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Haemulon sciurus - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+
+Kuhliidae
+Kuhlia xenura - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Kyphosidae
+Microcanthus strigatus - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Labridae
+Cheilinus undulatus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Choerodon fasciatus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Coris gaimard - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Gomphosus varius
+	1,2 - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Macropharyngodon geoffroy - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Novaculichthys taeniourus
+	1 - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+	2 - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Paracheilinus carpenteri - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Semicossyphus pulcher - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Lutjanidae
+Lutjanus griseus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Microdesmidae
+Nemateleotris magnifica
+	1,2 - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Monodactylidae
+Monodactylus argenteus - (July 31, 2013) [S] National Zoo, Washington, DC
+Monodactylus sebae - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Moronidae
+Morone mississippiensis - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Mullidae
+Mulloidichthys flavolineatus - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Parupeneus cyclostomus - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Opistognathidae
+Opistognathus aurifrons - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Percidae
+Perca flavescens - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Percina jenkinsi - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Pomacanthidae
+Centropyge flavissima - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Chaetodontoplus conspicillatus - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+Holacanthus ciliaris - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Holacanthus tricolor - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Pomacentridae
+Abudefduf abdominalis
+	1 - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+	2 - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+Amphiprion melanopus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Amphiprion ocellaris - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Amphiprion percula - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Amphiprion perideraion
+	1,2 - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Amphiprion polymnus - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Chromis viridis - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Chrysiptera talboti - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Hypsypops rubicundus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Priacanthidae
+Heteropriacanthus cruentatus - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Ptereleotridae
+Ptereleotris evides - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Scaridae
+Sparisoma aurofrenatum - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Sparisoma viride - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Scatophagidae
+Scatophagus argus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Sciaenidae
+Cynoscion nebulosus - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Pareques acuminatus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Serranidae
+Cephalopholis argus - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+Epinephelus lanceolatus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Mycteroperca microlepis - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Pseudanthias bartlettorum
+	1,2 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Pseudanthias pleurotaenia - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+Pseudanthias squamipinnis
+	1 - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+	2 - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Siganidae
+Siganus vulpinus - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Sparidae
+Archosargus probatocephalus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Diplodus holbrookii - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Lagodon rhomboides - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Toxotidae
+Toxotes jaculatrix - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+
+Zanclidae
+Zanclus cornutus
+	1 - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+	2 - (Dec 20, 2015) [W] Waikiki Beach, HI
+
+Salmonidae
+Oncorhynchus mykiss - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Salmo trutta - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Salvelinus fontinalis - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Scorpaenidae
+Pterois volitans - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Sebastes atrovirens - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+Sebastes diploproa - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Sebastes miniatus - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+Sebastes pinniger
+	1,2 - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Zaniolepididae
+Oxylebius pictus - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Callichthyidae
+Corydoras sp - (July 30, 2013) [S] National Zoo, Washington, DC
+
+Doradidae
+Agamyxis pectinifrons - (July 30, 2013) [S] National Zoo, Washington, DC
+Oxydoras niger - (July 30, 2013) [S] National Zoo, Washington, DC
+
+Loricariidae
+Aphanotorulus ammophilus - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Farlowella sp - (July 30, 2013) [S] National Zoo, Washington, DC
+Hypostomus plecostomus - (July 30, 2013) [S] National Zoo, Washington, DC
+Pseudacanthicus leopardus - (July 30, 2013) [S] National Zoo, Washington, DC
+
+Pimelodidae
+Phractocephalus hemioliopterus - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+
+Centriscidae
+Aeoliscus strigatus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Macroramphosidae
+Macroramphosus stolopax - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+
+Syngnathidae
+Dunckerocampus dactyliophorus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Haliichthys taeniophorus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Hippocampus abdominalis
+	1 - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Hippocampus erectus
+	1 - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Hippocampus histrix - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Hippocampus ingens - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Hippocampus reidi
+	1 - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+Hippocampus whitei - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Hippocampus zosterae - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Phycodurus eques
+	1 - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+	2 - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Phyllopteryx taeniolatus
+	1 - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Sygnathoides biaculeatus - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Trachyrhamphus bicoarctatus - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Balistidae
+Balistoides conspicillum - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Rhinecanthus aculeatus - (Dec 20, 2015) [W] Waikiki Beach, Honolulu, HI
+Rhinecanthus rectangulus - (Dec 20, 2015) [W] Waikiki Beach, Honolulu, HI
+
+Diodontidae
+Chilomycterus schoepfi - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Monacanthidae
+Monacanthus ciliatus - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+Oxymonacanthus longirostris - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Pervagor spilosoma - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Tetraodontidae
+Arothron hispidus - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+Arothron meleagris - (July 27, 2019) [S] Seattle Aquarium, Seattle, WA
+Tetraodon mbu - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+
+Bombinatoridae
+Bombina orientalis - (July 30, 2013) [S] National Zoo, Washington, DC
+
+Bufonidae
+Anaxyrus fowleri - (July 30, 2013) [S] National Zoo, Washington, DC
+Anaxyrus punctatus - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Anaxyrus terrestris
+	1 - (Apr 18, 2015) [W] Lady Lake, FL
+	2 - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Atelopus zeteki - (Jan 1, 2015) [S] National Zoo, Washington, DC
+Incilius nebulifer - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+
+Centrolenidae
+Cochranella granulosa - (July 30, 2013) [S] National Zoo, Washington, DC
+
+Dendrobatidae
+Dendrobates auratus
+	1,2 - (Jan 5, 2015) [S] National Zoo, Washington, DC
+Dendrobates leucomelas - (July 30, 2013) [S] National Zoo, Washington, DC
+Dendrobates pumilio - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Dendrobates tinctorius
+	1,2 - (July 30, 2013) [S] National Zoo, Washington, DC
+Phyllobates bicolor - (Jan 7, 2015) [S] National Zoo, Washington, DC
+Phyllobates terribilis - (July 30, 2013) [S] National Zoo, Washington, DC
+Phyllobates vittatus - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Ranitomeya imitator - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+
+Hylidae
+Acris crepitans
+	1,2 - (June 8, 2016) [W] Skymont Scout Camp, Altamount, TN
+Hyla cinerea
+	1 - (Sept 13, 2016) [W] New Orleans, LA
+	2 - (Mar 20, 2015) [S] Audubon Insectarium, New Orleans, LA
+Hyla versicolor - (Jan 5, 2015) [S] National Zoo, Washington, DC
+Phyllomedusa sauvagii - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Pseudacris feriarum
+	1,2 - (June 14, 2015) [W] Mountain Creek Road, Chattanooga, TN
+Pseudacris regilla
+	1,2,3 - (July 7, 2016) [W] Federal Way, WA
+Trachycephalus resinifictrix - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+Triprion spinosa - (Sept 26, 2015) [S] National Zoo, Washington, DC
+
+Leptodactylidae
+Leptodactylus pentadactylus
+	1 - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Mantellidae
+Mantella aurantiaca - (Dec 16, 2014) [S] National Zoo, Washington, DC
+
+Microhylidae
+Dyscophus antongilii - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Pipidae
+Xenopus laevis - (July 30, 2013) [S] National Zoo, Washington, DC
+
+Pyxicephalidae
+Pyxicephalus adspersus - (Jan 20, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+
+Ranidae
+Lithobates catesbeianus
+	1,2 - (June 8, 2016) [W] Skymont Scout Camp, Altamount, TN
+Lithobates clamitans - (Sept 20, 2013) [W] Baylor Lake, Chattanooga, TN
+Lithobates sphenocephalus - (June 14, 2015) [W] Mountain Creek Road, Chattanooga, TN
+Lithobates yavapaiensis - (Dec 23, 2014) [S] National Zoo, Washington, DC
+Rana draytonii - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+
+Rhacophoridae
+Rhacophorus dennysi - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Theloderma corticale - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Typhlonectidae
+Typhlonectes natans - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Ambystomatidae
+Ambystoma maculatum - (July 26, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Ambystoma mavortium - (Dec 24, 2014) [S] National Zoo, Washington, DC
+
+Cryptobranchidae
+Andrias japonicus - (Sept 26, 2015) [S] National Zoo, Washington, DC
+Cryptobranchus alleganiensis - (Dec 2, 2014) [S] National Zoo, Washington, DC
+
+Plethodontidae
+Gyrinophilus palleucus - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Plethodon yonahlossee - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+Pseudotriton ruber
+	1 - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+	ssp ruber - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Salamandridae
+Notophthalmus meridionalis
+	ssp meridionalis - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Notophthalmus viridescens
+	1 - (July 30, 2013) [S] National Zoo, Washington, DC
+	2 - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+Paramesotriton hongkongensis - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Tylototriton shanjing - (Dec 2, 2014) [S] National Zoo, Washington, DC
+
+Sirenidae
+Siren lacertina - (Apr 8, 2019) [S] Lowry Park Zoo, Tampa, FL
+
+Styelidae
+Cnemidocarpa finmarkiensis - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Accipitridae
+Aquila audax - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Accipiter cooperii - (June 21, 2019) [W] Avon, CT
+Aegypius monachus - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Buteo jamaicensis
+	1,2 - (Nov 17, 2013) [W] Redoubt Soccer Field, Chattanooga, TN
+Buteo lineatus - (Dec 26, 2019) [W] Dunlap, TN
+Buteo swainsoni
+	1 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (Aug 4, 2015) [W] Grand Teton National Park, WY
+Gyps coprotheres - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Gyps rueppellii - (Apr 11, 2015) [S] National Zoo, Washington, DC
+Haliaeetus leucocephalus
+	1 - (Oct 1, 2015) [W] Greenwood, DE
+	2 - (Dec 24, 2014) [S] National Zoo, Washington, DC
+Haliaeetus pelagicus - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Haliaeetus vocifer
+	1 - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (July 22, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Stephanoaetus coronatus - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Cathartidae
+Vultur gryphus - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Anatidae
+Aix galericulata
+	1 - (May 30, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Aix sponsa
+	male 1 - (Jan 2, 2015) [S] National Zoo, Washington, DC
+	male 2 - (Apr 24, 2015) [W] Rock Creek Park, Washington, DC
+	female - (Apr 24, 2015) [S] National Zoo, Washington, DC
+Alopochen aegyptiacus - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Anas acuta - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Anas clypeata - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Anas discors - (Jan 15, 2015) [S] National Zoo, Washington, DC
+Anas fulvigula
+	1,2 - (Feb 11, 2016) [W] Audubon Park, New Orleans, LA
+Anas platyrhynchos
+	male 1,male 2,female - (Dec 10, 2013) [W] Riverwalk, Chattanooga, TN
+	domesticus 1,domesticus 2 - (Jan 20, 2015) [W] near the Lincoln Memorial, Washington, DC
+	domesticus 3 - (June 14, 2015) [W] Mountain Creek Road, Chattanooga, TN
+Anas hottentota - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Anas sibilatrix - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Anas strepera
+	1,2 - (Aug 5, 2015) [W] Grand Teton National Park, WY
+Anas superciliosa - (Dec 28, 2015) [W] Royal Botanic Garden, Sydney {AU}
+Anas wyvilliana - (Dec 19, 2015) [W] Waikiki Beach, Oahu, HI
+Anser anser
+	domesticus - (Mar 17, 2015) [W] Audubon Park, New Orleans, LA
+Anser indicus - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Aythya americana - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Branta canadensis
+	1,2,3,4 - (Jan 20, 2015) [W] near the Lincoln Memorial, Washington, DC
+Branta sandvicensis - (Apr 8, 2019) [S] Lowry Park Zoo, Tampa, FL
+Branta ruficollis
+	1 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Bucephala islandica - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Cairina moschata
+	1 - (Sept 15, 2013) [W] Dunlap, TN
+	2 - (Mar 17, 2015) [W] Audubon Park, New Orleans, LA
+Chenonetta jubata - (Dec 28, 2015) [W] Royal Botanic Garden, Sydney {AU}
+Coscoroba coscoroba - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Cygnus atratus - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Cygnus buccinator - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Cygnus melancoryphus - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Cygnus olor
+	1,2 - (Mar 17, 2015) [W] Audubon Park, New Orleans, LA
+Dendrocygna arcuata - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Dendrocygna autumnalis - (Feb 11, 2016) [W] Audubon Park, New Orleans, LA
+Dendrocygna bicolor - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Dendrocygna viduata
+	1,2 - (Jan 2, 2015) [S] National Zoo, Washington, DC
+Lophodytes cucullatus
+	male 2 - (Jan 2, 2015) [S] National Zoo, Washington, DC
+	male 1,female - (Dec 24, 2014) [S] National Zoo, Washington, DC
+Marmaronetta angustirostris - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Melanitta perspicillata
+	1,2 - (Mar 22, 2016) [W] Puget Sound, Seattle, WA
+	3 - (Dec 20, 2023) [W] Carmel Beach, Carmel-by-the-Sea, CA
+Mergellus albellus
+	1 - (Jan 2, 2015) [S] National Zoo, Washington, DC
+	2 - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Netta peposaca - (Mar 17, 2015) [W] Audubon Park, New Orleans, LA
+Nettapus coromandelianus - (July 22, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Oxyura jamaicensis - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Sarkidiornis melanotos
+	ssp melanotos - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Tadorna tadornoides - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+
+Anhimidae
+Chauna torquata - (Apr 24, 2015) [S] National Zoo, Washington, DC
+
+Trochilidae
+Cynanthus latirostris - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Selasphorus platycercus
+	male 1,male 2,female - (Aug 1, 2015) [W] Nederland, CO
+
+Apterygidae
+Apteryx mantelli
+	1,2 - (Jan 16, 2015) [S] National Zoo, Washington, DC
+
+Bucerotidae
+Aceros corrugatus - (Jan 15, 2015) [S] National Zoo, Washington, DC
+Bucorvus abyssinicus - (June 4, 2015) [S] National Zoo, Washington, DC
+Bycanistes brevis
+	1,2 - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+Penelopides exarhatus - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+Tockus deckeni - (Sept 26, 2015) [S] National Zoo, Washington, DC
+
+Caprimulgidae
+Chordeiles minor - (July 27, 2015) [W] Salina, KS
+
+Podargidae
+Podargus strigoides - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Cariamidae
+Cariama cristata
+	1 - (July 31, 2013) [S] National Zoo, Washington, DC
+	2 - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+
+Casuariidae
+Casuarius casuarius
+	1,2 - (June 7, 2015) [S] National Zoo, Washington, DC
+
+Dromaiidae
+Dromaius novaehollandiae
+	1 - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary {AU}
+	2 - (June 7, 2015) [S] National Zoo, Washington, DC
+
+Cathartidae
+Cathartes aura
+	1,2 - (Feb 4, 2015) [W] Columbia Avenue, Washington, DC
+Sarcoramphus papa - (Jan 24, 2015) [S] National Zoo, Washington, DC
+Vultur gryphus
+	1 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (June 22, 2022) [S] Fort Worth Zoo, Fort Worth, TX
+
+Alcidae
+Cepphus columba
+	1,2 - (Mar 22, 2016) [W] Puget Sound, Seattle, WA
+Fratercula cirrhata - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Burhinidae
+Burhinus bistriatus - (Jan 20, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Burhinus capensis - (Jan 20, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Burhinus grallarius - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Charadriidae
+Charadrius vociferus
+	1 - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+	2 - (Sept 6, 2014) [W] Dunlap, TN
+Pluvialis fulva
+	1,2 - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+Pluvialis squatarola - (Apr 29, 2015) [W] St. Petersburg, FL
+Vanellus miles
+	ssp novaehollandiae - (Dec 28, 2015) [W] Royal Botanic Garden, Sydney {AU}
+	ssp miles - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Vanellus spinosus - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+
+Haematopodidae
+Haematopus palliatus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Jacanidae
+Jacana jacana - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+
+Laridae
+Larosterna inca - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+Larus delawarensis
+	1,2 - (Jan 20, 2015) [W] near the Lincoln Memorial, Washington, DC
+Larus hyperboreus - (Aug 7, 2015) [W] Seattle, WA
+Larus novaehollandiae - (Dec 28, 2015) [W] Royal Botanic Garden, Sydney {AU}
+Larus occidentalis - (Dec 20, 2023) [W] Carmel Beach, Carmel-by-the-Sea, CA
+Leucophaeus atricilla
+	1 - (Mar 17, 2015) [W] Mississippi River, New Orleans, LA
+	2 - (Oct 1, 2015) [W] Rehoboth Beach, DE
+
+Recurvirostridae
+Himantopus mexicanus - (Dec 22, 2015) [W] Kailua Beach, Oahu, HI
+
+Scolopacidae
+Arenaria interpres - (Mar 25, 2018) [W] Treasure Island, Tampa, FL
+Numenius americanus - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Tringa semipalmata - (Mar 25, 2018) [W] Treasure Island, Tampa, FL
+
+Sternidae
+Thalasseus maximus - (May 5, 2015) [W] Madiera Beach, Tampa, FL
+
+Ciconiidae
+Anastomus lamelligerus
+	1 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+Ciconia abdimii - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Ciconia ciconia
+	1,2 - (July 31, 2013) [S] National Zoo, Washington, DC
+Ephippiorhynchus senegalensis - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Leptoptilos crumenifer - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+Mycteria ibis - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+
+Coliidae
+Colius striatus
+	1,2 - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+
+Columbidae
+Caloenas nicobarica - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Columba livia
+	1 - (Aug 5, 2013) [W] New York City, NY
+	2 - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+Geopelia striata - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+Otidiphaps nobilis - (Jan 2, 2015) [S] National Zoo, Washington, DC
+Spilopelia chinensis - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+Streptopelia decaocto - (May 1, 2015) [W] Lowry Park Zoo, Tampa, FL
+Treron vernans - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Zenaida graysoni - (Jan 5, 2015) [S] National Zoo, Washington, DC
+Zenaida macroura
+	1 - (Jan 24, 2015) [W] National Zoo, Washington, DC
+	2 - (Apr 27, 2024) [W] Fort Worth, TX
+
+Alcedinidae
+Megaceryle alcyon - (Aug 15, 2023) [W] Potter Marsh, Anchorage, AK
+Todiramphus cinnamominus - (Jan 4, 2015) [S] National Zoo, Washington, DC
+Halcyon malimbica - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+
+Coraciidae
+Coracias cyanogaster - (Jan 20, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Coracias spatulatus - (Jan 20, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+
+Halcyonidae
+Dacelo novaeguineae - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Momotidae
+Momotus momota - (Jan 2, 2015) [S] National Zoo, Washington, DC
+
+Cuculidae
+Geococcyx californianus - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Guira guira - (Jan 4, 2015) [S] National Zoo, Washington, DC
+
+Eurypygidae
+Eurypyga helias
+	1 - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+	2 - (Dec 24, 2014) [S] National Zoo, Washington, DC
+
+Cracidae
+Crax alberti - (Sept 22, 2016) [S] National Zoo, Washington, DC
+
+Megapodiidae
+Alectura lathami - (Jan 8, 2016) [W] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Numididae
+Numida meleagris - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Odontophoridae
+Callipepla gambelii
+	1,2 - (Jan 19, 2026) [W] Desert Botanic Garden, Phoenix, AZ
+
+Phasianidae
+Bambusicola fytchii - (Jan 2, 2015) [S] National Zoo, Washington, DC
+Dendragapus obscurus - (Aug 4, 2015) [W] Signal Mountain, Grand Teton National Park, WY
+Gallus gallus
+	ssp domesticus 1 - (Sept 14, 2013) [S] Dunlap, TN
+	ssp domesticus 2 - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Meleagris gallopavo
+	1 - (Apr 25, 2023) [W] White Oak Quiet Walkway, Great Smoky Mountains National Park, TN
+	ssp osceola - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+	ssp silvestris - (Sept 14, 2013) [S] Dunlap, TN
+Meleagris ocellata
+	1,2 - (July 22, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Pavo cristatus
+	1 - (Oct 19, 2013) [S] Chattanooga Zoo, Chattanooga, TN
+	2 - (Jan 2, 2015) [S] National Zoo, Washington, DC
+	3 - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+Pavo muticus - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+
+Gruidae
+Anthropoides paradisea
+	1,2 - (June 7, 2015) [S] National Zoo, Washington, DC
+Balearica pavonina - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Bugeranus carunculatus - (July 31, 2013) [S] National Zoo, Washington, DC
+Grus americana - (July 31, 2013) [S] National Zoo, Washington, DC
+Grus canadensis
+	ssp pratensis 1,ssp pratensis 2 - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+Grus monacha
+	1,2 - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Grus vipio - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Grus virgo - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+
+Otididae
+Ardeotis kori - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Rallidae
+Amaurornis flavirostra - (Jan 2, 2015) [S] National Zoo, Washington, DC
+Fulica americana
+	1 - (Dec 10, 2013) [W] Riverwalk, Chattanooga, TN
+	2 - (Feb 22, 2016) [W] Audubon Park, New Orleans, LA
+Gallinula chloropus - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Gallinula tenebrosa
+	1,2 - (Dec 28, 2015) [W] Royal Botanic Garden, Sydney {AU}
+Porphyrio porphyrio - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+
+Musophagidae
+Musophaga violacea - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+Tauraco persa - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Alaudidae
+Eremophila alpestris - (Apr 4, 2016) [S] Natural History Museum, Washington, DC
+
+Artamidae
+Cracticus tibicen - (Jan 8, 2016) [W] Lone Pine Koala Sanctuary, Brisbane {AU}
+Strepera graculina - (Dec 27, 2015) [W] Royal Botanic Garden, Sydney {AU}
+
+Bombycillidae
+Bombycilla cedrorum - (Aug 10, 2015) [W] Mount Rainier, WA
+
+Cardinalidae
+Cardinalis cardinalis
+	female 1 - (Oct 29, 2013) [W] University of Tennessee at Chattanooga, TN
+	female 2 - (Jan 5, 2015) [W] National Zoo, Washington, DC
+	female 3 - (Jan 2, 2015) [W] National Zoo, Washington, DC
+	male 1 - (Oct 29, 2013) [W] University of Tennessee at Chattanooga, TN
+	male 2 - (Jan 2, 2015) [W] National Zoo, Washington, DC
+Pheucticus chrysogaster - (Jan 4, 2015) [S] National Zoo, Washington, DC
+Piranga olivacea
+	1 - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+	female - (Sept 22, 2016) [S] National Zoo, Washington, DC
+
+Certhiidae
+Certhia americana - (Apr 4, 2016) [S] Natural History Museum, Washington, DC
+
+Corvidae
+Aphelocoma californica - (May 19, 2024) [W] Channel Islands National Park, Santa Cruz, CA
+Corvus albicollis - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Corvus brachyrhynchos - (Dec 24, 2014) [W] Harvard Street, Washington, DC
+Corvus corax
+	1 - (Jan 2, 2015) [S] National Zoo, Washington, DC
+	2 - (Jan 5, 2015) [S] National Zoo, Washington, DC
+	3 - (May 19, 2024) [W] Santa Cruz Island, Channel Islands National Park, CA
+Cyanocitta cristata
+	1 - (Mar 17, 2015) [W] Audubon Park, New Orleans, LA
+	2 - (Mar 20, 2015) [W] Washington Square Park, New Orleans, LA
+Cyanocitta stelleri
+	1,2 - (Aug 23, 2015) [W] Crater Lake National Park, OR
+Perisoreus canadensis - (Aug 30, 2003) [W] Chilkoot Trail, Skagway, AK
+Pica hudsonia
+	1,2 - (July 29, 2015) [W] Boulder, CO
+
+Estrildidae
+Estrilda astrild - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+Lonchura oryzivora - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+
+Fringillidae
+Crithagra mozambicus - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+
+Hirundinidae
+Hirundo neoxena
+	1,2 - (Dec 28, 2015) [W] Royal Botanic Garden, Sydney {AU}
+Hirundo rustica - (Aug 18, 2015) [W] Mount Rainier, WA
+Tachycineta thalassina - (Aug 3, 2015) [W] Laramie, WY
+
+Icteridae
+Agelaius phoeniceus
+	1 - (Mar 30, 2015) [W] Dunlap, TN
+	2 - (Apr 14, 2016) [W] Federal Way, WA
+	3 - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+Euphagus cyanocephalus
+	male,female - (Aug 23, 2015) [W] Crater Lake National Park, OR
+Icterus galbula - (Sept 22, 2016) [S] National Zoo, Washington, DC
+Molothrus ater
+	1 - (June 7, 2015) [W] National Zoo, Washington, DC
+	2 - (June 15, 2015) [W] Nashville, TN
+Psarocolius decumanus - (Jan 2, 2015) [S] National Zoo, Washington, DC
+Quiscalus major - (May 3, 2015) [W] Busch Gardens, Tampa, FL
+Quiscalus mexicanus
+	1 - (Feb 19, 2023) [W] Fort Worth Zoo, Fort Worth, TX
+	2 - (July 28, 2015) [W] Limon, CO
+Quiscalus quiscula
+	1 - (Apr 11, 2015) [W] Washington, DC
+	2 - (Apr 15, 2015) [W] Washington, DC
+Sturnella magna
+	1 - (Nov 14, 2019) [W] Dunlap, TN
+	2,3 - (Mar 30, 2015) [W] Dunlap, TN
+Tyrannus verticalis - (July 28, 2015) [W] Limon, CO
+
+Irenidae
+Irena puella - (Jan 4, 2015) [S] National Zoo, Washington, DC
+
+Meliphagidae
+Entomyzon cyanotis - (Apr 8, 2019) [S] Lowry Park Zoo, Tampa, FL
+Manorina melanocephala - (Dec 27, 2015) [W] Royal Botanic Garden, Sydney {AU}
+
+Mimidae
+Dumetella carolinensis
+	1 - (Jan 2, 2015) [S] National Zoo, Washington, DC
+	2 - (May 15, 2015) [W] National Botanical Garden, Washington, DC
+Mimus polyglottos - (Oct 4, 2013) [W] University of Tennessee at Chattanooga, TN
+
+Monarchidae
+Grallina cyanoleuca - (Jan 7, 2016) [W] Brisbane {AU}
+
+Paradisaeidae
+Paradisaea minor - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Paradisaea raggiana - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+
+Paridae
+Baeolophus bicolor
+	1,2,3 - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+Parula americana - (Apr 18, 2015) [W] Lady Lake, FL
+Poecile atricapillus - (Sept 22, 2016) [S] National Zoo, Washington, DC
+Poecile carolinensis - (Apr 15, 2015) [W] National Zoo, Washington, DC
+Poecile rufescens
+	1,2 - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+
+Parulidae
+Mniotilta varia
+	1 - (Jan 20, 2020) [W] Jacksonville Zoo, Jacksonville, FL
+	2 - (Apr 18, 2015) [W] Lady Lake, FL
+Setophaga coronata
+	1,2 - (Feb 11, 2016) [W] Audubon Park, New Orleans, LA
+
+Passerellidae
+Junco hyemalis
+	1 - (Aug 10, 2015) [W] Mount Rainier, Pierce County, WA
+	2 - (Aug 22, 2015) [W] Crater Lake National Park, OR
+Melospiza georgiana - (Jan 11, 2015) [S] National Zoo, Washington, DC
+Melospiza melodia
+	1,2 - (Mar 30, 2015) [W] Dunlap, TN
+Passerculus sandwichensis
+	1,2 - (Mar 30, 2015) [W] Dunlap, TN
+Pipilo maculatus - (July 16, 2016) [W] Soos Creek Trail, Kent, WA
+Zonotrichia atricapilla - (Apr 16, 2016) [W] Soos Creek Trail, Kent, WA
+Zonotrichia leucophrys - (Apr 4, 2016) [S] Natural History Museum, Washington, DC
+
+Passeridae
+Passer domesticus
+	male,female - (Oct 22, 2013) [W] University of Tennessee at Chattanooga, TN
+
+Ploceidae
+Ploceus velatus - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+
+Pycnonotidae
+Pycnonotus cafer
+	1,2 - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+
+Rhipiduridae
+Rhipidura leucophrys - (Jan 8, 2016) [W] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Sturnidae
+Acridotheres tristis - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+Lamprotornis purpureus - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Leucopsar rothschildi - (Oct 19, 2013) [S] Chattanooga Zoo, Chattanooga, TN
+Sturnus vulgaris
+	1,2 - (Jan 28, 2015) [W] Washington, DC
+	winter - (Sept 22, 2016) [W] National Zoo, Washington, DC
+
+Thraupidae
+Paroaria coronata - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+Ramphocelus carbo - (Jan 11, 2015) [S] National Zoo, Washington, DC
+Thraupis episcopus - (Jan 7, 2015) [S] National Zoo, Washington, DC
+
+Troglodytidae
+Salpinctes obsoletus
+	1,2,3 - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+Thryothorus ludovicianus
+	1,2 - (Apr 20, 2015) [W] Lady Lake, FL
+
+Turdidae
+Hylocichla mustelina - (Sept 22, 2016) [S] National Zoo, Washington, DC
+Sialia currucoides - (Aug 4, 2015) [W] Grand Teton National Park, WY
+Sialia sialis
+	1 - (Sept 15, 2013) [W] Dunlap, TN
+	2 - (June 14, 2015) [W] Mountain Creek Road, Chattanooga, TN
+	3 - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+Turdus migratorius
+	1 - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+	2 - (Oct 29, 2013) [W] University of Tennessee, Chattanooga, TN
+	juvenile 1,juvenile 2 - (July 27, 2014) [W] Baylor School, Chattanooga, TN
+
+Tyraniidae
+Sayornis nigricans - (Dec 19, 2023) [W] Ano Nuevo State Park, Pesacadero, CA
+Sayornis phoebe - (June 8, 2016) [W] Skymont Scout Camp, Altamount, TN
+Sayornis saya - (July 29, 2015) [W] Boulder, CO
+Tyrannus tyrannus - (June 11, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Zosteropidae
+Zosterops japonicus
+	1,2 - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+
+Ardeidae
+Ardea alba
+	1,2 - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Ardea herodias
+	1 - (Feb 11, 2015) [W] Rock Creek, Washington, DC
+	2 - (Jan 20, 2015) [W] near the Lincoln Memorial, Washington, DC
+	3 - (Apr 16, 2016) [W] Coos Creek Trail, Kent, WA
+Bubulcus ibis - (Dec 22, 2015) [W] Kailua Beach, Oahu, HI
+Cochlearius cochlearius
+	1 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+	2 - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+Egretta caerulea
+	1,2 - (Jan 15, 2015) [S] National Zoo, Washington, DC
+Egretta garzetta - (June 12, 2015) [W] Whitney Plantation, New Orleans, LA
+Egretta rufescens
+	1,2 - (May 1, 2015) [W] Lowry Park Zoo, Tampa, FL
+Egretta thula
+	1 - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+	2 - (May 5, 2015) [W] Madiera Beach, FL
+Nyctanassa violacea - (Apr 29, 2015) [W] Sunken Gardens, Tampa, FL
+Nycticorax nycticorax
+	1 - (Apr 24, 2015) [W] National Zoo, Washington, DC
+	2 - (June 6, 2015) [W] National Zoo, Washington, DC
+	3 - (Sept 15, 2016) [W] Louis Armstrong Park, New Orleans, LA
+
+Balaenicipitidae
+Balaeniceps rex - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+
+Pelecanidae
+Pelecanus occidentalis
+	1 - (Mar 25, 2018) [W] Cypress Point Park, Tampa, FL
+	juvenile - (Mar 25, 2018) [W] Treasure Island, Tampa, FL
+	ssp californicus - (Dec 19, 2023) [W] Ano Nuevo State Park, Pesacadero, CA
+Pelecanus rufescens
+	1,2 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Pelecanus sp - (Mar 17, 2015) [W] Audubon Zoo, New Orleans, LA
+
+Scopidae
+Scopus umbretta
+	1 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+
+Threskiornithidae
+Bostrychia hagedash
+	1,2 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Eudocimus albus
+	1 - (Mar 17, 2015) [W] Audubon Park, New Orleans, LA
+	2 - (Apr 29, 2015) [W] Weedon Island Preserve, St. Petersburg, FL
+Eudocimus ruber
+	1 - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+Lophotibis cristata - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Platalea ajaja
+	1 - (Apr 24, 2014) [S] National Zoo, Washington, DC
+	2 - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+Platalea alba - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Plegadis chihi
+	1 - (Jan 15, 2015) [S] National Zoo, Washington, DC
+	2 - (Sept 26, 2015) [S] National Zoo, Washington, DC
+Threskiornis moluccus - (Dec 27, 2015) [W] Royal Botanic Garden, Sydney {AU}
+
+Phoenicopteridae
+Phoeniconaias minor
+	1,2 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Phoenicopterus chilensis - (Apr 29, 2015) [S] Sunken Gardens, Tampa, FL
+Phoenicopterus ruber - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Picidae
+Dryobates pubescens
+	female,male 1,male 2 - (Jan 28, 2015) [W] Rock Creek Park, Washington, DC
+Dryocopus pileatus
+	1 - (Apr 3, 2020) [W] Fernandina Beach, FL
+	2 - (Sept 26, 2015) [S] National Zoo, Washington, DC
+Melanerpes carolinus
+	1,2 - (May 16, 2019) [W] Spice Bush Swamp, Farmington, CT
+	3 - (Jan 28, 2015) [W] Rock Creek Park, Washington, DC
+
+Ramphastidae
+Pteroglossus aracari - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+Ramphastos ambiguus
+	ssp swainsonii - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Ramphastos toco - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+
+Podicipedidae
+Aechmophorus occidentalis - (Mar 22, 2016) [W] Puget Sound, Seattle, WA
+
+Cacatuidae
+Cacatua galerita
+	1 - (Dec 29, 2015) [W] Kings Cross, Sydney {AU}
+	2 - (Dec 28, 2015) [W] Kings Cross, Sydney {AU}
+Cacatua sanguinea - (Jan 10, 2016) [W] Brisbane Botanic Garden, Brisbane {AU}
+Calyptorhynchus banksii - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Eolophus roseicapilla
+	1 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Nymphicus hollandicus
+	1,2 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Psittacidae
+Amazona oratrix
+	ssp oratrix - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+Anodorhynchus hyacinthinus - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Ara ararauna - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Ara chloropterus - (Jan 11, 2015) [S] National Zoo, Washington, DC
+Ara macao - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Deroptyus accipitrinus - (Jan 15, 2015) [S] National Zoo, Washington, DC
+
+Psittaculidae
+Eclectus roratus - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Melopsittacus undulatus
+	1,2,3 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Platycercus eximius - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Trichoglossus haematodus
+	ssp moluccanus - (Dec 28, 2015) [W] Royal Botanic Garden, Sydney {AU}
+Trichoglossus weberi - (Apr 8, 2019) [S] Lowry Park Zoo, Tampa, FL
+
+Spheniscidae
+Eudyptes chrysolophus - (Aug 9, 2013) [S] Tennessee Aquarium, TN
+Eudyptula minor - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+Pygoscelis papua - (Aug 9, 2013) [S] Tennessee Aquarium, TN
+Spheniscus demersus
+	1 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+	2 - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+
+Strigidae
+Athene cunicularia
+	1 - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (Dec 2, 2014) [S] National Zoo, Washington, DC
+Bubo virginianus - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+Megascops asio - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Ninox connivens - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Strix nebulosa - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Strix varia
+	1 - (Dec 8, 2019) [W] Dunlap, TN
+	2 - (June 6, 2015) [S] National Zoo, Washington, DC
+
+Rheidae
+Rhea americana - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Struthionidae
+Struthio camelus - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Anhingidae
+Anhinga anhinga
+	1,2 - (Feb 11, 2016) [W] Audubon Park, New Orleans, LA
+
+Phalacrocoracidae
+Microcarbo melanoleucos - (Dec 28, 2015) [W] Kings Cross, Sydney {AU}
+Phalacrocorax auritus
+	1,juvenile - (Mar 18, 2015) [W] Mississippi River, New Orleans, LA
+	2 - (Mar 22, 2016) [W] Puget Sound, Seattle, WA
+Phalacrocorax carbo - (Mar 17, 2015) [W] Audubon Zoo, New Orleans, LA
+Phalacrocorax penicillatus
+	1,2 - (Mar 22, 2016) [W] Puget Sound, Seattle, WA
+Phalacrocorax sulcirostris - (Jan 8, 2016) [W] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Tinamidae
+Eudromia elegans - (Dec 2, 2014) [S] National Zoo, Washington, DC
+
+Scyliorhinidae
+Cephaloscyllium ventriosum - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Sphyrnidae
+Sphyrna tiburo - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Triakidae
+Triakis semifasciata - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+
+Dasyatidae
+Dasyatis americana - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+Dasyatis sabina - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Neotrygon kuhlii - (Aug 9, 2013) [S] Tennessee Aquarium, Chatanooga, TN
+
+Myliobatidae
+Aetobatus narinari - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Manta sp
+	1,2 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Rhinoptera bonasus - (Aug 9, 2013) [S] Tennessee Aquarium, Chatanooga, TN
+
+Potamotrygonidae
+Potamotrygon falkneri
+	1 - (Aug 9, 2013) [S] Tennessee Aquarium, Chatanooga, TN
+	2 - (July 30, 2013) [S] National Zoo, Washington, DC
+Potamotrygon leopoldi - (Aug 9, 2013) [S] Tennessee Aquarium, Chatanooga, TN
+
+Urotrygonidae
+Urobatis jamaicensis - (Apr 30, 2015) [S] Florida Aquarium, Tampa, FL
+
+Rhincodontidae
+Rhincodon typus
+	1,2,3 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Stegostomatidae
+Stegostoma fasciatum - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Rhinidae
+Rhina ancylostoma
+	1,2 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Tenrecidae
+Echinops telfairi - (June 29, 2015) [S] National Zoo, Washington, DC
+
+Antilocapridae
+Antilocapra americana - (Aug 4, 2015) [W] Grand Teton National Park, WY
+
+Bovidae
+Antidorcas marsupialis
+	ssp marsupialia - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Bison bison
+	1,2 - (Aug 4, 2015) [W] Grand Teton National Park, WY
+Bubalus depressicornis - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+Capra aegagrus
+	ssp hircus San Clemente Island - (Oct 5, 2015) [S] National Zoo, Washington, DC
+	ssp hircus Nigerian dwarf - (Oct 5, 2015) [S] National Zoo, Washington, DC
+Eudorcas thomsonii - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Nanger dama - (Apr 11, 2015) [S] National Zoo, Washington, DC
+Tragelaphus eurycerus
+	ssp isaaci - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Tragelaphus imberbis
+	1 - (June 4, 2015) [S] National Zoo, Washington, DC
+	2 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Tragelaphus spekii - (Oct 5, 2015) [S] National Zoo, Washington, DC
+Tragelaphus strepsiceros
+	1,2 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+
+Camelidae
+Camelus dromedarius - (Oct 22, 2013) [S] Chattanooga Zoo, TN
+Lama guanicoe - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Vicugna pacos
+	1 - (Sept 14, 2013) [S] Dunlap, TN
+	2 - (Mar 3, 2015) [S] Dunlap, TN
+
+Cervidae
+Alces alces - (Aug 4, 2015) [W] Grand Teton National Park, WY
+Cervus elaphus - (July 27, 2015) [S] Topeka Zoo, Topeka, KS
+Odocoileus hemionus
+	1,2 - (Aug 4, 2015) [W] Grand Teton National Park, WY
+	columbianus 1 - (Aug 23, 2015) [W] Crater Lake National Park, OR
+	columbianus 2 - (Dec 19, 2023) [W] Ano Nuevo State Park, Pesacadero, CA
+Odocoileus virginianus
+	1 - (Jan 2, 2015) [W] National Zoo, Washington, DC
+	2 - (June 28, 2015) [W] National Zoo, Washington, DC
+	3 - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+
+Giraffidae
+Giraffa camelopardalis
+	1 - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+	2 - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+Okapia johnstoni
+	1 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+	2 - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+
+Hippopotamidae
+Hippopotamus amphibius
+	1 - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+	2 - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+	3 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Suidae
+Babyrousa celebensis - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Phacochoerus africanus - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Potamochoerus porcus - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+
+Tragulidae
+Tragulus napu - (Dec 16, 2014) [S] National Zoo, Washington, DC
+
+Ailuridae
+Ailurus fulgens
+	1 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+	2 - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+
+Canidae
+Canis latrans
+	1,2 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Canis lupus
+	1 - (Dec 24, 2014) [S] National Zoo, Washington, DC
+	2 - (Mar 6, 2015) [S] National Zoo, Washington, DC
+	ssp dingo - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Chrysocyon brachyurus - (Mar 6, 2015) [S] National Zoo, Washington, DC
+Lycaon pictus - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Vulpes vulpes
+	1,2 - (Aug 22, 2015) [W] Crater Lake National Park, OR
+Vulpes zerda - (June 29, 2015) [S] National Zoo, Washington, DC
+
+Felidae
+Acinonyx jubatus - (Apr 15, 2015) [S] National Zoo, Washington, DC
+Caracal caracal - (Sept 26, 2015) [S] National Zoo, Washington, DC
+Leopardus pardalis - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Leptailurus serval - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Lynx rufus - (May 4, 2015) [S] Big Cat Rescue, Tampa, FL
+Neofelis nebulosa - (June 28, 2015) [S] National Zoo, Washington, DC
+Panthera leo
+	female - (Sept 26, 2015) [S] National Zoo, Washington, DC
+	male - (Jan 24, 2015) [S] National Zoo, Washington, DC
+Panthera onca
+	1 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+	2 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Panthera uncia
+	1 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+	2 - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+Panthera pardus
+	ssp pardus - (May 4, 2015) [S] Big Cat Rescue, Tampa, FL
+Panthera tigris
+	ssp sumatrae 1 - (July 30, 2013) [S] National Zoo, Washington, DC
+	ssp sumatrae 2 - (Sept 26, 2015) [S] National Zoo, Washington, DC
+	ssp tigris 1 - (May 4, 2015) [S] Big Cat Rescue, Tampa, FL
+	ssp tigris 2 - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Prionailurus viverrinus - (June 6, 2015) [S] National Zoo, Washington, DC
+Puma concolor
+	1 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (July 27, 2015) [S] Topeka Zoo, Topeks, KS
+
+Herpestidae
+Helogale parvula - (Jan 5, 2015) [S] National Zoo, Washington, DC
+Herpestes javanicus
+	1,2 - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+Mungos mungo - (Jan 5, 2015) [S] National Zoo, Washington, DC
+Suricata suricatta
+	ssp hahni - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+
+Mustelidae
+Aonyx cinerea - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Enhydra lutris - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+Lontra canadensis
+	1,2 - (Jan 27, 2015) [S] National Zoo, Washington, DC
+Mustela nigripes - (June 29, 2015) [S] National Zoo, Washington, DC
+
+Otariidae
+Zalophus californianus
+	1 - (May 19, 2024) [W] Ventura, CA
+	2 - (July 30, 2013) [S] National Zoo, Washington, DC
+	3 - (Dec 24, 2014) [S] National Zoo, Washington, DC
+
+Phocidae
+Mirounga angustirostris
+	female1,male1,male2 - (Dec 19, 2023) [W] Ano Nuevo State Park, Swanton, CA
+Phoca vitulina
+	1 - (July 30, 2013) [S] National Zoo, Washington, DC
+	ssp richardii - (Dec 20, 2023) [W] Point Lobos State Natural Reserve, Monterey, CA
+
+Procyonidae
+Nasua narica
+	1,2 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Nasua nasua - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Procyon lotor
+	1,2 - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+
+Ursidae
+Ailuropoda melanoleuca - (Jan 2, 2015) [S] National Zoo, Washington, DC
+Helarctos malayanus - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Melursus ursinus - (June 28, 2015) [S] National Zoo, Washington, DC
+Tremarctos ornatus
+	1 - (July 30, 2013) [S] National Zoo, Washington, DC
+	2 - (Dec 24, 2014) [S] National Zoo, Washington, DC
+Ursus americanus
+	ssp luteolus - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Ursus arctos - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+
+Monodontidae
+Delphinapterus leucas - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Pteropodidae
+Pteropus poliocephalus - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Pteropus vampyrus - (Apr 8, 2019) [S] Lowry Park Zoo, Tampa, FL
+
+Vespertilionidae
+Eptesicus fuscus - (June 12, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Dasypodidae
+Chaetophractus vellerosus - (Jan 15, 2015) [S] National Zoo, Washington, DC
+Tolypeutes matacus - (Jan 5, 2015) [S] National Zoo, Washington, DC
+
+Dasyuridae
+Sarcophilus harrisii
+	1,2 - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Didelphidae
+Didelphis virginiana - (Nov 22, 2025) [W] AA IOC, Euless, TX
+
+Macropodidae
+Macropus rufogriseus - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Macropus rufus - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary {AU}
+Macropus sp - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary {AU}
+Petrogale xanthopus - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+
+Phalangeridae
+Trichosurus vulpecula - (Dec 28, 2015) [W] Royal Botanic Garden, Sydney {AU}
+
+Phascolarctidae
+Phascolarctos cinereus
+	1,2 - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Potoroidae
+Bettongia penicillata - (Dec 24, 2014) [S] National Zoo, Washington, DC
+
+Vombatidae
+Vombatus ursinus - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Procaviidae
+Procavia capensis - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Leporidae
+Oryctolagus cuniculus - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Sylvilagus bachmani
+	1,2 - (May 30, 2016) [W] Kent, WA
+	3 - (Apr 16, 2016) [W] Coos Creek Trail, Kent, WA
+Sylvilagus floridanus
+	1 - (May 12, 2022) [W] Centennial Park, Dallas, TX
+	2 - (July 24, 2015) [W] Indianapolis, IN
+
+Macroscelididae
+Macroscelides proboscideus - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Equidae
+Equus asinus
+	ssp asinus - (Oct 5, 2015) [S] National Zoo, Washington, DC
+Equus ferus
+	ssp caballus - (Sept 14, 2013) [S] Dunlap, TN
+	ssp przewalskii - (June 7, 2015) [S] National Zoo, Washington, DC
+Equus grevyi - (June 28, 2015) [S] National Zoo, Washington, DC
+Equus quagga
+	ssp burchellii - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Equus zebra
+	ssp hartmannae - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+
+Rhinocerotidae
+Ceratotherium simum - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Diceros bicornis
+	ssp bicornis - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Rhinoceros unicornis
+	1 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+
+Tapiridae
+Tapirus indicus - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+
+Bradypodidae
+Bradypus variegatus - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+
+Megalonychidae
+Choloepus hoffmanni - (Oct 22, 2013) [S] Chattanooga Zoo, TN
+
+Myrmecophagidae
+Myrmecophaga tridactyla
+	1 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+	2 - (July 31, 2013) [S] National Zoo, Washington, DC
+Tamandua tetradactyla
+	1 - (June 4, 2015) [S] National Zoo, Washington, DC
+	2 - (Sept 26, 2015) [S] National Zoo, Washington, DC
+
+Atelidae
+Alouatta caraya - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Ateles geoffroyi
+	1 - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+	2 - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+
+Calltrichidae
+Callimico goeldii - (Jan 5, 2015) [S] National Zoo, Washington, DC
+Callithrix geoffroyi
+	1 - (Jan 11, 2015) [S] National Zoo, Washington, DC
+	2 - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+Leontopithecus chrysomelas - (Dec 2, 2014) [S] National Zoo, Washington, DC
+Leontopithecus rosalia
+	1 - (July 30, 2013) [S] National Zoo, Washington, DC
+	2 - (Dec 24, 2014) [S] National Zoo, Washington, DC
+Saguinus bicolor
+	1 - (Feb 20, 2023) [S] Dallas Aquarium, Dallas, TX
+	2 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Saguinus oedipus - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+
+Cercopithecidae
+Allenopithecus nigroviridis - (Sept 22, 2016) [S] National Zoo, Washington, DC
+Cercopithecus ascanius - (Sept 20, 2016) [S] National Zoo, Washington, DC
+Colobus guereza - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Erythrocebus patas - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Macaca nigra - (July 30, 2013) [S] National Zoo, Washington, DC
+Mandrillus sphinx - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Semnopithecus entellus - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Trachypithecus francoisi - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+
+Hominidae
+Gorilla gorilla - (July 30, 2013) [S] National Zoo, Washington, DC
+Pan paniscus - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Pan troglodytes
+	1,2 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Pongo abelii - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Pongo pygmaeus - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+
+Hylobatidae
+Hylobates leucogenys
+	1,2,3 - (Sept 22, 2016) [S] National Zoo, Washington, DC
+Hylobates syndactylus - (June 7, 2015) [S] National Zoo, Washington, DC
+
+Lemuridae
+Eulemur collaris - (Apr 8, 2019) [S] Lowry Park Zoo, Tampa, FL
+Eulemur rufifrons - (Sept 21, 2016) [S] National Zoo, Washington, DC
+Lemur catta
+	1 - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+	2 - (June 7, 2015) [S] National Zoo, Washington, DC
+Varecia variegata - (Dec 2, 2014) [S] National Zoo, Washington, DC
+
+Pitheciidae
+Pithecia pithecia - (Jan 5, 2015) [S] National Zoo, Washington, DC
+
+Elephantidae
+Elephas maximus - (Apr 24, 2015) [S] National Zoo, Washington, DC
+Loxodonta africana - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+
+Bathyergidae
+Heterocephalus glaber - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+
+Castoridae
+Castor canadensis - (Jan 27, 2015) [S] National Zoo, Washington, DC
+
+Cricetidae
+Ondatra zibethicus - (Mar 31, 2015) [W] Dunlap, TN
+
+Caviidae
+Cavia porcellus - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Hydrochoerus hydrochaeris - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Kerodon rupestris - (Jan 15, 2015) [S] National Zoo, Washington, DC
+
+Chinchillidae
+Chinchilla lanigera - (Jan 24, 2015) [S] National Zoo, Washington, DC
+
+Dasyproctidae
+Myoprocta acouchy - (Dec 2, 2014) [S] National Zoo, Washington, DC
+
+Erethizontidae
+Coendou prehensilis - (Dec 16, 2014) [S] National Zoo, Washington, DC
+Erethizon dorsatum - (June 4, 2015) [S] National Zoo, Washington, DC
+
+Muridae
+Mus musculus - (Sept 30, 2015) [W] National Botanic Garden, Washington, DC
+
+Myocastoridae
+Myocastor coypus - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+
+Nesomyidae
+Hypogeomys antimena - (Dec 2, 2014) [S] National Zoo, Washington, DC
+
+Octodontidae
+Octodon degus - (Dec 2, 2014) [S] National Zoo, Washington, DC
+
+Sciuridae
+Callosciurus prevostii - (Dec 24, 2014) [S] National Zoo, Washington, DC
+Callospermophilus lateralis - (Aug 23, 2015) [W] Crater Lake National Park, OR
+Callospermophilus saturatus
+	1,2 - (Aug 10, 2015) [W] Mount Rainier National Park, WA
+Cynomys ludovicianus
+	1 - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (June 4, 2015) [S] National Zoo, Washington, DC
+Neotamias townsendii - (Sept 7, 2015) [W] Lake Serene, WA
+Sciurus carolinensis
+	1 - (Dec 24, 2014) [W] Harvard Street, Washington, DC
+	2 - (Feb 28, 2015) [W] Washington, DC
+Sciurus niger - (July 24, 2015) [W] Indianapolis, IN
+Tamias striatus - (May 30, 2015) [W] National Zoo, Washington, DC
+
+Tupaiidae
+Tupaia belangeri - (Apr 24, 2015) [S] National Zoo, Washington, DC
+
+Trichechidae
+Trichechus manatus - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+
+Alligatoridae
+Alligator mississippiensis
+	1 - (Mar 22, 2015) [W] Lake Salvador, Jean Lafitte, LA
+	2 - (July 30, 2013) [S] National Zoo, Washington, DC
+	3 - (June 19, 2024) [S] Audubon Insectarium, New Orleans, LA
+Alligator sinensis - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+
+Crocodylidae
+Crocodylus johnstoni - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Crocodylus mindorensis - (July 30, 2013) [S] National Zoo, Washington, DC
+Crocodylus rhombifer
+	1 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+	2 - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Osteolaemus tetraspis - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+
+Gavialidae
+Gavialis gangeticus
+	1,2 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+Tomistoma schlegelii
+	1 - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+	2 - (Mar 30, 2016) [S] National Zoo, Washington, DC
+
+Agamidae
+Chlamydosaurus kingii - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Gonocephalus chamaeleontinus - (Dec 16, 2014) [S] National Zoo, Washington, DC
+Hydrosaurus pustulatus - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Intellagama lesueurii
+	1 - (Jan 6, 2016) [W] South Bank, Brisbane {AU}
+	2 - (Jan 10, 2016) [W] Brisbane Botanic Garden, Brisbane {AU}
+Physignathus cocincinus
+	1 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+	2 - (June 29, 2015) [S] National Zoo, Washington, DC
+Uromastyx maliensis - (July 22, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Xenagama taylori
+	1 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+	2 - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+
+Anguidae
+Abronia graminea - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Ophisaurus apodus - (Dec 16, 2014) [S] National Zoo, Washington, DC
+
+Boidae
+Boa constrictor - (Dec 23, 2014) [S] National Zoo, Washington, DC
+Corallus caninus - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Eunectes murinus - (July 31, 2013) [S] National Zoo, Washington, DC
+Lichanura trivirgata
+	ssp gracia - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Sanzinia madagascariensis - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Chamaeleonidae
+Chamaeleo calyptratus
+	1 - (July 31, 2013) [S] National Zoo, Washington, DC
+	2 - (June 29, 2015) [S] National Zoo, Washington, DC
+Furcifer pardalis - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+Trioceros melleri - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Trioceros quadricornis - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Colubridae
+Boiga irregularis - (Dec 2, 2014) [S] National Zoo, Washington, DC
+Coluber constrictor
+	latrunculus - (Mar 17, 2015) [S] Audubon Zoo, New Orleans, LA
+Drymarchon couperi - (Aug 8, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Drymarchon melanurus - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+Elaphe guttata - (Dec 2, 2014) [S] National Zoo, Washington, DC
+Erpeton tentaculatum - (Dec 2, 2014) [S] National Zoo, Washington, DC
+Gonyosoma boulengeri
+	1 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+	2 - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Gonyosoma oxycephalum - (Dec 23, 2014) [S] National Zoo, Washington, DC
+Hydrodynastes gigas - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Lampropeltis alterna
+	1 - (Dec 2, 2014) [S] National Zoo, Washington, DC
+	2 - (Jan 5, 2015) [S] National Zoo, Washington, DC
+Pantherophis obsoletus - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Pantherophis spiloides - (June 21, 2016) [W] Skymont Scout Camp, Altamount, TN
+Philodryas baroni - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Pituophis melanoleucus
+	1 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+	2 - (Dec 19, 2014) [S] National Zoo, Washington, DC
+Pseustes poecilonotus - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Rhynchophis boulengeri - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Storeria occipitomaculata - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+Thamnophis ordinoides
+	1,2 - (July 16, 2016) [W] Soos Creek Park, Kent, WA
+Thamnophis sirtalis
+	1 - (Sept 21, 2013) [S] Reflection Riding Arboretum, Chattanooga, TN
+	ssp similis - (Apr 8, 2019) [S] Lowry Park Zoo, Tampa, FL
+
+Cordylidae
+Cordylus tropidosternum - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+
+Corytophanidae
+Basiliscus plumifrons - (Nov 20, 2014) [S] National Zoo, Washington, DC
+
+Crotaphytidae
+Crotaphytus bicinctores - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+
+Dactyloidae
+Anolis carolinensis - (Apr 18, 2015) [W] Lady Lake, FL
+Anolis ricordi - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Anolis sagrei
+	1 - (Apr 20, 2015) [W] Lady Lake, FL
+	2,3 - (Apr 29, 2015) [W] Sunken Gardens, Saint Petersburg, FL
+	4 - (Apr 29, 2015) [W] Weedon Island Preserve, Saint Petersburg, FL
+
+Diplodactylidae
+Rhacodactylus leachianus - (Sept 26, 2015) [S] National Zoo, Washington, DC
+
+Elapidae
+Dendroaspis viridis - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Naja nivea - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Ophiophagus hannah
+	1 - (Dec 2, 2014) [S] National Zoo, Washington, DC
+	2 - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Oxyuranus microlepidotus - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Gekkonidae
+Gekko gecko - (Dec 19, 2014) [S] National Zoo, Washington, DC
+Hemidactylus turcicus
+	1 - (Jan 23, 2020) [W] Yulee, FL
+	2 - (Oct 2, 2022) [W] Fort Worth, TX
+Lygodactylus williamsi - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Phelsuma laticauda - (Dec 24, 2015) [W] Honolulu, Oahu, HI
+Phelsuma madagascariensis - (July 31, 2013) [S] National Zoo, Washington, DC
+Uroplatus fimbriatus - (Dec 16, 2014) [S] National Zoo, Washington, DC
+
+Gerrhosauridae
+Broadleysaurus major - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Gerrhosaurus validus
+	1 - (Sept 20, 2016) [S] National Zoo, Washington, DC
+	2 - (Dec 2, 2014) [S] National Zoo, Washington, DC
+
+Helodermatidae
+Heloderma horridum - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Heloderma suspectum - (Sept 26, 2015) [S] National Zoo, Washington, DC
+
+Iguanidae
+Brachylophus bulabula
+	1 - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (Dec 2, 2014) [S] National Zoo, Washington, DC
+Cyclura cornuta - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Cyclura lewisi - (July 31, 2013) [S] National Zoo, Washington, DC
+Sauromalus ater
+	1 - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+	2 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Phrynosoma cornutum - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+
+Lacertidae
+Holaspis guentheri - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+
+Phrynosomatidae
+Phrynosoma platyrhinos
+	1 - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+	2 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Sceloporus poinsettii - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Sceloporus undulatus - (June 24, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Pythonidae
+Aspidites melanocephalus - (Dec 19, 2014) [S] National Zoo, Washington, DC
+Liasis olivaceus - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Morelia spilota
+	ssp spilota - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Morelia viridis - (Nov 20, 2014) [S] National Zoo, Washington, DC
+Python bivittatus - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Python molurus
+	ssp molurus - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Python timoriensis - (Nov 20, 2014) [S] National Zoo, Washington, DC
+Python sebae - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+
+Scincidae
+Corucia zebrata - (Dec 24, 2014) [S] National Zoo, Washington, DC
+Plestiodon fasciatus
+	1,2 - (Sept 1, 2020) [W] Fernandina Beach, FL
+Tiliqua scincoides
+	1 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+	2 - (Dec 16, 2014) [S] National Zoo, Washington, DC
+
+Shinisauridae
+Shinisaurus crocodilurus - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+
+Teiidae
+Dracaena guianensis
+	1 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+	2 - (Sept 26, 2015) [S] National Zoo, Washington, DC
+
+Varanidae
+Varanus acanthurus - (Sept 26, 2015) [S] National Zoo, Washington, DC
+Varanus komodoensis
+	1 - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+	2 - (Sept 26, 2015) [S] National Zoo, Washington, DC
+Varanus melinus - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Varanus mertensi - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+Varanus prasinus - (Dec 23, 2014) [S] National Zoo, Washington, DC
+Varanus reisingeri - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Varanus varius - (Jan 8, 2016) [S] Lone Pine Koala Sanctuary, Brisbane {AU}
+
+Viperidae
+Agkistrodon bilineatus - (Nov 20, 2014) [S] National Zoo, Washington, DC
+Agkistrodon contortrix
+	1 - (June 13, 2016) [W] Skymont Scout Camp, Altamount, TN
+	2 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+Agkistrodon piscivorus
+	ssp conanti - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+	1 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Agkistrodon taylori - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Bitis arietans
+	1,2 - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+Bitis gabonica - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Bothriechis schlegelii - (Dec 23, 2014) [S] National Zoo, Washington, DC
+Crotalus adamanteus - (June 29, 2015) [S] National Zoo, Washington, DC
+Crotalus atrox - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Crotalus cerastes
+	1 - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+	ssp cercobombus - (Nov 9, 2019) [S] Chattanooga Zoo, TN
+Crotalus horridus
+	1 - (Sept 21, 2013) [S] Reflection Riding Arboretum, Chattanooga, TN
+	2 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+	ssp atricaudatus - (Apr 8, 2019) [S] Lowry Park Zoo, Tampa, FL
+Crotalus lepidus
+	ssp klauberi - (Sept 26, 2015) [S] National Zoo, Washington, DC
+	ssp morulus - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+Crotalus oreganus - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Crotalus polystictus
+	1 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+	2 - (Sept 26, 2015) [S] National Zoo, Washington, DC
+Crotalus scutulatus - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Crotalus tigris - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Lachesis muta
+	ssp muta - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Sistrurus miliarius
+	ssp barbouri - (Apr 8, 2019) [S] Lowry Park Zoo, Tampa, FL
+Vipera ammodytes
+	ssp ammodytes - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+
+Carettochelyidae
+Carettochelys insculpta - (Dec 2, 2014) [S] National Zoo, Washington, DC
+
+Chelidae
+Chelodina expansa - (July 26, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Chelodina longicollis - (Dec 2, 2014) [S] National Zoo, Washington, DC
+Chelodina mccordi - (Nov 10, 2019) [S] Chattanooga Zoo, TN
+Chelodina siebenrocki - (Oct 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Chelus fimbriata - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Emydura australis - (Dec 19, 2014) [S] National Zoo, Washington, DC
+
+Cheloniidae
+Chelonia mydas
+	2,3,4 - (Dec 20, 2015) [W] Waikiki Beach, HI
+	1,5 - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+
+Chelydridae
+Macrochelys temminckii
+	1 - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Emydidae
+Chrysemys picta
+	1 - (Oct 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+	var picta 1,var picta 2 - (Mar 30, 2016) [W] National Zoo, Washington, DC
+Clemmys guttata
+	1 - (Dec 2, 2014) [S] National Zoo, Washington, DC
+	2 - (Jan 24, 2015) [S] National Zoo, Washington, DC
+Deirochelys reticularia - (Oct 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Emydoidea blandingii - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Graptemys flavimaculata - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Graptemys pearlensis
+	1,2 - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Graptemys pseudogeographica - (Oct 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Malaclemys terrapin
+	1 - (Oct 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+	ssp littoralis - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Pseudemys concinna
+	1 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+	2 - (Mar 17, 2015) [S] Audubon Park, New Orleans, LA
+Pseudemys gorzugi - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Trachemys scripta
+	ssp elegans 1,ssp elegans 2 - (Oct 6, 2020) [W] Senter Park, Irving, TX
+	ssp elegans 3 - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+
+Geoemydidae
+Cuora galbinifrons - (Nov 20, 2014) [S] National Zoo, Washington, DC
+Cuora mouhotii - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Cuora trifasciata - (Dec 16, 2014) [S] National Zoo, Washington, DC
+Geoclemys hamiltonii
+	1 - (July 30, 2013) [S] National Zoo, Washington, DC
+	2 - (Oct 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Geoemyda spengleri - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Mauremys annamensis - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Mauremys japonica - (Oct 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Sacalia quadriocellata - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Kinosternidae
+Sternotherus minor - (Oct 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Sternotherus odoratus
+	1 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+	2 - (Jan 5, 2015) [S] National Zoo, Washington, DC
+
+Podocnemididae
+Podocnemis expansa
+	1,2 - (July 30, 2013) [S] National Zoo, Washington, DC
+Podocnemis unifilis
+	1 - (July 30, 2013) [S] National Zoo, Washington, DC
+	2 - (Nov 20, 2014) [S] National Zoo, Washington, DC
+
+Testudinidae
+Aldabrachelys gigantea - (June 17, 2021) [S] Fort Worth Zoo, Fort Worth, TX
+Astrochelys radiata - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Chelonoidis nigra
+	1 - (Feb 19, 2023) [S] Fort Worth Zoo, Fort Worth, TX
+	2 - (Mar 28, 2018) [S] Lowry Park Zoo, Tampa, FL
+Geochelone elegans - (Oct 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Geochelone gigantea - (July 30, 2013) [S] National Zoo, Washington, DC
+Geochelone sulcata - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Gopherus polyphemus
+	1 - (May 2, 2015) [W] Caladesi Island, FL
+	2 - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+	3 - (Sept 22, 2020) [W] Fort Clinch State Park, Amelia Island, FL
+Homopus signatus - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Indotestudo elongata - (Oct 19, 2013) [S] Chattanooga Zoo, TN
+Malacochersus tornieri
+	1 - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (July 26, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Manouria emys - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Manouria impressa - (Nov 20, 2014) [S] National Zoo, Washington, DC
+Pyxis arachnoides - (Sept 26, 2015) [S] National Zoo, Washington, DC
+Stigmochelys pardalis - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+Testudo kleinmanni - (Oct 10, 2015) [S] Woodland Park Zoo, Seattle, WA
+Trachemys gaigeae - (July 26, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Trionychidae
+Lissemys punctata - (Jan 11, 2015) [S] National Zoo, Washington, DC
+
+Actiniidae
+Anthopleura elegantissima - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Anthopleura xanthogrammica - (July 31, 2013) [S] National Zoo, Washington, DC
+Entacmaea quadricolor - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+Urticina piscivora - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Metridiidae
+Metridium farcimen - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Antipathidae
+Cirrhipathes spiralis - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Cerianthidae
+Cerianthus sp - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Corallimorphidae
+Corynactis californica - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Acroporidae
+Montipora capricornis - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Dendrophylliidae
+Tubastraea sp - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Sphenopidae
+Palythoa sp
+	1,2 - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Cassiopeidae
+Cassiopea sp - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+Cassiopea xamachana - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+
+Catostylidae
+Catostylus mosaicus - (May 30, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Mastigiidae
+Mastigias papua
+	1,2 - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Cyaneidae
+Cyanea capillata - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+
+Pelagiidae
+Chrysaora fuscescens
+	1 - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+	2 - (Nov 7, 2019) [S] Tennessee Aquarium, Chattanooga, TN
+Chrysaora pacifica - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Chrysaora quinquecirrha
+	1 - (July 31, 2013) [S] National Zoo, Washington, DC
+	2 - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Ulmaridae
+Aurelia aurita
+	1,2 - (May 30, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Cydippidae
+Hormiphora californensis - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+
+Bolinopsidae
+Mnemiopsis leidyi - (May 30, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Leucotheidae
+Leucothea pulchra - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+
+Asteriidae
+Pycnopodia helianthoides - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Luidiidae
+Luidia clathrata - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Echinasteridae
+Echinaster echinophorus - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Asterinidae
+Patiria miniata - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+
+Asteropseidae
+Dermasterias imbricata - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Cidaridae
+Eucidaris tribuloides - (May 29, 2014) [S] Chattanooga Aquarium, Chattanooga, TN
+
+Strongylocentrotidae
+Strongylocentrotus purpuratus
+	1 - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+	2 - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+
+Toxopneustidae
+Lytechinus variegatus - (Nov 23, 2013) [S] Georgia Aquarium, Atlanta, GA
+
+Stichopodidae
+Parastichopus californicus - (Mar 22, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Mytilidae
+Perna viridis - (May 1, 2015) [S] Lowry Park Zoo, Tampa, FL
+
+Pectinidae
+Crassadoma gigantea - (Dec 19, 2023) [S] Monterey Bay Aquarium, Monterey, CA
+
+Cardiidae
+Tridacna sp - (July 27, 2016) [S] Seattle Aquarium, Seattle, WA
+
+Veneridae
+Mercenaria mercenaria - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Nautilidae
+Nautilus pompilius - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Octopodidae
+Enteroctopus dofleini - (Aug 9, 2013) [S] Tennessee Aquarium, Chattanooga, TN
+
+Sepiidae
+Sepia bandensis - (Mar 20, 2015) [S] Audubon Aquarium, New Orleans, LA
+Sepia officinalis - (July 31, 2013) [S] National Zoo, Washington, DC
+
+Trichinellidae
+Trichinella spiralis - (Apr 14, 2014) [S] Invertebrate Zoology Lab, UTC, TN
+
+Ancylostomatidae
+Necator americanus - (Apr 14, 2014) [S] Invertebrate Zoology Lab, UTC, TN
+
+Amanitaceae
+Amanita flavorubescens
+	1,2 - (July 4, 2015) [W] Harvard Street, Washington, DC
+
+Bolbitiaceae
+Bolbitius titubans - (June 6, 2015) [W] National Zoo, Washington, DC
+
+Pleurotaceae
+Pleurotus sp
+	1A,1B - (Sept 21, 2013) [W] Reflection Riding Arboretum, Chattanooga, TN
+
+Boletaceae
+Phylloporus leucomycelinus - (Sept 21, 2013) [W] Reflection Riding Arboretum, Chattanooga, TN
+
+Ganodermataceae
+Ganoderma curtisii
+	1,2 - (Sept 21, 2013) [W] Reflection Riding Arboretum, Chattanooga, TN
+
+Polyporaceae
+Trametes versicolor
+	1,2 - (Sept 21, 2013) [W] Reflection Riding Arboretum, Chattanooga, TN
+Trichaptum sp - (Sept 21, 2013) [W] Reflection Riding Arboretum, Chattanooga, TN
+
+Stereaceae
+Stereum ostrea - (Sept 21, 2013) [W] Reflection Riding Arboretum, Chattanooga, TN
+Stereum rameale - (Sept 21, 2013) [W] Reflection Riding Arboretum, Chattanooga, TN
+
+Anomodontaceae
+Pseudanomodon attenuatus
+	1,2 - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+
+Mniaceae
+Plagiomnium cuspidatum - (Apr 27, 2023) [W] Newfound Gap, Great Smoky Mountains National Park, TN
+
+Thuidiaceae
+Anomodon minor - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+Thuidium sp - (Apr 27, 2023) [W] Newfound Gap, Great Smoky Mountains National Park, TN
+
+Cycadaceae
+Cycas revoluta - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Macrozamia moorei - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Zamiaceae
+Lepidozamia peroffskyanna - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+
+Apiaceae
+Angelica gigas - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Coriandrum sativum - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Eryngium integrifolium - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Eryngium planum - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Eryngium yuccifolium - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Sanicula sp - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+
+Araliaceae
+Oplopanax horridus
+	1,2,3 - (Aug 18, 2015) [W] Mount Rainier, WA
+Eleutherococcus senticosus
+	1,2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Schefflera actinophylla - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+
+Pittosporaceae
+Pittosporum ferrugineum - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+
+Aquifoliaceae
+Ilex cornuta - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Ilex opaca
+	1,2,3 - (Oct 22, 2013) [W] Shackleford Ridge, Signal Mountain, TN
+Ilex verticillata - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+
+Asteraceae
+Achillea millefolium
+	1,2,3 - (Aug 3, 2015) [W] Boulder, CO
+	4 - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+	5 - (Aug 15, 2023) [W] Potter Marsh, Anchorage, AK
+Acmella oleracea
+	1,2 - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Ageratum houstonianum - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Antennaria lanata - (Aug 10, 2015) [S] Mount Rainier National Park, WA
+Artemisia schmidtiana - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Aster novi-belgii - (Sept 10, 2016) [S] Kent, WA
+Bellis perennis - (Apr 16, 2016) [W] Soos Creek Trail, Kent, WA
+Bidens ferulifolia - (May 2, 2019) [S] Moscarillos Garden Shoppe, Hartford, CT
+Calyptocarpus vialis - (June 17, 2021) [W] DFW Airport, Irving, TX
+Carduus nutans - (Aug 1, 2015) [W] Denver, CO
+Chrysogonum virginianum - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+Cirsium altissimum - (July 16, 2013) [W] Skymont Scout Camp, Altamount, TN
+Conoclinium coelestinum
+	1,2 - (Sept 15, 2019) [W] Dunlap, TN
+Conoclinium greggii
+	1,2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Coreopsis auriculata
+	1,2 - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+Coreopsis lanceolata - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Coreopsis sp - (Aug 4, 2013) [S] Skyline, New York City, NY
+Coreopsis verticillata - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Cosmos sulphureus - (July 14, 2018) [G] Clemens Place, Hartford, CT
+Cota tinctoria
+	1,2 - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Dahlia sp - (May 2, 2019) [S] Moscarillos Garden Shoppe, Hartford, CT
+Dieteria bigelovii - (Oct 27, 2018) [W] Boulder, CO
+Echinacea laevigata - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Echinacea purpurea - (Aug 2, 2013) [S] Skyline, New York City, NY
+Echinacea tennesseensis - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Echinacea sp - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Engelmannia peristenia
+	1 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Mar 31, 2025) [S] AA Campus, Fort Worth, TX
+Erigeron canadensis - (June 22, 2018) [W] Windsor, CT
+Erigeron philadelphicus
+	1,2 - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+Erigeron pulchellus
+	1,2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Erigeron vernus - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Eurybia sibirica - (Aug 16, 2023) [S] Alaska Botanical Garden, Anchorage, AK
+Gaillardia pulchella - (Apr 2, 2023) [W] American Airlines IOC, Fort Worth, TX
+Galinsoga parviflora - (July 10, 2013) [W] Skymont Scout Camp, Altamount, TN
+Grindelia squarrosa
+	1,2 - (July 29, 2015) [W] Boulder, CO
+Helenium xRubinzwerg - (Aug 2, 2013) [S] Skyline, New York City, NY
+Helianthus annuus - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Helianthus debilis - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Helianthus sp - (July 29, 2015) [W] Boulder, CO
+Heliopsis helianthoides - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Hieracium venosum - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+Kleinia fulgens - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Lactuca sativa - (Nov 16, 2017) [S] Library of Congress, Washington, DC
+Leucanthemum vulgare
+	1 - (May 28, 2015) [W] Dunlap, TN
+	2 - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+Liatris spicata
+	1,2 - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Machaeranthera coloradoensis - (Oct 27, 2018) [W] Denver, CO
+Oreostemma alpigenum - (Aug 10, 2015) [S] Mount Rainier National Park, WA
+Packera aurea
+	1,2 - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+Parthenium integrifolium - (Aug 2, 2013) [S] Skyline, New York City, NY
+Pyrrhopappus carolinianus - (Mar 16, 2020) [W] Yulee, FL
+Pyrrhopappus pauciflorus - (Apr 2, 2023) [W] American Airlines IOC, Fort Worth, TX
+Rudbeckia fulgida - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Rudbeckia hirta - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Rudbeckia laciniata - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Rudbeckia maxima
+	1,2 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Rudbeckia subtomentosa - (Aug 2, 2013) [S] Skyline, New York City, NY
+Senecio candicans - (Oct 10, 2024) [S] Dublin Botanic Garden, Dublin {IE}
+Senecio radicans - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Senecio serpens - (Dec 27, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Silphium glutinosum - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Silphium gracile - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Silphium perfoliatum
+	1,2 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Solidago ptarmicoides - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Stokesia laevis - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Symphyotrichum ericoides
+	var ericoides - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Tagetes patula - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Tagetes tenuifolia
+	1,2 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Tanacetum parthenium - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Tanacetum vulgare
+	1,2 - (July 15, 2015) [W] Federal Way, WA
+Tithonia rotundifolia - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Vernonia angustifolia
+	ssp mohrii - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+
+Campanulaceae
+Brighamia insignis - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Campanula persicifolia
+	1,2 - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Lobelia cardinalis
+	1,2 - (Sept 19, 2019) [W] Dunlap, TN
+	3 - (Sept 1, 2013) [W] Chattanooga, TN
+Lobelia sp - (May 2, 2019) [S] Moscarillos Garden Shoppe, Hartford, CT
+Triodanis perfoliata
+	1,2 - (May 14, 2016) [W] Dunlap, TN
+
+Goodeniaceae
+Scaevola aemula - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Boraginaceae
+Borago officinalis - (Aug 27, 2018) [G] Clemens Place, Hartford, CT
+Brunnera macrophylla - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Heliotropium arborescens - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Hydrophyllum canadense - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Mertensia paniculata
+	1,2 - (May 30, 2016) [W] Steel Lake Park, Kent, WA
+Myosotis sylvatica - (Apr 4, 2016) [W] Saltwater State Park, Kent, WA
+Phacelia bipinnatifida - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+Phacelia purshii - (Apr 26, 2023) [W] Twin Creeks Research Site, Great Smoky Mountains National Park, TN
+
+Brassicaceae
+Aethionema oppositifolium - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Alliaria petiolata - (May 3, 2019) [W] Spice Bush Swamp, West Hartford, CT
+Brassica oleracea - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Brassica rapa - (Apr 13, 2016) [W] Federal Way, WA
+Cakile maritima - (May 18, 2024) [W] Huntington Beach, CA
+Cardamine concatenata - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+Lepidium virginicum
+	1,2 - (July 27, 2011) [W] University of Tennessee at Chattanooga, TN
+Lobularia maritima - (Dec 20, 2023) [W] Malpaso Beach, Monterey, CA
+Lunaria annua - (Apr 16, 2016) [W] Soos Creek Park, Kent, WA
+
+Caricaceae
+Carica papaya
+	1 - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+
+Aizoaceae
+Carpobrotus edulis
+	1,2,3 - (Dec 12, 2023) - (May 19, 2024) [W] Ormond Beach, Oxnard, CA
+Dorotheanthus bellidiformis - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Ruschia pulvinaris - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Titanopsis calcareum - (June 30, 2022) [S] Washington, DC
+
+Amaranthaceae
+Alternanthera brasiliana - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Beta vulgaris
+	1,2 - (Nov 16, 2017) [S] Library of Congress, Washington, DC
+Charpentiera elliptica - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Gomphrena pulchella - (May 2, 2019) [S] Moscarillos Garden Shoppe, Hartford, CT
+Spinacia oleracea - (Nov 16, 2017) [S] Library of Congress, Washington, DC
+
+Cactaceae
+Carnegiea gigantea - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Cephalocereus polylophus - (Oct 10, 2024) [S] Dublin Botanic Garden, Dublin {IE}
+Cephalocereus senilis - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Cleistocactus winteri
+	1,2 - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Coryphantha pycnacantha - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Cylindropuntia alcahes
+	var alcahes 1,var alcahes 2 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Cylindropuntia echinocarpa
+	1,2 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Echinocereus brandegeei
+	1,2,3 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Echinocereus triglochidiatus
+	1,2 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Echinofossulocactus multicostatus - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Echinopsis oxygona - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Echinopsis subdenudata - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Echinopsis tiegeliana - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Ferocactus echidne - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Ferocactus emoryi - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Ferocactus glaucescens - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Ferocactus pilosus - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Ferocactus wislizeni
+	1,2 - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+	3 - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Grusonia kunzei
+	1,2 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Gymnocalycium denudatum - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Kroenleinia grusonii - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+Mammillaria bocasana - (June 30, 2022) [S] Washington, DC
+Mammillaria bombycina - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Mammillaria compressa
+	1 - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+	2 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Mammillaria geminispina
+	1 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Mammillaria parkinsonii - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Mammillaria spinosissima
+	1 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Mammillaria triacantha - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Maireana sedifolia
+	1,2,3 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Opuntia ellisiana - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Opuntia humifusa - (July 17, 2013) [W] Dunlap, TN
+Opuntia macrocentra
+	1,2 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Pachycereus pringlei - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Pachycereus weberi - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Parodia magnifica - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Parodia warasii - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Soehrensia huascha - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Stenocactus multicostatus
+	1,2 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Stenocereus alamosensis - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Stenocereus thurberi - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+
+Caryophyllaceae
+Dianthus armeria - (June 21, 2019) [W] Avon, CT
+Dianthus barbatus
+	1,2,3 - (May 30, 2016) [W] Steel Lake Park, Kent, WA
+Dianthus sp - (Apr 22, 2014) [W] Red Bank, TN
+Silene coronaria - (May 20, 2015) [S] National Botanical Garden, Washington, DC
+Spergularia macrotheca - (Apr 20, 2016) [W] Saltwater State Park, Kent, WA
+Stellaria media
+	1,2 - (Apr 11, 2016) [W] Nashville, TN
+
+Droseraceae
+Dionaea muscipula - (July 26, 2013) [S] National Botanic Garden, Washington, DC
+
+Montiaceae
+Cistanthe grandiflora - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+
+Nepenthaceae
+Nepenthes ventricosa - (Oct 10, 2024) [S] Dublin Botanic Garden, Dublin {IE}
+
+Nyctaginaceae
+Bougainvillea glabra - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+
+Phytolaccaceae
+Phytolacca americana
+	1,2 - (July 16, 2013) [W] Ocoee, TN
+Rivina humilis
+	1,2 - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+
+Plumbaginaceae
+Armeria maritima - (Oct 9, 2024) [W] Cliffs of Moher, County Clare {IE}
+Plumbago auriculata - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Plumbago sp - (Sept 21, 2016) [S] Washington, DC
+
+Polygonaceae
+Fagopyrum esculentum - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Persicaria amplexicaulis - (Aug 4, 2013) [S] Skyline, New York City, NY
+Rumex occidentalis - (July 16, 2016) [W] Soos Creek Park, Kent, WA
+
+Portulacaceae
+Portulaca oleracea - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Celastraceae
+Celastrus orbiculatus - (Oct 6, 2013) [W] Redoubt soccer fields, Chattanooga, TN
+Euonymus alatus
+	1,2 - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+Euonymus americanus
+	1 - (May 16, 2016) [S] University of Tennessee, Chattanooga, TN
+	2 - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Tripterygium wilfordii - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+
+Cornaceae
+Cornus canadensis - (Aug 18, 2015) [W] Mount Rainier, WA
+Cornus florida - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Cornus kousa - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+
+Hydrangeaceae
+Deutzia gracilis - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Deutzia scabra - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Hydrangea arborescens - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Hydrangea macrophylla
+	ssp serrata - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Hydrangea paniculata - (Aug 4, 2013) [S] Skyline, New York City, NY
+Hydrangea quercifolia
+	1 - (May 16, 2016) [S] University of Tennessee at Chattanooga, TN
+	2 - (Oct 28, 2013) [S] University of Tennessee at Chattanooga, TN
+
+Stachyuraceae
+Stachyurus praecox - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+
+Cucurbitaceae
+Cucurbita pepo - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+
+Adoxaceae
+Sambucus racemosa
+	1 - (Aug 18, 2015) [W] Mount Rainier, WA
+	2 - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+Viburnum edule - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Viburnum nudum - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+
+Caprifoliaceae
+Lonicera japonica - (July 11, 2013) [W] Ocoee, TN
+Lonicera sempervirens - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Scabiosa japonica - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Symphoricarpos albus - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+
+Dipsacaceae
+Knautia macedonica - (Aug 4, 2013) [S] Skyline, New York City, NY
+
+Balsaminaceae
+Impatiens balsamina - (Aug 27, 2018) [G] Clemens Place, Hartford, CT
+Impatiens capensis
+	1 - (Sept 15, 2019) [W] Dunlap, TN
+	2 - (July 21, 2018) [W] Elizabeth Park, Hartford, CT
+
+Clethraceae
+Clethra alnifolia - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Clethra barbinervis - (Aug 2, 2013) [S] Skyline, New York City, NY
+
+Ericaceae
+Chimaphila maculata - (June 8, 2016) [W] Skymont Scout Camp, Altamount, TN
+Gaultheria shallon
+	1,2 - (Apr 20, 2016) [W] Saltwater Park, Kent, WA
+	3 - (Aug 18, 2015) [W] Mount Rainier, WA
+Kalmia latifolia
+	1 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+	2 - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+Ledum groenlandicum - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Leucothoe fontanesiana - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Oxydendrum arboreum
+	1,2 - (June 25, 2016) [W] Skymont Scout Camp, Altamount, TN
+Pieris japonica
+	1 - (Apr 29, 2018) [S] Moscarillo's Garden Shoppe, Hartford, CT
+	2 - (Aug 23, 2013) [S] Base of Signal Mountain, TN
+Rhododendron arborescens - (June 26, 2013) [W] North Chickamauga Creek, Chattanooga, TN
+Rhododendron oblongifolium - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Vaccinium corymbosum - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Vaccinium ovatum
+	1,2 - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+Vaccinium sp - (Aug 10, 2015) [W] Mount Rainier National Park, WA
+
+Fouquieriaceae
+Fouquieria splendens
+	1,2 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+
+Polemoniaceae
+Phlox nivalis - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Phlox paniculata - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Phlox subulata
+	1,2 - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+Phlox sp - (July 17, 2013) [W] Dunlap, TN
+Saltugilia splendens - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+
+Primulaceae
+Lysimachia monelli - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Primula sp - (Feb 17, 2018) [S] Moscarillo's Garden Shoppe, Hartford, CT
+Soldanella carpatica - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Trientalis borealis - (Apr 20, 2016) [W] Saltwater Park, Kent, WA
+
+Sarraceniaceae
+Sarracenia flava - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Sarracenia minor - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Sarracenia rubra - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+
+Styracaceae
+Styrax japonicus - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Theaceae
+Camellia mairei
+	var lapidea - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Camellia sp - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+
+Fabaceae
+Albizia julibrissin
+	1 - (June 4, 2016) [W] Dunlap, TN
+	2 - (Aug 10, 2013) [W] Cambridge Park Apts, Chattanooga, TN
+Albizia lebbeck - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+Amorpha canescens - (Aug 2, 2013) [S] Skyline, New York City, NY
+Amorpha glabra - (July 18, 2013) [W] Skymont Scout Camp, Altamount, TN
+Baptisia alba - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Bauhinia yunnanensis - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Calliandra californica - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Calliandra emarginata - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Cercis canadensis
+	1,2 - (Aug 23, 2013) [S] University of Tennessee at Chattanooga, TN
+	3 - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Chamaecrista fasciculata
+	1,2 - (May 2, 2015) [W] Caladesi Island State Park, FL
+Cladrastis kentukea
+	1,2 - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+Cytisus scoparius - (Apr 14, 2016) [W] Federal Way, WA
+Delonix regia - (Jan 8, 2016) [W] Lone Pine Koala Sanctuary, Brisbane {AU}
+Galactia regularis - (May 2, 2015) [W] Caladesi Island State Park, FL
+Gleditsia triacanthos - (Aug 2, 2013) [S] New York City, NY
+Indigofera heterantha - (Aug 2, 2013) [S] Skyline, New York City, NY
+Kennedia nigricans - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+Lathyrus latifolius
+	1,2 - (Sept 9, 2013) [W] University of Tennessee at Chattanooga, TN
+	3 - (July 30, 2015) [W] Boulder, CO
+Lathyrus polyphyllus - (Apr 20, 2016) [W] Saltwater Park, Kent, WA
+Lathyrus vernus - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Lespedeza cuneata
+	1 - (Sept 15, 2019) [W] Dunlap, TN
+	2 - (July 10, 2013) [W] Enterprise South, Chattanooga, TN
+Lespedeza repens - (Aug 16, 2013) [W] University of Tennessee at Chattanooga, TN
+Lotus corniculatus
+	1 - (May 27, 2016) [W] Federal Way, WA
+	2,3 - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+Lupinus nootkatensis
+	1,2 - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Lupinus texensis
+	1 - (Apr 2, 2023) [W] American Airlines IOC, Fort Worth, TX
+	2,3,4 - (Apr 7, 2021) [W] DFW Airport, Irving, TX
+Mimosa pudica
+	1,2 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Mimosa strigillosa - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Peltophorum africanum - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+Pueraria montana
+	1 - (Aug 31, 2013) [W] Signal Mountain, TN
+	2 - (Sept 2, 2013) [W] Suck Creek, Chattanooga, TN
+Senna alata - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Sophora tomentosa
+	1,2 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Trifolium campestre
+	1 - (Apr 2, 2023) [W] American Airlines IOC, Fort Worth, TX
+	2 - (Mar 15, 2020) [W] Yulee, FL
+	3 - (Apr 8, 2021) [W] Irving, TX
+Trifolium hybridum
+	1,2 - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+Trifolium incarnatum
+	1 - (Apr 2, 2023) [W] American Airlines IOC, Fort Worth, TX
+	2 - (May 4, 2014) [W] Dunlap, TN
+Trifolium pratense
+	1 - (July 24, 2019) [W] Dunlap, TN
+	2 - (May 5, 2013) [W] Chattanooga, TN
+	3 - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+Trifolium repens
+	1,2 - (July 27, 2011) [W] University of Tennessee at Chattanooga, TN
+Vachellia cornigera - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+Vicia caroliniana - (Apr 5, 2014) [W] Sequatchie Valley, TN
+Vicia sativa - (Apr 13, 2016) [W] Federal Way, WA
+Vicia villosa - (Apr 2, 2023) [W] American Airlines IOC, Fort Worth, TX
+
+Polygalaceae
+Polygala fruticosa - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Betulaceae
+Alnus rubra - (Aug 18, 2015) [W] Mount Rainier, WA
+Betula nigra
+	1,2 - (Aug 23, 2013) [S] University of Tennessee at Chattanooga, TN
+Betula neoalaskana
+	1,2 - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Carpinus betulus
+	1,2 - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+
+Fagaceae
+Castanea dentata - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+Castanea mollissima - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+Quercus coccinea
+	1,2 - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+Quercus nigra
+	1,2 - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+Quercus nuttallii
+	1,2 - (Aug 23, 2013) [S] University of Tennessee at Chattanooga, TN
+Quercus phellos
+	1,2 - (Aug 23, 2013) [S] University of Tennessee at Chattanooga, TN
+Quercus shumardii - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+
+Garryaceae
+Aucuba japonica
+	1,2 - (Oct 28, 2013) [S] University of Tennessee at Chattanooga, TN
+
+Apocynaceae
+Adenium obesum
+	1,2 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Amsonia tabernaemontana
+	1,2 - (Apr 2, 2023) [W] American Airlines IOC, Fort Worth, TX
+Asclepias tuberosa - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Calotropis gigantea
+	1,2 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Catharanthus roseus - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Catharanthus sp - (Sept 21, 2016) [S] Washington, DC
+Gomphocarpus physocarpus
+	1,2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Hoya curtisii - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Nerium oleander
+	1 - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (May 2, 2019) [S] Moscarillos Garden Shoppe, Hartford, CT
+Plumeria sp - (May 30, 2015) [S] National Botanic Garden, Washington, DC
+Rauvolfia serpentina - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Stapelia gigantea
+	1 - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+	3 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Strophanthus gratus - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Vinca major - (May 25, 2013) [W] Wilder Drive, Signal Mountain, TN
+
+Gentianaceae
+Sabatia kennedyana - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Rubiaceae
+Coffea arabica - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Coffea canephora - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Gardenia jasminoides - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Hamelia patens - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Houstonia serpyllifolia - (Apr 27, 2023) [W] Newfound Gap, Great Smoky Mountains National Park, TN
+Hydnophytum formicarum - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Mitchella repens - (May 11, 2019) [W] Campbell Falls State Park, Norfolk, CT
+Morinda citrifolia - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Mussaenda incana - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Pentas lanceolata - (July 31, 2013) [S] National Zoo, Washington, DC
+Richardia scabra - (Sept 1, 2020) [W] Fernandina Beach, FL
+Sherardia arvensis - (Apr 8, 2021) [W] Willow Creek Drive, Irving, TX
+
+Spermacoceae
+Houstonia caerulea
+	1,2,3 - (Apr 24, 2019) [W] West Hartford, CT
+
+Geraniaceae
+Erodium sp - (Feb 17, 2018) [S] Moscarillo's Garden Shoppe, Hartford, CT
+Geranium caespitosum
+	1,2 - (Aug 1, 2015) [W] Nederland, CO
+Geranium carolinianum - (May 14, 2016) [W] Dunlap, TN
+Geranium maderense - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Geranium molle - (Apr 14, 2016) [W] Federal Way, WA
+Geranium pratense
+	1,2 - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Geranium robertianum
+	1,2 - (Apr 30, 2016) [W] Federal Way, WA
+Geranium sanguineum - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Geranium soboliferum - (Aug 4, 2013) [S] Skyline, New York City, NY
+Pelargonium cordifolium - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Pelargonium ionidiflorum - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+Pelargonium quercifolium - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Pelargonium sidoides - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Acanthaceae
+Acanthus spinosus - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Aphelandra aurantiaca - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Asystasia gangetica - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+Dianthera candicans - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+Justicia carnea - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Justicia sonorae - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+Odontonema tubaeforme - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Pachystachys coccinea - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Pachystachys lutea - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Thunbergia sp - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+
+Bignoniaceae
+Bignonia callistegioides - (Apr 3, 2018) [W] Lady Lake, FL
+Campsis radicans
+	1 - (June 21, 2015) [W] Dunlap, TN
+	2,3 - (Oct 22, 2013) [W] Near Baylor Lake, Chattanooga, TN
+Catalpa speciosa
+	1,2 - (May 16, 2016) [S] University of Tennessee, Chattanooga, TN
+Chilopsis linearis - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Tabebuia rosea - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+
+Gesneriaceae
+Aeschynanthus lobbianus - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Saintpaulia ionantha - (Feb 17, 2018) [S] Moscarillo's Garden Shoppe, Hartford, CT
+
+Lamiaceae
+Ajuga reptans - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Ajuga sp - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+Calamintha nepeta
+	ssp nepeta - (Aug 2, 2013) [S] Skyline, New York City, NY
+Conradina canescens - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Lamium purpureum - (Apr 14, 2016) [W] Federal Way, WA
+Macbridea alba - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Mentha rotundifolia - (July 17, 2013) [W] Wilder Drive, Signal Mountain, TN
+Mentha requienii - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Micromeria fruticosa - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Monarda didyma - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Nepeta xFaassensii - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Origanum syriacum - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Petraeovitex bambusetorum - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Poliomintha bustamenta - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Prunella vulgaris - (July 21, 2018) [W] Elizabeth Park, Hartford, CT
+Pycnanthemum muticum - (Aug 2, 2013) [S] Skyline, New York City, NY
+Rosmarinus officinalis - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Salvia azurea
+	var grandiflora - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Salvia coccinea - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Salvia greggii - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Salvia guaranitica - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Salvia lyrata - (Mar 15, 2020) [W] Yulee, FL
+Salvia miniata - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Salvia patens - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Salvia sinaloensis - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Salvia urticifolia - (May 20, 2015) [S] National Botanical Garden, Washington, DC
+Thymus vulgaris - (May 20, 2015) [S] National Botanical Garden, Washington, DC
+
+Mazaceae
+Mazus reptans - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+
+Oleaceae
+Chionanthus retusus
+	1,2 - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+Jasminum sambac - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Ligustrum vulgare
+	1,2 - (May 16, 2016) [W] Dunlap, TN
+
+Orobanchaceae
+Conopholis americana
+	1,2 - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+	2 - (Apr 5, 2014) [W] Sequatchie Valley, TN
+
+Paulowniaceae
+Paulownia tomentosa
+	1,2 - (Aug 24, 2013) [S] University of Tennessee at Chattanooga, TN
+
+Phrymaceae
+Erythranthe guttata - (Aug 15, 2023) [W] Potter Marsh, Anchorage, AK
+Mimulus naiandinus - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+
+Plantaginaceae
+Antirrhinum majus - (May 27, 2016) [W] Kent, WA
+Asarina scandens - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Chelone lyonii - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Digitalis purpurea
+	1 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+	2,3 - (May 30, 2016) [W] Kent, WA
+Gambelia speciosa - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Russelia equisetiformis - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Veronica grandiflora - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Veronica persica - (Feb 2, 2013) [W] Riverview Grande Apts, Chattanooga, TN
+Veronicastrum virginicum - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Scrophulariaceae
+Buddleja marrubifolia - (Mar 6, 2024) [S] Albuquerque BioPark, Albuquerque, NM
+Leucophyllum frutescens - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Verbascum bombyciferum
+	1,2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Verbascum thapsus
+	1,2 - (June 21, 2019) [W] Avon, CT
+
+Verbenaceae
+Aloysia citrodora
+	1,2 - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Aloysia virgata
+	1 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+	2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Lantana sp
+	1A - (Apr 19, 2015) [W] Lady Lake, FL
+	2A - (Sept 21, 2016) [W] Washington, DC
+Stachytarpheta jamaicensis - (May 29, 2014) [S] Tennessee Aquarium, Chattanooga, TN
+Verbena bonariensis - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Verbena rigida - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+
+Calycanthaceae
+Calycanthus floridus
+	1 - (Apr 26, 2023) [W] Twin Creeks Research Site, Great Smoky Mountains National Park, TN
+	2 - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+
+Lauraceae
+Sassafras albidum - (July 18, 2013) [W] Skymont Scout Camp, Altamount, TN
+
+Eupomatiaceae
+Eupomatia laurina - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+
+Magnoliaceae
+Liriodendron tulipifera - (May 5, 2014) [W] Chattanooga, TN
+Magnolia grandiflora - (Aug 6, 2013) [W] University of Tennessee at Knoxville, TN
+Magnolia liliiflora
+	1,2 - (Mar 20, 2015) [W] New Orleans, LA
+Magnolia macrophylla
+	1 - (June 27, 2013) [W] North Chickamauga Creek, TN
+	2 - (May 21, 2015) [S] National Zoo, Washington, DC
+Magnolia virginiana
+	var australis - (Aug 4, 2013) [S] Skyline, New York City, NY
+Magnolia xSoulangeana
+	1,2 - (Aug 24, 2013) [S] University of Tennessee at Chattanooga, TN
+
+Euphorbiaceae
+Cnidoscolus stimulosus
+	1 - (Apr 3, 2018) [W] Lady Lake, FL
+	2 - (May 2, 2015) [W] Caladesi Island State Park, FL
+Euphorbia aeruginosa
+	1 - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Euphorbia amygdaloides - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Euphorbia cap-saintmariensis - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Euphorbia chariacus
+	ssp wulfenii 1,ssp wulfenii 2 - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Euphorbia corollata - (Aug 2, 2013) [S] Skyline, New York City, NY
+Euphorbia geroldii - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Euphorbia fulgens
+	1,2 - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Euphorbia gorgonis - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Euphorbia horrida - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Euphorbia milii
+	1,2 - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Euphorbia obesa - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Euphorbia officinarum - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Euphorbia myrsinites - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Euphorbia resinifera - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Ricinus communis
+	1 - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Oct 10, 2024) [S] Dublin Botanic Garden, Dublin {IE}
+
+Hypericaceae
+Hypericum frondosum - (July 4, 2013) [W] North Ocoee River, TN
+Hypericum perforatum - (July 15, 2016) [W] Federal Way, WA
+Hypericum prolificum - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Hypericum xMoserianum - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+
+Passifloraceae
+Passiflora incarnata - (July 11, 2013) [W] Ocoee, TN
+Passiflora vitifolia - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+
+Phyllanthaceae
+Breynia disticha - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+
+Rhizophoraceae
+Rhizophora mangle - (May 2, 2015) [W] Caladesi Island State Park, FL
+
+Salicaceae
+Populus tremuloides - (Aug 1, 2015) [W] Nederland, CO
+Salix babylonica
+	1,2 - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+Scolopia braunii - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+
+Violaceae
+Viola blanda - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Viola canadensis
+	1,2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Viola corsica - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Viola hastata - (Apr 5, 2014) [W] Sequatchie Valley, TN
+Viola pubescens - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Viola sp - (Apr 1, 2016) [W] Rock Creek Park, Washington, DC
+Viola walteri - (Mar 29, 2014) [W] University of Tennessee at Chattanooga, TN
+Viola wittrockiana - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+
+Malvaceae
+Abutilon pictum - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Abutilon sonneratianum - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Althaea officinalis - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Alyogyne sp - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Callirhoe involucrata
+	1 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Mar 31, 2025) [S] AA Campus, Fort Worth, TX
+Hibiscus clayi - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Hibiscus coccineus - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Hibiscus dasycalyx - (Aug 2, 2013) [S] Skyline, New York City, NY
+Hibiscus laevis - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Hibiscus moscheutos
+	ssp palustris - (Aug 2, 2013) [S] Skyline, New York City, NY
+Hibiscus rosa-sinensis - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Hibiscus syriacus - (July 17, 2013) [W] Wilder Drive, Signal Mountain, TN
+Kosteletzkya virginica - (May 2, 2015) [W] Caladesi Island, FL
+Lagunaria patersonia - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Modiola caroliniana - (May 12, 2022) [W] Centennial Park, Dallas, TX
+Malva neglecta - (Jun 29, 2024) [W] Big Bear Lake, CA
+Malvaviscus arboreus
+	var drummondii - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Sida fallax
+	1 - (Dec 19, 2015) [W] Diamondhead Crater, Honolulu, HI
+	2 - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Theobroma cacao - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Tilia cordata - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+
+Thymelaeaceae
+Edgeworthia chrysantha - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+
+Combretaceae
+Combretum indicum
+	1 - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+
+Lythraceae
+Cuphea llavea - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Heimia salicifolia - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Lagerstroemia indica - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+Punica granatum
+	1,2 - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Myrtaceae
+Acca sellowiana - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Melaleuca nesophila - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+
+Melastomataceae
+Medinilla myriantha
+	1,2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Medinilla sedifolia - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+
+Onagraceae
+Chamerion angustifolium
+	1 - (Aug 18, 2015) [W] Mount Rainier National Park, WA
+	2,3 - (May 27, 2016) [W] Federal Way, WA
+Ludwigia decurrens
+	1,2 - (Sept 12, 2019) [W] Dunlap, TN
+Oenothera cheiranthifolia
+	1,2 - (May 19, 2024) [W] Ormond Beach, Oxnard, CA
+Oenothera fruticosa - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+Oenothera speciosa
+	1,2 - (Apr 2, 2023) [W] American Airlines IOC, Fort Worth, TX
+	3 - (May 28, 2014) [W] Chattanooga, TN
+
+Cabombaceae
+Brasenia schreberi
+	1,2 - (June 18, 2016) [W] Skymont Scout Camp, Altamount, TN
+
+Nymphaeaceae
+Nuphar lutea
+	1,2 - (June 21, 2019) [W] Burlington, CT
+Nymphaea odorata
+	ssp odorata - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+
+Oxalidaceae
+Oxalis montana - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+Oxalis stricta - (June 7, 2015) [W] National Zoo, Washington, DC
+Oxalis violacea - (May 7, 2014) [W] Chattanooga, TN
+
+Piperaceae
+Peperomia puteolata - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Peperomia tetraphylla - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+
+Berberidaceae
+Achlys triphylla - (Aug 18, 2015) [W] Mount Rainier, WA
+Epimedium grandiflorum - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Epimedium sempervirens - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Mahonia bealei
+	1,2 - (Nov 1, 2013) [W] Shoal Creek, Signal Mountain, TN
+	3 - (Apr 13, 2016) [W] Federal Way, WA
+Podophyllum peltatum - (May 11, 2019) [W] Chapman Falls, Norfolk, CT
+
+Papaveraceae
+Corydalis solida - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Eschscholzia californica
+	1 - (June 26, 2016) [W] Auburn, WA
+	2 - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+	3 - (Aug 23, 2015) [W] Portland, OR
+Papaver alboroseum - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Papaver dubium - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Sanguinaria canadensis
+	1,2 - (Apr 5, 2014) [W] Sequatchie Valley, TN
+
+Ranunculaceae
+Aconitum napellus
+	1,2 - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Actaea rubra - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Anemone blanda - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Anemone hepatica - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Anemone quinquefolia - (Apr 5, 2014) [W] Sequatchie Valley, TN
+Aquilegia sp - (May 25, 2013) [W] Skymont Scout Camp, Altamount, TN
+Aquilegia chrysantha - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Clematis terniflora - (Aug 9, 2013) [W] Wilder Drive, Signal Mountain, TN
+Clematis viticella - (Aug 4, 2013) [S] Skyline, New York City, NY
+Coptis trifolia - (May 11, 2019) [W] Campbell Falls State Park, Norfolk, CT
+Hepatica nobilis - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Ranunculus acris
+	1,2 - (July 21, 2018) [W] Elizabeth Park, Hartford, CT
+Ranunculus repens - (May 12, 2016) [W] Federal Way, WA
+Thalictrum clavatum
+	1,2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Thalictrum kiusianum
+	1,2 - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Thalictrum thalictroides - (Apr 5, 2014) [W] Sequatchie Valley, TN
+
+Moraceae
+Artocarpus heterophyllus - (Feb 26, 2015) [S] National Botanic Garden, Washington, DC
+Ficus benghalensis
+	1,2 - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+Ficus macrophylla
+	1,2 - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+Ficus virens - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+Maclura pomifera - (Aug 16, 2024) [W] National Mall, Washington, DC
+
+Rosaceae
+Amelanchier canadensis
+	1 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+Dasiphora fruticosa - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Duchesnea indica - (June 7, 2015) [S] National Zoo, Washington, DC
+Fragaria chiloensis
+	1 - (May 4, 2015) [W] Federal Way, WA
+	2,3 - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Fragaria virginiana - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Geum macrophyllum
+	1,2 - (Apr 20, 2016) [W] Saltwater State Park, Kent, WA
+Gillenia trifoliata - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+Malus domestica - (Apr 13, 2016) [W] Federal Way, WA
+Malus sp - (Apr 7, 2016) [S] University of the South, Sewanee, TN
+Physocarpus opulifolius - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Potentilla simplex
+	1,2 - (May 21, 2024) [W] Cuyahoga Valley National Park, Akron, OH
+Prunus caroliniana
+	1,2 - (Aug 24, 2013) [S] University of Tennessee at Chattanooga, TN
+Prunus laurocerasus
+	1,2 - (Oct 28, 2013) [S] University of Tennessee at Chattanooga, TN
+Prunus serrulata
+	1 - (Mar 30, 2016) [S] Tidal Basin, Washington, DC
+	2 - (Apr 4, 2016) [S] National Botanic Garden, Washington, DC
+	3 - (Mar 28, 2024) [S] Tidal Basin, Washington, DC
+Prunus subhirtella
+	1,2 - (Feb 25, 2017) [S] UW Arboretum, Seattle, WA
+Pyrus calleryana
+	1,2 - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+Rosa chinensis - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Rosa multiflora - (May 25, 2013) [W] Wilder Drive, Signal Mountain, TN
+Rosa nutkana
+	1,2,3 - (July 16, 2016) [W] Soos Creek Park, Kent, WA
+Rubus bifrons - (Aug 31, 2013) [W] Base of Signal Mountain, Chattanooga, TN
+Rubus flagellaris - (July 18, 2013) [W] Skymont Scout Camp, Altamount, TN
+Rubus parviflorus
+	1,2 - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+Rubus spectabilis - (Apr 16, 2016) [W] Soos Creek Trail, Federal Way, WA
+Sorbus sitchensis
+	1,2 - (Aug 18, 2015) [W] Mount Rainier National Park, WA
+Spiraea douglasii - (July 16, 2016) [W] Soos Creek Park, Kent, WA
+Spiraea thunbergii - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+
+Ulmaceae
+Ulmus parvifolia
+	1,2 - (Aug 23, 2013) [S] University of Tennessee, Chattanooga, TN
+
+Urticaceae
+Laportea canadensis
+	1,2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Pellionia repens - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Pilea spruceana - (Feb 17, 2018) [S] Moscarillo's Garden Shoppe, Hartford, CT
+
+Anacardiaceae
+Rhus copallinum - (June 27, 2013) [W] Camp Ocoee, TN
+Rhus glabra
+	1,2 - (July 27, 2013) [W] Camp Ocoee, TN
+Toxicodendron radicans
+	1 - (June 4, 2016) [W] East Ridge, TN
+	2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+
+Rutaceae
+Citrus aurantium
+	1 - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+	2 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Citrus japonica - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Citrus limon
+	1 - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Citrus medica
+	1,2 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Citrus reticulata
+	1,2 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Citrus sinensis - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Citrus tangerina - (Apr 18, 2015) [W] Lady Lake, FL
+
+Sapindaceae
+Acer circinatum
+	1,2 - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+	3 - (Aug 18, 2015) [W] Mount Rainier, WA
+Acer davidii - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Acer griseum
+	1,2 - (June 6, 2015) [S] National Zoo, Washington, DC
+Acer macrophyllum
+	1,2 - (Aug 18, 2015) [W] Mount Rainier National Park, WA
+	3 - (Mar 30, 2016) [W] Saltwater Park, Kent, WA
+Acer negundo - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Acer palmatum
+	1,2 - (Oct 28, 2013) [S] University of Tennessee at Chattanooga, TN
+	3 - (May 3, 2019) [S] West Hartford, CT
+Acer pensylvanicum
+	1,2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Acer rubrum - (Aug 23, 2013) [S] University of Tennessee at Chattanooga, TN
+Aesculus hippocastanum
+	1,2 - (May 16, 2019) [W] Spice Bush Swamp, Farmington, CT
+Aesculus parviflora
+	1 - (Aug 4, 2013) [S] Skyline, New York City, NY
+	2 - (Oct 28, 2013) [S] University of Tennessee at Chattanooga, TN
+Aesculus pavia - (Apr 5, 2014) [W] Sequatchie Valley, TN
+Koelreuteria paniculata - (Aug 24, 2013) [S] University of Tennessee at Chattanooga, TN
+
+Altingiaceae
+Liquidambar styraciflua
+	1,2 - (Oct 6, 2013) [W] Redoubt soccer fields, Chattanooga, TN
+
+Crassulaceae
+Aeonium arboreum - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Aeonium decorum - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Crassula muscosa - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Dudleya pulverulenta - (Dec 20, 2023) [W] Point Lobos Park, Carmel, CA
+Graptopetalum paraguayense - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Hylotelephium telephium - (Aug 2, 2013) [S] Skyline, New York City, NY
+Kalanchoe rhombopilosa - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Phedimus middendorffianus - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Rhodiola integrifolia
+	ssp integrifolia - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Sedum divergens - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+
+Grossulariaceae
+Ribes aureum
+	1 - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+	var villosum - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+
+Hamamelidaceae
+Fothergilla major - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Hamamelis japonica
+	1,2 - (Feb 25, 2017) [S] UW Arboretum, Seattle, WA
+Hamamelis mollis
+	1,2 - (Feb 25, 2017) [S] UW Arboretum, Seattle, WA
+
+Paeoniaceae
+Paeonia anomala
+	ssp khakassia 1,ssp khakassia 2 - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+
+Saxifragaceae
+Astilbe chinensis - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Boykinia aconitifolia - (July 16, 2013) [W] North Chickamauga Creek, TN
+Mitella diphylla - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Paeonia lactiflora - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+Saxifraga paniculata - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Saxifraga sancta - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Tellima grandiflora
+	1,2 - (Apr 20, 2016) [W] Saltwater State Park, Kent, WA
+Tiarella cordifolia
+	1 - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+	2 - (Apr 5, 2014) [W] Sequatchie Valley, TN
+
+Convolvulaceae
+Calystegia sepium
+	1,2 - (June 4, 2016) [W] Red Bank, TN
+	3 - (July 29, 2015) [W] Boulder, CO
+	4 - (May 24, 2013) [W] Chattanooga, TN
+Ipomoea coccinea
+	1,2 - (Sept 12, 2019) [W] Dunlap, TN
+Ipomoea cordatotriloba - (June 12, 2025) Rowlet, TX
+Ipomoea hederacea
+	1,2 - (July 24, 2015) [W] Hilliard, OH
+	3 - (Sept 12, 2019) [W] Dunlap, TN
+
+Solanaceae
+Atropa belladonna
+	1,2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Brunfelsia jamaicensis - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Brunfelsia pauciflora - (May 7, 2015) [W] New Orleans, LA
+Calibrachoa sp - (May 2, 2019) [S] Moscarillos Garden Shoppe, Hartford, CT
+Capsicum annuum
+	1 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+	2,3 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Capsicum chinense
+	1 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Cestrum aurantiacum - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Datura metel - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Juanulloa aurantiaca - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Lycium barbarum - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Lycium carolinianum - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Solanum carolinense
+	1 - (June 6, 2015) [W] Washington, DC
+	2 - (June 4, 2016) [W] Red Bank, TN
+Solanum dulcamara - (July 21, 2018) [W] Elizabeth Park, Hartford, CT
+Solanum lycopersicum
+	1,2,3 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Solanum melongena
+	1,2 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Solanum pyracanthos
+	1 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Solanum quitoense - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+
+Vitaceae
+Ampelopsis arborea
+	1,2 - (July 17, 2013) [W] Wilder Drive, Signal Mountain, TN
+Ampelopsis sp - (Sept 6, 2013) [W] Riverwalk, Chattanooga, TN
+Parthenocissus quinquefolia - (May 25, 2013) [W] Wilder Drive, Signal Mountain, TN
+Vitis labrusca
+	1,2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Vitis rotundifolia - (May 2, 2015) [W] Caladesi Island, FL
+
+Zygophyllaceae
+Guaiacum angustifolium
+	1,2,3 - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Guaiacum officinale - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+
+Ginkgoaceae
+Ginkgo biloba
+	1,2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+
+Araucariaceae
+Agathis robusta
+	1,2 - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+Araucaria bidwillii - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+Araucaria heterophylla - (Dec 30, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Wollemia nobilis - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+
+Cupressaceae
+Calocedrus decurrens
+	1,2 - (Feb 25, 2017) [S] UW Arboretum, Seattle, WA
+Chamaecyparis thyoides
+	1 - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+Chamaecyparis obtusa
+	1,2 - (July 21, 2018) [S] Elizabeth Park, Hartford, CT
+Cryptomeria japonica
+	1,2 - (Sept 30, 2016) [S] National Zoo, Washington, DC
+Cunninghamia konishii
+	1,2 - (Feb 25, 2017) [S] UW Arboretum, Seattle, WA
+Cunninghamia lanceolata
+	1,2 - (Feb 25, 2017) [S] UW Arboretum, Seattle, WA
+Glyptostrobus pensilis - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Juniperus chinensis
+	var procumbens - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Juniperus deppeana - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+Juniperus squamata - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Juniperus virginiana
+	1,2 - (Oct 28, 2013) [S] University of Tennessee at Chattanooga, TN
+Metasequoia glyptostroboides
+	1,2 - (Oct 28, 2013) [S] University of Tennessee at Chattanooga, TN
+Sequoia sempervirens
+	1,2,3 - (Feb 25, 2017) [S] UW Arboretum, Seattle, WA
+Taxodium distichum
+	1,2 - (Sept 20, 2013) [S] Baylor School, Chattanooga, TN
+Taxodium mucronatum - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Thuja plicata - (Sept 7, 2015) [W] Lake Serene, WA
+
+Pinaceae
+Cedrus deodara
+	1,2 - (Sept 1, 2017) [S] University of Tennessee at Chattanooga, TN
+Cedrus libani
+	ssp atlantica 1,ssp atlantica 2 - (Feb 25, 2017) [S] UW Arboretum, Seattle, WA
+Picea abies
+	1,2 - (Oct 28, 2013) [S] University of Tennessee at Chattanooga, TN
+Pinus jeffreyi
+	1,2 - (Mar 3, 2023) [W] South Lake Tahoe, NV
+Pinus palustris - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Pinus ponderosa
+	1 - (July 29, 2015) [W] Boulder, CO
+	2 - (June 29, 2024) [W] Big Bear Lake, San Bernardino County, CA
+Pinus strobus
+	1,2,3 - (Sept 20, 2013) [W] Baylor School, Chattanooga, TN
+Pinus sylvestris - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Pinus taeda
+	1,2 - (Oct 6, 2013) [W] Redoubt soccer field, Chattanooga, TN
+Pinus virginiana
+	1,2 - (Oct 22, 2013) [W] Shackleford Ridge, Signal Mountain, TN
+Pseudotsuga menziesii
+	1,2 - (Aug 18, 2015) [W] Mount Rainier, WA
+Tsuga canadensis
+	1,2 - (Oct 22, 2013) [W] Wilder Drive, Signal Mountain, TN
+Tsuga heterophylla
+	1,2 - (Aug 18, 2015) [W] Mount Rainier, WA
+
+Taxaceae
+Taxus floridana - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+
+Lycopodiaceae
+Diphasiastrum digitatum - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+Huperzia lucidula
+	1 - (Apr 27, 2023) [W] Newfound Gap, Great Smoky Mountains National Park, TN
+	2 - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+Lycopodium clavatum
+	1,2 - (Sept 7, 2015) [W] Bridal Veil Falls, WA
+
+Huperziaceae
+Huperzia squarrosa - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+
+Selaginellaceae
+Selaginella kraussiana - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+
+Porellaceae
+Porella sp - (Apr 27, 2023) [W] Newfound Gap, Great Smoky Mountains National Park, TN
+
+Alismataceae
+Sagittaria lancifolia - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Araceae
+Aglaonema modestum
+	1,2 - (Apr 29, 2018) [S] Moscarillo's Garden Shoppe, Hartford, CT
+Amorphophallus titanum - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Anthurium andicola - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Anthurium andraeanum - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Arisaema triphyllum
+	1,2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+	3 - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+Dieffenbachia rex
+	1,2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Lysichiton americanus
+	1,2 - (Apr 16, 2016) [W] Coos Creek Trail, Kent, WA
+Spathiphyllum sp - (May 2, 2019) [S] Moscarillos Garden Shoppe, Hartford, CT
+
+Arecaceae
+Chamaerops humilis - (Dec 28, 2015) [S] Royal Botanic Garden, Sydney {AU}
+Cocos nucifera - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Livistona chinensis - (Apr 29, 2015) [S] Sunken Gardens, Tampa, FL
+Phoenix canariensis - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+Phoenix roebellinii
+	1,2 - (Apr 29, 2015) [S] Sunken Gardens, Tampa, FL
+Roystonea regia - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+Sabal minor - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+Sabal palmetto - (May 2, 2015) [W] Caladesi Island State Park, FL
+Serenoa repens - (May 2, 2015) [W] Caladesi Island State Park, FL
+Syagrus romanzoifiana - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+Wodyetia bifurcata - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+
+Amaryllidaceae
+Allium nutans
+	1,2 - (Aug 16, 2023) [S] Alaska Botanic Garden, Anchorage, AK
+Allium senescens - (July 21, 2018) [S] Elizabeth Park, Hartford, CT
+Crinum xPowellii - (July 1, 2015) [S] National Botanic Garden, Washington, DC
+Eucharis grandiflora - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Ipheion uniflorum
+	1,2 - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Leucojum aestivum - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Narcissus pseudonarcissus - (Apr 5, 2014) [W] Sequatchie Valley, TN
+Nothoscordum bivalve - (Apr 5, 2014) [W] Sequatchie Valley, TN
+Zephyranthes rosea - (Oct 10, 2024) [S] Dublin Botanic Garden, Dublin {IE}
+
+Asparagaceae
+Agave victoriae-reginae - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Agave macroacantha - (Jan 18, 2026) [S] Desert Botanic Garden, Phoenix, AZ
+Chionodoxa forbesii - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Chionodoxa luciliae - (Apr 29, 2018) [S] Moscarillo's Garden Shoppe, Hartford, CT
+Chionodoxa sardensis - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Dracaena reflexa - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Dracaena marginata - (Feb 17, 2018) [S] Moscarillo's Garden Shoppe, Hartford, CT
+Dracaena surculosa - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Hosta sp
+	1,2 - (Sept 21, 2016) [S] Washington, DC
+Hyacinthus orientalis - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Lachenalia mathewsii - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Maianthemum racemosum
+	1,3 - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+	2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Maianthemum stellatum - (Aug 18, 2015) [W] Mount Rainier, WA
+Muscari neglectum - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Muscari sp - (Apr 5, 2014) [W] University of Tennessee at Chattanooga, TN
+Ophiopogon japonicus - (Aug 8, 2013) [W] Wilder Drive, Signal Mountain, TN
+Polygonatum biflorum
+	1,2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Scilla peruviana - (Apr 5, 2016) [S] National Botanic Garden, Washington, DC
+Scilla siberica - (Mar 30, 2016) [S] National Botanic Garden, Washington, DC
+Yucca aloifolia - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Yucca brevifolia - (June 6, 2024) [W] Joshua Tree National Park, San Bernardino County, CA
+Yucca flaccida - (July 17, 2013) [W] Wilder Drive, Signal Mountain, TN
+Yucca rostrata - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+
+Hypoxidaceae
+Hypoxis hemerocallidea - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+
+Iridaceae
+Iris bucharica - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Iris sibirica - (July 21, 2018) [S] Elizabeth Park, Hartford, CT
+Iris sp - (Apr 22, 2014) [S] Red Bank, TN
+Sisyrinchium micranthum - (May 12, 2022) [W] Centennial Park, Dallas, TX
+Sisyrinchium sp - (Apr 7, 2021) [W] DFW Airport, Dallas, TX
+
+Orchidaceae
+Calanthe vestita - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Cattleya maxima - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Cattleya percivaliana
+	var miniata - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Coelogyne barbata - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Coelogyne lentiginosa - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Cymbidium lowianum - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Cypripedium acaule
+	1,2,3 - (Apr 26, 2023) [W] Twin Creeks Research Site, Great Smoky Mountains National Park, TN
+Dendrobium anosmum - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Dendrobium chrysotoxum - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Dendrobium samurai - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Dendrobium spectabile - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Dendrobium uniflorum - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Doritis pulcherrima
+	1 - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Galearis spectabilis
+	1,2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Holcoglossum kimballianum - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Lycaste macrophylla - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Miltonia regnellii - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum burtonii - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum charlesworthii - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum cinderella - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum cockade - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum delrosi - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum deperle
+	var alba - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum dianthum - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Paphiopedilum glanduliferum - (July 7, 2019) [S] National Botanic Garden, Washington, DC
+Paphiopedilum harrisianum - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum insigne - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum petunia - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum praestans - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Paphiopedilum tonsum - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Peristeria elata - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Phalaenopsis equestris - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Phalaenopsis pulcherrima - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Phragmipedium cardinale - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Phragmipedium schlimii - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Phragmipedium sedenii - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Phragmipedium urgandiae - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Stenoglottis longifolia - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Vanda coerulea - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Vanilla planifolia - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Warczewiczella amazonica - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Zelenkoa onusta - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+
+Xanthorrhoeaceae
+Aristaloe aristata - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Aloe rauhii - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Haworthia arachnoidea - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Haworthia attenuata - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Haworthiopsis limifolia - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+
+Commelinaceae
+Commelina communis
+	1 - (June 4, 2016) [W] Dunlap, TN
+	2 - (Aug 14, 2013) [W] Wilder Drive, Signal Mountain, TN
+	3 - (July 21, 2018) [W] Elizabeth Park, Hartford, CT
+Dichorisandra penduliflora - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Dichorisandra thyrsiflora
+	1 - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+	2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Tradescantia xAndersoniana - (June 7, 2015) [S] National Zoo, Washington, DC
+Tradescantia ernestiana - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Tradescantia pallida - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+
+Pontederiaceae
+Pontederia cordata
+	1,2 - (May 20, 2015) [S] National Botanic Garden, Washington, DC
+	3 - (June 6, 2016) [W] Amelia Island, FL
+
+Liliaceae
+Clintonia umbellulata
+	1,2 - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+Erythronium americanum
+	1 - (Apr 5, 2014) [W] Sequatchie Valley, TN
+	2 - (Apr 23, 2019) [W] Salmon River, Cromwell, CT
+Medeola virginiana
+	1,2 - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+Tulipa clusiana - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Tulipa kaufmanniana - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Tulipa sp - (Mar 30, 2016) [W] Mary Livingston Ripley Garden, Washington, DC
+
+Melanthiaceae
+Veratrum virginicum - (July 17, 2015) [S] National Botanic Garden, Washington, DC
+Trillium erectum - (May 11, 2019) [W] Campbell Falls State Park, Norfolk, CT
+Trillium grandiflorum - (Apr 5, 2014) [W] Sequatchie Valley, TN
+Trillium luteum
+	1 - (Apr 25, 2023) [W] White Oak Quiet Walkway, Great Smoky Mountains National Park, TN
+	2 - (Apr 26, 2023) [W] Twin Creeks Research Site, Great Smoky Mountains National Park, TN
+Trillium ovatum - (Mar 26, 2016) [W] Dash Point State Park, Federal Way, WA
+Trillium sulcatum - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Trillium vaseyi - (Apr 29, 2023) [W] Ramsey Cascade Trail, Great Smoky Mountains National Park, TN
+
+Smilaceae
+Smilax auriculata
+	1,2 - (May 2, 2015) [W] Caladesi Island State Preserve, FL
+Smilax bona-nox - (Aug 10, 2013) [W] Cambridge Park Apts, Chattanooga, TN
+Smilax rotundifolia
+	1,2 - (Sept 20, 2013) [W] Baylor School, Chattanooga, TN
+
+Bromeliaceae
+Ananas comosus - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Canistropsis billbergioides - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Neoregelia compacta - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+Tillandsia neglecta - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Tillandsia usneoides - (Mar 22, 2015) [W] Lake Salvador, Jean Lafitte, LA
+
+Cyperaceae
+Carex plantaginea - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Cyperus haspan - (June 7, 2015) [S] National Zoo, Washington, DC
+Cyperus papyrus - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+
+Poaceae
+Bambusa beecheyana
+	1,2 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Bambusa chungii
+	1,2 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Bambusa intermedia
+	1,2 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Bambusa oldhamii - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Bambusa textilis - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Bambusa ventricosa
+	1,2 - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Cortaderia selloana - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+Muhlenbergia capillaris - (Jan 29, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+Nassella tenuissima - (July 31, 2013) [S] National Zoo, Washington, DC
+Paspalum floridanum - (July 29, 2013) [S] National Botanic Garden, Washington, DC
+Saccharum officinarum - (June 12, 2015) [W] Whitney Plantation, New Orleans, LA
+
+Marantaceae
+Calathea bachemiana - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Calathea makoyana - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Ctenanthe burle-marxii
+	1,2 - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+Stromanthe lutea
+	1,2 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+
+Musaceae
+Ensete superbum
+	1,2 - (Sept 26, 2016) [S] National Botanic Garden, Washington, DC
+Musa textilis - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
+
+Strelitziaceae
+Strelitzia reginae - (Jan 20, 2020) [S] Jacksonville Zoo, Jacksonville, FL
+
+Zingiberaceae
+Zingiber sp - (Jan 10, 2016) [S] Brisbane Botanic Garden, Brisbane {AU}
+
+Cyatheaceae
+Sphaeropteris cooperi
+	1,2 - (May 3, 2015) [S] Busch Gardens, Tampa, FL
+
+Dennstaedtiaceae
+Microlepia strigosa - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Pteridium aquilinum - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+
+Equisetaceae
+Equisetum arvense - (May 7, 2019) [W] Hartford Reservoir, Farmington, CT
+Equisetum hyemale
+	1,2 - (Sept 7, 2015) [W] Lake Serene, WA
+Equisetum telmateia - (Apr 14, 2016) [W] Federal Way, WA
+
+Ophioglossaceae
+Botrypus virginianus
+	1,2,3 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+
+Aspleniaceae
+Asplenium kaulfussii - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Asplenium montanum - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Asplenium platyneuron
+	1 - (Sept 2, 2013) [W] Suck Creek, Chattanooga, TN
+	2 - (Oct 20, 2013) [W] Baylor School, Chattanooga, TN
+Asplenium rhizophyllum
+	1,2 - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+Asplenium trichomanes - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+
+Blechnaceae
+Blechnum serrulatum - (May 2, 2015) [W] Caladesi Island, FL
+Struthiopteris spicant - (Aug 18, 2015) [W] Mount Rainier, WA
+
+Cystopteridaceae
+Cystopteris protrusa - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+Cystopteris sp - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+
+Dennstaedtiaceae
+Dennstaedtia punctilobula
+	1 - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+	2 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+
+Dryopteridaceae
+Cyrtomium fortunei
+	1,2 - (Mar 30, 2016) [S] Mary Livingston Ripley Garden, Washington, DC
+Dryopteris intermedia - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+Dryopteris marginalis
+	1,2 - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+Polystichum acrostichoides
+	1 - (Apr 26, 2023) [W] Middle Prong Trail, Great Smoky Mountains National Park, TN
+	2,3 - (Nov 1, 2013) [W] Shoal Creek, Signal Mountain, TN
+	4 - (Apr 5, 2014) [W] Sequatchie Valley, TN
+Polystichum munitum
+	1,2 - (Apr 20, 2016) [W] Saltwater State Park, Federal Way, WA
+
+Polypodiaceae
+Lemmaphyllum microphyllum - (Sept 30, 2015) [S] National Botanic Garden, Washington, DC
+Pleopeltis polypodioides
+	1 - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+	2 - (Sept 6, 2013) [W] Suck Creek, Chattanooga, TN
+Polypodium appalachianum
+	1,2 - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+
+Pteridaceae
+Adiantum pedatum
+	1 - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+	2 - (Aug 4, 2013) [S] Skyline, New York City, NY
+Adiantum peruvianum - (Jan 13, 2015) [S] National Botanic Garden, Washington, DC
+Cheilanthes lanosa - (Sept 28, 2016) [S] National Botanic Garden, Washington, DC
+
+Thelypteridaceae
+Amauropelta noveboracensis - (Apr 28, 2023) [W] Baxter Creek Trail, Great Smoky Mountains National Park, TN
+Phegopteris connectilis
+	1,2 - (Apr 23, 2019) [W] Salmon River, Cromwell, CT
+
+Marsileaceae
+Marsilea minuta
+	1,2 - (Apr 15, 2015) [S] National Botanic Garden, Washington, DC
