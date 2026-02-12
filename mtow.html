@@ -365,7 +365,7 @@ function compute (str_override = "") {
 		}
 
 		var tmpres = result[3] + '&nbsp;&nbsp;&nbsp;' +
-			(is_domestic(result[1], false) ? (result[1] + '&nbsp;&nbsp;(' + get_fir(result[1]) + ")") : (result[1] + '&nbsp;/&nbsp;' + convert_icao(result[1]))) +
+			(is_domestic(result[1], false) ? ('<span style="cursor:pointer" onclick="$(\'#dom_fir\').toggle()">' + result[1] + '</span><span id="dom_fir" style="display:none">&nbsp;&nbsp;(' + get_fir(result[1]) + ")</span>") : (result[1] + '&nbsp;/&nbsp;' + convert_icao(result[1]))) +
 			'&nbsp;&nbsp;&nbsp;' + result[5] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result[4];
 		output = tmpres + '<br/>' + output;
 
