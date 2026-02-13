@@ -632,7 +632,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "SFO": // LAX-SFO // Updated 02-12-2026
 			result += "<!-- Updated 02-12-2026 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL320):</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX SUMMR2 STOKD SERFR SERFR4 KSFO\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KLAX VTU8 RZS J501 BSR BSR3 KSFO\" readonly>";
