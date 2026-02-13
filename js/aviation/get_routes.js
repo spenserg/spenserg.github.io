@@ -11588,13 +11588,16 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>";
 					break;
-				case "ORD": // SRQ-ORD // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
+				case "ORD": // SRQ-ORD // Updated 02-13-2026
+			result += "<!-- Updated 02-13-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSRQ TIDES1 MOMIE BRUTS Q118 HEVAN BONNT VEECK5 KORD\" readonly>";
-					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KSRQ SRKUS4 MOMIE PATOY Q116 VLKNN GETME J151 FAM FTZ SHAIN2 KORD\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSRQ TIDES1 CAMJO Q99 TEEEM Q75 FISHO Q93 HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSRQ SRKUS4 MOMIE PATOY Q116 VLKNN GETME J151 FAM FTZ SHAIN2 KORD\" readonly>";
+					result += "<br/><br/>East via HVQ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSRQ TIDES1 CAMJO Q99 TEEEM Q75 ILBEE BZM HVQ APE FWA WATSN4 KORD\" readonly>";
+					result += "<br/>West/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSRQ TIDES1 FROOT ROZZI Y280 REDFN Q105 HRV MCB J35 RUSLR FTZ TRTLL6 KORD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-13-2026
 					break;
 				case "PHL": // SRQ-PHL // Updated 07-20-2025
 					result += "<!-- Updated 07-20-2025 P -->"
