@@ -167,17 +167,16 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR KIOSK KBHM\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD ZIEBR GQO DIODE KBHM\" readonly>";
 			break;
-		case "BNA": // CLT-BNA // Updated 10-05-2025
-			result += "<!-- Updated 10-05-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>"; // TODO is this faa pref? or more direct?
-			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV SWFFT3 KBNA\" readonly>";
-			result += "<br/><b>Flown route is closer to .. KCLT BOBZY5 BOBZY BRAYN REWET BAMMA SWFFT3 KBNA<\/b>";
+		case "BNA": // CLT-BNA // Updated 02-14-2026
+			result += "<!-- Updated 02-14-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET EDDDY SWFFT3 KBNA\" readonly>"; // CDR RP
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD TONIO CUTRR PASLY5 KBNA\" readonly>";
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT BEAVY6 GANDT THRSR SWFFT3 KBNA\" readonly>"; // CDR BE
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT CLT3 HARAY BRAYN REWET VXV KBNA\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-05-2025
-			result += "<!-- Verified with ATCSCC on 10-05-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-14-2026
+			result += "<!-- Verified with ATCSCC on 02-14-2026 -->";
 			result += "<br/>BE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY6 GANDT THRSR SWFFT3 KBNA\" readonly>";
 			result += "<br/>ES<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR SWFFT3 KBNA\" readonly>";
 			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 CUBIM VHP TONES RYYMN3 KBNA\" readonly>";
