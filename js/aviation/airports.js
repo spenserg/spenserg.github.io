@@ -2182,21 +2182,24 @@ get_weather_cams = function (str = null) {
 		case "ATL":
 		case "KATL":
 			return [
-				["https://www.fox10phoenix.com/webcams-atlanta2","Airport Cam 1"],
-				["https://worldcams.tv/united-states/atlanta/airport","Airport Cam 2"]
+				["https://www.youtube.com/watch?v=BgqxEmN3Wh4", "Airport1"],
+				["https://www.fox10phoenix.com/webcams-atlanta2","Airport2"],
+				["https://worldcams.tv/united-states/atlanta/airport","Airport3"]
 			];
 			break;
 		case "AUS":
 		case "KAUS":
 			return [
-				["https://www.earthcam.net/projects/abia/terminal/","Airport"]
+				// ["https://www.earthcam.net/projects/abia/terminal/","Airport"],
+				["https://www.youtube.com/watch?v=G6V8Fllye30", "Skyline"]
 			];
 			break;
 		case "AVL":
 		case "KAVL":
 			return [
-				["", ""]
-			]; // TODO
+				["https://www.youtube.com/watch?v=StJx1F1XW14", "Airport"],
+				["https://www.youtube.com/watch?v=UxUU3Fc1vBw", "Skyline"]
+			];
 			break;
 		case "AVP":
 		case "KAVP":
@@ -2210,17 +2213,11 @@ get_weather_cams = function (str = null) {
 				["", ""]
 			]; // TODO
 			break;
-		case "BDA":
-		case "TXKF":
-			return [
-				["https://www.youtube.com/watch?v=ninudy1Bxso", "Nonsuch Island"]
-			];
-			break;
 		case "BDL":
 		case "KBDL":
 			return [
-				["", ""]
-			]; // TODO
+				["https://www.youtube.com/watch?v=nKWD6ig9JXk", "Westfield"]
+			];
 			break;
 		case "BFI":
 		case "KBFI":
@@ -2243,13 +2240,13 @@ get_weather_cams = function (str = null) {
 		case "BHM":
 		case "KBHM":
 			return [
-				["", ""]
-			]; // TODO
+				["https://f001.backblazeb2.com/file/lightwave-camera-thumbnails/cameras/7/wbrc.jpg", "Skyline"]
+			];
 			break;
 		case "BIL":
 		case "KBIL":
 			return [
-				["", ""]
+				["https://www.ktvq.com/weather/weather-cameras", "Skyline"]
 			]; // TODO
 			break;
 		case "BLV":
@@ -2274,7 +2271,7 @@ get_weather_cams = function (str = null) {
 		case "KBOS":
 			return [
 				// "https://www.youtube.com/watch?v=vdd-TUP3cxs",
-				["https://www.youtube.com/watch?v=zmiOmpo27F8", "Skyline"],
+				["https://www.youtube.com/watch?v=FcpsdpQ0xKg", "Skyline"],
 				["https://www.youtube.com/watch?v=yXfcL7DqlR4", "Hanover"],
 				["https://www.youtube.com/watch?v=MhmTJQ7I_hU", "Nahant Bay"]
 			];
@@ -2294,7 +2291,7 @@ get_weather_cams = function (str = null) {
 		case "BTV":
 		case "KBTV":
 			return [
-				["https://www.youtube.com/watch?v=3NZYi-BCCDY","Airport South"],
+				["https://www.youtube.com/watch?v=3NZYi-BCCDY","Airport"],
 				["https://www.youtube.com/watch?v=JIE0vE51OKU","Lake Champlain"]
 			];
 			break;
@@ -2339,13 +2336,15 @@ get_weather_cams = function (str = null) {
 		case "CHS":
 		case "KCHS":
 			return [
-				["", ""]
-			]; // TODO
+				["https://g1.ipcamlive.com/player/player.php?alias=601979de6cf36", "Skyline"],
+				["https://g1.ipcamlive.com/player/player.php?alias=601976f6d043b", "Harbor"]
+			];
 			break;
 		case "CID":
 		case "KCID":
 			return [
-				["https://www.youtube.com/watch?v=5c5EZJ4tgHY", "Muscatine"]
+				["https://www.youtube.com/watch?v=5c5EZJ4tgHY", "Muscatine"],
+				["http://mesonet.agron.iastate.edu/data/camera//640x480/KCRG-001.jpg", "Skyline Capture"]
 			]; // TODO
 			break;
 		case "CLE":
@@ -2361,7 +2360,7 @@ get_weather_cams = function (str = null) {
 		case "CLT":
 		case "KCLT":
 			return [
-				["", ""]
+				["https://www.sixflags.com/carowinds/live-video", "Carowinds"]
 			]; // TODO
 			break;
 		case "CMH":
@@ -2411,7 +2410,7 @@ get_weather_cams = function (str = null) {
 		case "KCYS":
 			return [
 				["", ""]
-			]; // TODO
+			];
 			break;
 		case "DAB":
 		case "KDAB":
@@ -2435,7 +2434,8 @@ get_weather_cams = function (str = null) {
 		case "KDCA":
 			return [
 				["https://www.fox5dc.com/skycam-washington-dc-at-the-wharf", "Airport"],
-				["https://www.youtube.com/watch?v=1wV9lLe14aU", "Potomac"]
+				["https://www.youtube.com/watch?v=1wV9lLe14aU", "Potomac"],
+				["https://www.youtube.com/watch?v=Fu8vYoIkaeM", "White House"]
 			];
 			break;
 		case "DEN":
@@ -2473,8 +2473,8 @@ get_weather_cams = function (str = null) {
 		case "DTW":
 		case "KDTW":
 			return [
-				["", ""]
-			]; // TODO
+				["https://www.youtube.com/watch?v=lo5OtAdWC2s", "Skyline"]
+			];
 			break;
 		case "ECP":
 		case "KECP":
@@ -2520,6 +2520,7 @@ get_weather_cams = function (str = null) {
 				["https://www.youtube.com/watch?v=Y5ypYTZs-7o", "Marina"],
 				["https://www.youtube.com/watch?v=HDlmUp4JBLg", "South Point"],
 				["https://www.youtube.com/watch?v=_RxQuhI8_TY", "Big Pine Key"]
+				// ["https://www.keywestharborwebcam.com/", "Harbor"]
 			]; // TODO
 			break;
 		case "FAR":
@@ -2537,8 +2538,8 @@ get_weather_cams = function (str = null) {
 		case "FCA":
 		case "KGPI":
 			return [
-				["", ""]
-			]; // TODO
+				["https://redeagleaviation.com/live/", "Airport"]
+			];
 			break;
 		case "FLL":
 		case "KFLL":
@@ -2565,6 +2566,12 @@ get_weather_cams = function (str = null) {
 		case "KFSD":
 			return [
 				["https://media.psg.nexstardigital.net/kelo/livecams/siouxfallsfallspark.html", "Skyline"]
+			];
+			break;
+		case "FWA":
+		case "KFWA":
+			return [
+				["https://www.youtube.com/watch?v=ic6mrwpirac", "Skyline"]
 			];
 			break;
 		case "GEG":
@@ -2615,15 +2622,10 @@ get_weather_cams = function (str = null) {
 				["", ""]
 			]; // TODO
 			break;
-		case "GRU":
-		case "SBGR":
-			return [
-				["https://www.youtube.com/watch?v=9d4EvAwTw1A", "Airport"]
-			];
 		case "GSO":
 		case "KGSO":
 			return [
-				["", ""]
+				["https://www.youtube.com/watch?v=7WR9X_SyPeI", "Reidsville"]
 			]; // TODO
 			break;
 		case "GSP":
@@ -2677,8 +2679,8 @@ get_weather_cams = function (str = null) {
 		case "IAH":
 		case "KIAH":
 			return [
-				["", ""]
-			]; // TODO
+				["https://www.youtube.com/watch?v=SDK_m1_BVJ4", "Skyline"]
+			];
 			break;
 		case "ICT":
 		case "KICT":
@@ -2695,8 +2697,9 @@ get_weather_cams = function (str = null) {
 		case "ILM":
 		case "KILM":
 			return [
-				["https://www.youtube.com/watch?v=itXoEFJZtD0","Mercer Pier South"],
-				["https://www.youtube.com/watch?v=yQG1M1GU_pI","Mercer Pier North"]
+				["https://www.youtube.com/watch?v=itXoEFJZtD0", "Mercer Pier South"],
+				["https://www.youtube.com/watch?v=yQG1M1GU_pI", "Mercer Pier North"],
+				["https://www.youtube.com/watch?v=lcANlrXCR0Q", "Bald Head Island"]
 			];
 			break;
 		case "IND":
@@ -2708,8 +2711,8 @@ get_weather_cams = function (str = null) {
 		case "JAC":
 		case "KJAC":
 			return [
-				["", ""]
-			]; // TODO
+				["https://www.youtube.com/watch?v=U2Zgr0nJxxg", "Flat Creek"]
+			];
 			break;
 		case "JAN":
 		case "KJAN":
@@ -2755,8 +2758,9 @@ get_weather_cams = function (str = null) {
 		case "LBB":
 		case "KLBB":
 			return [
-				["", ""]
-			]; // TODO
+				["https://www.depts.ttu.edu/geosciences/atmo/livewebcam.php", "Texas Tech"],
+				["https://www.everythinglubbock.com/lubbock-skyview/", "Skyline"]
+			];
 			break;
 		case "LCH":
 		case "KLCH":
@@ -2912,6 +2916,7 @@ get_weather_cams = function (str = null) {
 		case "KMSP":
 			return [
 				["https://www.youtube.com/watch?v=FY6WlMjzG2U", "Airport"],
+				["https://www.earthcam.com/usa/minnesota/saintpaul/?cam=stpaul", "Skyline"],
 				["https://www.youtube.com/watch?v=FTC8ZYHJMuw", "Prescott"]
 			];
 			break;
@@ -2936,10 +2941,12 @@ get_weather_cams = function (str = null) {
 		case "MYR":
 		case "KMYR":
 			return [
-				["https://www.youtube.com/watch?v=Sf8GYK93u5o", "Beach"],
+				["https://www.youtube.com/watch?v=MAPDh0XDtZs", "Beach1"],
+				["https://www.youtube.com/watch?v=Sf8GYK93u5o", "Beach2"],
+				["https://www.youtube.com/watch?v=GKOyGoRE0Tg", "Beach3"],
 				["https://www.youtube.com/watch?v=UKtfCDXhCq0", "Boardwalk"],
-				["https://www.youtube.com/watch?v=EaYwBsJERv0", "Surfside Beach 1"],
-				["https://www.youtube.com/watch?v=PdudbIiVIKQ", "Surfside Beach 2"]
+				["https://www.youtube.com/watch?v=EaYwBsJERv0", "Surfside1"],
+				["https://www.youtube.com/watch?v=PdudbIiVIKQ", "Surfside2"]
 			];
 			break;
 		case "OKC":
@@ -2970,8 +2977,8 @@ get_weather_cams = function (str = null) {
 		case "ORF":
 		case "KORF":
 			return [
-				["", ""]
-			]; // TODO
+				["https://www.cruisingearth.com/port-webcams/united-states/norfolk-virginia/", "Skyline"]
+			];
 			break;
 		case "PAE":
 		case "KPAE":
@@ -3039,7 +3046,8 @@ get_weather_cams = function (str = null) {
 		case "PSM":
 		case "KPSM":
 			return [
-				"https://www.youtube.com/watch?v=hYnWDuvXXvc"
+				["https://www.youtube.com/watch?v=LkZZTkRHLVQ", "Skyline"],
+				["https://www.youtube.com/watch?v=catvjIWNrZg", "York Harbor"]
 			];
 			break;
 		case "PSP":
@@ -3051,19 +3059,21 @@ get_weather_cams = function (str = null) {
 		case "PUB":
 		case "KPUB":
 			return [
-				["", ""]
-			]; // TODO
+				["https://www.youtube.com/watch?v=k0QE6L26Ipg", "Skyline"]
+			];
 			break;
 		case "PVD":
 		case "KPVD":
 			return [
+				["https://control.videolinq.com/public/e4McLghM", "Skyline"]
 				// ["https://www.youtube.com/watch?v=sp-FHZY95QM", "Nantucket"]
-			]; // TODO
+			];
 			break;
 		case "PWM":
 		case "KPWM":
 			return [
 				["https://www.youtube.com/watch?v=-acfCP1ks-c", "Downtown"],
+				["https://www.youtube.com/watch?v=rArvNLNmhOo", "Skyline"],
 				["https://www.youtube.com/watch?v=4muj2V_WCPw", "Old Orchard Beach"]
 			];
 			break;
@@ -3082,8 +3092,9 @@ get_weather_cams = function (str = null) {
 		case "RDU":
 		case "KRDU":
 			return [
+				["https://www.wral.com/video/city-of-raleigh-museum-north/19388560/", "Skyline"],
 				["https://www.youtube.com/watch?v=qy3TCN2abFc", "KLHZ Airport"]
-			]; // TODO
+			];
 			break;
 		case "RFD":
 		case "KRFD":
@@ -3146,7 +3157,7 @@ get_weather_cams = function (str = null) {
 		case "SAV":
 		case "KSAV":
 			return [
-				["", ""]
+				["https://www.youtube.com/watch?v=QIJku1LZGRE", "Hilton Head"]
 			]; // TODO
 			break;
 		case "SBA":
@@ -3158,7 +3169,7 @@ get_weather_cams = function (str = null) {
 		case "SBN":
 		case "KSBN":
 			return [
-				["", ""]
+				["https://www.earthcam.com/usa/indiana/notredame/?cam=notredame", "UND"]
 			]; // TODO
 			break;
 		case "SBP":
@@ -3176,7 +3187,8 @@ get_weather_cams = function (str = null) {
 		case "SEA":
 		case "KSEA":
 			return [
-				["https://www.youtube.com/watch?v=2eFJG4Uu0wI", "Airport"],
+				["https://www.youtube.com/watch?v=2eFJG4Uu0wI", "Airport1"],
+				["https://www.youtube.com/watch?v=p0ymA8WpMnI", "Airport2"],
 				["https://www.youtube.com/watch?v=4cgSE12k9Sc", "Skyline"]
 			];
 			break;
@@ -3239,13 +3251,16 @@ get_weather_cams = function (str = null) {
 		case "SRQ":
 		case "KSRQ":
 			return [
+				["https://www.youtube.com/watch?v=5w4LxEunMhg", "Siesta Key"],
 				["https://www.youtube.com/watch?v=EmHLP80PMU0", "Anna Maria Island"]
 			]; // TODO
 			break;
 		case "STL":
 		case "KSTL":
 			return [
-				["https://www.ksdk.com/airport-cam", "Airport"]
+				// ["https://www.ksdk.com/airport-cam", "Airport"],
+				["https://www.youtube.com/watch?v=o4_Ldr0hyBA", "Airport],
+				["https://www.earthcam.com/usa/missouri/stlouis/?cam=arch_riverview", "Skyline"]
 			];
 			break;
 		case "STS":
@@ -3275,7 +3290,8 @@ get_weather_cams = function (str = null) {
 		case "TPA":
 		case "KTPA":
 			return [
-				["", ""]
+				["https://www.porttampawebcam.com/", "Skyline"],
+				["https://www.youtube.com/watch?v=QvNWCIOaB4Y", "Tampa U"]
 			]; // TODO
 			break;
 		case "TUL":
@@ -3434,10 +3450,47 @@ get_weather_cams = function (str = null) {
 				["https://www.youtube.com/watch?v=_ZXMjk5K0_s", "Eagle Beach"]
 			];
 			break;
+		case "BDA":
+		case "TXKF":
+			return [
+				["https://www.youtube.com/watch?v=ninudy1Bxso", "Nonsuch Island"]
+			];
+			break;
+		case "BGI":
+		case "TBPB":
+			return [
+				["https://www.youtube.com/watch?v=T7jHPxgz46M", "Airport"]
+			];
+			break;
 		case "CUN":
 		case "MMUN":
 			return [
 				["https://www.youtube.com/watch?v=tlRVK1opGXo", "Royal Sands"]
+			];
+			break;
+		case "GIG":
+		case "SBGL":
+			return [
+				["https://www.youtube.com/watch?v=BQGmkdwlilw", "Airport"]
+			];
+			break;
+		case "GRU":
+		case "SBGR":
+			return [
+				["https://www.youtube.com/watch?v=9d4EvAwTw1A", "Airport1"],
+				["https://www.youtube.com/watch?v=n_rQoHWh9NY", "Airport2"],
+				["https://www.youtube.com/watch?v=l7HDcRfXrBk", "Airport3"]
+			];
+		case "GUA":
+		case "MGGT":
+			return [
+				["https://www.youtube.com/watch?v=z_I152IMqI8", "Skyline"]
+			];
+			break;
+		case "HMO":
+		case "MMHO":
+			return [
+				["https://www.aeroclubguatemala.com/ftpcamaras/cam55.jpg?1669142093183", "Airport Still Frame"]
 			];
 			break;
 		case "KIN":
@@ -3447,24 +3500,50 @@ get_weather_cams = function (str = null) {
 				["https://www.youtube.com/watch?v=1nWP1fjBY94", "Harbor2"]
 			];
 			break;
+		case "MEX":
+		case "MMMX":
+			return [
+				["https://www.youtube.com/watch?v=q3-BEgRfrdY", "Popocatepetl"]
+			];
+			break;
+		case "PVR":
+		case "MMPR":
+			return [
+				["https://www.youtube.com/watch?v=RY3iDXftbMc", "Beach"]
+			];
+			break;
 		case "SAL":
 		case "MSLP":
 			return [
 				["https://www.youtube.com/watch?v=IitNHCLLeA8", "Skyline"]
 			];
 			break;
+		case "SJO":
+		case "MROC":
+			return [
+				["https://www.camarasvialescr.com/camara/7dqfijhjTR1FJm9zlbdt/alajuela-ruta-1-vista-aeropuerto-juan-santamaria", "Airport"]
+			];
+			break;
+		case "STX":
+		case "TISX":
+			return [
+				["https://www.youtube.com/watch?v=II9_tyn1HDI", "Harbor"]
+			];
+			break;
 		case "SXM":
 		case "TNCM":
 			return [
-				["https://www.youtube.com/watch?v=LtzkkAeW_Qg", "Airport"],
+				["https://www.youtube.com/watch?v=2IQmpCXbOmM", "Airport"],
+				["https://www.sxmislandcam.com/", "Skyline"],
 				["https://www.youtube.com/watch?v=aBpnLhWvW3A", "Little Bay"],
-				// ["https://www.youtube.com/watch?v=rEg487yY9ko", "Simpson Bay"],
 				["https://www.youtube.com/watch?v=525dNEryfQ4", "Simpson Bay"]
+				// ["https://www.youtube.com/watch?v=rEg487yY9ko", "Simpson Bay"],
 			];
 			break;
 		case "ZIH":
 		case "MMZH":
 			return [
+				["https://www.youtube.com/watch?v=GOpxYKqloPg", "Skyline"],
 				["https://www.youtube.com/watch?v=WXi5sp4hZ0k", "Marina"]
 			];
 			break;
@@ -3491,10 +3570,22 @@ get_weather_cams = function (str = null) {
 				["https://www.youtube.com/watch?v=muA0CLPmna4", "Phibsboro"]
 			];
 			break;
+		case "FCO":
+		case "LIRF":
+			return [
+				["https://www.youtube.com/watch?v=KB3f4zmkqcM", "Mt. Etna"]
+			];
+			break;
 		case "GOA":
 		case "LIMJ":
 			return [
 				["https://www.youtube.com/watch?v=Mw2R0FV7FP8", "Moneglia"]
+			];
+			break;
+		case "NAP":
+		case "LIRN":
+			return [
+				["https://www.youtube.com/watch?v=KB3f4zmkqcM", "Mt. Etna"]
 			];
 			break;
 
@@ -3515,7 +3606,8 @@ get_weather_cams = function (str = null) {
 		case "HNL":
 		case "PHNL":
 			return [
-				["https://www.youtube.com/watch?v=jfPjRG7N58g", "Ala Moana"]
+				["https://www.youtube.com/watch?v=jfPjRG7N58g", "Ala Moana"],
+				["https://www.youtube.com/watch?v=7do5yOYetV0", "Beach"]
 			];
 			break;
 		case "NRT":
@@ -3531,6 +3623,7 @@ get_weather_cams = function (str = null) {
 				["https://www.youtube.com/watch?v=7pcL-0Wo77U", "Harbor2"],
 			];
 			break;
+
 	}
 	return [""];
 }
