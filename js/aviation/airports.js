@@ -3259,7 +3259,7 @@ get_weather_cams = function (str = null) {
 		case "KSTL":
 			return [
 				// ["https://www.ksdk.com/airport-cam", "Airport"],
-				["https://www.youtube.com/watch?v=o4_Ldr0hyBA", "Airport],
+				["https://www.youtube.com/watch?v=o4_Ldr0hyBA", "Airport"],
 				["https://www.earthcam.com/usa/missouri/stlouis/?cam=arch_riverview", "Skyline"]
 			];
 			break;
