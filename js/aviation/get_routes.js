@@ -7540,15 +7540,15 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-17-2025
 					result += "<!-- Verified with ATCSCC on 04-17-2025 -->";
 					break;
-				case "DFW": // MEM-DFW // Updated 07-17-2025
-					result += "<!-- Updated 07-17-2025 P -->";
+				case "DFW": // MEM-DFW // Updated 02-18-2026
+					result += "<!-- Updated 02-18-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMEM CHLDR5 ANSWA LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMEM PIEPE6 IBUFY MLU YUYUN BEREE3 KDFW\" readonly>";
-					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMEM NIKEI5 INAYO ECIGE FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KMEM CHLDR5 ANSWA MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMEM NIKEI5 INAYO ECIGE FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMEM PIEPE6 IBUFY MLU YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMEM ELVIS4 WONEE GEEYY J66 LIT WILBR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-17-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-18-2026
 					break;
 				case "MIA": // MEM-MIA // Updated 07-17-2025
 					result += "<!-- Updated 07-17-2025 P -->";
