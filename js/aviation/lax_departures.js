@@ -506,8 +506,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-02-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J96 CIM Q176 STL J24 VHP ROD J152 JST BOJID4 KPHL\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER Q114 LEONG MZV FWA J64 EWC JST BOJID4 KPHL\" readonly>";
-			// TODO ALL
-			// result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM ARG HITMN Q34 SITTR Q108 SIE CAMRN5 KJFK\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM MEMFS Q34 GVE PAATS4 KPHL\" readonly>";
 			result += "<br/><br/>North via FOD<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR BFF J94 ONL FOD DBQ J100 OBK GIJ J146 CXR EWC JST BOJID4 KPHL\" readonly>";
 			result += "<br/>South via LCH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J86 IAH J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
 			result += "<br/><br/>North via DLH: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR MBW RAP J158 ABR DLH J140 SSM BURWA TULEG DNY SPUDS7 KPHL\" readonly>";
@@ -534,8 +533,8 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>SPI<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX CLEEE PKE DRK J96 CIM SLN J24 MCI J80 SPI J80 VHP ROD J152 JST BOJID4 KPHL\" readonly>";
 			result += "<br/>VHP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX CLEEE PKE DRK J96 CIM SLN J24 MCI J80 VHP ROD J152 JST BOJID4 KPHL\" readonly>";
 			result += "<br/>VLKNN<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX CNERY BLH J169 TFD J50 SSO J4 EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-01-2026
-			result += "<!-- Verified with ATCSCC on 02-01-2026 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-18-2026
+			result += "<!-- Verified with ATCSCC on 02-18-2026 -->";
 			result += "<br/>AD<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX TCATE IPL MXL AMUDI IMEXA AGNID OBGIY SLENA PSX HOODO BOWFN LEV SJI J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
 			result += "<br/>AM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX TCATE IPL MXL AMUDI IMEXA JALIL VOKOM MRF JCT J86 IAH J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
 			result += "<br/>B1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR MBW RAP RWF J34 BAE J34 DJB EWC JST BOJID4 KPHL\" readonly>"; // BAE 1
