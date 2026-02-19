@@ -356,6 +356,24 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN PGS J64 HEC J6 PMD J65 LANDO TTE ALTTA9 KFAT\" readonly>";
 			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED J6 PMD J65 LANDO TTE ALTTA9 KFAT\" readonly>";
 			break;
+		case "FLL": // PHX-FLL // Updated 02-18-2026
+			result += "<!-- Updated 02-18-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 02-18-2026
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J2 FST J86 LEV Y290 OCHHO VNECK TEEKY3 KFLL\" readonly>";
+			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP Q4 CLL KH03G LSU J2 DEFUN TEEKY3 KFLL\" readonly>";
+			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO TCC J6 IRW J14 LIT JMUCK LDK MGM ACORI TEEKY3 KFLL\" readonly>";
+			result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J86 FST J138 SAT MUSYL KELPP ALGAE MINOW M580 MARCI TEEKY3 KFLL\" readonly>";
+			result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J86 FST KH87A CRP PEGLG ALGAE MINOW M580 MARCI TEEKY3 KFLL\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-18-2026
+			result += "<!-- Verified with ATCSCC on 02-18-2026 -->";
+			result += "<br/>BR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX J74 TXO J72 SPS J58 AEX J50 CEW J2 DEFUN TEEKY3 KFLL\" readonly>";
+			result += "<br/>EC<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J50 ABI J50 CEW J2 DEFUN TEEKY3 KFLL\" readonly>";
+			result += "<br/>FR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FORPE1 SJN J74 TXO J72 SPS J58 AEX J50 CEW J2 DEFUN TEEKY3 KFLL\" readonly>";
+			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA GUP J8 FTI J58 AEX J50 CEW J2 DEFUN TEEKY3 KFLL\" readonly>";
+			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 JARPA GUP J8 FTI J58 AEX J50 CEW J2 DEFUN TEEKY3 KFLL\" readonly>";
+			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J50 ABI J50 CEW J2 DEFUN TEEKY3 KFLL\" readonly>";
+			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM CNX J74 TXO J72 SPS J58 AEX J50 CEW J2 DEFUN TEEKY3 KFLL\" readonly>";
+			break;
 		case "GEG": // PHX-GEG // Updated 04-30-2025 // Mandatory Routes checked
 			result += "<!-- Updated 04-30-2025 PCM -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
