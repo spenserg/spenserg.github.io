@@ -772,18 +772,18 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q109 PANDY RAPZZ Q135 RREGG CVI DRONE DRONE2 KORF\" readonly>";
 			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO GARIC ISO DRONE2 KORF\" readonly>";
 			break;
-		case "PDX": // MIA-PDX // Updated 06-01-2025
-			result += "<!-- Updated 06-01-2025 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-01-2025
-			result += "<br/><br/>OW: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV J58 AEX EIC J20 IRW MMB LAA J52 OCS J163 BOI J15 IMB JOTBA HHOOD5 KPDX\" readonly>";
-			result += "<br/><br/>Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 MEMFS RZC ICT J182 GLD J80 FQF J20 PIH J54 BOI J15 IMB JOTBA HHOOD5 KPDX\" readonly>";
-			result += "<br/>North: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM HLV OVR ONL Q152 WEDAK PDT JORAD HHOOD5 KPDX\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV J86 BAVPE CORKR Q35 IMB JOTBA HHOOD5 KPDX\" readonly>";
-			result += "<br/><br/>South/Non OW: <input style=\"width:75%\"; value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 IAH J86 BAVPE CORKR Q35 IMB JOTBA HHOOD5 KPDX\" readonly>";
-			result += "<br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW HRVLK KELPP LCHLH MUSYL SAT J138 FST J86 BAVPE CORKR Q35 IMB JOTBA HHOOD5 KPDX\" readonly>";
-			result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP KH87A FST J2 ELP J86 BAVPE CORKR Q35 IMB JOTBA HHOOD5 KPDX\" readonly>";
+		case "PDX": // MIA-PDX // Updated 02-20-2026
+			result += "<!-- Updated 02-20-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 02-20-2026
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV EIC J20 IRW LBL LAA J52 HGO OCS J163 BOI J15 IMB JOTBA HHOOD5 KPDX\" readonly>";
+			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW J50 MCB KF15G UKW Q154 BYI BOI J15 IMB JOTBA HHOOD5 KPDX\" readonly>";
+			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 MEMFS ICT J182 GLD CKW J54 BOI J15 IMB JOTBA HHOOD5 KPDX\" readonly>";
+			result += "<br/><br/>North via ONL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM HLV OVR ONL Q152 WEDAK PDT JORAD HHOOD5 KPDX\" readonly>";
+			result += "<br/>South via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV J86 BAVPE CORKR Q35 IMB JOTBA HHOOD5 KPDX\" readonly>";
+			result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE KELPP MUSYL SAT J138 FST J86 BAVPE CORKR Q35 IMB JOTBA HHOOD5 KPDX\" readonly>";
+			result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP KH87A FST J86 BAVPE CORKR Q35 IMB JOTBA HHOOD5 KPDX\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-31-2025
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-20-2026
 			break;
 		case "PHL": // MIA-PHL // Updated 05-31-2025
 			result += "<!-- Updated 05-31-2025 P -->";
