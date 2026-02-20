@@ -1081,17 +1081,18 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG TERGE SMUKE3 KIND\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MCB J35 MEM TERGE SMUKE3 KIND\" readonly>";
 			break;
-		case "JAC": // DFW-JAC // Updated 04-16-2025
-			result += "<!-- Updated 04-16-2025 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-16-2025
+		case "JAC": // DFW-JAC // Updated 02-19-2026
+			result += "<!-- Updated 02-19-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 02-19-2026
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH DBL OCS DNW KJAC\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\"; value=\"KDFW LOWGN8 ROLLS TOTOE GLD BFF JYMBO DNW KJAC\" readonly>";
-			result += "<br/>South via ABQ: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO J72 ABQ J15 JNC BPI KJAC\" readonly>";
-			result += "<br/>South via EWM: <input style=\"width:75%\" value=\"KDFW NELYN6 ACT INK J4 EWM RUTER J86 INW BCE J11 FFU HOMVA KJAC\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ADM MMB DVV CKW DNW KJAC\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE FTI J58 RSK J15 JNC BPI KJAC\" readonly>";
+			result += "<br/><br/>North via BFF<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 ZEMMA END HLC BFF DDY BOY DNW KJAC\" readonly>";
+			result += "<br/>South via ABQ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO J72 ABQ J15 JNC BPI KJAC\" readonly>";
+			result += "<br/><br/>South via ELP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT FST ELP RUTER J86 INW BCE J11 FFU HOMVA KJAC\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 PNH J17 TBE CHE CKW DNW KJAC\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-16-2025
-			result += "<!-- Verified with ATCSCC on 04-16-2025 -->";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-19-2026
 			break;
 		case "JAN": // DFW-JAN // Updated 04-16-2025
 			result += "<!-- Updated 04-16-2025 -->";
