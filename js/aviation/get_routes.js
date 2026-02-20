@@ -8535,7 +8535,7 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "PHX": // PDX-PHX // Updated 02-06-2026
 					result += "<!-- Updated 02-06-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 02-06-2026
-					result += "<br/><br/><input style=\"width:75%\" value=\"KPDX WHAMY5 IMB Q35 CORKR TENTS BRUSR1 KPHX\" readonly>";
+					result += "<br/><br/><input style=\"width:75%\" value=\"KPDX WHAMY5 KOATA Q35 CORKR TENTS BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX WHAMY5 IMB J15 RSK GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX CASCD4 PUHTS Q11 PAWLI Q13 WOTRO BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/>West via PMD<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX MINNE5 HISKU Q5 STIKM OAK J1 AVE J6 PMD J65 BLH HYDRR1 KPHX\" readonly>";
