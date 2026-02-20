@@ -4205,16 +4205,16 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/><input style=\"width:75%\" value=\"KDSM OTM BDF KORD\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-22-2026
 					break;
-				case "PHX": // DSM-PHX // Updated 05-16-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-16-2025 MP -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-16-2025
+				case "PHX": // DSM-PHX // Updated 02-19-2026
+					result += "<!-- Updated 02-19-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 02-19-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDSM LNK J146 GLD PUB ALS J102 GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDSM LNK J60 HCT J128 FQF DVC INW EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDSM LNK J60 HCT J128 FQF DVC INW EAGUL6 KPHX\" readonly>";
 					result += "<br/><b style=\"color:orange\">Expect reroute to GUP EAGUL6 KPHX on west side of weather.<\/b>";
-					result += "<br/>South: <input style=\"width:75%\"; value=\"KDSM STJ HUT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDSM LMN MCI J26 ICT TOTOE Q176 CIM J96 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDSM LNK J60 HCT J128 FQF J10 HBU RSK GUP BUNTR3 KPHX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-16-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-19-2026
 					break;
 			}
 		break; // End of DSM
@@ -8524,6 +8524,14 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-05-2026
 					break;
+				case "ORD": // PDX-ORD // Updated 02-20-2026
+					result += "<!-- Updated 02-20-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KPDX LAVAA7 PDT J16 MCW ZZIPR FYTTE7 ORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 SUNED FINUT DIPHU Q146 GEP J70 BAE LYNNI ERNNY8 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 PDT J20 FQF J80 MCI J26 IRK BENKY6 KORD\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-05-2026
 				case "PHX": // PDX-PHX // Updated 02-06-2026
 					result += "<!-- Updated 02-06-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 02-06-2026
