@@ -6523,7 +6523,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 02-20-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLAS NIITZ4 SSKEE GUP J72 TXO TURKI VKTRY2 KDFW\" readonly>";
-					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAS GIDGT3 TUKRR DVC HBU J28 GCK IRW IBAKE VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAS GIDGT3 TUKRR DVC HBU J28 GCK IRW IBAKE VKTRY2 KDFW\" readonly>";
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAS NIITZ4 SSKEE INW J86 ELP J50 INK GEEKY BOOVE7 KDFW\" readonly>";
 					// result += "<br/><br/>SW Arrival: <input style=\"width:75%\" value=\"KLAS NIITZ4 SSKEE GUP J72 ABQ J15 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
