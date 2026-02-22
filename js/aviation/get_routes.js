@@ -11070,7 +11070,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					break;
 				case "CLT": // SDF-CLT // Updated 02-13-2026
 					result += "<!-- Updated 02-13-2026 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL270):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSDF EEVAA1 SHIPR TAFTT PARQR4 KCLT\" readonly>";
 					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSDF LOKRD1 LOKRD CNTRY SKYWA FILPZ4 KCLT\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
