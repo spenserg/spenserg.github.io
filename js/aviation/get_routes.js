@@ -11849,15 +11849,15 @@ KPHL OOD TEBEE HAYDO TRPOD Q409 PUPYY KYYUU LUBBR3 KSRQ
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-06-2025
 					break; 
-				case "DFW": // SYR-DFW // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
+				case "DFW": // SYR-DFW // Updated 02-28-2026
+			result += "<!-- Updated 02-28-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSYR SYR GONZZ Q29 KLYNE PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KSYR SYR PTAKI STUBN AHTIY BURGS HNN LVT SQS YUYUN BEREE3 KDFW\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KSYR SYR KELTI HOCKE FNT J94 OBK MZV IRK RZC FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/>NW Arrival: <input style=\"width:75%\" value=\"KSYR SYR KELTI HOCKE FNT J94 OBK MZV IRK MCI ICT HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KSYR GONZZ Q29 KLYNE PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSYR SYR KELTI Q816 HOCKE Q824 FNT J94 OBK MZV SGF FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSYR PTAKI CNTER J59 PSB Q71 BOBBD VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/>North via MCW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSYR KELTI Q816 OMRAK Q935 MONEE DABJU J68 BAE J16 MCW OVR ICT HOFFF VKTRY2 KDFW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-07-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-28-2026
 					break;
 				case "LGA": // SYR-LGA // Updated 09-06-2025
 					result += "<!-- Updated 09-06-2025 P -->"
@@ -12073,9 +12073,9 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KTUL FSM FINGR9 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-10-2025
 					break;
-				case "TUL": // TUL-TUL // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
-					result += "<br/><br/><b>MTC FCF:</b>";
+				case "TUL": // TUL-TUL // Updated 02-28-2026
+					result += "<!-- Updated 02-28-2026 P -->";
+					result += "<br/><br/><b>Standard FCF:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTUL V73 FRAKS ICT HUSKA TUL KTUL\" readonly>";
 					result += "<br/><br/>40 Mins: <input style=\"width:75%\" value=\"KTUL ICT KTUL\" readonly>";
 					result += "<br/>50 Mins: <input style=\"width:75%\" value=\"KTUL V73 FRAKS ICT HUSKA TUL KTUL\" readonly>";
@@ -12225,15 +12225,15 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 
 		case "XNA":
 			switch(arvl) {
-				case "CLT": // XNA-CLT // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
+				case "CLT": // XNA-CLT // Updated 02-28-2026
+					result += "<!-- Updated 02-28-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KXNA RZC Q36 BNA TAZZA FILPZ4 KCLT\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\" value=\"KXNA MEM J41 VUZ BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KXNA HRO FAM J78 IIU TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KXNA SGF FAM J78 IIU TAFTT PARQR4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KXNA RZC LIT IZAAC Q30 VLKNN THRSR BESTT JONZE5 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KXNA RZC ARG BNA VXV LIINN3 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-28-2026
 					break;
 				case "DFW": // XNA-DFW // Updated 02-05-2026
 					result += "<!-- Updated 02-05-2026 P -->";
