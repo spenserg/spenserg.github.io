@@ -8639,7 +8639,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ Q68 YOCKY CUTRR PASLY5 KBNA\" readonly>"; // CDR PH
 					result += "<br/></br>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV J64 MAINE ROD MOSEY LOONE RYYMN3 KBNA\" readonly>"; // CDR 64
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 MRPIT CEELY Q172 YUTEE AHN JAGIR SWFFT3 KBNA\" readonly>";
-					result += "<br/><br/>DELMARVA 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 GUILD Q409 MRPIT CEELY Q172 YUTEE IRQ THRSR SWFFT3 KBNA\" readonly>";
+					result += "<br/><br/>DELMARVA 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 MRPIT CEELY Q172 YUTEE IRQ THRSR SWFFT3 KBNA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 ALEAN VXV SWFFT2 KBNA\"; readonly>"; // CDR 48
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-25-2026
@@ -8649,7 +8649,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>64<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV J64 MAINE ROD MOSEY LOONE RYYMN3 KBNA\" readonly>";
 					result += "<br/>75<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL STOEN Q75 GVE MOL J24 HVQ Q68 YOCKY CUTRR PASLY5 KBNA\" readonly>";
 					result += "<br/>80<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 AIR J80 CREEP MOSEY LOONE RYYMN3 KBNA\" readonly>";
-					result += "<br/>D1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 GUILD Q409 MRPIT CEELY Q172 YUTEE IRQ THRSR SWFFT3 KBNA\" readonly>"; // DELMARVA 1
+					result += "<br/>D1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 MRPIT CEELY Q172 YUTEE IRQ THRSR SWFFT3 KBNA\" readonly>"; // DELMARVA 1
 					result += "<br/>DQ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DQO BELAY MORTY FOXHL OTTTO Q80 DEWAK CUTRR PASLY5 KBNA\" readonly>";
 					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ Q68 YOCKY CUTRR PASLY5 KBNA\" readonly>";
 					break;
@@ -9102,7 +9102,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>LV<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL STOEN Q75 GVE LYH COLZI Q52 CHOPZ MGMRY SJI LEV BOWFN HOODO PSX CARTI HFMAN DLF KOBLE MRF ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ Q68 RAMRD ARG FSM IRW PNH J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/>P2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 ALEAN Q66 LITTR KOMMA IRW J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
-					result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 STL J134 ICT LBL CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 STL Q176 ICT LBL CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					break;
 				case "LGA": // PHL-LGA // Updated 03-03-2025
 					result += "<!-- Updated 03-03-2025 -->";
