@@ -93,7 +93,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 02-28-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX FORPE1 ABQ FTI J18 MZV J87 JOT J146 GIJ J554 JHW Q82 PONCT JFUND2 KBOS\" readonly>";
-			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK J64 PUB SKWYR Q90  WELKY MZV J87 JOT J146 GIJ J554 JHW Q82 PONCT JFUND2 KBOS\" readonly>"; // Based on CDR MR
+			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK J64 PUB SKWYR Q90 WELKY MZV J87 JOT J146 GIJ J554 JHW Q82 PONCT JFUND2 KBOS\" readonly>"; // Based on CDR MR
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE EWM J66 ABI J4 FUZ UIM ELD IZAAC Q30 VLKNN THRSR TWOUP Q22 RBV Q419 JFK ROBUC3 KBOS\" readonly>"; // CDR EC
 			result += "<br/><br/>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK FQF YANKI J114 ONL J148 MCW J16 BAE J68 DABJU MONEE Q935 PONCT JFUND2 KBOS\" readonly>";
 			result += "<br/>South via IAH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J86 IAH J2 LCH J138 SJI Q56 CATLN Q22 RBV Q419 JFK ROBUC3 KBOS\" readonly>";
@@ -559,7 +559,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 ONM ACH LBL ICT ZOURA WUTNG3 KMCI\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 ONM ACH LBL ICT ZOURA WUTNG3 KMCI\" readonly>";
 			break;
-		case "MCO":  // PHX-MCO // Updated 02-14-2026
+		case "MCO": // PHX-MCO // Updated 02-14-2026
 			result += "<!-- Updated 02-14-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-07-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KPHX ECLPS1 PHASE ELP J2 JCT J86 LEV Y280 CHRGE PRICY4 KMCO\" readonly>";
