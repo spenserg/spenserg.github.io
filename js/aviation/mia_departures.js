@@ -972,7 +972,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 05-31-2025 -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><br/>OW: <input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV J58 SPS NOSEW Q154 HOVEL BKE PDT CHINS5 KSEA\" readonly>";
-			result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW J50 MCB EIC J20 IRW J98 MMB LAA J52 OCS J20 PDT CHINS5 KSEA\" readonly>"; // CDR G0
+			result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 CEW J50 MCB EIC ADM MMB LAA J52 OCS J20 PDT CHINS5 KSEA\" readonly>"; // CDR G0
 			result += "<br/>North: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 VLKNN GETME J151 FAM IRK J151 BIL J136 MLP GLASR3 KSEA\" readonly>";
 			result += "<br/>South: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV J86 BAVPE CORKR Q35 IMB YKM CHINS5 KSEA\" readonly>";
 			result += "<br/><br/>South/Non OW: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 IAH J86 BAVPE CORKR Q35 IMB YKM CHINS5 KSEA\" readonly>";
