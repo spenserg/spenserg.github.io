@@ -7626,8 +7626,8 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMFE ELIZA V17 LRD J21 SAT GUTZZ BOOVE7 KDFW\" readonly>";
 					result += "<br/><b>To file below FL310 you must remove 'V17' and go direct ELIZA-LRD</b>";
-					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MFE CRP PSX TNV STUFT BEREE3 DFW\" readonly>";
-					result += "<br/><b style=\"color:orange\">If Kingsville SUA is active, fkeys will cap you at 7000. Use: KMFE KH69C CRP .. <\/b>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MFE KH69C CRP PSX TNV STUFT BEREE3 DFW\" readonly>";
+					result += "<br/><b>MFE direct CRP will cap at 7000 feet if Kingsville SUA is active<\/b>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MFE CRP SAT GUTZZ SOCKK4 DFW\" readonly>";
 					result += "<br/><br/>East via IAH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MFE CRP PSX J29 IAH CRIED BEREE3 KDFW\" readonly><\/b>";
 					result += "<br/>West via SJT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMFE ELIZA V17 LRD PIPPI RSG SJT GEEKY BOOVE7 KDFW\" readonly>";
@@ -11093,7 +11093,7 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "DFW": // SDF-DFW // Updated 08-29-2025
 					result += "<!-- Updated 08-29-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-17-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSDF GTGON1 TERGE ARG FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSDF GTGON1 TERGE ARG PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSDF GTGON1 TERGE PLESS J78 TUL KLAWW VKTRY2 KDFW\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSDF HIDEY1 RAMRD BNA MEM J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/>South via SQS<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSDF HIDEY1 RAMRD BNA Q32 CRAMM SQS YUYUN BEREE3 KDFW\" readonly>";
