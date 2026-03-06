@@ -7625,8 +7625,9 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 09-30-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMFE ELIZA V17 LRD J21 SAT GUTZZ BOOVE7 KDFW\" readonly>";
-					result += "<br/><b style=\"color:orange\">As of 12/9/24, to plan low level you must remove 'V17' and go direct ELIZA-LRD</b><br/><b style=\"color:orange\">(Fkeys doesnt allow planning V17 below FL310)</b>";
+					result += "<br/><b>To file below FL310 you must remove 'V17' and go direct ELIZA-LRD</b>";
 					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MFE CRP PSX TNV STUFT BEREE3 DFW\" readonly>";
+					result += "<br/><b style=\"color:orange\">If Kingsville SUA is active, fkeys will cap you at 7000. Use: KMFE KH69C CRP .. <\/b>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MFE CRP SAT GUTZZ SOCKK4 DFW\" readonly>";
 					result += "<br/><br/>East via IAH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MFE CRP PSX J29 IAH CRIED BEREE3 KDFW\" readonly><\/b>";
 					result += "<br/>West via SJT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMFE ELIZA V17 LRD PIPPI RSG SJT GEEKY BOOVE7 KDFW\" readonly>";
