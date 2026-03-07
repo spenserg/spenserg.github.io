@@ -954,7 +954,7 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 05-31-2025 -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q118 GLAZR LEDDL1 KSDF\" readonly>"; // CDR H0
-			result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 WIGVO GLAZR LEDDL1 KSDF\" readonly>"; // CDR F0
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 WIGVO GLAZR LEDDL1 KSDF\" readonly>"; // CDR F0
 			result += "<br/><br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY SPA GLAZR LEDDL1 KSDF\" readonly>"; // CDR Z0
 			result += "<br/>West/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 REDFN Q105 HRV MCB J35 MEM BUMPY MBELL5 KSDF\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
