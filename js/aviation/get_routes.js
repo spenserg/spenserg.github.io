@@ -2486,7 +2486,7 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 				case "DFW": // COS-DFW // Updated 03-06-2026
 					result += "<!-- Updated 03-06-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 03-06-2026
-					result += "<br/><input style=\"width:75%\" value=\"KCOS BRESH EZEEE MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCOS BRESH EZEEE MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCOS BRK GCK PER HITUG SEEVR4 KDFW\" readonly>";
 					result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KCOS BRESH TBE TXO TURKI VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
