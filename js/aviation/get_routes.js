@@ -11447,14 +11447,14 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-21-2026
 					break;
-				case "ORD": // SMF-ORD // Updated 07-27-2025
-					result += "<!-- Updated 07-27-2025 P -->"
+				case "ORD": // SMF-ORD // Updated 03-11-2026
+					result += "<!-- Updated 03-11-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-27-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSMF RVRCT4 MACUS Q122 VIGGR MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSMF RVRCT4 RALEY MVA J198 ILC J80 MLF J28 PUB LAA J102 SLN J96 IRK BENKY6 KORD\" readonly>";
-					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSMF RVRCT4 MACUS BAM J32 ABR J70 BAE LYNNI ERNNY8 KORD\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSMF RVRCT4 MACUS Q122 KATES FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSMF RVRCT4 MACUS BAM J32 DPR J34 RWF HSTIN Q156 ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSMF RVRCT4 RALEY MVA J198 ILC J80 MLF J28 PUB LAA J102 SLN J96 IRK BENKY6 KORD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-27-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-11-2026
 					break;
 				case "PHX": // SMF-PHX // Updated 12-13-2025
 					result += "<!-- Updated 12-13-2025 P -->";
