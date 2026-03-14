@@ -642,15 +642,16 @@ KORD GIJ V55 DQN KDAY
 			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL BUM ICT KICT\" readonly>";
 			result += "<br/>2W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN STJ KICT\" readonly>";
 			break;
-		case "IAH": // ORD-IAH // Updated 01-22-2026
-			result += "<!-- Updated 01-22-2026 P -->";
-			result += "<br/><input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL LITTR Q33 SWEUP ZEEKK3 KIAH\" readonly>"; // CDR 0S
-			result += "<br/></br>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL J71 MEM J35 SQS AEX DOOBI3 KIAH\" readonly>"; // Based on CDR 3S
+		case "IAH": // ORD-IAH // Updated 03-14-2026
+			result += "<!-- Updated 03-14-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI FAM J137 LIT EDWAH Q33 SWEUP ZEEKK3 KIAH\" readonly>"; // CDR 2S
+			result += "<br/></br>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL J71 MEM J35 SQS AEX DOOBI3 KIAH\" readonly>"; // Based on CDR 3S			
 			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ MCI J25 TUL J87 CVE DRLLR5 KIAH\" readonly>"; // CDR W0
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD BACEN BLOKR BEKKI ENL J71 MEM J35 SQS AEX GESNR2 KIAH\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-22-2026
-			result += "<!-- Verified with ATCSCC on 01-22-2026 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-14-2026
+			result += "<!-- Verified with ATCSCC on 03-14-2026 -->";
 			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL LITTR Q33 SWEUP ZEEKK3 KIAH\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL FSM URH CVE DRLLR5 KIAH\" readonly>";
 			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ BUM J87 CVE DRLLR5 KIAH\" readonly>";
