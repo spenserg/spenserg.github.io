@@ -7527,6 +7527,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 02-01-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 03-11-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMDT HAR LDN AIROW CHSLY6 KCLT\" readonly>";
+					result += "<br/><b>As of 03-14-2026, mandatory route is different but both are ok to file<\/b>";
 					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMDT VINNY EMI GVE AIROW CHSLY6 KCLT\" readonly>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMDT HAR JST AIR LNDIZ PARQR4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
