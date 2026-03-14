@@ -1431,6 +1431,18 @@ KORD BACEN BLOKR BEKKI IMOUT MBELL5 KSDF
 			result += "<br/>K1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL IFI PNH J6 DRK HIMDU DSNEE6 KSNA\" readonly>";
 			result += "<br/>LP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J60 DVV ZAKRY Q114 NATEE DSNEE6 KSNA\" readonly>";
 			break;
+		case "SRQ": // ORD-SRQ // Updated 03-14-2026
+			result += "<!-- Updated 03-14-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI BANGZ2 KSRQ\" readonly>"; // CDR SB
+			result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE WIGVO Q77 TEUFL KYYUU LUBBR3 KSRQ\" readonly>"; // CDR 2E
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF MERDN DEFUN BANGZ2 KSRQ\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-14-2026
+			result += "<!-- Verified with ATCSCC on 03-14-2026 -->";
+			result += "<br/>2E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE WIGVO Q77 TEUFL KYYUU LUBBR3 KSRQ\" readonly>";
+			result += "<br/>4S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE RAMRD HITMN ACORI BANGZ2 KSRQ\" readonly>";
+			result += "<br/>SB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI BANGZ2 KSRQ\" readonly>";
+			break;
 		case "STL": // ORD-STL // Updated 02-19-2026
 			result += "<!-- Updated 02-19-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
