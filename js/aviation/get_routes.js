@@ -5081,17 +5081,17 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 					result += "<br/><br/>South/ZMP Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGEG GEG J52 DBS J175 LAR HLC SLN J96 IRK SHAIN2 KORD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-27-2025
-					break; 
-				case "PHX": // GEG-PHX // Updated 04-30-2025
-					result += "<!-- Updated 04-30-2025 MP -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-30-2025
-					result += "<br/><br/>Q73: <input style=\"width:75%\" value=\"KGEG ZATIP Q73 WINEN Q35 CORKR TENTS BRUSR1 KPHX\" readonly>";
+					break;
+				case "PHX": // GEG-PHX // Updated 03-14-2026
+					result += "<!-- Updated 03-14-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 03-14-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KGEG ZATIP Q73 WINEN Q35 CORKR TENTS BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGEG DOXIE LKT PATIO CORKR TENTS BRUSR1 KPHX\" readonly>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGEG GEG J153 REO MVA OAL J92 BLD WOTRO BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/>West/ZLC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGEG GEG J3 LKV J5 FMG J92 BLD WOTRO BRUSR1 KPHX\" readonly>";
 					result += "<br/>JUNIPER B Active<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KGEG GEG KS06G POWEL LKV J5 FMG J92 BLD WOTRO BRUSR1 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-30-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-14-2026
 					break;
 			}
 		break; // End of GEG
