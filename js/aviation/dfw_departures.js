@@ -828,16 +828,16 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT KFSM\" readonly>";
 			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD CDS BFV IRW KFSM\" readonly>";
 			break;
-		case "GEG": // DFW-GEG // Updated 04-15-2025
-			result += "<!-- Updated 04-15-2025 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-15-2025
-			result += "<br/><br/>HUDAD/NRP: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 PUB CHE OCS J52 GEG KGEG\" readonly>";
-			result += "<br/>LOWGN/NRP<input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE LAA J52 FQF CKW DBS MLP HILIE3 KGEG\" readonly>";
-			result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK CYS J13 BIL J136 MLP HILIE3 KGEG\" readonly>";
-			result += "<br/>South: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH CIM ALS J206 HBU J240 MTU TCH J15 BOI J517 KGEG\" readonly>";
-			result += "<br/>West: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH Q130 REANA ELY J523 REO J153 KGEG\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-15-2025
-			result += "<!-- Verified with ATCSCC on 04-15-2025 -->";
+		case "GEG": // DFW-GEG // Updated 03-14-2026
+			result += "<!-- Updated 03-14-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-14-2026
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 PUB CHE J163 OCS J52 GEG KGEG\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK DUUZE Q150 GANNE DLN MLP HILIE3 KGEG\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE FTI J58 MLF ELY J523 REO J153 GEG KGEG\" readonly>";
+			result += "<br/><br/>North via HLC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 ZEMMA END HLC BFF BIL J34 HLN MLP HILIE3 KGEG\" readonly>";
+			result += "<br/>South via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK J50 ELP J86 BAVPE CORKR Q35 WINEN Q73 ZATIP GEG KGEG\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-14-2026
 			break;
 		case "GGG": // DFW-GGG // Updated 04-15-2025
 			result += "<!-- Updated 04-15-2025 -->";
@@ -1997,21 +1997,21 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC MOOCH MBELL5 KSDF\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MCB J35 MEM BUMPY MBELL5 KSDF\" readonly>";
 			break;
-		case "SEA": // DFW-SEA // Updated 03-04-2026
-			result += "<!-- Updated 03-04-2026 P -->";
+		case "SEA": // DFW-SEA // Updated 03-14-2026
+			result += "<!-- Updated 03-14-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>";
 			// result += "<br/><input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 FQF J20 PDT CHINS5 KSEA\" readonly>"; // CDR 0P
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH KD48U MTU OGD PDT CHINS5 KSEA\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK DUUZE Q150 GANNE DBS J82 DNJ PDT CHINS5 KSEA\" readonly>";
-			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN BGS J66 EWM J4 SSO J50 TOTEC J11 DRK J92 LMT HAWKZ8 KSEA\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE FTI J58 MLF ELY J523 REO PDT CHINS5 KSEA\" readonly>";
 			result += "<br/><br/>North via BIL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 ZEMMA END HLC BFF BIL J34 HLN MLP GLASR3 KSEA\" readonly>";
 			result += "<br/>South via PMD<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN BGS J66 EWM Q2 HEDVI BLH J65 LANDO J6 AVE J189 LMT HAWKZ8 KSEA\" readonly>";
 			result += "<br/><br/>COWBOY WEST 1 (FL220 to JCT)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT FST CNM CME J15 BOI PDT CHINS5 KSEA\" readonly>";
 			result += "<br/>COWBOY WEST 2 (FL220 to SAT)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY SAT DLF FST CNM CME J15 BOI PDT CHINS5 KSEA\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 ROLLS LBL LAA DEN CKW BPI IDA DNJ J20 PDT CHINS5 KSEA\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-04-2026
-			result += "<!-- Verified with ATCSCC on 03-04-2026 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-14-2026
+			result += "<!-- Verified with ATCSCC on 03-14-2026 -->";
 			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 FQF J20 PDT CHINS5 KSEA\" readonly>";
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE FQF J20 PDT CHINS5 KSEA\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT J15 BOI PDT CHINS5 KSEA\" readonly>";
