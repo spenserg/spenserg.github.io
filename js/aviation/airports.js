@@ -1575,6 +1575,7 @@ convert_icao = function (str = null) {
 				case "GUA": return "MGGT";break;
 				case "GUC": return "KGUC";break;
 				case "GUM": return "PGUM";break;
+				case "GUS": return "KGUS";break;
 				case "GVA": return "LSGG";break;
 				case "GYE": return "SEGU";break;
 				case "HAM": return "EDDH";break;
@@ -1974,6 +1975,7 @@ get_fir = function (apt = "") {
 			case "KGSP": return "ZTL"; break;
 			case "KGTF": return "ZLC"; break;
 			case "KGUC": return "ZDV"; break;
+			case "KGUS": return "GUS"; break;
 			case "KHDN": return "ZDV"; break;
 			case "KHOU": return "ZHU"; break;
 			case "KHRL": return "ZHU"; break;
