@@ -1088,6 +1088,7 @@ convert_iata = function (str = null) {
 				case "MGGT": return "GUA";break;
 				case "KGUC": return "GUC";break;
 				case "PGUM": return "GUM";break;
+				case "KGUS": return "GUS";break;
 				case "LSGG": return "GVA";break;
 				case "SEGU": return "GYE";break;
 				case "EDDH": return "HAM";break;
@@ -1975,7 +1976,7 @@ get_fir = function (apt = "") {
 			case "KGSP": return "ZTL"; break;
 			case "KGTF": return "ZLC"; break;
 			case "KGUC": return "ZDV"; break;
-			case "KGUS": return "GUS"; break;
+			case "KGUS": return "ZAU"; break;
 			case "KHDN": return "ZDV"; break;
 			case "KHOU": return "ZHU"; break;
 			case "KHRL": return "ZHU"; break;
