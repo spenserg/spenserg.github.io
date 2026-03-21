@@ -5749,8 +5749,9 @@ KILM RDU BBDOL PAATS4 KPHL
 					break;
 				case "DFW": // IND-DFW // Updated 08-25-2025
 					result += "<!-- Updated 08-25-2025 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KIND OOM5 PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					// result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KIND OOM5 PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><b>Used to be pref route, now triggers mandatory route violation<\/b>";
 					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND ROCKY1 STL RZC FSM RRNET SEEVR4 KDFW\" readonly>"; // CDR PR
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND DAWNN1 MYS RAMRD Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>"; // CDR BG
 					result += "<br/><br/>North via JOT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND MEARZ7 BVT J89 CADIZ JOT MZV IRK J87 TUL HITUG SEEVR4 KDFW\" readonly>"; // CDR BT
