@@ -496,19 +496,20 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q118 THRSR Q79 SWAPP HAGAL GIIBS4 KIND\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR JOHNN Q118 THRSR Q79 SWAPP HAGAL GIIBS4 KIND\" readonly>";
 			break;
-		case "JAX": // MIA-JAX // Updated 07-20-2025
-			result += "<!-- Updated 07-20-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+		case "JAX": // MIA-JAX // Updated 03-21-2026
+			result += "<!-- Updated 03-21-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL270/290):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY ORL HAINY QUBEN2 KJAX\" readonly>"; // CDR F0
-			result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 KPASA HILIS TEBOW2 KJAX\" readonly>"; // CDR H2
+			result += "<br/><b style=\"color:orange\">Pref route flown at odd altitudes. Fkeys will try to file even<\/b>";
+			result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 KPASA HILIS TEBOW2 KJAX\" readonly>"; // CDR H0
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY ORL POGIE2 KJAX\" readonly>"; // CDR F1
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-20-2025
-			result += "<!-- Verified with ATCSCC on 07-20-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-21-2026
+			result += "<!-- Verified with ATCSCC on 03-21-2026 -->";
 			result += "<br/>F0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY ORL HAINY QUBEN2 KJAX\" readonly>";
 			result += "<br/>F1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY ORL POGIE2 KJAX\" readonly>";
 			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR HILIS TEBOW2 KJAX\" readonly>";
-			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA HILIS TEBOW2 KJAX\" readonly>";
+			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA HILIS TEBOW2 KJAX\" readonly>";
 			result += "<br/>K2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 KLADA UPACE ORL HAINY QUBEN2 KJAX\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR HILIS TEBOW2 KJAX\" readonly>";
 			break;
