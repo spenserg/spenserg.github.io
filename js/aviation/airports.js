@@ -110,8 +110,8 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>GJT - Run VAA above 25C";
 			break;
 		case "IAH":
-			result += "<br/><br/>IAH Flow: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East</button>";
-			// show_flow_info = "NW Rwy33: <br/>SE Rwy15: BNDTO, GUMBY, PITZZ<br/>ALL: FLYZA, INDIE, LURIC, MMUGS, RITAA, STRYA, STYCK, WYLSN";
+			result += "<br/><br/>IAH Landing: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West Rwy26</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East Rwy8</button>";
+			show_flow_info = "Landing East: GUMBY, PITZZ<br/>Landing West: MMUGS, BNDTO<br/>ALL: FLYZA, RITAA, STRYA, STYCK, WYLSN";
 			break;
 		case "JAC":
 			result += "<br/><br/>JAC - Tailwind or Contaminated Rwy takeoff N/A";
@@ -319,8 +319,8 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/>GUC Cold Temp chart below -26C";
 			break;
 		case "IAH":
-			result += "<br/><br/>IAH Flow: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East</button>";
-			show_flow_info = "East Rwy8/9: GUSHR<br/>West Rwy26/27: DRLLR";
+			result += "<br/><br/>IAH Landing: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West Rwy26</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East Rwy8</button>";
+			show_flow_info = "East Rwy8/9: GUSHR, NNCEE<br/>West Rwy26/27: DRLLR, LINKK";
 			break;
 		case "JAC":
 			result += "<br/><br/>JAC - Plan at least 5k spread between ferry fuel and mlw";
