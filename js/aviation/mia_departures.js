@@ -1326,6 +1326,14 @@ MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.CABLO.DCT.MEI.DCT.LIT.DCT.RZC.DCT.XNA
 			result += "<br/>W4<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UL577 CDO LRN UL343 SATOE GEECE TLPL\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP SUMAC Y421 MEEGL L466 GEECE TLPL\" readonly>";
 			break;
+		case "VQQ": // MIA-VQQ // Updated 03-22-2026
+			result += "<!-- Updated 03-22-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY ORL HAINY QUBEN2 KVQQ\" readonly>";
+			result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA DORRL ORL POGIE2 KVQQ\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-22-2026
+			
 		}
 	return result;
 }
