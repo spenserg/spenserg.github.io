@@ -1349,6 +1349,7 @@ convert_iata = function (str = null) {
 				case "LOWW": return "VIE";break;
 				case "LEVC": return "VLC";break;
 				case "KVPS": return "VPS";break;
+				case "KVQQ": return "VQQ";break;
 				case "MUVR": return "VRA";break;
 				case "SLVR": return "VVI";break;
 				case "UHWW": return "VVO";break;
@@ -1837,6 +1838,7 @@ convert_icao = function (str = null) {
 				case "VIE": return "LOWW";break;
 				case "VLC": return "LEVC";break;
 				case "VPS": return "KVPS";break;
+				case "VQQ": return "KVQQ";break;
 				case "VRA": return "MUVR";break;
 				case "VVI": return "SLVR";break;
 				case "VVO": return "UHWW";break;
@@ -2081,6 +2083,7 @@ get_fir = function (apt = "") {
 			case "KTVC": return "ZMP"; break;
 			case "KTYS": return "ZTL"; break;
 			case "KVPS": return "ZJX"; break;
+			case "KVQQ": return "ZJX"; break;
 			case "KXNA": return "ZME"; break;
 			case "KYKM": return "ZSE"; break;
 		}
