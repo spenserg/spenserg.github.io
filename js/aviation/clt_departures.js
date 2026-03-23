@@ -376,7 +376,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "DCA": // CLT-DCA // Updated 03-06-2026
 			result += "<!-- Updated 03-06-2026 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL330):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KILNS5 AUDII WAVES CAPSS3 KDCA\" readonly>"; // CDR RP
 			result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD SITTR TRUPS5 KDCA\" readonly>"; // CDR WE
 			result += "<br/><br/><b>Non RNAV</b>";
