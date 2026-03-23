@@ -374,14 +374,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>SK<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL SMKEY2 BOBBD Q71 KONGO Q34 GVE PHLBO4 KEWR\" readonly>";
 					result += "<br/>VR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL VRSTY3 NOKIE TWINS BLAAN Q99 QUART PHLBO4 KEWR\" readonly>";
 					break;
-				case "LAX": // ATL-LAX // Updated 05-21-2025
-					result += "<!-- Updated 05-21-2025 P -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-21-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KATL NASSA2 YAALL J14 PNH J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+				case "LAX": // ATL-LAX // Updated 03-23-2026
+					result += "<!-- Updated 03-23-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/>NRP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KATL NASSA2 YAALL J14 PNH J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR RP
 					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL PENCL2 JAACE BNA ARG OKM IFI EZEEE FTI GUP J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR PE
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KATL NASSA2 VUZ SQS J42 ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
-					result += "<br/><br/>North via STL<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL PENCL2 JAACE BNA J45 STL J24 MCI J80 HLC SKYWR Q90 DNERO ANJLL4 KLAX\" readonly>";
-					result += "<br/>South via LSU: <input style=\"width:75%\" value=\"KATL HAALO3 SARGE CEW J2 LSU ROKIT CLL Q4 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KATL NASSA2 NASSA VLKNN Q30 IZAAC ELD FUZ J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>North via STL<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL PENCL2 JAACE BNA J45 STL J24 MCI J80 HLC SKYWR Q90 DNERO ANJLL4 KLAX\" readonly>";  // Based on CDR PE
+					result += "<br/>South via LSU<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL HAALO3 SARGE CEW J2 LSU ROKIT CLL Q4 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+					/* TODO
 					result += "<br/><br/>ABI: <input style=\"width:75%\" value=\"KATL NASSA2 VUZ SQS J52 TXK J42 ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/>ELP: <input style=\"width:75%\" value=\"KATL POUNC2 GRGIA ARNNY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/>LEV WEST: <input style=\"width:75%\" value=\"KATL POUNC2 GRGIA ARNNY SJI LEV BOWFN HOODO PSX CARTI HFMAN DLF KOBLE MRF ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
@@ -391,8 +392,9 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>TUL 1: <input style=\"width:75%\" value=\"KATL CUTTN2 HANKO MEM ARG TUL MMB FTI J8 GUP J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KATL WEONE VUZ J14 PNH J78 DRK J231 TNP BASET5 KLAX\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-21-2025
-					result += "<!-- Verified with ATCSCC on 05-21-2025 -->";
+					*/
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-23-2026
+					result += "<!-- Verified with ATCSCC on 03-23-2026 -->";
 					result += "<br/>CU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL CUTTN2 HANKO GAD MEM PNH J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/>HA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL HAALO3 SARGE EUF ARNNY IGB LIT OKM IFI EZEEE FTI GUP J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/>PE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KATL PENCL2 JAACE BNA ARG OKM IFI EZEEE FTI GUP J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
