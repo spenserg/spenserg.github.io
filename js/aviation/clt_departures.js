@@ -654,17 +654,17 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>LL<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT LILLS3 LILLS FAY CHS ESENT LUNNI2 KJAX\" readonly>";
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ICONS5 NOOKS ESENT LUNNI2 KJAX\" readonly>";
 			break;
-		case "JFK": // CLT-JFK // Updated 04-28-2025 // Mandatory Routes checked
-			result += "<!-- Updated 04-28-2025 M -->";
+		case "JFK": // CLT-JFK // Updated 03-24-2026
+			result += "<!-- Updated 03-24-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT BARMY5 TYI Q64 SAWED Q108 SIE CAMRN5 KJFK\" readonly>"; // CDR RP
-			result += "<br/><b style=\"color:orange\">CDR RP is .. TYI ORF SAWED.. FAA Pref is ..TYI Q64 SAWED.. but its the same route<\/b>";
-			result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM DEDDY Y436 DIZNY WHOOS Y494 YAALE Y495 CAMRN CAMRN5 KJFK\" readonly>";
+			result += "<br/><b>CDR RP is .. TYI ORF SAWED.. FAA Pref is ..TYI Q64 SAWED.. but its the same route<\/b>";
+			result += "<br/><br/>East/Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KWEEN5 UNJAM DEDDY Y436 DIZNY WHOOS Y494 YAALE Y495 CAMRN CAMRN5 KJFK\" readonly>";
 			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD KLYNE Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>"; // CDR JJ
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KER4 MERIL TYI ORF RADDS SIE CAMRN5 KJFK\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-07-2025
-			result += "<!-- Verified with ATCSCC on 10-07-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-24-2026
+			result += "<!-- Verified with ATCSCC on 03-24-2026 -->";
 			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY5 BOBZY BRAYN REWET VXV FLM ROD KLYNE Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO5 JOJJO DOOGE Q93 OCASE ROD KLYNE Q29 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 TYI ORF SAWED Q108 SIE CAMRN5 KJFK\" readonly>";
