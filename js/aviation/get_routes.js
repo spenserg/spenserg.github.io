@@ -10477,9 +10477,9 @@ KILM RDU BBDOL PAATS4 KPHL
 
 		case "RNO":
 			switch(arvl) {
-				case "DFW": // RNO-DFW // Updated 11-22-2025
-					result += "<!-- Updated 11-22-2025 P -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 11-22-2025
+				case "DFW": // RNO-DFW // Updated 03-24-2026
+					result += "<!-- Updated 03-24-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 03-24-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KRNO ZEFFR9 PESKE MVA JSICA Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRNO ZEFFR9 BLKJK LLC J32 BAM J154 TCH J56 CHE FQF J20 LAA TOTOE MMB J98 IRW IBAKE VKTRY2 KDFW\" readonly>";
 					result += "<br/>South/ZLC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRNO ZEFFR9 PESKE OAL J92 BLD J72 TXO TURKI VKTRY2 KDFW\" readonly>";
@@ -10487,7 +10487,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><br/>DFW WEST: <input style=\"width:75%\" value=\"KRNO ZEFFR9 PESKE MVA MLF J28 ICT TUL HITUG SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KRNO RENO1 FMG J92 BLD J72 TXO TURKI UKW8 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-22-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-24-2026
 					break;
 				case "PHX": // RNO-PHX // Updated 02-08-2026
 					result += "<!-- Updated 02-08-2026 P -->";
