@@ -520,13 +520,13 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KIAH GUMBY3", "KIAH MMUGS4");
 						break;
 					case "JAC": // JAC South // Rwy19 // ALPIN/TETON
-						result = result.replaceAll("KJAC DIVYD2 HUKET IDA", "KJAC ALPIN4 IDA"); // HUKET via IDA first
-						result = result.replaceAll("KJAC DIVYD2 HUKET", "KJAC ALPIN4 IDA HUKET"); // All else HUKET via IDA
-						result = result.replaceAll("KJAC DIVYD2 DNW BPI", "KJAC ALPIN4 BPI");
-						result = result.replaceAll("KJAC DIVYD2 DNW", "KJAC ALPIN4 BPI"); // All Else
-						result = result.replaceAll("KJAC DIVYD2 BOY", "KJAC ALPIN4 BPI BOY");
-						result = result.replaceAll("KJAC DIVYD2 JEDHY BPI", "KJAC ALPIN4 BPI"); // BPI via JEDHY
-						result = result.replaceAll("KJAC DIVYD2 JEDHY", "KJAC ALPIN4 KICNE"); // All other JEDHY
+						result = result.replaceAll("KJAC DIVYD2 HUKET IDA", "KJAC ALPIN5 IDA"); // HUKET via IDA first
+						result = result.replaceAll("KJAC DIVYD2 HUKET", "KJAC ALPIN5 IDA HUKET"); // All else HUKET via IDA
+						result = result.replaceAll("KJAC DIVYD2 DNW BPI", "KJAC ALPIN5 BPI");
+						result = result.replaceAll("KJAC DIVYD2 DNW", "KJAC ALPIN5 BPI"); // All Else
+						result = result.replaceAll("KJAC DIVYD2 BOY", "KJAC ALPIN5 BPI BOY");
+						result = result.replaceAll("KJAC DIVYD2 JEDHY BPI", "KJAC ALPIN5 BPI"); // BPI via JEDHY
+						result = result.replaceAll("KJAC DIVYD2 JEDHY", "KJAC ALPIN5 KICNE"); // All other JEDHY
 						result = result.replaceAll("KJAC GEYSR6 DNW", "KJAC TETON3 KICNE");
 						break;
 					case "LAX": // LAX West // Rwy 24/25
@@ -734,10 +734,10 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KIAH MMUGS4", "KIAH GUMBY3");
 						break;
 					case "JAC": // JAC North // Rwy1 // DIVYD/GEYSR
-						result = result.replaceAll("KJAC ALPIN4 BPI BOY", "KJAC DIVYD2 BOY");
-						result = result.replaceAll("KJAC ALPIN4 BPI", "KJAC DIVYD2 JEDHY BPI");
-						result = result.replaceAll("KJAC ALPIN4 IDA", "KJAC DIVYD2 HUKET IDA");
-						result = result.replaceAll("KJAC ALPIN4 KICNE", "KJAC DIVYD2 JEDHY");
+						result = result.replaceAll("KJAC ALPIN5 BPI BOY", "KJAC DIVYD2 BOY");
+						result = result.replaceAll("KJAC ALPIN5 BPI", "KJAC DIVYD2 JEDHY BPI");
+						result = result.replaceAll("KJAC ALPIN5 IDA", "KJAC DIVYD2 HUKET IDA");
+						result = result.replaceAll("KJAC ALPIN5 KICNE", "KJAC DIVYD2 JEDHY");
 						result = result.replaceAll("KJAC TETON3 IDA HUKET", "KJAC DIVYD2 HUKET");
 						result = result.replaceAll("KJAC TETON3 IDA", "KJAC DIVYD2 HUKET IDA");
 						result = result.replaceAll("KJAC TETON3 KICNE", "KJAC DIVYD2 HUKET IDA");
