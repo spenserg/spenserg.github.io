@@ -427,19 +427,20 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>FP<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW ALLMA ISUZO CHECR STOCR4 KCLT\" readonly>";
 			result += "<br/>NJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEM BNA TAZZA FILPZ4 KCLT\" readonly>";
 			break;
-		case "CMH": // DFW-CMH // Updated 04-08-2025
-			result += "<!-- Updated 04-08-2025 -->";
+		case "CMH": // DFW-CMH // Updated 03-24-2026
+			result += "<!-- Updated 03-24-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV JUDDI JAKTZ2 KCMH\" readonly>";
-			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL VHP JADUB DUBLN1 KCMH\" readonly>";
-			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS BNA GETTA JAKTZ2 KCMH\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV GETTA JAKTZ2 KCMH\" readonly>"; // CDR 0P
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC SGF J8 STL J110 VHP JADUB DUBLN1 KCMH\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD Q32 HITMN Q139 GETTA JAKTZ2 KCMH\" readonly>";
+			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MCB J35 MEM J29 PXV GETTA JAKTZ2 KCMH\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 LIT MEM BWG HNN TASKE BREMN KCMH\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-08-2025
-			result += "<!-- Verified with ATCSCC on 04-08-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-24-2026
+			result += "<!-- Verified with ATCSCC on 03-24-2026 -->";
 			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV GETTA JAKTZ2 KCMH\" readonly>";
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG PXV GETTA JAKTZ2 KCMH\" readonly>";
-			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MCB J35 MEM J29 PXV GETTA JAKTZ2 KCMH\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MCB J35 MEM J29 PXV GETTA JAKTZ2 KCMH\" readonly>"; // COWBOY EAST 1 (FL230 to LCH)
 			break;
 		case "CNW": // DFW-CNW // Updated 03-07-2026
 			result += "<!-- Updated 03-07-2026 -->";
