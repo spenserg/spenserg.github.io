@@ -594,11 +594,11 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						break;
 					case "RNO": // RNO south // Rwy17
 						result = result.replaceAll("EELZA4", "KLUBS1");
-						result = result.replaceAll("ORRCA TARVR1 KRNO", "ORRCA ORRCA1 KRNO");
-						result = result.replaceAll("MVA TARVR1 KRNO", "MVA SCOLA1 KRNO");
-						result = result.replaceAll("SLEAT TARVR1 KRNO", "SLEAT KRNO");
-						result = result.replaceAll("KENNO TARVR1 KRNO", "KENNO SCOLA1 KRNO");
-						result = result.replaceAll("WADOL4 KRNO", "WINRZ4 KRNO");
+						result = result.replaceAll("ORRCA TARVR2 KRNO", "ORRCA ORRCA1 KRNO");
+						result = result.replaceAll("MVA TARVR2 KRNO", "MVA SCOLA1 KRNO");
+						result = result.replaceAll("SLEAT TARVR2 KRNO", "SLEAT KRNO");
+						result = result.replaceAll("KENNO TARVR2 KRNO", "KENNO SCOLA1 KRNO");
+						result = result.replaceAll("WADOL4 KRNO", "WINRZ1 KRNO");
 						// RNO SIDS
 						result = result.replaceAll("KRNO ALPYN1 YERIN","KRNO ZEFFR9 PESKE");
 						result = result.replaceAll("KRNO SPRKS1 FMG BLKJK","KRNO ZEFFR9 BLKJK");
@@ -652,10 +652,10 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						// result = result.replaceAll("KSLC FFU9 BCE", ""); // TODO
 						// result = result.replaceAll("KSLC FFU9 OAL", ""); // TODO
 						// STARS
-						result = result.replaceAll("EKR PITTT1 KSLC", "EKR RACER JAZZZ1 KSLC");
-						result = result.replaceAll("HELPR PITTT1 KSLC", "HELPR JAZZZ1 KSLC");
-						result = result.replaceAll("MLF PITTT1 KSLC", "MLF QWENN6 KSLC");
-						result = result.replaceAll("BCE PITTT1 KSLC", "BCE QWENN6 KSLC");
+						result = result.replaceAll("EKR PITTT2 KSLC", "EKR RACER JAZZZ1 KSLC");
+						result = result.replaceAll("HELPR PITTT2 KSLC", "HELPR JAZZZ1 KSLC");
+						result = result.replaceAll("MLF PITTT2 KSLC", "MLF QWENN6 KSLC");
+						result = result.replaceAll("BCE PITTT2 KSLC", "BCE QWENN6 KSLC");
 						break;
 					case "SMF": // SMF north // Rwy35
 						result = result.replaceAll("KSMF SCTWN4", "KSMF RVRCT4");
@@ -790,12 +790,12 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						break;
 					case "RNO": // RNO north Rwy35
 						result = result.replaceAll("KLUBS1 KRNO","EELZA4 KRNO");
-						result = result.replaceAll("ORRCA ORRCA1 KRNO","ORRCA TARVR1 KRNO");
-						result = result.replaceAll("MVA RYANN2 KRNO", "MVA TARVR1 KRNO");
-						result = result.replaceAll("MVA SCOLA1 KRNO", "MVA TARVR1 KRNO");
-						result = result.replaceAll("KENNO SCOLA1 KRNO", "KENNO TARVR1 KRNO");
-						result = result.replaceAll("WINRZ4 KRNO", "WADOL4 KRNO");
-						result = result.replaceAll("SLEAT KRNO", "SLEAT TARVR1 KRNO");
+						result = result.replaceAll("ORRCA ORRCA1 KRNO","ORRCA TARVR2 KRNO");
+						// result = result.replaceAll("MVA RYANN2 KRNO", "MVA TARVR2 KRNO");
+						result = result.replaceAll("MVA SCOLA1 KRNO", "MVA TARVR2 KRNO");
+						result = result.replaceAll("KENNO SCOLA1 KRNO", "KENNO TARVR2 KRNO");
+						result = result.replaceAll("WINRZ1 KRNO", "WADOL4 KRNO");
+						result = result.replaceAll("SLEAT KRNO", "SLEAT TARVR2 KRNO");
 						// RNO SIDS
 						result = result.replaceAll("KRNO WAGGE8 LLC","KRNO PVINE5 PYGOW LLC");
 						result = result.replaceAll("KRNO ZEFFR9 PESKE","KRNO ALPYN1 YERIN");
@@ -847,10 +847,10 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						// result = result.replaceAll("KSLC SEVYR3 MLF", ""); // TODO
 						result = result.replaceAll("KSLC SEVYR3 OAL", "KSLC DEZRT2 MVA");
 						// STARS
-						result = result.replaceAll("EKR RACER JAZZZ1 KSLC", "EKR PITTT1 KSLC");
-						result = result.replaceAll("RACER JAZZZ1 KSLC", "EKR PITTT1 KSLC");
-						result = result.replaceAll("HELPR JAZZZ1 KSLC", "HELPR PITTT1 KSLC");
-						result = result.replaceAll("QWENN6 KSLC", "PITTT1 KSLC");
+						result = result.replaceAll("EKR RACER JAZZZ1 KSLC", "EKR PITTT2 KSLC");
+						result = result.replaceAll("RACER JAZZZ1 KSLC", "EKR PITTT2 KSLC");
+						result = result.replaceAll("HELPR JAZZZ1 KSLC", "HELPR PITTT2 KSLC");
+						result = result.replaceAll("QWENN6 KSLC", "PITTT2 KSLC");
 						break;
 					case "SMF": // SMF south // Rwy17
 						result = result.replaceAll("KSMF RVRCT4", "KSMF SCTWN4");
