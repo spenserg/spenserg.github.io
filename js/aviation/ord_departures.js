@@ -960,28 +960,28 @@ KORD PMPKN NEATO DLLAN RONIC BAE KMSN
 KORD PMPKN NEATO DLLAN RONIC BAE DREAR KMSN
 */
 
-		case "MSP": // ORD-MSP // Updated 01-22-2026
-			result += "<!-- Updated 01-22-2026 P -->";
+		case "MSP": // ORD-MSP // Updated 03-24-2026
+			result += "<!-- Updated 03-24-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL290):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC KAMMA KKILR3 KMSP\" readonly>"; // CDR 0N
-			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE EAU9 KMSP\" readonly>"; // CDR 5N
-			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MYKIE MONNY MNOSO BLUEM4 KMSP\" readonly>"; // CDR 1W
-			result += "<br/><br/>MSP S<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE FSD SSWAN TORGY3 KMSP\" readonly>";
-			result += "<br/>MSP SE<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE GRB DLH GGULL BAINY3 KMSP\" readonly>";
+			result += "<br/></br>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE IDIOM MUSCL4 KMSP\" readonly>"; // CDR 1N
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MYKIE MONNY MNOSO BLUEM5 KMSP\" readonly>"; // CDR 1W
+			result += "<br/><br/>MSP S<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE FSD SSWAN TORGY4 KMSP\" readonly>";
+			result += "<br/>MSP SE<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE GRB DLH GGULL BAINY4 KMSP\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KORD BAE EAU9 KMSP\"; readonly>"; // CDR NN
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-22-2026
-			result += "<!-- Verified with ATCSCC on 01-22-2026 -->";
-			result += "<br/>0N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC KAMMA KKILR3 KMSP\" readonly>";
-			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE IDIOM MUSCL3 KMSP\" readonly>";
-			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MYKIE MONNY MNOSO BLUEM4 KMSP\" readonly>";
-			result += "<br/>2N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J89 DLH GGULL BAINY3 KMSP\" readonly>";
-			result += "<br/>2W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD NOONY NIGHT NITWT ROKKK NITZR3 KMSP\" readonly>";
-			result += "<br/>3N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE GRB DLH GGULL BAINY3 KMSP\" readonly>"; // MSP SE
-			result += "<br/>3W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE FSD SSWAN TORGY3 KMSP\" readonly>"; // MSP S
-			result += "<br/>4N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE OOPEE BLUEM4 KMSP\" readonly>";
-			result += "<br/>5N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE EAU9 KMSP\" readonly>";
-			result += "<br/>NN<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BAE EAU9 KMSP\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-24-2026
+			result += "<!-- Verified with ATCSCC on 03-24-2026 -->";
+			result += "<br/>0N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC KAMMA KKILR4 KMSP\" readonly>";
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE IDIOM MUSCL4 KMSP\" readonly>";
+			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MYKIE MONNY MNOSO BLUEM5 KMSP\" readonly>";
+			result += "<br/>2N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J89 DLH GGULL BAINY4 KMSP\" readonly>";
+			result += "<br/>2W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD NOONY NIGHT NITWT ROKKK NITZR4 KMSP\" readonly>";
+			result += "<br/>3N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE GRB DLH GGULL BAINY4 KMSP\" readonly>"; // MSP SE
+			result += "<br/>3W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE FSD SSWAN TORGY4 KMSP\" readonly>"; // MSP S
+			result += "<br/>4N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE OOPEE BLUEM5 KMSP\" readonly>";
+			result += "<br/>5N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE EAU KMSP\" readonly>";
+			result += "<br/>NN<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BAE EAU KMSP\" readonly>";
 			break;
 		case "MSY": // ORD-MSY // Updated 12-19-2025
 			result += "<!-- Updated 12-19-2025 P -->";
