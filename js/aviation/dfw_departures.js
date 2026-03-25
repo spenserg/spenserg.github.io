@@ -2362,16 +2362,14 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\" value=\"KDFW LOWGN8 ADM MMB LBL LAA J52 FQF J20 SEA PAE PAINE4 CYVR\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-		case "YYC": // DFW-YYC // Updated 04-18-2025
-			result += "<!-- Updated 04-18-2025 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-18-2025
-			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW KK36C HLC HCT MLS BEVEL MOBEK EBGAL7 CYYC\" readonly>";
-			result += "<br/><br/>East: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL EMP LNK ONL DPR GGW PEMDU BEVEL MOBEK EBGAL7 CYYC\" readonly>";
-			result += "<br/>West via JNC: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ALS JNC BPI DNW GTF COUTS MOBEK EBGAL7 CYYC\" readonly>";
-			result += "<br/>West via CNX: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN CME J15 CNX KA36U RLG BIL COUTS MOBEK EBGAL7 CYYC\" readonly>";
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 IRW GCK GLD CYS J13 DDY BIL GTF J516 YQL EBGAL CYYC\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-18-2025
+		case "YYC": // DFW-YYC // Updated 03-25-2026
+			result += "<!-- Updated 03-25-2026 P -->";
+			result += "<br/><br/>CFS: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK CYS J13 GTF COUTS EBGAL EBGAL7 CYYC\" readonly>";
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 ZEMMA PER SLN ONL DPR GGW BEVEL VESDO EBGAL EBGAL7 CYYC\" readonly>";
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE FTI J58 MLF ELY J523 REO J153 GEG ANTAK Q953 IGVEP IGVEP IGVEP7 CYYC\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 IRW GCK GLD CYS J13 DDY BIL GTF J516 YQL EBGAL CYYC\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-25-2026
 			break;
 		case "YYZ": // DFW-YYZ // Updated 01-30-2025
 			result += "<!-- Updated 01-30-2025 -->";
