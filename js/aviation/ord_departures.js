@@ -550,23 +550,23 @@ KORD GIJ V55 DQN KDAY
 		case "FLL": // ORD-FLL // Updated 03-14-2026
 			result += "<!-- Updated 03-14-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DUMGE SCOTO SWAPP Q79 ZPLEN TEEKY3 KFLL\" readonly>"; // CDR 0S
+			result += "<br/><input style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DUMGE SCOTO SWAPP Q79 ZPLEN TEEKY4 KFLL\" readonly>"; // CDR 0S
 			result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM DOOGE Q93 PRMUS CUUDA3 KFLL\" readonly>";
-			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI TEEKY3 KFLL\" readonly>"; // CDR SB
-			result += "<br/></br>East via APE<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE Q149 BURGG ENEME TEEKY3 KFLL\" readonly>"; // CDR 0E
-			result += "<br/>West via MEM<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL J71 MEM LDK MGM ACORI TEEKY3 KFLL\" readonly>";
-			result += "<br/><br/>West/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI JARKE J71 MEM J35 MCB HRV Q105 BLVNS Y290 OCHHO VNECK TEEKY3 KFLL\" readonly>";
-			result += "<br/><br/>OHIO VLY TO FL 1: <span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI TEEKY3 KFLL\" readonly>";
+			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI TEEKY4 KFLL\" readonly>"; // CDR SB
+			result += "<br/></br>East via APE<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE Q149 BURGG ENEME TEEKY4 KFLL\" readonly>"; // CDR 0E
+			result += "<br/>West via MEM<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL J71 MEM LDK MGM ACORI TEEKY4 KFLL\" readonly>";
+			result += "<br/><br/>West/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI JARKE J71 MEM J35 MCB HRV Q105 BLVNS Y290 OCHHO VNECK TEEKY4 KFLL\" readonly>";
+			result += "<br/><br/>OHIO VLY TO FL 1: <span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI TEEKY4 KFLL\" readonly>";
 			result += "<br/>OHIO VLY TO FL 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM HMV PANDY CAKET Q97 PRMUS CUUDA3 KFLL\" readonly>";
 			result += "<br/>OHIO VLY TO FL 3<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM HMV PANDY DEDDY Y436 OGGRE MAJIK CUUDA3 KFLL\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>";
 			// result += "<br/><input style=\"width:75%\"; value=\"KORD DENNT DARCY DREGS DONVE BWG GQO LGC SZW PIE FORTL9 KFLL\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-14-2026
 			result += "<!-- Verified with ATCSCC on 03-14-2026 -->";
-			result += "<br/>0E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE Q149 BURGG ENEME TEEKY3 KFLL\" readonly>";
-			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DUMGE SCOTO SWAPP Q79 ZPLEN TEEKY3 KFLL\" readonly>";
-			result += "<br/>0W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF MERDN DEFUN TEEKY3 KFLL\" readonly>";
-			result += "<br/>SB<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI TEEKY3 KFLL\" readonly>";
+			result += "<br/>0E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA APE Q149 BURGG ENEME TEEKY4 KFLL\" readonly>";
+			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DUMGE SCOTO SWAPP Q79 ZPLEN TEEKY4 KFLL\" readonly>";
+			result += "<br/>0W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PEKUE PIGGG QUANE CARET ROEZZ SGF MERDN DEFUN TEEKY4 KFLL\" readonly>";
+			result += "<br/>SB<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN ACORI TEEKY4 KFLL\" readonly>";
 			break;
 		case "GEG": // ORD-GEG // Updated 03-14-2026
 			result += "<!-- Updated 03-14-2026 P -->";
