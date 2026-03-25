@@ -1437,17 +1437,17 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "SRQ": // CLT-SRQ // Updated 03-11-2026
 			result += "<!-- Updated 03-11-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS RIELE Q103 PUPYY KYYUU LUBBR3 KSRQ\" readonly>"; // CDR RP
+			result += "<br/><input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS RIELE Q103 PUPYY KYYUU LUBBR4 KSRQ\" readonly>"; // CDR RP
 			result += "<br/><b>If ZJX is capping/tunnelling route around Fort Stewart SUA:<\/b>";
 			result += "<br/>ZJX Capping: <input style=\"width:75%\" value=\"KCLT ICONS5 NOOKS FISHO Q75 TEUFL KYYUU LUBBR4 KSRQ\" readonly>";
-			result += "<br/><br/>East/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 OGGRE Y289 BAHAA HIBAC AR15 ORL LUBBR LUBBR3 KSRQ\" readonly>";
+			result += "<br/><br/>East/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT KWEEN5 PITRW Y436 OGGRE Y289 BAHAA HIBAC AR15 ORL LUBBR LUBBR4 KSRQ\" readonly>";
 			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR HONID BANGZ2 KSRQ\" readonly>"; // CDR ES
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-11-2026
 			result += "<!-- Verified with ATCSCC on 03-11-2026 -->";
-			result += "<br/>BA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 BARMY BATTA ROZBO CHS JROSS Q409 PUPYY KYYUU LUBBR3 KSRQ\" readonly>";
+			result += "<br/>BA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BARMY5 BARMY BATTA ROZBO CHS JROSS Q409 PUPYY KYYUU LUBBR4 KSRQ\" readonly>";
 			result += "<br/>ES<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR HONID BANGZ2 KSRQ\" readonly>";
-			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ICONS5 NOOKS RIELE Q103 PUPYY KYYUU LUBBR3 KSRQ\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ICONS5 NOOKS RIELE Q103 PUPYY KYYUU LUBBR4 KSRQ\" readonly>";
 			break;
 		case "STL": // CLT-STL // Updated 08-22-2025
 			result += "<!-- Updated 08-22-2025 P -->";
