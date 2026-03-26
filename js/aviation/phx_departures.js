@@ -344,16 +344,16 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI SSO J104 FTI J18 JOT J146 GIJ J554 CRL J584 SLT FQM3 KEWR\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 FTI J18 JOT J146 GIJ J554 CRL J584 SLT FQM3 KEWR\" readonly>";
 			break;
-		case "EUG": // PHX-EUG // Updated 04-30-2025 // Mandatory Routes checked
-			result += "<!-- Updated 04-30-2025 PCM -->";
+		case "EUG": // PHX-EUG // Updated 03-25-2026
+			result += "<!-- Updated 03-25-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BTY J92 LMT KEUG\" readonly>"; // CDR ZE
-			result += "<br/><br/>West: <input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR J212 DECAS J65 LANDO J6 AVE J1 OED CURTI KEUG\" readonly>";
-			result += "<br/>East: <input style=\"width:75%\" value=\"KPHX QUAKY1 GCN WINEN BAM LKV KEUG\" readonly>";
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KPHX QUAKY1 GCN PGS BLD J92 LMT KEUG\" readonly>"; // CDR QU
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-30-2025
-			result += "<!-- Verified with ATCSCC on 04-30-2025 -->";
+			result += "<br/></br>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX QUAKY1 GCN WINEN Q35 NEERO LKV KEUG\" readonly>"; // Based on CDR QU
+			result += "<br/></br>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX KEENS3 HRRBR J212 DECAS J65 LANDO J6 AVE J1 OED CURTI KEUG\" readonly>"; // Based on CDR KE
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\" value=\"KPHX QUAKY1 GCN PGS BLD J92 LMT KEUG\" readonly>"; // CDR QU
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-25-2026
+			result += "<!-- Verified with ATCSCC on 03-25-2026 -->";
 			result += "<br/>KE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR DECAS J212 PSP PDZ J74 LAX J7 FMG J92 LMT KEUG\" readonly>";
 			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN PGS BLD J92 LMT KEUG\" readonly>";
 			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BTY J92 LMT KEUG\" readonly>";
