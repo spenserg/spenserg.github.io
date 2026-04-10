@@ -12304,15 +12304,17 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 
 		case "YEG":
 			switch(arvl) {
-				case "DFW": // YEG-DFW // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"CYEG OMROD TOVIS YEA MLS TST GCK MMB MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>East: <input style=\"width:75%\" value=\"CYEG OMROD TOVIS YEA GGW RAP SLN TUL KLAWW VKTRY2 KDFW\" readonly>";
-					result += "<br/>West: <input style=\"width:75%\" value=\"CYEG UKRAM Q957 RIGAD OTARA Q931 IPTAN DLN MTU FTI TXO TURKI VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"CYEG TOVIS YEA GGW MLS GCC ECS LBF HYS IRW UKW4 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+				case "DFW": // YEG-DFW // Updated 04-10-2026
+					result += "<!-- Updated 04-10-2026 P -->";
+					result += "<br/><br/><b>CFS:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"CYEG UKRAM Q957 RIGAD GADKI Q957 VOBUK GTF BOY CKW PUB J17 PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYEG OMROD IGVUX FUDGY Q862 DURUR Q971 MOT ONL ICT HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYEG UKRAM Q957 RIGAD OTARA Q931 IPTAN FCA DBS J52 OCS J206 DBL TBE J17 PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>NE Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYEG OMROD IGVUX FUDGY Q862 DURUR Q971 MOT ABR J45 FSD OVR TUL HITUG SEEVR4 KDFW\" readonly>";
+					result += "<br/>SW Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYEG UKRAM Q957 RIGAD OTARA Q931 IPTAN FCA DBS JNC J15 RSK J15 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"CYEG TOVIS YEA GGW MLS GCC ECS LBF HYS IRW UKW4 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-10-2026
 					break;
 			}
 		break; // End of YEG
@@ -12325,30 +12327,29 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 
 				// TODO CLT
 
-				case "DFW": // YUL-DFW // Updated 06-03-2025 // Mandatory Routes checked
-					result += "<!-- Updated 06-03-2025 MP -->";
+				case "DFW": // YUL-DFW // Updated 04-10-2026
+					result += "<!-- Updated 04-10-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-03-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"CYUL FAWNS BUGSY SYR GONZZ Q29 KLYNE PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>CFS: <input style=\"width:75%\"; value=\"CYUL FAWNS BUGSY SYR GONZZ Q29 KLYNE PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYUL KESKA SAVEX Q806 BOBTA DERLO CRL BVT STL RZC FSM KOMMA RRNET SEEVR4 KDFW\" readonly>";
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"CYUL FAWNS BUGSY SYR J59 PSB Q71 GEFFS HVQ Q68 LITTR MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>North via BAE: <input style=\"width:75%\"; value=\"CYUL KESKA SAVEX KANUR LETAK Q824 FNT BAE DBQ J144 DSM J25 TUL KLAWW VKTRY2 KDFW\" readonly>";
-					result += "<br/>South via SQS: <input style=\"width:75%\"; value=\"CYUL FAWNS BUGSY SYR J59 PSB Q71 GEFFS HVQ VXV VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/><br/>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYUL KESKA SAVEX KANUR LETAK Q848 SLLAP BAE DSM PWE ICT HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/>South via SQS<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"CYUL FAWNS BUGSY ALB J6 SAX LANNA J48 CSN FANPO Q40 BFOLO SQS YUYUN BEREE3 KDFW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-03-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-10-2026
 					break;
 
 				// TODO LGA
 				// TODO ORD
 
-				case "MIA": // YUL-MIA // Updated 01-19-2025
-					result += "<!-- Updated 01-19-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"CYUL FAWNS BUGSY PONCT Q133 LLUND Q437 VILLS Q409 CRPLR BGBRD Q101 SKARP Y313 HOAGG BNFSH3 KMIA\" readonly>";
-					result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"CYUL FAWNS BUGSY PONCT BIZEX Q75 GSO Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>";
-					result += "<br/>West: <input style=\"width:75%\" value=\"CYUL FAWNS BUGSY SYR J59 PSB IHD EKN PSK SPA QUIWE TEEEM DOFFY BROMO FROGZ5 KMIA\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"CYUL FAWNS BUGSY PONCT BIZEX Q75 GSO Q83 JEVED Q97 KENLL OMN ANNEY4 KMIA\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-15-2025
+				case "MIA": // YUL-MIA // Updated 04-10-2026
+					result += "<!-- Updated 04-10-2026 P -->";
+					result += "<br/><br/>CFS: <input style=\"width:75%\" value=\"CYUL FAWNS BUGSY PONCT Q437 CRPLR BGBRD Q101 SKARP Y313 HOAGG BNFSH3 KMIA\" readonly>";
+					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYUL FAWNS BUGSY PONCT Q437 CRPLR PAACK Q97 DEBRL CSTAL3 KMIA\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYUL KESKA SAVEX Q806 GGUCE DJB ROD VOSTK Q118 THRSR HONID FROGZ5 KMIA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"CYUL FAWNS BUGSY PONCT BIZEX Q75 GSO Q83 JEVED Q97 KENLL OMN ANNEY4 KMIA\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-10-2026
 					break;
 			}
 		break; // End of YUL
