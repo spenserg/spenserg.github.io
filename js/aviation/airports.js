@@ -15,8 +15,8 @@ vaa_parse = function (fkeystxt = "") {
 */
 
 airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, result = "") {
-	dptr = ((dptr.length == 4) ? (dptr.substr(1, 4)) : dptr);
-	arvl = ((arvl.length == 4) ? (arvl.substr(1, 4)) : arvl);
+	dptr = ((dptr.length == 4) ? convert_iata(dptr) : dptr);
+	arvl = ((arvl.length == 4) ? convert_iata(arvl) : arvl);
 	flows = ((Object.keys(flows).length == 0) ? {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"ELP":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0} : flows);
 
 	// A012
@@ -53,6 +53,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>ABQ Flow: <button type='button' id='ABQ_standard_left' class='btn" + ((flows['ABQ'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 0)'>East</button>&nbsp;&nbsp;<button type='button' id='ABQ_standard_right' class='btn" + ((flows['ABQ'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 1)'>West</button>";
 			show_flow_info = "East Rwy8: GRZZZ, JEMEZ, MNZNO, RDRNR<br/>West Rwy26: ADYOS, ATOMK, BOSQE, DOOKK, FYSTA";
 			break;
+		case "AGS":
+			result =+ "<br/><br/>CHATT/DOVER/KAOLN/RDBUD: Masters weekend only (early April)";
+			break;
 		case "BFL":
 			result += "<br/><br/>BFL - 12R/30L N/A, see 10-7A";
 			break;
@@ -86,7 +89,12 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>Run VAA when hot"; // TODO How hot? Source?
 			break;
 		case "DFW":
-			// show_flow_info = "North Rwy36R/35L<br/>South Rwy18L/17R";
+			if (is_euro(arvl)) {
+				result += "<br/><br/><b>SAEZE<\/b>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC SGF SPI FWA DJB JHW SAEZE\" readonly>";
+				result += "<br/><b>EXTOL<\/b>: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV CREEP Q29 JHW EXTOL\" readonly>";
+				result += "<br/><b>KIDDO<\/b>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEMFS VXV KIDDO\" readonly>";
+				result += "<br/><b>ORF<\/b>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR HRTWL Q64 TYI ORF\" readonly>";
+			}
 			break;
 		case "EGE":
 			result += "<br/><br/>EGE - Rwy 25 is preferred, even with tailwind";
@@ -150,7 +158,11 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>MTJ - Rwy 13/31 N/A"; // TODO: Source?
 			break;
 		case "ORD":
-			// show_flow_info = "West Rwy28R/22L<br/>East Rwy9R/10L";
+			case "DFW":
+			if (is_euro(arvl)) {
+				result += "<br/><br/><b>MIILS<\/b>: <input style=\"width:75%\" value=\"KORD EBAKE WISMO POSTS PADDE SVM Q907 MIILS\" readonly>";
+				result += "<br/><b>DOVEY<\/b>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME EVOTE NELLS JHW Q82 PONCT Q935 BOS FRILL DOVEY\" readonly>";
+			}
 			break;
 		case "PHX":
 			result += "<br/><br/>PHX - Make sure flow matches TPS; Usually departing into the sun (East in AMs, West in PMs)";
@@ -1881,6 +1893,12 @@ is_atwelve = function (apt = "") {
 is_latin = function (apt = "") {
 	if (typeof apt === 'string' || apt instanceof String) {
 		return "MST".includes(convert_icao(apt).substring(0,1));
+	}
+	return false;
+}
+is_euro = function(apt = "") {
+	if (typeof apt === 'string' || apt instanceof String) {
+		return "ELVOB".includes(convert_icao(apt).substring(0,1));
 	}
 	return false;
 }
