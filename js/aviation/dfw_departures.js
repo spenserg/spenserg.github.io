@@ -1797,6 +1797,17 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 
 // DFW-PVD skipped
 
+		case "PVU": // Updated 04-13-2026
+			result += "<!-- Updated 04-13-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 03-01-2026
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH ALS JNC J12 HELPR YMONT TAYTR3 KPVU\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE LAA JNC J12 HELPR YMONT TAYTR3 KPVU\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX J15 RSK DVC HELPR YMONT TAYTR3 KPVU\" readonly>";
+			result += "<br/><br/>North via FQF<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW END PENUT Q148 LEWOY GLL RIDJE J56 CHE J24 MTU TAYTR3 KPVU\" readonly>";
+			result += "<br/>South via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK J50 ELP J86 INW CORKR J11 BCE TAYTR3 KPVU\" readonly>";
+			result += "<br/><br/>COWBOY WEST (FL220 to SAT)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY SAT DLF FST ELP J86 INW CORKR J11 BCE TAYTR3 KPVU\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-13-2026
+			break;
 		case "PWM": // DFW-PWM // Updated 03-01-2026
 			result += "<!-- Updated 03-01-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 03-01-2026
