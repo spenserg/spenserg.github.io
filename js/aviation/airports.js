@@ -1268,6 +1268,7 @@ convert_iata = function (str = null) {
 				case "KPVD": return "PVD";break;
 				case "ZSPD": return "PVG";break;
 				case "MMPR": return "PVR";break;
+				case "KPVU": return "PVU";break;
 				case "KPWM": return "PWM";break;
 				case "MMQT": return "QRO";break;
 				case "KRAP": return "RAP";break;
@@ -1757,6 +1758,7 @@ convert_icao = function (str = null) {
 				case "PVD": return "KPVD";break;
 				case "PVG": return "ZSPD";break;
 				case "PVR": return "MMPR";break;
+				case "PVU": return "KPVU";break;
 				case "PWM": return "KPWM";break;
 				case "QRO": return "MMQT";break;
 				case "RAP": return "KRAP";break;
@@ -2061,6 +2063,7 @@ get_fir = function (apt = "") {
 			case "KPSP": return "ZLA"; break;
 			case "KPUB": return "ZDV"; break;
 			case "KPVD": return "ZBW"; break;
+			case "KPVU": return "ZLC"; break;
 			case "KPWM": return "ZBW"; break;
 			case "KRAP": return "ZDV"; break;
 			case "KRDM": return "ZSE"; break;
