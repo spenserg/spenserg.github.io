@@ -108,14 +108,13 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO TULEG RAHKS STELA1 KBDL\" readonly>"; // 
 			result += "<br/>M3<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO AHPAH HANKK AUDIL STELA1 KBDL\" readonly>"; // 
 			break;
-		case "BGR": // ORD-BGR // Updated 02-19-2026
-			result += "<!-- Updated 02-19-2026 P -->";
+		case "BGR": // ORD-BGR // Updated 04-30-2026
+			result += "<!-- Updated 04-30-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD EBAKE WISMO POSTS PADDE SVM Q951 DERLO Q913 CABCI RANGY BGR KBGR\" readonly>"; // CDR 0E
 			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK DAYYY Q140 SIKBO DEDKI Q913 CABCI RANGY BGR KBGR\" readonly>"; // CDR 0N
-			// result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-19-2026
-			result += "<!-- Verified with ATCSCC on 02-19-2026 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-30-2026
+			result += "<!-- Verified with ATCSCC on 04-30-2026 -->";
 			result += "<br/>0E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EBAKE WISMO POSTS PADDE SVM Q951 DERLO Q913 CABCI RANGY BGR KBGR\" readonly>";
 			result += "<br/>0N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK DAYYY Q140 SIKBO DEDKI Q913 CABCI RANGY BGR KBGR\" readonly>";
 			break;
