@@ -9988,15 +9988,15 @@ KILM RDU BBDOL PAATS4 KPHL
 
 		case "PNS":
 			switch(arvl) {
-				case "CLT": // PNS-CLT // Updated 07-07-2025
-					result += "<!-- Updated 07-07-2025 P -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-07-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPNS CEW LGC BESTT JONZE5 KCLT\" readonly>";
-					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS CEW MCN PONZE BANKR5 KCLT\" readonly>";
-					result += "<br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS CEW DEFUN SAV CHECR STOCR4 KCLT\" readonly>";
-					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS CATLN VUZ TAZZA FILPZ4 KCLT\" readonly>";
+				case "CLT": // PNS-CLT // Updated 04-30-2026
+					result += "<!-- Updated 04-30-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 04-30-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPNS PENSI MGM BESTT JONZE5 KCLT\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS CATLN VUZ TAZZA FILPZ4 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS CEW MCN PONZE BANKR5 KCLT\" readonly>";
+					result += "<br/><br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS CEW DEFUN SAV CHECR STOCR4 KCLT\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-07-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-30-2026
 					break;
 				case "DFW": // PNS-DFW // Updated 09-29-2025
 					result += "<!-- Updated 09-29-2025 P -->";
