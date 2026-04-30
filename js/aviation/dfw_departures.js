@@ -1752,21 +1752,21 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG PXV IIU HNN FEWGA7 KPIT\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MEI BNA IIU HNN FEWGA7 KPIT\" readonly>";
 			break;
-		case "PNS": // DFW-PNS // Updated 09-28-2025
-			result += "<!-- Updated 09-28-2025 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-28-2025
-			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB SJI V241 PENSI KPNS\" readonly>"; // CDR 0P
-			result += "<br/><b style=\"color:orange\">As of 2025-09-29, FAA uses V198 and Fkeys MR use V241 but it's the same airway<\/b>";
-			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD MHZ SJI V241 PENSI KPNS\" readonly>";
-			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 SJI V241 PENSI KPNS\" readonly>";
-			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 SJI V241 PENSI KPNS\" readonly>";
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 EIC MCB SJI V241 PENSI KPNS\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-28-2025
-			result += "<!-- Verified with ATCSCC on 09-28-2025 -->";
+		case "PNS": // DFW-PNS // Updated 04-30-2026
+			result += "<!-- Updated 04-30-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB SJI LOXLY V241 PENSI KPNS\" readonly>"; // CDR 0P
+			// result += "<br/><b style=\"color:orange\">As of 2025-09-29, FAA uses V198 and Fkeys MR use V241 but it's the same airway<\/b>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK MHZ SJI LOXLY V241 PENSI KPNS\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 SJI LOXLY V241 PENSI KPNS\" readonly>"; // Based on CDR 1S
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 EIC MCB SJI V241 PENSI KPNS\" readonly>";
+			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH)<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 SJI LOXLY V198 PENSI KPNS\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-30-2026
+			result += "<!-- Verified with ATCSCC on 04-30-2026 -->";
 			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB SJI LOXLY V198 PENSI KPNS\" readonly>";
 			result += "<br/>1N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG MEM MEI SJI LOXLY V198 PENSI KPNS\" readonly>";
-			result += "<br/>1S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 SJI LOXLY V198 PENSI KPNS\" readonly>";
+			result += "<br/>1S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 SJI LOXLY V198 PENSI KPNS\" readonly>"; // COWBOY EAST 1 (FL230 to LCH)
 			break;
 		case "PSP": // DFW-PSP // Updated 09-17-2025
 			result += "<!-- Updated 09-17-2025 MP -->";
