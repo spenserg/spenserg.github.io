@@ -11127,16 +11127,17 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-13-2026
 					break;
-				case "DFW": // SDF-DFW // Updated 08-29-2025
-					result += "<!-- Updated 08-29-2025 P -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-17-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSDF GTGON1 TERGE ARG PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
+				case "DFW": // SDF-DFW // Updated 04-30-2026
+					result += "<!-- Updated 04-30-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 04-30-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSDF GTGON1 TERGE FAM FSM RRNET SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSDF GTGON1 TERGE PLESS J78 TUL KLAWW VKTRY2 KDFW\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSDF HIDEY1 RAMRD BNA MEM J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>South via SQS<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSDF HIDEY1 RAMRD BNA Q32 CRAMM SQS YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSDF HIDEY1 RAMRD LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>SE Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSDF HIDEY1 RAMRD BNA Q32 CRAMM SQS YUYUN WHINY4 KDFW\" readonly>";
+					// ne arvl with hidey dptr... result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSDF HIDEY1 RAMRD BNA MEM J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSDF MYS BWG BNA MEM LIT FINGR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-17-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-30-2026
 					break;
 				case "MIA": // SDF-MIA // Updated 02-13-2026
 					result += "<!-- Updated 02-13-2026 P -->";
