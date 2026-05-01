@@ -1071,7 +1071,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J2 FST J86 LEV Y280 CHRGE RAYZZ3 KTPA\" readonly>";
 			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP Q4 CLL ROKIT LSU J2 DEFUN MAATY5 KTPA\" readonly>";
-			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO TCC J6 IRW J14 LIT J14 VUZ HONID MAATY5 KTPA\" readonly>";
+			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO TCC J6 IRW J14 VUZ HONID MAATY5 KTPA\" readonly>";
 			result += "<br/><b>For east coast arvl: .. LGC AMG BAAMF DADES2 KTPA<\/b>";
 			result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J86 FST J138 SAT PSX PEGLG ALGAE DTSRJ CIGAR RAYZZ3 KTPA\" readonly>";
 			result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J86 FST KH87A CRP PEGLG ALGAE DTSRJ CIGAR RAYZZ3 KTPA\" readonly>";
