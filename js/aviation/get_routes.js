@@ -139,7 +139,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Updated 02-06-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KAGS JUNPR6 NOKIE MVC MCB J50 AEX PNUTS BEREE3 KDFW\" readonly>";
-					result += "<br/><b style=\"color:orange\">Only use SAMMI/JUNPR except during Masters Golf Tournament (see chart)<\/b>";
+					result += "<br/><b style=\"color:orange\">SAMMI/JUNPR is standard except during Masters Golf Tournament (see chart)<\/b>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KAGS JUNPR6 NOKIE MVC MCB J50 AEX PNUTS BEREE3 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>";
