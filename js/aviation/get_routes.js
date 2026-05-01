@@ -7525,15 +7525,14 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KMDT ETX HUO IGN BAF KBOS\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-01-2026
 					break;
-				case "CLT": // MDT-CLT // Updated 02-01-2026
-					result += "<!-- Updated 02-01-2026 P -->";
+				case "CLT": // MDT-CLT // Updated 05-01-2026
+					result += "<!-- Updated 05-01-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 03-11-2026
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMDT HAR LDN AIROW CHSLY6 KCLT\" readonly>";
-					result += "<br/><b>As of 03-14-2026, mandatory route is different but both are ok to file<\/b>";
-					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMDT VINNY EMI GVE AIROW CHSLY6 KCLT\" readonly>";
-					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMDT HAR JST AIR LNDIZ PARQR4 KCLT\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMDT LRP SACRI Q75 GVE LYH MAJIC4 KCLT\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMDT VINNY EMI GVE AIROW CHSLY6 KCLT\" readonly>";
+					// TODO East rte
+					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMDT HAR JST AIR LNDIZ PARQR4 KCLT\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KMDT LRP SACRI Q75 GVE LYH MAJIC4 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-01-2026
 					break;
 				case "DFW": // MDT-DFW // Updated 02-01-2026
@@ -9695,7 +9694,7 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "SFO": // PHL-SFO // Updated 12-15-2025
 					result += "<!-- Updated 12-15-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 VHP J80 MCI J24 HGO HBU J28 MLF J58 OAL INYOE DYAMD5 KSFO\" readonly>"; // Based on CDR 80
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB CPONE JOT J87 MZV DIYAP Q136 OAL INYOE DYAMD5 KSFO\" readonly>";
 					result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB CPONE JOT J60 DBL J80 OAL INYOE DYAMD5 KSFO\" readonly>"; // CDR 60
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 FLIRT J6 HVQ Q68 RAMRD ARG IRW PNH RSK J58 ILC J80 OAL INYOE DYAMD5 KSFO\" readonly>"; // CDR BW
 					result += "<br/></br>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB J34 BAE J70 AUGER HUFFR DKOTA Q138 RICCO MLD J32 LLC LEGGS BDEGA4 KSFO\" readonly>"; // CDR RK
@@ -12083,7 +12082,7 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTPA DORMR3 FROOT ROZZI Y280 LEV J86 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 LACEN PATOY Q116 JAWJA CABLO DEFUN J2 IAH J86 ELP DRRVR PINNG1 KPHX\" readonly>"; // CDR E0
-					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 LACEN PATOY Q116 VLKNN YAALL J14 LIT J6 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTPA ENDED2 LACEN PATOY Q116 VLKNN YAALL J14 PNH J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA DORMR3 CIGAR DTSCK ALGAE PEGLG PSX SAT J138 FST J86 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KTPA DORMR3 CIGAR DTSCK ALGAE PEGLG CRP KH87A FST J2 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
