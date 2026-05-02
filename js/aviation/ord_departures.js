@@ -701,14 +701,13 @@ KORD EARND ELANR EMMLY ERECO IIU SPA FLO KILM
 KORD DENNT DARCY DREGS DONVE BWG VXV SPA FLO KILM
 */
 
-		case "IND": // ORD-IND // Updated 06-08-2025
-			result += "<!-- Updated 06-08-2025 P -->";
+		case "IND": // ORD-IND // Updated 05-01-2026
+			result += "<!-- Updated 05-01-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL230):</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD EARND ELANR EMMLY JAKKS JAKKS2 KIND\" readonly>";
-			result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME SEWTO SJAAY SNKPT2 KIND\" readonly>"; // CDR 1E
-			// TODO West rte
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD EON V24 JAKKS VHP KIND\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD EARND ELANR JAKKS2 KIND\" readonly>"; // CDR 0S
+			result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME SEWTO SJAAY SNKPT2 KIND\" readonly>"; // CDR 1E
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\" value=\"KORD EON V24 JAKKS VHP KIND\" readonly>"; // CDR NR
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-08-2025
 			result += "<!-- Verified with ATCSCC on 06-08-2025 -->";
 			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR JAKKS2 KIND\" readonly>";
