@@ -11320,7 +11320,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-07-2025
 					result += "<br/>NRP: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 TABLL SAKES J80 FQF ZIRKL Q136 DIYAP PIA BVT ROD J152 JST BOJID4 KPHL\" readonly>";
 					result += "<br/><b style=\"width:orange\">Dptrs after 2100L use NIITE SID instead of TRUKN<\/b>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 MOGEE Q122 VIGGR DBQ J94 OBK GIJ J146 CXR EWC JST BOJID4 KPHL\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 MOGEE Q122 VIGGR DBQ GIJ DJB J60 PSB BOJID4 KPHL\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 JSICA MLF J28 GCK ICT SGF J98 FAM J78 PXV HELUB ZIEBR Q108 SITTR Q34 GVE PAATS4 KPHL\" readonly>";
 					result += "<br/><br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN BOILE Q2 EWM J66 FUZ ELD IZAAC Q30 VLKNN THRSR TWOUP Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
 					result += "<br/><br/>JOT 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 TIPRE Q126 BRAFF AKO HCT J60 JOT J146 WOOST J34 DJB EWC JST BOJID4 KPHL\" readonly>";
