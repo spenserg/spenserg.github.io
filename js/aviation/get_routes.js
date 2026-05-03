@@ -7731,7 +7731,7 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "PHX": // MKE-PHX // Updated 01-29-2026
 					result += "<!-- Updated 01-29-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-29-2026
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMKE GREAS JAYEX KG75I LNK J146 GLD ALS J102 GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMKE GREAS JAYEX ALO LNK J146 GLD ALS J102 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMKE GREAS JAYEX MCW J148 ONL YANKI FQF J10 RSK GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS J19 STL Q176 TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>South via IRW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMKE ACCRA5 ACCRA RBS J19 STL J8 SGF J78 IRW J6 ZUN EAGUL6 KPHX\" readonly>";
