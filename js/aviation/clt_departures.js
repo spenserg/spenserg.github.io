@@ -878,7 +878,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 11-24-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT JOJJO5 DOOGE FLM MACES VINNE BRAVE EXARR KMKE\" readonly>"; // CDR RP
-			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HNN APE JXN VIO GETCH LYSTR SUDDS KMKE\" readonly>";
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL5 CLAWD HNN APE CRL GETCH LYSTR SUDDS KMKE\" readonly>";
 			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR5 IPTAY CHOPZ THRSR VLKNN MEM ARG STL SPI CHZHD GOPAC3 KMKE\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-24-2025
