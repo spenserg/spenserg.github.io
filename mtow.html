@@ -484,6 +484,12 @@ function compute (str_override = "") {
 				'result += "<!-- Updated ' + tmp_today_str + (mandatory_routes_checked ? " M" : " ") + 'P -->";</textarea>';
 				// + tmp_textarea_tabs + 'result += "<br/><br/><b>Faa Pref Route:</b>";</textarea>';
 			output += '<br/><button onclick=\"toggle_mandatory_routes()\">Turn ' + (mandatory_routes_checked ? "OFF" : "ON") + ' Mandatory Routes</button>';
+			/*
+			output += 'FKeys Page: <textarea id="outbound2" rows="5"></textarea>&nbsp;';
+			output += '<textarea id="ob_copy2" rows="5" hidden></textarea>&nbsp;&nbsp';
+			output += '<button id="go_button2" onclick="compute()">Go</button>&nbsp;&nbsp;
+			*/
+			output += '<br/><br/><button onclick="clear_input(0)">Clear</button>&nbsp;&nbsp;<button onclick="restore_last()">Refresh/Run Previous</button><br/>';
 			output += '</div>';
 		}
 	}
