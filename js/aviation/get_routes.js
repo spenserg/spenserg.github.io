@@ -16,15 +16,15 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<!-- Verified with on 06-18-2025 -->";
 					result += "<br/>HV<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABE ETX RAV J64 BURNI TYROO QUARM AIR HVQ LNDIZ PARQR4 KCLT\" readonly>";
 					break;
-				case "JFK": // ABE-JFK // Updated 03-17-2025
-					result += "<!-- Updated 03-17-2025 -->";
+				case "JFK": // ABE-JFK // Updated 05-07-2026
+					result += "<!-- Updated 05-07-2026 P -->";
 					result += "<br/><br/>Div Recovery: <input style=\"width:75%\"; value=\"KABE SBJ CRI KJFK\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2026
 					break;
-				case "PHL": // ABE-PHL // Updated 03-17-2025
-					result += "<!-- Updated 03-17-2025 -->";
+				case "PHL": // ABE-PHL // Updated 05-07-2026
+					result += "<!-- Updated 05-07-2026 P -->";
 					result += "<br/><br/>Div Recovery: <input style=\"width:75%\"; value=\"KABE MAZIE KPHL\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2026
 					break;
 			}
 		break; // End of ABE
@@ -127,22 +127,24 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 
 // AGS-BOS skipped // NO FOS ROUTES
 
-				case "CLT": // AGS-CLT // Updated 01-30-2025
-					result += "<!-- Updated 01-30-2025 -->";
+				case "CLT": // AGS-CLT // Updated 05-07-2026
+					result += "<!-- Updated 05-07-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KAGS PONZE BANKR5 KCLT\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KAGS CAE FLO RASLN3 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KAGS CAE FLO RASLN3 KCLT\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2026
 					break;
-				case "DFW": // AGS-DFW // Updated 02-06-2025
-					result += "<!-- Updated 02-06-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KAGS JUNPR6 NOKIE MVC MCB J50 AEX PNUTS BEREE3 KDFW\" readonly>";
-					result += "<br/><b style=\"color:orange\">SAMMI/JUNPR is standard except during Masters Golf Tournament (see chart)<\/b>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KAGS JUNPR6 NOKIE MVC MCB J50 AEX PNUTS BEREE3 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+				case "DFW": // AGS-DFW // Updated 05-07-2026
+					result += "<!-- Updated 05-07-2026 P -->";
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KAGS JUNPR6 NOKIE MEI J20 MHZ YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/><b>SAMMI/JUNPR is standard except during Masters Golf Tournament (see chart)<\/b>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KAGS IRQ RMG J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAGS JUNPR6 NOKIE MGM MCB J50 AEX PNUTS BEREE3 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KAGS JUNPR6 NOKIE MVC MCB J50 AEX PNUTS BEREE3 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2026
 					break;
 
 // AGS-MIA skipped // NO FOS ROUTES
@@ -4211,8 +4213,8 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 
 		case "DSM":
 			switch(arvl) {
-				case "CLT": // DSM-CLT // Updated 07-01-2025
-					result += "<!-- Updated 07-01-2025 P -->";
+				case "CLT": // DSM-CLT // Updated 05-07-2026
+					result += "<!-- Updated 05-07-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDSM DSM Q19 STL ENL PXV SKYWA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDSM PIA VHP J24 FLM TAFTT PARQR4 KCLT\" readonly>";
@@ -4220,7 +4222,7 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/><br/>South via ARG<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDSM IRK MAW BNA TAZZA FILPZ4 KCLT\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDSM IRK STL PXV BWG VXV LIINN3 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-01-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2026
 					break;
 				case "DFW": // DSM-DFW // Updated 05-16-2025 // Mandatory Routes checked
 					result += "<!-- Updated 05-16-2025 MP -->";
@@ -4614,9 +4616,8 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 					result += "<br/>U8<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 AIR J80 VHP J24 STL BUM ICT IRW IBAKE VKTRY2 KDFW\" readonly>";
 					result += "<br/>UN<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEWEL J60 DJB CPONE JOT MZV IRK MCI ICT IRW HOFFF JOVEM6 KDFW\" readonly>";
 					break;
-				case "MIA": // EWR-MIA // Updated 05-01-2026
-					result += "<!-- Updated 05-01-2026 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+				case "MIA": // EWR-MIA // Updated 05-07-2026
+					result += "<!-- Updated 05-07-2026 P -->";
 					result += "<br/><input style=\"width:75%\" value=\"KEWR ELVAE NECCK WHITE Q409 CRPLR BGBRD Q101 SKARP Y313 HOAGG BNFSH3 KMIA\" readonly>"; // CDR AR
 					result += "<br/></br>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR ELVAE NECCK WHITE Q409 CRPLR PAACK Q97 DEBRL CSTAL3 KMIA\" readonly>"; // CDR TR
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR PORTT4 BIGGY Q75 GSO Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>"; // CDR SA
@@ -4625,8 +4626,8 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><input style=\"width:75%\" value=\"KEWR ELVAE NECCK WHITE SIE ORF ILM CHS SAV OMN ANNEY4 KMIA\" readonly>";
 					result += "<br/><br/>NE TO FL VIA J48 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR LANNA J48 MOL FLASK GOWBE BURGG QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-01-2026
-					result += "<!-- Verified with ATCSCC on 05-01-2026 -->";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-07-2026
+					result += "<!-- Verified with ATCSCC on 05-07-2026 -->";
 					result += "<br/>48<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR LANNA J48 MOL FLASK COREX THRSR HONID FROGZ5 KMIA\" readonly>";
 					result += "<br/>4A<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR LANNA J48 CSN FANPO Q40 ALEAN VXV THRSR HONID FROGZ5 KMIA\" readonly>";
 					result += "<br/>4C<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR LANNA J48 MOL FLASK GOWBE BURGG QUIWE Q93 DEBRL CSTAL3 KMIA\" readonly>"; // NE TO FL VIA J48 1
@@ -12149,15 +12150,15 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KTUL RZC ARG BNA VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-14-2025
 					break;
-				case "DFW": // TUL-DFW // Updated 05-10-2025
-					result += "<!-- Updated 05-10-2025 MP -->";
+				case "DFW": // TUL-DFW // Updated 05-07-2026
+					result += "<!-- Updated 05-07-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL220):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KTUL PEJAY AXXEE SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>West: <input style=\"width:75%\" value=\"KTUL IRW HOFFF VKTRY2 KDFW\" readonly>";
-					result += "<br/>East: <input style=\"width:75%\" value=\"KTUL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KTUL FSM FINGR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-10-2025
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTUL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KTUL IRW HOFFF VKTRY2 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KTUL FSM FINGR9 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2026
 					break;
 				case "ORD": // TUL-ORD // Updated 05-01-2026
 					result += "<!-- Updated 05-01-2026 P -->";
