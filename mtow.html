@@ -1480,7 +1480,7 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	// result = result.replaceAll("KBOS GLYDE", ""); // TEC routes
 	// result = result.replaceAll("KBOS BOSOX", ""); // TEC routes
 	// result = result.replaceAll("KBOS BURDY", ""); // TEC routes
-	result = result.replaceAll("KBOS BLZZR", "KBOS BLZZR6 BLZZR");
+	result = result.replaceAll("KBOS BLZZR ", "KBOS BLZZR6 BLZZR ");
 
 	// KBUR
 	result = result.replaceAll("KBUR LAS", "KBUR SLAPP2 LAS");
@@ -1518,13 +1518,14 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KELP ELP", ""); // TODO
 	result = result.replaceAll("KELP DRK", ""); // TODO
 */
-
+/*
+All NY Metros are radar vectors to a fix per their AIP
 	// KEWR
 	result = result.replaceAll("KEWR PARKE", "KEWR PORTT4 PARKE");
 	result = result.replaceAll("KEWR BIGGY", "KEWR PORTT4 BIGGY");
 	result = result.replaceAll("KEWR LANNA", "KEWR PORTT4 LANNA");
 	result = result.replaceAll("KEWR ELIOT", "KEWR PORTT4 ELIOT");
-/*
+
 	result = result.replaceAll("KEWR BREZY", ""); // TODO
 	result = result.replaceAll("KEWR ZIMMZ", ""); // TODO
 	result = result.replaceAll("KEWR BDR", ""); // TODO
@@ -1593,7 +1594,7 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	result = result.replaceAll("KIND OKK CRL", ""); // TODO
 	*/
 	result = result.replaceAll("KIND BVT", "KIND MEARZ7 BVT");
-	result = result.replaceAll("KIND DQN", "KIND MAREO5 MAREO DQN");
+	result = result.replaceAll("KIND DQN", "KIND MAREO1 MAREO DQN");
 	result = result.replaceAll("KIND PXV", "KIND OOM5 PXV");
 	// result = result.replaceAll("KIND SHB", ""); // IND-CVG
 	// result = result.replaceAll("KIND OOM", ""); // IND-CVG
@@ -1604,7 +1605,8 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	// result = result.replaceAll("KIND VHP", ""); // IND-STL
 
 	// KJFK
-	/*
+	/*  All NY Metros are radar vectors to a fix per their AIP
+	
 	result = result.replaceAll("KJFK BAYYS", ""); // TODO
 	result = result.replaceAll("KJFK COATE", ""); // TODO
 	result = result.replaceAll("KJFK BDR", ""); // TODO
@@ -1658,7 +1660,8 @@ function add_sids_and_stars_to_cdrs (result = "") {
 	// result = result.replaceAll("KLAX IKAYE", ""); // TODO
 
 	// KLGA
-	/*
+	/* All NY Metros are radar vectors to a fix per their AIP
+	
 	result = result.replaceAll("KLGA CCC", ""); // TODO
 	result = result.replaceAll("KLGA BDR", ""); // TODO
 	result = result.replaceAll("KLGA BAYYS", ""); // TODO
