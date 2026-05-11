@@ -658,7 +658,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		
 		// Route Str = cdrstr_xxx || Description = cdrdesc_xxx || CopyPaste = cdrcp_xxx
 		new_cdr_str += "<br/>CDR " + z[1] + z[2].replaceAll("\\", "") + ": <input id=\"cdrstr_" + z[1] + "\" class=\"cdr_input\" style=\"width:50%\" " + z[3].replaceAll("\\", "") + " readonly>";
-		if (debug_mode) {
+		if (debug_mode && !safe_mode) {
 			new_cdr_str += "&nbsp;&nbsp;Desc: <input id=\"cdrdesc_" + z[1] + "\" style=\"width:10%\" value=\"XXX\" onchange=\"update_cdr_text('" + z[1] + "'," + ((z[2].includes("Coord Req")) ? 'true' : 'false') + ")\" } />" +
 			"&nbsp;&nbsp;<input id=\"cdrdescbr_" + z[1] + "\" style=\"width:10%\" value=\"<br/>XXX\" readonly><br/>" +
 			z[1] + ": <input id=\'cdrcp_" + z[1] + "\' style=\'width:75%\' value=\'" +
@@ -680,34 +680,36 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	var output = '<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
 				'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span><br/><br/>';
 	// First input line
-	output += '<input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA pref route as of ' + 
-		today_str + '\' readonly><br/><br/>';
+	if (debug_mode && !safe_mode) {
+		output += '<input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA pref route as of ' + 
+			today_str + '\' readonly><br/><br/>';
 
-	// Top large box
-	output += '<textarea rows="8" cols="80">' + "case \"" + convert_iata(arvl) + '\": // ' + convert_iata(dptr) + '-' + convert_iata(arvl) + ' // Updated ' + today_str + mr_text + textarea_tabs +
-		'result += \"<!-- Updated ' + today_str + ' P -->\";';
-	if (faa_pref.trim().length > 0) {
-		output += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
-	}
-	output += '</textarea><br/><br/>';
-	output += '<input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Non RNAV:</b>\"; // TODDO\' readonly><br/><br/>';
-	output += '<textarea rows="8" cols="80">';
-	if (sortable.length > 0) {
-		if (sortable.length > 3) {
-			output += 'result += \"<br/><br/><b>Playbooks:</b>\";' + textarea_tabs + playbook_str;
-		} else {
-			output += playbook_str.replace("<br/>","<br/><br/>"); // Only replace first (top)
+		// Top large box
+		output += '<textarea rows="8" cols="80">' + "case \"" + convert_iata(arvl) + '\": // ' + convert_iata(dptr) + '-' + convert_iata(arvl) + ' // Updated ' + today_str + mr_text + textarea_tabs +
+			'result += \"<!-- Updated ' + today_str + ' P -->\";';
+		if (faa_pref.trim().length > 0) {
+			output += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
 		}
-		output += textarea_tabs;
+		output += '</textarea><br/><br/>';
+		output += '<input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Non RNAV:</b>\"; // TODDO\' readonly><br/><br/>';
+		output += '<textarea rows="8" cols="80">';
+		if (sortable.length > 0) {
+			if (sortable.length > 3) {
+				output += 'result += \"<br/><br/><b>Playbooks:</b>\";' + textarea_tabs + playbook_str;
+			} else {
+				output += playbook_str.replace("<br/>","<br/><br/>"); // Only replace first (top)
+			}
+			output += textarea_tabs;
+		}
+		output +=
+			'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
+			'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
+			cdr_str + textarea_tabs + 'break;</textarea><br/><br/><textarea rows="15" cols="80">' +
+			'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
+			'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
+			cdr_str + textarea_tabs + 'break;</textarea><br/><br/>';
 	}
-	output +=
-		'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
-		'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
-		cdr_str + textarea_tabs + 'break;</textarea><br/><br/><textarea rows="15" cols="80">' +
-		'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
-		'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
-		cdr_str + textarea_tabs + 'break;</textarea><br/><br/>' + new_cdr_str +
-		'<br/><br/><button onclick=\"clear_input(0)\">Clear</button>';
+	output += new_cdr_str + '<br/><br/><button onclick=\"clear_input(0)\">Clear</button>';
 	if (to_array) { return result_arr; }
 	return output;
 }
