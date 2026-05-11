@@ -28,7 +28,10 @@
 <body>
 	FKeys Page: <textarea id="outbound" rows="5">https://prod-1-public.fk.aa.com</textarea>&nbsp;
 	<textarea id="ob_copy" rows="5" hidden></textarea>&nbsp;&nbsp
-	<button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;<button onclick="clear_input(0)">Clear</button>&nbsp;&nbsp;<button onclick="restore_last()">Refresh/Run Previous</button><br/>
+	<button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;
+	<button onclick="clear_input(0)">Clear</button>&nbsp;&nbsp;
+	<button onclick="restore_last()">Refresh/Run Previous</button><br/>&nbsp;&nbsp;
+	<button onclick="clear_input(1)">Clear All</button>;
 	<div id="total"></div>
 </body>
 
@@ -498,9 +501,6 @@ function compute (str_override = "") {
 			output += '<button id="go_button2" onclick="compute()">Go</button>&nbsp;&nbsp;
 			*/
 			output += '<br/><br/><button onclick="clear_input(0)">Clear</button>&nbsp;&nbsp;<button onclick="restore_last()">Refresh/Run Previous</button><br/>';
-			if (debug_mode) {
-				output += '&nbsp;&nbsp;<button onclick="clear_input(1)">Clear All</button>;';
-			}
 			output += '</div>';
 		}
 	}
@@ -710,6 +710,9 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 			cdr_str + textarea_tabs + 'break;</textarea><br/><br/>';
 	}
 	output += new_cdr_str + '<br/><br/><button onclick=\"clear_input(0)\">Clear</button>';
+	if (debug_mode) {
+		output += '&nbsp;&nbsp;<button onclick="clear_input(1)">Clear All</button>;';
+	}
 	if (to_array) { return result_arr; }
 	return output;
 }
