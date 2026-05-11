@@ -65,6 +65,7 @@ var mandatory_routes_checked = false;
 var input_boxes_shown = false;
 var tog_faapref = false;
 var tog_cdrroutes = false;
+var safe_mode = false;
 
 document.getElementById("outbound").addEventListener("keypress", function(event) {
 	if (event.key === "Enter") {
@@ -74,7 +75,7 @@ document.getElementById("outbound").addEventListener("keypress", function(event)
 });
 
 $( document ).ready(function() {
-	console.log("Remember to set debug_mode! (debug_mode = true;)");
+	// console.log("Remember to set debug_mode! (debug_mode = true;)");
 });
 
 function restore_last() {
@@ -189,8 +190,9 @@ function compute (str_override = "") {
 	// For Testing Station Info
 	// XXXYYY | x = dptr | y = arr
 	// xxx - YYY | x = dptr | y = arr
-	if (fkeystxt.replaceAll(" ","").replaceAll("-","").length == 6) {
-		fkeystxt = fkeystxt.replaceAll("-","").replaceAll(" ","");
+	var tmp_strlen = fkeystxt.replaceAll(" ","").replaceAll("-","").length;
+	if (tmp_strlen == 6 || tmp_strlen == 9) {
+		fkeystxt = fkeystxt.replaceAll("-","").replaceAll(" ","").toUpperCase();
 		testing = true;
 	}
 
@@ -258,7 +260,7 @@ function compute (str_override = "") {
 	} else if (testing || ((result = rega.exec(fkeystxt)) != null)) {
 		var mlwa = 7777;
 		var mlwb = 7777;
-		if (!testing) {
+		if (!testing && !safe_mode) {
 			mlwa = parseInt(result[2]) - parseInt(result[1]); // Takeoff weight buffer
 			mlwb = parseInt(result[5]) - parseInt(result[4]); // Landing weight buffer
 			land_wgt_limited = ((mlwa < mlwb) ? false : true);
@@ -268,7 +270,11 @@ function compute (str_override = "") {
 		}
 
 		// Get ac_type
-		var ac_type = (testing ? "321R" : get_ac_type(tmp_rslt[5]));
+		var ac_type = (testing ? "321R" : (safe_mode ? "321R" : get_ac_type(tmp_rslt[5])));
+		if (testing && tmp_strlen == 9) {
+			var tmp_tmp_act = get_ac_type(fkeystxt.slice(-3));
+			ac_type = ((tmp_tmp_act == null) ? "321R" : tmp_tmp_act)
+		}
 
 		output = "MTOW SPREAD: ";
 		var reg_ci = /C\sI\:(\d+)[^\d]/g;
@@ -330,7 +336,7 @@ function compute (str_override = "") {
 				output += "&nbsp;&nbsp;&nbsp;<b style='color:orange'>Method 1 in use</b>";
 			}
 		}
-		if (["A321", "321K", "321R", "321N", "321X"].includes(ac_type)) { // 321T and A321E (Neos) are ok
+		if (!safe_mode && ["A321", "321K", "321R", "321N", "321X"].includes(ac_type)) { // 321T and A321E (Neos) are ok
 			reg_fob = /TOTAL[^\d]*(\d+)[^\d]/g;
 			var unnecessary_var = reg_fob.exec(fkeystxt);
 			if (ac_type == "321X" && unnecessary_var[1] > 40500 && unnecessary_var[1] < 45200) {
@@ -344,7 +350,7 @@ function compute (str_override = "") {
 	} else if (debug_mode) {
 		console.log("regb parse error");
 	}
-	if (testing || (tmp_rslt !== null)) {
+	if (testing || (tmp_rslt !== null && !safe_mode)) {
 		/*
 	 	*	1 - Dptr Station
 	 	*	2 - Arvl Station
@@ -358,7 +364,7 @@ function compute (str_override = "") {
 				fkeystxt.substring(3, 6).toUpperCase(),
 				7777,
 				"TESTING",
-				"850"
+				((fkeystxt.length == 9) ? fkeystxt.slice(-3) : "850")
 			];
 		} else {
 			result = tmp_rslt;
@@ -406,14 +412,16 @@ function compute (str_override = "") {
 
 		// Airport Specific
 		output = airport_extra(flows, result[1], result[2], result[5], ac_type, output);
-	} else if (debug_mode && (rega.exec(fkeystxt) != null) && (regb.exec(fkeystxt) != null)) {
+	} else if (debug_mode && (safe_mode || ((rega.exec(fkeystxt) != null) && (regb.exec(fkeystxt) != null)))) {
 		console.log("flifo parse error");
 	}
 
 	// Tanker | Ferry Fuel
-	regc = /(\d+)\t\d+\:\d+\tH\n+TOTAL/g;
-	if ((tmpres = regc.exec(fkeystxt)) != null) {
-		output += "<br/>Ferry Fuel: <b>" + tmpres[1] + "</b>";
+	if (!safe_mode) {
+		regc = /(\d+)\t\d+\:\d+\tH\n+TOTAL/g;
+		if ((tmpres = regc.exec(fkeystxt)) != null) {
+			output += "<br/>Ferry Fuel: <b>" + tmpres[1] + "</b>";
+		}
 	}
 
 	// Routes
@@ -421,7 +429,7 @@ function compute (str_override = "") {
 	if (result !== null) {
 		output = get_routes(result[1], result[2], result[5], ac_type, output);
 		$("#outbound").val("");
-		if (debug_mode) {
+		if (debug_mode && !safe_mode) {
 			var today = new Date();
 			var tmp_today_str = String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "-" + String(today.getFullYear());
 			regad = /\<\!\-\-\sUpdated\s([\d\-]+)\s([A-Z]*)\s*\-\-\>/g;
@@ -490,6 +498,9 @@ function compute (str_override = "") {
 			output += '<button id="go_button2" onclick="compute()">Go</button>&nbsp;&nbsp;
 			*/
 			output += '<br/><br/><button onclick="clear_input(0)">Clear</button>&nbsp;&nbsp;<button onclick="restore_last()">Refresh/Run Previous</button><br/>';
+			if (debug_mode) {
+				output += '&nbsp;&nbsp;<button onclick="clear_input(1)">Clear All</button>;';
+			}
 			output += '</div>';
 		}
 	}
@@ -1171,9 +1182,8 @@ function today(report_date = true) {
 }
 
 function clear_input (type = -1) {
-	if (type == 0) {
-		$("#outbound").val("");
-	}
+	if (type == 1) { safe_mode = true; }
+	$("#outbound").val("");
 	$("#total").html("");
 }
 
