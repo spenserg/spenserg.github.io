@@ -7032,21 +7032,21 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>WA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA JFK WAVEY EMJAY Q167 KALDA Q161 CHIEZ Y291 MAJIK CUUDA3 KFLL\" readonly>";
 					result += "<br/>WC<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA JFK WAVEY EMJAY Q167 ZJAAY Q97 PRMUS CUUDA3 KFLL\" readonly>";
 					break;
-				case "MCO": // LGA-MCO // Updated 03-24-2026
-					result += "<!-- Updated 03-24-2026 P -->";
+				case "MCO": // LGA-MCO // Updated 05-12-2026
+					result += "<!-- Updated 05-12-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLGA WHITE Q409 CRPLR EARZZ Q131 WAALT Y289 BAHAA HIBAC ALYNA4 KMCO\" readonly>"; // CDR AR
-					result += "<br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLGA WHITE Q409 CRPLR Q85 LPERD SNFLD3 KMCO\" readonly>"; // CDR PH
+					result += "<br/></br>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLGA WHITE Q409 CRPLR Q85 LPERD SNFLD3 KMCO\" readonly>"; // CDR PH
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLGA BIGGY Q75 GSO Q83 ROYCO Q85 LPERD SNFLD3 KMCO\" readonly>"; // CDR SA
 					result += "<br/></br>East/Full OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLGA JFK SHIPP Y488 STERN Y493 BAHAA HIBAC ALYNA4 KMCO\" readonly>"; // CDR AZ
 					result += "<br/>West via HVQ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLGA PARKE J6 HVQ Q147 BURGG WHYYT GRNCH5 KMCO\" readonly>"; // CDR J6
-					result += "<br/><br/>ATLANTIC SOUTH<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA JFK SHIPP Y488 OHRYN AZEZU METZZ OOONN Y494 WEAKK Y493 BAHAA HIBAC ALYNA4 KMCO\" readonly>";
-					// result += "<br/>VACAPES SOUTH 1: <input style=\"width:75%\" value=\"KLGA WAVEY EMJAY CORNE ECG PRONI WAALT Y289 BAHAA HIBAC ALYNA4 KMCO\" readonly>";
+					result += "<br/></br>ATLANTIC SOUTH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLGA JFK SHIPP Y488 STERN Y493 BAHAA HIBAC ALYNA4 KMCO\" readonly>"; // CDR AZ
 					result += "<br/>NE TO FL VIA J48 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLGA LANNA J48 MOL FLASK GOWBE BURGG QUIWE Q93 GIPPL Q85 LPERD SNFLD3 KMCO\" readonly>";
+					// result += "<br/>VACAPES SOUTH 1: <input style=\"width:75%\" value=\"KLGA WAVEY EMJAY CORNE ECG PRONI WAALT Y289 BAHAA HIBAC ALYNA4 KMCO\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><input style=\"width:75%\" value=\"KLGA SBJ PTW J48 MOL FLASK ODF MCN OTK LEESE3 KMCO\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-24-2026
-					result += "<!-- Verified with ATCSCC on 03-24-2026 -->";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-12-2026
+					result += "<!-- Verified with ATCSCC on 05-12-2026 -->";
 					result += "<br/>48<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA LANNA J48 MOL FLASK GOWBE BURGG WHYYT GRNCH5 KMCO\" readonly>";
 					result += "<br/>4A<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA LANNA J48 CSN FANPO Q40 ALEAN VXV THRSR ZJAYX GRNCH5 KMCO\" readonly>";
 					result += "<br/>4C<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA LANNA J48 MOL FLASK GOWBE BURGG QUIWE Q93 GIPPL Q85 LPERD SNFLD3 KMCO\" readonly>"; // NE TO FL VIA J48 1
