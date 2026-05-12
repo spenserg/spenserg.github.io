@@ -449,7 +449,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 03-24-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-24-2026
 			result += "<br/><br/>NRP: <span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 JCT J86 LEV Y280 CHRGE PRICY5 KMCO\" readonly>";
-			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 JCT LFK J50 CEW J2 DEFUN GRNCH5 KMCO\" readonly>";
+			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY DCT BLH J169 TFD J50 ELP Q4 CLL ROKIT LSU J2 DEFUN GRNCH5 KMCO\" readonly>";
 			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J78 PNH J14 VUZ LGC ZJAYX GRNCH5 KMCO\" readonly>";
 			result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 FST J138 SAT PSX PEGLG ALGAE DTSRJ CIGAR PRICY5 KMCO\" readonly>";
 			result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 FST KH87A CRP PEGLG ALGAE DTSRJ CIGAR PRICY5 KMCO\" readonly>";
