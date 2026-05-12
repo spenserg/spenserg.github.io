@@ -1255,7 +1255,7 @@ KORD MOBLE ADIME OTENS ANEWA DJB JHW KROC
 			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J151 VUZ MGMRY ACORI BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>"; // CDR 8S			
 			result += "<br/><br/>East/ZTL Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM BKW RDU PRONI Q131 WAALT Y289 BAHAA HIBAC SHFTY6 KRSW\" readonly>";
 			result += "<br/>West/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J101 LIT EDWAH Q33 SWEUP AEX J58 HRV Q105 BLVNS KOLBR TYNEE4 KRSW\" readonly>";
-			result += "<br/></br><br/>OHIO VLY TO FL 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN Q19 BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>"; // CDR 0S
+			result += "<br/></br>OHIO VLY TO FL 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN Q19 BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>"; // CDR 0S
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-12-2026
 			result += "<!-- Verified with ATCSCC on 05-12-2026 -->";
 			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN Q19 BULZI Q81 NICKI PLYER TYNEE4 KRSW\" readonly>";
