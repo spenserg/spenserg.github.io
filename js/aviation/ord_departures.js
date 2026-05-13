@@ -463,14 +463,14 @@ KORD GIJ V55 DQN KDAY
 			result += "<br/>1W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD OLINN OREOS OBENE KDSM\" readonly>";
 			result += "<br/>NR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD IOW J10 DSM KDSM\" readonly>";
 			break;
-		case "DTW": // ORD-DTW // Updated 11-14-2025
-			result += "<!-- Updated 11-14-2025 P -->";
+		case "DTW": // ORD-DTW // Updated 05-13-2026
+			result += "<!-- Updated 05-13-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL230):</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PORZL RKCTY2 KDTW\" readonly>"; // CDR 0N
-			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-14-2025
-			result += "<!-- Verified with ATCSCC on 11-14-2025 -->";
-			result += "<br/>0E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DUFEE ELX HOSSA VCTRZ2 KDTW\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD RAYNR BRTMN DNIKA TAAYZ PETTY DUUDA RKCTY2 KDTW\" readonly>"; // CDR 0N
+			result += "<br/></br>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD DUFEE LOGGR HOSSA VCTRZ2 KDTW\" readonly>"; // CDR 0E
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-13-2026
+			result += "<!-- Verified with ATCSCC on 05-13-2026 -->";
+			result += "<br/>0E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DUFEE LOGGR HOSSA VCTRZ2 KDTW\" readonly>";
 			result += "<br/>0N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PORZL RKCTY2 KDTW\" readonly>";
 			result += "<br/>1E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME SEWTO FWA SHANX HANBL HANBL3 KDTW\" readonly>";
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ TVC LEFSA LAYKS2 KDTW\" readonly>";
@@ -1410,7 +1410,7 @@ KORD BACEN BLOKR BEKKI IMOUT MBELL5 KSDF
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-11-2026
 			result += "<br/></br>NRP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MYKIE MONNY JORDY ONL J94 LLC ANAHO SLMMR5 KSMF\" readonly>"; // CDR 1W
 			result += "<br/></br>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 RWF J34 DPR J32 LLC ANAHO SLMMR5 KSMF\" readonly>"; // CDR 1N
-			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J60 HCT EKR TCH BAM J94 LLC ANAHO SLMMR5 KSMF\" readonly>"; // CDR LP
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J60 DBL J80 MLF TATOO CRASY SLMMR5 KSMF\" readonly>";
 			result += "<br/><br/>South via STL<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J134 ICT J28 MLF TATOO CRASY SLMMR5 KSMF\" readonly>"; // CDR 2S
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD PLL ALO FOD ONL J94 LLC J32 SAC KSMF\" readonly>"; // CDR NR
