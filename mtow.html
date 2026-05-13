@@ -30,8 +30,8 @@
 	<textarea id="ob_copy" rows="5" hidden></textarea>&nbsp;&nbsp
 	<button id="go_button" onclick="compute()">Go</button>&nbsp;&nbsp;
 	<button onclick="clear_input(0)">Clear</button>&nbsp;&nbsp;
-	<button onclick="restore_last()">Refresh/Run Previous</button><br/>&nbsp;&nbsp;
-	<button onclick="clear_input(1)">Clear All</button>;
+	<button onclick="restore_last()">Refresh/Run Previous</button>&nbsp;&nbsp;
+	<button onclick="clear_input(1)">Clear All</button><br/>&nbsp;&nbsp;
 	<div id="total"></div>
 </body>
 
@@ -448,14 +448,6 @@ function compute (str_override = "") {
 			output += '<br/><br/><button id=\"button_toggle_input_boxes\" onclick=\"toggle_input_boxes()\">' + (input_boxes_shown ? 'Hide' : 'Show') + ' Input Boxes</button>';
 			output += '<div id="input_boxes">';
 
-			// Faa Pref
-			output += '<br/><hr><br/><input id=\'input_faapref_default\' style=\'width:75%\' value=\'' + ((tog_faapref) ? '' : '// ') + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + ((tog_faapref) ? '' :  ' // No FAA Pref route as of ' + tmp_today_str) + '\' readonly>';
-			output += '&nbsp;&nbsp;<button id=\'button_faapref_default\' onclick=\"toggle_faa_pref()\">' + ((tog_faapref) ? 'No FAA pref' : 'Remove Pref Rte Comments') + '</button>';
-
-			// CDRs
-			output += '<br/><input id=\'input_cdrroutes_default\' style=\'width:75%\' value=\'' + ((tog_cdrroutes) ? '' : '// ') + 'result += \"<br/><br/><b>CDRS</b>\";' + ((tog_cdrroutes) ? '' : ' // No CDRs as of ' + tmp_today_str) + '\' readonly>';
-			output += '&nbsp;&nbsp;<button id=\'button_cdrroutes_default\' onclick=\"toggle_cdr_routes()\">' + ((tog_cdrroutes) ? 'No CDRs listed' : 'Remove CDR Comments') + '</button>';
-
 			// 3 input boxes: [green, red, xxx]
 			output += '<hr>Route: <input id=\'3box_route\' style=\'width:25%\' value=\'YYY\' onchange=\'update_rte_text()\'>';
 			output += '&nbsp;&nbsp;&nbsp;&nbsp;Desc: <input id=\'3box_desc\' style=\'width:25%\' value=\'XXX\' onchange=\'update_rte_text()\'>';
@@ -500,6 +492,15 @@ function compute (str_override = "") {
 			output += '<textarea id="ob_copy2" rows="5" hidden></textarea>&nbsp;&nbsp';
 			output += '<button id="go_button2" onclick="compute()">Go</button>&nbsp;&nbsp;
 			*/
+
+			// Faa Pref
+			output += '<br/><hr><br/><input id=\'input_faapref_default\' style=\'width:75%\' value=\'' + ((tog_faapref) ? '' : '// ') + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + ((tog_faapref) ? '' :  ' // No FAA Pref route as of ' + tmp_today_str) + '\' readonly>';
+			output += '&nbsp;&nbsp;<button id=\'button_faapref_default\' onclick=\"toggle_faa_pref()\">' + ((tog_faapref) ? 'No FAA pref' : 'Remove Pref Rte Comments') + '</button>';
+
+			// CDRs
+			output += '<br/><input id=\'input_cdrroutes_default\' style=\'width:75%\' value=\'' + ((tog_cdrroutes) ? '' : '// ') + 'result += \"<br/><br/><b>CDRS</b>\";' + ((tog_cdrroutes) ? '' : ' // No CDRs as of ' + tmp_today_str) + '\' readonly>';
+			output += '&nbsp;&nbsp;<button id=\'button_cdrroutes_default\' onclick=\"toggle_cdr_routes()\">' + ((tog_cdrroutes) ? 'No CDRs listed' : 'Remove CDR Comments') + '</button>';
+
 			output += '<br/><br/><button onclick="clear_input(0)">Clear</button>&nbsp;&nbsp;<button onclick="restore_last()">Refresh/Run Previous</button><br/>';
 			output += '</div>';
 		}
