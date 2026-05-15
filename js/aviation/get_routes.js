@@ -11341,20 +11341,21 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-23-2026
 					break;
-				case "ORD": // SFO-ORD // Updated 09-14-2025
-					result += "<!-- Updated 09-14-2025 P -->";
+				case "ORD": // SFO-ORD // Updated 05-15-2026
+					result += "<!-- Updated 05-15-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 GALLI BAM J94 LCU Q122 KATES FOD MYRRS FYTTE7 KORD\" readonly>";
 					// result += "<br/><br/>Night: <input style=\"width:75%\" value=\"KSFO NIITE4 MOGEE Q122 KATES FOD MYRRS FYTTE7 KORD\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 JASTI FSD ZZIPR FYTTE7 KORD\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 GCK J110 BUM WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 EDLES HGO J24 SLN J96 IRK BENKY6 KORD\" readonly>";
 					result += "<br/><br/>North via DPR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 GALLI BAM J32 DPR UFFDA Q156 ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/>South via GCK<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 GCK J110 BUM WELTS TRTLL6 KORD\" readonly>";
 					result += "<br/>South via PNH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q130 PNH J78 TUL J98 SGF WELTS TRTLL6 KORD\" readonly>";
 					result += "<br/><br/>South via ABQ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN PMD J6 DRK J78 TUL EOS WELTS TRTLL6 KORD\" readonly>";
 					result += "<br/><br/>ORD JVL BDF<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 GALLI MLD J32 CZI J82 FSD J114 GEP DLL MSN JVL CHMPN FYTTE7 KORD\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSFO SHOR7 SAC J32 BAM J94 DBQ JVL JVL7 KORD\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-11-2026
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KSFO SHOR7 SAC J32 BAM J94 DBQ JVL JVL7 KORD\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-15-2026
 					/*
 					result += "<br/>F1 (Coord Req): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 GALLI MLD J32 CZI J82 FSD ZZIPR FYTTE7 KORD\" readonly>";
 					result += "<br/>LS (Ok to File): <input class=\"cdr_input\" style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 JSICA MLF J80 HLC SLN J96 IRK BENKY6 KORD\" readonly>";
