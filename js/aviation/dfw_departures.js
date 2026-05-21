@@ -925,7 +925,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "GRR": // DFW-GRR // Updated 05-12-2026
 			result += "<!-- Updated 05-12-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL J19 RBS GIJ VIO GRR\" readonly>"; // Based on pref route from Houston
+			result += "<br/><input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL J19 RBS GIJ VIO KGRR\" readonly>"; // Based on pref route from Houston
 			// CDR 0P is different
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J87 MZV OBK J94 PMM KGRR\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEMFS Q34 HITMN IIU FWA AZO KGRR\" readonly>";
