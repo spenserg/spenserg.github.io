@@ -1074,7 +1074,8 @@ KORD EARND ELANR EMMLY ERECO IIU J8 HVQ J24 MOL TERKS2 KORF
 			break;
 		case "PDX": // ORD-PDX // Updated 03-24-2026
 			result += "<!-- Updated 03-24-2026 P -->";
-			result += "<br/><input style=\"width:75%\" value=\"KORD MYKIE MONNY SMIDD MCW J16 PDT JKNOX HHOOD6 KPDX\" readonly>"; // CDR 1W
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-21-2026
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KORD MYKIE MONNY SMIDD MCW J16 PDT JKNOX HHOOD6 KPDX\" readonly>"; // CDR 1W
 			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 BIL J16 PDT JKNOX HHOOD6 KPDX\" readonly>"; // CDR 0N
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD NOONY NIGHT NITWT OBH SNY OCS J20 PDT JKNOX HHOOD6 KPDX\" readonly>"; // CDR 3W
 			result += "<br/><br/><b>Non RNAV</b>";
