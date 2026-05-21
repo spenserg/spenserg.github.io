@@ -8619,10 +8619,10 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "ORD": // PDX-ORD // Updated 02-20-2026
 					result += "<!-- Updated 02-20-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KPDX LAVAA7 PDT J16 FSD ZZIPR FYTTE7 ORD\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 SUNED FINUT DIPHU Q146 GEP J70 BAE LYNNI ERNNY8 KORD\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KPDX LAVAA7 PDT J16 FSD ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 SUNED FINUT Q156 ZZIPR FYTTE7 kORD\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 PDT J20 FQF J80 MCI J26 IRK BENKY6 KORD\" readonly>";
-					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					result += "<br/><br/>North via MSP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 SUNED FINUT DIPHU Q146 SMERF GEP J70 BAE LYNNI ERNNY8 KORD\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-05-2026
 					break;
 				case "PHX": // PDX-PHX // Updated 02-06-2026
