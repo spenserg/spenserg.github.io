@@ -167,7 +167,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "PHX":
 			// result += "<br/>PHX - Make sure flow matches TPS; Usually departing into the sun (East in AMs, West in PMs)";
 			result += "<br/><br/>PHX - Rwy 26/8 usually available for dptr (operational necessity) if tower notified in advance";
-			result += "<br/><br/><b>If ZFW is reduced using BROAK1 dptr, disable restrictions.<br/>Fkeys cant calc an M2 solution when cowboy sua is active, but the sua isn't meant to restrict departures on broak1<\/b>";
+			if (!["ZLA","ZLC","ZOA","ZSE","ZAB"].includes(get_fir(arvl))) {
+				result += "<br/><br/><b>If ZFW is reduced using BROAK1 dptr, disable restrictions.<br/>Fkeys cant calc an M2 solution when cowboy sua is active, but the sua isn't meant to restrict departures on broak1<\/b>";
+			}
 			// show_flow_info = "West Rwy25R<br/>East Rwy7L";
 			break;
 		case "PSP":
