@@ -302,7 +302,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "ELP": // PHX-ELP // Updated 02-20-2026
 			result += "<!-- Updated 02-20-2026 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE TEEES MOLLY5 KELP\" readonly>"; // CDR EC
 			result += "<br/></br>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX BROAK1 JNIPR GREBE MOLLY5 KELP\" readonly>"; // CDR BR
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX STRRM1 TUS NOCHI TEEES MOLLY5 KELP\" readonly>"; // CDR ST
