@@ -7275,11 +7275,11 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><input style=\"width:75%\" value=\"KLIT LIT \" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-23-2025
 					break;
-				case "DFW": // LIT-DFW // Updated 11-23-2025
-					result += "<!-- Updated 11-23-2025 P -->";
+				case "DFW": // LIT-DFW // Updated 05-24-2026
+					result += "<!-- Updated 05-24-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL300):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><b style=\"color:orange\";>Fkeys defaults to LIT DESME.. and I'm not sure why</b>";
+					result += "<br/><b style=\"color:orange\";>Fkeys defaults to LIT LESME.. and I'm not sure why</b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLIT LIT RZC KLAWW VKTRY2 KDFW\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLIT WASKO CISAR EIC WHINY BEREE3 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
