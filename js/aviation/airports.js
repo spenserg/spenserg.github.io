@@ -999,6 +999,7 @@ convert_iata = function (str = null) {
 				case "LGKR": return "CFU";break;
 				case "EDDK": return "CGN";break;
 				case "SBCG": return "CGR";break;
+				case "KCHA": return "CHA";break;
 				case "NZCH": return "CHC";break;
 				case "KCHS": return "CHS";break;
 				case "LIRA": return "CIA";break;
@@ -1489,6 +1490,7 @@ convert_icao = function (str = null) {
 				case "CFU": return "LGKR";break;
 				case "CGN": return "EDDK";break;
 				case "CGR": return "SBCG";break;
+				case "CHA": return "KCHA";break;
 				case "CHC": return "NZCH";break;
 				case "CHS": return "KCHS";break;
 				case "CIA": return "LIRA";break;
@@ -1953,6 +1955,7 @@ get_fir = function (apt = "") {
 			case "KBZN": return "ZLC"; break;
 			case "KCAE": return "ZJX"; break;
 			case "KCAK": return "ZOB"; break;
+			case "KCHA": return "ZTL"; break;
 			case "KCHS": return "ZJX"; break;
 			case "KCID": return "ZAU"; break;
 			case "KCLE": return "ZOB"; break;
