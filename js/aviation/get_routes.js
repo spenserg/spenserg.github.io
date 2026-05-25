@@ -2132,6 +2132,21 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 
 // CAK skipped
 
+		case "CHA":
+			switch(arvl) {
+				case "DFW": // CHA-DFW // Updated 05-25-2026
+					result += "<!-- Updated 05-25-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-25-2026
+					result += "<br/><br/><input style=\"width:75%\" value=\"KDFW MEM LITTR FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCHA BNA J46 ARG FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCHA NIOLA VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/><br/>North/ZME Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCHA RESPE Q79 SWAPP KI45O PXV J78 TUL KLAWW VKTRY2 KDFW\" readonly>";
+					result += "<br/>South/ZME Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCHA RMG MGM PAYTN MCB J50 AEX PNUTS BEREE3 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-25-2026
+				break;
+			}
+		break; // End of CHA
+
 		case "CHS":
 			switch(arvl) {
 				case "CLT": // CHS-CLT // Updated 05-11-2026
