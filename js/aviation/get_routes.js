@@ -379,6 +379,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL PENCL2 JAACE BNA ARG OKM IFI EZEEE FTI GUP J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR PE
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KATL NASSA2 NASSA VLKNN Q30 IZAAC ELD FUZ J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/>North via STL<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL PENCL2 JAACE BNA J45 STL J24 MCI J80 HLC SKYWR Q90 DNERO ANJLL4 KLAX\" readonly>";  // Based on CDR PE
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/>South via LSU<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KATL HAALO3 SARGE CEW J2 LSU ROKIT CLL Q4 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					/* TODO
 					result += "<br/><br/>ABI: <input style=\"width:75%\" value=\"KATL NASSA2 VUZ SQS J52 TXK J42 ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
@@ -1208,6 +1209,7 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA PARDN4 HODJS ARG KF33E IRW J6 ZUN GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/><b>South dptr:  KBNA DANLS4 TPEEE FSM IRW .. <\/b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA PARDN4 NAKIY SGF ICT GCK J110 RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY4 JALAR CRAMM Q32 ELD FUZ J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/><b>If Jackal sua active:  ..  EWM J4 SSO J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1 KLAX<\/b>";
 					result += "<br/><br/>North via HLC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER PXV STL J24 MCI J80 HLC SKWYR Q90 DNERO ANJLL4 KLAX\" readonly>";
@@ -1386,6 +1388,7 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 				case "LAX": // BOS-LAX // Updated 02-12-2026
 					result += "<!-- Updated 02-12-2026 P -->";
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBOS HYLND7 HYLND CAM Q822 GONZZ Q29 JHW J554 GIJ JOT MZV WELKY Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOS HYLND7 HYLND HANAA Q816 HOCKE Q935 MONEE DABJU J68 BAE J16 MCW J148 ONL CHUWY Q88 HAKMN ANJLL4 KLAX\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOS BLZZR6 BLZZR BAF Q406 BWZ J6 HVQ J78 FAM J98 SGF PER MMB FTI J244 ZUN DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/></br>North via CYOW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOS HYLND7 HYLND BUGSY POLTY OVORA GABOV HML OGSIQ SWTHN DNW FFU J9 MLF WINEN Q73 HAKMN ANJLL4 KLAX\" readonly>"; // CDR 2Y
@@ -2467,6 +2470,7 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<!-- Updated 04-13-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 04-13-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KCMH PKACZ TARRY DQN VHP J80 MCI J24 SLN J102 ALS J44 RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY FWA JOT J60 DVV ZAKRY Q88 HAKMN ANJLL4 KLAX\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY PXV ARG FSM IRW J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/>North via ONL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH PKACZ TARRY FWA JOT FOD ONL CHUWY Q88 HAKMN ANJLL4 KLAX\" readonly>";
@@ -4134,6 +4138,7 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/><br/>NRP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN CONNR8 WERNR ZAKRY Q88 HAKMN ANJLL4 KLAX\" readonly>"; // CDR W1
 					result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN DDRTH1 DDRTH MTU GARDD Q88 HAKMN ANJLL4 KLAX\" readonly>"; // CDR N1
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN SMMUR2 DAAYE Q90 DNERO ANJLL4 KLAX\" readonly>"; // CDR S1
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/>: <input style=\"width:75%\" value=\"KDEN PIKES3 ALS J13 ABQ J78 DRK J231 TNP BASET5 KLAX\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-09-2025
@@ -5947,6 +5952,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-30-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KJAC DIVYD2 JEDHY TCH PICHO Q842 WINEN Q73 HAKMN ANJLL4 KLAX\" readonly>";
 					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAC GEYSR6 NALSI OCS EKR DVC NAVJO Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAC ALPIN4 KICNE MLD J158 MVA FRA AVE SADDE8 KLAX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-30-2026
@@ -6193,6 +6199,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 12-15-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 12-15-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KJFK RBV Q430 AIR J80 MCI J24 SLN J102 ALS J44 RSK J64 TBC JASSE Q90 DNERO ANJLL4 KLAX\" readonly>"; // CDR PH
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK DEEZZ6 CANDR J60 DANNR RAV J64 FWA WHETT DARCY EDENS WELKY Q90 DNERO ANJLL4 KLAX\" readonly>"; // CDR 64
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 HVQ J78 FAM SGF TOTOE CIM J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR 6F
 					result += "<br/></br>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK COATE Q436 RAAKK Q438 RUBYY DABJU J36 BAE MCW ONL J148 CYS EKR J100 SAKES PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>"; // Based on CDR CW
@@ -6495,6 +6502,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 12-15-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KJFK RBV Q430 AIR J80 MCI J24 SLN J102 ALS J44 RSK TOADD Q78 MARUE DSNEE6 KSNA\" readonly>";
 					result += "<br/><br/>North/ZKC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK DEEZZ6 CANDR J60 DANNR RAV J64 FWA WHETT DARCY EDENS WELKY Q90 NAVJO TOADD Q78 MARUE DSNEE6 KSNA\" readonly>";
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/>South/Mtn Wave Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 HVQ J78 FAM SGF TOTOE CIM J96 DRK HIMDU DSNEE6 KSNA\" readonly>";
 					result += "<br/></br>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK COATE Q436 RAAKK Q438 RUBYY DABJU J36 BAE MCW ONL J148 CYS EKR J100 BCE J60 BLD NATEE DSNEE6 KSNA\" readonly>";
 					result += "<br/>South/ZKC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 HVQ Q68 RAMRD ARG FSM IRW J78 DRK HIMDU DSNEE6 KSNA\" readonly>";
@@ -9164,6 +9172,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 11-07-2025 P -->";
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHL MXE PENSY J110 BUM Q176 CIM J134 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // CDR ST
 					result += "<br/><br/>PTW/North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB J60 DJB MAYZE JOT J87 MZV WELKY Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/><b>J60: .. JOT J60 DVV ZAKRY Q88 HAKMN ANJLL4 KLAX<\/b>";
 					result += "<br/>STOEN/South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN REEFI EMI J48 CSN FANPO Q40 BFOLO FIBER HRISN IZAAC EIC FUZ J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>"; // Based on CDR EM
 					result += "<br/><br/>DITCH/North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL DITCH Q437 HNNAH Q450 JFK CFB Q818 WOZEE Q935 HOCKE BAE J16 MCW J148 DTA MLF WINEN Q73 HAKMN ANJLL4 KLAX\" readonly>"; // CDR 95
@@ -9975,6 +9984,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 01-23-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPIT BSV MAYZE CPONE JOT J87 MZV WELKY Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPIT BSV MAYZE CPONE JOT J60 HVE PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>"; // CDR P1
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPIT AIR J80 MCI J24 SLN J102 ALS J44 RSK J64 TBC JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
 					result += "<br/><br/>North via EKR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPIT BSV MAYZE CPONE JOT J60 IOW LEONG Q114 AYOLE SNY J100 EKR KIMMR Q96 GUNTR LAKRR Q88 HAKMN ANJLL4 KLAX\" readonly>";
@@ -11861,6 +11871,7 @@ KPHL OOD TEBEE HAYDO TRPOD Q409 PUPYY KYYUU LUBBR4 KSRQ
 					result += "<!-- Updated 02-27-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 02-27-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSTL BGOOD5 BGOOD BUM J110 ALS NAVJO Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL BRAKK5 HLV MCI J80 HLC SKWYR Q90 DNERO ANJLL4 KLAX\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL JAHNY6 MAP RZC KF33E IRW J6 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/>North via LNK<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL WHRLI7 MCM LNK J60 DBL CHESZ Q88 HAKMN ANJLL4 KLAX\" readonly>";
