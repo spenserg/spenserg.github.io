@@ -6092,7 +6092,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 09-23-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 HVQ Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/>North</br><span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 COLNS Q176 STL RZC FSM RRNET SEEVR4 KDFW\" readonly>"; // CDR B7
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 SAAME J6 COLNS Q176 STL RZC FSM RRNET SEEVR4 KDFW\" readonly>"; // CDR B7
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 BYRDD J48 CSN FANPO Q40 BFOLO IGB SQS YUYUN BEREE3 KDFW\" readonly>"; // CDR CQ
 					result += "<br/></br>NW Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK RBV Q430 AIR J80 VHP J24 STL BUM ICT IRW IBAKE VKTRY2 KDFW\" readonly>"; // CDR U8
 					// result += "<br/>NO J6 1: <input style=\"width:75%\" value=\"KJFK RBV Q430 BYRDD J48 CSN FANPO Q40 ALEAN VXV J46 SOPIE Q68 LITTR MEEOW FEWWW SEEVR4 KDFW\" readonly>";
