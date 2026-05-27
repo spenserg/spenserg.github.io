@@ -172,7 +172,7 @@ function compute (str_override = "") {
 	regw = /(PERMANENT AIRPORT ANALYSIS)/g;
 
 	// Briefing
-	regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+\n/g;
+	regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAA[LT]([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+\n/g;
 
 	// All CDRs doc // FAA download
 	regu = /RCode\tOrig\tDest\tDepFix\tRoute String\tDCNTR\tACNTR\tTCNTRs\tCoordReq\tPlay\tNavEqp/g;
@@ -955,7 +955,7 @@ function decs_route(input = null, cdr_list = null) {
 
 function briefing_parse(fkeystxt = "") {
 	var result = "briefing recognized // unable to parse";
-	var tmp_regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAAL([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})\n[^\/]+\/(\d+)\s([^\/]+)\/[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+/g;
+	var tmp_regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAA[LT]([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})\n[^\/]+\/(\d+)\s([^\/]+)\/[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+/g;
 
 	/*
 	* 1 - Dptr
