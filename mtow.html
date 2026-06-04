@@ -537,9 +537,13 @@ electronic_turnover_parse = function (input = null) {
 	var desk_info = desk_reg.exec(input);
 	result += desk_info[1] + "          SHIFT<" + desk_info[2] + "\n---------------------------------------------------------------\n";
 
-	var header_reg = /Chief\sDispatcher\sNotes[^\n]+\n([\s\S]+)\nStanding Desk Notes\n([\s\S]+)\nGeneral Comments\nGeneral Comments/g;
+	var header_reg = /Chief\sDispatcher\sNotes[^\n]+\n([\s\S]+)\nStanding Desk Notes\n([\s\S]+)\nGeneral Comments\n(General Comments[\s\S]+)/g;
 	var header_info = header_reg.exec(input);
 	result += header_info[1] + "\n" + header_info[2] + "\n---------------------------------------------------------------\n                 ***** DFW <SOUTH> FLOW *****\n---------------------------------------------------------------\n";
+
+	// TODO
+	// result += "1.WXR<\n\n2.MEL<\n\n3.ATC<\n\n4.OPS<\n\n\n" + desk_info[1] + "<.................RLVD BY...........................<1400L";
+	result += header_info[3];
 
 	return '<textarea rows="8" cols="80">' + result + '<\/textarea>';
 }
