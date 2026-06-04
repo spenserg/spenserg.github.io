@@ -227,6 +227,12 @@ function compute (str_override = "") {
 		}
 	} // End of CCCZ Table
 
+	// Electronic Turnover
+	if (fkeystxt.includes("Dispatch Desk Electronic Turnover")) {
+		$("#total").html(electronic_turnover_parse(fkeystxt));
+		return;
+	}
+
 	// All CDRs Doc
 	if (fkeystxt.includes("RCode") || fkeystxt.includes("DepFix")) {
 		if (regu.exec(fkeystxt) != null) {
@@ -519,6 +525,23 @@ function compute (str_override = "") {
 	}
 	*/
 	if (!input_boxes_shown) { $("#input_boxes").hide(); }
+}
+
+electronic_turnover_parse = function (input = null) {
+	var today = new Date();
+	var month_names = ["JAN", "FEB", "MAR", "APR", "MAY", "JUNE", "JULY", "AUG", "SEPT", "OCT", "NOV", "DEC"];
+	var today_str = String(today.getDate()).padStart(2, '0') + " " + String(month_names[today.getMonth()]) + " " + String(today.getFullYear());
+	var result = "---------------------------------------------------------------\n<" + today_str + "            TURNOVER FD";
+
+	var desk_reg = /Turnover\sNotes\sfor\sDesk\sFD([\d]+)\sfor\sShift\s[\d\/]+\s([^\n]+)\n/g;
+	var desk_info = desk_reg.exec(input);
+	result += desk_info[1] + "          SHIFT<" + desk_info[2] + "\n---------------------------------------------------------------\n";
+
+	var header_reg = /Chief\sDispatcher\sNotes[^\n]+\n([\s\S]+)\nStanding Desk Notes\n([\s\S]+)\nGeneral Comments\nGeneral Comments/g;
+	var header_info = header_reg.exec(input);
+	result += header_info[1] + "\n" + header_info[2] + "\n---------------------------------------------------------------\n                 ***** DFW <SOUTH> FLOW *****\n---------------------------------------------------------------\n";
+
+	return '<textarea rows="8" cols="80">' + result + '<\/textarea>';
 }
 
 function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {}, 'non_rnav' : {}, 'cdrs' : {}}) {
