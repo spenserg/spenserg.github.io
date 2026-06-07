@@ -825,18 +825,18 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J26 MCI J80 VHP APE KPIT\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK J104 ONM CNX J74 IRW J78 IIU HNN FEWGA7 KPIT\" readonly>";
 			break;
-		case "PSP": // PHX-PSP // Updated 09-14-2025
-			result += "<!-- Updated 09-14-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX KEENS3 HRRBR BLH SBONO1 KPSP\" readonly>";
-			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED SBONO1 KPSP\" readonly>"; // CDR ZE
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX BXK4 BLH SBONO1 KPSP\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-14-2025
-			result += "<!-- Verified with ATCSCC on 09-14-2025 -->";
-			result += "<br/>KE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR DECAS KPSP\" readonly>";
-			result += "<br/>QU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN EED TNP KPSP\" readonly>";
-			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED TNP KPSP\" readonly>";
+		case "PSP": // PHX-PSP // Updated 06-07-2026
+			result += "<!-- Updated 06-07-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KPHX KEENS3 HRRBR CURIV RDBUL1 KPSP\" readonly>"; // CDR KE
+			result += "<br/></br>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA YORRK RDBUL1 KPSP\" readonly>"; // CDR ZE
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\"; value=\"KPHX BXK4 BLH SBONO1 KPSP\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-07-2026
+			result += "<!-- Verified with ATCSCC on 06-07-2026 -->";
+			result += "<br/>KE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 HRRBR CURIV RDBUL1 KPSP\" readonly>";
+			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN YORRK RDBUL1 KPSP\" readonly>";
+			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA YORRK RDBUL1 KPSP\" readonly>";
 			break;
 		case "RDM": // PHX-RDM // Updated 12-23-2025
 			result += "<!-- Updated 12-23-2025 P -->";
