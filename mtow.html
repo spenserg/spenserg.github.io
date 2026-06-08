@@ -532,20 +532,45 @@ electronic_turnover_parse = function (input = null) {
 	var month_names = ["JAN", "FEB", "MAR", "APR", "MAY", "JUNE", "JULY", "AUG", "SEPT", "OCT", "NOV", "DEC"];
 	var today_str = String(today.getDate()).padStart(2, '0') + " " + String(month_names[today.getMonth()]) + " " + String(today.getFullYear());
 	var result = "---------------------------------------------------------------\n<" + today_str + "            TURNOVER FD";
+	var gen_comments = 0;
 
-	var desk_reg = /Turnover\sNotes\sfor\sDesk\sFD([\d]+)\sfor\sShift\s[\d\/]+\s([^\n]+)\n/g;
+	var desk_reg = /Turnover\sNotes\sfor\sDesk\sFD([\d]+)\sfor\sShift\s[\d\/]+\s([^\n]+)\n([\s\S]+)/g;
 	var desk_info = desk_reg.exec(input);
+	/*
+	* 1 - Desk Number
+	* 2 - Shift
+	* 3 - All Notes
+	*/
+	if (desk_info == null) {
+		var desk_reg_2 = /Desk\(s\)\nFD(\d+)[\s\S]*(click) outside the field to save\.\n([\s\S]+)/g;
+		desk_info = desk_reg_2.exec(input);
+		/*
+		* 1 - Desk Number
+		* 2 - Placeholder "click"
+		* 3 - All Notes
+		*/
+		if (desk_info == null) { return "Error with regex"; } else {
+			var cur_hour = today.getHours();
+			desk_info[2] = ((cur_hour > 12 && cur_hour < 22) ? "PM" : (cur_hour > 4 && cur_hour < 1) ? "AM" : "MID");
+		}
+	}
 	result += desk_info[1] + "          SHIFT<" + desk_info[2] + "\n---------------------------------------------------------------\n";
 
-	var header_reg = /Chief\sDispatcher\sNotes[^\n]+\n([\s\S]*)\nStanding Desk Notes\n([\s\S]*)General Comments\n(General Comments[\s\S]*)/g;
-	var header_info = header_reg.exec(input);
-	result += header_info[1] + "\n" + header_info[2] + "\n---------------------------------------------------------------\n                 ***** DFW <SOUTH> FLOW *****\n---------------------------------------------------------------\n";
-
-	// TODO
-	// result += "1.WXR<\n\n2.MEL<\n\n3.ATC<\n\n4.OPS<\n\n\n" + desk_info[1] + "<.................RLVD BY...........................<1400L";
-	result += header_info[3];
-
-	return '<textarea rows="8" cols="80">' + result + '<\/textarea>';
+	desk_info[3] = desk_info[3].replaceAll(", otherwise it will delay your relief", "");
+	var tmp_lines = desk_info[3].split("\n");
+	var all_categories = ["Standing Desk Notes", "General Comments", "Flights: Non-Normal", "RON", "Stub", "Curfew Concern", "Significant Delay", "Long Taxi", "Flights: Flight Planning", "Exemption(s) Applied", "Weight Restriction", "Flights: Crew", "MOT", "High Mins Crew", "Flights: Emergency", "Passenger/ Crew", "Mechanical", "Aircraft", "MELs", "Out of Service (ETR or DCN)", "Maintenance Holds", "ATC: Traffic Management Initiative", "GS", "GDP", "AFP", "ATC: Route", "Reroute", "CDRs", "Closed Airways", "ATC: Operational", "VIP Movement", "Rocket Launches", "Weather", "Thunderstorms", "Turbulence", "Icing", "Ozone", "Volcano", "Station", "Visibility/ Ceiling Near Minimums", "Winds Near Limits", "Field Condition Concerns", "NOTAM", "Customs", "Security", "ETOPS", "B044 Re-dispatch", "Greater than 180 mins"];
+	for (var i = 0; i < tmp_lines.length; i++) {
+		if (!all_categories.includes(tmp_lines[i].trim())) {
+			result += tmp_lines[i].trim() + "\n";
+		}
+		if (gen_comments == 0 && tmp_lines[i].trim().localeCompare("General Comments") == 0) {
+			gen_comments++;
+			result += "---------------------------------------------------------------\n";
+		}
+	}
+	// result += "1.WXR<\n\n2.MEL<\n\n3.ATC<\n\n4.OPS<\n\n\n";
+	result += "\n<.................RLVD BY...........................<" + desk_info[2];
+	return '<b>Courier New, Font Size 10<\/b><br/><br/><textarea rows="25" cols="80" style="font-family:Courier New;font-size:12px;">' + result + '<\/textarea>';
 }
 
 function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {}, 'non_rnav' : {}, 'cdrs' : {}}) {
