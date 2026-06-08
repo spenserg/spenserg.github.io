@@ -11499,15 +11499,15 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><span style=\"color:red\">FFU9 authorized for Rwy16LR Only</span>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-29-2025
 					break;
-				case "ORD": // SLC-ORD // Updated 06-16-2025
-					result += "<!-- Updated 06-16-2025 P -->";
+				case "ORD": // SLC-ORD // Updated 06-08-2026
+					result += "<!-- Updated 06-08-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSLC RUGGD3 OCS J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 HOLTR BOY J32 ABR J70 BAE LYNNI ERNNY8 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 HOLTR BOY J32 DPR RWF ZZIPR FYTTE7 KORD\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA DBL BRK HGO J24 SLN J96 IRK SHAIN2 KORD\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSLC OCS J202 DDY J158 RAP J82 FSD J16 MCW JVL1 KORD\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-16-2025
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KSLC OCS J202 DDY J158 RAP J82 FSD J16 MCW JVL1 KORD\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-08-2026
 					break;
 				case "PHX": // SLC-PHX // Updated 01-18-2025
 					result += "<!-- Updated 01-18-2025 -->";
