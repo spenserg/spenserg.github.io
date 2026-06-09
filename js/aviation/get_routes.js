@@ -4871,15 +4871,15 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-10-2026
 					break;
-				case "PHX": // FAT-PHX // Updated 06-23-2025
-					result += "<!-- Updated 06-23-2025 P -->";
+				case "PHX": // FAT-PHX // Updated 06-08-2026
+					result += "<!-- Updated 06-08-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KFAT BULL3 NTELL FRAME EHF J65 BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KFAT BULL3 NTELL FRAME LANDO J65 BLH HYDRR1 KPHX\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAT OAL4 OAL J80 ILC WINEN Q35 CORKR TENTS BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/>South: <input style=\"width:75%\" value=\"KFAT EHF J65 BLH ARLIN4 KPHX\" readonly>";
 					result += "<br/>North: <input style=\"width:75%\" value=\"KFAT OAL BTY J92 BLD COYOT5 KPHX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-25-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-08-2026
 					break;
 			}
 		break; // End of FAT
