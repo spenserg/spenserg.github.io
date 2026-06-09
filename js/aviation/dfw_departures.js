@@ -1122,8 +1122,8 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 06-09-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT TERGE SMUKE3 KIND\" readonly>"; // CDR 0P
-			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL JAAVE KOLTS2 KIND\" readonly>";
-			result += "<br/><b>North of STL: .. RZC SGF USIRE KOLTS2 KIND<\/b>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC FAM WIDAM SMUKE3 KIND\" readonly>";
+			result += "<br/><b>Via STL: .. RZC STL JAAVE KOLTS2 KIND<\/b>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE Q34 HITMN HAGAL GIIBS4 KIND\" readonly>";
 			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J22 MCB J35 MEM TERGE SMUKE3 KIND\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>";
