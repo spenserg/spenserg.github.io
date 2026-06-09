@@ -5168,7 +5168,6 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KGRR FWA FLM TAFTT PARQR5 KCLT\" readonly>";
 					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGRR CRL J34 DJB J85 NEALS LNDIZ PARQR5 KCLT\" readonly>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGRR VIO FWA MIE IIU SKYWA FILPZ5 KCLT\" readonly>";
-					result += "<br/><b>
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-07-2025
 					break;
