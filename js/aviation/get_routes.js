@@ -2505,15 +2505,15 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-01-2025
 					break;
-				case "PHL": // CMH-PHL // Updated 09-06-2025
-					result += "<!-- Updated 09-06-2025 P -->";
+				case "PHL": // CMH-PHL // Updated 06-11-2026
+					result += "<!-- Updated 06-11-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCMH OWEBO HLG JST BOJID4 KPHL\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH RDBUV NOWZU DORET Q82 VIEEW Q818 CFB SPUDS7 KPHL\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH RDBUV NOWZU DORET Q82 VIEEW Q818 CFB SPUDS7 KPHL\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCMH HVQ SITTR Q34 GVE PAATS4 KPHL\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KCMH HLG PSB BUNTS3 KPHL\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-06-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-11-2026
 					break;
 				case "PHX": // CMH-PHX // Updated 07-26-2025
 					result += "<!-- Updated 07-26-2025 -->";
@@ -4853,16 +4853,17 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 
 		case "FAT":
 			switch(arvl) {
-				case "DFW": // FAT-DFW // Updated 07-17-2025
-					result += "<!-- Updated 07-17-2025 P -->";
+				case "DFW": // FAT-DFW // Updated 06-11-2026
+					result += "<!-- Updated 06-11-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KFAT OAL4 OAL KATTS Q164 ROCCY Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAT BULL3 AVE J6 PMD BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAT BULL3 NTELL FRAME LANDO J65 BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/><b>As of 2026-06-11 NOPROCALT tag required for BULL3 NTELL..<\/b>";
 					result += "<br/>NE Arrival<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAT OAL4 OAL J58 MLF J28 ICT TUL HITUG SEEVR4 KDFW\" readonly>";
 					// result += "<br/><br/>Holiday/Weekend: <input style=\"width:75%\" value=\"KFAT PINNI J110 FUZZY COWBY DILCO ABQ TXO TURKI VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KFAT OAL J92 BTY BLD J72 TXO UKW8 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-17-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-11-2026
 					break;
 				case "LAX": // FAT-LAX // Updated 01-10-2026
 					result += "<!-- Updated 01-10-2026 P -->";
@@ -4875,10 +4876,11 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 					result += "<!-- Updated 06-08-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KFAT BULL3 NTELL FRAME LANDO J65 BLH HYDRR1 KPHX\" readonly>";
+					result += "<br/><b>As of 2026-06-11 NOPROCALT tag required for BULL3 NTELL..<\/b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAT OAL4 OAL J80 ILC WINEN Q35 CORKR TENTS BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/>South: <input style=\"width:75%\" value=\"KFAT EHF J65 BLH ARLIN4 KPHX\" readonly>";
-					result += "<br/>North: <input style=\"width:75%\" value=\"KFAT OAL BTY J92 BLD COYOT5 KPHX\" readonly>";
+					result += "<br/>North: <input style=\"width:75%\" value=\"KFAT OAL4 OAL BTY J92 BLD COYOT5 KPHX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-08-2026
 					break;
 			}
