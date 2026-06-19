@@ -248,30 +248,54 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>VPS - If arresting cables are inop, use B runways for TPS";
 			break;
 		case "YEG":
-			result += "<br/>YEG - ARR fr E: .. REFEX CAMRA IGSOX ARR<br/>YEG - ARR fr S: .. MIREK Q995 OILRS OILRS ARR<br/>YEG - ARR fr W: .. ROMRA Q949 ELLKS ELLKS ARR<br/>";
+			show_flow_info =
+				"YEG - DEP to NE: .. <input style=\"width:15em\" value=\"RYLEY\" readonly> .. <br/>" +
+				"YEG - DEP to E: .. <input style=\"width:15em\" value=\"OMROD IGVUX FUDGY\" readonly> .. <br/>" +
+				"YEG - DEP to SE: .. <input style=\"width:15em\" value=\"OMROD IGVUX TOVIS DAPOP\" readonly> .. <br/>" +
+				"YEG - DEP to S: .. <input style=\"width:15em\" value=\"UKRAM Q957 VOBUK\" readonly> .. <br/>" +
+				"YEG - DEP to SW: .. <input style=\"width:15em\" value=\"UKRAM Q957 RIGAD OTARA Q931 IPTAN\" readonly> ..";
 			break;
 		case "YOW":
 			break;
 		case "YUL":
 			break;
 		case "YVR":
-			result += "<br/>YVR - ARR fr NE: .. MERYT BOOTH CANUC ARR<br/>YVR - ARR fr E: .. BOOTH CANUC ARR<br/>YVR - ARR fr S: .. EGRET GRIZZ ARR<br/>YVR - ARR fr SW: .. KANUA PITUT GOVAD SHARK ARR<br/>YVR - ARR fr SW: .. PEKAA SHARK ARR<br/>";
+			show_flow_info =
+				"YVR - DEP to E: .. <input style=\"width:15em\" value=\"ALNOD IKNIX\" readonly> ..<br/>" +
+				"YVR - DEP to E: .. <input style=\"width:15em\" value=\"VIBTA DURVU FINBO\" readonly> ..<br/>" +
+				"YVR - DEP to E: .. <input style=\"width:15em\" value=\"VIBTA NOSOM\" readonly> ..<br/>" +
+				"YVR - DEP to SE: .. <input style=\"width:15em\" value=\"YVR J52 GEG\" readonly> ..<br/>" +
+				"YVR - DEP to S: .. <input style=\"width:15em\" value=\"YVR J5 SEA\" readonly> ..<br/>" +
+				"YVR - DEP to SW: .. <input style=\"width:15em\" value=\"PITUT\" readonly> ..<br/>" +
+				"YVR - DEP to SW: .. <input style=\"width:15em\" value=\"VIXOR ELMAA\" readonly> ..";
 			break;
 		case "YYC":
+			show_flow_info =
+				"YYC - DEP to E: .. <input style=\"width:15em\" value=\"LOMLO Q961 DAPOP\" readonly> .. <br/>" +
+				"YYC - DEP to SE: .. <input style=\"width:15em\" value=\"NOSIV Q909 DESNU\" readonly> .. <br/>" +
+				"YYC - DEP to S: .. <input style=\"width:15em\" value=\"UBVAL Q927 SEKOM\" readonly> .. <br/>" +
+				"YYC - DEP to S: .. <input style=\"width:15em\" value=\"OTARA Q931 IPTAN\" readonly> .. <br/>" +
+				"YYC - DEP to SW: .. <input style=\"width:15em\" value=\"DUMRA Q890 ROPLA\" readonly> .. <br/>" +
+				"YYC - DEP to W: .. <input style=\"width:15em\" value=\"BOTAG Q894 BINVO\" readonly> ..";
 			break;
 		case "YYZ":
+			show_flow_info =
+				"YYZ - DEP to E: .. <input style=\"width:15em\" value=\"test\" readonly> ..";
 			break;
 /* Latin Depatures */
 		case "AUA":
 			result += "<br/><br/>AUA - Customs pre-cleared. No issues at arrival station";
 			break;
 	}
-	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(arvl)) {
-		result += "<br/><br/>Canadian required departures are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
-	}
-	if (show_flow_info.length > 0) {
+	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(dptr)) {
+		result += "<br/><br/>Canadian required routes are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes<br/>";
+		result += "<br/><b>Canada Flight Supplement Routes:</b>";
+		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='cfsd_desc_button' onclick='$(\"#cfsd_desc_text\").toggle(); $(\"#cfsd_desc_button\").text(($(\"#cfsd_desc_button\").text().includes(\"Show\")) ? \"Hide CFS Routes\" : \"Show CFS Routes\");'>Hide CFS Routes</button>";
+		result += "&nbsp;&nbsp;&nbsp;(Updated 2026-06-19)";
+		result += "<span id='cfsd_desc_text'><br/>" + show_flow_info + "</span>";
+	} else if (show_flow_info.length > 0) {
 		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='flow_desc_button' onclick='$(\"#flow_desc_text\").toggle(); $(\"#flow_desc_button\").text(($(\"#flow_desc_button\").text().includes(\"Show\")) ? \"Hide SIDS\" : \"Show SIDS\");'>Show SIDS</button>";
-		result += "<div id='flow_desc_text' style='display:none'>" + show_flow_info + "</div>";
+		result += "<span id='flow_desc_text' style='display:none'><br/>" + show_flow_info + "</span>";
 	}
 
 	show_flow_info = "";
@@ -418,7 +442,10 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/>TUS - Night: Visual appr N/A (see 10-7B)";
 			break;
 		case "YEG":
-			result += "<br/>YEG - DEP to NE: .. RYLEY ..<br/>YEG - DEP to E: .. OMROD IGVUX FUDGY ..<br/>YEG - DEP to SE: .. OMROD IGVUX TOVIS DAPOP ..<br/>YEG - DEP to S: .. UKRAM Q957 VOBUK ..<br/>YEG - DEP to SW: .. UKRAM Q957 RIGAD OTARA Q931 IPTAN ..<br/>";
+			show_flow_info =
+				"YEG - ARR fr E: .. <input style=\"width:15em\" value=\"REFEX CAMRA IGSOX ARR\" readonly> .. <br/>" +
+				"YEG - ARR fr S: .. <input style=\"width:15em\" value=\"MIREK Q995 OILRS OILRS ARR\" readonly> .. <br/>" +
+				"YEG - ARR fr W: .. <input style=\"width:15em\" value=\"ROMRA Q949 ELLKS ELLKS ARR\" readonly> ..";
 			break;
 		case "YOW":
 			break;
@@ -428,22 +455,45 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "YVR":
 			result += "<br/><br/>YVR - Curfew rstr 0000L - 0600L, Extensions authorized";
 			result += "<br/>YVR - Rwy 13/31 N/A";
-			result += "<br/>YVR - DEP to E: .. ALNOD IKNIX ..<br/>YVR - DEP to E: .. VIBTA DURVU FINBO ..<br/>YVR - DEP to E: .. VIBTA NOSOM ..<br/>YVR - DEP to SE: .. YVR J52 GEG ..<br/>YVR - DEP to S: .. YVR J5 SEA ..<br/>YVR - DEP to SW: .. PITUT ..<br/>YVR - DEP to SW: .. VIXOR ELMAA ..<br/>";
+			show_flow_info = 
+				"YVR - ARR fr NE: .. <input style=\"width:15em\" value=\"MERYT BOOTH CANUC ARR\" readonly><br/>" +
+				"YVR - ARR fr E: .. <input style=\"width:15em\" value=\"BOOTH CANUC ARR\" readonly><br/>" +
+				"YVR - ARR fr S: .. <input style=\"width:15em\" value=\"EGRET GRIZZ ARR\" readonly><br/>" +
+				"YVR - ARR fr SW: .. <input style=\"width:15em\" value=\"KANUA PITUT GOVAD SHARK ARR\" readonly><br/>" +
+				"YVR - ARR fr SW: .. <input style=\"width:15em\" value=\"PEKAA SHARK ARR\" readonly>";
 			break;
 		case "YYC":
 			result += "<br/><br/>YYC - If alt needed: Check Customs for YEG; GEG is a good backup";
+			show_flow_info =
+				"YYC - ARR fr NE: .. <input style=\"width:15em\" value=\"IGVUX Q882 BIRKO BIRKO ARR\" readonly><br/>" +
+				"YYC - ARR fr E: .. <input style=\"width:15em\" value=\"GUDOG BIRKO BIRKO ARR\" readonly><br/>" +
+				"YYC - ARR fr SE: .. <input style=\"width:15em\" value=\"BEVEL VESDO EBGAL EBGAL ARR\" readonly><br/>" +
+				"YYC - ARR fr S: .. <input style=\"width:15em\" value=\"COUTS MOBEK EBGAL ARR\" readonly><br/>" +
+				"YYC - ARR fr SW: .. <input style=\"width:15em\" value=\"ANTAK Q953 IGVEP IGVEP ARR\" readonly><br/>" +
+				"YYC - ARR fr W: .. <input style=\"width:15em\" value=\"MENBO Q983 IGVEP IGVEP ARR\" readonly>";
 			break;
 		case "YYZ":
 			result += "<br/><br/>YYZ - Curfew 0030-0630L; Extensions authorized (else pay fine)";
 			result += "<br/>Airbus and Boeing are Stage 3 acft";
+			show_flow_info =
+				"YYZ - ARR fr NE: .. <input style=\"width:15em\" value=\"LETAK IMEBA ARR\" readonly><br/>" +
+				"YYZ - ARR fr E: .. <input style=\"width:15em\" value=\"TUKIR RAGID ARR\" readonly><br/>" +
+				"YYZ - ARR fr SE: .. <input style=\"width:15em\" value=\"WOZEE LINNG ARR\" readonly><br/>" +
+				"YYZ - ARR fr S: .. <input style=\"width:15em\" value=\"OXMAN LINNG ARR\" readonly><br/>" +
+				"YYZ - ARR fr SW: .. <input style=\"width:15em\" value=\"QWERI NUBER ARR\" readonly><br/>" +
+				"YYZ - ARR fr W: .. <input style=\"width:15em\" value=\"MONEE NUBER ARR\" readonly><br/>" +
+				"YYZ - ARR fr NW: .. <input style=\"width:15em\" value=\"OTNIK BOXUM ARR\" readonly>";
 			break;
 	}
-	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(dptr)) {
-		result += "<br/><br/>Canadian required departures are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
-	}
-	if (show_flow_info.length > 0) {
+	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(arvl)) {
+		result += "<br/><br/>Canadian required routes are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes<br/>";
+		result += "<br/><b>Canada Flight Supplement Routes:</b>";
+		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='cfsa_desc_button' onclick='$(\"#cfsa_desc_text\").toggle(); $(\"#cfsa_desc_button\").text(($(\"#cfsa_desc_button\").text().includes(\"Show\")) ? \"Hide CFS Routes\" : \"Show CFS Routes\");'>Hide CFS Routes</button>";
+		result += "&nbsp;&nbsp;&nbsp;(Updated 2026-06-19)";
+		result += "<span id='cfsa_desc_text'><br/>" + show_flow_info + "</span>";
+	} else if (show_flow_info.length > 0) {
 		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='star_desc_button' onclick='$(\"#star_desc_text\").toggle(); $(\"#star_desc_button\").text(($(\"#star_desc_button\").text().includes(\"Show\")) ? \"Hide STARS\" : \"Show STARS\");'>Show STARS</button>";
-		result += "<div id='star_desc_text' style='display:none'>" + show_flow_info + "</div>";
+		result += "<span id='star_desc_text' style='display:none'><br/>" + show_flow_info + "</span>";
 	}
 
 	result = add_sara_rmks(arvl, result);
