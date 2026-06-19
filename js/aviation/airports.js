@@ -280,7 +280,13 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 		case "YYZ":
 			show_flow_info =
-				"YYZ - DEP to E: .. <input style=\"width:15em\" value=\"test\" readonly> ..";
+				"YYZ - DEP to NE: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
+				"YYZ - DEP to E: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
+				"YYZ - DEP to SE: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
+				"YYZ - DEP to S: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
+				"YYZ - DEP to SW: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
+				"YYZ - DEP to W: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
+				"YYZ - DEP to NW: .. <input style=\"width:15em\" value=\"\" readonly> ..";
 			break;
 /* Latin Depatures */
 		case "AUA":
