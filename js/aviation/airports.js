@@ -248,17 +248,26 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>VPS - If arresting cables are inop, use B runways for TPS";
 			break;
 		case "YEG":
+			result += "<br/>YEG - ARR fr E: .. REFEX CAMRA IGSOX ARR<br/>YEG - ARR fr S: .. MIREK Q995 OILRS OILRS ARR<br/>YEG - ARR fr W: .. ROMRA Q949 ELLKS ELLKS ARR<br/>";
+			break;
 		case "YOW":
+			break;
 		case "YUL":
+			break;
 		case "YVR":
+			result += "<br/>YVR - ARR fr NE: .. MERYT BOOTH CANUC ARR<br/>YVR - ARR fr E: .. BOOTH CANUC ARR<br/>YVR - ARR fr S: .. EGRET GRIZZ ARR<br/>YVR - ARR fr SW: .. KANUA PITUT GOVAD SHARK ARR<br/>YVR - ARR fr SW: .. PEKAA SHARK ARR<br/>";
+			break;
 		case "YYC":
+			break;
 		case "YYZ":
-			result += "<br/><br/>Canadian required departures are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 /* Latin Depatures */
 		case "AUA":
 			result += "<br/><br/>AUA - Customs pre-cleared. No issues at arrival station";
 			break;
+	}
+	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(arvl)) {
+		result += "<br/><br/>Canadian required departures are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 	}
 	if (show_flow_info.length > 0) {
 		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='flow_desc_button' onclick='$(\"#flow_desc_text\").toggle(); $(\"#flow_desc_button\").text(($(\"#flow_desc_button\").text().includes(\"Show\")) ? \"Hide SIDS\" : \"Show SIDS\");'>Show SIDS</button>";
@@ -409,29 +418,28 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/>TUS - Night: Visual appr N/A (see 10-7B)";
 			break;
 		case "YEG":
-			result += "<br/><br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
+			result += "<br/>YEG - DEP to NE: .. RYLEY ..<br/>YEG - DEP to E: .. OMROD IGVUX FUDGY ..<br/>YEG - DEP to SE: .. OMROD IGVUX TOVIS DAPOP ..<br/>YEG - DEP to S: .. UKRAM Q957 VOBUK ..<br/>YEG - DEP to SW: .. UKRAM Q957 RIGAD OTARA Q931 IPTAN ..<br/>";
 			break;
 		case "YOW":
-			result += "<br/><br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 		case "YUL":
 			result += "<br/><br/>YUL - Curfew rstr 0100L - 0700L, Extensions authorized";
-			result += "<br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 		case "YVR":
 			result += "<br/><br/>YVR - Curfew rstr 0000L - 0600L, Extensions authorized";
 			result += "<br/>YVR - Rwy 13/31 N/A";
-			result += "<br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
+			result += "<br/>YVR - DEP to E: .. ALNOD IKNIX ..<br/>YVR - DEP to E: .. VIBTA DURVU FINBO ..<br/>YVR - DEP to E: .. VIBTA NOSOM ..<br/>YVR - DEP to SE: .. YVR J52 GEG ..<br/>YVR - DEP to S: .. YVR J5 SEA ..<br/>YVR - DEP to SW: .. PITUT ..<br/>YVR - DEP to SW: .. VIXOR ELMAA ..<br/>";
 			break;
 		case "YYC":
 			result += "<br/><br/>YYC - If alt needed: Check Customs for YEG; GEG is a good backup";
-			result += "<br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
 		case "YYZ":
 			result += "<br/><br/>YYZ - Curfew 0030-0630L; Extensions authorized (else pay fine)";
 			result += "<br/>Airbus and Boeing are Stage 3 acft";
-			result += "<br/>Canadian required routes are in FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 			break;
+	}
+	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(dptr)) {
+		result += "<br/><br/>Canadian required departures are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes";
 	}
 	if (show_flow_info.length > 0) {
 		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='star_desc_button' onclick='$(\"#star_desc_text\").toggle(); $(\"#star_desc_button\").text(($(\"#star_desc_button\").text().includes(\"Show\")) ? \"Hide STARS\" : \"Show STARS\");'>Show STARS</button>";
