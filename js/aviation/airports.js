@@ -2233,9 +2233,11 @@ get_weather_cams = function (str = null) {
 			break;
 		case "ACT":
 		case "KACT":
+		case "CNW":
+		case "KCNW":
 			return [
-				["", ""]
-			]; // TODO
+				["https://www.youtube.com/watch?v=3nx8AA35sos", "Interstate 35"]
+			];
 			break;
 		case "ACY":
 		case "KACY":
@@ -2463,12 +2465,6 @@ get_weather_cams = function (str = null) {
 			break;
 		case "CMH":
 		case "KCMH":
-			return [
-				["", ""]
-			]; // TODO
-			break;
-		case "CNW":
-		case "KCNW":
 			return [
 				["", ""]
 			]; // TODO
@@ -2893,7 +2889,8 @@ get_weather_cams = function (str = null) {
 		case "LIT":
 		case "KLIT":
 			return [
-				["", ""]
+				["https://arkansasweatherwatchers.org/cameras/stuttgartar", "Stuttgart"],
+				["https://arkansasweatherwatchers.org/cameras/wardar", "Ward"]
 			]; // TODO
 			break;
 		case "LNK":
@@ -3029,8 +3026,8 @@ get_weather_cams = function (str = null) {
 		case "MSY":
 		case "KMSY":
 			return [
-				["", ""]
-			]; // TODO
+				["https://www.youtube.com/watch?v=MH0_mPt-VXE", "Airport"]
+			];
 			break;
 		case "MTJ":
 		case "KMTJ":
@@ -3757,4 +3754,3 @@ get_weather_cams = function (str = null) {
 	}
 	return [""];
 }
-
