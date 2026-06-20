@@ -319,18 +319,19 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 FST J138 SAT LAMMY LINKK LINKK1 KIAH\" readonly>"; // IAH WEST
 			result += "<br/>XC<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO CUS AGNID OBGIY SLENA YEEHA TEJAS5 KIAH\" readonly>";
 			break;
-		case "IND": // LAX-IND // Updated 03-04-2026
-			result += "<!-- Updated 03-04-2026 P -->";
+		case "IND": // LAX-IND // Updated 06-20-2026
+			result += "<!-- Updated 06-20-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 03-04-2026
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 DRK J96 CIM GCK J18 SLN J24 MCI J80 JAAVE KOLTS2 KIND\" readonly>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J78 DRK J96 CIM GCK J18 SLN J24 MCI J80 JAAVE KOLTS2 KIND\" readonly>";
 			// result += "<br/><br/>Night: <input style=\"width:75%\"; value=\"KLAX OSHNN1 BEALE BAWER Q70 SAKES J100 EKR BFF J94 ONL IOW WORDY KIND\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS J146 DVC J197 HGO HUSQA Q90 WELKY BDF ELANR JAKKS2 KIND\" readonly>";
 			result += "<br/><b>If red brick, use OSHNN instead of ORCKA<\/b>";
-			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ABI J4 FUZ J42 TXK LIT J131 PXV RACYR6 KIND\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J96 DRK J6 ZUN J244 FTI MMB PER SGF WIDAM SMUKE3 KIND\" readonly>";
 			result += "<br/><br/>North via SNY<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR J100 SNY AYOLE Q114 LEONG IOW J60 JOT ELANR JAKKS2 KIND\" readonly>";
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM J78 PXV RACYR6 KIND\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-04-2026
+			result += "<br/>South via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ABI J4 FUZ J42 TXK LIT J131 PXV RACYR6 KIND\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 TRM J78 PXV RACYR6 KIND\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-20-2026
 			break;
 		case "JAC": // LAX-JAC // Updated 03-05-2026
 			result += "<!-- Updated 03-05-2026 P -->";
