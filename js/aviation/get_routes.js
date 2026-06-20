@@ -5892,19 +5892,19 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>PR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND BONNT VEECK5 KORD\" readonly>";
 					result += "<br/>SW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND OOM5 PXV STL SPI PNTAC TRTLL6 KORD\" readonly>";
 					break;
-				case "PHL": // IND-PHL // Updated 06-08-2025
-					result += "<!-- Updated 06-08-2025 P -->";
+				case "PHL": // IND-PHL // Updated 06-20-2026
+					result += "<!-- Updated 06-20-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KIND MAREO1 BDOCK JST BOJID4 KPHL\" readonly>"; // CDR PR
-					result += "<br/><br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND DAWNN1 IIU Q108 SITTR Q34 GVE PAATS4 KPHL\" readonly>"; // CDR BU
-					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KIND MEARZ7 MZZ FWA DJB J60 PSB BOJID4 KPHL\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KIND MAREO1 UKATS BLISS JST BOJID4 KPHL\" readonly>"; // CDR PR
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND MEARZ7 MZZ FWA DJB J60 PSB BOJID4 KPHL\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KIND DAWNN1 IIU Q108 SITTR Q34 GVE PAATS4 KPHL\" readonly>"; // CDR BU
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-08-2025
-					result += "<!-- Verified with ATCSCC on 06-08-2025 -->";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-20-2026
+					result += "<!-- Verified with ATCSCC on 06-20-2026 -->";
 					result += "<br/>BU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND DAWNN1 IIU Q108 SITTR Q34 GVE PAATS4 KPHL\" readonly>";
-					result += "<br/>CP<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND ROCKY1 SPI BDF GIJ J146 CXR EWC HAR BOJID4 KPHL\" readonly>";
+					result += "<br/>CP<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND ROCKY1 SPI EDENS ZIINE Q186 SPYDY EWC HAR BOJID4 KPHL\" readonly>";
 					result += "<br/>KK<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND OKK FWA DJB Q178 AVERE J152 HAR BOJID4 KPHL\" readonly>";
-					result += "<br/>PR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND MAREO1 BDOCK JST BOJID4 KPHL\" readonly>";
+					result += "<br/>PR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND MAREO1 UKATS BLISS JST BOJID4 KPHL\" readonly>";
 					result += "<br/>SW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KIND OOM5 PXV J73 BNA BURGG Q22 BEARI BBDOL PAATS4 KPHL\" readonly>";
 					break;
 				case "PHX": // IND-PHX // Updated 06-05-2025
