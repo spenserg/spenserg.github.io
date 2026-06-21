@@ -8648,10 +8648,20 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 02-20-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KPDX LAVAA7 PDT J16 FSD ZZIPR FYTTE7 KORD\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 SUNED FINUT Q156 ZZIPR FYTTE7 kORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 SUNED FINUT Q156 ZZIPR FYTTE7 KORD\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 PDT J20 FQF J80 MCI J26 IRK BENKY6 KORD\" readonly>";
 					result += "<br/><br/>North via MSP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 SUNED FINUT DIPHU Q146 SMERF GEP J70 BAE LYNNI ERNNY8 KORD\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-05-2026
+					break;
+				case "PHL": // PDX-PHL // Updated 06-21-2026
+					result += "<!-- Updated 06-21-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-21-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPDX LAVAA7 PDT J16 DPR J34 DJB J60 PSB BOJID4 KPHL\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 SUNED FINUT DIPHU Q146 HUFFR DLL J34 DJB J60 PSB BOJID4 KPHL\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX WHAMY5 IMB J15 BOI J54 LAR LBF LNK IRK SPI J80 VHP ROD J152 JST BOJID4 KPHL\" readonly>";
+					result += "<br/><br/>North via GRB<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX LAVAA7 SUNED FINUT DIPHU Q146 TIMMR Q812 ZOHAN HOCKE Q935 WOZEE Q818 CFB SPUDS7 KPHL\" readonly>";
+					result += "<br/>South via LIT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPDX CASCD4 DSD LKV J5 FMG J92 BLD J72 ABQ J6 PNH J14 LIT MEMFS Q34 GVE PAATS4 KPHL\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-21-2026
 					break;
 				case "PHX": // PDX-PHX // Updated 02-06-2026
 					result += "<!-- Updated 02-06-2026 P -->";
