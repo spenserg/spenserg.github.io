@@ -5068,15 +5068,15 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 
 		case "FSD":
 			switch(arvl) {
-				case "DFW": // FSD-DFW // Updated 01-22-2026
-					result += "<!-- Updated 01-22-2026 P -->";
+				case "DFW": // FSD-DFW // Updated 06-21-2026
+					result += "<!-- Updated 06-21-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KFSD LNK ICT HOFFF VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFSD OVR J41 MCI FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFSD OVR J41 MCI RZC FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KFSD OVR MCI RZC FSM WILBR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-22-2026
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFSD OVR J41 MCI RZC FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFSD OBH HLC GCK EZEEE MDANO VKTRY2 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KFSD OVR MCI RZC FSM WILBR9 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-21-2026
 					break;
 				case "ORD": // FSD-ORD // Updated 11-26-2025
 					result += "<br/><br/><b>Div Recovery:</b>";
@@ -8309,16 +8309,17 @@ KILM RDU BBDOL PAATS4 KPHL
 
 		case "OMA":
 			switch(arvl) {
-				case "CLT": // OMA-CLT // Updated 02-01-2026
-					result += "<!-- Updated 02-01-2026 P -->";
+				case "CLT": // OMA-CLT // Updated 06-21-2026
+					result += "<!-- Updated 06-21-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KOMA LMN IRK J151 STL PXV KI45O SKYWA FILPZ5 KCLT\" readonly>";
 					result += "<br/><b>KI45O included to stay out of ZME</b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KOMA DSM J10 IOW MZV BDF RBS VHP J24 FLM TAFTT PARQR5 KCLT\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KOMA MCI J41 VUZ THRSR BESTT JONZE6 KCLT\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KOMA LMN J151 STL J45 BNA J46 VXV LIINN3 KCLT\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-01-2026
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KOMA MCI FAM BNA TAZZA FILPZ5 KCLT\" readonly>";
+					result += "<br/><br/>South via ATL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KOMA MCI J41 VUZ THRSR BESTT JONZE6 KCLT\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KOMA LMN J151 STL J45 BNA J46 VXV LIINN3 KCLT\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-21-2026
 					break;
 				case "DFW": // OMA-DFW // Updated 02-01-2026
 					result += "<!-- Updated 02-01-2026 P -->";
