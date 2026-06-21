@@ -541,12 +541,19 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 		if (new_config == 0) { // Left clicked
 				switch(airport) {
 					case "ABQ": // ABQ east // Rwy8
-						result = result.replaceAll("KABQ ADYOS3", "KABQ RDRNR3");
+						result = result.replaceAll("KABQ ADYOS3 GUP", "KABQ RDRNR3 GUP");
+						result = result.replaceAll("KABQ ADYOS3 ZUN", "KABQ RDRNR3 ZUN");
+						result = result.replaceAll("KABQ ADYOS3 ADYOS", "KABQ RDRNR3 RDRNR");
 						result = result.replaceAll("KABQ ATOMK3 ATOMK", "KABQ JEMEZ3 JEMEZ");
-						result = result.replaceAll("KABQ BOSQE3", "KABQ MNZNO3");
-						result = result.replaceAll("KABQ DOOKK3", "KABQ MNZNO3");
+						result = result.replaceAll("KABQ BOSQE3 SJN", "KABQ MNZNO3 SJN");
+						result = result.replaceAll("KABQ BOSQE3 ONM", "KABQ MNZNO3 ONM");
+						result = result.replaceAll("KABQ BOSQE3 BOSQE", "KABQ MNZNO3 MNZNO");
+						result = result.replaceAll("KABQ DOOKK3 TXO", "KABQ MNZNO3 TXO");
+						result = result.replaceAll("KABQ DOOKK3 CME", "KABQ MNZNO3 CME");
+						result = result.replaceAll("KABQ DOOKK3 DOOKK", "KABQ MNZNO3 MNZNO");
 						result = result.replaceAll("KABQ FYSTA3 FTI", "KABQ GRZZZ4 FLAVA");
 						result = result.replaceAll("KABQ FYSTA3 JLPNO", "KABQ  GRZZZ4 POPRR");
+						result = result.replaceAll("KABQ FYSTA3 FYSTA", "KABQ  GRZZZ4 GRZZZ");
 						break;
 					case "ATL": // ATL west
 						result = result.replaceAll("SITTH3 KATL", "JJEDI4 KATL");
@@ -750,16 +757,20 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 		} else if (new_config == 1) {
 				switch(airport) {
 					case "ABQ": // ABQ west // Rwy26
-						result = result.replaceAll("KABQ RDRNR3", "KABQ ADYOS3");
+						result = result.replaceAll("KABQ RDRNR3 GUP", "KABQ ADYOS3 GUP");
+						result = result.replaceAll("KABQ RDRNR3 ZUN", "KABQ ADYOS3 ZUN");
+						result = result.replaceAll("KABQ RDRNR3 RDRNR", "KABQ ADYOS3 ADYOS");
 						result = result.replaceAll("KABQ JEMEZ3 JEMEZ", "KABQ ATOMK3 ATOMK");
 						result = result.replaceAll("KABQ GRZZZ4 FLAVA", "KABQ FYSTA3 FTI");
-						result = result.replaceAll("KABQ  GRZZZ4 POPRR", "KABQ FYSTA3 JLPNO");
+						result = result.replaceAll("KABQ GRZZZ4 POPRR", "KABQ FYSTA3 JLPNO");
+						result = result.replaceAll("KABQ GRZZZ4 GRZZZ", "KABQ FYSTA3 FYSTA");
 						result = result.replaceAll("KABQ MNZNO3 SJN", "KABQ BOSQE3 SJN");
 						result = result.replaceAll("KABQ MNZNO3 ONM", "KABQ BOSQE3 ONM");
 						result = result.replaceAll("KABQ MNZNO3 TXO", "KABQ DOOKK3 TXO");
 						result = result.replaceAll("KABQ MNZNO3 CME", "KABQ DOOKK3 CME");
 						result = result.replaceAll("KABQ MNZNO3 MOLVE", "KABQ DOOKK3 MOLVE");
 						result = result.replaceAll("KABQ MNZNO3 LAMSE", "KABQ BOSQE3 LAMSE");
+						result = result.replaceAll("KABQ MNZNO3 MNZNO", "KABQ BOSQE3 BOSQE");
 						break;
 					case "ATL": // ATL east
 						result = result.replaceAll("JJEDI4 KATL", "SITTH3 KATL");
