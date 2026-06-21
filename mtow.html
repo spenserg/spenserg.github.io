@@ -1524,14 +1524,16 @@ function remove_common_cdr_redundancies(result = "") {
 
 function add_sids_and_stars_to_cdrs (result = "") {
 	// ABQ
-	/*
-	result = result.replaceAll("KABQ CNX", ""); // TODO
-	result = result.replaceAll("KABQ TCC", ""); // TODO
-	esult = result.replaceAll("KABQ ONM", ""); // TODO
-	*/
-	result = result.replaceAll("KABQ FTI", "KABQ FYSTA3 FTI");
+	result = result.replaceAll("KABQ ABQ J13","KABQ ATOMK3 ATOMK ALS J13");
+	// TODO KABQ-ABQ...
 	result = result.replaceAll("KABQ ALS", "KABQ ATOMK3 ATOMK ALS");
-	result = result.replaceAll("KABQ ABQ", "KABQ ABQ3 ABQ");
+	result = result.replaceAll("KABQ CNX CME","KABQ DOOKK3 CME");
+	result = result.replaceAll("KABQ CNX", "KABQ DOOKK3 LARLE");
+	result = result.replaceAll("KABQ DOOKK3 LARLE J15","KABQ DOOKK3 CME J15");
+	result = result.replaceAll("KABQ FTI", "KABQ FYSTA3 FTI");
+	result = result.replaceAll("KABQ ONM", "KABQ BOSQE3 ONM");
+	result = result.replaceAll("KABQ LARGO3 RSK","KABQ ATOMK3 ATOMK RSK");
+	result = result.replaceAll("KABQ TCC","KABQ FYSTA3 JLPNO TCC");
 	result = result.replaceAll("KABQ TXO", "KABQ MNZNO3 TXO");
 
 	// KATL
