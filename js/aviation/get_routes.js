@@ -80,23 +80,23 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-07-2025
 					break;
-				case "ORD": // ABQ-ORD // Updated 05-07-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-07-2025 MP -->";
+				case "ORD": // ABQ-ORD // Updated 06-21-2026
+					result += "<!-- Updated 06-21-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KABQ FYSTA3 FTI KENTO J18 GCK J96 IRK BENKY6 KORD\" readonly>"; // CDR JV
+					result += "<br/><input style=\"width:75%\" value=\"KABQ FYSTA3 FTI J18 GCK J96 IRK BENKY6 KORD\" readonly>"; // CDR JV
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ ATOMK3 ATOMK ALS J13 FQF J10 LBF KP72C FOD MYRRS FYTTE7 KORD\" readonly>"; // CDR B2
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ RDRNR3 ZUN J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>"; // CDR B1
-					result += "<br/><br/>ORD BDF 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ RDRNR3 ZUN J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
-					result += "<br/>ORD BDF 2<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ ATOMK3 ATOMK ALS J13 FQF BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/>ORD JVL 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ FYSTA3 FTI J18 GCK J96 IRK BENKY6 KORD\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\"; value=\"KABQ ABQ J13 FQF BFF J94 ONL FOD MYRRS FYTTE7 KORD\"; readonly>"; // CDR B2
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-07-2025
-					result += "<!-- Verified with ATCSCC on 05-07-2025 -->";
-					result += "<br/>B1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ RDRNR3 ZUN J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
-					result += "<br/>B2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ ABQ3 ABQ J13 FQF BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/>JB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ ABQ3 ABQ J13 FQF BFF J94 ONL J114 GEP TVC WYNDE3 KORD\" readonly>";
-					result += "<br/>JV<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ FYSTA3 FTI J18 GCK J96 IRK BENKY6 KORD\" readonly>";
+					// result += "<br/><br/>ORD BDF 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ RDRNR3 ZUN J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
+					// result += "<br/>ORD BDF 2<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ ATOMK3 ATOMK ALS J13 FQF BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>ORD JVL 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KABQ FTI J18 GCK J96 IRK BENKY6 KORD\" readonly>";
+					result += "<br/>ORD NO BENKY 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KABQ TCC J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
+					result += "<br/>ORD NO BENKY 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KABQ ABQ J13 FQF BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-21-2026
+					result += "<!-- Verified with ATCSCC on 06-21-2026 -->";
+					result += "<br/>B1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ TCC J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>"; // ORD NO BENKY 1
+					result += "<br/>B2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ ABQ J13 FQF BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>"; // ORD NO BENKY 2
+					result += "<br/>JB<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ ABQ J13 FQF BFF J94 ONL J114 GEP TVC WYNDE3 KORD\" readonly>";
+					result += "<br/>JV<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KABQ FTI J18 GCK J96 IRK BENKY6 KORD\" readonly>"; // ORD JVL 1
 					break;
 				case "PHL": // ABQ-PHL // Updated 09-29-2025
 					result += "<!-- Updated 09-29-2025 P -->"
@@ -2091,14 +2091,15 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/><input style=\"width:75%\" value=\"KBZN SUBKY BIL J13 CYS J17 PNH UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-14-2025
 					break;
-				case "ORD": // BZN-ORD // Updated 07-14-2025
-					result += "<!-- Updated 07-14-2025 P -->";
+				case "ORD": // BZN-ORD // Updated 06-21-2026
+					result += "<!-- Updated 06-21-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBZN BOBKT5 BIL J34 DPR UFFDA Q156 ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBZN BOBKT5 BIL J34 DPR UFFDA Q156 HSTIN ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/><b>Q156 includes ZZIPR but //..Q156 ZZIPR// triggers mandatory route violation<\/b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBZN BOBKT5 BIL MLS DIK J36 FAR J140 DLH SHIKY FYTTE7 KORD\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBZN BOBKT5 BOY JUGIV Q148 CUGGA J80 MCI J26 IRK BENKY6 KORD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-14-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-21-2026
 					break;
 			}
 		break; // End of BZN
