@@ -162,8 +162,10 @@ function compute (str_override = "") {
 	// https://www.fly.faa.gov/rmt/cdm_operational_coded_departur.jsp
 	regc = /\d\t([^\t]{8})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])\t(\d)\t/g;
 
+/* OBSOLETE
 	// Decs route page
 	regz = /[DI][\d]+\s+\d+\s[A-Z]\s[A-Z]\s[A-Z][^\n]+\n\s*ARTC TEXT/g;
+*/
 
 	// Airway
 	regy = /\<(\d+)\s\<(K\d)\s\<([^\s]+)\s/g;
@@ -255,11 +257,24 @@ function compute (str_override = "") {
 		return;
 	}
 
+	/* OBSOLETE
 	if ((result = regz.exec(fkeystxt)) != null) {
-		output = decs_route(fkeystxt, routes_arr['cdr_list']);
-	} else if ((result = regc.exec(fkeystxt)) != null) {
-		// TODO get array from compute first
-		
+		output = decs_route(fkeystxt);
+	}
+	*/
+
+	if ((result = regc.exec(fkeystxt)) != null) {
+		/* TODO get array from compute first
+		var reg_tmp_cdr = /\d\t[A-Z]{6}([^\t]{2})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])\t(\d)\t([^\n]*)\n/g;
+		dptr = null;
+		arvl = null;
+		if ((zzx = reg_tmp_cdr.exec(fkeystxt)) != null) {
+			dptr = ((zzx[2].length != 4) ? convert_iata(zzx[2]) : zzx[2]);
+			arvl = ((zzx[3].length != 4) ? convert_iata(zzx[3]) : zzx[3]);
+		}
+		console.log(get_routes(dptr, arvl, null, null, "").split("<br/>"));
+		*/
+
 		// ATSCC CDR page ONLY
 		output = cdr_parse(fkeystxt);
 	} else if ((result = regw.exec(fkeystxt)) != null) {
@@ -832,7 +847,7 @@ function merge_faa_pref (result_arr = {}) {
 	return {'result' : result, 'errors' : errors, 'warnings' : warnings, 'status' : status};
 }
 
-function decs_route(input = null, cdr_list = null) {
+function decs_route(input = null) {
 	var result = "";
 	var result_arr = {};
 	var textarea_tabs = "";
@@ -1392,6 +1407,8 @@ check_page_for_errors = function (text = "") {
 							errors['misc'].push('Blank space in Route String: "' + tmp_xee[2] + '"');
 						} else if (tmp_pieces[j] == "DCT") {
 							errors['misc'].push('"DCT" in route string: "' + tmp_xee[2] + '"');
+						} else if (/[a-z]/.test(tmp_pieces[j])) {
+							errors['misc'].push('lowercase letter in route string: "' + tmp_xee[2] + '"');
 						} else {
 							if (super_tmp_obj[tmp_pieces[j]] != null) {
 								var skip_error = false;
