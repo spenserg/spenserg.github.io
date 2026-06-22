@@ -256,8 +256,19 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				"YEG - DEP to SW: .. <input style=\"width:15em\" value=\"UKRAM Q957 RIGAD OTARA Q931 IPTAN\" readonly> ..";
 			break;
 		case "YOW":
+			show_flow_info =
+				"YOW - DEP to E: .. <input style=\"width:15em\" value=\"AVVON Q947 LAFIT RABIK Q951 ANTOV\" readonly> .. <br/>" +
+				"YOW - DEP to SE: .. <input style=\"width:15em\" value=\"KODEX EPMOK SSENA BUGSY\" readonly> .. <br/>" +
+				"YOW - DEP to S: .. <input style=\"width:15em\" value=\"IKLAX Q844 SYR\" readonly> .. <br/>" +
+				"YOW - DEP to W: .. <input style=\"width:15em\" value=\"SELES OLIGO Q904 ROSVO\" readonly>";
 			break;
 		case "YUL":
+			show_flow_info =
+				"YUL - DEP to E: .. <input style=\"width:15em\" value=\"SUXET NOVUN ESRAM RABIK Q951 ANTOV\" readonly> .. <br/>" +
+				"YUL - DEP to SE: .. <input style=\"width:15em\" value=\"OVAXO VIRKA\" readonly> .. <br/>" +
+				"YUL - DEP to S: .. <input style=\"width:15em\" value=\"FAWNS BUGSY\" readonly> .. <br/>" +
+				"YUL - DEP to SW: .. <input style=\"width:15em\" value=\"FAWNS BUGSY SYR\" readonly> .. <br/>" +
+				"YUL - DEP to W: .. <input style=\"width:15em\" value=\"KESKA SAVEX Q806 TUKIR\" readonly>";
 			break;
 		case "YVR":
 			show_flow_info =
@@ -454,9 +465,21 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				"YEG - ARR fr W: .. <input style=\"width:15em\" value=\"ROMRA Q949 ELLKS ELLKS ARR\" readonly> ..";
 			break;
 		case "YOW":
+			show_flow_info = 
+				"YOW - ARR fr NE: .. <input style=\"width:15em\" value=\"MIVAX PENTU CATOG RIVER ARR\" readonly><br/>" +
+				"YOW - ARR fr E: .. <input style=\"width:15em\" value=\"DERDO Q806 PUPOV VILRO RIVER ARR\" readonly><br/>" +
+				"YOW - ARR fr S: .. <input style=\"width:15em\" value=\"BUGSY DEANS ARR\" readonly><br/>" +
+				"YOW - ARR fr W: .. <input style=\"width:15em\" value=\"ELSUB CAPITAL ARR\" readonly><br/>" +
+				"YOW - ARR fr NW: .. <input style=\"width:15em\" value=\"SMARE MEECH ARR\" readonly>";
 			break;
 		case "YUL":
 			result += "<br/><br/>YUL - Curfew rstr 0100L - 0700L, Extensions authorized";
+			show_flow_info = 
+				"YUL - ARR fr NE: .. <input style=\"width:15em\" value=\"TIBOS ROCKT ARR\" readonly><br/>" +
+				"YUL - ARR fr E: .. <input style=\"width:15em\" value=\"KEBIG ROCKT ARR\" readonly><br/>" +
+				"YUL - ARR fr S: .. <input style=\"width:15em\" value=\"PBERG CARTR ARR\" readonly><br/>" +
+				"YUL - ARR fr SW: .. <input style=\"width:15em\" value=\"ART IMPACT ARR\" readonly><br/>" +
+				"YUL - ARR fr W: .. <input style=\"width:15em\" value=\"MIGLO HABBS ARR\" readonly>";
 			break;
 		case "YVR":
 			result += "<br/><br/>YVR - Curfew rstr 0000L - 0600L, Extensions authorized";
