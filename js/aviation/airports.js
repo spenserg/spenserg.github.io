@@ -494,12 +494,12 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "YYC":
 			result += "<br/><br/>YYC - If alt needed: Check Customs for YEG; GEG is a good backup";
 			show_flow_info =
-				"YYC - ARR fr NE: .. <input style=\"width:15em\" value=\"IGVUX Q882 BIRKO BIRKO ARR\" readonly><br/>" +
-				"YYC - ARR fr E: .. <input style=\"width:15em\" value=\"GUDOG BIRKO BIRKO ARR\" readonly><br/>" +
-				"YYC - ARR fr SE: .. <input style=\"width:15em\" value=\"BEVEL VESDO EBGAL EBGAL ARR\" readonly><br/>" +
-				"YYC - ARR fr S: .. <input style=\"width:15em\" value=\"COUTS MOBEK EBGAL ARR\" readonly><br/>" +
-				"YYC - ARR fr SW: .. <input style=\"width:15em\" value=\"ANTAK Q953 IGVEP IGVEP ARR\" readonly><br/>" +
-				"YYC - ARR fr W: .. <input style=\"width:15em\" value=\"MENBO Q983 IGVEP IGVEP ARR\" readonly>";
+				"YYC - ARR fr NE: .. <input style=\"width:15em\" value=\"IGVUX Q882 BIRKO6 YYC\" readonly><br/>" +
+				"YYC - ARR fr E: .. <input style=\"width:15em\" value=\"GUDOG BIRKO BIRKO6 YYC\" readonly><br/>" +
+				"YYC - ARR fr SE: .. <input style=\"width:15em\" value=\"BEVEL VESDO EBGAL7 YYC\" readonly><br/>" +
+				"YYC - ARR fr S: .. <input style=\"width:15em\" value=\"COUTS MOBEK EBGAL7 YYC\" readonly><br/>" +
+				"YYC - ARR fr SW: .. <input style=\"width:15em\" value=\"ANTAK Q953 IGVEP7 YYC\" readonly><br/>" +
+				"YYC - ARR fr W: .. <input style=\"width:15em\" value=\"MENBO Q983 IGVEP7 YYC\" readonly>";
 			break;
 		case "YYZ":
 			result += "<br/><br/>YYZ - Curfew 0030-0630L; Extensions authorized (else pay fine)";
