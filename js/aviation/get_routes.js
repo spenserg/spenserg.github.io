@@ -1714,12 +1714,12 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 
 		case "BRO":
 			switch(arvl) {
-				case "DFW": // BRO-DFW // Updated 02-28-2025
-					result += "<!-- Updated 02-28-2025 -->";
+				case "DFW": // BRO-DFW // Updated 06-24-2026
+					result += "<!-- Updated 06-24-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KBRO CRP SAT GUTZZ BOOVE7 KDFW\" readonly>";
-					// result += "<br/><br/><b>Non RNAV</b>";
-					// result += "<br/><br/><b>CDRS</b>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"BRO CRP PSX TNV STUFT BEREE3 DFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-24-2026
 					break;
 			}
 		break; // end of BRO
@@ -5339,14 +5339,14 @@ KGSP MCN SPLSH CHRGE MATCY FROGZ1 KMIA
 
 		case "GUC":
 			switch(arvl) {
-				case "DFW": // GUC-DFW // Updated 03-18-2025
-					result += "<!-- Updated 03-18-2025 -->";
+				case "DFW": // GUC-DFW // Updated 06-24-2026
+					result += "<!-- Updated 06-24-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KGUC HBU J206 ALS PNH MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KGUC HELPS ESPAN CNX J15 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\"; value=\"KGUC DUFEL CIM PNH UKW8 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRS listed 03-17-25
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\"; value=\"KGUC DUFEL CIM PNH UKW8 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-24-2026
 					break;
 			}
 		break; // End of GUC
@@ -9932,27 +9932,27 @@ KILM RDU BBDOL PAATS4 KPHL
 
 // VPS skipped
 
-				case "YUL": // PHL-YUL // Updated 03-11-2025
-					result += "<!-- Updated 03-11-2025 -->";
+				case "YUL": // PHL-YUL // Updated 06-24-2026
+					result += "<!-- Updated 06-24-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\"; value=\"KPHL DITCH Q437 LLUND CAM JASDU PBERG CARTR5 CYUL\" readonly>"; // CDR PJ
-					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-11-2025
-					result += "<!-- Verified with ATCSCC on 03-11-2025 -->";
+					result += "<br/><input style=\"width:75%\" value=\"KPHL DITCH LUIGI HNNAH LLUND BIZEX Q133 PBERG CARTR5 CYUL\" readonly>"; // CDR PJ
+					result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL PTW CHLSE T449 CFB T335 SYR ART IMPAC4 CYUL\" readonly>"; // CDR SY
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-24-2026
+					result += "<!-- Verified with ATCSCC on 06-24-2026 -->";
 					result += "<br/>FF<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL FJC T221 LAAYK DNY ALB PBERG CARTR5 CYUL\" readonly>";
-					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DITCH Q437 LLUND CAM JASDU PBERG CARTR5 CYUL\" readonly>";
+					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DITCH LUIGI HNNAH LLUND BIZEX Q133 PBERG CARTR5 CYUL\" readonly>";
 					result += "<br/>PP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW CHLSE DIANO T212 LAAYK T291 DANZI ALB PBERG CARTR5 CYUL\" readonly>";
 					result += "<br/>SY<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW CHLSE T449 CFB T335 SYR ART IMPAC4 CYUL\" readonly>";
 					break;
-				case "YYZ": // PHL-YYZ // Updated 03-11-2025
-					result += "<!-- Updated 03-11-2025 -->";
+				case "YYZ": // PHL-YYZ // Updated 06-24-2026
+					result += "<!-- Updated 06-24-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\"; value=\"KPHL PTW SARAA RAV PSB WOZEE LINNG3 CYYZ\" readonly>"; // CDR 95
-					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-11-2025
-					result += "<!-- Verified with ATCSCC on 03-11-2025 -->";
-					result += "<br/>95<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DITCH Q437 HNNAH Q450 JFK GAYEL Q818 WOZEE LINNG3 CYYZ\" readonly>";
-					result += "<br/>CA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DITCH Q437 LLUND CAM Q822 GONZZ WOZEE LINNG3 CYYZ\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB WOZEE LINNG3 CYYZ\" readonly>"; // CDR PJ
+					result += "<br/></br>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL DITCH LUIGI HNNAH Q450 JFK GAYEL Q818 WOZEE LINNG3 CYYZ\" readonly>"; // CDR 95
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-24-2026
+					result += "<!-- Verified with ATCSCC on 06-24-2026 -->";
+					result += "<br/>95<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DITCH LUIGI HNNAH Q450 JFK GAYEL Q818 WOZEE LINNG3 CYYZ\" readonly>";
+					result += "<br/>CA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DITCH LUIGI HNNAH LLUND CAM Q822 GONZZ WOZEE LINNG3 CYYZ\" readonly>";
 					result += "<br/>DQ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DQO BELAY MORTY FOXHL RAMAY Q72 HACKS OXMAN LINNG3 CYYZ\" readonly>";
 					result += "<br/>FP<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW T447 DLMAR DMACK WOZEE LINNG CYYZ\" readonly>";
 					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB WOZEE LINNG3 CYYZ\" readonly>";
