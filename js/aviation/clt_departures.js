@@ -1572,13 +1572,7 @@ KCLT JOJJO6 JOJJO DOOGE IIU FAM KXNA
 KCLT BOBZY6 BNA RZC KXNA
 KCLT WEAZL6 CLAWD HVQ J8 IIU FAM KXNA
 */
-		case "YYC": // CLT-YYC // Updated 02-06-2025
-			result += "<!-- Updated 02-06-2025 -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT JOJJO6 DOOGE Q93 OCASE FLM J24 VHP BVT DBQ RWF J90 ABR J70 DIK GGW J478 YQL ILOSA EBGAL7 CYYC\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-			// result += "<br/><br/><b>CDRS</b>";
-			break;
+			
 		case "YUL": // CLT-YUL // Updated 01-23-2026
 			result += "<!-- Updated 01-23-2026 P -->";
 			result += "<br/><br/><b>Canada Mandatory Routes:</b>";
@@ -1598,16 +1592,22 @@ KCLT WEAZL6 CLAWD HVQ J8 IIU FAM KXNA
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KRITR7 FILDS ILLSA Q69 RICCS PSB SYR ART IMPAC4 CYUL\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL6 CLAWD HNN AIR JHW ART IMPAC4 CYUL\" readonly>";
 			break;
-/*
-		case "YVR": // CLT-YVR // Updated 05-07-2026
-			result += "<!-- Updated 05-07-2026 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 05-07-2026
-			result += "<br/><br/>CFS: <input style=\"width:75%\" value=\"KCLT JOJJO6 DOOGE Q93 TONIO GBEES DONVE MZV ONTIJ MMUDY CTB ONEAL BOOTH CANUC5 CYVR\" readonly>";
-			result += "<br/><br/>South: <input style=\"width:75%\" value=\"KCLT BOBZY6 BOBZY BRAYN REWET LORNN RIZZZ SPKER RZC TUL DVC PUC TCH YKM PAE PAINE4 CYVR\" readonly>";
+		case "YVR": // CLT-YVR // Updated 06-24-2026
+			result += "<!-- Updated 06-24-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-24-2026
+			result += "<br/><br/>CFS: <input style=\"width:75%\" value=\"KCLT JOJJO6 DOOGE FLM VHP CID FSD J16 DPR J204 MLS LEWIT Q140 GETNG EGRET GRIZZ1 CYVR\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL6 CLAWD HVQ J85 DJB J34 DLL HUFFR Q146 KIXCO LEWIT Q140 GETNG EGRET GRIZZ1 CYVR\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY6 BNA J46 TUL DUUZE Q150 GANNE DBS J82 DNJ PDT J20 YKM ELN EGRET GRIZZ1 CYVR\" readonly>";
+			result += "<br/><br/>South via MGM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR6 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK ADM PNH ALS JNC J15 BOI PDT J20 YKM ELN EGRET GRIZZ1 CYVR\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-24-2026
+			break;
+		case "YYC": // CLT-YYC // Updated 02-06-2025
+			result += "<!-- Updated 02-06-2025 -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT JOJJO6 DOOGE Q93 OCASE FLM J24 VHP BVT DBQ RWF J90 ABR J70 DIK GGW J478 YQL ILOSA EBGAL7 CYYC\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 			// result += "<br/><br/><b>CDRS</b>";
 			break;
-*/
 		case "YYZ": // CLT-YYZ // Updated 06-14-2025
 			result += "<!-- Updated 06-14-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
