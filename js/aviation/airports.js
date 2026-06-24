@@ -460,9 +460,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 		case "YEG":
 			show_flow_info =
-				"YEG - ARR fr E: .. <input style=\"width:15em\" value=\"REFEX CAMRA IGSOX ARR\" readonly> .. <br/>" +
-				"YEG - ARR fr S: .. <input style=\"width:15em\" value=\"MIREK Q995 OILRS OILRS ARR\" readonly> .. <br/>" +
-				"YEG - ARR fr W: .. <input style=\"width:15em\" value=\"ROMRA Q949 ELLKS ELLKS ARR\" readonly> ..";
+				"YEG - ARR fr E: .. <input style=\"width:15em\" value=\"REFEX CAMRA IGSOX3 CYEG\" readonly> .. <br/>" +
+				"YEG - ARR fr S: .. <input style=\"width:15em\" value=\"MIREK Q995 OILRS OILRS2 CYEG\" readonly> .. <br/>" +
+				"YEG - ARR fr W: .. <input style=\"width:15em\" value=\"ROMRA Q949 ELLKS ELLKS ELLKS3 CYEG\" readonly> ..";
 			break;
 		case "YOW":
 			show_flow_info = 
@@ -475,21 +475,21 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "YUL":
 			result += "<br/><br/>YUL - Curfew rstr 0100L - 0700L, Extensions authorized";
 			show_flow_info = 
-				"YUL - ARR fr NE: .. <input style=\"width:15em\" value=\"TIBOS ROCKT ARR\" readonly><br/>" +
-				"YUL - ARR fr E: .. <input style=\"width:15em\" value=\"KEBIG ROCKT ARR\" readonly><br/>" +
-				"YUL - ARR fr S: .. <input style=\"width:15em\" value=\"PBERG CARTR ARR\" readonly><br/>" +
-				"YUL - ARR fr SW: .. <input style=\"width:15em\" value=\"ART IMPACT ARR\" readonly><br/>" +
-				"YUL - ARR fr W: .. <input style=\"width:15em\" value=\"MIGLO HABBS ARR\" readonly>";
+				"YUL - ARR fr NE: .. <input style=\"width:15em\" value=\"TIBOS ROCKT3 CYUL\" readonly><br/>" +
+				"YUL - ARR fr E: .. <input style=\"width:15em\" value=\"KEBIG ROCKT3 CYUL\" readonly><br/>" +
+				"YUL - ARR fr S: .. <input style=\"width:15em\" value=\"PBERG CARTR5 CYUL\" readonly><br/>" +
+				"YUL - ARR fr SW: .. <input style=\"width:15em\" value=\"ART IMPAC4 CYUL\" readonly><br/>" +
+				"YUL - ARR fr W: .. <input style=\"width:15em\" value=\"MIGLO HABBS7 CYUL\" readonly>";
 			break;
 		case "YVR":
 			result += "<br/><br/>YVR - Curfew rstr 0000L - 0600L, Extensions authorized";
 			result += "<br/>YVR - Rwy 13/31 N/A";
 			show_flow_info = 
-				"YVR - ARR fr NE: .. <input style=\"width:15em\" value=\"MERYT BOOTH CANUC ARR\" readonly><br/>" +
-				"YVR - ARR fr E: .. <input style=\"width:15em\" value=\"BOOTH CANUC ARR\" readonly><br/>" +
-				"YVR - ARR fr S: .. <input style=\"width:15em\" value=\"EGRET GRIZZ ARR\" readonly><br/>" +
-				"YVR - ARR fr SW: .. <input style=\"width:15em\" value=\"KANUA PITUT GOVAD SHARK ARR\" readonly><br/>" +
-				"YVR - ARR fr SW: .. <input style=\"width:15em\" value=\"PEKAA SHARK ARR\" readonly>";
+				"YVR - ARR fr NE: .. <input style=\"width:15em\" value=\"MERYT BOOTH CANUC7 CYVR\" readonly><br/>" +
+				"YVR - ARR fr E: .. <input style=\"width:15em\" value=\"BOOTH CANUC7 CYVR\" readonly><br/>" +
+				"YVR - ARR fr S: .. <input style=\"width:15em\" value=\"EGRET GRIZZ1 CYVR\" readonly><br/>" +
+				"YVR - ARR fr SW: .. <input style=\"width:15em\" value=\"KANUA PITUT GOVAD SHARK5 CYVR\" readonly><br/>" +
+				"YVR - ARR fr SW: .. <input style=\"width:15em\" value=\"PEKAA SHARK5 CYVR\" readonly>";
 			break;
 		case "YYC":
 			result += "<br/><br/>YYC - If alt needed: Check Customs for YEG; GEG is a good backup";
@@ -505,13 +505,13 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>YYZ - Curfew 0030-0630L; Extensions authorized (else pay fine)";
 			result += "<br/>Airbus and Boeing are Stage 3 acft";
 			show_flow_info =
-				"YYZ - ARR fr NE: .. <input style=\"width:15em\" value=\"LETAK IMEBA ARR\" readonly><br/>" +
-				"YYZ - ARR fr E: .. <input style=\"width:15em\" value=\"TUKIR RAGID ARR\" readonly><br/>" +
-				"YYZ - ARR fr SE: .. <input style=\"width:15em\" value=\"WOZEE LINNG ARR\" readonly><br/>" +
-				"YYZ - ARR fr S: .. <input style=\"width:15em\" value=\"OXMAN LINNG ARR\" readonly><br/>" +
-				"YYZ - ARR fr SW: .. <input style=\"width:15em\" value=\"QWERI NUBER ARR\" readonly><br/>" +
-				"YYZ - ARR fr W: .. <input style=\"width:15em\" value=\"MONEE NUBER ARR\" readonly><br/>" +
-				"YYZ - ARR fr NW: .. <input style=\"width:15em\" value=\"OTNIK BOXUM ARR\" readonly>";
+				"YYZ - ARR fr NE: .. <input style=\"width:15em\" value=\"LETAK IMEBA9 CYYZ\" readonly><br/>" +
+				"YYZ - ARR fr E: .. <input style=\"width:15em\" value=\"TUKIR RAGID6 CYYZ\" readonly><br/>" +
+				"YYZ - ARR fr SE: .. <input style=\"width:15em\" value=\"WOZEE LINNG3 CYYZ\" readonly><br/>" +
+				"YYZ - ARR fr S: .. <input style=\"width:15em\" value=\"OXMAN LINNG3 CYYZ\" readonly><br/>" +
+				"YYZ - ARR fr SW: .. <input style=\"width:15em\" value=\"QWERI NUBER6 CYYZ\" readonly><br/>" +
+				"YYZ - ARR fr W: .. <input style=\"width:15em\" value=\"MONEE NUBER6 CYYZ\" readonly><br/>" +
+				"YYZ - ARR fr NW: .. <input style=\"width:15em\" value=\"OTNIK BOXUM7 CYYZ\" readonly>";
 			break;
 	}
 	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(arvl)) {
