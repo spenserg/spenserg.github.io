@@ -264,17 +264,6 @@ function compute (str_override = "") {
 	*/
 
 	if ((result = regc.exec(fkeystxt)) != null) {
-		/* TODO get array from compute first
-		var reg_tmp_cdr = /\d\t[A-Z]{6}([^\t]{2})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])\t(\d)\t([^\n]*)\n/g;
-		dptr = null;
-		arvl = null;
-		if ((zzx = reg_tmp_cdr.exec(fkeystxt)) != null) {
-			dptr = ((zzx[2].length != 4) ? convert_iata(zzx[2]) : zzx[2]);
-			arvl = ((zzx[3].length != 4) ? convert_iata(zzx[3]) : zzx[3]);
-		}
-		console.log(get_routes(dptr, arvl, null, null, "").split("<br/>"));
-		*/
-
 		// ATSCC CDR page ONLY
 		output = cdr_parse(fkeystxt);
 	} else if ((result = regw.exec(fkeystxt)) != null) {
@@ -752,12 +741,27 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		output += '<input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA pref route as of ' + 
 			today_str + '\' readonly><br/><br/>';
 
+		var fp_lines = fp_to_lines(fkeystxt);
+
 		// Top large box
+		// Header and Date
 		output += '<textarea rows="8" cols="80">' + "case \"" + convert_iata(arvl) + '\": // ' + convert_iata(dptr) + '-' + convert_iata(arvl) + ' // Updated ' + today_str + mr_text + textarea_tabs +
 			'result += \"<!-- Updated ' + today_str + ' P -->\";';
+
+		// Pref / NRP / CFS
+		for (let ii = 0; ii < fp_lines.length; ii++) {
+			
+		}
+
+
+		
 		if (faa_pref.trim().length > 0) {
 			output += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
+		} else {
+			
 		}
+
+		
 		output += '</textarea><br/><br/>';
 		output += '<input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Non RNAV:</b>\"; // TODDO\' readonly><br/><br/>';
 		output += '<textarea rows="8" cols="80">';
@@ -1161,6 +1165,18 @@ function get_dca_mlw(ac_type = null, tail = null) {
 	if (["738K", "738R"].includes(ac_type)) { return "MLW 140.200 to comply with DCA curfew noise limits"; }
 	if (ac_type == "738M") { return "No DCA curfew MLW penalties for B737 MAX"; }
 	return null;
+}
+
+function fp_to_lines(fkeystxt){
+	var reg_tmp_cdr = /\d\t[A-Z]{6}([^\t]{2})\t([A-Z]{4})\t([A-Z]{4})\t[^\t]*\t([^\t]+)\t[^\t]*\t[^\t]*\t[^\t]*\t([YN])\t(\d)\t([^\n]*)\n/g;
+	dptr = null;
+	arvl = null;
+	if ((zzx = reg_tmp_cdr.exec(fkeystxt)) != null) {
+		dptr = ((zzx[2].length != 4) ? convert_iata(zzx[2]) : zzx[2]);
+		arvl = ((zzx[3].length != 4) ? convert_iata(zzx[3]) : zzx[3]);
+	}
+	console.log(get_routes(dptr, arvl, null, null, "").split("<br/>"));
+	return get_routes(dptr, arvl, null, null, "").split("<br/>");
 }
 
 function get_ac_type(tail = "") {
