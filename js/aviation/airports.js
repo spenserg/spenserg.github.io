@@ -160,8 +160,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "ORD":
 			case "DFW":
 			if (is_euro(arvl)) {
-				result += "<br/><br/><b>MIILS<\/b>: <input style=\"width:75%\" value=\"KORD EBAKE WISMO POSTS PADDE SVM Q907 MIILS\" readonly>";
+				result += "<br/><br/><b>DOVEY<\/b>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME EVOTE NELLS JHW Q82 PONCT Q935 BOS FRILL DOVEY\" readonly>";
 				result += "<br/><b>DOVEY<\/b>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME EVOTE NELLS JHW Q82 PONCT Q935 BOS FRILL DOVEY\" readonly>";
+				result += "<br/><b>MIILS<\/b>: <input style=\"width:75%\" value=\"KORD EBAKE WISMO POSTS PADDE SVM Q907 MIILS\" readonly>";
 			}
 			break;
 		case "PHX":
