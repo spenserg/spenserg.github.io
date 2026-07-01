@@ -90,10 +90,14 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 		case "DFW":
 			if (is_euro(arvl)) {
-				result += "<br/><br/><b>SAEZE<\/b>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC SGF SPI FWA DJB JHW SAEZE\" readonly>";
-				result += "<br/><b>EXTOL<\/b>: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV CREEP Q29 JHW EXTOL\" readonly>";
-				result += "<br/><b>KIDDO<\/b>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEMFS VXV KIDDO\" readonly>";
-				result += "<br/><b>ORF<\/b>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR HRTWL Q64 TYI ORF\" readonly>";
+				result += "<br/><br/><b>SAEZE<\/b>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL J24 VHP DJB JHW SAEZE\" readonly>";
+				result += "<br/><b style=\"color:red\">Non RNAV<\/b>: <input style=\"width:75%\" value=\"KDFW TEX5 TUL J98 SGF J8 STL J24 VHP DJB JHW SAEZE\" readonly>";
+				result += "<br/><br/><b>EXTOL<\/b>: <input style=\"width:75%\" value=\"KDFW ZACHH4 BSKAT LIT J131 PXV CREEP Q29 JHW EXTOL\" readonly>";
+				result += "<br/><b style=\"color:red\">Non RNAV<\/b>: <input style=\"width:75%\" value=\"KDFW DALL4 LIT J131 PXV CREEP Q29 JHW EXTOL\" readonly>";
+				result += "<br/><br/><b>KIDDO<\/b>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEMFS VXV KIDDO\" readonly>";
+				result += "<br/><b style=\"color:red\">Non RNAV<\/b>: <input style=\"width:75%\" value=\"KDFW DALL4 TXK MEM VXV KIDDO\" readonly>";
+				result += "<br/><br/><b>ORF<\/b>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR HRTWL Q64 TYI ORF\" readonly>";
+				result += "<br/><b style=\"color:red\">Non RNAV<\/b>: <input style=\"width:75%\" value=\"KDFW DALL4 EIC IZAAC Q30 VLKNN THRSR HRTWL Q64 TYI ORF\" readonly>";
 			}
 			break;
 		case "EGE":
@@ -158,9 +162,10 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>MTJ - Rwy 13/31 N/A"; // TODO: Source?
 			break;
 		case "ORD":
-			case "DFW":
 			if (is_euro(arvl)) {
-				result += "<br/><br/><b>DOVEY<\/b>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME EVOTE NELLS JHW Q82 PONCT Q935 BOS FRILL DOVEY\" readonly>";
+				result += "<br/><br/><b>ANCER<\/b>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PETTY TVC NAKAL YVO EMBES ANCER\" readonly>";
+				result += "<br/><b>BAREE<\/b>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PETTY TVC NAKAL YVO Q820 KISAS BAREE\" readonly>";
+				result += "<br/><b>CEFOU<\/b>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PETTY MELRR HOCKE Q824 LETAK Q848 DICEN CEFOU\" readonly>";
 				result += "<br/><b>DOVEY<\/b>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME EVOTE NELLS JHW Q82 PONCT Q935 BOS FRILL DOVEY\" readonly>";
 				result += "<br/><b>MIILS<\/b>: <input style=\"width:75%\" value=\"KORD EBAKE WISMO POSTS PADDE SVM Q907 MIILS\" readonly>";
 			}
@@ -292,13 +297,16 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 		case "YYZ":
 			show_flow_info =
-				"YYZ - DEP to NE: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
-				"YYZ - DEP to E: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
-				"YYZ - DEP to SE: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
-				"YYZ - DEP to S: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
-				"YYZ - DEP to SW: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
-				"YYZ - DEP to W: .. <input style=\"width:15em\" value=\"\" readonly> .. <br/>" +
-				"YYZ - DEP to NW: .. <input style=\"width:15em\" value=\"\" readonly> ..";
+				"YYZ - DEP to NE: .. <input style=\"width:15em\" value=\"DEDKI DEP OLABA\" readonly> .. <br/>" +
+				"YYZ - DEP to NE: .. <input style=\"width:15em\" value=\"DEDKI DEP TULEG\" readonly> .. <br/>" +
+				"YYZ - DEP to E: .. <input style=\"width:15em\" value=\"KEPTA DEP BMPAH\" readonly> .. <br/>" +
+				"YYZ - DEP to SE: .. <input style=\"width:15em\" value=\"RIGUS DEP PSB\" readonly> .. <br/>" +
+				"YYZ - DEP to SE: .. <input style=\"width:15em\" value=\"BETES DEP AIRRA\" readonly> .. <br/>" +
+				"YYZ - DEP to S: .. <input style=\"width:15em\" value=\"BETES DEP FOXEE\" readonly> .. <br/>" +
+				"YYZ - DEP to SW: .. <input style=\"width:15em\" value=\"MIXUT DEP GNTRY\" readonly> .. <br/>" +
+				"YYZ - DEP to W: .. <input style=\"width:15em\" value=\"GOPUP DEP HOCKE\" readonly> .. <br/>" +
+				"YYZ - DEP to W: .. <input style=\"width:15em\" value=\"GOPUP DEP SLLAP\" readonly> .. <br/>" +
+				"YYZ - DEP to NW: .. <input style=\"width:15em\" value=\"NOSIK DEP ZOHAN\" readonly> ..";
 			break;
 /* Latin Depatures */
 		case "AUA":
