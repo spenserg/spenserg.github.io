@@ -170,6 +170,11 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				result += "<br/><b>MIILS<\/b>: <input style=\"width:75%\" value=\"KORD EBAKE WISMO POSTS PADDE SVM Q907 MIILS\" readonly>";
 			}
 			break;
+		case "PHL":
+			if (is_euro(arvl)) {
+				result += "<br/><br/>Use OOD if planning via DOVEY: <input style=\"width:29em\" value=\"KPHL OOD TEBEE HAYDO SIE B24 LYNUS LARGE JENYY DOVEY\" readonly> ..";
+			}
+			break;
 		case "PHX":
 			// result += "<br/>PHX - Make sure flow matches TPS; Usually departing into the sun (East in AMs, West in PMs)";
 			result += "<br/><br/>PHX - Rwy 26/8 usually available for dptr (operational necessity) if tower notified in advance";
