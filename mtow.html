@@ -741,7 +741,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		output += '<input style=\'width:75%\' value=\'// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA pref route as of ' + 
 			today_str + '\' readonly><br/><br/>';
 
-		var fp_lines = fp_to_lines(fkeystxt);
+		var fp_lines = fp_to_lines(input);
 
 		// Top large box
 		// Header and Date
