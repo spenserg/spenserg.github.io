@@ -1357,6 +1357,10 @@ check_page_for_errors = function (text = "") {
 	if (text.length > 0) {
 		var cases = text.split("break;");
 		for (let i = 0; i < cases.length; i++) {
+			// Incorrect "br"
+			if (cases[i].includes("</br>")) {
+				errors['misc'].push('Incorrect BR: "' + cases[i] + '"');
+			}
 			regdd = /case \"([A-Z]{3})\"\:\s\/\/\s([A-Z]{3})\-([A-Z]{3})[^\n]+Updated\s*([\d\-]{10})/g;
 			if ((tmp_xdd = regdd.exec(cases[i])) !== null) {
 				/*
