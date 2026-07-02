@@ -1358,9 +1358,16 @@ check_page_for_errors = function (text = "") {
 		var cases = text.split("break;");
 		for (let i = 0; i < cases.length; i++) {
 			// Incorrect "br"
-			if (cases[i].includes("</br>")) {
-				errors['misc'].push('Incorrect BR: "' + cases[i] + '"');
+			regda = /\<\/br\>/g;
+			if ((regda.exec(cases[i])) !== null) {
+				tmp_clines = cases[i].split("\n");
+				for (let j = 0; j < tmp_clines.length; j++) {
+					if (tmp_clines[j].includes("<\/br>")) {
+						errors['misc'].push('Incorrect BR: "' + tmp_clines[j].replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("&lt;/br&gt;",'<b style="color:red">&lt;/br&gt;</b>') + '"');
+					}
+				}
 			}
+
 			regdd = /case \"([A-Z]{3})\"\:\s\/\/\s([A-Z]{3})\-([A-Z]{3})[^\n]+Updated\s*([\d\-]{10})/g;
 			if ((tmp_xdd = regdd.exec(cases[i])) !== null) {
 				/*
