@@ -268,50 +268,50 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 		case "YOW":
 			show_flow_info =
-				"YOW - DEP to E: .. <input style=\"width:15em\" value=\"AVVON Q947 LAFIT RABIK Q951 ANTOV\" readonly> .. <br/>" +
-				"YOW - DEP to SE: .. <input style=\"width:15em\" value=\"KODEX EPMOK SSENA BUGSY\" readonly> .. <br/>" +
-				"YOW - DEP to S: .. <input style=\"width:15em\" value=\"IKLAX Q844 SYR\" readonly> .. <br/>" +
-				"YOW - DEP to W: .. <input style=\"width:15em\" value=\"SELES OLIGO Q904 ROSVO\" readonly>";
+				"YOW - DEP to E: .. <input style=\"width:15em\" value=\"CYOW AVVON Q947 LAFIT RABIK Q951 ANTOV\" readonly> .. <br/>" +
+				"YOW - DEP to SE: .. <input style=\"width:15em\" value=\"CYOW KODEX EPMOK SSENA BUGSY\" readonly> .. <br/>" +
+				"YOW - DEP to S: .. <input style=\"width:15em\" value=\"CYOW IKLAX Q844 SYR\" readonly> .. <br/>" +
+				"YOW - DEP to W: .. <input style=\"width:15em\" value=\"CYOW SELES OLIGO Q904 ROSVO\" readonly>";
 			break;
 		case "YUL":
 			show_flow_info =
-				"YUL - DEP to E: .. <input style=\"width:15em\" value=\"SUXET NOVUN ESRAM RABIK Q951 ANTOV\" readonly> .. <br/>" +
-				"YUL - DEP to SE: .. <input style=\"width:15em\" value=\"OVAXO VIRKA\" readonly> .. <br/>" +
-				"YUL - DEP to S: .. <input style=\"width:15em\" value=\"FAWNS BUGSY\" readonly> .. <br/>" +
-				"YUL - DEP to SW: .. <input style=\"width:15em\" value=\"FAWNS BUGSY SYR\" readonly> .. <br/>" +
-				"YUL - DEP to W: .. <input style=\"width:15em\" value=\"KESKA SAVEX Q806 TUKIR\" readonly>";
+				"YUL - DEP to E: .. <input style=\"width:15em\" value=\"CYUL SUXET NOVUN ESRAM RABIK Q951 ANTOV\" readonly> .. <br/>" +
+				"YUL - DEP to SE: .. <input style=\"width:15em\" value=\"CYUL OVAXO VIRKA\" readonly> .. <br/>" +
+				"YUL - DEP to S: .. <input style=\"width:15em\" value=\"CYUL FAWNS BUGSY\" readonly> .. <br/>" +
+				"YUL - DEP to SW: .. <input style=\"width:15em\" value=\"CYUL FAWNS BUGSY SYR\" readonly> .. <br/>" +
+				"YUL - DEP to W: .. <input style=\"width:15em\" value=\"CYUL KESKA SAVEX Q806 TUKIR\" readonly>";
 			break;
 		case "YVR":
 			show_flow_info =
-				"YVR - DEP to E: .. <input style=\"width:15em\" value=\"ALNOD IKNIX\" readonly> ..<br/>" +
-				"YVR - DEP to E: .. <input style=\"width:15em\" value=\"VIBTA DURVU FINBO\" readonly> ..<br/>" +
-				"YVR - DEP to E: .. <input style=\"width:15em\" value=\"VIBTA NOSOM\" readonly> ..<br/>" +
-				"YVR - DEP to SE: .. <input style=\"width:15em\" value=\"YVR J52 GEG\" readonly> ..<br/>" +
-				"YVR - DEP to S: .. <input style=\"width:15em\" value=\"YVR J5 SEA\" readonly> ..<br/>" +
-				"YVR - DEP to SW: .. <input style=\"width:15em\" value=\"PITUT\" readonly> ..<br/>" +
-				"YVR - DEP to SW: .. <input style=\"width:15em\" value=\"VIXOR ELMAA\" readonly> ..";
+				"YVR - DEP to E: .. <input style=\"width:15em\" value=\"CYVR ALNOD IKNIX\" readonly> ..<br/>" +
+				"YVR - DEP to E: .. <input style=\"width:15em\" value=\"CYVR VIBTA DURVU FINBO\" readonly> ..<br/>" +
+				"YVR - DEP to E: .. <input style=\"width:15em\" value=\"CYVR VIBTA NOSOM\" readonly> ..<br/>" +
+				"YVR - DEP to SE: .. <input style=\"width:15em\" value=\"CYVR YVR J52 GEG\" readonly> ..<br/>" +
+				"YVR - DEP to S: .. <input style=\"width:15em\" value=\"CYVR YVR J5 SEA\" readonly> ..<br/>" +
+				"YVR - DEP to SW: .. <input style=\"width:15em\" value=\"CYVR PITUT\" readonly> ..<br/>" +
+				"YVR - DEP to SW: .. <input style=\"width:15em\" value=\"CYVR VIXOR ELMAA\" readonly> ..";
 			break;
 		case "YYC":
 			show_flow_info =
-				"YYC - DEP to E: .. <input style=\"width:15em\" value=\"LOMLO Q961 DAPOP\" readonly> .. <br/>" +
-				"YYC - DEP to SE: .. <input style=\"width:15em\" value=\"NOSIV Q909 DESNU\" readonly> .. <br/>" +
-				"YYC - DEP to S: .. <input style=\"width:15em\" value=\"UBVAL Q927 SEKOM\" readonly> .. <br/>" +
-				"YYC - DEP to S: .. <input style=\"width:15em\" value=\"OTARA Q931 IPTAN\" readonly> .. <br/>" +
-				"YYC - DEP to SW: .. <input style=\"width:15em\" value=\"DUMRA Q890 ROPLA\" readonly> .. <br/>" +
-				"YYC - DEP to W: .. <input style=\"width:15em\" value=\"BOTAG Q894 BINVO\" readonly> ..";
+				"YYC - DEP to E: .. <input style=\"width:15em\" value=\"CYYC STAMP2 LOMLO Q961 DAPOP\" readonly> .. <br/>" +
+				"YYC - DEP to SE: .. <input style=\"width:15em\" value=\"CYYC STAMP2 NOSIV Q909 DESNU\" readonly> .. <br/>" +
+				"YYC - DEP to S: .. <input style=\"width:15em\" value=\"CYYC STAMP2 UBVAL Q927 SEKOM\" readonly> .. <br/>" +
+				"YYC - DEP to S: .. <input style=\"width:15em\" value=\"CYYC STAMP2 OTARA Q931 IPTAN\" readonly> .. <br/>" +
+				"YYC - DEP to SW: .. <input style=\"width:15em\" value=\"CYYC STAMP2 DUMRA Q890 ROPLA\" readonly> .. <br/>" +
+				"YYC - DEP to W: .. <input style=\"width:15em\" value=\"CYYC STAMP2 BOTAG Q894 BINVO\" readonly> ..";
 			break;
 		case "YYZ":
 			show_flow_info =
-				"YYZ - DEP to NE: .. <input style=\"width:15em\" value=\"DEDKI DEP OLABA\" readonly> .. <br/>" +
-				"YYZ - DEP to NE: .. <input style=\"width:15em\" value=\"DEDKI DEP TULEG\" readonly> .. <br/>" +
-				"YYZ - DEP to E: .. <input style=\"width:15em\" value=\"KEPTA DEP BMPAH\" readonly> .. <br/>" +
-				"YYZ - DEP to SE: .. <input style=\"width:15em\" value=\"RIGUS DEP PSB\" readonly> .. <br/>" +
-				"YYZ - DEP to SE: .. <input style=\"width:15em\" value=\"BETES DEP AIRRA\" readonly> .. <br/>" +
-				"YYZ - DEP to S: .. <input style=\"width:15em\" value=\"BETES DEP FOXEE\" readonly> .. <br/>" +
-				"YYZ - DEP to SW: .. <input style=\"width:15em\" value=\"MIXUT DEP GNTRY\" readonly> .. <br/>" +
-				"YYZ - DEP to W: .. <input style=\"width:15em\" value=\"GOPUP DEP HOCKE\" readonly> .. <br/>" +
-				"YYZ - DEP to W: .. <input style=\"width:15em\" value=\"GOPUP DEP SLLAP\" readonly> .. <br/>" +
-				"YYZ - DEP to NW: .. <input style=\"width:15em\" value=\"NOSIK DEP ZOHAN\" readonly> ..";
+				"YYZ - DEP to NE: .. <input style=\"width:15em\" value=\"CYYZ DEDKI5 OLABA\" readonly> .. <br/>" +
+				"YYZ - DEP to NE: .. <input style=\"width:15em\" value=\"CYYZ DEDKI5 TULEG\" readonly> .. <br/>" +
+				"YYZ - DEP to E: .. <input style=\"width:15em\" value=\"CYYZ KEPTA3 BMPAH\" readonly> .. <br/>" +
+				"YYZ - DEP to SE: .. <input style=\"width:15em\" value=\"CYYZ RIGUS5 PSB\" readonly> .. <br/>" +
+				"YYZ - DEP to SE: .. <input style=\"width:15em\" value=\"CYYZ BETES3 AIRRA\" readonly> .. <br/>" +
+				"YYZ - DEP to S: .. <input style=\"width:15em\" value=\"CYYZ BETES3 FOXEE\" readonly> .. <br/>" +
+				"YYZ - DEP to SW: .. <input style=\"width:15em\" value=\"CYYZ MIXUT7 DEP GNTRY\" readonly> .. <br/>" +
+				"YYZ - DEP to W: .. <input style=\"width:15em\" value=\"CYYZ GOPUP4 HOCKE\" readonly> .. <br/>" +
+				"YYZ - DEP to W: .. <input style=\"width:15em\" value=\"CYYZ GOPUP4 SLLAP\" readonly> .. <br/>" +
+				"YYZ - DEP to NW: .. <input style=\"width:15em\" value=\"CYYZ NOSIK4 ZOHAN\" readonly> ..";
 			break;
 /* Latin Depatures */
 		case "AUA":
