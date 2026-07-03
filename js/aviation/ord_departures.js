@@ -924,6 +924,19 @@ ORD-RBS.J71-ENL-ARG.J137-LIT
 			result += "<br/>6S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL PLESS Q19 HITMN THRSR ZJAYX GRNCH5 KMCO\" readonly>";
 			result += "<br/>SB<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV HITMN THRSR ZJAYX GRNCH5 KMCO\" readonly>";
 			break;
+		case "MDT": // ORD-MDT // Updated 07-03-2026
+			result += "<!-- Updated 07-03-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KORD MOBLE ADIME GERBS Q186 SPYDY EWC HAR KMDT\" readonly>"; // CDR 0E
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH SPYDY EWC JST J152 HAR KMDT\" readonly>"; // CDR 1N
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME VHP ROD J152 HAR KMDT\" readonly>"; // CDR VR
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-03-2026
+			result += "<!-- Verified with ATCSCC on 07-03-2026 -->";
+			result += "<br/>0E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME GERBS Q186 SPYDY EWC HAR KMDT\" readonly>";
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH SPYDY EWC JST J152 HAR KMDT\" readonly>";
+			result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU HVQ MGW J162 MRB J6 LRP KMDT\" readonly>";
+			result += "<br/>VR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME VHP ROD J152 HAR KMDT\" readonly>";
+			break;
 
 // TODO ORD-MEM // ORD.DCT.CMSKY.DCT.CARYN.DCT.CYBIL.DCT.PXV.BLUZZ3.MEM
 
