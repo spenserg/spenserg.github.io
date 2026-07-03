@@ -2306,10 +2306,8 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "TUL": // DFW-TUL // Updated 05-25-2026
 			result += "<!-- Updated 05-25-2026 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW GRABE8 EAKER KTUL\" readonly>"; // CDR 0P
 			result += "<br/><br/><b>Faa Pref Route (Avg FL250):</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW GRABE8 EAKER KTUL\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KDFW GRABE8 EAKER KTUL\" readonly>"; // CDR 0P
 			result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW HUDAD2 PGLET SPS FILGO IRW OKM KTUL\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 ADM TUL KTUL\" readonly>";
