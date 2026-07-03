@@ -590,6 +590,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	var non_rnav_coordreq = true;
 	var cdr_str = "";
 	var playbooks = {};
+	var cdr_strs = {};
 	var mr_text = ((mandatory_routes_checked) ? " // Mandatory Routes checked" : "");
 	var num_ok_to_file = 0;
 	var only_one_ok_to_file_pref = {};
@@ -673,6 +674,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 			'verified' : today_str,
 			'result_str' : cdr_str
 		}
+		cdr_strs[z[4]] = z[1];
 	}
 
 	if (num_ok_to_file == 1 && !["KCLT","KDCA","KDFW","KPHL"].includes(dptr)) {
@@ -712,7 +714,7 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		// z[2] = Coord Rqd -or- OK to file
 		// z[3] = route string as input value
 		// z[4] = Playbook name (blank if none)
-		
+
 		// Route Str = cdrstr_xxx || Description = cdrdesc_xxx || CopyPaste = cdrcp_xxx
 		new_cdr_str += "<br/>CDR " + z[1] + z[2].replaceAll("\\", "") + ": <input id=\"cdrstr_" + z[1] + "\" class=\"cdr_input\" style=\"width:50%\" " + z[3].replaceAll("\\", "") + " readonly>";
 		if (debug_mode && !safe_mode) {
@@ -729,83 +731,110 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		}
 	}
 	new_cdr_str = add_sids_and_stars_to_cdrs(new_cdr_str);
+	for (const property in cdr_strs) {
+		cdr_strs[add_sids_and_stars_to_cdrs(property)] = cdr_strs[property];
+	}
 
 	var faa_result = merge_faa_pref(result_arr, today_str);
 
 	// -- HTML Building below here --
 	// Errors
-	var output = '<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
-				'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span><br/><br/>';
+	var output = "";
+
 	// First input line
 	if (debug_mode && !safe_mode) {
 		var fp_lines = fp_to_lines(input);
+		reg_getcdrrte = /value\=\"([^\"]+)\"/g;
 
 		// Top large box
 		// Header and Date
-		output += '<textarea rows="20" cols="100">' + "case \"" + convert_iata(arvl) + '\": // ' + convert_iata(dptr) + '-' + convert_iata(arvl) + ' // Updated ' + today_str + mr_text + textarea_tabs +
+		var header = 'case \"' + convert_iata(arvl) + '\": // ' + convert_iata(dptr) + '-' + convert_iata(arvl) + ' // Updated ' + today_str + mr_text + textarea_tabs +
 			'result += \"<!-- Updated ' + today_str + ' P -->\";';
 
 		// Pref Route / NRP / CFS
 		if (fp_lines[2].includes("Faa Pref Route")) {
-			output += textarea_tabs + 'result += \"<br/><br/>' + fp_lines[2] + '\";' + textarea_tabs + 'result += \"<br/>' + fp_lines[3] + '\";';
-			if (faa_pref.trim().length > 0) {
-				// FAA pref from CDRs
-				output += textarea_tabs + '// ' + faa_pref;
+			header += textarea_tabs + 'result += \"<br/><br/>' + fp_lines[2] + '\";' + textarea_tabs + 'result += \"<br/>' + fp_lines[3].replaceAll('\"','\\\"') + '\";';
+			var actcdrrte = reg_getcdrrte.exec(fp_lines[3]);
+			if (cdr_strs[actcdrrte[1]] != undefined) {
+				header += " // CDR " + cdr_strs[actcdrrte[1]];
 			}
 		} else if (fp_lines[2].includes("CFS") || fp_lines[2].includes("NRP")) {
 			// No Faa Pref route
-			output += textarea_tabs + '// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of ' + today_str +
-				textarea_tabs + 'result += \"<br/><br/>' + fp_lines[2] + '\";';
+			header += textarea_tabs + '// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of ' + today_str +
+				textarea_tabs + 'result += \"<br/><br/>' + fp_lines[2].replaceAll('\"','\\\"') + '\";';
+			var actcdrrte = reg_getcdrrte.exec(fp_lines[2]);
+			if (cdr_strs[actcdrrte[1]] != undefined) {
+				header += " // CDR " + cdr_strs[actcdrrte[1]];
+			}
 		} else if (faa_pref.trim().length > 0) {
-			output += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
+			header += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
 		} else {
 			 // Unknown Format
-			output += textarea_tabs + '// TODO: FAA Pref Route // NRP Rte QQ';
+			header += textarea_tabs + '// TODO: FAA Pref Route // NRP Rte QQ';
 		}
+		output += '<textarea rows="20" cols="100">' + header;
+		header = '<textarea rows="8" cols="80">' + header + '</textarea>';
+
+		/*
+		new_cdr_str += "&nbsp;&nbsp;Desc: <input id=\"cdrdesc_" + z[1] + "\" style=\"width:10%\" value=\"XXX\" onchange=\"update_cdr_text('" + z[1] + "'," + ((z[2].includes("Coord Req")) ? 'true' : 'false') + ")\" } />" +
+			"&nbsp;&nbsp;<input id=\"cdrdescbr_" + z[1] + "\" style=\"width:10%\" value=\"<br/>XXX\" readonly><br/>" +
+			z[1] + ": <input id=\'cdrcp_" + z[1] + "\' style=\'width:75%\' value=\'" +
+			"result += \"<br/>XXX" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ") + 
+			"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
+			if (z[4].trim().length > 0) {
+				new_cdr_str += z[4] + ": <input style=\'width:75%\' value=\'" +
+					"result += \"<br/>" + z[4] + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ") + 
+					"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
+			}
+		*/
 
 		// Copy from current body
+		var middle = "";
 		var cdrs_and_beyond = false;
 		var add_row = false;
-		for (var ki = 3; ki < fp_lines.length; ki++) {
-			if (!cdrs_and_beyond) {
-				// .replaceAll("<","&lt;").replaceAll(">","&gt;");
-				if (fp_lines[i].includes(">CDRS<")) { cdrs_and_beyond = true; }
-				else {
-					if (fp_lines[ki].trim().length == 0) { add_row = true; }
-					else {
-						output += textarea_tabs + 'result += \"<br/>' + (add_row ? '<br/>' : "") + fp_lines[ki];
-						add_row = false;
-					}
+		for (var ki = ((fp_lines[2].includes("Faa Pref Route")) ? 4 : 3); ki < fp_lines.length; ki++) {
+			// .replaceAll("<","&lt;").replaceAll(">","&gt;");
+			if (fp_lines[ki].includes(">CDRS<") || fp_lines[ki].includes("Verified with ATCSCC")) { break; }
+			if (fp_lines[ki].trim().length == 0) { add_row = true; }
+			else {
+				middle += textarea_tabs + 'result += \"<br/>' + (add_row ? '<br/>' : "") + fp_lines[ki].replaceAll('\"','\\\"') + '";';
+				var actcdrrte = reg_getcdrrte.exec(fp_lines[ki]);
+				if (cdr_strs[actcdrrte[1]] != undefined) {
+					middle += " // CDR " + cdr_strs[actcdrrte[1]];
 				}
+				add_row = false;
 			}
 		}
+		output += middle;
+		middle = '<br/><br/><textarea rows="8" cols="80">' + middle.trim() + '</textarea>';	
 
 		// Playbooks
+		var bot_mid = "";
 		if (sortable.length > 0) {
 			if (sortable.length > 3) {
-				output += textarea_tabs + 'result += \"<br/><br/><b>Playbooks:</b>\";' + textarea_tabs + playbook_str;
+				bot_mid += textarea_tabs + 'result += \"<br/><br/><b>Playbooks:</b>\";' + textarea_tabs + playbook_str;
 			} else {
-				output += textarea_tabs + playbook_str.replace("<br/>","<br/><br/>"); // Only replace first (top)
+				bot_mid += textarea_tabs + playbook_str.replace("<br/>","<br/><br/>"); // Only replace first (top)
 			}
 		}
+		output += bot_mid;
+		bot_mid = ((bot_mid.trim().length == 0) ? '' : '<br/><br/><textarea rows="8" cols="80">' + bot_mid.trim() + '</textarea>');
 
 		// CDRS
-		output += textarea_tabs + 'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str +
+		var bottom = 'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str +
 			textarea_tabs + 'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
 			cdr_str + textarea_tabs + 'break;</textarea><br/><br/>';
-/*
-			'<br/><br/><textarea rows="15" cols="80">' +
-			'result += \"<br/><br/><b>CDRS</b>\"; \/\/ Verified with ATCSCC on ' + today_str + textarea_tabs +
-			'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
-			cdr_str + textarea_tabs + 'break;</textarea><br/><br/>';
-*/
+		output += textarea_tabs + bottom;
+		bottom = '<br/><br/><textarea rows="10" cols="80">' + bottom + '</textarea>';
 	}
-	output += new_cdr_str + '<br/><br/><button onclick=\"clear_input(0)\">Clear</button>';
+	// output += new_cdr_str + '<br/><br/><button onclick=\"clear_input(0)\">Clear</button>';
 	if (debug_mode) {
-		output += '&nbsp;&nbsp;<button onclick="clear_input(1)">Clear All</button>;';
+		output += '&nbsp;&nbsp;<button onclick="clear_input(1)">Clear All</button>';
 	}
 	if (to_array) { return result_arr; }
-	return output;
+	'<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
+				'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span><br/><br/>';
+	return header + middle + bot_mid + bottom + "<hr>" + output + new_cdr_str;
 }
 
 function merge_faa_pref (result_arr = {}) {
