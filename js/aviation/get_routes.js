@@ -10091,7 +10091,7 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "DFW": // PNS-DFW // Updated 09-29-2025
 					result += "<!-- Updated 09-29-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KPNS SJI AEX PNUTS BEREE3 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KPNS PENSI V198 LOXLY SJI AEX PNUTS BEREE3 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS MEI SQS FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPNS PENSI V198 LOXLY SJI J2 LSU LCH IAH CWK GUTZZ BOOVE7 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -10848,7 +10848,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 07-29-2025 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-29-2025
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP J86 LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
-					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP J2 DEFUN FROGZ5 KMIA\" readonly>";
+					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP Q4 CLL ROKIT LSU J2 DEFUN FROGZ5 KMIA\" readonly>";
 					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAN ZZOOO4 MTBAL LANCY J78 IRW J14 XESSS LDK ACORI FROGZ5 KMIA\" readonly>";
 					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSAN ZZOOO4 GBN J50 ELP J86 FST J138 SAT MUSYL LCHLH KELPP MINOW MARCI FROGZ5 KMIA\" readonly>";
 					result += "<br/>HAVANA EAST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSAN BRDR7 IPL NOVOS MXL UT25 AXASA UT41 CUU UJ2 MAM UT22 VESKO UT11 OTOGU ALPUK UM346 CANOA SNDBR3 KMIA\" readonly>";
