@@ -799,8 +799,10 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 			else {
 				middle += textarea_tabs + 'result += \"<br/>' + (add_row ? '<br/>' : "") + fp_lines[ki].replaceAll('\"','\\\"') + '";';
 				var actcdrrte = reg_getcdrrte.exec(fp_lines[ki]);
-				if (cdr_strs[actcdrrte[1]] != undefined) {
-					middle += " // CDR " + cdr_strs[actcdrrte[1]];
+				if (actcdrrte != null) {
+					if (cdr_strs[actcdrrte[1]] != null) {
+						middle += " // CDR " + cdr_strs[actcdrrte[1]];
+					}
 				}
 				add_row = false;
 			}
