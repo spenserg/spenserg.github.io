@@ -752,25 +752,38 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 			'result += \"<!-- Updated ' + today_str + ' P -->\";';
 
 		// Pref Route / NRP / CFS
-		if (fp_lines[2].includes("Faa Pref Route")) {
-			header += textarea_tabs + 'result += \"<br/><br/>' + fp_lines[2] + '\";' + textarea_tabs + 'result += \"<br/>' + fp_lines[3].replaceAll('\"','\\\"') + '\";';
-			var actcdrrte = reg_getcdrrte.exec(fp_lines[3]);
-			if (cdr_strs[actcdrrte[1]] != undefined) {
-				header += " // CDR " + cdr_strs[actcdrrte[1]];
+		if (fp_lines != null && fp_lines.length > 1) {
+			if (fp_lines[2].includes("Faa Pref Route")) {
+				header += textarea_tabs + 'result += \"<br/><br/>' + fp_lines[2] + '\";' + textarea_tabs + 'result += \"<br/>' + fp_lines[3].replaceAll('\"','\\\"') + '\";';
+				var actcdrrte = reg_getcdrrte.exec(fp_lines[3]);
+				if (actcdrrte != null) {
+					if (cdr_strs[actcdrrte[1]] != null) {
+						header += " // CDR " + cdr_strs[actcdrrte[1]];
+					}
+				}
+			} else if (fp_lines[2].includes("CFS") || fp_lines[2].includes("NRP")) {
+				// No Faa Pref route
+				header += textarea_tabs + '// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of ' + today_str +
+					textarea_tabs + 'result += \"<br/><br/>' + fp_lines[2].replaceAll('\"','\\\"') + '\";';
+				var actcdrrte = reg_getcdrrte.exec(fp_lines[2]);
+				if (actcdrrte != null) {
+					if (cdr_strs[actcdrrte[2]] != null) {
+						header += " // CDR " + cdr_strs[actcdrrte[1]];
+					}
+				}
+			} else if (faa_pref.trim().length > 0) {
+				header += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
+			} else {
+				 // Unknown Format
+				header += textarea_tabs + '// TODO: FAA Pref Route // NRP Rte QQ';
 			}
-		} else if (fp_lines[2].includes("CFS") || fp_lines[2].includes("NRP")) {
-			// No Faa Pref route
-			header += textarea_tabs + '// result += \"<br/><br/><b>Faa Pref Route:</b>\"; // No FAA Pref route as of ' + today_str +
-				textarea_tabs + 'result += \"<br/><br/>' + fp_lines[2].replaceAll('\"','\\\"') + '\";';
-			var actcdrrte = reg_getcdrrte.exec(fp_lines[2]);
-			if (cdr_strs[actcdrrte[1]] != undefined) {
-				header += " // CDR " + cdr_strs[actcdrrte[1]];
-			}
-		} else if (faa_pref.trim().length > 0) {
-			header += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
 		} else {
-			 // Unknown Format
-			header += textarea_tabs + '// TODO: FAA Pref Route // NRP Rte QQ';
+			if (faa_pref.trim().length > 0) {
+				header += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
+			} else {
+				 // Unknown Format
+				header += textarea_tabs + '// TODO: FAA Pref Route // NRP Rte QQ';
+			}
 		}
 		output += '<textarea rows="20" cols="100">' + header;
 		header = '<textarea rows="8" cols="80">' + header + '</textarea>';
@@ -792,23 +805,25 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 		var middle = "";
 		var cdrs_and_beyond = false;
 		var add_row = false;
-		for (var ki = ((fp_lines[2].includes("Faa Pref Route")) ? 4 : 3); ki < fp_lines.length; ki++) {
-			// .replaceAll("<","&lt;").replaceAll(">","&gt;");
-			if (fp_lines[ki].includes(">CDRS<") || fp_lines[ki].includes("Verified with ATCSCC")) { break; }
-			if (fp_lines[ki].trim().length == 0) { add_row = true; }
-			else {
-				middle += textarea_tabs + 'result += \"<br/>' + (add_row ? '<br/>' : "") + fp_lines[ki].replaceAll('\"','\\\"') + '";';
-				var actcdrrte = reg_getcdrrte.exec(fp_lines[ki]);
-				if (actcdrrte != null) {
-					if (cdr_strs[actcdrrte[1]] != null) {
-						middle += " // CDR " + cdr_strs[actcdrrte[1]];
+		if (fp_lines.length > 1) {
+			for (var ki = ((fp_lines[2].includes("Faa Pref Route")) ? 4 : 3); ki < fp_lines.length; ki++) {
+				// .replaceAll("<","&lt;").replaceAll(">","&gt;");
+				if (fp_lines[ki].includes(">CDRS<") || fp_lines[ki].includes("Verified with ATCSCC")) { break; }
+				if (fp_lines[ki].trim().length == 0) { add_row = true; }
+				else {
+					middle += textarea_tabs + 'result += \"<br/>' + (add_row ? '<br/>' : "") + fp_lines[ki].replaceAll('\"','\\\"') + '";';
+					var actcdrrte = reg_getcdrrte.exec(fp_lines[ki]);
+					if (actcdrrte != null) {
+						if (cdr_strs[actcdrrte[1]] != null) {
+							middle += " // CDR " + cdr_strs[actcdrrte[1]];
+						}
 					}
+					add_row = false;
 				}
-				add_row = false;
 			}
+			output += middle;
+			middle = '<br/><br/><textarea rows="8" cols="80">' + middle.trim() + '</textarea>';
 		}
-		output += middle;
-		middle = '<br/><br/><textarea rows="8" cols="80">' + middle.trim() + '</textarea>';	
 
 		// Playbooks
 		var bot_mid = "";
