@@ -7614,7 +7614,9 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "ORD": // MDT-ORD // Updated 02-01-2026
 					result += "<!-- Updated 02-01-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KMDT HAR MCMAN Q62 WATSN WATSN4 KORD\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KMDT HAR V33 MCMAN Q62 WATSN WATSN4 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMDT SLT DKK FNT WYNDE3 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMDT MRB J6 COLNS Q176 HNN HEVAN BONNT VEECK5 KORD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-01-2026
 					break;
