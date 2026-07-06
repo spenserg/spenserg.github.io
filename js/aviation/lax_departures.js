@@ -660,7 +660,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 03-05-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 03-05-2026
 			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KLAX DOTSS2 CLEEE PKE J134 DRK J6 PNH IRW FSM ARG J46 BNA GLAZR MXEEN KPASS ALDAN4 KRDU\" readonly>";
-			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J78 DRK RSK J110 BUM J112 FAM BNA METWO Q66 MXEEN KPASS ALDAN4 KRDU\" readonly>";
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J78 DRK RSK J110 BUM IIU Q108 ZIEBR PSK FRIKY ALDAN4 KRDU\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO J4 FUZ ELD IZAAC Q30 VLKNN THRSR IRQ PYRES DMSTR2 KRDU\" readonly>";
 			result += "<br/><br/>North via MCI<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS J146 DVC J197 HGO HLC J80 MCI J24 STL J8 IIU Q108 ZIEBR FRIKY ALDAN4 KRDU\" readonly>";
 			result += "<br/>South via IAH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J65 KOFFA J169 TFD J50 ELP J2 JCT J86 IAH LCH J138 SJI J2 CABLO AMG PETTO DMSTR2 KRDU\" readonly>";
