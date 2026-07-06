@@ -7219,6 +7219,22 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>WA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA JFK WAVEY EMJAY Q167 KALDA Q131 WAALT Y289 DULEE CLMNT2 KPBI\" readonly>";
 					result += "<br/>WC<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA JFK WAVEY EMJAY Q167 ZJAAY Q97 KENLL CPTAN3 KPBI\" readonly>";
 					break;
+				case "RDU": // LGA-RDU // Updated 07-05-2026
+					result += "<!-- Updated 07-05-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KLGA WHITE Q409 VILLS NALES Q141 HOUKY TAQLE3 KRDU\" readonly>"; // CDR PH
+					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLGA LANNA J48 MOL FRIKY ALDAN4 KRDU\" readonly>"; // CDR 48
+					result += "<br/><br/>SERMN SOUTH<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA JFK T303 LEEAH T315 TAPPA HOUKY TAQLE3 KRDU\" readonly>"; // CDR SR
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-05-2026
+					result += "<!-- Verified with ATCSCC on 07-05-2026 -->";
+					result += "<br/>48<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA LANNA J48 MOL FRIKY ALDAN4 KRDU\" readonly>";
+					result += "<br/>60<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 DJB Q147 HVQ SITTR FRIKY ALDAN4 KRDU\" readonly>";
+					result += "<br/>75<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA BIGGY Q75 GVE MELTN ALDAN4 KRDU\" readonly>";
+					result += "<br/>80<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA ZIMMZ Q42 MIKYG Q480 AIR HNN SITTR FRIKY ALDAN4 KRDU\" readonly>";
+					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA WHITE Q409 VILLS NALES Q141 HOUKY TAQLE3 KRDU\" readonly>";
+					result += "<br/>SR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA JFK T303 LEEAH T315 TAPPA HOUKY TAQLE3 KRDU\" readonly>";
+					result += "<br/>WA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA JFK WAVEY EMJAY Q167 ZJAAY TAQLE3 KRDU\" readonly>";
+					break;
 				case "RSW": // LGA-RSW // Updated 01-31-2026
 					result += "<!-- Updated 01-31-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
