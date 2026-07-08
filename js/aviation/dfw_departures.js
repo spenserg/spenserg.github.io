@@ -668,7 +668,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "ECP": // DFW-ECP // Updated 06-26-2026
 			result += "<!-- Updated 06-26-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-26-2026
-			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW J2 DEFUN CUGAR KECP\" readonly>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW DEFUN CUGAR KECP\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS MGM CUGAR KECP\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 DEFUN CUGAR KECP\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-26-2026
