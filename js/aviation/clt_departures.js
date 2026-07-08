@@ -91,6 +91,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 03-21-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT ESTRR6 IPTAY CHOPZ THRSR JAMMR MERDN LCH LUKKN WLEEE7 KAUS\" readonly>"; // CDR RP
+			result += "<br/><b>Coastal Wx: <\/b> .. <input style=\"width:75%\" value=\"THRSR VLKNN Q30 HRISN SQS EIC WINDU SEWZY6 KAUS\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY6 BNA J46 ARG FSM BROBB WINDU SEWZY6 KAUS\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR6 IPTAY CHOPZ GARTS LCH WEEED WLEEE7 KAUS\" readonly>";
 			result += "<br/><br/>North/ZME Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO6 DOOGE IIU J78 TUL CVE WINDU SEWZY6 KAUS\" readonly>";
