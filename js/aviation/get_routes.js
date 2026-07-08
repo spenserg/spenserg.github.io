@@ -4305,23 +4305,24 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/>S1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW CLVIN3 CLVIN RINTE HNN HVQ TRUPS5 KDCA\" readonly>";
 					result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW CLVIN3 CLVIN AIR BUCKO FRDMM6 KDCA\" readonly>";
 					break;
-				case "DFW": // DTW-DFW // Updated 09-23-2025
-					result += "<!-- Updated 09-23-2025 P -->";
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDTW MIGGY3 SLLAP Q440 IDIOM ODI MCW OVR IRW IBAKE VKTRY2 KDFW\" readonly>"; // CDR N1
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDTW SNDRS3 BGHRT STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
+				case "DFW": // DTW-DFW // Updated 07-08-2026
+					result += "<!-- Updated 07-08-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KDTW SNDRS3 BGHRT STL RZC FSM RRNET SEEVR4 KDFW\" readonly>"; // CDR S1
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDTW MIGGY3 SLLAP Q440 IDIOM ODI MCW OVR IRW IBAKE VKTRY2 KDFW\" readonly>"; // CDR N1
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDTW BARII3 SINKR IIU RAMRD SQS YUYUN BEREE3 KDFW\" readonly>"; // CDR S2
 					result += "<br/><br/>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDTW KAYLN3 SMUUV OBK MZV IRK J26 ICT IFI HOFFF VKTRY2 KDFW\" readonly>"; // CDR W2
 					result += "<br/><br/>DFW WEST<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDTW BARII3 SINKR PXV ARG FSM RRNET SEEVR4 KDFW\" readonly>"; // CDR P1
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KDTW METRO4 ILLIE FWA VHP J24 STL J8 SGF RZC FSM FINGR9 KDFW\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-23-2025
-					result += "<!-- Verified with ATCSCC on 09-23-2025 -->";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KDTW METRO4 ILLIE FWA VHP J24 STL J8 SGF RZC FSM FINGR9 KDFW\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-08-2026
+					result += "<!-- Verified with ATCSCC on 07-08-2026 -->";
 					result += "<br/>N1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW MIGGY3 SLLAP Q440 IDIOM ODI MCW OVR IRW IBAKE VKTRY2 KDFW\" readonly>";
 					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW BARII3 SINKR PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/>S1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW SNDRS3 BGHRT STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
 					result += "<br/>S2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW BARII3 SINKR IIU RAMRD SQS YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/>W1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW KAYLN3 SMUUV RBS J19 STL RZC FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/>W2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW KAYLN3 SMUUV OBK MZV IRK J26 ICT IFI HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/>W2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDTW KAYLN3 SMUUV OBK MZV IRK J26 ICT IFI HOFFF VKTRY2 KDFW\" readonly>"; // DFW SEEVR 2
 					break;
 				case "LGA": // DTW-LGA // Updated 11-25-2025
 					result += "<!-- Updated 11-25-2025 P -->";
