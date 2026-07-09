@@ -11558,7 +11558,8 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-02-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA BONGO Q154 NOSEW SPS J58 HRV Q105 BLVNS Y290 DOWRY FROGZ5 KMIA\" readonly>";
 					result += "<br/><br/>North/Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 EKR J116 FQF J80 HLC SLN SGF Q116 MEMFS MGM ACORI FROGZ5 KMIA\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA RSK J15 JCT J86 LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA RSK J15 CNX CME ABI J50 ACT LCH LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
+					result += "<br/><br/>South via JCT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA RSK J15 JCT J86 LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSLC MTU JNC ALS PNH SPS GGG MCB J50 CEW J2 DEFUN DRABK HEVVN PIE PALMZ2 KMIA\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-02-2026
