@@ -11081,7 +11081,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 07-26-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSAT SNIDR2 BLUMS IAH J101 LFK SUTTN J29 CARIN MEMFS Q34 GVE PAATS4 KPHL\" readonly>"; // CDR 0B
-					result += "<br/>North Dptr: <input style=\"width:75%\" value=\"KSAT YODUH2 KLNGR FUZ J42 TXK Q34 GVE PAATS4 KPHL\" readonly>";
+					result += "<br/><b>North Dptr:<\/b> <input style=\"width:75%\" value=\"KSAT YODUH2 KLNGR FUZ J42 TXK Q34 GVE PAATS4 KPHL\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAT SNIDR2 BLUMS IAH J101 LFK SUTTN J29 CARIN MEMFS Q29 CREEP BLISS J152 JST BOJID4 KPHL\" readonly>"; // CDR 0F
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAT SNIDR2 MOLLR Q56 CATLN Q22 BEARI BBDOL PAATS4 KPHL\" readonly>"; // CDR 0M
 					// result += "<br/>TXK/MEM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAT YODUH2 KLNGR FUZ J42 TXK Q34 GVE PAATS4 KPHL\" readonly>"; // CDR 1B
@@ -11537,8 +11537,9 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 06-08-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSLC RUGGD3 OCS J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 HOLTR BOY J32 DPR RWF ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 HOLTR BOY J32 DPR RWF HSTIN ZZIPR FYTTE7 KORD\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 KIERA DBL BRK HGO J24 SLN J96 IRK SHAIN2 KORD\" readonly>";
+					result += "<br/><br/>North/ZDV Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSLC RUGGD3 HOLTR DNW KU03U DPR RWF HSTIN ZZIPR FYTTE7 KORD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><input style=\"width:75%\" value=\"KSLC OCS J202 DDY J158 RAP J82 FSD J16 MCW JVL1 KORD\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-08-2026
