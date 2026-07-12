@@ -429,22 +429,22 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "CLT": // DFW-CLT // Updated 06-03-2025 // Mandatory Routes checked
 			result += "<!-- Updated 06-03-2025 MP -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR BESTT JONZE6 KCLT\" readonly>"; // CDR 0P
-			result += "<br/><br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW ALLMA ISUZO CHECR STOCR5 KCLT\" readonly>"; // CDR FP
-			result += "<br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA TAZZA FILPZ5 KCLT\" readonly>"; // CDR 1N
+			result += "<br/><input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR BESTT JONZE7 KCLT\" readonly>"; // CDR 0P
+			result += "<br/><br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW ALLMA ISUZO CHECR STOCR6 KCLT\" readonly>"; // CDR FP
+			result += "<br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA TAZZA FILPZ6 KCLT\" readonly>"; // CDR 1N
 			result += "<br/><b>To get a bit farther north, replace ARG with KM42K ..RZC KM42K BNA..<\/b>";
 			// result += "<br/><br/>CLT NO FILPZ PARQR<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW ALLMA ISUZO CHECR STOCR5 KCLT\" readonly>";
 			// result += "<br/>CLT NO JONZE<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEM BNA TAZZA FILPZ5 KCLT\" readonly>";
-			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH LSU MERDN JAMMR THRSR BESTT JONZE6 KCLT\" readonly>";
+			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH LSU MERDN JAMMR THRSR BESTT JONZE7 KCLT\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 EIC SQS VUZ GQO SOT LIINN3 KCLT\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-03-2025
 			result += "<!-- Verified with ATCSCC on 06-03-2025 -->";
-			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR BESTT JONZE6 KCLT\" readonly>";
-			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA TAZZA FILPZ5 KCLT\" readonly>";
-			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH LSU MERDN JAMMR THRSR BESTT JONZE6 KCLT\" readonly>";
-			result += "<br/>FP<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW ALLMA ISUZO CHECR STOCR5 KCLT\" readonly>";
-			result += "<br/>NJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEM BNA TAZZA FILPZ5 KCLT\" readonly>";
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD IZAAC Q30 VLKNN THRSR BESTT JONZE7 KCLT\" readonly>";
+			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG BNA TAZZA FILPZ6 KCLT\" readonly>";
+			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH LSU MERDN JAMMR THRSR BESTT JONZE7 KCLT\" readonly>";
+			result += "<br/>FP<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW ALLMA ISUZO CHECR STOCR6 KCLT\" readonly>";
+			result += "<br/>NJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEM BNA TAZZA FILPZ6 KCLT\" readonly>";
 			break;
 		case "CMH": // DFW-CMH // Updated 03-24-2026
 			result += "<!-- Updated 03-24-2026 P -->";
