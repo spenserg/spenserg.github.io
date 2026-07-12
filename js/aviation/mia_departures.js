@@ -221,20 +221,20 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "CLT": // MIA-CLT // Updated 01-23-2026
 			result += "<!-- Updated 01-23-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 VIYAP CHECR STOCR5 KCLT\" readonly>"; // CDR A0
-			result += "<br/><br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 PITRW STOCR5 KCLT\" readonly>"; // CDR Z0
-			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 CAMJO TWINS PONZE BANKR6 KCLT\" readonly>"; // CDR H0
+			result += "<br/><input style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 VIYAP CHECR STOCR6 KCLT\" readonly>"; // CDR A0
+			result += "<br/><br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 PITRW STOCR6 KCLT\" readonly>"; // CDR Z0
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 CAMJO TWINS PONZE BANKR7 KCLT\" readonly>"; // CDR H0
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA PHK CRG SAV FLO KCLT\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-23-2026
 			result += "<!-- Verified with ATCSCC on 01-23-2026 -->";
-			result += "<br/>A0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 VIYAP CHECR STOCR5 KCLT\" readonly>";
-			result += "<br/>F0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 WIGVO PONZE BANKR6 KCLT\" readonly>";
-			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO TWINS PONZE BANKR6 KCLT\" readonly>";
-			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 CAMJO TWINS PONZE BANKR6 KCLT\" readonly>";
-			result += "<br/>K2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 KLADA UPACE SEELO OGGRE PITRW STOCR5 KCLT\" readonly>";
-			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO TWINS PONZE BANKR6 KCLT\" readonly>";
-			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 PITRW STOCR5 KCLT\" readonly>";
+			result += "<br/>A0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 VIYAP CHECR STOCR6 KCLT\" readonly>";
+			result += "<br/>F0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 WIGVO PONZE BANKR7 KCLT\" readonly>";
+			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO TWINS PONZE BANKR7 KCLT\" readonly>";
+			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 CAMJO TWINS PONZE BANKR7 KCLT\" readonly>";
+			result += "<br/>K2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 KLADA UPACE SEELO OGGRE PITRW STOCR6 KCLT\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO TWINS PONZE BANKR7 KCLT\" readonly>";
+			result += "<br/>Z0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 PITRW STOCR6 KCLT\" readonly>";
 			break;
 		case "CMH": // MIA-CMH // Updated 03-23-2026
 			result += "<!-- Updated 03-23-2026 P -->";
