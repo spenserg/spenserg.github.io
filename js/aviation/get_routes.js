@@ -7695,6 +7695,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMCO OSPRY1 REMIS Y280 LEV J86 ELP DRRVR PINNG1 KPHX\" readonly>"; // CDR G0
 					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 JAWJA CABLO DEFUN J2 IAH J86 ELP DRRVR PINNG1 KPHX\" readonly>"; // CDR R0
+					result += "<br/><b>Coastal Wx: ..<\/b><input style=\"width:75%\" value=\"J2 CEW MCB CLL Q4 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO RDSOX1 JFRYS PATOY Q116 VLKNN YAALL J14 PNH J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCO OSPRY1 REMIS Y280 LEV KCEEE VUH SAT J138 FST J86 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/>Full OW/SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMCO OSPRY1 CIGAR M215 SNOMN KELPP MUSYL PSX SAT J138 FST J86 ELP DRRVR PINNG1 KPHX\" readonly>";
