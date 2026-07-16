@@ -7972,13 +7972,13 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KMRY MQO SXC LEENA8 KLAX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-01-2026
 					break;
-				case "PHX": // MRY-PHX // Updated 02-01-2026
-					result += "<!-- Updated 02-01-2026 P -->";
+				case "PHX": // MRY-PHX // Updated 07-15-2026
+					result += "<!-- Updated 07-15-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KMRY AVE BOILE BLH HYDRR1 KPHX\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMRY SNS PXN NTELL Q158 JEDNA BLD J92 WOTRO BRUSR1 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMRY SNS PXN NTELL Q174 SKANN Q13 WOTRO BRUSR1 KPHX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO 
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-01-2026
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-15-2026
 					break;
 			}
 		break; // End of MRY
