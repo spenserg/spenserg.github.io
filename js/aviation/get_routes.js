@@ -7534,7 +7534,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 01-31-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-31-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KMCI WLDCT6 SLN J18 GCK CIM ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI TIFTO8 TIFTO ATIJA Q90 SKWYR PUB ALS J102 GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI WLDCT6 SLN J102 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI RACER8 DOSOA J25 TUL J78 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>North via ONL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI CHIEF9 STJ OVR J151 ONL Q122 KURSE OCS J107 URNUW J11 CORKR TENTS BRUSR1 KPHX\" readonly>";
 					result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMCI RACER8 DOSOA TUL ADM ABI J66 EWM PINNG PINNG1 KPHX\" readonly>";
