@@ -2023,19 +2023,20 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG MEM VUZ MGMRY KSAV\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J138 SJI Q56 CATLN MGMRY KSAV\" readonly>";
 			break;
-		case "SBA": // DFW-SBA // Updated 01-13-2026
-			result += "<!-- Updated 01-13-2026 -->";
+		case "SBA": // DFW-SBA // Updated 07-21-2026
+			result += "<!-- Updated 07-21-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			// .. TNP FIM KWANG KSBA
 			// .. HEC PTBL2 KSBA
 			result += "<br/><input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX J74 PKE TNP PORPS PITBL2 KSBA\" readonly>"; // Based on CDR 0P
-			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR AGGIY Q162 GUP J8 EED J6 HEC PITBL2 KSBA\" readonly>"; // Based on CDR 1N
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO J72 PGS J64 HEC PITBL2 KSBA\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN BGS J66 EWM J4 TNP PORPS PITBL2 KSBA\" readonly>";
+			result += "<br/><br/>North via Pueblo<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS TOTOE LAA DAAYE Q90 JASSE PGS J64 HEC PITBL2 KSBA\" readonly>"; // Based on CDR 1N
 			result += "<br/><br/>COWBOY WEST 1 (FL220 to JCT)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT J86 ELP J50 SSO J4 TNP PORPS PITBL2 KSBA\" readonly>"; // CDR 1S
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW CYOTE4 TXO J72 ABQ J6 HEC PTBL2 KSBA\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-13-2026
-			result += "<!-- Verified with ATCSCC on 01-13-2026 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-21-2026
+			result += "<!-- Verified with ATCSCC on 07-21-2026 -->";
 			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX J74 PKE TNP FIM KWANG KSBA\" readonly>";
 			result += "<br/>1N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 DRK J231 TNP FIM KWANG KSBA\" readonly>";
 			result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 HOARY JCT J86 ELP J50 SSO J4 TNP FIM KWANG KSBA\" readonly>";
