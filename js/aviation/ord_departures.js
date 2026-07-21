@@ -846,7 +846,7 @@ KORD DENNT DARCY DREGS DONVE BWG VXV SPA FLO KILM
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-29-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KORD OLINN OREOS OBENE OGALE LNK J146 GLD PUB J64 RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>"; // CDR 1W
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MYKIE MONNY IANNA FOD ONL J148 CYS EKR J100 SAKES PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>";
-			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J8 SGF J78 DRK GABBL HLYWD1 KLAX\" readonly>"; // Based on CDR K1
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD ACITO ADELL ARLYN STL J8 SGF J98 IRW J78 DRK GABBL HLYWD1 KLAX\" readonly>"; // Based on CDR K1
 			result += "<br/><br/>North via RAP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MYKIE MONNY IANNA FOD ONL J148 CYS EKR J100 SAKES PROMT Q88 HAKMN ANJLL4 KLAX\" readonly>";
 			result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI FAM J137 LIT J66 BYP ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
