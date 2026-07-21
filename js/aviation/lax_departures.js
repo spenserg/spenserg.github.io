@@ -57,6 +57,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 03-14-2026 P -->";	
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 03-14-2026
 			result += "<br/><br/>NRP: <input style=\"width:75%\"; value=\"KLAX ORCKA5 LAS BAWER Q114 ZAKRY FQF ZIRKL Q136 DIYAP MZV JOT J146 GIJ J554 JHW Q82 PONCT JFUND2 KBOS\" readonly>";
+			result += "<br/>To clear Mando Rte Violation .. BEALE BAWER HVE ZAKRY Q114 ..";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER Q70 SAKES EKR CYS J148 MCW J16 BAE J68 FNT Q818 DERLO Q935 PONCT JFUND2 KBOS\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J134 DRK J6 IRW FSM ARG SIDAE Q29 JHW Q82 PONCT JFUND2 KBOS\" readonly>";
 			result += "<br/><br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO EWM J66 FUZ J131 TXK Q34 RBV Q419 JFK ROBUC3 KBOS\" readonly>";
@@ -243,6 +244,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 05-09-2026 P -->";
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J96 GUP FTI EZEEE MMB PER SGF J98 FAM J78 DACOS JARLO GIBBZ6 KIAD\" readonly>"; // CDR LV
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER Q114 LEONG IOW J60 JOT J30 APE MGW GIBBZ6 KIAD\" readonly>";
+			result += "<br/>To clear Mando Rte Violation .. BEALE BAWER HVE ZAKRY Q114 ..";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO EWM J66 ABI J4 FUZ LIT SOPIE Q68 SPAYD JARLO GIBBZ6 KIAD\" readonly>";
 			result += "<br/><br/>North via ABR<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR CYS J148 MCW J16 BAE J34 AIR J162 MGW GIBBZ6 KIAD\" readonly>"; // Based on CDR GR
 			result += "<br/>South via CEW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J86 IAH J2 CEW ALLMA TEEEM Q99 OGRAE BZNGA DORRN CAVLR7 KIAD\" readonly>"; // CDR CE
@@ -349,6 +351,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J134 CIM GCK J18 MZV OBK J94 PMM J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER Q114 LEONG IOW J146 GIJ J554 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 			result += "<br/><b>Use NOPROCALT if red brick; PUCKY1 requires exactly FL230 at JENNO<\/b>";
+			result += "<br/>To clear Mando Rte Violation .. BEALE BAWER HVE ZAKRY Q114 ..";
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM MEMFS Q34 SITTR Q108 SIE CAMRN5 KJFK\" readonly>"; // CDR BN
 			// KLAX DOTSS2 CLEEE PKE DRK J78 IRW FSM ARG BWG ZIEBR Q108 SIE CAMRN5 KJFK
 			result += "<br/><br/>North via BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR BFF J94 ONL J148 MCW J16 BAE J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
@@ -520,6 +523,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 02-14-2026 P -->";
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J78 DRK J134 CIM GCK J18 SLN J96 IRK SHAIN2 KORD\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER Q114 AYOLE KP72C FOD MYRRS FYTTE7 KORD\" readonly>";
+			result += "<br/>To clear Mando Rte Violation .. BEALE BAWER HVE ZAKRY Q114 ..";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J134 DRK J78 TUL J98 SGF WELTS TRTLL6 KORD\" readonly>";
 			result += "<br/><br/>North via CYS<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR CYS J148 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
 			result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO EWM J66 ABI MLC RZC SGF WELTS TRTLL6 KORD\" readonly>";
@@ -558,6 +562,7 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-02-2025
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J96 CIM Q176 STL J24 VHP ROD J152 JST BOJID4 KPHL\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER Q114 LEONG MZV FWA J64 EWC JST BOJID4 KPHL\" readonly>";
+			result += "<br/>To clear Mando Rte Violation .. BEALE BAWER HVE ZAKRY Q114 ..";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM MEMFS Q34 GVE PAATS4 KPHL\" readonly>";
 			result += "<br/><br/>North via FOD<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR BFF J94 ONL FOD DBQ J100 OBK GIJ J146 CXR EWC JST BOJID4 KPHL\" readonly>";
 			result += "<br/>South via LCH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J86 IAH J2 CEW ALLMA TEEEM Q99 PEETT BBDOL PAATS4 KPHL\" readonly>";
