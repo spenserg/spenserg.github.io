@@ -4970,17 +4970,17 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 
 		case "FAT":
 			switch(arvl) {
-				case "DFW": // FAT-DFW // Updated 06-11-2026
-					result += "<!-- Updated 06-11-2026 P -->";
+				case "DFW": // FAT-DFW // Updated 07-21-2026
+					result += "<!-- Updated 07-21-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KFAT OAL4 OAL KATTS Q164 ROCCY Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAT BULL3 NTELL FRAME LANDO J65 BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
-					result += "<br/><b>As of 2026-06-11 NOPROCALT tag required for BULL3 NTELL..<\/b>";
+					result += "<br/><input style=\"width:75%\" value=\"KFAT YOSE3 NTELL CABAB Q164 ROCCY Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAT YOSE3 NTELL FRAME LANDO J65 BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/><b>As of 2026-07-21 NOPROCALT tag required for BULL3/YOSE3 NTELL..<\/b>";
 					result += "<br/>NE Arrival<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFAT OAL4 OAL J58 MLF J28 ICT TUL HITUG SEEVR4 KDFW\" readonly>";
 					// result += "<br/><br/>Holiday/Weekend: <input style=\"width:75%\" value=\"KFAT PINNI J110 FUZZY COWBY DILCO ABQ TXO TURKI VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KFAT OAL J92 BTY BLD J72 TXO UKW8 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-11-2026
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KFAT OAL J92 BTY BLD J72 TXO UKW8 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-21-2026
 					break;
 				case "LAX": // FAT-LAX // Updated 01-10-2026
 					result += "<!-- Updated 01-10-2026 P -->";
