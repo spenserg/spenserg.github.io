@@ -1272,16 +1272,17 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 
 		case "BOI":
 			switch(arvl) {
-				case "DFW": // BOI-DFW // Updated 07-11-2025
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-12-2025
-					result += "<br/><br/>Q154: <input style=\"width:75%\" value=\"KBOI BOI3 BOI ROARR BYI Q154 NOSEW MDANO VKTRY2 KDFW\" readonly>";
+				case "DFW": // BOI-DFW // Updated 07-22-2026
+					result += "<!-- Updated 07-22-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-22-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBOI ROARR BYI Q154 KENTO EZEEE MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI3 BOI J163 OCS J52 HGO EZEEE MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI3 BOI J15 TCH HVE RSK J58 PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><b>For SW Arrival: ...RSK J15 CME BGS GEEKY BOOVE7 KDFW<\/b>";
-					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI3 BOI J54 LAR MOCTU Q148 BVO HITUG SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBOI BOI3 BOI J54 PIH J20 LAA J168 SPS KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-11-2025
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BROPH Q73 CRITO MLF J58 PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>NE Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI3 BOI J54 CKW CYS LEWOY Q148 BVO HITUG SEEVR4 KDFW\" readonly>";
+					result += "<br/>SW Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BROPH Q73 CRITO MLF J58 RSK J15 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KBOI BOI3 BOI J54 PIH J20 LAA J168 SPS KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-22-2026
 					break;
 				case "ORD": // BOI-ORD // Updated 10-31-2025
 					// result += "<br/><br/><b>Faa Pref Route:</b>";
@@ -4170,7 +4171,8 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDEN EMMYS8 ZIRKL PWE IRK BENKY6 KORD\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN CHUWY1 CHUWY ONL FOD MYRRS FYTTE7 KORD\" readonly>"; // CDR N1
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN SLEEK2 SLEEK GCK J96 IRK BENKY6 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN EPKEE7 GAETR SLN J96 IRK BENKY6 KORD\" readonly>";
+					result += "<br/><br/>South via GCK<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDEN SLEEK2 SLEEK GCK J96 IRK BENKY6 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDEN PLAIN2 HCT OBH MCW JVL1 KORD\" readonly>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-02-2026
@@ -5032,6 +5034,18 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 					break;
 			}
 		break; // End of FCA
+
+		case "FLG":
+			switch(arvl) {
+				case "DFW": // FLG-DFW // Updated 07-22-2026
+					result += "<!-- Updated 07-22-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-22-2026
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KFLG FLG1 OATES ZUN J6 ABQ J72 TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFLG FLG1 OATES FLG TBC RSK CIM MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KFLG FLG1 OATES PXR TUS INK GEEKY BOOVE7 KDFW\" readonly>";
+				break;
+			}
+		break; // End of FLG
 
 		case "FLL":
 			switch(arvl) {
