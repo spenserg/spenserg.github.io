@@ -2104,6 +2104,7 @@ get_fir = function (apt = "") {
 			case "KFAR": return "ZMP"; break;
 			case "KFAT": return "ZOA"; break;
 			case "KGPI": return "ZLC"; break;
+			case "KFLG": return "ZAB"; break;
 			case "KFLL": return "ZMA"; break;
 			case "KFNT": return "ZOB"; break;
 			case "KFOE": return "ZKC"; break;
