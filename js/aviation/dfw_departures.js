@@ -827,6 +827,15 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TEX5 IRW J98 MMB LAA J20 FQF LAR MBW BOY HLN KGPI\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-29-2025
 			break;
+		case "FLG": // DFW-FLG // Updated 07-22-2026
+			result += "<!-- Updated 07-22-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-29-2025
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO J72 MIERA INW V572 MAZDA KFLG\" readonly>";
+			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ADM MRMAC CRUSR J6 PNH J58 FTI J8 GUP INW V572 MAZDA KFLG\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK EWM GREBE J86 INW V572 MAZDA KFLG\" readonly>";
+			result += "<br/><br/>North via PUB<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW LOWGN8 ROLLS LBL PUB J64 RSK J44 INW V572 MAZDA KFLG\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-22-2026
+			break;
 		case "FLL": // DFW-FLL // Updated 12-15-2025
 			result += "<!-- Updated 12-15-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
