@@ -1183,6 +1183,7 @@ convert_iata = function (str = null) {
 				case "KGPI": return "FCA";break;
 				case "LIRF": return "FCO";break;
 				case "TFFF": return "FDF";break;
+				case "KFLG": return "FLG";break;
 				case "KFLL": return "FLL";break;
 				case "KFNT": return "FNT";break;
 				case "KFOE": return "FOE";break;
@@ -1674,6 +1675,7 @@ convert_icao = function (str = null) {
 				case "FCA": return "KGPI";break;
 				case "FCO": return "LIRF";break;
 				case "FDF": return "TFFF";break;
+				case "FLG": return "KFLG";break;
 				case "FLL": return "KFLL";break;
 				case "FNT": return "KFNT";break;
 				case "FOE": return "KFOE";break;
@@ -2686,6 +2688,11 @@ get_weather_cams = function (str = null) {
 			return [
 				["https://redeagleaviation.com/live/", "Airport"]
 			];
+			break;
+		case "KFLG":
+			return [
+				["", ""]
+			]; // TODO
 			break;
 		case "FLL":
 		case "KFLL":
