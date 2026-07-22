@@ -157,6 +157,22 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>4S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DENNT DARCY DREGS DONVE TONES RYYMN3 KBNA\" readonly>";
 			result += "<br/>6S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI PLESS SOKOL RYYMN3 KBNA\" readonly>";
 			break;
+		case "BOI": // ORD-BOI // Updated 07-22-2026
+			result += "<!-- Updated 07-22-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-22-2026
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KORD MYKIE MONNY IANNA FOD FSD J82 DBS REAPS KOURT4 KBOI\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 GEP ABR J32 CZI REAPS KOURT4 KBOI\" readonly>"; // CDR 2N
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PEKUE PIPPN ROTTN PWE HLC J80 FQF J116 EKR J173 TCH PATIO Q151 BROPH SPUUD4 KBOI\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-22-2026
+			result += "<!-- Verified with ATCSCC on 07-22-2026 -->";
+			result += "<br/>1N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 DPR J32 CZI REAPS KOURT4 KBOI\" readonly>";
+			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MYKIE MONNY IANNA FOD FSD J82 CZI REAPS KOURT4 KBOI\" readonly>";
+			result += "<br/>2N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 GEP ABR J32 CZI REAPS KOURT4 KBOI\" readonly>";
+			result += "<br/>2W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD NOONY NIGHT NITWT OBH BFF J94 OCS J20 PIH REAPS KOURT4 KBOI\" readonly>";
+			result += "<br/>3N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J89 DLH ABR J32 DPR J34 BIL DLN COLLR BEWTE4 KBOI\" readonly>";
+			result += "<br/>4N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB GEP J70 ABR J32 DPR J34 BIL DLN COLLR BEWTE4 KBOI\" readonly>";
+			result += "<br/>5N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB DLH ABR J32 DPR J34 BIL DLN COLLR BEWTE4 KBOI\" readonly>";
+			break;
 		case "BOS": // ORD-BOS // Updated 11-13-2025
 			result += "<!-- Updated 11-13-2025 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
