@@ -7351,7 +7351,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					break;
 				case "PWM": // LGA-PWM // Updated 07-23-2026
 					result += "<!-- Updated 07-23-2026 P -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL290):</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLGA GREKI JUDDS CAM CDOGG4 KPWM\" readonly>"; // CDR PH
 					result += "<br/><b>Careful with ferry fuel- usually given a shortcut before CAM<\/b>";
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 07-23-2026
