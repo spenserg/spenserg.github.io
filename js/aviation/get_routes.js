@@ -12002,6 +12002,15 @@ KPHL OOD TEBEE HAYDO TRPOD Q409 PUPYY KYYUU LUBBR4 KSRQ
 					result += "<br/><input style=\"width:75%\" value=\"KSTL GATWY1 JIGSY AXC BDF BDF8 KORD\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 02-27-2026
 					break;
+				case "PHL": // STL-PHL // Updated 09-23-2026
+					result += "<!-- Updated 09-23-2026 P -->"
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\"; value=\"KSTL JHART7 RINTE TRAKK J152 JST BOJID4 KPHL\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL NATCA5 SPI BVT FWA J64 EWC JST BOJID4 KPHL\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSTL TEDDD5 IIU Q108 ASBUR Q34 GVE PAATS4 KPHL\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-23-2026
+					break; 
 				case "PHX": // STL-PHX // Updated 12-26-2025
 					result += "<!-- Updated 12-26-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
