@@ -10325,6 +10325,12 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPWM RBELA1 BAF Q406 BWZ J6 HVQ Q68 LITTR FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/>T7<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPWM RBELA1 CCC Q97 SAWED GUILD Q409 SESUE PANDY TWINS NOKIE MGMRY GARTS AEX PNUTS BEREE3 KDFW\" readonly>";
 					break;
+				case "LGA": // PWM-LGA // Updated 07-23-2026
+					result += "<!-- Updated 07-23-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL280):</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KPWM HSKEL4 BAUER CAM ALB VADDR1 KLGA\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPWM RBELA1 JJIMY NELIE VADDR1 KLGA\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-23-2026
 				case "PHL": // PWM-PHL // Updated 12-08-2025
 					result += "<!-- Updated 12-08-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
