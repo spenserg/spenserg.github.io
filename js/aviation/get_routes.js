@@ -11422,7 +11422,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 08-28-2025 P -->"
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/>NRP: <input style=\"width:75%\" value=\"KSFO SYRAH Q128 JSICA MLF J28 PUB LAA J102 SLN J24 MCI J80 VHP ROD KLYNE Q29 JHW J70 LVZ KJFK\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 MOGEE Q122 ONL KATES DBQ KG75M DAFLU J70 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 MOGEE Q122 VIGGR DBQ J100 OBK J584 CRL J554 JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 ZAROS GCK J110 BUM ENL IIU Q108 SIE CAMRN5 KJFK\" readonly>";
 					result += "<br/><br/>North via GEP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 ORRCA Q120 PROXI BOY J32 DPR ABR GEP DLL HASTE DAFLU JHW Q476 WLKES PUCKY1 KJFK\" readonly>";
 					result += "<br/>South/ZKC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 JSICA Q130 PNH IRW ARG J46 BNA SWAPP Q34 SITTR Q108 SIE CAMRN5 KJFK\" readonly>";
@@ -11790,7 +11790,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 02-27-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 02-27-2026
 					result += "<br/><br/>NRP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSNA PIGGN3 CNERY BLH J65 KOFFA J169 TFD J50 ELP J2 JCT J86 LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
-					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSNA PIGGN3 CNERY BLH J65 KOFFA J169 TFD J50 ELP INK ACT J50 CEW J2 DEFUN FROGZ5 KMIA\" readonly>";
+					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSNA PIGGN3 CNERY BLH J65 KOFFA J169 TFD J50 ELP Q4 CLL ROKIT LSU J2 DEFUN FROGZ5 KMIA\" readonly>";
 					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSNA PIGGN3 AVRRY LANCY J96 DRK J6 IRW J14 LIT JMUCK LDK MGM ACORI FROGZ5 KMIA\" readonly>";
 					result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSNA PIGGN3 CNERY BLH J169 TFD J50 ELP J86 FST J138 SAT MUSYL KELPP ALGAE MINOW M580 MARCI FROGZ5 KMIA\" readonly>";
 					result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KSNA PIGGN3 CNERY BLH J169 TFD J50 ELP J86 FST KH87A CRP PEGLG ALGAE MINOW M580 MARCI FROGZ5 KMIA\" readonly>";
