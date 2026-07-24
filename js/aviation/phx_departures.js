@@ -232,7 +232,8 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "DEN": // PHX-DEN // Updated 02-20-2026
 			result += "<!-- Updated 02-20-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK SHNPS TBARR4 KDEN\" readonly>"; // CDR MR
+			result += "<br/><input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK CRUDD TBARR4 KDEN\" readonly>"; // CDR MR
+			result += "<br/><b>CDRs use SHNPS TBARR.. but SHNPS transition is atc-assigned only. Use .. CRUDD TBARR4 KDEN<\/b>";
 			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX QUAKY1 GCN BCE J60 HVE HAQHY SSKII4 KDEN\" readonly>";
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHX BROAK1 JNIPR JSSUA GNDLA TBARR4 KDEN\" readonly>"; // CDR BR
 			result += "<br/><br/><b>Non RNAV</b>";
@@ -242,10 +243,10 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>BR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX BROAK1 JNIPR JSSUA GNDLA TBARR4 KDEN\" readonly>";
 			result += "<br/>EC<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ECLPS1 ECLPS KATMN SSO J104 ONM GNDLA TBARR4 KDEN\" readonly>";
 			result += "<br/>FR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX FORPE1 SJN GNDLA TBARR4 KDEN\" readonly>";
-			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK SHNPS TBARR4 KDEN\" readonly>";
-			result += "<br/>QU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 JARPA RSK SHNPS TBARR4 KDEN\" readonly>";
+			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK CRUDD TBARR4 KDEN\" readonly>";
+			result += "<br/>QU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 JARPA RSK CRUDD TBARR4 KDEN\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM GNDLA TBARR4 KDEN\" readonly>";
-			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA TBC RSK SHNPS TBARR4 KDEN\" readonly>";
+			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA TBC RSK CRUDD TBARR4 KDEN\" readonly>";
 			break;
 		case "DFW": // PHX-DFW // Updated 07-30-2025
 			result += "<!-- Updated 07-30-2025 MP -->";
