@@ -296,6 +296,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 05-13-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW KATZZ2 BRHMA CNX J74 SJN DRK J6 EED JANNY5 KBUR\" readonly>"; // Based on CDR 0P
+			result += "<br/><b>SUA 2501C: .. EED WNCHL JANNY5 KBUR<\/b>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TXO J72 ABQ J6 EED JANNY5 KBUR\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK EWM J4 BXK PHRED THRNE4 KBUR\" readonly>";
 			// result += "<br/><br/>North via CIM: <input style=\"width:75%\" value=\"KDFW LOWGN8 ADM MMB CIM J96 DRK J6 EED JANNY5 KBUR\" readonly>";
