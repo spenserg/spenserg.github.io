@@ -2084,7 +2084,7 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 				case "DFW": // BZN-DFW // Updated 07-14-2025
 					result += "<!-- Updated07-14-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBZN BOBKT5 BOY CKW PUB J17 PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBZN BOBKT5 BOY CKW PUB EZEEE MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBZN BOBKT5 BIL RAP HYS IRW IBAKE VKTRY2 KDFW\" readonly>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBZN BGSKY2 DBS J9 FFU HVE RSK J58 PNH MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/><b>For Southwest Arrival: ...RSK J15 CME BGS GEEKY BOOVE7 KDFW<\/b>";
@@ -8506,7 +8506,7 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "ORD": // OMA-ORD // Updated 02-01-2026
 					result += "<!-- Updated 02-01-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL230):</b>";
-					result += "<br/><br/><input style=\"width:75%\" value=\"KOMA FOD MYRRS FYTTE7 KORD\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KOMA FOD MYRRS FYTTE7 KORD\" readonly>";
 					// todo north
 					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KOMA STJ IRK BENKY6 KORD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
