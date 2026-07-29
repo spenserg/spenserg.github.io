@@ -1173,7 +1173,7 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					result += "<!-- Updated 01-02-2026 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA DANLS5 TPEEE LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG5 FAPER PXV J78 TUL KLAWW VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER PXV J78 TUL KLAWW VKTRY2 KDFW\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY5 JALAR SQS YUYUN WHINY4 KDFW\" readonly>";
 					result += "<br/><br/>DFW EAST 2 SOUTHQ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA DRURY5 JALAR SQS AEX DAS IAH CRGER GUTZZ SOCKK4 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -1197,7 +1197,7 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					result += "<br/><b>If weather ARG-RZC, replace /ARG KF33E/ with /KM33K/</b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA PARDN5 NAKIY SGF ICT GCK J110 RSK J64 TBC SQIRE RKSTR4 KLAS\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY5 JALAR SQS TXK SPS J72 GUP HAHAA RKSTR4 KLAS\" readonly>";
-					result += "<br/><br/>North via MCI<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG5 FAPER PXV STL J24 MCI J80 HLC HGO J197 DVC TYEGR CHOWW4 KLAS\" readonly>";
+					result += "<br/><br/>North via MCI<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER PXV STL J24 MCI J80 HLC HGO J197 DVC TYEGR CHOWW4 KLAS\" readonly>";
 					result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY5 JALAR CRAMM Q32 ELD FUZ J42 ABI J66 EWM J4 SSO ELLDA RKSTR4 KLAS\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA ARG J46 TUL IFI BGD FTI J8 GUP J72 PGS ISHEE2 KLAS\" readonly>";
@@ -1212,7 +1212,7 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY5 JALAR CRAMM Q32 ELD FUZ J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/><b>If Jackal sua active:  ..  EWM J4 SSO J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1 KLAX<\/b>";
-					result += "<br/><br/>North via HLC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG5 FAPER PXV STL J24 MCI J80 HLC SKWYR Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/><br/>North via HLC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER PXV STL J24 MCI J80 HLC SKWYR Q90 DNERO ANJLL4 KLAX\" readonly>";
 					result += "<br/>South via AUS<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY5 JALAR MHZ AEX CLL Q4 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA ARG J46 TUL IFI BGD FTI J8 GUP J72 PGS BASET5 KLAX\" readonly>";
@@ -1249,7 +1249,7 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					result += "<!-- Updated 01-02-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA CHADM5 MUNNY TONIO Q34 GVE PAATS4 KPHL\" readonly>";
-					result += "<br/><br/>North/ZDC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG5 FAPER VHP ROD JST BOJID4 KPHL\" readonly>";
+					result += "<br/><br/>North/ZDC Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER VHP ROD JST BOJID4 KPHL\" readonly>";
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA TAZMO5 BURME VXV IDDAA Q64 SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
 					result += "<br/><br/>South via ATL<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA TIPPN4 DENST RMG HRTWL Q64 SAWED Q97 ZJAAY JIIMS4 KPHL\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
@@ -1262,7 +1262,7 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA DANLS5 TPEEE FSM IRW J78 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA PARDN5 NAKIY SGF ICT GCK J110 RSK J161 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY5 JALAR CRAMM Q32 ELD FUZ J42 ABI J66 EWM DRRVR PINNG1 KPHX\" readonly>";
-					result += "<br/><br/>North via HLC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG5 FAPER PXV STL J24 MCI J80 GLD J146 HBU J128 GCN TENTS KPHX\" readonly>";
+					result += "<br/><br/>North via HLC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER PXV STL J24 MCI J80 GLD J146 HBU J128 GCN TENTS KPHX\" readonly>";
 					result += "<br/>South via AUS<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY5 JALAR MHZ AEX CLL Q4 ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA ARG J46 TUL IFI BGD FTI J8 GUP BUNTR3 KPHX\" readonly>";
