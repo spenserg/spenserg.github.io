@@ -188,7 +188,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			break;
 		case "BNA": // DFW-BNA // Updated 10-05-2025
 			result += "<!-- Updated 10-05-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><br/><b>Faa Pref Route (FL310 or below at MEMFS):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEMFS CHSNE3 KBNA\" readonly>"; // CDR 0P
 			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC ARG LOPPY CHSNE3 KBNA\" readonly>"; // CDR 1N
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 MRSSH MLU SQS KISTS CHSNE3 KBNA\" readonly>";
