@@ -1222,6 +1222,12 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KBNA J46 TUL J78 PKE J104 TNP BASET5 KLAX\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-02-2026
 					break;
+				case "LGA": // BNA-LGA // Updated 07-29-2026
+					result += "<!-- Updated 07-29-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBNA KRSTA4 OLSIE IIU Q139 CREEP Q29 WWSHR TEESY Q186 WEVEL ETG MIP4 KLGA\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-29-2026
+					break;
 				case "MIA": // BNA-MIA // Updated 01-02-2026
 					result += "<!-- Updated 01-02-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
