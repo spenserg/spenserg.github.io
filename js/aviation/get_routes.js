@@ -1173,12 +1173,13 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					result += "<!-- Updated 01-02-2026 MP -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBNA DANLS5 TPEEE LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER PXV J78 TUL KLAWW VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA PARDN5 HODJS ARG FSM RRNET SEEVR4 KDFW\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA DRURY5 JALAR SQS YUYUN WHINY4 KDFW\" readonly>";
+					result += "<br/><br/>North via TUL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA GDOGG4 FAPER PXV J78 TUL KLAWW VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/>DFW EAST 2 SOUTHQ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBNA DRURY5 JALAR SQS AEX DAS IAH CRGER GUTZZ SOCKK4 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBNA MEM LIT FINGR9 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-19-2025
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KBNA MEM LIT FINGR9 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 01-02-2026
 					break;
 				case "JFK": // BNA-JFK // Updated 01-02-2026
 					result += "<!-- Updated 01-02-2026 P -->";
@@ -9304,7 +9305,7 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "MCO": // PHL-MCO // Updated 04-11-2026
 					result += "<!-- Updated 04-11-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD CRPLR Q85 LPERD SNFLD3 KMCO\" readonly>"; // CDR PH
+					result += "<br/><input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 CRPLR Q85 LPERD SNFLD3 KMCO\" readonly>"; // CDR PH
 					result += "<br/><br/>East/OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO TRPOD Q409 CRPLR EARZZ Q131 WAALT Y289 BAHAA HIBAC ALYNA4 KMCO\" readonly>"; // CDR AR
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL STOEN Q75 GSO Q83 ROYCO Q85 LPERD SNFLD3 KMCO\" readonly>"; // CDR 75
 					result += "<br/><br/>East/Full OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHL OOD TEBEE HAYDO SIE B24 LYNUS SILLY Y485 STERN Y493 BAHAA HIBAC ALYNA4 KMCO\" readonly>"; // CDR AZ
