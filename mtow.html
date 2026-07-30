@@ -594,7 +594,11 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	var mr_text = ((mandatory_routes_checked) ? " // Mandatory Routes checked" : "");
 	var num_ok_to_file = 0;
 	var only_one_ok_to_file_pref = {};
+	var fp_comment = " \nCDR LIST:";
+
+	var counter = 0;
 	while(null != (z = reg_tmp.exec(input))) {
+		counter++;
 		dptr = ((z[2].length != 4) ? convert_iata(z[2]) : z[2]);
 		arvl = ((z[3].length != 4) ? convert_iata(z[3]) : z[3]);
 		var textarea_tabs = ((["KCLT","KDFW","KLAX","KMIA","KORD","KPHX"].includes(dptr)) ? "\n\t\t\t" : "\n\t\t\t\t\t");
@@ -675,7 +679,10 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 			'result_str' : cdr_str
 		}
 		cdr_strs[z[4]] = z[1];
+
+		fp_comment += " \n" + counter + "	" + convert_iata(z[2]) + convert_iata(z[3]) + z[1] + "	" + z[4];
 	}
+	fp_comment += "\n \n";
 
 	if (num_ok_to_file == 1 && !["KCLT","KDCA","KDFW","KPHL"].includes(dptr)) {
 		faa_pref = only_one_ok_to_file_pref['result_str'];
@@ -851,7 +858,8 @@ function cdr_parse (input = null, to_array = false, result_arr = {'faa_pref' : {
 	if (to_array) { return result_arr; }
 	'<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
 				'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span><br/><br/>';
-	return header + middle + bot_mid + bottom + "<hr>" + output + new_cdr_str;
+	return '<textarea rows="8" cols="80">' + fp_comment + '</textarea><br/><br/>' +
+		header + middle + bot_mid + bottom + "<hr>" + output + new_cdr_str;
 }
 
 function merge_faa_pref (result_arr = {}) {
