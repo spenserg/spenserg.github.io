@@ -36,7 +36,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	}
 
 	// 27K for 737-NGs
-	if (["738K", "738R"].includes(ac_type) && ["BDL","BJX","BOS","BUR","BZN","DCA","DEN","GUA","HDN","LAS","LGA","MDE","MEX","PHX","PSP","QRO","RDU","RNO","RTB","SBA","SBP","SJO","SJU","SNA","STT","SXM"].includes(dptr)) {
+	if (["738K", "738R"].includes(ac_type) && ["BDL","BJX","BOS","BUR","BZN","DCA","DEN","FAT","GUA","HDN","LAS","LGA","MDE","MEX","PHX","PSP","PVD","QRO","RDU","RNO","RTB","SBA","SBP","SJO","SJU","SNA","STT","SXM"].includes(dptr)) {
 		result += "<br/><b>" + dptr + " - 27K Available for N" + tail + "<\/b>";
 	}
 	// A321 IAE Non-Sharklet Thrust Bump
