@@ -1854,7 +1854,7 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 				case "DFW": // BUF-DFW // Updated 07-14-2025
 					result += "<!-- Updated 07-14-2025 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBUF DJB ROD PXV ARG FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBUF DJB ROD PXV J131 LIT FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/><br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBUF JHW EWC AIR HNN SPAYD VXV VUZ MEI MHZ MLU YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBUF JHW J554 GIJ J146 JOT J26 ICT HOFFF VKTRY2 KDFW\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
