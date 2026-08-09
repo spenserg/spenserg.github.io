@@ -58,7 +58,8 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "ALB": // CLT-ALB // Updated 02-18-2026
 			result += "<!-- Updated 02-18-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT BARMY7 RDU NOWAE Q87 GEARS BBOBO Q22 LLUND TRUDE V487 CANAN KALB\" readonly>"; // CDR RP
+			result += "<br/><input style=\"width:75%\" value=\"KCLT BARMY7 RDU NOWAE Q87 GEARS BBOBO Q22 LLUND TRUDE T463 CANAN KALB\" readonly>"; // CDR RP
+			result += "<br/><b>CDR RP uses .. TRUDE V487 CANAN KALB<\/b>";
 			result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KCLT KILNS7 AUDII BBOBO DANGR Q22 LLUND TRUDE V487 CANAN KALB\" readonly>";
 			result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO7 JOJJO DOOGE Q93 OCASE ROD JHW Q82 LOXXE KALB\" readonly>"; // CDR JJ
 			result += "<br/><br/><b>Non RNAV</b>";
