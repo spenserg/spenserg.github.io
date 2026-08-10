@@ -7089,7 +7089,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KLGA NEION Q232 STUBN BENEE KBUF\" readonly>"; // CDR PH
 					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA GAYEL J95 CFB KBUF\" readonly>"; // CDR 95
-					result += "<br/>North via SYR<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA GREKI JUDDS CAM SYR ROC EHMAN KBUF\" readonly>"; // CDR CA
+					result += "<br/>North via SYR<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA GREKI JUDDS Q822 GONZZ ROC EHMAN KBUF\" readonly>"; // Based on GREKI_3
 					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-10-2026
 					result += "<!-- Verified with ATCSCC on 08-10-2026 -->";
 					result += "<br/>95<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA GAYEL J95 CFB KBUF\" readonly>";
