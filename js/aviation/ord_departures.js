@@ -218,18 +218,18 @@ ord_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>CD<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PECOK NOTAP YEE TULEG KBTV\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO TULEG KBTV\" readonly>";
 			break;
-		case "BUF": // ORD-BUF // Updated 06-10-2025
-			result += "<!-- Updated 06-10-2025 P -->";
+		case "BUF": // ORD-BUF // Updated 08-10-2026
+			result += "<!-- Updated 08-10-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KORD DUFEE ELX HAAKK DOXXY SOSIC WTEVR DOBIE DKK KBUF\" readonly>"; // CDR 0E
+			result += "<br/><input style=\"width:75%\" value=\"KORD DUFEE LOGGR HAAKK DOXXY SOSIC WTEVR DOBIE DKK KBUF\" readonly>";
 			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ RUBKI SIKBO KBUF\" readonly>"; // CDR 2N
 			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME VHP ROD KLYNE Q29 DORET DKK KBUF\" readonly>"; // CDR 0S
 			result += "<br/><br/>LAKE ERIE EAST<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD EBAKE WISMO POSTS PADDE SVM DAFLU J70 BEWEL DKK KBUF\" readonly>";
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KORD ELX CRL DKK KBUF\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-10-2025
-			result += "<!-- Verified with ATCSCC on 06-10-2025 -->";
-			result += "<br/>0E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DUFEE ELX HAAKK DOXXY SOSIC COHOW DKK KBUF\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\"; value=\"KORD ELX CRL DKK KBUF\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-10-2026
+			result += "<!-- Verified with ATCSCC on 08-10-2026 -->";
+			result += "<br/>0E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD DUFEE LOGGR HAAKK DOXXY SOSIC COHOW DKK KBUF\" readonly>";
 			result += "<br/>0N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE YXU KBUF\" readonly>";
 			result += "<br/>0S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME VHP ROD KLYNE Q29 DORET DKK KBUF\" readonly>";
 			result += "<br/>2N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ RUBKI SIKBO KBUF\" readonly>";
