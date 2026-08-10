@@ -1861,6 +1861,16 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KBUF JHW ROD PXV LIT FINGR9 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-14-2025
 					break;
+				case "LGA": // BUF-LGA // Updated 08-10-2026
+					result += "<!-- Updated 08-10-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBUF GEE AUDIL RAHKS VADDR1 KLGA\" readonly>"; // CDR P1
+					result += "<br/><br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBUF JHW ETG MIP4 KLGA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-10-2026
+					result += "<!-- Verified with ATCSCC on 08-10-2026 -->";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF GEE AUDIL RAHKS VADDR1 KLGA\" readonly>";
+					result += "<br/>S1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF VAIRS BFD ETG MIP MIP4 KLGA\" readonly>";
+					break;
 				case "MIA": // BUF-MIA // Updated 11-01-2025
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KBUF JHW RICCS Q103 SLOJO EFFAY Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>";
