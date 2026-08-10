@@ -1880,23 +1880,23 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-01-2025
 					break;
-				case "ORD": // BUF-ORD // Updated 11-01-2025
-					result += "<!-- Updated 11-01-2025 P -->";
+				case "ORD": // BUF-ORD // Updated 08-10-2026
+					result += "<!-- Updated 08-10-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBUF WOZEE Q818 FNT KAYYS WYNDE3 KORD\" readonly>"; // CDR P1
+					result += "<br/><input style=\"width:75%\" value=\"KBUF DAVVK FARGN CHAAP Q436 KAYYS WYNDE3 KORD\" readonly>"; // CDR P1
 					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBUF WOZEE NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>"; // CDR N2
 					result += "<br/><b>If you file above route, verify ok on max land wgt for KBUF NOSIK ZOHAN OBSTR WYNDE3 KORD<\/b>";
 					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KBUF JHW DJB WEEVR Q62 WATSN WATSN4 KORD\" readonly>"; // CDR S1
 					result += "<br/><br/>LAKE ERIE WEST<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBUF DAVVK FARGN CHAAP Q436 KAYYS WYNDE3 KORD\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-01-2025
-					result += "<!-- Verified with ATCSCC on 11-01-2025 -->";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-10-2026
+					result += "<!-- Verified with ATCSCC on 08-10-2026 -->";
 					result += "<br/>N1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF DERLO Q935 HOCKE GRB SHIKY FYTTE7 KORD\" readonly>";
 					result += "<br/>N2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF WOZEE NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
-					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF WOZEE Q818 FNT KAYYS WYNDE3 KORD\" readonly>";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF DAVVK FARGN CHAAP Q436 KAYYS WYNDE3 KORD\" readonly>";
 					result += "<br/>S1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF JHW DJB WEEVR Q62 WATSN WATSN4 KORD\" readonly>";
 					result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF JHW HNN FLM HEVAN BONNT VEECK5 KORD\" readonly>";
-					result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF DAVVK CHAAP Q436 KAYYS WYNDE3 KORD\" readonly>";
+					result += "<br/>W1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KBUF WOZEE Q818 FNT WYNDE3 KORD\" readonly>";
 					break;
 /* FOS ROUTES:
 KBUF BIMRO T608 HOCKE PAPPI KORD
