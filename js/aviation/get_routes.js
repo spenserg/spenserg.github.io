@@ -7084,6 +7084,21 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>SC<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA MERIT OOSHN5 KBOS\" readonly>"; // 
 					result += "<br/>SH<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA JFK SHIPP Y487 ISLES ACK FERNZ OOSHN5 KBOS\" readonly>"; // 
 					break;
+				case "BUF": // LGA-BUF // Updated 08-10-2026
+					result += "<!-- Updated 10-24-2025 -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KLGA NEION Q232 STUBN BENEE KBUF\" readonly>"; // CDR PH
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA GAYEL J95 CFB KBUF\" readonly>"; // CDR 95
+					result += "<br/>North via SYR<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA GREKI JUDDS CAM SYR ROC EHMAN KBUF\" readonly>"; // CDR CA
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-10-2026
+					result += "<!-- Verified with ATCSCC on 08-10-2026 -->";
+					result += "<br/>95<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA GAYEL J95 CFB KBUF\" readonly>";
+					result += "<br/>CA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA GREKI JUDDS CAM SYR ROC EHMAN KBUF\" readonly>";
+					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEION Q232 STUBN BENEE KBUF\" readonly>";
+					result += "<br/>PL<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA COATE LAAYK STUBN BENEE KBUF\" readonly>";
+					result += "<br/>PT<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA COATE Q436 MTCAF STUBN BENEE KBUF\" readonly>";
+					result += "<br/>SR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA COATE LAAYK STUBN BENEE KBUF\" readonly>";
+					break;
 				case "CLT": // LGA-CLT // Updated 10-24-2025
 					result += "<!-- Updated 10-24-2025 -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
