@@ -11481,7 +11481,7 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "MIA": // SFO-MIA // Updated 01-23-2026
 					result += "<!-- Updated 01-23-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 04-18-2025
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 JSICA ILC BCE RSK J58 FTI TCC CHMPZ TBEND TBD BLVNS Y290 DOWRY FROGZ5 KMIA\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 JSICA Q130 HASSL RSK J58 FTI TCC FUZ J58 HRV Q105 BLVNS Y290 DOWRY FROGZ5 KMIA\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 JILLS MGMRY ACORI FROGZ5 KMIA\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO SSTIK5 KAYEX LOSHN BOILE Q4 ELP J86 LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
 					result += "<br/><b style=\"color:orange\";>10PM to 7AM local departures north/east file: KSFO NIITE4 SYRAH...<\/b>";
