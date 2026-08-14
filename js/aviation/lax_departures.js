@@ -519,28 +519,29 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-05-2026
 			break;
-		case "ORD": // LAX-ORD // Updated 02-14-2026
-			result += "<!-- Updated 02-14-2026 P -->";
+		case "ORD": // LAX-ORD // Updated 08-14-2026
+			result += "<!-- Updated 08-14-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 08-14-2026
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J78 DRK J134 CIM GCK J18 SLN J96 IRK SHAIN2 KORD\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER Q114 AYOLE KP72C FOD MYRRS FYTTE7 KORD\" readonly>";
-			result += "<br/>To clear Mando Rte Violation .. BEALE BAWER HVE ZAKRY Q114 ..";
+			result += "<br/><b>To clear Mando Rte Violation .. BEALE BAWER HVE ZAKRY Q114 .. <\/b>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J134 DRK J78 TUL J98 SGF WELTS TRTLL6 KORD\" readonly>";
 			result += "<br/><br/>North via CYS<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS BAWER LARVE EKR CYS J148 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
 			result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 SSO EWM J66 ABI MLC RZC SGF WELTS TRTLL6 KORD\" readonly>";
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX SEBBY3 DAG J9 LAS J146 GLD PWE IRK BDF8 KORD\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\"; value=\"KLAX SEBBY3 DAG J9 LAS J146 GLD PWE IRK BDF8 KORD\" readonly>";
 			result += "<br/><br/><b>Playbooks:</b>";
 			result += "<br/>ORD JVL 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J96 CIM SLN IRK BENKY6 KORD\" readonly>";
 			result += "<br/>ORD NO BENKY 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>";
 			result += "<br/>ORD NO BENKY 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>";
 			result += "<br/>ORD NO BENKY CHPMN<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR BFF J94 ONL J114 GEP DLL MSN JAKSA MOOPS FYTTE FYTTE7 KORD\" readonly>";
 			result += "<br/>ORD NO BENKY FYTTE<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR BFF J94 ONL J114 GEP TVC WYNDE3 KORD\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-14-2026
-			result += "<!-- Verified with ATCSCC on 02-14-2026 -->";
-			result += "<br/>F1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>"; // ORD NO BENKY 1
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-14-2026
+			result += "<!-- Verified with ATCSCC on 08-14-2026 -->";
+			result += "<br/>F1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CLEEE PKE DRK J6 IRW J98 SGF WELTS TRTLL6 KORD\" readonly>"; // ORD NO BENKY 1
 			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR BFF J94 ONL FOD MYRRS FYTTE7 KORD\" readonly>"; // ORD NO BENKY 2
-			result += "<br/>JB<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR BFF J94 ONL J114 GEP DLL MSN JAKSA MOOPS FYTTE FYTTE7 KORD\" readonly>"; // ORD NO BENKY CHPMN
-			result += "<br/>JV<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J96 CIM SLN IRK BENKY6 KORD\" readonly>"; // ORD JVL 1
+			result += "<br/>JB<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR BFF J94 ONL J114 GEP DLL MSN JAKSA MOOPS FYTTE FYTTE7 KORD\" readonly>"; // ORD NO BENKY CHMPN
+			result += "<br/>JV<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CLEEE PKE DRK J96 CIM SLN IRK BENKY6 KORD\" readonly>"; // ORD JVL 1
 			result += "<br/>JW<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX LAS BAWER LARVE EKR BFF J94 ONL J114 GEP TVC WYNDE3 KORD\" readonly>"; // ORD NO BENKY FYTTE
 			break;
 		case "PDX": // LAX-PDX // Updated 03-24-2026
