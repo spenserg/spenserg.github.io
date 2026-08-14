@@ -317,8 +317,56 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 /* Latin Depatures */
 		case "AUA":
-			result += "<br/><br/>AUA - Customs pre-cleared. No issues at arrival station";
+			result += "<br/><br/>AUA - Contact station via DECS. \"SEND AUA6\"";
 			break;
+		case "BOG":
+			result += "<br/><br/>Contact BOG Ops via <a href=\"https://teams.microsoft.com/\" target=\"_blank\">TEAMS<\/a>";
+			result += "<br/>BOG - Wgt rstr above 19C // 14L is primary but 14R can take a little more weight";
+			result += "<br/>BOG - 32L/R gets even more weight but only used when wx tops above 10.000";
+			break;
+		case "BDA":
+			result += "<br/><br/>BDA current weather: <a href=\"http://weather.bm/tools/graphics.asp?name=ISLAND_AWOS\" target=\"_blank\">AWOS<\/a> | <a href=\"http://weather.bm/tools/graphics.asp?name=250KM%20SRI\" target=\"_blank\">RADAR<\/a>";
+			break;
+		case "BGI":
+			result += "<br/><br/>Make sure BGI/TBPB metar is current: <a href=\"https://www.barbadosweather.org/AviationData.php\" target=\"_blank\">Latest METAR/TAF<\/a>";
+			break;
+		case "BZE":
+			result += "<br/><br/>BZE Rwy25 requires back-taxi";
+			break;
+		case "OAX":
+			result += "<br/><br/>OAX - Rwy1 by capt request only. See notes on MAXIL SID chart.";
+			break;
+		case "QRO":
+			result += "<br/><br/>QRO - Make sure metar is up to date and planned temp matches current";
+			break;
+		case "SJU":
+			result += "<br/><br/>SJU - Check VAA if not a Neo. Rwy26 optimal.";
+			break;
+		case "STT":
+			result += "<br/><br/>STT - Rwy 28 available, usually with delay. Check tailwinds and MOT";
+			result += "<br/>STT Airbus - Check for wet rwy if tailwind";
+			break;
+		case "SXM":
+			result += "<br/><br/>SXM - Rwy10 primary, use winds when able. Rwy10 tailwind takeoff N/A";
+			break;
+	}
+	if (["COR","EZE","GRU","GIG","MVD"].includes(dptr)) {
+		// UL550
+		result += "<br/><b>UL550 southbound only<\/b>";
+	}
+	if (["AUA","BDA","NAS"].includes(dptr)) {
+		// Precleared Customs
+		result += "<br/><b>Customs pre-cleared<\/b>";
+	}
+	if (["BAQ","BOG","CLO","CTG","MDE"].includes(dptr)) {
+		// Colombia Ops
+		result += "<br/><br/>FP must be filed 60 mins before etd and expire 45 mins after p-time. RF 7001C DLA";
+		result += "<br/>Colombia does not accept CHG messages. Must cancel/refile";
+		result += "<br/>Colombia departures must have an alternate";
+	}
+	if (["LIM","CIX","TRU","PIO"].includes(dptr)) {
+		// Peru Ops
+		result += "<br/><b>All Peru departures must have an alternate<\/b>";
 	}
 	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(dptr)) {
 		result += "<br/><br/>Canadian required routes are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes<br/>";
@@ -359,6 +407,11 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/>BZN Night: Circle to Land N/A";
 			result += "<br/><br/>BZN Flow: <button type='button' id='BZN_standard_left' class='btn" + ((flows['BZN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='BZN_standard_right' class='btn" + ((flows['BZN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 1)'>NW Rwy 30</button>";
 			show_flow_info = "NW Rwy30: SUBKY<br/>SE Rwy12: POWDA";
+			break;
+		case "CLT":
+			if (!is_domestic(dptr)) {
+				result += "<br/><br/>RDU has latest customs hours out of nearby alternates";
+			}
 			break;
 		case "COS":
 			result += "<br/><br/>COS - Rwy31 N/A";
@@ -529,6 +582,40 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				"YYZ - ARR fr W: .. <input style=\"width:15em\" value=\"MONEE NUBER6 CYYZ\" readonly><br/>" +
 				"YYZ - ARR fr NW: .. <input style=\"width:15em\" value=\"OTNIK BOXUM7 CYYZ\" readonly>";
 			break;
+
+		/* Latin Arrivals */
+		case "BDA":
+			result += "<br/><br/><a href=\"http://weather.bm/tools/graphics.asp?name=ISLAND_AWOS\">AWOS<\/a> | <a href=\"http://weather.bm/tools/graphics.asp?name=250KM%20SRI\">RADAR<\/a>";
+			break;
+		case "BGI":
+			result += "<br/><br/>Make sure BGI/TBPB metar is current: <a href=\"https://www.barbadosweather.org/AviationData.php\">Latest METAR/TAF<\/a>";
+			break;
+		case "GEO":
+			result += "<br/><br/>Best alt is POS/TTPP. BVB/SBBV and Paramaraibo no good<\/a>";
+			break;
+		case "GUA":
+			result += "<br/><br/>Best alt is SAL/MSLP then BZE/MZBZ (customs closes 6pm local)<\/a>";
+			result += "<br/>Most stations send everyone home after last scheduled arrival<\/a>";
+			result += "<br/>XPL/MHPR customs are 24 hrs with coordination but its an hour from the city and only has RNP apchs<\/a>";
+			break;
+		case "SJU":
+			result += "<br/><br/>SJU - STX/TISX preferred alt";
+			break;
+		case "STT":
+			result += "<br/><br/>STT - Ops N/A when tower closed, but they will stay open until 2300 lcl with dispatch coord";
+			result += "<br/>STT - Check VAA for return flight if not Max or 319S";
+			result += "<br/>STT - Rwy28 landing N/A";
+			break;
+		case "STX":
+			result += "<br/><br/>STX - No ARFF after 2300 local unless requested";
+			break;
+		case "SXM":
+			result += "<br/><br/>SXM - Make sure ILS is available if tower is closed";
+			break;
+	}
+	if (["CMW","HAV","HOG","SCU","SNU","VRA"].includes(arvl)) {
+		// Cuba Ops
+		result += "<br/><br/><b>Tanker all flights into Cuba<\/b>";
 	}
 	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(arvl)) {
 		result += "<br/><br/>Canadian required routes are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes<br/>";
