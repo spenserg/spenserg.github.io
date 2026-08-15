@@ -3,7 +3,7 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 	arvl = ((arvl.length == 4) ? convert_iata(arvl) : arvl);
 
 	if (is_latin(dptr)) {
-		return latin_departures (arvl, tail, ac_type, result);
+		return latin_departures (arvl, dptr, tail, ac_type, result);
 	}
 
 	switch(dptr) {
