@@ -2,6 +2,10 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 	dptr = ((dptr.length == 4) ? convert_iata(dptr) : dptr);
 	arvl = ((arvl.length == 4) ? convert_iata(arvl) : arvl);
 
+	if (is_latin(dptr)) {
+		return latin_departures (arvl, tail, ac_type, result);
+	}
+
 	switch(dptr) {
 
 		case "ABE":
