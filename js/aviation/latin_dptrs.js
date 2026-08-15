@@ -1,10 +1,7 @@
-latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "") {
+latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = null, result = "") {
     dptr = ((dptr.length == 4) ? convert_iata(dptr) : dptr);
 	arvl = ((arvl.length == 4) ? convert_iata(arvl) : arvl);
 
-
-	console.log(dptr);
-    
 	switch(dptr) {
 
 		case "ANU": // Antigua/V C BIRD INTL
