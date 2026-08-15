@@ -1,6 +1,9 @@
 latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "") {
     dptr = ((dptr.length == 4) ? convert_iata(dptr) : dptr);
 	arvl = ((arvl.length == 4) ? convert_iata(arvl) : arvl);
+
+
+	console.log(dptr);
     
 	switch(dptr) {
 
@@ -737,6 +740,12 @@ latin_departures = function (arvl = "XXX", tail = null, ac_type = null, result =
 			switch (arvl) {
 				case "DFW": // SCL-DFW // Updated 01-01-1965
 					result += "<!-- Updated 01-01-1965 -->";
+					break;
+				case "MIA": // SCL-MIA // Updated 08-15-2026
+					result += "<!-- Updated 08-15-2026 -->";
+					result += "<br/><br/>GYV<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"SCEL VTN1R VTN UV200 BUXIS UL780 TBG UM542 SIA UM347 EPSIM UM779 ZEUSS VIICE2 KMIA\" readonly>";					
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"SCEL VTN1R VTN UV200 TOY UL302 JCL UM674 QIT BOKAN UQ102 ANRON UQ101 KILER UM779 ZEUSS VIICE2 KMIA\" readonly>";
+					result += "<br/>West via ATENO<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"SCEL VTN1R VTN UV200 BUXIS UL780 ISREN UM542 ATENO UL203 LIXAS UZ593 PARRI UB767 PZA UZ751 SELEK UL345 IKBIX SNDBR3 KMIA\" readonly>";
 					break;
 			}
 		break; // End of SCL
