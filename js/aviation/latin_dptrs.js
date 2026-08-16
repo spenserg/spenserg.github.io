@@ -21,7 +21,7 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 			}
 		break; // End of ANU
 
-		case "AUA": // Oranjestad/REINA BEATRIX INTL
+		case "AUA": // ARUBA/Oranjestad/REINA BEATRIX INTL
 			switch (arvl) {
 				case "CLT": // AUA-CLT // Updated 01-01-1965
 					result += "<br/><br/><b>Standard Route:</b>";
@@ -35,9 +35,12 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 					result += "<br/><br/><b>Standard Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
-				case "MIA": // AUA-MIA // Updated 01-01-1965
+				case "MIA":  // AUA-MIA // Updated 08-16-2026
+					result += "<!-- Updated 08-16-2026 P -->";
 					result += "<br/><br/><b>Standard Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
+					result += "<br/><input style=\"width:75%\" value=\"TNCA VIXOL1F VIXOL UL468 PIGBI UA315 SAVAR JOSES Y586 MADIZ VIICE2\" readonly>";
+					result += "<br/><br/>East via JOSES<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"TNCA KISAS1F KISAS UL468 PIGBI UA315 SAVAR DCT JOSES Y586 MADIZ VIICE2 KMIA\" readonly>";
+					result += "<br/>West over Cuba<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"TNCA DIBOK1F DIBOK UL795 ALTIB UM779 ZEUSS VIICE2 KMIA\" readonly>";
 					break;
 				case "ORD": // AUA-ORD // Updated 01-01-1965
 					result += "<br/><br/><b>Standard Route:</b>";
