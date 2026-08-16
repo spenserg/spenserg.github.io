@@ -591,12 +591,15 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>Make sure BGI/TBPB metar is current: <a href=\"https://www.barbadosweather.org/AviationData.php\">Latest METAR/TAF<\/a>";
 			break;
 		case "GEO":
-			result += "<br/><br/>Best alt is POS/TTPP. BVB/SBBV and Paramaraibo no good<\/a>";
+			result += "<br/><br/>Best alt is POS/TTPP. BVB/SBBV and Paramaraibo no good.";
 			break;
 		case "GUA":
 			result += "<br/><br/>Best alt is SAL/MSLP then BZE/MZBZ (customs closes 6pm local)<\/a>";
-			result += "<br/>Most stations send everyone home after last scheduled arrival<\/a>";
-			result += "<br/>XPL/MHPR customs are 24 hrs with coordination but its an hour from the city and only has RNP apchs<\/a>";
+			result += "<br/>Most stations send everyone home after last scheduled arrival";
+			result += "<br/>XPL/MHPR customs are 24 hrs with coordination but its an hour from the city and only has RNP apchs.";
+			break;
+		case "QRO":
+			result += "<br/><br/>Best alt is SLP/MMSP then MEX/MMMX (Mex uses slot times). BJX/MMLO no good after tower closes.";
 			break;
 		case "SJU":
 			result += "<br/><br/>SJU - STX/TISX preferred alt";
