@@ -7,13 +7,16 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "ANU": // Antigua/V C BIRD INTL
 			switch (arvl) {
 				case "CLT": // ANU-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // ANU-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "JFK": // ANU-JFK // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of ANU
@@ -21,22 +24,28 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "AUA": // Oranjestad/REINA BEATRIX INTL
 			switch (arvl) {
 				case "CLT": // AUA-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "DFW": // AUA-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "LGA": // AUA-LGA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // AUA-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "ORD": // AUA-ORD // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "PHL": // AUA-PHL // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of AUA
@@ -44,7 +53,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "BAQ": // Barranquilla/ERNESTO CORTISSOZ
 			switch (arvl) {
 				case "MIA": // BAQ-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of BAQ
@@ -52,16 +62,20 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "BDA": // Bermuda/L F WADE INTL
 			switch (arvl) {
 				case "CLT": // BDA-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "JFK": // BDA-JFK // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // BDA-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "PHL": // BDA-PHL // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of BDA
@@ -69,16 +83,20 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "BGI": // Bridgetown/GRANTLEY ADAMS INTL
 			switch (arvl) {
 				case "CLT": // BGI-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "JFK": // BGI-JFK // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // BGI-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "PHL": // BGI-PHL // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of BGI
@@ -86,7 +104,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "BJX": // Del Bajio/DE GUANAJUATO INTL
 			switch (arvl) {
 				case "DFW": // BJX-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of BJX
@@ -94,10 +113,12 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "BOG": // Bogota/EL DORADO INTL
 			switch (arvl) {
 				case "DFW": // BOG-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // BOG-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of BOG
@@ -105,7 +126,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "BON": // Kralendijk/FLAMINGO INTL
 			switch (arvl) {
 				case "MIA": // BON-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of BON
@@ -116,13 +138,16 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "BZE": // Belize City/PHILIP S W GOLDSON INTL
 			switch (arvl) {
 				case "CLT": // BZE-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "DFW": // BZE-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // BZE-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of BZE
@@ -134,7 +159,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "CLO": // Cali/ALFONSO BONILLA ARAGON INTL
 			switch (arvl) {
 				case "MIA": // CLO-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of CLO
@@ -142,7 +168,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "CMW": // Camaguey/IGNACIO AGRAMONTE INTL
 			switch (arvl) {
 				case "MIA": // CMG-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of CMW
@@ -153,7 +180,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "CTG": // Cartagena/RAFAEL NUNEZ
 			switch (arvl) {
 				case "MIA": // CTG-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of CTG
@@ -161,61 +189,80 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "CUN": // Cancun/CANCUN INTL
 			switch (arvl) {
 				case "AUS": // CUN-AUS // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "BNA": // CUN-BNA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "BOS": // CUN-BOS // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "CLT": // CUN-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "CMH": // CUN-CMH // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "CVG": // CUN-CVG // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "DFW": // CUN-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "IND": // CUN-IND // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "JFK": // CUN-JFK // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "LAX": // CUN-LAX // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MCI": // CUN-MCI // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // CUN-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "OKC": // CUN-OKC // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "ORD": // CUN-ORD // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "PHL": // CUN-PHL // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "PHX": // CUN-PHX // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "PIT": // CUN-PIT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "RDU": // CUN-RDU // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "STL": // CUN-STL // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of CUN
@@ -223,13 +270,16 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "CUR": // Willemstad/HATO INTL
 			switch (arvl) {
 				case "CLT": // CUR-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // CUR-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "ORD": // CUR-ORD // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of CUR
@@ -237,7 +287,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "CUU": // Chihuahua/GEN DIV P A ROBERTO FIERRO VIL
 			switch (arvl) {
 				case "DFW": // CUU-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of CUU
@@ -247,16 +298,20 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "CZM": // Cozumel/COZUMEL INTL
 			switch (arvl) {
 				case "CLT": // CZM-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "DFW": // CZM-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // CZM-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "ORD": // CZM-ORD // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of CZM
@@ -264,7 +319,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "DGO": // Durango/DURANGO INTL
 			switch (arvl) {
 				case "DFW": // DGO-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of DGO
@@ -272,13 +328,16 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "EZE": // Buenos Aires/EZEIZA INTL/MINISTRO PISTARINI
 			switch (arvl) {
 				case "DFW": // EZE-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "JFK": // EZE-JFK // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // EZE-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of EZE
@@ -286,7 +345,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "FDF": // Fort-de-france/AIME CESAIRE
 			switch (arvl) {
 				case "MIA": // FDF-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of FDF
@@ -294,10 +354,12 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "FPO": // Freeport/GRAND BAHAMA INTL
 			switch (arvl) {
 				case "CLT": // FPO-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // FPO-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of FPO
@@ -305,19 +367,24 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "GCM": // Georgetown/OWEN ROBERTS INTL
 			switch (arvl) {
 				case "CLT": // GCM-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "DFW": // GCM-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // GCM-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "ORD": // GCM-ORD // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "PHL": // GCM-PHL // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of GCM
@@ -325,10 +392,12 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "GDL": // Guadalajara/MIGUEL HIDALGO Y COSTILLA INTL
 			switch (arvl) {
 				case "DFW": // GDL-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "PHX": // GDL-PHX // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of GDL
@@ -336,10 +405,12 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "GEO": // Georgetown/CHEDDI JAGAN INTL
 			switch (arvl) {
 				case "JFK": // GEO-JFK // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // GEO-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of GEO
@@ -347,10 +418,12 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "GGT": // Exuma/EXUMA INTL
 			switch (arvl) {
 				case "CLT": // GGT-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // GGT-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of GGT
@@ -358,13 +431,16 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "GIG": // Rio De Janeiro/GALEAO-ANTONIO CARLOS JOBIM IN
 			switch (arvl) {
 				case "DFW": // GIG-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "JFK": // GIG-JFK // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // GIG-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of GIG
@@ -372,10 +448,12 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "GND": // Point Salines/MAURICE BISHOP INTL
 			switch (arvl) {
 				case "CLT": // GND-CLT // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // GND-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of GND
@@ -383,13 +461,16 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "GRU": // Sao Paulo/GUARULHOS-GOV ANDRE FRANCO MON
 			switch (arvl) {
 				case "DFW": // GRU-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "JFK": // GRU-JFK // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // GRU-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of GRU
@@ -397,13 +478,16 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "GUA": // Guatemala City/LA AURORA INTL
 			switch (arvl) {
 				case "DFW": // GUA-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "MIA": // GUA-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 				case "ORD": // GUA-ORD // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of GUA
@@ -411,7 +495,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "GYE": // Guayaquil/JOSE JOAQUIN DE OLMEDO INTL
 			switch (arvl) {
 				case "MIA": // GYE-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of GYE
@@ -419,7 +504,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "HAV": // Havana/JOSE MARTI INTL
 			switch (arvl) {
 				case "MIA": // HAV-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of HAV
@@ -427,7 +513,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "HMO": // Hermosillo/GEN IGNACIO PESQUEIRA GARCIA I
 			switch (arvl) {
 				case "PHX": // HMO-PHX // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of HMO
@@ -435,7 +522,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "HOG": // Holguin/FRANK PAIS INTL
 			switch (arvl) {
 				case "MIA": // HOG-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of HOG
@@ -443,7 +531,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "HUX": // Bahias de Huatulco/BAHIAS DE HUATULCO INTL
 			switch (arvl) {
 				case "DFW": // HUX-DFW // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of HUX
@@ -454,7 +543,8 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 		case "KIN": // Kingston/NORMAN MANLEY INTL
 			switch (arvl) {
 				case "MIA": // KIN-MIA // Updated 01-01-1965
-					result += ""; // TODO
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
 			}
 		break; // End of KIN
