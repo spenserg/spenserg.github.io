@@ -2462,6 +2462,14 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><input style=\"width:75%\" value=\"KDFW DALL3 LIT ARG PXV VHP CRL QWERI CYYZ\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-10-2026
 			break;
+	/* Latin Destinations */
+		case "QRO": // DFW-QRO  // DFW-QRO // Updated 08-16-2026
+			result += "<!-- Updated 08-16-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 08-16-2026
+			result += "<br/><br/>Standard: <input style=\"width:75%\" value=\"KDFW NELYN6 SAT J21 LRD J22 NLD UJ11 MTY UJ45 SLP UJ45 QET MMQT\" readonly>";
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV PSX J29 MTY UJ45 SLP UJ45 QET MMQT\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 08-16-2026
+			break;
 	}
 	return result;
 }
