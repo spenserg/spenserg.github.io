@@ -115,9 +115,9 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 
 		case "BOG": // Bogota/EL DORADO INTL
 			switch (arvl) {
-				case "DFW": // BOG-DFW // Updated 01-01-1965
-					result += "<br/><br/><b>Standard Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
+				case "DFW": // BOG-DFW // Updated 08-16-2026
+					result += "<!-- Updated 08-16-2026 P -->";
+					result += "<br/><br/><input style=\"width:75%\" value=\"SKBO TOBKI4R VASIL UL423 PULOX SIGUN UM549 TBG UN420 SPP UM205 SIGMA UA766 KEHLI A766 SBI CRIED BEREE3 KDFW\" readonly>";
 					break;
 				case "MIA": // BOG-MIA // Updated 01-01-1965
 					result += "<br/><br/><b>Standard Route:</b>";
@@ -467,9 +467,9 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 					result += "<br/><br/><b>Standard Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
-				case "JFK": // GRU-JFK // Updated 01-01-1965
-					result += "<br/><br/><b>Standard Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
+				case "JFK":  // GRU-JFK // Updated 08-16-2026
+					result += "<!-- Updated 08-16-2026 P -->";
+					result += "<br/><br/>UL452: <input style=\"width:75%\" value=\"SBGR AMVUL6A ISMOB UZ26 ILKUS UL452 TONOM UA312 LEPOD UG449 KORTO UL776 GEECE L776 MACOR L455 SAVIK Y486 MOUGH Y495 CAMRN CAMRN5 KJFK\" readonly>";
 					break;
 				case "MIA": // GRU-MIA // Updated 01-01-1965
 					result += "<br/><br/><b>Standard Route:</b>";
