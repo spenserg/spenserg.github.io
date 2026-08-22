@@ -6670,8 +6670,8 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "PUJ":  // JFK-PUJ // Updated 08-22-2026
 					result += "<!-- Updated 08-22-2026 P -->";
 					// result += "<br/><br/><b>Standard Route:</b>";
-					result += "<br/><br/>L455: <input style=\"width:75%\" value=\"KJFK SHIPP Y488 SAUCR L453 CERDA L464 SEBUG POKEG POKEG1W MDPC\" readonly>";
-					result += "<br/><br/>East/L453<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK SHIPP Y488 SAUCR L453 CERDA L464 SEBUG POKEG POKEG1W MDPC\" readonly>";
+					result += "<br/><br/>L455: <input style=\"width:75%\" value=\"KJFK SHIPP Y488 SAUCR L453 CERDA L464 SEBUG POKEG MDPC\" readonly>";
+					result += "<br/><br/>East/L453<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJFK SHIPP Y488 SAUCR L453 CERDA L464 SEBUG POKEG MDPC\" readonly>";
 					// result += "<br/><input style=\"width:75%\" value=\"\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 08-22-2026
 					break;
