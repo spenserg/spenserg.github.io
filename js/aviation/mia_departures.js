@@ -1326,7 +1326,7 @@ MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.CABLO.DCT.MEI.DCT.LIT.DCT.RZC.DCT.XNA
 		case "SXM": // MIA-SXM // Updated 02-06-2026
 			result += "<!-- Updated 02-06-2026 P -->";
 			result += "<br/><br/><b>Standard Route:</b>";
-			result += "<br/><br/><input style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 SLUGO TNCM\" readonly>"; // CDR K0
+			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 BITAC Y290 SLUGO TNCM\" readonly>"; // CDR K0
 			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y355 SLUGO TNCM\" readonly>";
 			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP UA890 ETBOD UL577 ANTEX L577 GOUDA TNCM\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
