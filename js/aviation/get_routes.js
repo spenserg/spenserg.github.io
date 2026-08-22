@@ -10053,6 +10053,12 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>PJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA RAV PSB WOZEE LINNG3 CYYZ\" readonly>";
 					result += "<br/>PP<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW CHLSE DIANO LYKOM T445 ROC T608 WOZEE LINNG3 CYYZ\" readonly>";
 					break;
+			/* Latin Dest */
+				case "STI":  // PHL-STI // Updated 08-22-2026
+					// TODO 
+					result += "<!-- Updated 08-22-2026 P -->";
+					result += "<br/><br/><input style=\"width:75%\" value=\"\" readonly>";
+					break;
 			}
 		break; // End of PHL
 
