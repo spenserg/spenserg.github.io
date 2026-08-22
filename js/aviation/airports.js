@@ -336,6 +336,10 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "OAX":
 			result += "<br/><br/>OAX - Rwy1 by capt request only. See notes on MAXIL SID chart.";
 			break;
+		case "PUJ":
+			result += "<br/><br/>CHUMA only for New England arvls (JFK, PHL, etc.)";
+			result += "<br/>PIXAR only for Oceanic/L-Routes";
+			break;
 		case "QRO":
 			result += "<br/><br/>QRO - Make sure metar is up to date and planned temp matches current";
 			break;
@@ -594,15 +598,21 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>Best alt is POS/TTPP. BVB/SBBV and Paramaraibo no good.";
 			break;
 		case "GUA":
-			result += "<br/><br/>Best alt is SAL/MSLP then BZE/MZBZ (customs closes 6pm local)<\/a>";
+			result += "<br/><br/>Best alt is SAL/MSLP then BZE/MZBZ (customs closes 6pm local)";
 			result += "<br/>Most stations send everyone home after last scheduled arrival";
 			result += "<br/>XPL/MHPR customs are 24 hrs with coordination but its an hour from the city and only has RNP apchs.";
+			break;
+		case "PUJ":
+			result += "<br/><br/>Best alt is SDQ/MDSD then STI/MDST";
 			break;
 		case "QRO":
 			result += "<br/><br/>Best alt is SLP/MMSP then MEX/MMMX (Mex uses slot times). BJX/MMLO no good after tower closes.";
 			break;
 		case "SJU":
 			result += "<br/><br/>SJU - STX/TISX preferred alt";
+			break;
+		case "STI":
+			result += "<br/><br/>Best alt is SDQ/MDSD then PUJ/MDPC";
 			break;
 		case "STT":
 			result += "<br/><br/>STT - Ops N/A when tower closed, but they will stay open until 2300 lcl with dispatch coord";
