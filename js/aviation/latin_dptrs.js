@@ -454,9 +454,10 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 					result += "<br/><br/><b>Standard Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
 					break;
-				case "MIA": // GND-MIA // Updated 01-01-1965
+				case "MIA":  // GND-MIA // Updated 08-22-2026
+					result += "<!-- Updated 08-22-2026 P -->";
 					result += "<br/><br/><b>Standard Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"\" readonly>"; // TODO
+					result += "<br/><input style=\"width:75%\" value=\"TGPY GND ANADA L343 SATOE UL343 MALVN Y261 MADIZ VIICE2 KMIA\" readonly>";
 					break;
 			}
 		break; // End of GND
@@ -740,6 +741,13 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 
 		case "POP": // Puerto Plata/GREGORIO LUPERON INTL
 			switch (arvl) {
+				case "CLT":  // POP-CLT // Updated 08-22-2026
+					result += "<!-- Updated 08-22-2026 P -->"
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"MDPP LERED L216 GTK R763 JEFFO L450 LETON L451 JAINS Y436 PITRW STOCR6 KCLT\" readonly>";
+					// TODO East
+					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MDPP MALVN Y396 BITAC ZBV OCTAL Q77 WIGVO PONZE BANKR7 KCLT\" readonly>";
+					break;
 				case "DFW": // POP-DFW // Updated 01-01-1965
 					result += "<!-- Updated 01-01-1965 -->";
 					break;
@@ -774,6 +782,14 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 			switch (arvl) {
 				case "DFW": // PUJ-DFW // Updated 01-01-1965
 					result += "<!-- Updated 01-01-1965 -->";
+					
+					break;
+				case "JFK": // PUJ-JFK // Updated 08-22-2026
+					result += "<!-- Updated 08-22-2026 P -->";
+					result += "<br/><br/>L455: <input style=\"width:75%\" value=\"MDPC CHUMA Y315 DOZGO JANMA L455 SAVIK Y486 MOUGH Y495 CAMRN CAMRN5 KJFK\" readonly>";
+					result += "<br/><br/>East/L459<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MDPC CHUMA Y315 KEEKA L459 SAVIK Y486 MOUGH Y495 CAMRN CAMRN5 KJFK\" readonly>";
+					result += "<br/>West/L453<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MDPC PIXAR UW10 ASIVO L453 CERDA Y439 SLUKA L452 OXANA AR8 ECG KALDA Q108 SIE CAMRN5 KJFK\" readonly>";
+					result += "<br/><br/>West via ZFP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MDPC MALVN Y396 RUMFO Y441 ZQA BR65V ZFP WOLFO AR18 FLRDA SAGGY CHIEZ Q161 KALDA Q108 SIE CAMRN5 KJFK\" readonly>";
 					break;
 			}
 		break; // End of PUJ
@@ -853,6 +869,13 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 				case "DFW": // SDQ-DFW // Updated 01-01-1965
 					result += "<!-- Updated 01-01-1965 -->";
 					break;
+				case "PHL": // SDQ-PHL // Updated 08-22-2026
+					result += "<!-- Updated 08-22-2026 P -->";
+					result += "<br/><br/>L453: <input style=\"width:75%\" value=\"MDSD LERED L464 CERDA L453 SAUCR VIRST Y494 SILLY LYNUS B24 DASHA JIIMS4 KPHL\" readonly>";
+					result += "<br/><br/>East/L455<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MDSD LERED L464 CERDA M594 MCOOP L455 SKPPR L457 OKONU WEBBB B24 DASHA JIIMS4 KPHL\" readonly>";
+					result += "<br/>West/L451<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MDSD LERED L216 GTK R763 LETON L451 JAINS Y327 IDOLS SKARP Q101 KALDA ZJAAY JIIMS4 KPHL\" readonly>";
+					result += "<br/><br/>West via ZFP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MDSD MALVN Y396 RUMFO Y441 ZQA BR65V ZFP WOLFO AR18 FLRDA IDOLS SKARP Q101 KALDA ZJAAY JIIMS4 KPHL\" readonly>";
+					break; // MDSD MALVN Y396 RUMFO Y441 ZQA BR65V ZFP WOLFO AR18 FLRDA SAGGY CHIEZ Q161 KALDA ZJAAY JIIMS4 KPHL
 			}
 		break; // End of SDQ
 
@@ -908,6 +931,13 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 			switch (arvl) {
 				case "DFW": // STI-DFW // Updated 01-01-1965
 					result += "<!-- Updated 01-01-1965 -->";
+					break;
+				case "PHL": // STI-PHL // Updated 08-22-2026
+					result += "<!-- Updated 08-22-2026 P -->";
+					result += "<br/><br/>L453: <input style=\"width:75%\" value=\"MDST LERED L464 CERDA L453 SAUCR VIRST Y494 SILLY LYNUS B24 DASHA JIIMS4 KPHL\" readonly>";
+					result += "<br/><br/>East/L455<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MDST LERED L464 CERDA M594 MCOOP L455 SKPPR L457 OKONU WEBBB B24 DASHA JIIMS4 KPHL\" readonly>";
+					result += "<br/>West/L451<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MDST PTA UL339 SEKAR A554 GTK R763 LETON L451 JAINS Y327 IDOLS SKARP Q101 KALDA ZJAAY JIIMS4 KPHL\" readonly>";
+					result += "<br/><br/>West via ZFP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MDST MALVN Y396 RUMFO Y441 ZQA BR65V ZFP WOLFO AR18 FLRDA SAGGY CHIEZ Q161 KALDA ZJAAY JIIMS4 KPHL\" readonly>";
 					break;
 			}
 		break; // End of STI
