@@ -1632,6 +1632,14 @@ KCLT WEAZL7 CLAWD HVQ J8 IIU FAM KXNA
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KRITR8 FILDS ILLSA Q69 RICCS OXMAN LINNG3 CYYZ\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL7 CLAWD HVQ QWERI NUBER6 CYYZ\" readonly>";
 			break;
+
+		/* Latin Dptrs */
+		case "POP": // CLT-POP // Updated 08-22-2026
+			result += "<!-- Updated 08-22-2026 P -->";
+			result += "<br/><br/><input style=\"width:75%\" value=\"KCLT KWEEN7 PITRW Y436 JAINS L451 IORIO SEKAR A554 PTA MDPP\" readonly>";
+			result += "<br/><br/>South/Y306<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS7 NOOKS DCT WURFL Q83 JEVED Q97 PRMUS Q89 MANLE Y185 VENDS Y306 CHASO OREDE BR1L GTK A554 PTA DCT MDPP\" readonly>";
+			result += "<br/><br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT NOOKS DCT WURFL Q83 JEVED Q97 TOVAR Y297 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UA890 ETBOD UW43 BEPAL MDPP\" readonly>";
+			break;
 	}
 	return result;
 }
