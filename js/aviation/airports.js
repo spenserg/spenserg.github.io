@@ -628,6 +628,8 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	}
 	if (["CMW","HAV","HOG","SCU","SNU","VRA"].includes(arvl)) {
 		// Cuba Ops
+		result += "<br/><br/>MKJS/MBJ and MKJP/KIN/ good alts. KMIA even better if able.";
+		result += "<br/>Verify dis-insectation is up to date. <a href=\"https://spteam.aa.com/:x:/r/sites/customer/Cabin/Shared%20Documents/AA%20Cuba%20Orkin%20Tracker%20-%20737+319+787+777.xlsx?d=w9d02b8c7b3104300979ebcf6f2e41ec8&csf=1&web=1\" target=\"_blank\">Orkin Tracker Sheet<\/a>";
 		result += "<br/><br/><b>Tanker all flights into Cuba<\/b>";
 	}
 	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(arvl)) {
