@@ -873,8 +873,10 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 					// todo east
 					// todo west
 					break;
-				case "mia": // SDQ-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "MIA":  // SDQ-MIA // Updated 08-23-2026
+					result += "<!-- Updated 08-23-2026 P -->";
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"MDSD MALVN Y261 MADIZ VIICE2 KMIA\" readonly>";
 					break;
 				case "PHL": // SDQ-PHL // Updated 08-22-2026
 					result += "<!-- Updated 08-22-2026 P -->";
