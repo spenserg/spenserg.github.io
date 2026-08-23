@@ -1633,12 +1633,27 @@ KCLT WEAZL7 CLAWD HVQ J8 IIU FAM KXNA
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL7 CLAWD HVQ QWERI NUBER6 CYYZ\" readonly>";
 			break;
 
-		/* Latin Dptrs */
+		/* Latin Arvls */
 		case "POP": // CLT-POP // Updated 08-22-2026
 			result += "<!-- Updated 08-22-2026 P -->";
-			result += "<br/><br/><input style=\"width:75%\" value=\"KCLT KWEEN7 PITRW Y436 JAINS L451 IORIO SEKAR A554 PTA MDPP\" readonly>";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT KWEEN7 PITRW Y436 JAINS L451 IORIO SEKAR A554 PTA MDPP\" readonly>";
 			result += "<br/><br/>South/Y306<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS7 NOOKS DCT WURFL Q83 JEVED Q97 PRMUS Q89 MANLE Y185 VENDS Y306 CHASO OREDE BR1L GTK A554 PTA DCT MDPP\" readonly>";
 			result += "<br/><br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT NOOKS DCT WURFL Q83 JEVED Q97 TOVAR Y297 URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UA890 ETBOD UW43 BEPAL MDPP\" readonly>";
+			break;
+		case "PLS": // CLT-POP // Updated 08-22-2026
+			result += "<!-- Updated 08-22-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT PITRW Y436 DIZNY Y307 NUCAR L463 BTLER MBPV\" readonly>";
+			result += "<br/><br/>North/JAINS<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT KWEEN7 PITRW Y436 JAINS L451 LETON L450 FOLLE G504 RATTL MBPV\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS7 NOOKS DCT WURFL Q83 JEVED Q97 PRMUS Q89 MANLE Y185 VENDS Y304 RUTOC RNDLY L463 BTLER MBPV\" readonly>";
+			break;
+		case "SXM":  // CLT-SXM // Updated 08-23-2026
+			result += "<!-- Updated 08-23-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT KWEEN7 PITRW Y436 JAINS L451 LETON IORIO FIPEK Y355 SLUGO TNCM\" readonly>";
+			result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS7 NOOKS WURFL Q83 JEVED Q97 PRMUS Q89 MANLE Y185 RENAH Y355 SLUGO TNCM\" readonly>";
+			result += "<br/><br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ICONS7 NOOKS WURFL Q83 JEVED Q97 PRMUS Q89 WAKUP PBI URSUS UP406 BILSI UL795 LORBA UCJ UM348 OTOSI UL218 PAP UL577 ANTEX B520 BQN RTE4 COY L204 GOUDA TNCM\" readonly>";
 			break;
 	}
 	return result;
