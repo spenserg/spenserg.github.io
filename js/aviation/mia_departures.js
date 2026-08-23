@@ -1245,7 +1245,7 @@ MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.CABLO.DCT.MEI.DCT.LIT.DCT.RZC.DCT.XNA
 		case "SCL": // MIA-SCL // Updated 02-06-2026
 			result += "<!-- Updated 02-06-2026 P -->";
 			result += "<br/><br/><b>Standard Route:</b>";
-			result += "<br/><span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UL780 SULNA UT315 TOY UV208 SIMOK SIMOK7B SCEL\" readonly>"; // CDR W0			
+			result += "<br/><input style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UL780 SULNA UT315 TOY UV208 SIMOK SIMOK7B SCEL\" readonly>"; // CDR W0			
 			result += "<br/><br/>East via TASNO<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UL780 TASNO UM221 COLBY UM795 JCL UL302 SIMOK SCEL\" readonly>";
 			result += "<br/>West via ATENO<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA MAYNR3 FUNDI UM335 ALVEK UM328 SELEK UZ751 PZA UB767 PARRI UZ593 LIXAS UL203 ARNEL UM542 ILMAR UL302 TOY UV208 SIMOK SIMOK7B SCEL\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 08-15-2026
@@ -1254,6 +1254,11 @@ MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.CABLO.DCT.MEI.DCT.LIT.DCT.RZC.DCT.XNA
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 FUNDI UM335 ALVEK GAXER UL780 SULNA UT315 TOY SCEL\" readonly>";
 			result += "<br/>W0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UL780 SULNA UT315 TOY SCEL\" readonly>";
 			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP URSUS UL780 SULNA UT315 TOY SCEL\" readonly>";
+			break;
+		case "SCU":  // MIA-SCU // Updated 08-23-2026
+			result += "<!-- Updated 08-23-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 BOPOL CAOBA5 MUCU\" readonly>";
 			break;
 		case "SDQ": // MIA-SDQ // Updated 02-06-2026
 			result += "<!-- Updated 02-06-2026 P -->";
