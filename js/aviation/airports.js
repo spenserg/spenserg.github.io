@@ -602,6 +602,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/>Most stations send everyone home after last scheduled arrival";
 			result += "<br/>XPL/MHPR customs are 24 hrs with coordination but its an hour from the city and only has RNP apchs.";
 			break;
+		case "PLS":
+			result += "<br/><br/>Best alt is SDQ/MDSD then STI/MDST";
+			break;
 		case "PUJ":
 			result += "<br/><br/>Best alt is SDQ/MDSD then STI/MDST";
 			break;
@@ -624,6 +627,8 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 		case "SXM":
 			result += "<br/><br/>SXM - Make sure ILS is available if tower is closed";
+			result += "<br/>SXM - Rwy28 N/A for landing";
+			result += "<br/>SXM - TKPK usual alt";
 			break;
 	}
 	if (["CMW","HAV","HOG","SCU","SNU","VRA"].includes(arvl)) {
