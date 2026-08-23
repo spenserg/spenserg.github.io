@@ -725,6 +725,12 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 
 		case "PLS": // Providenciales/PROVIDENCIALES INTL
 			switch (arvl) {
+				case "CLT":  // PLS-CLT // Updated 08-23-2026
+					result += "<!-- Updated 08-23-2026 P -->";
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"MBPV MICAS RNDLY L463 NUCAR OZENA OGGRE Y436 PITRW STOCR6 KCLT\" readonly>";
+					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MBPV MICAS FODED Y308 MADIZ UCRAZ OCTAL Q77 WIGVO PONZE BANKR7 KCLT\" readonly>";
+					break;
 				case "DFW": // PLS-DFW // Updated 01-01-1965
 					result += "<!-- Updated 01-01-1965 -->";
 					break;
