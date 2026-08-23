@@ -597,6 +597,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "GEO":
 			result += "<br/><br/>Best alt is POS/TTPP. BVB/SBBV and Paramaraibo no good.";
 			break;
+		case "Gnd":
+			result += "<br/><br/>Best alt is UVF/TLPL. ";
+			break;
 		case "GUA":
 			result += "<br/><br/>Best alt is SAL/MSLP then BZE/MZBZ (customs closes 6pm local)";
 			result += "<br/>Most stations send everyone home after last scheduled arrival";
