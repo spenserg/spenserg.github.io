@@ -866,7 +866,14 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 
 		case "SDQ": // Santo Domingo/LAS AMERICAS INTL (JOSE F PENA
 			switch (arvl) {
-				case "DFW": // SDQ-DFW // Updated 01-01-1965
+				case "DFW":  // SDQ-MIA // Updated 08-23-2026
+					result += "<!-- Updated 08-23-2026 P -->";
+					result += "<br/><br/><b>Standard Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"MDSD MALVN4L MALVN Y261 MADIZ VIICE2 KMIA\" readonly>";
+					// todo east
+					// todo west
+					break;
+				case "mia": // SDQ-DFW // Updated 01-01-1965
 					result += "<!-- Updated 01-01-1965 -->";
 					break;
 				case "PHL": // SDQ-PHL // Updated 08-22-2026
