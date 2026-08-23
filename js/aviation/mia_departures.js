@@ -1265,7 +1265,8 @@ MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.CABLO.DCT.MEI.DCT.LIT.DCT.RZC.DCT.XNA
 			result += "<br/><br/><b>Standard Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA KLADA2 JAGOR RUMFO Y441 JUELE W38 PTA A554 KODIX KODI2G MDSD\" readonly>"; // CDR K0
 			result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP BR70V MRRSH DAAST RENAH Y397 SEKAR UL339 PTA UT20 KODIX KODI2G MDSD\" readonly>";
-			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP OKOSO OKOS2G MDSD\" readonly>";
+			result += "<br/>South/MA5<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 GLAMS BORDO UL218 PAP OKOSO MDSD\" readonly>";
+			result += "<br/><br/>South via URSUS<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UP406 BILSI UL795 GUBAK UL212 KODIX MDSD\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-06-2026
 			result += "<!-- Verified with ATCSCC on 02-06-2026 -->";
 			result += "<br/>K0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 JAGOR RUMFO Y441 JUELE W38 PTA A554 KODIX KODI2G MDSD\" readonly>";
