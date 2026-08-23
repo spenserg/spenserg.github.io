@@ -236,6 +236,12 @@ function compute (str_override = "") {
 		return;
 	}
 
+	// Electronic Turnover
+	if (fkeystxt.includes("ATC DELAYS FOR DESK")) {
+		$("#total").html(edct_parse(fkeystxt));
+		return;
+	}
+
 	// All CDRs Doc
 	if (fkeystxt.includes("RCode") || fkeystxt.includes("DepFix")) {
 		if (regu.exec(fkeystxt) != null) {
@@ -532,6 +538,35 @@ function compute (str_override = "") {
 	}
 	*/
 	if (!input_boxes_shown) { $("#input_boxes").hide(); }
+}
+
+edct_parse = function (input = null) {
+	var edct_reg = /AAL(\d+)\s([A-Z]{3})\s([A-Z]{3})\s[^\s]+\s([^\n]+)/g;
+	var edct_times = [];
+	while(null != (z = edct_reg.exec(input))) {
+		if (z[4].charAt(4).localeCompare("Z") == 0 && !isNaN(parseInt(z[4].substring(0,4)))) {
+			z[5] = parseInt(z[4].substring(0,4));
+		} else { z[5] = 2500; }
+		edct_times.push(z);
+	}
+	edct_times.sort((a, b) => {
+		if (a[5] > 2359) { return 1; }
+		if (b[5] > 2359) { return -1; }
+		if (a[5] > 1000) {
+			if (b[5] < 1000) { return -1; }
+			return ((a[5] < b[5]) ? -1 : 1);
+		} else {
+			if (b[5] > 1000) { return 1; }
+			return ((a[5] < b[5]) ? -1 : 1);
+		}
+		return 0;
+	});
+
+	var result = '<br/><br/><textarea rows="15" cols="60">';
+	for (var i = 0; i < edct_times.length; i++) {
+		result += edct_times[i][0] + "\n";
+	}
+	return result.trim() + '<\/textarea>';
 }
 
 electronic_turnover_parse = function (input = null) {
