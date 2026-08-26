@@ -535,15 +535,12 @@ function compute (str_override = "") {
 }
 
 edct_parse = function (input = null) {
-	var edct_reg = /AAL(\d+)\s([A-Z]{3})\s([A-Z]{3})\s[^\s]+\s([^\n]+)/g;
-	var edct_times = [];
-	while(null != (z = edct_reg.exec(input))) {
-		if (z[4].charAt(4).localeCompare("Z") == 0 && !isNaN(parseInt(z[4].substring(0,4)))) {
-			z[5] = parseInt(z[4].substring(0,4));
-		} else { z[5] = 2500; }
-		edct_times.push(z);
-	}
-	edct_times.sort((a, b) => {
+	var edct_times = input.match(/[\*\s]AAL\d+\s[A-Z]{3}\s[A-Z]{3}[^\n]+/g);
+	edct_times.sort((stra, strb) => {
+		var a = parseInt(stra.substr(22,4));
+		var b = parseInt(stra.substr(22,4));
+		if (isNaN(a)) { return 1; }
+		if (isNaN(b)) { return -1; }
 		if (a[5] > 2359) { return 1; }
 		if (b[5] > 2359) { return -1; }
 		if (a[5] > 1000) {
@@ -555,12 +552,7 @@ edct_parse = function (input = null) {
 		}
 		return 0;
 	});
-
-	var result = '<br/><br/><textarea rows="15" cols="60">';
-	for (var i = 0; i < edct_times.length; i++) {
-		result += edct_times[i][0] + "\n";
-	}
-	return result.trim() + '<\/textarea>';
+	return '<br/><br/><textarea rows="15" cols="80" style="font-family: monospace;">ATC DELAYS FOR DESK\n AC ID   DEP ARR TYPE     EDCT     CTA   ETA  DF  ODF  CTL\n' + edct_times.join('\n') + '<\/textarea>';
 }
 
 electronic_turnover_parse = function (input = null) {
