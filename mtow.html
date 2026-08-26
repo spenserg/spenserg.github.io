@@ -174,7 +174,7 @@ function compute (str_override = "") {
 	// VAA App
 	regw = /(PERMANENT AIRPORT ANALYSIS)/g;
 
-	// Briefing
+	// Briefing || Fuel Burn
 	regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAA[LT]([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+\n/g;
 
 	// All CDRs doc // FAA download
@@ -236,7 +236,7 @@ function compute (str_override = "") {
 		return;
 	}
 
-	// Electronic Turnover
+	// Edcts
 	if (fkeystxt.includes("ATC DELAYS FOR DESK")) {
 		$("#total").html(edct_parse(fkeystxt));
 		return;
@@ -263,12 +263,6 @@ function compute (str_override = "") {
 		$("#total").html(dex_parse(fkeystxt));
 		return;
 	}
-
-	/* OBSOLETE
-	if ((result = regz.exec(fkeystxt)) != null) {
-		output = decs_route(fkeystxt);
-	}
-	*/
 
 	if ((result = regc.exec(fkeystxt)) != null) {
 		// ATSCC CDR page ONLY
@@ -1124,7 +1118,7 @@ function decs_route(input = null) {
 	return result;
 }
 
-function briefing_parse(fkeystxt = "") {
+briefing_parse=function(fkeystxt = "") {
 	var result = "briefing recognized // unable to parse";
 	var tmp_regv = /PAGE\s[^\n]+([A-Z]{4})\-([A-Z]{4})\sAA[LT]([^\n]+)\n[\s\S]+682\-315\-\d{2}(\d{2})\n[^\/]+\/(\d+)\s([^\/]+)\/[\s\S]+PLAN\sARR\sFUEL\s(\d+)\s(\d+)\n\-+\n([\s\S]+)ON TIME ANALYSIS\n\-+/g;
 
@@ -1140,7 +1134,18 @@ function briefing_parse(fkeystxt = "") {
 	* 9 - Fuel Ladder Text
 	*/
 	if ((z = (tmp_regv.exec(fkeystxt))) != null) {
-		result = '<textarea rows="5" cols="80">' + z[3] + '\t' + z[1] + '\t' + z[2] + '\t' + z[6] + 
+		// TODO Delta AAF inc Taxi // Delta AAF
+		var fuel = fkeystxt.match(/ROUTE\:\s[^\n]+[\s\S]*\-{68}[\s\S]*\-{68}[\s\S]*\-{68}[\s\S]*\-{68}[\s\S]*\-{68}[\s\S]*\-{68}[\s\S]*\nTOTAL\s[A-Z]+\s\d+\n/g)[0];
+		result = '<textarea rows="5" cols="80">';
+		fuel = fuel.replaceAll("--------------------------------------------------------------------", "--------------------------------");
+		result += "ESTMD ARR FUEL   " + ((fuel.match('/PLAN\sARR\sFUEL\s\d+\s\d+/g')[0]).match(/\d+/g)).join(" ");
+
+		console.log(z);
+		console.log(fuel);
+		console.log(result);
+
+		/* TODO PAF
+		result = '<br/><br/><textarea rows="5" cols="80">' + z[3] + '\t' + z[1] + '\t' + z[2] + '\t' + z[6] + 
 		'\t' + parseInt(z[7]) + // paf lbs
 		'\t' + parseInt(z[8]) + // paf mins
 		'\t' + (parseInt(z[8])/parseInt(z[7])).toFixed(2) + // mins per 1 lb
@@ -1151,30 +1156,11 @@ function briefing_parse(fkeystxt = "") {
 			result += '=IF(OFFSET(INDIRECT(ADDRESS(ROW(), COLUMN())),0,-2)<>"",ABS((OFFSET(INDIRECT(ADDRESS(ROW(), COLUMN())),0,-4)-' + parseInt(y[2]) + ')),"--")\t'; // Delta RPAF || APAF
 		} else { result += ' \t'; }
 		result += ' \t \t \t \t'; // Rptd ON Time // Rptd IN /Time / Rptd IN Fuel // RPT AAF Mins
-		
-		// TODO Delta AAF inc Taxi // Delta AAF
+		*/
 		
 		result += '</textarea><br/>';
 	}
 	return result;
-/*
-ARPT FUEL TIME DIST
-ENRT BRN SAT 005446 0047 244
---------------------------------------------------------------------
-RSV 05538 0045
-MAF 00332 0004
-ALTN NONE 00000 0000
---------------------------------------------------------------------
-MIN T/O 011316
---------------------------------------------------------------------
-BASELINE 01184 0015
---------------------------------------------------------------------
-TAXI DFW 00598 0025
-RLS FUEL DFW 013098
---------------------------------------------------------------------
-ADMIN 00946 0011
-TOTAL DFW 014044
-*/
 }
 
 Array.prototype.unique = function() {
