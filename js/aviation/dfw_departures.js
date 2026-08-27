@@ -1429,7 +1429,8 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 08-25-2026
 			result += "<br/><br/>NRP: <span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP HRV Q105 REDFN Y280 CHRGE PRICY5 KMCO\" readonly>";
 			result += "<br/><br/>Non OW/North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK MHZ J20 MGM DEEDA GRNCH5 KMCO\" readonly>";
-			result += "<br/>Non OW/South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW DEFUN HEVVN PLYER BAYNE PRICY5 KMCO\" readonly>";
+			result += "<br/>Non OW/South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP MCB J50 CEW DEFUN GRNCH5 KMCO\" readonly>";
+			result += "<br/><b>West Coast Arvl:<\/b> .. <input style=\"width:21em\" value=\"DEFUN HEVVN PLYER BAYNE PRICY5 KMCO\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW FORCK3 FORCK ELD SQS LDK LGC ZJAYX GRNCH5 KMCO\" readonly>";
 			result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV MUSYL KELPP ALGAE SNOMN M215 CIGAR PRICY5 KMCO\" readonly>";
 			result += "<br/><br/>COWBOY EAST 1 (FL230 to LCH)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW DARTZ9 TNV IAH LCH J2 DEFUN GRNCH5 KMCO\" readonly>";
