@@ -760,16 +760,16 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "YVR": // LAX-YVR // Updated 04-10-2026
 			result += "<!-- Updated 04-10-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 04-10-2026
-			result += "<br/><br/>CFS: <input style=\"width:75%\"; value=\"KLAX LADYJ4 CSTRO FRA J7 FMG J5 SEA PAE GRIZZ9 CYVR\" readonly>";
-			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS J9 FFU J12 EPH METOW GRIZZ9 CYVR\" readonly>";
-			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX SUMMR2 SCTRR SNS J88 PYE J501 OED J1 SEA PAE GRIZZ9 CYVR\" readonly>";
+			result += "<br/><br/>CFS: <input style=\"width:75%\"; value=\"KLAX LADYJ4 CSTRO FRA J7 FMG J5 SEA PAE GRIZZ1 CYVR\" readonly>";
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX ORCKA5 LAS J9 FFU J12 EPH METOW GRIZZ1 CYVR\" readonly>";
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX SUMMR2 SCTRR SNS J88 PYE J501 OED J1 SEA PAE GRIZZ1 CYVR\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><br/>SIERRA 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX LADYJ4 CSTRO NURAY SAC RBL SEA PAE GRIZZ9 CYVR\" readonly>";
-			result += "<br/>SIERRA 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX LADYJ4 CSTRO NURAY LIN J189 LMT SEA PAE GRIZZ9 CYVR\" readonly>";
+			result += "<br/><br/>SIERRA 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX LADYJ4 CSTRO NURAY SAC RBL SEA PAE GRIZZ1 CYVR\" readonly>";
+			result += "<br/>SIERRA 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX LADYJ4 CSTRO NURAY LIN J189 LMT SEA PAE GRIZZ1 CYVR\" readonly>";
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 04-10-2026
 			result += "<!-- Verified with ATCSCC on 04-10-2026 -->";
-			result += "<br/>S1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CSTRO NURAY SAC RBL SEA PAE GRIZZ9 CYVR\" readonly>"; // SIERRA 1
-			result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CSTRO NURAY LIN J189 LMT SEA PAE GRIZZ9 CYVR\" readonly>"; // SIERRA 2
+			result += "<br/>S1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CSTRO NURAY SAC RBL SEA PAE GRIZZ1 CYVR\" readonly>"; // SIERRA 1
+			result += "<br/>S2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CSTRO NURAY LIN J189 LMT SEA PAE GRIZZ1 CYVR\" readonly>"; // SIERRA 2
 			break;
 	}
 	return result;
