@@ -2433,12 +2433,12 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "YVR": // DFW-YVR // Updated 09-15-2025
 			result += "<!-- Updated 09-15-2025 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-15-2025
-			result += "<br/><br/>CFS: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 PUB CHE J163 OCS J52 GEG METOW GRIZZ7 CYVR\" readonly>";
-			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK CYS MBW Q148 WEDAK GEG METOW GRIZZ7 CYVR\" readonly>";
-			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TCC J76 FTI J58 MLF ELY J523 SEA PAE GRIZZ7 CYVR\" readonly>";
-			result += "<br/><br/>West via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK J50 ELP J86 BAVPE CORKR Q35 IMB J523 SEA PAE GRIZZ7 CYVR\" readonly>";
-			// result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW J21 ICT HCT BFF BOY DBS J52 GEG METOW GRIZZ7 CYVR\" readonly>";
-			result += "<br/>West: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN CME J15 ABQ BCE J523 SEA PAE GRIZZ7 CYVR\" readonly>";
+			result += "<br/><br/>CFS: <input style=\"width:75%\" value=\"KDFW HUDAD2 HUDAD PNH J17 PUB CHE J163 OCS J52 GEG METOW GRIZZ1 CYVR\" readonly>";
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW GCK CYS MBW Q148 WEDAK GEG METOW GRIZZ1 CYVR\" readonly>";
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW HRPER3 HULZE TCC J76 FTI J58 MLF ELY J523 SEA PAE GRIZZ1 CYVR\" readonly>";
+			result += "<br/><br/>West via ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN INK J50 ELP J86 BAVPE CORKR Q35 IMB J523 SEA PAE GRIZZ1 CYVR\" readonly>";
+			// result += "<br/><br/>North: <input style=\"width:75%\" value=\"KDFW BLECO8 IRW J21 ICT HCT BFF BOY DBS J52 GEG METOW GRIZZ1 CYVR\" readonly>";
+			result += "<br/>West: <input style=\"width:75%\" value=\"KDFW WSTEX2 CIKAN CME J15 ABQ BCE J523 SEA PAE GRIZZ1 CYVR\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KDFW LOWGN8 ADM MMB LBL LAA J52 FQF J20 SEA PAE PAINE4 CYVR\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>";
