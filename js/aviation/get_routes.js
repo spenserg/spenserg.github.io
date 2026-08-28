@@ -11384,15 +11384,16 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><input style=\"width:75%\" value=\"KSEA MONTN2 SEA ZADON ZELAK ZIRAN MLP J136 BIL J16 FSD J45 BNA J46 VXV LIINN3 KCLT\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 08-23-2025
 					break;
-				case "DFW": // SEA-DFW // Updated 02-21-2026
-					result += "<!-- Updated 02-21-2026 P -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 02-21-2026
+				case "DFW": // SEA-DFW // Updated 08-28-2026
+					result += "<!-- Updated 08-28-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 08-28-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSEA SUMMA2 SUMMA J54 BOI J15 JNC ALS PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSEA MONTN2 SEA ZADON ZELAK ZIRAN MLP J136 BIL CZI BFF SNY GLD GCK MMB IRW IBAKE VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSEA MONTN2 SEA NORMY MODDA STEVS Q150 DDRTH FQF J20 HGO EZEEE MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSEA SUMMA2 LKV BAM ELY BCE RSK J58 FTI TXO TURKI VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSEA MONTN2 SEA NORMY J90 MWH LKT J52 OCS J163 CHE PUB TBE PNH UKW8 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>";
+					result += "<br/><br/>North via BIL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSEA MONTN2 SEA ZADON ZELAK ZIRAN MLP J136 BIL CZI BFF SNY GLD GCK MMB IRW IBAKE VKTRY2 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KSEA MONTN2 SEA NORMY J90 MWH LKT J52 OCS J163 CHE PUB TBE PNH UKW8 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 08-28-2026
 					break;
 				case "LAX": // SEA-LAX // Updated 02-21-2026
 					result += "<!-- Updated 02-21-2026 P -->";
