@@ -1632,12 +1632,12 @@ KORD ACITO ADELL ARLYN STL J151 FAM J35 MEM MEI CEW KVPS
 			result += "<br/>3N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE DLH HML SEGAP DURUR SHAWI Q874 ILADA BIRKO6 CYYC\" readonly>";
 			result += "<br/>4N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB GEP J70 DIK GGW PEMDU Q832 VESDO EBGAL7 CYYC\" readonly>";
 			break;
-		case "YVR": // ORD-YVR // Updated 09-15-2025
-			result += "<!-- Updated 09-15-2025 MP -->"
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-15-2025
+		case "YVR": // ORD-YVR // Updated 08-28-2026
+			result += "<!-- Updated 08-28-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 08-28-2026
 			result += "<br/><br/>CFS: <input style=\"width:75%\"; value=\"KORD MYKIE MONNY SMIDD MCW J16 BIL J136 MLP Q142 METOW GRIZZ1 CYVR\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 GEP SMERF Q146 KIXCO Q142 METOW GRIZZ1 CYVR\" readonly>";
-			// TODO South
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD NOONY NIGHT NITWT OBH SNY CYS OCS J20 YKM PAE GRIZZ1 CYVR\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-15-2025
 			result += "<!-- Verified with ATCSCC on 09-15-2025 -->";
