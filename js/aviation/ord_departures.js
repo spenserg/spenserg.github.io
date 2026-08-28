@@ -1635,18 +1635,18 @@ KORD ACITO ADELL ARLYN STL J151 FAM J35 MEM MEI CEW KVPS
 		case "YVR": // ORD-YVR // Updated 09-15-2025
 			result += "<!-- Updated 09-15-2025 MP -->"
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-15-2025
-			result += "<br/><br/>CFS: <input style=\"width:75%\"; value=\"KORD MYKIE MONNY SMIDD MCW J16 BIL J136 MLP Q142 METOW GRIZZ7 CYVR\" readonly>";
-			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 GEP SMERF Q146 KIXCO Q142 METOW GRIZZ7 CYVR\" readonly>";
+			result += "<br/><br/>CFS: <input style=\"width:75%\"; value=\"KORD MYKIE MONNY SMIDD MCW J16 BIL J136 MLP Q142 METOW GRIZZ1 CYVR\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 GEP SMERF Q146 KIXCO Q142 METOW GRIZZ1 CYVR\" readonly>";
 			// TODO South
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-15-2025
 			result += "<!-- Verified with ATCSCC on 09-15-2025 -->";
-			result += "<br/>0N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 HLN MLP GEG METOW GRIZZ7 CYVR\" readonly>";
-			result += "<br/>0W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MYKIE MONNY IANNA FOD ONL J151 BIL J136 GEG METOW GRIZZ7 CYVR\" readonly>";
-			result += "<br/>2N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 MLP GEG METOW GRIZZ7 CYVR\" readonly>";
-			result += "<br/>3N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J89 DLH FAR DIK GEG METOW GRIZZ7 CYVR\" readonly>";
-			result += "<br/>4N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB GEP J70 MLP GEG METOW GRIZZ7 CYVR\" readonly>";
-			result += "<br/>5N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB DLH FAR DIK MLP GEG METOW GRIZZ7 CYVR\" readonly>";
+			result += "<br/>0N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J34 HLN MLP GEG METOW GRIZZ1 CYVR\" readonly>";
+			result += "<br/>0W<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MYKIE MONNY IANNA FOD ONL J151 BIL J136 GEG METOW GRIZZ1 CYVR\" readonly>";
+			result += "<br/>2N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 MLP GEG METOW GRIZZ1 CYVR\" readonly>";
+			result += "<br/>3N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J89 DLH FAR DIK GEG METOW GRIZZ1 CYVR\" readonly>";
+			result += "<br/>4N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB GEP J70 MLP GEG METOW GRIZZ1 CYVR\" readonly>";
+			result += "<br/>5N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ GRB DLH FAR DIK MLP GEG METOW GRIZZ1 CYVR\" readonly>";
 			break;
 	}
 	return result;
