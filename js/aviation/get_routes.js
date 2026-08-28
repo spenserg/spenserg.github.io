@@ -12634,13 +12634,14 @@ KSYR SYR V29 LVZ V613 FJC T221 MAZIE KPHL
 				case "DFW": // YVR-DFW // Updated 09-15-2025
 					result += "<!-- Updated 09-15-2025 MP -->"
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-15-2025
-					result += "<br/><br/>CFS: <span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J5 SUMMA J54 BOI J15 JNC ALS PNH MDANO JOVEM6 KDFW\" readonly>";
-					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J52 GEG J136 BIL RAP HYS IRW IBAKE VKTRY2 KDFW\" readonly>";
-					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J52 GEG ZATIP Q73 DERSO TWF J15 JNC ALS PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><b>For Southwest Arrival: ...JNC J15 CME BGS GEEKY BOOVE7 KDFW<\/b>";
-					result += "<br/><br/>West via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J5 SEA J1 AVE J6 PMD J65 BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"CYVR HUH MWH LEZLE LKT OCS DBL TBE PNH UKW8 KDFW\" readonly>";
+					result += "<br/><br/>CFS: <span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J5 SUMMA J54 BOI J15 JNC ALS PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J5 SEA NORMY MODDA STEVS Q150 DDRTH FQF J20 HGO EZEEE MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J5 SEA J523 IMB J15 JNC FTI TXO TURKI VKTRY2 KDFW\" readonly>";
+					result += "<br/><b>For Southwest Arrival: ...J15 CME BGS GEEKY BOOVE7 KDFW<\/b>";
+					result += "<br/><br/>North via RAP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J52 GEG J136 BIL RAP HYS IRW IBAKE VKTRY2 KDFW\" readonly>";
+					result += "<br/>South via EWM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"CYVR YVR J5 SEA J1 AVE J6 PMD J65 BLH J169 TFD J50 SSO J4 INK GEEKY BOOVE7 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"CYVR HUH MWH LEZLE LKT OCS DBL TBE PNH UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-15-2025
 					break;
 				case "LAX": // YVR-LAX // Updated 09-15-2025
