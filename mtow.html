@@ -425,6 +425,13 @@ function compute (str_override = "") {
 				output += "<br/><b style='color:red'>DCA TSA must be contacted at least one hour prior to departure for non-scheduled operations (DPM 5.6.1)</b>";
 			}
 		}
+		// Check for DCT and No STAR
+		var reg_getstar = /([A-Z]{4})\n\n\nRW[\d\sA-Z]+\-([^\n]+)\n/g;
+		while(null != (zz = reg_getstar.exec(fkeystxt))) {
+			if (["DCT","No STAR"].includes(zz[2].trim())) {
+				output += "<br/><b style='color:orange'>Verify SID/STARS. 'DCT' or 'No STAR' set.<\/b>";
+			}
+		}
 
 		// Airport Specific
 		output = airport_extra(flows, result[1], result[2], result[5], ac_type, output);
