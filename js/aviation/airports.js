@@ -375,9 +375,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(dptr)) {
 		result += "<br/><br/>Canadian required routes are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes<br/>";
 		result += "<br/><b>Canada Flight Supplement Routes:</b>";
-		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='cfsd_desc_button' onclick='$(\"#cfsd_desc_text\").toggle(); $(\"#cfsd_desc_button\").text(($(\"#cfsd_desc_button\").text().includes(\"Show\")) ? \"Hide CFS Routes\" : \"Show CFS Routes\");'>Hide CFS Routes</button>";
+		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='cfsd_desc_button' onclick='$(\"#cfsd_desc_text\").toggle(); $(\"#cfsd_desc_button\").text(($(\"#cfsd_desc_button\").text().includes(\"Show\")) ? \"Hide CFS Routes\" : \"Show CFS Routes\");'>Show CFS Routes</button>";
 		result += "&nbsp;&nbsp;&nbsp;(Updated 2026-06-19)";
-		result += "<span id='cfsd_desc_text'><br/>" + show_flow_info + "</span>";
+		result += "<span id='cfsd_desc_text' style='display:none;'><br/>" + show_flow_info + "</span>";
 	} else if (show_flow_info.length > 0) {
 		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='flow_desc_button' onclick='$(\"#flow_desc_text\").toggle(); $(\"#flow_desc_button\").text(($(\"#flow_desc_button\").text().includes(\"Show\")) ? \"Hide SIDS\" : \"Show SIDS\");'>Show SIDS</button>";
 		result += "<span id='flow_desc_text' style='display:none'><br/>" + show_flow_info + "</span>";
@@ -643,9 +643,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(arvl)) {
 		result += "<br/><br/>Canadian required routes are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes<br/>";
 		result += "<br/><b>Canada Flight Supplement Routes:</b>";
-		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='cfsa_desc_button' onclick='$(\"#cfsa_desc_text\").toggle(); $(\"#cfsa_desc_button\").text(($(\"#cfsa_desc_button\").text().includes(\"Show\")) ? \"Hide CFS Routes\" : \"Show CFS Routes\");'>Hide CFS Routes</button>";
+		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='cfsa_desc_button' onclick='$(\"#cfsa_desc_text\").toggle(); $(\"#cfsa_desc_button\").text(($(\"#cfsa_desc_button\").text().includes(\"Show\")) ? \"Hide CFS Routes\" : \"Show CFS Routes\");'>Show CFS Routes</button>";
 		result += "&nbsp;&nbsp;&nbsp;(Updated 2026-06-19)";
-		result += "<span id='cfsa_desc_text'><br/>" + show_flow_info + "</span>";
+		result += "<span id='cfsa_desc_text' style='display:none;'><br/>" + show_flow_info + "</span>";
 	} else if (show_flow_info.length > 0) {
 		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='star_desc_button' onclick='$(\"#star_desc_text\").toggle(); $(\"#star_desc_button\").text(($(\"#star_desc_button\").text().includes(\"Show\")) ? \"Hide STARS\" : \"Show STARS\");'>Show STARS</button>";
 		result += "<span id='star_desc_text' style='display:none'><br/>" + show_flow_info + "</span>";
