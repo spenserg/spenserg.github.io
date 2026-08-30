@@ -1424,8 +1424,8 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "SNA": // CLT-SNA // Updated 01-26-2026
 			result += "<!-- Updated 01-26-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 01-26-2026
-			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT BOBZY7 BNA J46 TUL MMB FTI J8 GUP J96 DRK HIMDU DSNEE6 KSNA\" readonly>";
-			result += "<br/><b>ZKC Avoid: .. J46 ARG IRW J78 DRK HIMDU DSNEE6 KSNA<\/b>";
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT BOBZY7 BNA J46 TUL AGGIY Q162 GUP J96 DRK HIMDU DSNEE6 KSNA\" readonly>";
+			result += "<br/><b>ZKC Avoid: .. J46 ARG FSM IRW J78 DRK HIMDU DSNEE6 KSNA<\/b>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO7 CUBIM Q50 IIU J8 STL Q176 CIM J96 DRK HIMDU DSNEE6 KSNA\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR7 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK J42 ABI J66 EWM J4 BXK J212 CULTS EMLLD DSNEE6 KSNA\" readonly>";
 			result += "<br/><br/>North via STL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO7 DOOGE Q93 HEVAN VHP J80 MCI J24 SLN J102 ALS J44 RSK J64 TBC J236 EED DSNEE6 KSNA\" readonly>";
