@@ -407,7 +407,11 @@ function compute (str_override = "") {
 			}
 		} else { output += "Unknown"; }
 		// Cost Index
-		output += ((ac_type == "738R") ? "<br/>" : "&nbsp;&nbsp;||&nbsp;") + "&nbsp;ci: ";
+		output += ((ac_type == "738R") ? "<br/>" : "&nbsp;&nbsp;||&nbsp;");
+		if (["H319","A321","321T","321K"].includes(ac_type)) {
+			output += "&nbsp<b style='color:orange'>100/162NM<\/b>&nbsp;&nbsp;||&nbsp;"
+		}
+		output += "&nbsp;ci: ";
 		if (["319S", "H319", "319W", "A320", "H205", "738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X"].includes(ac_type)) {
 			// Narrow Body
 			output += narrow_ci_min + " - " + narrow_ci_max + " (lower/slower/lighter)";
