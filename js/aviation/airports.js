@@ -612,7 +612,8 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/><br/>Best alt is SDQ/MDSD then STI/MDST";
 			break;
 		case "QRO":
-			result += "<br/><br/>Best alt is SLP/MMSP then MEX/MMMX (Mex uses slot times). BJX/MMLO no good after tower closes.";
+			result += "<br/><br/>QRO - Best alt is SLP/MMSP then MEX/MMMX (Mex uses slot times). BJX/MMLO no good after tower closes.";
+			result += "<br/>QRO - Make sure metar is up to date and planned temp matches current";
 			break;
 		case "SJU":
 			result += "<br/><br/>SJU - STX/TISX preferred alt";
