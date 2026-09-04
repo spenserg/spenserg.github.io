@@ -1230,6 +1230,12 @@ MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.CABLO.DCT.MEI.DCT.LIT.DCT.RZC.DCT.XNA
 			// KMIA GWAVA2 URSUS UL780 SULNA UT315 TOY UL416 JUA UW57 RCU UW10 SNT SNT7U SAEZ
 			// KMIA KLADA2 BITAC Y290 HAGIT L452 ANADA UG449 POS UM402 VAS UP526 REPAM UZ103 DALAB UL793 GUA UZ129 PAGON SAEZ
 			break;
+		case "GYE": // MIA-GYE // Updated 09-04-2026
+			result += "<!-- Updated 09-04-2026 P -->";
+			result += "<br/><br/><b>Standard Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UL780 UGUPI SEGU\" readonly>";
+			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-04-2026
+			break;
 		case "PUJ": // MIA-PUJ // Updated 02-06-2026
 			result += "<!-- Updated 02-06-2026 P -->";
 			result += "<br/><br/><b>Standard Route:</b>";
