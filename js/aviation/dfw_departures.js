@@ -2463,6 +2463,19 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 04-10-2026
 			break;
 	/* Latin Destinations */
+		case "BJX": // DFW-BJX // Updated 09-04-2026
+			result += "<!-- Updated 09-04-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KDFW NELYN6 SAT LRD NLD UJ11 BEROS UJ31 SLP V39 BJX MMLO\" readonly>"; // CDR 0P
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 HOARY CRP J25 SLP UJ40 LIBOL MMLO\" readonly>";
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 SAT PNG UJ31 MOV UT1 XUGAD UQ102 SLP MMLO\" readonly>";
+			result += "<br/><br/>West via TRC<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW NELYN6 SAT PNG UJ31 MOV UJ20 TRC J13 AGU MMLO\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-04-2026
+			result += "<!-- Verified with ATCSCC on 09-04-2026 -->";
+			result += "<br/>0P<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW NELYN6 SAT LRD NLD UJ11 BEROS UJ31 SLP V39 BJX MMLO\" readonly>";
+			result += "<br/>1E<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA SWEUP IAH CRP J29 MTY UJ11 BEROS UJ31 SLP V39 BJX MMLO\" readonly>";
+			result += "<br/>1W<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDFW WSTEX2 DOSXX SJT JCT SAT LRD NLD UJ11 MTY UJ11 BEROS UJ31 SLP V39 BJX MMLO\" readonly>";
+			break;
 		case "QRO": // DFW-QRO  // DFW-QRO // Updated 08-16-2026
 			result += "<!-- Updated 08-16-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 08-16-2026
