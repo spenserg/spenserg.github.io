@@ -1233,8 +1233,16 @@ MIA.HURCN1.SMELZ.Q116.JAWJA.DCT.CABLO.DCT.MEI.DCT.LIT.DCT.RZC.DCT.XNA
 		case "GYE": // MIA-GYE // Updated 09-04-2026
 			result += "<!-- Updated 09-04-2026 P -->";
 			result += "<br/><br/><b>Standard Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UL780 UGUPI SEGU\" readonly>";
-			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-04-2026
+			result += "<br/><input style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UL780 UGUPI SEGU\" readonly>"; // Based on CDR W0
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA KLADA2 JAGOR Y398 JOSES UQ301 LENOM UG444 EJA UW26 RNG UP778 BOKAN UP533 QIT UW9 TEMOX SEGU\" readonly>";
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA MAYNR3 FUNDI UM335 ALVEK UM328 SELEK UZ751 PZA UB767 PARRI UZ593 LIXAS UL207 MNV W6 ASDEL SEGU\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-04-2026
+			result += "<!-- Verified with ATCSCC on 09-04-2026 -->";
+			result += "<br/>K2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA KLADA2 KLADA UPACE URSUS UL780 UGUPI SEGU\" readonly>";
+			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 FUNDI UM335 ALVEK GAXER UL780 UGUPI SEGU\" readonly>";
+			result += "<br/>W0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 URSUS UL780 UGUPI SEGU\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ZFP URSUS UL780 UGUPI SEGU\" readonly>";
+			break;
 			break;
 		case "PUJ": // MIA-PUJ // Updated 02-06-2026
 			result += "<!-- Updated 02-06-2026 P -->";
