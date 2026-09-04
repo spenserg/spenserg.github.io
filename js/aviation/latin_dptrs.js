@@ -904,8 +904,11 @@ latin_departures = function (arvl = "XXX", dptr = "XXX", tail = null, ac_type = 
 
 		case "SJO": // San Jose/JUAN SANTAMARIA INTL
 			switch (arvl) {
-				case "DFW": // SJO-DFW // Updated 01-01-1965
-					result += "<!-- Updated 01-01-1965 -->";
+				case "DFW": // SJO-DFW // Updated 09-04-2026
+					result += "<!-- Updated 09-04-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"MROC NANJO3U ULAPO UA502 MGA UZ512 BZE UB753 MID UL208 DUTNA L208 SBI DCT CRIED BEREE3 KDFW\" readonly>";
+					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"MROC NANJO3U ULAPO UA502 MGA UZ498 BTO UB881 CUN UT27 PISAD L333 HRV DCT AEX DCT PNUTS BEREE3 KDFW\" readonly>";
 					break;
 			}
 		break; // End of SJO
