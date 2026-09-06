@@ -744,11 +744,14 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KELP JCOXX2 HBACK", "KELP ATKNN5 FLOGS");
 						result = result.replaceAll("KELP JCOXX2 TELKE", "KELP ATKNN5 NOCHI");
 						result = result.replaceAll("KELP JCOXX2 JCOXX", "KELP ATKNN5 ATKNN");
+						break;
+/* RIDDG3 NOW BOTH 2/20
 					case "FCA":
 					case "GPI": // FCA North // Rwy2
-						result = result.replaceAll("KGPI GPI1 CHOTE", "KGPI RIDDG1 SKOTT CHOTE");
-						result = result.replaceAll("KGPI GPI1 SKOTT", "KGPI RIDDG1 SKOTT");
-						result = result.replaceAll("KGPI GPI1 ANGIL", "KGPI RIDDG1 RIDDG");
+						result = result.replaceAll("KGPI GPI1 CHOTE", "KGPI RIDDG3 SKOTT CHOTE");
+						result = result.replaceAll("KGPI GPI1 SKOTT", "KGPI RIDDG3 SKOTT");
+						result = result.replaceAll("KGPI GPI1 ANGIL", "KGPI RIDDG3 RIDDG");
+*/
 					case "IAH": // IAH west // Rwy26 Rwy27
 						result = result.replaceAll("SKNRD5 KIAH", "DOOBI3 KIAH");
 						result = result.replaceAll("GUSHR3 KIAH", "DRLLR5 KIAH");
@@ -962,10 +965,12 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KELP ATKNN5 FLOGS", "KELP JCOXX2 HBACK");
 						result = result.replaceAll("KELP ATKNN5 NOCHI", "KELP JCOXX2 TELKE");
 						result = result.replaceAll("KELP ATKNN5 ATKNN", "KELP JCOXX2 JCOXX");
+/* RIDDG3 NOW BOTH 2/20
 					case "FCA":
 					case "GPI": // FCA North // Rwy2
-						result = result.replaceAll("KGPI RIDDG1 SKOTT CHOTE", "KGPI GPI1 CHOTE");
-						result = result.replaceAll("KGPI RIDDG1 SKOTT", "KGPI GPI1 SKOTT");
+						result = result.replaceAll("KGPI RIDDG3 SKOTT CHOTE", "KGPI GPI1 CHOTE");
+						result = result.replaceAll("KGPI RIDDG3 SKOTT", "KGPI SKOTT3 SKOTT");
+*/
 					case "IAH": // IAH East // Rwy8 Rwy9
 						// IAH STARS
 						result = result.replaceAll("DOOBI3 KIAH", "SKNRD5 KIAH");
