@@ -1624,6 +1624,7 @@ KORD ACITO ADELL ARLYN STL J151 FAM J35 MEM MEI CEW KVPS
 			// result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KORD MYKIE MONNY IANNA FOD FSD J16 DPR J204 HILGR EBGAL EBGAL7 CYYC\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE J70 GEP KP06C DIK GGW PEMDU Q832 VESDO EBGAL7 CYYC\" readonly>";
+			result += "<br/><b>Via ABR/MLS:<\/b> .. <input style=\"width:29em\" value=\"J70 ABR J90 MLS J204 HILGR VESDO T690 EBGAL EBGAL7 CYYC\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MYKIE MONNY JORDY ONL J151 BIL J13 COUTS MOBEK EBGAL7 CYYC\" readonly>";
 			result += "<br/><br/>North via HML<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORD PMPKN NEATO DLLAN RONIC BAE DLH HML SEGAP DURUR SHAWI Q874 ILADA BIRKO6 CYYC\" readonly>"; // CDR 3N
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
