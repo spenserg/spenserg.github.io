@@ -1341,7 +1341,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 03-21-2026
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT JOJJO8 DOOGE Q93 HEVAN JOT DBQ MCW J16 DPR J204 GTF J36 MLP GLASR3 KSEA\" readonly>"; // Based on CDR RP
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL8 CLAWD HVQ J85 DJB J34 DLL HUFFR Q146 KIXCO Q142 MLP GLASR3 KSEA\" readonly>";
-			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY8 BNA J46 TUL DUUZE Q150 GANNE DBS J82 DNJ PDT CHINS5 KSEA\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY8 BNA J46 ARG RZC PER GCK FQF J20 PDT CHINS5 KSEA\" readonly>";
 			result += "<br/><br/>South via MGM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK ADM PNH ALS JNC J15 BOI PDT CHINS5 KSEA\" readonly>";
 			result += "<br/><br/>BAE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL8 CLAWD HVQ J85 DJB J34 DLL HUFFR Q146 KIXCO Q142 MLP GLASR3 KSEA\" readonly>";
 			result += "<br/>FAM<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY8 BNA FAM J112 BUM SLN HCT BFF DBS J82 DNJ J20 PDT CHINS5 KSEA\" readonly>"; // CDR BZ
@@ -1615,7 +1615,7 @@ KCLT WEAZL8 CLAWD HVQ J8 IIU FAM KXNA
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 06-24-2026
 			result += "<br/><br/>CFS: <input style=\"width:75%\" value=\"KCLT JOJJO8 DOOGE Q93 HEVAN BVT DBQ RWF J90 ABR J70 DIK GGW BEVEL VESDO EBGAL7 YYC\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL8 CLAWD HVQ J85 DJB J34 RWF J90 ABR J70 DIK GGW BEVEL VESDO EBGAL7 YYC\" readonly>";
-			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY8 BNA J46 ARG RZC VEGUC Q148 MOCTU DDY J13 COUTS MOBEK EBGAL7 YYC\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY8 BNA SGF HLC CYS BOY BZN COUTS EBGAL EBGAL7 CYYC\" readonly>";
 			// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-24-2026
 			break;
 		case "YYZ": // CLT-YYZ // Updated 06-14-2025
