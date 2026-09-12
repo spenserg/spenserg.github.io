@@ -10490,6 +10490,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KRDU SHPRD4 SHPRD AWYAT Q52 CHOPZ THRSR VLKNN Q30 IZAAC YUYUN BEREE3 KDFW\" readonly>"; // CDR 00
 					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRDU SHPRD4 SHPRD BURGG MEMFS LIT FEWWW SEEVR4 KDFW\" readonly>"; // CDR D1
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRDU SHPRD4 SHPRD AWYAT Q52 CHOPZ LGC MEI MHZ MLU YUYUN BEREE3 KDFW\" readonly>";
 					// result += "<br/>South: <input style=\"width:75%\" value=\"KRDU SHPRD4 SHPRD BURGG Q22 CATLN MCB J50 AEX PNUTS BEREE3 KDFW\" readonly>";
 					// South TODO
 					result += "<br/><br/><b>Non RNAV</b>";
@@ -10520,10 +10521,10 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<!-- Updated 08-29-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 08-29-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KRDU SHPRD4 SHPRD VXV BNA J46 ARG IRW J78 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRDU LWOOD5 DANCO ZIEBR Q108 GETTA  ENL BUM Q176 CIM J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRDU LWOOD5 DANCO ZIEBR Q108 IIU ENL BUM Q176 CIM J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KRDU SHPRD4 SHPRD VXV BAZOO Q66 LITTR BYP ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/><b>If Jackal sua active:  ..  EWM J4 SSO J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1 KLAX<\/b>";
-					result += "<br/><br/>North via HLC<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRDU LWOOD5 DANCO ZIEBR Q108 GETTA  STL J24 MCI J80 HLC SKWYR Q90 DNERO ANJLL4 KLAX\" readonly>";
+					result += "<br/><br/>North via HLC<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRDU LWOOD5 DANCO ZIEBR Q108 IIU J8 STL J24 MCI J80 HLC SKWYR Q90 DNERO ANJLL4 KLAX\" readonly>";
 					result += "<br/>South via IRQ<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRDU HOOKZ5 DAWTS FLO IRQ THRSR VLKNN Q30 IZAAC TXK J42 ABI J66 EWM J4 SSO J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 					// result += "<br/>North via MCI: <input style=\"width:75%\" value=\"KRDU SHPRD4 SHPRD BWG FAM MCI J80 DBL CHESZ Q88 HAKMN ANJLL4 KLAX\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
