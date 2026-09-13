@@ -144,12 +144,13 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			show_flow_info = "West Rwy24L/25R<br/>E Rwy 6R/7L: LAXX/GARDY/TRTON";
 			break;
 		case "LGA":
-/* TODO Im pretty sure pier weights arent a thing anymore
+			result += "<br/><b>LGA - If launching RWY13, make sure CLP planned runway matches<\/b>";
+/* 		Im pretty sure pier weights arent a thing anymore
 			if (ac_type == "738M") {
 				result += "<br/><br/>B737 MAX acft are not subject to pier weights";
 			}
-			break;
 */
+			break;
 		case "MIA":
 			// result += "<br/><br/>MIA - GLADZ EAST FLOW // BNGOS WEST FLOW"; // TODO: Is this still a thing?
 			break;
@@ -170,6 +171,8 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				result += "<br/><b>CEFOU<\/b>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PETTY MELRR HOCKE Q824 LETAK Q848 DICEN CEFOU\" readonly>";
 				result += "<br/><b>DOVEY<\/b>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME EVOTE NELLS JHW Q82 PONCT Q935 BOS FRILL DOVEY\" readonly>";
 				result += "<br/><b>MIILS<\/b>: <input style=\"width:75%\" value=\"KORD EBAKE WISMO POSTS PADDE SVM Q907 MIILS\" readonly>";
+			} else {
+				result += "<br/><b>ORD - Is 22L set as primary?<\/b>";
 			}
 			break;
 		case "PHL":
