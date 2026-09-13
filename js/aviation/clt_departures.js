@@ -278,8 +278,8 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<!-- Updated 09-06-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL180):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KWEEN8 UNJAM OSPRI7 KCHS\" readonly>"; // CDR RP
-			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY IRQ OSPRI7 KCHS\" readonly>"; // CDR ES
 			result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT BATTA1 BATTA POB MRPIT AMYLU3 KCHS\" readonly>";
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY IRQ OSPRI7 KCHS\" readonly>"; // CDR ES
 			result += "<br/><br/>SW Arrival<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ MCN DEQUE BAGGY3 KCHS\" readonly>";
 			// result += "<br/><br/><b>Non RNAV</b>";
 			// result += "<br/><input style=\"width:75%\" value=\"KCLT BOWMA KCHS\" readonly>";
