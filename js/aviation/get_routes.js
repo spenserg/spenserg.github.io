@@ -593,24 +593,26 @@ get_routes = function(dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, r
 					result += "<br/>7X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS MUCKY3 MUCKY JCT ELP J50 SSO BXK ESTWD HLYWD1 KLAX\" readonly>";
 					result += "<br/>9X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS ELOEL3 ABI TXO J72 ABQ J78 DRK GABBL HLYWD1 KLAX\" readonly>";
 					break;
-				case "MIA": // AUS-MIA // Updated 05-06-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-06-2025 MP -->";
+				case "MIA": // AUS-MIA // Updated 09-14-2026
+					result += "<!-- Updated 09-14-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/>OW: <input style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI IAH J86 LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
-					result += "<br/><br/>Non OW: <input style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI IAH J2 DEFUN FROGZ5 KMIA\" readonly>";
-					result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAUS ELOEL3 KLNGR FUZ Q184 MERDN DEFUN FROGZ5 KMIA\" readonly>"; // CDR 9L
-					result += "<br/><br/>Full OW: <input style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI IAH VUH KELPP ALGAE MINOW M580 MARCI FROGZ5 KMIA\" readonly>";
-					result += "<br/>Full OW via CRP: <input style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA THX CRP PSXRH KELPP GPTCK MINOW M580 MARCI FROGZ5 KMIA\" readonly>";
-					result += "<br/>Full OW via EYW: <input style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA THX CRP PSXRH KELPP GPTCK MINOW EYW DVALL4 KMIA\" readonly>";
-					result += "<br/>South via Mexico: <input style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA THX CRP J25 BRO RADAS UT22 VESKO UT11 OMVOM UR522 XOPGI UB646 CANOA Y196 LULLS EYW DVALL4 KMIA\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KAUS CWK7 TNV J87 IAH SZW RSW PALMZ2 KMIA\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-06-2025
-					result += "<!-- Verified with ATCSCC on 05-06-2025 -->";
+					result += "<br/><input style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI IAH J86 LEV Y290 DOWRY FROGZ5 KMIA\" readonly>"; // CDR 0Q
+					result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI IAH J2 DEFUN FROGZ5 KMIA\" readonly>"; // CDR 0L
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAUS ELOEL3 KLNGR FUZ J42 TXK SQS VUZ LGC HONID FROGZ5 KMIA\" readonly>";
+					result += "<br/><b>Via MEM:<\/b> .. <input style=\"width:23em\" value=\"TXK Q34 MEMFS MSL LGC HONID FROGZ5 KMIA\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA SLENA CRP PSX SBIRD LEV Y290 DOWRY FROGZ5 KMIA\" readonly>"; // CDR 6Q
+					result += "<br/><br/>Full OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI IAH VUH KELPP ALGAE MINOW M580 MARCI FROGZ5 KMIA\" readonly>";
+					result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA THX CRP PSXRH KELPP GPTCK MINOW M580 MARCI FROGZ5 KMIA\" readonly>";
+					result += "<br/>Full OW via EYW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA THX CRP PSXRH KELPP GPTCK MINOW EYW DVALL4 KMIA\" readonly>";
+					result += "<br/><br/>South via MEX<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA THX CRP J25 BRO RADAS UT22 VESKO UT11 OMVOM UR522 XOPGI UB646 CANOA Y196 LULLS EYW DVALL4 KMIA\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KAUS CWK7 TNV J87 IAH SZW RSW PALMZ2 KMIA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-14-2026
+					result += "<!-- Verified with ATCSCC on 09-14-2026 -->";
 					result += "<br/>0L<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI IAH J2 DEFUN FROGZ5 KMIA\" readonly>";
 					result += "<br/>0Q<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS ILEXY4 ZENZI IAH J86 LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
-					result += "<br/>6L<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA THX CRP PSX SBIRD TBD SJI J2 DEFUN FROGZ5 KMIA\" readonly>";
-					result += "<br/>6Q<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA THX CRP PSX SBIRD LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
+					result += "<br/>6L<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA SLENA CRP PSX SBIRD TBD SJI J2 DEFUN FROGZ5 KMIA\" readonly>";
+					result += "<br/>6Q<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS BNDIA3 BNDIA SLENA CRP PSX SBIRD LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
 					result += "<br/>9L<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS ELOEL3 KLNGR FUZ Q184 MERDN DEFUN FROGZ5 KMIA\" readonly>";
 					result += "<br/>9Q<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KAUS ELOEL3 KLNGR FUZ Q184 DOBIS HRV LEV Y290 DOWRY FROGZ5 KMIA\" readonly>";
 					break;
@@ -3947,17 +3949,19 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 					result += "<br/>97<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB PAACK Q97 ELMSZ JROSS Q409 PUPYY Q103 CYNTA SHFTY6 KRSW\" readonly>"; // NE TO FL VIA Q97 2
 					result += "<br/>AR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA AMEEE1 SCOOB EARZZ Q131 WAALT Y289 BAHAA HIBAC SHFTY6 KRSW\" readonly>";
 					break;
-				case "SAT": // DCA-SAT // Updated 05-01-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-01-2025 PCM -->";
+				case "SAT": // DCA-SAT // Updated 09-14-2026
+					result += "<!-- Updated 09-14-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 AEX CAAGE QERVO3 KSAT\" readonly>"; // CDR 00
 					result += "<br/><br/><b style=\"color:orange\">Fkeys will flag anything other than CDR00 as a mandatory route violation but routes below are good.<\/b>";
-					result += "<br/>South: <input style=\"width:75%\" value=\"KDCA SCRAM6 GLANC COLZI Q52 CHOPZ MGMRY GARTS LCH CAAGE QERVO3 KSAT\" readonly>"; // CDR 00
-					result += "<br/>North: <input style=\"width:75%\" value=\"KDCA HORTO4 BUFFR Q178 AVERE J152 ROD VHP STL FSM WINDU QERVO3 KSAT\" readonly>"; // CDR 00
-					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-01-2025
-					result += "<!-- Verified with ATCSCC on 05-01-2025 -->";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q176 STL MLC URH WINDU QERVO3 KSAT\" readonly>"; // CDR 60
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDCA SCRAM6 GLANC COLZI Q52 CHOPZ THRSR JAMMR MERDN AEX CAAGE QERVO3 KSAT\" readonly>"; // CDR 50
+					// result += "<br/><br/><b>Non RNAV</b>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-14-2026
+					result += "<!-- Verified with ATCSCC on 09-14-2026 -->";
 					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA CLTCH3 MAULS Q40 AEX CAAGE QERVO3 KSAT\" readonly>";
+					result += "<br/>50<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA SCRAM6 GLANC COLZI Q52 CHOPZ THRSR JAMMR MERDN AEX CAAGE QERVO3 KSAT\" readonly>";
+					result += "<br/>60<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KDCA REBLL5 OTTTO Q176 STL MLC URH WINDU QERVO3 KSAT\" readonly>";
 					break;
 				case "SAV": // DCA-SAV // Updated 11-13-2025
 					result += "<!-- Updated 11-13-2025 P -->";
@@ -11093,22 +11097,23 @@ KILM RDU BBDOL PAATS4 KPHL
 
 		case "SAT":
 			switch(arvl) {
-				case "CLT": // SAT-CLT // Updated 05-01-2025 // Mandatory Routes checked
-					result += "<!-- Updated 05-01-2025 PCM -->";
+				case "CLT": // SAT-CLT // Updated 09-14-2026
+					result += "<!-- Updated 09-14-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSAT SNIDR2 MOLLR Q56 CATLN BESTT JONZE8 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KSAT SNIDR2 MOLLR Q56 CATLN BESTT JONZE8 KCLT\" readonly>"; // CDR 3X
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAT YODUH2 KLNGR FUZ ELD IZAAC Q30 VLKNN THRSR BESTT JONZE8 KCLT\" readonly>"; // CDR 1X
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAT SLENA2 BRENI LAMMY TBD HRV Q56 CATLN BESTT JONZE8 KCLT\" readonly>"; // CDR 5X
 					result += "<br/><br/>North/ZME Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAT YODUH2 KLNGR FUZ J25 TUL J78 PXV KI45O SKYWA FILPZ7 KCLT\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KSAT CHURN Q56 BLUMS IAH J29 VELCO J50 CEW SZW TAY SAV FLO RASLN1 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-01-2025
-					result += "<!-- Verified with ATCSCC on 05-01-2025 -->";
-					result += "<br/>0J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT SNIDR2 MOLLR Q56 SJI J2 CEW ALLMA PONZE BANKR8 KCLT\" readonly>";
-					result += "<br/>1J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT YODUH2 KLNGR FUZ Q184 MERDN PONZE BANKR8 KCLT\" readonly>";
+					result += "<br/><br/>CLT NO JONZE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSAT SLENA2 BRENI PSX SBIRD HRV Q56 SJI J2 CEW ALLMA PONZE BANKR8 KCLT\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KSAT CHURN Q56 BLUMS IAH J29 VELCO J50 CEW SZW TAY SAV FLO RASLN1 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-14-2026
+					result += "<!-- Verified with ATCSCC on 09-14-2026 -->";
+					result += "<br/>0J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT SNIDR2 MOLLR Q56 SJI J2 CEW ALLMA PONZE BANKR8 KCLT\" readonly>"; // CLT NO JONZE
+					result += "<br/>1J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT YODUH2 KLNGR FUZ Q184 MERDN PONZE BANKR8 KCLT\" readonly>"; // CLT NO JONZE
 					result += "<br/>1X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT YODUH2 KLNGR FUZ ELD IZAAC Q30 VLKNN THRSR BESTT JONZE8 KCLT\" readonly>";
 					result += "<br/>3X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT SNIDR2 MOLLR Q56 CATLN BESTT JONZE8 KCLT\" readonly>";
-					result += "<br/>5J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT SLENA2 BRENI PSX SBIRD HRV Q56 SJI J2 CEW ALLMA PONZE BANKR8 KCLT\" readonly>";
+					result += "<br/>5J<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT SLENA2 BRENI PSX SBIRD HRV Q56 SJI J2 CEW ALLMA PONZE BANKR8 KCLT\" readonly>"; // CLT NO JONZE
 					result += "<br/>5X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KSAT SLENA2 BRENI LAMMY TBD HRV Q56 CATLN BESTT JONZE8 KCLT\" readonly>";
 					break;
 				case "DFW": // SAT-DFW // Updated 06-29-2025
