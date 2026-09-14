@@ -909,25 +909,26 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 
 // MIA-ROC skipped
 
-		case "SAN": // MIA-SAN // Updated 05-06-2025
-			result += "<!-- Updated 05-06-2025 MP -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 05-06-2025
-			result += "<br/><br/>OW: <input style=\"width:75%\"; value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
-			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 LSU ROKIT CLL Q4 ELP Q166 HOGGZ LUCKI1 KSAN\" readonly>";
+		case "SAN": // MIA-SAN // Updated 09-14-2026
+			result += "<!-- Updated 09-14-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>"; // CDR G0
+			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 LSU ROKIT CLL Q4 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 DEEDA MGMRY SQS J52 TXK SPS J72 TXO J74 SJN J18 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/><br/>Full OW via SAT<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW HRVLK KELPP LCHLH MUSYL SAT J138 FST J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/>Full OW via CRP<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KMIA GLADZ4 SHAQQ M580 MINOW ALGAE PEGLG CRP KH87A FST J2 HOGGZ LUCKI1 KSAN\" readonly>";
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KMIA LAL SZW DEFUN J2 CEW J50 ACT INK J50 GBN J18 IPL BARET5 KSAN\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 05-06-2025
-			result += "<!-- Verified with ATCSCC on 05-06-2025 -->";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\"; value=\"KMIA LAL SZW DEFUN J2 CEW J50 ACT INK J50 GBN J18 IPL BARET5 KSAN\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-14-2026
+			result += "<!-- Verified with ATCSCC on 09-14-2026 -->";
 			result += "<br/>B2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA BNGOS4 DOLIE Y280 LEV J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS CABLO DEFUN J2 HOGGZ LUCKI1 KSAN\" readonly>";
-			result += "<br/>G0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS REMIS Y280 LEV J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
+			result += "<br/>G0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 BAGGS Y290 LEV J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA CABLO DEFUN J2 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI LEV J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
+			result += "<br/>M3<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR Q116 JAWJA CABLO DEFUN J2 HOGGZ LUCKI1 KSAN\" readonly>";
 			result += "<br/>W2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GWAVA2 GWAVA GLAMS TAZER MARCI LEV J86 ELP J2 HOGGZ LUCKI1 KSAN\" readonly>";
-			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR VLKNN HRISN Q30 IZAAC TXK J42 ABI J66 EWM J4 SSO GBN HOGGZ LUCKI1 KSAN\" readonly>";
+			result += "<br/>Z2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO OGGRE Y436 DEDDY THRSR VLKNN HRISN Q30 IZAAC TXK J42 ABI J66 EWM J4 SSO GBN HOGGZ KSAN\" readonly>";
 			break;
 		case "SAT": // MIA-SAT // Updated 05-31-2025
 			result += "<!-- Updated 05-31-2025 P -->";
