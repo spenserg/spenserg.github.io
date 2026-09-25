@@ -1,5 +1,5 @@
 <head>
-	<title>FKeys Helper</title>
+	<title>Galaxy Helper</title>
 	<meta name="viewport" content="user-scalable=no, width=device-width">
 	<meta charset="UTF-8">
 
@@ -10,46 +10,57 @@
 	<script src="js/bootstrap.min.js"></script>
 
 	<style>
-		.selected {font-weight:bold;color:black;font-size:20;border:4px solid black}
+		.galaxy-input {text-align:center;height:1.5em;width:1.5em;font-size:30}
 	</style>
 </head>
 
 <body>
-	WORD: <input type="text" maxlength="1">
-  
-  <textarea id="outbound" rows="5">https://prod-1-public.fk.aa.com</textarea>&nbsp;
-	<textarea id="ob_copy" rows="5" hidden></textarea>&nbsp;&nbsp
+	WORD: <input id="L1" class="galaxy-input" type="text" maxlength="1">&nbsp;&nbsp;
+	<input id="L2" class="galaxy-input" type="text" maxlength="1">&nbsp;&nbsp;
+	<input id="L3" class="galaxy-input" type="text" maxlength="1">&nbsp;&nbsp;
+	<input id="L4" class="galaxy-input" type="text" maxlength="1">&nbsp;&nbsp;
+	<input id="L5" class="galaxy-input" type="text" maxlength="1">&nbsp;&nbsp;
+	<input id="L6" class="galaxy-input" type="text" maxlength="1">&nbsp;&nbsp;
+	<input id="L7" class="galaxy-input" type="text" maxlength="1">&nbsp;&nbsp;
+
 	<button onclick="clear_input(0)">Clear</button>&nbsp;&nbsp;
 	<div id="total"></div>
 </body>
 
 <script>
-/*
-var partTimeControlTowers = ["BFL", "BTV", "CHS", "EYW", "GRR", "MAF", "MSO", "MYR", "PSP", "RAP", "RDM", "SJC"];
-var dctSIDok = ["KCID","KEWR","KFSD","KGEG","KJFK","KLGA","KORD","KPHL","KRSW"];
-var flows = {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"ELP":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0};
-var debug_mode = false;
-*/
+var let3 = ['ape','arm','bug','bat','bus','bag','bee','bed','box','boy','bow','big','can','cap','car','cat','cot','cow','cry','cup','cut','day','dig','dog','dot','dry','ear','eat','eye','egg','fly','fry','fog','fix','fan','gym','hug','hat','hop','hot','ice','ill','jet','jam','joy','job','jog','key','kid','law','lid','man','map','mat','mix','mud','nap','net','pad','pay','pen','pet','pin','rag','raw','red','rug','run','sun','sad','say','sea','sew','shy','ski','son','spy','tie','top','tow','toy','wet','win','zoo'];
+var let4 = ['baby','bump','bird','bake','band','bowl','bank','bone','bath','bear','beam','bark','bell','bike','boat','cold','cage','cake','call','camp','chew','city','cook','cute','clap','doll','dive','farm','fish','flag','food','game','gift','gold','half','home','hope','itch','joke','jump','king','kite','lake','lazy','lion','lock','loud','mask','moon','nail','nose','oven','page','park','path','peek','pest','pull','push','plan','play','poor','pony','room','race','rain','read','road','ring','ride','rich','swim','soft','shop','star','sign','sing','stop','sail','sink','slow','safe','seal','sell','sled','snow','twin','tiny','test','tent','trip','taxi','talk','walk','wish','wall','wild','wing','yard','yell'];
+var let5 = ['award','alone','atlas','block','bench','brick','broom','beach','bagel','broom','cabin','candy','chair','child','class','clean','climb','clock','clown','count','crazy','crown','dance','diary','drink','dream','earth','equal','favor','fence','float','floor','fruit','giant','glass','glove','house','horse','igloo','jelly','knife','large','lucky','magic','medal','mouth','movie','music','money','night','ocean','paper','point','prize','paint','party','piano','plate','puppy','queen','radio','robot','ruler','river','scale','score','scrub','shelf','shine','silly','skate','sleep','snack','small','smart','smile','story','sound','speak','sport','straw','scare','space','stage','storm','stamp','stand','trick','train','think','twist','tiger','uncle','visit','video','wagon','whale','windy','wheel','zebra'];
+var let6 = ['asleep','artist','animal','button','bucket','bridge','bounce','bubble','branch','basket','bottom','bottle','cactus','camera','candle','carpet','castle','cavity','cereal','circus','closet','crayon','dinner','double','dragon','escape','flower','finger','family','frozen','forest','friend','future','father','garden','garage','giggle','hammer','helmet','honest','hungry','island','jungle','karate','ladder','letter','mother','museum','magnet','marble','mirror','napkin','office','palace','parade','parent','picnic','pillow','pirate','planet','puppet','puddle','puzzle','polish','poster','pretty','racket','recipe','report','reward','riddle','rocket','smooth','spring','summer','scream','season','secret','shadow','soccer','statue','sloppy','street','shovel','shrink','silent','sister','strong','switch','strike','trophy','tunnel','travel','turtle','ticket','winter','weight','wallet','yellow','zipper'];
+var let7 = ['airport','acrobat','address','baggage','balloon','bicycle','battery','brother','cartoon','chicken','compass','contest','diamond','dentist','disease','explore','factory','feather','garbage','healthy','haunted','history','holiday','husband','imagine','journey','kitchen','laundry','lecture','library','liberty','machine','message','miracle','monster','morning','mystery','pajamas','picture','pitcher','pretend','private','problem','program','promise','rainbow','scratch','shelter','strange','stretch','stadium','scooter','special','traffic','thunder','tourist','thirsty','tornado','theater','wrestle','wedding','whisper','warning','witness','welcome'];
 
-/*
-document.getElementById("outbound").addEventListener("keypress", function(event) {
-	if (event.key === "Enter") {
-		event.preventDefault();
-		document.getElementById("go_button").click();
-	}
+const max_length = 8
+
+$('.galaxy-input').change(function() {
+	compute(get_cur_word);
 });
-*/
 
 /*
 $( document ).ready(function() {
 	// console.log("Remember to set debug_mode! (debug_mode = true;)");
 });
 */
+function get_cur_word() {
+	var result = "";
+	for (var i = 1; i < max_length; i++) {
+		var new_letter = "?";
+		var letter = $("#L" + i).val();
+		if (letter !== undefined) {
+			if (letter.trim().length == 1) { new_letter = letter.trim().toUpperCase(); }
+		}
+		result += new_letter;
+	}
+	return result;
+}
 
-/*
-function restore_last() {
-	$("#outbound").val($("#ob_copy").val());
+function compute(str = "") {
+	if (
 	compute();
 }
-*/
+
 </script>
