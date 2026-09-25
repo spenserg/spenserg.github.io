@@ -33,11 +33,12 @@ var let4 = ['baby','bump','bird','bake','band','bowl','bank','bone','bath','bear
 var let5 = ['award','alone','atlas','block','bench','brick','broom','beach','bagel','broom','cabin','candy','chair','child','class','clean','climb','clock','clown','count','crazy','crown','dance','diary','drink','dream','earth','equal','favor','fence','float','floor','fruit','giant','glass','glove','house','horse','igloo','jelly','knife','large','lucky','magic','medal','mouth','movie','music','money','night','ocean','paper','point','prize','paint','party','piano','plate','puppy','queen','radio','robot','ruler','river','scale','score','scrub','shelf','shine','silly','skate','sleep','snack','small','smart','smile','story','sound','speak','sport','straw','scare','space','stage','storm','stamp','stand','trick','train','think','twist','tiger','uncle','visit','video','wagon','whale','windy','wheel','zebra'];
 var let6 = ['asleep','artist','animal','button','bucket','bridge','bounce','bubble','branch','basket','bottom','bottle','cactus','camera','candle','carpet','castle','cavity','cereal','circus','closet','crayon','dinner','double','dragon','escape','flower','finger','family','frozen','forest','friend','future','father','garden','garage','giggle','hammer','helmet','honest','hungry','island','jungle','karate','ladder','letter','mother','museum','magnet','marble','mirror','napkin','office','palace','parade','parent','picnic','pillow','pirate','planet','puppet','puddle','puzzle','polish','poster','pretty','racket','recipe','report','reward','riddle','rocket','smooth','spring','summer','scream','season','secret','shadow','soccer','statue','sloppy','street','shovel','shrink','silent','sister','strong','switch','strike','trophy','tunnel','travel','turtle','ticket','winter','weight','wallet','yellow','zipper'];
 var let7 = ['airport','acrobat','address','baggage','balloon','bicycle','battery','brother','cartoon','chicken','compass','contest','diamond','dentist','disease','explore','factory','feather','garbage','healthy','haunted','history','holiday','husband','imagine','journey','kitchen','laundry','lecture','library','liberty','machine','message','miracle','monster','morning','mystery','pajamas','picture','pitcher','pretend','private','problem','program','promise','rainbow','scratch','shelter','strange','stretch','stadium','scooter','special','traffic','thunder','tourist','thirsty','tornado','theater','wrestle','wedding','whisper','warning','witness','welcome'];
+var let_all = let3.concat(let4.concat(let5.concat(let6.concat(let7))));
 
 const max_length = 8
 
 $('.galaxy-input').change(function() {
-	compute(get_cur_word);
+	var result = get_matches(get_cur_word());
 });
 
 /*
@@ -51,16 +52,20 @@ function get_cur_word() {
 		var new_letter = "?";
 		var letter = $("#L" + i).val();
 		if (letter !== undefined) {
-			if (letter.trim().length == 1) { new_letter = letter.trim().toUpperCase(); }
+			if (letter.trim().length == 1) { new_letter = letter.trim().toLowerCase(); }
 		}
 		result += new_letter;
 	}
 	return result;
 }
 
-function compute(str = "") {
-	if (
-	compute();
+function get_matches(str = "") {
+	if (str === undefined || str.trim().length == 0) { return []; }	
+	var result = [];
+	const re = new RegExp((str.replaceAll("?","[a-z]*")), "g"); 
+	while ((var test_arr = re.exec(str)) !== null) {
+		console.log(test_arr);
+	}
 }
 
 </script>
