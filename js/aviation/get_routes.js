@@ -9672,10 +9672,10 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL MXE PENSY J110 VINSE DEMME5 KPIT\" readonly>";
 					result += "<br/>PS<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW SARAA PSB HAYNZ7 KPIT\" readonly>";
 					break;
-				case "PVD": // PHL-PVD // Updated 03-11-2026
-					result += "<!-- Updated 03-11-2026 P -->";
+				case "PVD": // PHL-PVD // Updated 09-26-2026
+					result += "<!-- Updated 09-26-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL250):</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KPHL DITCH T416 JIMEE WAVEY SHLEP HTO JORDN2 KPVD\" readonly>"; // CDR PH
+					result += "<br/><input style=\"width:75%\" value=\"KPHL DITCH T416 JIMEE WAVEY SHLEP HTO JORDN2 KPVD\" readonly>";
 					result += "<br/><b>As of 03-01-2025 FAA pref is JORDN JORDN2 but its not on the chart. HTO JORDN2 is ok to file<\/b>";
 					result += "<br/><br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KPHL PTW SUZIE RAV FQM HNK WIPOR4 KPVD\" readonly>";
 					result += "<br/><b>Only use if DITCH is unavailable<\/b>";
@@ -9683,8 +9683,8 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/><br/>PHLYER NORTH (Max FL090)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\"; value=\"KPHL PTW FJC T221 LAAYK T216 GON MINNK KPVD\" readonly>";
 					result += "<br/><br/><b>Non RNAV</b>";
 					result += "<br/><input style=\"width:75%\"; value=\"KPHL MXE PENSY J110 LARRI J61 PSB J49 HNK WIPOR3 KPVD\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-11-2026
-					result += "<!-- Verified with ATCSCC on 03-11-2026 -->";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-26-2026
+					result += "<!-- Verified with ATCSCC on 09-26-2026 -->";
 					result += "<br/>FF<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL FJC T221 LAAYK T216 GON MINNK KPVD\" readonly>";
 					result += "<br/>LH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL PTW CHLSE DIANO T212 LAAYK T216 GON V374 MINNK KPVD\" readonly>";
 					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHL DITCH T416 JIMEE WAVEY SHLEP ORCHA JORDN JORDN2 KPVD\" readonly>";
