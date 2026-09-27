@@ -1639,7 +1639,7 @@ convert_iata = function (str = null) {
 			}
 		}
 	}
-	return null;
+	return "XXX";
 }
 
 convert_icao = function (str = null) {
@@ -2132,7 +2132,7 @@ convert_icao = function (str = null) {
 			}
 		}
 	}
-	return null;
+	return "XXXX";
 }
 
 is_atwelve = function (apt = "") {
@@ -2359,6 +2359,7 @@ get_fir = function (apt = "") {
 			case "KYKM": return "ZSE"; break;
 		}
 	}
+	return "ZZZ";
 }
 
 get_star_array = function(text = "") {
