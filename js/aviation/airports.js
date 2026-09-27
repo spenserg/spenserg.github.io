@@ -21,7 +21,12 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 
 	// A012
 	if (is_atwelve(arvl)) { result += "<br/><b>" + arvl + " is an A012 Airport<\/b>"; }
-	
+
+	// FAA airport link
+	result += '<br/>FAA Airport Info: <a href="https://weathercams.faa.gov/map/-86.70639,33.68144,-80.69413,36.36651/airport/' +
+		dptr + '/details/pdfs" target="_blank">' + dptr + '<\/a>&nbsp;&nbsp;&nbsp;' + 
+		'<a href="https://weathercams.faa.gov/map/-86.70639,33.68144,-80.69413,36.36651/airport/' + arvl +
+		'/details/pdfs" target="_blank">' + arvl + '<\/a>';
 	// Weather Cameras
 	var tmp_cams = get_weather_cams(arvl);
 	if (tmp_cams.length > 0) {
@@ -34,7 +39,6 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			}
 		}
 	}
-
 	// 27K for 737-NGs
 	if (["738K", "738R"].includes(ac_type) && ["BDL","BJX","BOS","BUR","BZN","DCA","DEN","FAT","GUA","HDN","LAS","LGA","MDE","MEX","PHX","PSP","PVD","QRO","RDU","RNO","RTB","SBA","SBP","SJO","SJU","SNA","STT","SXM"].includes(dptr)) {
 		result += "<br/><b>" + dptr + " - 27K Available for N" + tail + "<\/b>";
