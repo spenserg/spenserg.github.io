@@ -354,15 +354,21 @@ function compute (str_override = "") {
 				output += "&nbsp;&nbsp;&nbsp;<b style='color:orange'>Method 1 in use</b>";
 			}
 		}
-		if (!safe_mode && ["A321", "321K", "321R", "321N", "321X"].includes(ac_type)) { // 321T and A321E (Neos) are ok
-			reg_fob = /TOTAL[^\d]*(\d+)[^\d]/g;
-			var unnecessary_var = reg_fob.exec(fkeystxt);
-			if (ac_type == "321X" && unnecessary_var[1] > 40500 && unnecessary_var[1] < 45200) {
-				output += "<br/><b style='color:red'>321X fuel load cannot be between 40,600 and 45,100 lbs (Cur FOB " + parseInt(unnecessary_var[1]) + ") Must add or remove fuel (remark '\/XL')</b>"; // A321XLR RCT Fueling Requirement Comply Message Jan 16, 2026
-			} else if (ac_type == "321X" && unnecessary_var[1] > 38500 && unnecessary_var[1] < 45200) {
-				output += "<br/><b style='color:orange'>321X fuel load cannot be between 40,600 and 45,100 lbs (Cur FOB " + parseInt(unnecessary_var[1]) + ")</b>"; // A321XLR RCT Fueling Requirement Comply Message Jan 16, 2026
-			} else if (unnecessary_var && parseInt(unnecessary_var[1]) > 47000) {
-				output += "<br/><b style='color:" + ((parseInt(unnecessary_var[1]) > 49000) ? "red" : "orange") + "'>A321 balance issues when FOB above 47000 lbs (Cur FOB " + parseInt(unnecessary_var[1]) + " - Coordinate with loads)</b>";
+		if (!safe_mode) {
+			if (["A321", "321K", "321R", "321N", "321X"].includes(ac_type)) { // 321T and A321E (Neos) are ok
+				reg_fob = /TOTAL[^\d]*(\d+)[^\d]/g;
+				var unnecessary_var = reg_fob.exec(fkeystxt);
+				if (ac_type == "321X") {
+					if (unnecessary_var[1] >= 40500 && unnecessary_var[1] < 45200) {
+						output += "<br/><b style='color:red'>321X fuel load cannot be between 40,600 and 45,100 lbs (Cur FOB " + parseInt(unnecessary_var[1]) + ") Must add or remove fuel (remark '\/XL')</b>"; // A321XLR RCT Fueling Requirement Comply Message Jan 16, 2026
+					} else if (unnecessary_var[1] >= 37500 && unnecessary_var[1] < 40500) {
+						output += "<br/><b style='color:orange'>321X fuel penalty above FOB 40,600. (" + (40600 - parseInt(unnecessary_var[1])) + " lbs from cutoff)</b>"; // A321XLR RCT Fueling Requirement Comply Message Jan 16, 2026
+					}
+				} else if (ac_type == "321X" && unnecessary_var[1] > 38500 && unnecessary_var[1] < 45200) {
+					output += "<br/><b style='color:orange'>321X fuel load cannot be between 40,600 and 45,100 lbs (Cur FOB " + parseInt(unnecessary_var[1]) + ")</b>"; // A321XLR RCT Fueling Requirement Comply Message Jan 16, 2026
+				} else if (unnecessary_var && parseInt(unnecessary_var[1]) > 47000) {
+					output += "<br/><b style='color:" + ((parseInt(unnecessary_var[1]) > 49000) ? "red" : "orange") + "'>A321 balance issues when FOB above 47000 lbs (Cur FOB " + parseInt(unnecessary_var[1]) + " - Coordinate with loads)</b>";
+				}
 			}
 		}
 	} else if (debug_mode) {
@@ -421,6 +427,15 @@ function compute (str_override = "") {
 			output += wide_ci_min + " - " + wide_ci_max + " (lower/slower/lighter)";
 		} else { output += "Unknown"; }
 
+		// A320 max autoland
+		if (["A320","H205"].includes(ac_type)) {
+			var ab_no = parseInt(tmp_rslt[5]);
+			if (ab_no < 126 || (ab_no > 128 && ab_no < 663) || ab_no > 680) {
+				// Max Autoland 2500 ft MSL
+				output += "<br/><b style='color:orange'>Max Autoland 2500 ft MSL<\/b>";
+			}
+		}
+		
 		// Non-scheduled flight
 		if (result[3] > 8999 && result[3] < 10000) {
 			// Reminder to amend flight type if non-scheduled
