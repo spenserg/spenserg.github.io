@@ -397,7 +397,16 @@ function compute (str_override = "") {
 		var tmpres = result[3] + '&nbsp;&nbsp;&nbsp;' +
 			(is_domestic(result[1], false) ? ('<span style="cursor:pointer" onclick="$(\'#dom_fir\').toggle()">' + result[1] + '</span><span id="dom_fir" style="display:none">&nbsp;&nbsp;(' + get_fir(result[1]) + ")</span>") : (convert_iata(result[1]) + '&nbsp;/&nbsp;' + convert_icao(result[1]))) +
 			'&nbsp;&nbsp;&nbsp;' + result[5] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result[4];
-		output = tmpres + '<br/>' + output;
+		output = tmpres;
+		// Unrecognized Airport or ARTCC
+		if (convert_iata(result[1]).localeCompare("XXX") == 0 || convert_icao(result[1]).localeCompare("XXXX") == 0) {
+			// Unrecognized Dprt Station
+			output += '<br/><b style="color:red">Station Code "' + result[1] + '" not recognized<\/b>';
+		}
+		if (convert_iata(result[2]).localeCompare("XXX") == 0 || convert_icao(result[2]).localeCompare("XXXX") == 0) {
+			// Unrecognized Dprt Station
+			output += '<br/><b style="color:red">Station Code "' + result[2] + '" not recognized<\/b>';
+		}
 
 		// Approach Category
 		output += "<br/>" + ac_type + "&nbsp;&nbsp;&nbsp;CAT ";
@@ -436,15 +445,6 @@ function compute (str_override = "") {
 			}
 		}
 
-		// Unrecognized Airport or ARTCC
-		if (convert_iata(result[1]).localeCompare("XXX") == 0 || convert_icao(result[1]).localeCompare("XXXX") == 0) {
-			// Unrecognized Dprt Station
-			output += '<br/><b style="color:red">Station Code "' + result[1] + '" not recognized<\/b>';
-		}
-		if (convert_iata(result[2]).localeCompare("XXX") == 0 || convert_icao(result[2]).localeCompare("XXXX") == 0) {
-			// Unrecognized Dprt Station
-			output += '<br/><b style="color:red">Station Code "' + result[2] + '" not recognized<\/b>';
-		}
 		// Non-scheduled flight
 		if (result[3] > 8999 && result[3] < 10000) {
 			// Reminder to amend flight type if non-scheduled
