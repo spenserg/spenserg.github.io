@@ -193,6 +193,8 @@ function compute (str_override = "") {
 
 	// LAWS inputs
 	regp = /DISP MLW \d+\//g;
+
+	// TODO: Coordinate conversion
 	
 	var testing = false;
 	var land_wgt_limited = false;
@@ -506,6 +508,10 @@ function compute (str_override = "") {
 	//if (regz.exec(fkeystxt) == null && (testing || (rega.exec(fkeystxt) != null))) {
 	if (result !== null) {
 		output = get_routes(result[1], result[2], result[5], ac_type, output);
+
+console.log(result);
+console.log(output);
+		
 		$("#outbound").val("");
 		if (debug_mode && !safe_mode) {
 			var today = new Date();
