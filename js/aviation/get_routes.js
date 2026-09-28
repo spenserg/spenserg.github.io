@@ -11570,7 +11570,7 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "PHL": // SFO-PHL // Updated 09-07-2025
 					result += "<!-- Updated 09-07-2025 MP -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-07-2025
-					result += "<br/>NRP: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 TABLL SAKES J80 FQF ZIRKL Q136 DIYAP PIA BVT ROD J152 JST BOJID4 KPHL\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 TABLL SAKES J80 FQF ZIRKL Q136 DIYAP PIA BVT ROD J152 JST BOJID4 KPHL\" readonly>";
 					result += "<br/><b style=\"width:orange\">Dptrs after 2100L use NIITE SID instead of TRUKN<\/b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 MOGEE Q122 VIGGR DBQ GIJ DJB J60 PSB BOJID4 KPHL\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KSFO TRUKN2 SYRAH Q128 JSICA MLF J28 GCK ICT SGF J98 FAM J78 PXV HELUB ZIEBR Q108 SITTR Q34 GVE PAATS4 KPHL\" readonly>";
