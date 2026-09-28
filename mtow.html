@@ -190,6 +190,9 @@ function compute (str_override = "") {
 
 	// dex all list
 	regq = /[^\n]+[idce]ae\n[^\-]+ \- \([A-Za-z\d\,\s]+\) \[[^\]]\]/g;
+
+	// LAWS inputs
+	regp = /DISP MLW \d+\//g;
 	
 	var testing = false;
 	var land_wgt_limited = false;
@@ -202,6 +205,14 @@ function compute (str_override = "") {
 	if (tmp_strlen == 6 || tmp_strlen == 9) {
 		fkeystxt = fkeystxt.replaceAll("-","").replaceAll(" ","").toUpperCase();
 		testing = true;
+	}
+
+	// LAWS input
+	if (fkeystxt.includes("DISP MLW")) {
+		if (regp.exec(fkeystxt) != null) {
+			$("#total").html('<br/>' + format_laws(fkeystxt));
+			return;
+		}
 	}
 
 	// CCCZ table
@@ -1655,6 +1666,28 @@ check_page_for_errors = function (text = "") {
 		error_str += "<br/>";
 	}
 	return '<br/><br/><textarea rows="8" cols="50">' + result + '</textarea>' + ((error_str.length == 0) ? "<br/><br/>No Errors" : error_str);
+}
+
+function format_laws (fkeystxt = "") {
+	var result = "";
+	var tmp_pcs = fkeystxt.split("/");
+	if (tmp_pcs.length > 5) {
+		if (tmp_pcs[5].includes("CDL") || tmp_pcs[5].includes("MEL")) {
+			result += tmp_pcs[5].replace("CDLS","CDL").replace("MELS","MEL").replace(/(\d+)C(\d+)/, "$1-$2").replace("-0","-").replace(/(\,\d+)/, "") + "/ penalties applied//\n";
+		}
+		if (tmp_pcs.length > 6) {
+			if (tmp_pcs[6].includes("CDL") || tmp_pcs[6].includes("MEL")) {
+				result += tmp_pcs[6].replace("CDLS","CDL").replace("MELS","MEL").replace(/(\d+)C(\d+)/, "$1-$2").replace("-0","-").replace(/(\,\d+)/, "") + "/ penalties applied//\n";
+			}
+		}
+	}
+	result += tmp_pcs[0].replace("DISP MLW","DSP MLW").replace(tmp_pcs[0].split(" ").pop(),parseInt(tmp_pcs[0].split(" ").pop()).toLocaleString()).replace(",",".") +
+		"/ " + tmp_pcs[3].replace(/[A-Z]{3}\s(RWY\s)/, "$1").replace(/RWY [0]*/, "RWY") +
+		"/ " + tmp_pcs[2].replace(/LDA (\d{2})(\d{3})/, "LDA $1.$2") + 
+		"/ " + tmp_pcs[1] + "/ " + tmp_pcs[4];
+	return '<br/><textarea rows="8" cols="80">' +
+		result.replace("MLW 142.100","MLW 142.100 STRUCT").replace("MLW 137.700","MLW 137.700 STRUCT").replace("MLW 146.300","MLW 146.300 STRUCT").replace("MLW 152.800","MLW 152.800 STRUCT").replace("MLW 171.500","MLW 171.500 STRUCT").replace("MLW 174.600","MLW 174.600 STRUCT").replace("MLW 380.000","MLW 380.000 STRUCT").replace("MLW 425.000","MLW 425.000 STRUCT").replace("MLW 460.000","MLW 460.000 STRUCT").replace("MLW 554.000","MLW 554.000 STRUCT") +
+		'</textarea>';
 }
 
 function remove_common_cdr_redundancies(result = "") {
