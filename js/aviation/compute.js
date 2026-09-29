@@ -387,8 +387,8 @@ compute = function(str_override = "") {
 		console.log("flifo parse error");
 	}
 
-	// TODO: airport_extra
-
+	output = airport_extra({}, result[1], result[2], result[5], ac_type, output);
+	
 	// Routes
 	//if (regz.exec(fkeystxt) == null && (testing || (rega.exec(fkeystxt) != null))) {
 	if (result !== null) {
