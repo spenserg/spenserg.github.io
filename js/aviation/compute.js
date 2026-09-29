@@ -299,9 +299,9 @@ compute = function(str_override = "") {
 				output += "&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
 			}
 		} else if (["738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X", "773W", "7878", "7879", "789P"].includes(ac_type)) {
-			if (ac_type == "738R") {
+			if (ac_type == "738R") { // TODO: Toggle Cat C/D conditions // or show on hover
 				// SFP - Cat C under certain conditions
-				output += "C [flaps 40 straight-in] // Cat D [circle-to-land]<br/>";
+				output += "C / D<br/>C - [flaps 40 straight-in]<br/> D - [circle-to-land]";
 				if (["H319","A321","321T","321K"].includes(ac_type)) {
 					output += "<br/>&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
 				}
