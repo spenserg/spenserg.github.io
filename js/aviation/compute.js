@@ -1,3 +1,8 @@
+toggle_cd = function () {
+	$("#cd_details").toggle();
+	$("#cd_button").text(($("#cd_button").html().includes("Show")) ? 'Hide Details' : 'Show Details');
+}
+
 compute = function(str_override = "") {
 	var output = "Check the input box and make sure you pasted the right thing.";
 	var reg;
@@ -301,7 +306,8 @@ compute = function(str_override = "") {
 		} else if (["738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X", "773W", "7878", "7879", "789P"].includes(ac_type)) {
 			if (ac_type == "738R") { // TODO: Toggle Cat C/D conditions // or show on hover
 				// SFP - Cat C under certain conditions
-				output += "C / D<br/>C - [flaps 40 straight-in]<br/> D - [circle-to-land]";
+				output += "C / D&nbsp;&nbsp;<button id='cd_button' onclick=\"toggle_cd()\">Show Details<\/button>" +
+					"<div id='cd_details' style='display:none;border:1px solid black;margin:2px;width:75%'>C - [flaps 40 straight-in]<br/> D - [circle-to-land]<\/div>";
 				if (["H319","A321","321T","321K"].includes(ac_type)) {
 					output += "<br/>&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
 				}
