@@ -295,13 +295,22 @@ compute = function(str_override = "") {
 		if (["319S", "H319", "319W", "A320", "H205", "B772"].includes(ac_type)) {
 			// Cat C
 			output += "C"; // 121-141 Kts
+			if (["H319","A321","321T","321K"].includes(ac_type)) {
+				output += "&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
+			}
 		} else if (["738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X", "773W", "7878", "7879", "789P"].includes(ac_type)) {
 			if (ac_type == "738R") {
 				// SFP - Cat C under certain conditions
 				output += "C [flaps 40 straight-in] // Cat D [circle-to-land]<br/>";
+				if (["H319","A321","321T","321K"].includes(ac_type)) {
+					output += "<br/>&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
+				}
 			} else {
 				// Cat D
 				output += "D"; // 141-165 Kts
+				if (["H319","A321","321T","321K"].includes(ac_type)) {
+					output += "&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
+				}
 			}
 		} else { output += "Unknown"; }
 
@@ -331,15 +340,12 @@ compute = function(str_override = "") {
 		
 /* FP NOTES */
 
-		
-		output += "<br/>" + ((["H319","A321","321T","321K"].includes(ac_type)) ? "&nbsp;<b style='color:orange'>100/162NM<\/b><br/>" : "");
-		
 		// A320 max autoland
 		if (["A320","H205"].includes(ac_type)) {
 			var ab_no = parseInt(tmp_rslt[5]);
 			if (ab_no < 126 || (ab_no > 128 && ab_no < 663) || ab_no > 680) {
 				// Max Autoland 2500 ft MSL
-				output += "<br/><b style='color:orange'>Max Autoland 2500 ft MSL<\/b>";
+				output += "<b style='color:orange'>Max Autoland 2500 ft MSL<\/b><br/>";
 			}
 		}
 
