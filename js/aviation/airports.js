@@ -35,6 +35,43 @@ get_right_box_info = function (dptr = "XXX", arvl = "XXX", tail = null, ac_type 
 	return result;
 }
 
+get_cutoff = function (sta = "") {
+	sta = get_fir(sta);
+	switch(sta) {
+		case "ITL": return ["ITL","KTULAALD","N",15,120]; break;
+		case "YEG": return ["YEG","CZEGZQZX","N",00,180]; break;
+		case "YQM": return ["YQM","CZQMZQZX","N",00,180]; break;
+		case "YQX": return ["YQX","CZQXZQZX","N",00,180]; break;
+		case "YUL": return ["YUL","CZULZQZX","N",00,180]; break;
+		case "YVR": return ["YVR","CZVRZQZX","N",00,180]; break;
+		case "YWG": return ["YWG","CZWGZQZX","N",00,180]; break;
+		case "YYZ": return ["YYZ","CZYZZQZX","N",00,180]; break;
+		case "ZAB": return ["ZAB","KZABZQZX","Y",30,120]; break;
+		case "ZAN": return ["ZAN","PAZAZQZX","N",43,90]; break;
+		case "ZAU": return ["ZAU","KZAUZQZX","Y",34,120]; break;
+		case "ZBW": return ["ZBW","KZBWZQZX","Y",55,120]; break;
+		case "ZDC": return ["ZDC","KZDCZQZX","Y",45,120]; break;
+		case "ZDV": return ["ZDV","KZDVZQZX","Y",30,180]; break;
+		case "ZFW": return ["ZFW","KZFWZQZX","Y",30,180]; break;
+		case "ZHU": return ["ZHU","KZHUZQZX","Y",40,120]; break;
+		case "ZID": return ["ZID","KZIDZQZX","Y",32,240]; break;
+		case "ZJX": return ["ZJX","KZJXZQZX","Y",45,120]; break;
+		case "ZKC": return ["ZKC","KZKCZQZX","Y",30,120]; break;
+		case "ZLA": return ["ZLA","KZLAZQZX","Y",30,90]; break;
+		case "ZLC": return ["ZLC","KZLCZQZX","Y",30,120]; break;
+		case "ZMA": return ["ZMA","KZMAZQZX","Y",45,120]; break;
+		case "ZME": return ["ZME","KZMEZQZX","Y",30,120]; break;
+		case "ZMP": return ["ZMP","KZMPZQZX","Y",35,120]; break;
+		case "ZMY": return ["ZMY","MMMYXMXO","N",45,180]; break;
+		case "ZNY": return ["ZNY","KZNYZQZX","Y",60,121]; break;
+		case "ZOA": return ["ZOA","KZOAZQZX","Y",45,90]; break;
+		case "ZOB": return ["ZOB","KZOBZQZX","Y",45,180]; break;
+		case "ZSE": return ["ZSE","KZSEZQZX","Y",30,120]; break;
+		case "ZTL": return ["ZTL","KZTLZQZX","Y",35,120]; break;
+	}
+	return ["ZZZ","ZZZZZZZZ","N",0];
+}
+
 airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, result = "") {
 	dptr = ((dptr.length == 4) ? convert_iata(dptr) : dptr);
 	arvl = ((arvl.length == 4) ? convert_iata(arvl) : arvl);
@@ -1644,6 +1681,29 @@ convert_iata = function (str = null) {
 				case "MMZH": return "ZIH";break;
 				case "MMZO": return "ZLO";break;
 				case "LSZH": return "ZRH";break;
+
+				case "KZAB": return "ZAB";break;
+				case "KZAN": return "ZAN";break;
+				case "KZAU": return "ZAU";break;
+				case "KZBW": return "ZBW";break;
+				case "KZDC": return "ZDC";break;
+				case "KZDV": return "ZDV";break;
+				case "KZFW": return "ZFW";break;
+				case "KZHU": return "ZHU";break;
+				case "KZID": return "ZID";break;
+				case "KZJX": return "ZJX";break;
+				case "KZKC": return "ZKC";break;
+				case "KZLA": return "ZLA";break;
+				case "KZLC": return "ZLC";break;
+				case "KZMA": return "ZMA";break;
+				case "KZME": return "ZME";break;
+				case "KZMP": return "ZMP";break;
+				case "KZMY": return "ZMY";break;
+				case "KZNY": return "ZNY";break;
+				case "KZOA": return "ZOA";break;
+				case "KZOB": return "ZOB";break;
+				case "KZSE": return "ZSE";break;
+				case "KZTL": return "ZTL";break;
 			}
 		}
 	}
@@ -2137,6 +2197,29 @@ convert_icao = function (str = null) {
 				case "ZIH": return "MMZH";break;
 				case "ZLO": return "MMZO";break;
 				case "ZRH": return "LSZH";break;
+
+				case "ZAB": return "KZAB";break;
+				case "ZAN": return "KZAN";break;
+				case "ZAU": return "KZAU";break;
+				case "ZBW": return "KZBW";break;
+				case "ZDC": return "KZDC";break;
+				case "ZDV": return "KZDV";break;
+				case "ZFW": return "KZFW";break;
+				case "ZHU": return "KZHU";break;
+				case "ZID": return "KZID";break;
+				case "ZJX": return "KZJX";break;
+				case "ZKC": return "KZKC";break;
+				case "ZLA": return "KZLA";break;
+				case "ZLC": return "KZLC";break;
+				case "ZMA": return "KZMA";break;
+				case "ZME": return "KZME";break;
+				case "ZMP": return "KZMP";break;
+				case "ZMY": return "KZMY";break;
+				case "ZNY": return "KZNY";break;
+				case "ZOA": return "KZOA";break;
+				case "ZOB": return "KZOB";break;
+				case "ZSE": return "KZSE";break;
+				case "ZTL": return "KZTL";break;
 			}
 		}
 	}
@@ -2365,6 +2448,52 @@ get_fir = function (apt = "") {
 			case "KVQQ": return "ZJX"; break;
 			case "KXNA": return "ZME"; break;
 			case "KYKM": return "ZSE"; break;
+
+			case "KZAB": return "ZAB";break;
+			case "KZAN": return "ZAN";break;
+			case "KZAU": return "ZAU";break;
+			case "KZBW": return "ZBW";break;
+			case "KZDC": return "ZDC";break;
+			case "KZDV": return "ZDV";break;
+			case "KZFW": return "ZFW";break;
+			case "KZHU": return "ZHU";break;
+			case "KZID": return "ZID";break;
+			case "KZJX": return "ZJX";break;
+			case "KZKC": return "ZKC";break;
+			case "KZLA": return "ZLA";break;
+			case "KZLC": return "ZLC";break;
+			case "KZMA": return "ZMA";break;
+			case "KZME": return "ZME";break;
+			case "KZMP": return "ZMP";break;
+			case "KZMY": return "ZMY";break;
+			case "KZNY": return "ZNY";break;
+			case "KZOA": return "ZOA";break;
+			case "KZOB": return "ZOB";break;
+			case "KZSE": return "ZSE";break;
+			case "KZTL": return "ZTL";break;
+			case "ZAB": return "ZAB";break;
+			case "ZAN": return "ZAN";break;
+			case "ZAU": return "ZAU";break;
+			case "ZBW": return "ZBW";break;
+			case "ZDC": return "ZDC";break;
+			case "ZDV": return "ZDV";break;
+			case "ZFW": return "ZFW";break;
+			case "ZHU": return "ZHU";break;
+			case "ZID": return "ZID";break;
+			case "ZJX": return "ZJX";break;
+			case "ZKC": return "ZKC";break;
+			case "ZLA": return "ZLA";break;
+			case "ZLC": return "ZLC";break;
+			case "ZMA": return "ZMA";break;
+			case "ZME": return "ZME";break;
+			case "ZMP": return "ZMP";break;
+			case "ZMY": return "ZMY";break;
+			case "ZNY": return "ZNY";break;
+			case "ZOA": return "ZOA";break;
+			case "ZOB": return "ZOB";break;
+			case "ZSE": return "ZSE";break;
+			case "ZTL": return "ZTL";break;
+			
 		}
 	}
 	return "ZZZ";
