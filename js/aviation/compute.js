@@ -304,7 +304,7 @@ compute = function(str_override = "") {
 				output += "&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
 			}
 		} else if (["738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X", "773W", "7878", "7879", "789P"].includes(ac_type)) {
-			if (ac_type == "738R") { // TODO: Toggle Cat C/D conditions // or show on hover
+			if (ac_type == "738R") {
 				// SFP - Cat C under certain conditions
 				output += "C / D&nbsp;&nbsp;<button id='cd_button' onclick=\"toggle_cd()\">Show Details<\/button>" +
 					"<div id='cd_details' style='display:none;border:1px solid black;margin:2px;width:75%'>C - [flaps 40 straight-in]<br/> D - [circle-to-land]<\/div>";
@@ -341,8 +341,12 @@ compute = function(str_override = "") {
 /* RIGHT BOX */
 		output += '</div><div class="col-6" style="border:2px solid black;font-size:12px">';
 		output += get_right_box_info(result[1], result[2], result[5], ac_type);
-		output += "<br/>" + result[1] + " FIR: " + get_fir(result[1]) + " | Cutoff TODO";
-		output += '</div></div></div>';
+		var cutoff_info = get_cutoff(result[1]);
+		// [ZTL, KZTLZQZX, Y, 35, 120]
+		output += "<br/>" + result[1] + " FIR: " + get_fir(result[1]) + " (" + cutoff_info[4] + " mins)" +
+			"<br/>Cutoff " + ("TODO") + // TODO add time until cutoff
+			"<br/>Refile " + ("TODO") + // TODO add time until refile
+			'</div></div></div>';
 		
 /* FP NOTES */
 
