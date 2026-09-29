@@ -306,7 +306,7 @@ compute = function(str_override = "") {
 		} else { output += "Unknown"; }
 
 		// Cost Index
-		output += "&nbsp;ci: ";
+		output += "<br/>&nbsp;ci: ";
 		if (["319S", "H319", "319W", "A320", "H205", "738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X"].includes(ac_type)) {
 			// Narrow Body
 			output += narrow_ci_min + " - " + narrow_ci_max + " (lower/slower/lighter)";
@@ -374,7 +374,7 @@ compute = function(str_override = "") {
 	// Routes
 	//if (regz.exec(fkeystxt) == null && (testing || (rega.exec(fkeystxt) != null))) {
 	if (result !== null) {
-		output = get_routes(result[1], result[2], result[5], ac_type, output);		
+		output = get_routes(result[1], result[2], result[5], ac_type, output);
 		$("#outbound").val("");
 		if (debug_mode && !safe_mode) {
 			var today = new Date();
