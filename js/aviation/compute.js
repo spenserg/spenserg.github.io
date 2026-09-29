@@ -274,10 +274,12 @@ compute = function(str_override = "") {
 			result = tmp_rslt;
 		}
 
-		var tmpres = result[3] + '&nbsp;&nbsp;&nbsp;' +
+/* LEFT BOX */
+
+		output = '<div class="container text-left" style="margin:0;padding:5"><div class="row"><div class="col-6">' + result[3] + '&nbsp;&nbsp;&nbsp;' +
 			(is_domestic(result[1], false) ? ('<span style="cursor:pointer" onclick="$(\'#dom_fir\').toggle()">' + result[1] + '</span><span id="dom_fir" style="display:none">&nbsp;&nbsp;(' + get_fir(result[1]) + ")</span>") : (convert_iata(result[1]) + '&nbsp;/&nbsp;' + convert_icao(result[1]))) +
-			'&nbsp;&nbsp;&nbsp;' + result[5] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result[4];
-		output = tmpres + "<br/>" + output;
+			'&nbsp;&nbsp;&nbsp;' + result[5] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result[4] + "<br/>" + output;
+
 		// Unrecognized Airport or ARTCC
 		if (convert_iata(result[1]).localeCompare("XXX") == 0 || convert_icao(result[1]).localeCompare("XXXX") == 0) {
 			// Unrecognized Dprt Station
@@ -296,17 +298,14 @@ compute = function(str_override = "") {
 		} else if (["738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X", "773W", "7878", "7879", "789P"].includes(ac_type)) {
 			if (ac_type == "738R") {
 				// SFP - Cat C under certain conditions
-				output += "C [flaps 40 straight-in] // Cat D [circle-to-land]";
+				output += "C [flaps 40 straight-in] // Cat D [circle-to-land]<br/>";
 			} else {
 				// Cat D
 				output += "D"; // 141-165 Kts
 			}
 		} else { output += "Unknown"; }
+
 		// Cost Index
-		output += ((ac_type == "738R") ? "<br/>" : "&nbsp;&nbsp;||&nbsp;");
-		if (["H319","A321","321T","321K"].includes(ac_type)) {
-			output += "&nbsp<b style='color:orange'>100/162NM<\/b>&nbsp;&nbsp;||&nbsp;"
-		}
 		output += "&nbsp;ci: ";
 		if (["319S", "H319", "319W", "A320", "H205", "738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X"].includes(ac_type)) {
 			// Narrow Body
@@ -316,6 +315,25 @@ compute = function(str_override = "") {
 			output += wide_ci_min + " - " + wide_ci_max + " (lower/slower/lighter)";
 		} else { output += "Unknown"; }
 
+		// Tanker | Ferry Fuel
+		if (!safe_mode) {
+			regc = /(\d+)\t\d+\:\d+\tH\n+TOTAL/g;
+			if ((tmpregc= regc.exec(fkeystxt)) != null) {
+				output += "<br/>Ferry Fuel: <b>" + tmpregc[1] + "</b>";
+			}
+		}
+
+/* RIGHT BOX */
+		output += '</div><div class="col-6" style="border:2px solid black;font-size:12px">';
+		output += get_right_box_info(result[1], result[2], result[5], ac_type);
+		output += "<br/>" + result[1] + " FIR: " + get_fir(result[1]) + " | Cutoff TODO";
+		output += '</div></div></div>';
+		
+/* FP NOTES */
+
+		
+		output += "<br/>" + ((["H319","A321","321T","321K"].includes(ac_type)) ? "&nbsp;<b style='color:orange'>100/162NM<\/b><br/>" : "");
+		
 		// A320 max autoland
 		if (["A320","H205"].includes(ac_type)) {
 			var ab_no = parseInt(tmp_rslt[5]);
@@ -349,29 +367,14 @@ compute = function(str_override = "") {
 				}
 			}
 		}
-
-		// Airport Specific
-		output = airport_extra(flows, result[1], result[2], result[5], ac_type, output);
 	} else if (debug_mode && (safe_mode || ((rega.exec(fkeystxt) != null) && (regb.exec(fkeystxt) != null)))) {
 		console.log("flifo parse error");
-	}
-
-	// Tanker | Ferry Fuel
-	if (!safe_mode) {
-		regc = /(\d+)\t\d+\:\d+\tH\n+TOTAL/g;
-		if ((tmpres = regc.exec(fkeystxt)) != null) {
-			output += "<br/>Ferry Fuel: <b>" + tmpres[1] + "</b>";
-		}
 	}
 
 	// Routes
 	//if (regz.exec(fkeystxt) == null && (testing || (rega.exec(fkeystxt) != null))) {
 	if (result !== null) {
-		output = get_routes(result[1], result[2], result[5], ac_type, output);
-
-console.log(result);
-console.log(output);
-		
+		output = get_routes(result[1], result[2], result[5], ac_type, output);		
 		$("#outbound").val("");
 		if (debug_mode && !safe_mode) {
 			var today = new Date();
