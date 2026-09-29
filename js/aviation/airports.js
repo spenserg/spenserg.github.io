@@ -78,43 +78,43 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	flows = ((Object.keys(flows).length == 0) ? {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"ELP":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0} : flows);
 
 	// A012
-	if (is_atwelve(arvl)) { result += "<br/><b>" + arvl + " is an A012 Airport<\/b>"; }
+	if (is_atwelve(arvl)) { result += "<b>" + arvl + " is an A012 Airport<\/b><br/>"; }
 
 	// 27K for 737-NGs
 	if (["738K", "738R"].includes(ac_type) && ["BDL","BJX","BOS","BUR","BZN","DCA","DEN","FAT","GUA","HDN","LAS","LGA","MDE","MEX","PHX","PSP","PVD","QRO","RDU","RNO","RTB","SBA","SBP","SJO","SJU","SNA","STT","SXM"].includes(dptr)) {
-		result += "<br/><b>" + dptr + " - 27K Available for N" + tail + "<\/b>";
+		result += "<b>" + dptr + " - 27K Available for N" + tail + "<\/b><br/>";
 	}
 	// A321 IAE Non-Sharklet Thrust Bump
 	if (["PHX","DEN","LAS","CLT"].includes(dptr)) {
 		if (["507","508","510","519","521","523","524","534","535","536","537","538","539","540","542","543","544","545","546","549","551","552","553","554","556","557","558","559","560","561","562","563","567","568","572","573","575","576","578","579","580","581","582","583","584","585","586","587","912","913","914","915","916","917","918","919","920","921","922","923","924","925","926","927","970","971","972","973","974","975","976","977","978","979","980","981","982"].includes(tail)) {
 			// Source: FOS COMMAND "TC*10"
-			result += "<br/><b>" + dptr + " - Thrust Bump Available for N" + tail + "<\/b>";
+			result += "<b>" + dptr + " - Thrust Bump Available for N" + tail + "<\/b><br/>";
 		}
 	}
 
 	var show_flow_info = "";
 	switch(dptr) {
 		case "ABQ":
-			result += "<br/><br/>ABQ Flow: <button type='button' id='ABQ_standard_left' class='btn" + ((flows['ABQ'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 0)'>East Rwy8</button>&nbsp;&nbsp;<button type='button' id='ABQ_standard_right' class='btn" + ((flows['ABQ'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 1)'>West Rwy26</button>";
+			result += "<br/>ABQ Flow: <button type='button' id='ABQ_standard_left' class='btn" + ((flows['ABQ'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 0)'>East Rwy8</button>&nbsp;&nbsp;<button type='button' id='ABQ_standard_right' class='btn" + ((flows['ABQ'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ABQ\", 1)'>West Rwy26</button>";
 			show_flow_info = "East Rwy8: GRZZZ, JEMEZ, MNZNO, RDRNR<br/>West Rwy26: ADYOS, ATOMK, BOSQE, DOOKK, FYSTA";
 			break;
 		case "AGS":
-			result =+ "<br/><br/>CHATT/DOVER/KAOLN/RDBUD: Masters weekend only (early April)";
+			result =+ "<br/>CHATT/DOVER/KAOLN/RDBUD: Masters weekend only (early April)";
 			break;
 		case "BFL":
-			result += "<br/><br/>BFL - 12R/30L N/A, see 10-7A";
+			result += "<br/>BFL - 12R/30L N/A, see 10-7A";
 			break;
 		case "BOI":
-			result += "<br/><br/>Run VAA above 30C";
+			result += "<br/>Run VAA above 30C";
 			break;
 		case "BTV":
-			result += "<br/><br/>BTV - Rwy15 limited due to terrain/ Tower will accommodate rwy33 with tailwind";
+			result += "<br/>BTV - Rwy15 limited due to terrain/ Tower will accommodate rwy33 with tailwind";
 			break;
 		case "BUR":
-			result += "<br/><br/>BUR - ATC prefers Rwy15, even with a tailwind";
+			result += "<br/>BUR - ATC prefers Rwy15, even with a tailwind";
 			break;
 		case "BZN":
-			result += "<br/><br/>BZN - Run VAA above 25C; Rwy30 is about 3k lbs better";
+			result += "<br/>BZN - Run VAA above 25C; Rwy30 is about 3k lbs better";
 			result += "<br/><br/>BZN Flow: <button type='button' id='BZN_standard_left' class='btn" + ((flows['BZN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='BZN_standard_right' class='btn" + ((flows['BZN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 1)'>NW Rwy 30</button>";
 			show_flow_info = "NW Rwy30: MEADO<br/>SE Rwy12: BGSKY, BOBKT";
 			break;
@@ -122,16 +122,16 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			// show_flow_info = "North Rwy36C/36R<br/>South Rwy18C/18L";
 			break;
 		case "COS":
-			result += "<br/><br/>COS - LAWS above 10C";
+			result += "<br/>COS - LAWS above 10C";
 			result += "<br/>COS - Rwy31 N/A, see 10-7A-1";
 			break;
 		case "DCA":
-			result += "<br/><br/>Curfew rstr 2200L - 0659L";
+			result += "<br/>Curfew rstr 2200L - 0659L";
 			var tmp_mtow = get_dca_mtow(ac_type, tail);
 			if (tmp_mtow != null) { result += "<br/>" + tmp_mtow; }
 			break;
 		case "DEN":
-			result += "<br/><br/>Run VAA when hot"; // TODO How hot? Source?
+			result += "<br/>Run VAA when hot"; // TODO How hot? Source?
 			break;
 		case "DFW":
 			if (is_euro(arvl)) {
@@ -146,38 +146,38 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			}
 			break;
 		case "EGE":
-			result += "<br/><br/>EGE - Rwy 25 is preferred, even with tailwind";
+			result += "<br/>EGE - Rwy 25 is preferred, even with tailwind";
 			result += "<br/>EGE - VAA 25X for icing conditions 1000 - 10,000 Feet";
 			result += "<br/>EGE - ARFF manages snow plow ops and notams";
 			break;
 		case "ELP":
-			result += "<br/><br/>ELP Flow: <button type='button' id='ELP_standard_left' class='btn" + ((flows['ELP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ELP\", 0)'>SW Rwy 22</button>&nbsp;&nbsp;<button type='button' id='ELP_standard_right' class='btn" + ((flows['ELP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ELP\", 1)'>NE Rwy 4</button>";
+			result += "<br/>ELP Flow: <button type='button' id='ELP_standard_left' class='btn" + ((flows['ELP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ELP\", 0)'>SW Rwy 22</button>&nbsp;&nbsp;<button type='button' id='ELP_standard_right' class='btn" + ((flows['ELP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ELP\", 1)'>NE Rwy 4</button>";
 			show_flow_info = "SW Rwy22: ATKNN<br/>NE Rwy4: JCOXX<br/>BOTH: LATVE, NEVUE, TDOWN";
 			break;
 		case "EYW":
-			result += "<br/><br/>EYW - Check VAA if wet or departing Rwy 9";
+			result += "<br/>EYW - Check VAA if wet or departing Rwy 9";
 			result += "<br/>EYW - Tailwind N/A (1kt is about 10k lbs penalty)";
 			result += "<br/>EYW - Max crosswind 20 knots, see 10-7A-1";
 			result += "<br/>Wet/Dry definitions FOM 2.1.6";
 			break;
 		case "FAT":
-			result += "<br/><br/>FAT - Run VAA if departing Rwy29L";
+			result += "<br/>FAT - Run VAA if departing Rwy29L";
 			break;
 		case "GJT":
-			result += "<br/><br/>GJT - Run VAA above 25C";
+			result += "<br/>GJT - Run VAA above 25C";
 			break;
 		case "IAH":
-			result += "<br/><br/>IAH Landing: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West Rwy26</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East Rwy8</button>";
+			result += "<br/>IAH Landing: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West Rwy26</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East Rwy8</button>";
 			show_flow_info = "Landing East: GUMBY, PITZZ<br/>Landing West: MMUGS, BNDTO<br/>ALL: FLYZA, RITAA, STRYA, STYCK, WYLSN";
 			break;
 		case "JAC":
-			result += "<br/><br/>JAC - Tailwind or Contaminated Rwy takeoff N/A";
+			result += "<br/>JAC - Tailwind or Contaminated Rwy takeoff N/A";
 			result += "<br/>JAC - Always check VAA, Rwy19 is better";
 			result += "<br/><br/>JAC Flow: <button type='button' id='JAC_standard_left' class='btn" + ((flows['JAC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"JAC\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='JAC_standard_right' class='btn" + ((flows['JAC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"JAC\", 1)'>North</button>";
 			show_flow_info = "S Rwy19: ALPIN, TETON<br/>N Rwy1: DIVYD, GEYSR";
 			break;
 		case "LAX":
-			result += "<br/><br/>LAX curfew 2100L - 0700L, see <a href=\"https://www.lawa.org/media/30137\" target=\"_blank\">KLAX Noise Abatement Procedures<\/a>";
+			result += "<br/>LAX curfew 2100L - 0700L, see <a href=\"https://www.lawa.org/media/30137\" target=\"_blank\">KLAX Noise Abatement Procedures<\/a>";
 			if (ac_type.includes("321")) {
 				result += "<br/>A321 - File OSHNN instead of ORKAS";
 				result += "<br/>KLAX ORCKA5 LAS BAWER => KLAX OSHNN1 BEALE BAWER";
@@ -185,33 +185,33 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				result += "<br/>Departures 2100L-0700L, file OSHNN instead of ORKAS";
 				result += "<br/>KLAX ORCKA5 LAS BAWER => KLAX OSHNN1 BEALE BAWER";
 			}
-			result += "<br/><br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>";
+			result += "<br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>";
 			show_flow_info = "West Rwy24L/25R<br/>E Rwy 6R/7L: LAXX/GARDY/TRTON";
 			break;
 		case "LGA":
 			result += "<br/><b>LGA - If launching RWY13, make sure CLP planned runway matches<\/b>";
 /* 		Im pretty sure pier weights arent a thing anymore
 			if (ac_type == "738M") {
-				result += "<br/><br/>B737 MAX acft are not subject to pier weights";
+				result += "<br/>B737 MAX acft are not subject to pier weights";
 			}
 */
 			break;
 		case "MIA":
-			// result += "<br/><br/>MIA - GLADZ EAST FLOW // BNGOS WEST FLOW"; // TODO: Is this still a thing?
+			// result += "<br/>MIA - GLADZ EAST FLOW // BNGOS WEST FLOW"; // TODO: Is this still a thing?
 			break;
 		case "MRY":
-			result += "<br/><br/>MRY - Run VAA if departing Rwy 10R";
+			result += "<br/>MRY - Run VAA if departing Rwy 10R";
 			break;
 		case "MSO":
-			result += "<br/><br/>MSO Flow: <button type='button' id='MSO_standard_left' class='btn" + ((flows['MSO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"MSO\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='MSO_standard_right' class='btn" + ((flows['MSO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"MSO\", 1)'>NW Rwy 30</button>";
+			result += "<br/>MSO Flow: <button type='button' id='MSO_standard_left' class='btn" + ((flows['MSO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"MSO\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='MSO_standard_right' class='btn" + ((flows['MSO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"MSO\", 1)'>NW Rwy 30</button>";
 			show_flow_info = "NW Rwy30: DIDLY<br/>SE Rwy 12: MZULA, VICTO";
 			break;
 		case "MTJ":
-			result += "<br/><br/>MTJ - Rwy 13/31 N/A"; // TODO: Source?
+			result += "<br/>MTJ - Rwy 13/31 N/A"; // TODO: Source?
 			break;
 		case "ORD":
 			if (is_euro(arvl)) {
-				result += "<br/><br/><b>ANCER<\/b>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PETTY TVC NAKAL YVO EMBES ANCER\" readonly>";
+				result += "<br/><b>ANCER<\/b>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PETTY TVC NAKAL YVO EMBES ANCER\" readonly>";
 				result += "<br/><b>BAREE<\/b>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PETTY TVC NAKAL YVO Q820 KISAS BAREE\" readonly>";
 				result += "<br/><b>CEFOU<\/b>: <input style=\"width:75%\" value=\"KORD RAYNR BRTMN TAAYZ PETTY MELRR HOCKE Q824 LETAK Q848 DICEN CEFOU\" readonly>";
 				result += "<br/><b>DOVEY<\/b>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME EVOTE NELLS JHW Q82 PONCT Q935 BOS FRILL DOVEY\" readonly>";
@@ -222,43 +222,43 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 		case "PHL":
 			if (is_euro(arvl)) {
-				result += "<br/><br/>Use OOD if planning via DOVEY: <input style=\"width:29em\" value=\"KPHL OOD TEBEE HAYDO SIE B24 LYNUS LARGE JENYY DOVEY\" readonly> ..";
+				result += "<br/>Use OOD if planning via DOVEY: <input style=\"width:29em\" value=\"KPHL OOD TEBEE HAYDO SIE B24 LYNUS LARGE JENYY DOVEY\" readonly> ..";
 			}
 			break;
 		case "PHX":
 			// result += "<br/>PHX - Make sure flow matches TPS; Usually departing into the sun (East in AMs, West in PMs)";
-			result += "<br/><br/>PHX - Rwy 26/8 usually available for dptr (operational necessity) if tower notified in advance";
+			result += "<br/>PHX - Rwy 26/8 usually available for dptr (operational necessity) if tower notified in advance";
 			if (!["ZLA","ZLC","ZOA","ZSE","ZAB"].includes(get_fir(arvl))) {
 				result += "<br/><br/><b>If ZFW is reduced using BROAK1 dptr, disable restrictions.<br/>Fkeys cant calc an M2 solution when cowboy sua is active, but the sua isn't meant to restrict departures on broak1<\/b>";
 			}
 			// show_flow_info = "West Rwy25R<br/>East Rwy7L";
 			break;
 		case "PSP":
-			result += "<br/><br/>PSP - Run VAA for Rwy 31L";
+			result += "<br/>PSP - Run VAA for Rwy 31L";
 			result += "<br/><br/>PSP Flow: <button type='button' id='PSP_standard_left' class='btn" + ((flows['PSP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"PSP\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='PSP_standard_right' class='btn" + ((flows['PSP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"PSP\", 1)'>North</button>";
 			show_flow_info = "North Rwy31L: HWRRD, YUCCA<br/>South Rwy 13R: IKNOE, JEEON, LGANN";
 			break;
 		case "RDM":
-			result += "<br/><br/>RDM - Rwy11/29 N/A for A320 and non-sharklet A321, see 10-7A-2";
+			result += "<br/>RDM - Rwy11/29 N/A for A320 and non-sharklet A321, see 10-7A-2";
 			break;
 		case "RNO":
-			result += "<br/><br/>RNO - Use 10-7 Pages and SIDS for takeoff mins";
+			result += "<br/>RNO - Use 10-7 Pages and SIDS for takeoff mins";
 			result += "<br/>RNO - Max climb gradient 525 feet per NM; Some south departures exceed 525 ft/nm (see 10-7C)";
 			result += "<br/><br/>RNO Flow: <button type='button' id='RNO_standard_left' class='btn" + ((flows['RNO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='RNO_standard_right' class='btn" + ((flows['RNO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 1)'>North</button>";
 			show_flow_info = "North Rwy35L: ALPYN<br/>South Rwy17R: ZEFFR";
 			break;
 		case "SAN":
-			result += "<br/><br/>SAN - East Flow (Rwy9): Takeoff Mins 600-2 // BORDER SID lower mins";
+			result += "<br/>SAN - East Flow (Rwy9): Takeoff Mins 600-2 // BORDER SID lower mins";
 			result += "<br/>SAN - Curfew rstr: Takeoff prohibited 2330L - 0630L";
 			// TODO
 			// result += "<br/><br/>SAN Landing: <button type='button' id='SAN_standard_left' class='btn" + ((flows['SAN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SAN\", 0)'>West Rwy27</button>&nbsp;&nbsp;<button type='button' id='SAN_standard_right' class='btn" + ((flows['SAN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SAN\", 1)'>East Rwy9</button>";
 			break;
 		case "SBA":
-			result += "<br/><br/>SBA - Always run VAA; Rwy 25 is about 2k lbs worse.";
+			result += "<br/>SBA - Always run VAA; Rwy 25 is about 2k lbs worse.";
 			result += "<br/>SBA - Tailwind takeoff N/A. Check NOTAMs for crane penalty";
 			break;
 		case "SBP":
-			result += "<br/><br/>SBP - Mountains off Rwy11; Watch winds and run VAA";
+			result += "<br/>SBP - Mountains off Rwy11; Watch winds and run VAA";
 			result += "<br/><br/>SBP Flow: <button type='button' id='SBP_standard_left' class='btn" + ((flows['SBP'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SBP\", 0)'>East Rwy 11</button>&nbsp;&nbsp;<button type='button' id='SBP_standard_right' class='btn" + ((flows['SBP'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SBP\", 1)'>West Rwy 29</button>";
 			show_flow_info = "West Rwy29: CREPE<br/>East Rwy11: AVILA, WYNNR";
 			break;
@@ -275,18 +275,18 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			show_flow_info = "Rwy 1L/1R: NIITE, SEGUL, SSTIK<br/>Rwy28: GNNRR, NIITE, SEGUL, SNTNA, WESLA<br/>Rwy19: SAHEY";
 			break;
 		case "SJC":
-			result += "<br/><br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
+			result += "<br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
 			result += "<br/>SJC - B737 MAX and A32F NEO exempt from curfew (see 10-7A-2)";
 			result += "<br/><br/>SJC Flow: <button type='button' id='SJC_standard_left' class='btn" + ((flows['SJC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SJC\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='SJC_standard_right' class='btn" + ((flows['SJC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SJC\", 1)'>South</button>";
 			show_flow_info = "South Rwy12: ALMDN, BMRNG, TECKY<br/>North Rwy30: LOUPE, SJC3, SPTNS";
 			break;
 		case "SLC":
-			result += "<br/><br/>SLC - Run VAA in summer";
+			result += "<br/>SLC - Run VAA in summer";
 			result += "<br/><br/>SLC Flow: <button type='button' id='SLC_standard_left' class='btn" + ((flows['SLC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SLC\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='SLC_standard_right' class='btn" + ((flows['SLC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SLC\", 1)'>South</button>";
 			show_flow_info = "North Rwy34/35: ARCHZ, SEVYR<br/>South Rwy16: ZIONZ<br/>Both: RUGGD, DEZRT";
 			break;
 		case "SMF":
-			result += "<br/><br/>SMF - Run VAA above 25C";
+			result += "<br/>SMF - Run VAA above 25C";
 			result += "<br/><br/>SMF Flow: <button type='button' id='SMF_standard_left' class='btn" + ((flows['SMF'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SMF\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='SMF_standard_right' class='btn" + ((flows['SMF'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SMF\", 1)'>South</button>";
 			show_flow_info = "North Rwy35: RVRCT<br/>South Rwy17: SCTWN";
 			break;
@@ -302,11 +302,11 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			show_flow_info = "North Rwy2L: HOBOW, MIKAA<br/>South Rwy20R: FINZZ, HHERO, STAYY<br/>Both: PIGGN";
 			break;
 		case "TUS":
-			result += "<br/><br/>TUS Flow: <button type='button' id='TUS_standard_left' class='btn" + ((flows['TUS'] == 0) ? " selected" : "") + "' onclick='change_flow(\"TUS\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='TUS_standard_right' class='btn" + ((flows['TUS'] == 1) ? " selected" : "") + "' onclick='change_flow(\"TUS\", 1)'>NW Rwy 30</button>";
+			result += "<br/>TUS Flow: <button type='button' id='TUS_standard_left' class='btn" + ((flows['TUS'] == 0) ? " selected" : "") + "' onclick='change_flow(\"TUS\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='TUS_standard_right' class='btn" + ((flows['TUS'] == 1) ? " selected" : "") + "' onclick='change_flow(\"TUS\", 1)'>NW Rwy 30</button>";
 			show_flow_info = "North Rwy30: WLDKT<br/>South Rwy12: BURRO, STAYY<br/>Both: TUS9";
 			break;
 		case "VPS":
-			result += "<br/><br/>VPS - If arresting cables are inop, use B runways for TPS";
+			result += "<br/>VPS - If arresting cables are inop, use B runways for TPS";
 			break;
 		case "YEG":
 			show_flow_info =
@@ -365,41 +365,41 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			break;
 /* Latin Depatures */
 		case "AUA":
-			result += "<br/><br/>AUA - Contact station via DECS. \"SEND AUA6\"";
+			result += "<br/>AUA - Contact station via DECS. \"SEND AUA6\"";
 			break;
 		case "BOG":
-			result += "<br/><br/>Contact BOG Ops via <a href=\"https://teams.microsoft.com/\" target=\"_blank\">TEAMS<\/a>";
+			result += "<br/>Contact BOG Ops via <a href=\"https://teams.microsoft.com/\" target=\"_blank\">TEAMS<\/a>";
 			result += "<br/>BOG - Wgt rstr above 19C // 14L is primary but 14R can take a little more weight";
 			result += "<br/>BOG - 32L/R gets even more weight but only used when wx tops above 10.000";
 			break;
 		case "BDA":
-			result += "<br/><br/>BDA current weather: <a href=\"http://weather.bm/tools/graphics.asp?name=ISLAND_AWOS\" target=\"_blank\">AWOS<\/a> | <a href=\"http://weather.bm/tools/graphics.asp?name=250KM%20SRI\" target=\"_blank\">RADAR<\/a>";
+			result += "<br/>BDA current weather: <a href=\"http://weather.bm/tools/graphics.asp?name=ISLAND_AWOS\" target=\"_blank\">AWOS<\/a> | <a href=\"http://weather.bm/tools/graphics.asp?name=250KM%20SRI\" target=\"_blank\">RADAR<\/a>";
 			break;
 		case "BGI":
-			result += "<br/><br/>Make sure BGI/TBPB metar is current: <a href=\"https://www.barbadosweather.org/AviationData.php\" target=\"_blank\">Latest METAR/TAF<\/a>";
+			result += "<br/>Make sure BGI/TBPB metar is current: <a href=\"https://www.barbadosweather.org/AviationData.php\" target=\"_blank\">Latest METAR/TAF<\/a>";
 			break;
 		case "BZE":
-			result += "<br/><br/>BZE Rwy25 requires back-taxi";
+			result += "<br/>BZE Rwy25 requires back-taxi";
 			break;
 		case "OAX":
-			result += "<br/><br/>OAX - Rwy1 by capt request only. See notes on MAXIL SID chart.";
+			result += "<br/>OAX - Rwy1 by capt request only. See notes on MAXIL SID chart.";
 			break;
 		case "PUJ":
-			result += "<br/><br/>CHUMA only for New England arvls (JFK, PHL, etc.)";
+			result += "<br/>CHUMA only for New England arvls (JFK, PHL, etc.)";
 			result += "<br/>PIXAR only for Oceanic/L-Routes";
 			break;
 		case "QRO":
-			result += "<br/><br/>QRO - Make sure metar is up to date and planned temp matches current";
+			result += "<br/>QRO - Make sure metar is up to date and planned temp matches current";
 			break;
 		case "SJU":
-			result += "<br/><br/>SJU - Check VAA if not a Neo. Rwy26 optimal.";
+			result += "<br/>SJU - Check VAA if not a Neo. Rwy26 optimal.";
 			break;
 		case "STT":
-			result += "<br/><br/>STT - Rwy 28 available, usually with delay. Check tailwinds and MOT";
+			result += "<br/>STT - Rwy 28 available, usually with delay. Check tailwinds and MOT";
 			result += "<br/>STT Airbus - Check for wet rwy if tailwind";
 			break;
 		case "SXM":
-			result += "<br/><br/>SXM - Rwy10 primary, use winds when able. Rwy10 tailwind takeoff N/A";
+			result += "<br/>SXM - Rwy10 primary, use winds when able. Rwy10 tailwind takeoff N/A";
 			break;
 	}
 	if (["COR","EZE","GRU","GIG","MVD"].includes(dptr)) {
@@ -412,7 +412,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	}
 	if (["BAQ","BOG","CLO","CTG","MDE"].includes(dptr)) {
 		// Colombia Ops
-		result += "<br/><br/>FP must be filed 60 mins before etd and expire 45 mins after p-time. RF 7001C DLA";
+		result += "<br/>FP must be filed 60 mins before etd and expire 45 mins after p-time. RF 7001C DLA";
 		result += "<br/>Colombia does not accept CHG messages. Must cancel/refile";
 		result += "<br/>Colombia departures must have an alternate";
 	}
@@ -421,7 +421,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		result += "<br/><b>All Peru departures must have an alternate<\/b>";
 	}
 	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(dptr)) {
-		result += "<br/><br/>Canadian required routes are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes<br/>";
+		result += "<br/>Canadian required routes are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes<br/>";
 		result += "<br/><b>Canada Flight Supplement Routes:</b>";
 		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='cfsd_desc_button' onclick='$(\"#cfsd_desc_text\").toggle(); $(\"#cfsd_desc_button\").text(($(\"#cfsd_desc_button\").text().includes(\"Show\")) ? \"Hide CFS Routes\" : \"Show CFS Routes\");'>Show CFS Routes</button>";
 		result += "&nbsp;&nbsp;&nbsp;(Updated 2026-06-19)";
@@ -434,148 +434,148 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	show_flow_info = "";
 	switch(arvl) {
 		case "ABQ":
-			result += "<br/><br/>ABQ - No ILS Rwy21 or Rwy26 // RNAV apchs cannot be used for alternate planning";
+			result += "<br/>ABQ - No ILS Rwy21 or Rwy26 // RNAV apchs cannot be used for alternate planning";
 			result += "<br/>ABQ - Rwy12/30 N/A (See 10-7A)";
 			break;
 		case "ATL":
-			result += "<br/><br/>ATL Flow: <button type='button' id='ATL_standard_left' class='btn" + ((flows['ATL'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ATL\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='ATL_standard_right' class='btn" + ((flows['ATL'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ATL\", 1)'>East</button>";
+			result += "<br/>ATL Flow: <button type='button' id='ATL_standard_left' class='btn" + ((flows['ATL'] == 0) ? " selected" : "") + "' onclick='change_flow(\"ATL\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='ATL_standard_right' class='btn" + ((flows['ATL'] == 1) ? " selected" : "") + "' onclick='change_flow(\"ATL\", 1)'>East</button>";
 			show_flow_info = "East Rwy8/9: SITTH<br/>West Rwy26/27: JJEDI";
 			break;
 		case "BFL":
-			result += "<br/><br/>BFL - 12R/30L N/A, see 10-7A";
+			result += "<br/>BFL - 12R/30L N/A, see 10-7A";
 			break;
 		case "BHM":
-			result += "<br/><br/>BHM - Landing 18/36 N/A per 10-7";
+			result += "<br/>BHM - Landing 18/36 N/A per 10-7";
 			break;
 		case "BIL":
-			result += "<br/><br/>BIL - Run VAA if departing rwy28R";
+			result += "<br/>BIL - Run VAA if departing rwy28R";
 			break;
 		case "BUR":
-			result += "<br/><br/>BUR - Voluntary curfew 2200-0700L";
+			result += "<br/>BUR - Voluntary curfew 2200-0700L";
 			result += "<br/>BUR - Wet: Use LAWS, ATC prefers rwy33 and rwy8";
 			break;
 		case "BZN":
-			result += "<br/><br/>BZN - Run LAWS above 30C";
+			result += "<br/>BZN - Run LAWS above 30C";
 			result += "<br/>BZN Night: Circle to Land N/A";
 			result += "<br/><br/>BZN Flow: <button type='button' id='BZN_standard_left' class='btn" + ((flows['BZN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 0)'>SE Rwy 12</button>&nbsp;&nbsp;<button type='button' id='BZN_standard_right' class='btn" + ((flows['BZN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"BZN\", 1)'>NW Rwy 30</button>";
 			show_flow_info = "NW Rwy30: SUBKY<br/>SE Rwy12: POWDA";
 			break;
 		case "CLT":
 			if (!is_domestic(dptr)) {
-				result += "<br/><br/>RDU has latest customs hours out of nearby alternates";
+				result += "<br/>RDU has latest customs hours out of nearby alternates";
 			}
 			break;
 		case "COS":
-			result += "<br/><br/>COS - Rwy31 N/A";
+			result += "<br/>COS - Rwy31 N/A";
 			break;
 		case "DCA":
-			result += "<br/><br/>Curfew rstr 2200L - 0659L";
+			result += "<br/>Curfew rstr 2200L - 0659L";
 			var tmp_mlw = get_dca_mlw(ac_type, tail);
 			if (tmp_mlw != null) { result += "<br/>" + tmp_mlw; }
 			break;
 		case "DEN":
-			result += "<br/><br/>DEN - Run LAWS above 20C";
+			result += "<br/>DEN - Run LAWS above 20C";
 			break;
 		case "DFW":
-			result += "<br/><br/>DFW Flow: <button type='button' id='DFW_standard_left' class='btn" + ((flows['DFW'] == 0) ? " selected" : "") + "' onclick='change_flow(\"DFW\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='DFW_standard_right' class='btn" + ((flows['DFW'] == 1) ? " selected" : "") + "' onclick='change_flow(\"DFW\", 1)'>North</button>";
+			result += "<br/>DFW Flow: <button type='button' id='DFW_standard_left' class='btn" + ((flows['DFW'] == 0) ? " selected" : "") + "' onclick='change_flow(\"DFW\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='DFW_standard_right' class='btn" + ((flows['DFW'] == 1) ? " selected" : "") + "' onclick='change_flow(\"DFW\", 1)'>North</button>";
 			show_flow_info = "North Rwy35/36: JOVEM / BRDJE / SOCKK / WHINY<br/>South Rwy17/18: VKTRY / SEEVR / BOOVE / BEREE";
 			break;
 		case "DTW":
-			result += "<br/><br/>DTW Flow: <button type='button' id='DTW_standard_left' class='btn" + ((flows['DTW'] == 0) ? " selected" : "") + "' onclick='change_flow(\"DTW\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='DTW_standard_right' class='btn" + ((flows['DTW'] == 1) ? " selected" : "") + "' onclick='change_flow(\"DTW\", 1)'>South</button>";
+			result += "<br/>DTW Flow: <button type='button' id='DTW_standard_left' class='btn" + ((flows['DTW'] == 0) ? " selected" : "") + "' onclick='change_flow(\"DTW\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='DTW_standard_right' class='btn" + ((flows['DTW'] == 1) ? " selected" : "") + "' onclick='change_flow(\"DTW\", 1)'>South</button>";
 			show_flow_info = "North Rwy3/4: KLYNK / CRAKN / CUUGR / WNGNT / GRAYT / LECTR / HAYLL / KKISS<br/>South Rwy21/22: BONZZ / HTROD / TPGUN / FERRL / LAYKS / HANBL / VCTRZ / RKCTY";
 			break;
 		case "EGE":
-			result += "<br/><br/>EGE Can handle 3 acft max: 2 gates + deice pad. Expect station to call for delay.";
+			result += "<br/>EGE Can handle 3 acft max: 2 gates + deice pad. Expect station to call for delay.";
 			result += "<br/>EGE - ARFF manages snow plow ops and notams";
 			result += "<br/>EGE - Send RAIM Check RNP .11 // LAWS above 37C";
 			result += "<br/><br/>EGE - MALSR and PAPI required for night arrivals.";
 			result += "<br/>EGE - Rwy 7 and Visual Rwy 25 N/A after Civil Twilight";
 			break;
 		case "EYW":
-			result += "<br/><br/>EYW - Max crosswind 20 knots (see 10-7B)";
+			result += "<br/>EYW - Max crosswind 20 knots (see 10-7B)";
 			result += "<br/>EYW - Papi and GPS required at night (see 10-7B)";
 			result += "<br/>EYW - Wet/Dry definitions FOM 2.1.6";
 			result += "<br/>EYW - CA needs 75 hrs in AC type// FAM page review required";
 			break;
 		case "GEG":
-			result += "<br/><br/>GEG - Run LAWS above 35C";
+			result += "<br/>GEG - Run LAWS above 35C";
 			break;
 		case "GUC":
-			result += "<br/><br/>GUC - VOR, Circle-to-Land, Visual N/A; Rwy 24 N/A at night";
+			result += "<br/>GUC - VOR, Circle-to-Land, Visual N/A; Rwy 24 N/A at night";
 			result += "<br/>GUC Cold Temp chart below -26C";
 			break;
 		case "IAH":
-			result += "<br/><br/>IAH Landing: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West Rwy26</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East Rwy8</button>";
+			result += "<br/>IAH Landing: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West Rwy26</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East Rwy8</button>";
 			show_flow_info = "East Rwy8/9: GUSHR, NNCEE<br/>West Rwy26/27: DRLLR, LINKK";
 			break;
 		case "JAC":
-			result += "<br/><br/>JAC - Plan at least 5k spread between ferry fuel and mlw";
+			result += "<br/>JAC - Plan at least 5k spread between ferry fuel and mlw";
 			result += "<br/>JAC Night: Visual approaches N/A, ARFF curfew 2330L";
 			result += "<br/>JAC - Coordinate rwy clearing during snow events per F-2 notam";
 			result += "<br/>JAC - Cold Temp chart below -21C";
 			break;
 		case "LAS":
-			result += "<br/><br/>LAS - Run LAWS above 35C";
+			result += "<br/>LAS - Run LAWS above 35C";
 			break;
 		case "MCO":
-			result += "<br/><br/>MCO Flow: <button type='button' id='MCO_standard_left' class='btn" + ((flows['MCO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='MCO_standard_right' class='btn" + ((flows['MCO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 1)'>North</button>";
+			result += "<br/>MCO Flow: <button type='button' id='MCO_standard_left' class='btn" + ((flows['MCO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='MCO_standard_right' class='btn" + ((flows['MCO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"MCO\", 1)'>North</button>";
 			show_flow_info = "North Rwy35/36: SNFLD<br/>South Rwy17/18: GTOUT<br/>Both: GRNCH, PRICY, ALYNA";
 			break;
 		case "MFE":
-			result += "<br/><br/>MFE - Notify Ops of any arrivals after midnight local";
+			result += "<br/>MFE - Notify Ops of any arrivals after midnight local";
 			break;
 		case "MSO":
-			result += "<br/><br/>MSO - Below -12C Cold Temp Correction only available ILS Rwy12, see FOM 9w.4";
+			result += "<br/>MSO - Below -12C Cold Temp Correction only available ILS Rwy12, see FOM 9w.4";
 			result += "<br/>MSO - Run LAWS above 35C";
 			break;
 		case "MTJ":
-			result += "<br/><br/>MTJ - No Control Tower";
+			result += "<br/>MTJ - No Control Tower";
 			result += "<br/>MTJ - Rwy 13/31 N/A";
 			result += "<br/>MTJ - At night: Rwy 35 N/A; no circle to land";
 			break;
 		case "PSP":
-			result += "<br/><br/>PSP - No ILS procedures, do not plan RNAV apch for alternates";
+			result += "<br/>PSP - No ILS procedures, do not plan RNAV apch for alternates";
 			break;
 		case "RDM":
-			result += "<br/><br/>RDM - Rwy11/29 N/A for A320 and non-sharklet A321, see 10-7A-2";
+			result += "<br/>RDM - Rwy11/29 N/A for A320 and non-sharklet A321, see 10-7A-2";
 			result += "<br/>RDM - TSA closes 1945L";
 			break;
 		case "RIC":
-			result += "<br/><br/>RIC - primary AA gates A6 and A8, AE gates A10, A12, & A14";
+			result += "<br/>RIC - primary AA gates A6 and A8, AE gates A10, A12, & A14";
 			break;
 		case "RNO":
-			result += "<br/><br/>RNO Flow: <button type='button' id='RNO_standard_left' class='btn" + ((flows['RNO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='RNO_standard_right' class='btn" + ((flows['RNO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 1)'>North</button>";
+			result += "<br/>RNO Flow: <button type='button' id='RNO_standard_left' class='btn" + ((flows['RNO'] == 0) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='RNO_standard_right' class='btn" + ((flows['RNO'] == 1) ? " selected" : "") + "' onclick='change_flow(\"RNO\", 1)'>North</button>";
 			show_flow_info = "North Rwy35: TARVR, EELZA, WADOL<br/>South Rwy17: SCOLA, KLUBS, ORRCA, RYANN, WINRZ";
 			break;
 		case "SAN":
-			result += "<br/><br/>SAN Landing: <button type='button' id='SAN_standard_left' class='btn" + ((flows['SAN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SAN\", 0)'>West Rwy27</button>&nbsp;&nbsp;<button type='button' id='SAN_standard_right' class='btn" + ((flows['SAN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SAN\", 1)'>East Rwy9</button>";
+			result += "<br/>SAN Landing: <button type='button' id='SAN_standard_left' class='btn" + ((flows['SAN'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SAN\", 0)'>West Rwy27</button>&nbsp;&nbsp;<button type='button' id='SAN_standard_right' class='btn" + ((flows['SAN'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SAN\", 1)'>East Rwy9</button>";
 			result += "<br/>SAN - Use TOPGN instead of LUCKI when KSAN is landing east and departing west";
 			break;
 		case "SBA":
-			result += "<br/><br/>SBA - Plan 5k spread on ferry fuel";
+			result += "<br/>SBA - Plan 5k spread on ferry fuel";
 			break;
 		case "SBP":
-			result += "<br/><br/>SBP - Run LAWS when wet; Rwy 11 LDA 5300 feet // Rwy 29 LDA 5600";
+			result += "<br/>SBP - Run LAWS when wet; Rwy 11 LDA 5300 feet // Rwy 29 LDA 5600";
 			break;
 		case "SJC":
 			if (["321E", "738M"].includes(ac_type)) { // A32F neo & B737 max
-				result += "<br/><br/>SJC - " + ((ac_type == "738M") ? "B737 MAX" : "A32F NEO") + " acft are exempt from curfew (see 10-7A-2)";
+				result += "<br/>SJC - " + ((ac_type == "738M") ? "B737 MAX" : "A32F NEO") + " acft are exempt from curfew (see 10-7A-2)";
 			} else {
-				result += "<br/><br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
+				result += "<br/>SJC - Curfew rstr: 2330-0630L (see 10-9A), 30 min extension possible";
 			}
 			break;
 		case "SLC":
-			result += "<br/><br/>SLC - Run LAWS above 30C";
+			result += "<br/>SLC - Run LAWS above 30C";
 			result += "<br/><br/>SLC Flow: <button type='button' id='SLC_standard_left' class='btn" + ((flows['SLC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SLC\", 0)'>North</button>&nbsp;&nbsp;<button type='button' id='SLC_standard_right' class='btn" + ((flows['SLC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SLC\", 1)'>South</button>";
 			show_flow_info = "North Rwy34: JAZZZ, QWENN<br/>South Rwy16: PITTT";
 			break;
 		case "SNA":
-			result += "<br/><br/>SNA Flow: <button type='button' id='SNA_standard_left' class='btn" + ((flows['SNA'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SNA\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='SNA_standard_right' class='btn" + ((flows['SNA'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SNA\", 1)'>North</button>";
+			result += "<br/>SNA Flow: <button type='button' id='SNA_standard_left' class='btn" + ((flows['SNA'] == 0) ? " selected" : "") + "' onclick='change_flow(\"SNA\", 0)'>South</button>&nbsp;&nbsp;<button type='button' id='SNA_standard_right' class='btn" + ((flows['SNA'] == 1) ? " selected" : "") + "' onclick='change_flow(\"SNA\", 1)'>North</button>";
 			result += "<br/>SNA - DSNEE S FLOW (rwy20R) // ROOBY N FLOW (rwy2L), see chart notes";
 			result += "<br/><br/>SNA - Curfew rstr: landing N/A without approval 2300-0705L (0805L on Sundays), 15 min extension possible";
 			break;
 		case "TUS":
-			result += "<br/><br/>TUS - Run LAWS above 35C";
+			result += "<br/>TUS - Run LAWS above 35C";
 			result += "<br/>TUS - NO ILS apchs for Rwy30";
 			result += "<br/>TUS - Night: Visual appr N/A (see 10-7B)";
 			break;
@@ -594,7 +594,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				"YOW - ARR fr NW: .. <input style=\"width:15em\" value=\"SMARE MEECH ARR\" readonly>";
 			break;
 		case "YUL":
-			result += "<br/><br/>YUL - Curfew rstr 0100L - 0700L, Extensions authorized";
+			result += "<br/>YUL - Curfew rstr 0100L - 0700L, Extensions authorized";
 			show_flow_info = 
 				"YUL - ARR fr NE: .. <input style=\"width:15em\" value=\"TIBOS ROCKT3 CYUL\" readonly><br/>" +
 				"YUL - ARR fr E: .. <input style=\"width:15em\" value=\"KEBIG ROCKT3 CYUL\" readonly><br/>" +
@@ -603,7 +603,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				"YUL - ARR fr W: .. <input style=\"width:15em\" value=\"MIGLO HABBS7 CYUL\" readonly>";
 			break;
 		case "YVR":
-			result += "<br/><br/>YVR - Curfew rstr 0000L - 0600L, Extensions authorized";
+			result += "<br/>YVR - Curfew rstr 0000L - 0600L, Extensions authorized";
 			result += "<br/>YVR - Rwy 13/31 N/A";
 			show_flow_info = 
 				"YVR - ARR fr NE: .. <input style=\"width:15em\" value=\"MERYT BOOTH CANUC7 CYVR\" readonly><br/>" +
@@ -613,7 +613,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				"YVR - ARR fr SW: .. <input style=\"width:15em\" value=\"PEKAA SHARK5 CYVR\" readonly>";
 			break;
 		case "YYC":
-			result += "<br/><br/>YYC - If alt needed: Check Customs for YEG; GEG is a good backup";
+			result += "<br/>YYC - If alt needed: Check Customs for YEG; GEG is a good backup";
 			show_flow_info =
 				"YYC - ARR fr NE: .. <input style=\"width:15em\" value=\"IGVUX Q882 BIRKO6 YYC\" readonly><br/>" +
 				"YYC - ARR fr E: .. <input style=\"width:15em\" value=\"GUDOG BIRKO BIRKO6 YYC\" readonly><br/>" +
@@ -623,7 +623,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 				"YYC - ARR fr W: .. <input style=\"width:15em\" value=\"MENBO Q983 IGVEP7 YYC\" readonly>";
 			break;
 		case "YYZ":
-			result += "<br/><br/>YYZ - Curfew 0030-0630L; Extensions authorized (else pay fine)";
+			result += "<br/>YYZ - Curfew 0030-0630L; Extensions authorized (else pay fine)";
 			result += "<br/>Airbus and Boeing are Stage 3 acft";
 			show_flow_info =
 				"YYZ - ARR fr NE: .. <input style=\"width:15em\" value=\"LETAK IMEBA9 CYYZ\" readonly><br/>" +
@@ -637,65 +637,65 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 
 		/* Latin Arrivals */
 		case "BDA":
-			result += "<br/><br/><a href=\"http://weather.bm/tools/graphics.asp?name=ISLAND_AWOS\">AWOS<\/a> | <a href=\"http://weather.bm/tools/graphics.asp?name=250KM%20SRI\">RADAR<\/a>";
+			result += "<br/><a href=\"http://weather.bm/tools/graphics.asp?name=ISLAND_AWOS\">AWOS<\/a> | <a href=\"http://weather.bm/tools/graphics.asp?name=250KM%20SRI\">RADAR<\/a>";
 			break;
 		case "BGI":
-			result += "<br/><br/>Make sure BGI/TBPB metar is current: <a href=\"https://www.barbadosweather.org/AviationData.php\">Latest METAR/TAF<\/a>";
+			result += "<br/>Make sure BGI/TBPB metar is current: <a href=\"https://www.barbadosweather.org/AviationData.php\">Latest METAR/TAF<\/a>";
 			break;
 		case "GEO":
-			result += "<br/><br/>Best alt is POS/TTPP. BVB/SBBV and Paramaraibo no good.";
+			result += "<br/>Best alt is POS/TTPP. BVB/SBBV and Paramaraibo no good.";
 			break;
 		case "GND":
-			result += "<br/><br/>Best alt is UVF/TLPL. ";
+			result += "<br/>Best alt is UVF/TLPL. ";
 			break;
 		case "GUA":
-			result += "<br/><br/>Best alt is SAL/MSLP then BZE/MZBZ (customs closes 6pm local)";
+			result += "<br/>Best alt is SAL/MSLP then BZE/MZBZ (customs closes 6pm local)";
 			result += "<br/>Most stations send everyone home after last scheduled arrival";
 			result += "<br/>XPL/MHPR customs are 24 hrs with coordination but its an hour from the city and only has RNP apchs.";
 			break;
 		case "GYE":
-			result += "<br/><br/>Check customs closing time for MEC/SEMT alt";
+			result += "<br/>Check customs closing time for MEC/SEMT alt";
 			result += "<br/><br/><b>If only alts are SEMT & MPTO, either CA or FO doesn't have terrain qual<\/b>";
 			result += "<br/><b>If good alt needed, either bump payload for PTY/MPTO alt or ask crew sched for TQ crew<\/b>";
 			break;
 		case "PLS":
-			result += "<br/><br/>Best alt is SDQ/MDSD then STI/MDST";
+			result += "<br/>Best alt is SDQ/MDSD then STI/MDST";
 			break;
 		case "PUJ":
-			result += "<br/><br/>Best alt is SDQ/MDSD then STI/MDST";
+			result += "<br/>Best alt is SDQ/MDSD then STI/MDST";
 			break;
 		case "QRO":
-			result += "<br/><br/>QRO - Best alt is SLP/MMSP then MEX/MMMX (Mex uses slot times). BJX/MMLO no good after tower closes.";
+			result += "<br/>QRO - Best alt is SLP/MMSP then MEX/MMMX (Mex uses slot times). BJX/MMLO no good after tower closes.";
 			result += "<br/>QRO - Make sure metar is up to date and planned temp matches current";
 			break;
 		case "SJU":
-			result += "<br/><br/>SJU - STX/TISX preferred alt";
+			result += "<br/>SJU - STX/TISX preferred alt";
 			break;
 		case "STI":
-			result += "<br/><br/>Best alt is SDQ/MDSD then PUJ/MDPC";
+			result += "<br/>Best alt is SDQ/MDSD then PUJ/MDPC";
 			break;
 		case "STT":
-			result += "<br/><br/>STT - Ops N/A when tower closed, but they will stay open until 2300 lcl with dispatch coord";
+			result += "<br/>STT - Ops N/A when tower closed, but they will stay open until 2300 lcl with dispatch coord";
 			result += "<br/>STT - Check VAA for return flight if not Max or 319S";
 			result += "<br/>STT - Rwy28 landing N/A";
 			break;
 		case "STX":
-			result += "<br/><br/>STX - No ARFF after 2300 local unless requested";
+			result += "<br/>STX - No ARFF after 2300 local unless requested";
 			break;
 		case "SXM":
-			result += "<br/><br/>SXM - Make sure ILS is available if tower is closed";
+			result += "<br/>SXM - Make sure ILS is available if tower is closed";
 			result += "<br/>SXM - Rwy28 N/A for landing";
 			result += "<br/>SXM - TKPK usual alt";
 			break;
 	}
 	if (["CMW","HAV","HOG","SCU","SNU","VRA"].includes(arvl)) {
 		// Cuba Ops
-		result += "<br/><br/>MKJS/MBJ and MKJP/KIN/ good alts. KMIA even better if able.";
+		result += "<br/>MKJS/MBJ and MKJP/KIN/ good alts. KMIA even better if able.";
 		result += "<br/>Verify dis-insectation is up to date. <a href=\"https://spteam.aa.com/:x:/r/sites/customer/Cabin/Shared%20Documents/AA%20Cuba%20Orkin%20Tracker%20-%20737+319+787+777.xlsx?d=w9d02b8c7b3104300979ebcf6f2e41ec8&csf=1&web=1\" target=\"_blank\">Orkin Tracker Sheet<\/a>";
 		result += "<br/><br/><b>Tanker all flights into Cuba<\/b>";
 	}
 	if (["YEG","YOW","YUL","YVR","YYC","YYZ"].includes(arvl)) {
-		result += "<br/><br/>Canadian required routes are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes<br/>";
+		result += "<br/>Canadian required routes are in the pubs:<br/>FD Pro Pubs -> North America -> North American Airway Manuals -> Enroute Data North America -> Canada High Altitude Mandatory Routes<br/>";
 		result += "<br/><b>Canada Flight Supplement Routes:</b>";
 		result += "&nbsp;&nbsp;&nbsp;<button type='button' id='cfsa_desc_button' onclick='$(\"#cfsa_desc_text\").toggle(); $(\"#cfsa_desc_button\").text(($(\"#cfsa_desc_button\").text().includes(\"Show\")) ? \"Hide CFS Routes\" : \"Show CFS Routes\");'>Show CFS Routes</button>";
 		result += "&nbsp;&nbsp;&nbsp;(Updated 2026-06-19)";
