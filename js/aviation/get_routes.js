@@ -1218,7 +1218,7 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 				case "LAX": // BNA-LAX // Updated 01-02-2026
 					result += "<!-- Updated 01-02-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 01-02-2026
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA PARDN5 HODJS ARG KF33E IRW J6 ZUN GABBL HLYWD1 KLAX\" readonly>";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBNA PARDN5 HODJS ARG FSM IRW J6 ZUN GABBL HLYWD1 KLAX\" readonly>";
 					result += "<br/><b>South dptr:  KBNA DANLS5 TPEEE FSM IRW .. <\/b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBNA PARDN5 NAKIY SGF ICT GCK J110 RSK JASSE Q90 DNERO ANJLL4 KLAX\" readonly>";
 					result += "<br/><b>SUA Active: .. Q90 JASSE Q168 FNNDA HLYWD1 KLAX<\/b>";
