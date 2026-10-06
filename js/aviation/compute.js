@@ -463,6 +463,20 @@ compute = function(str_override = "") {
 			output += '<br/><input id=\'input_cdrroutes_default\' style=\'width:75%\' value=\'' + ((tog_cdrroutes) ? '' : '// ') + 'result += \"<br/><br/><b>CDRS</b>\";' + ((tog_cdrroutes) ? '' : ' // No CDRs as of ' + tmp_today_str) + '\' readonly>';
 			output += '&nbsp;&nbsp;<button id=\'button_cdrroutes_default\' onclick=\"toggle_cdr_routes()\">' + ((tog_cdrroutes) ? 'No CDRs listed' : 'Remove CDR Comments') + '</button>';
 
+			// Rls Amd for Reroute
+			var rls_regex = /Release\s(\d+\.\d+)\n\nfp\-number/g;
+			var dct_regex = /VIA\n\s*([^\s]+)\s*\n/g;
+			var eta_regex = /FUEL\t[^\n]+\nS\s\d+\n[\d\:]*\n\d+\nE\s\d+\n[\d\:]+\n(\d+)\n/g;
+			var arrfuel_regex = /Fuels\n\n\(FAA\)\n\n(\d+)\t/g;
+			var desk_regex = /Desk\:\s(FD\d+)/g;
+			output += '<hr><textarea rows="8" cols="80">ACR N' + result[5] + ' FTM/ACK¶\n' +
+				'RLS AMD ' + rls_regex.exec(fkeystxt)[1] + ' // ATC RRTE¶\n' +
+				'PPOS ' + dct_regex.exec(fkeystxt)[1] + ' AS FILED¶\n' +
+				'ETA ' + eta_regex.exec(fkeystxt)[1] + '¶\n' +
+				'EST ARR FUEL ' + arrfuel_regex.exec(fkeystxt)[1] + '¶\n' +
+				desk_regex.exec(fkeystxt)[1] + ' SG';
+			output += '</textarea>';
+
 			output += '<br/><br/><button onclick="clear_input(0)">Clear</button>&nbsp;&nbsp;<button onclick="restore_last()">Refresh/Run Previous</button><br/>';
 			output += '</div>';
 		}
