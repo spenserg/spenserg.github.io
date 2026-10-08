@@ -78,17 +78,17 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 	flows = ((Object.keys(flows).length == 0) ? {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"ELP":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0} : flows);
 
 	// A012
-	if (is_atwelve(arvl)) { result += "<b>" + arvl + " is an A012 Airport<\/b><br/>"; }
+	if (is_atwelve(arvl)) { result += "<br/><b>" + arvl + " is an A012 Airport<\/b>"; }
 
 	// 27K for 737-NGs
 	if (["738K", "738R"].includes(ac_type) && ["BDL","BJX","BOS","BUR","BZN","DCA","DEN","FAT","GUA","HDN","LAS","LGA","MDE","MEX","PHX","PSP","PVD","QRO","RDU","RNO","RTB","SBA","SBP","SJO","SJU","SNA","STT","SXM"].includes(dptr)) {
-		result += "<b>" + dptr + " - 27K Available for N" + tail + "<\/b><br/>";
+		result += "<br/><b>" + dptr + " - 27K Available for N" + tail + "<\/b>";
 	}
 	// A321 IAE Non-Sharklet Thrust Bump
 	if (["PHX","DEN","LAS","CLT"].includes(dptr)) {
 		if (["507","508","510","519","521","523","524","534","535","536","537","538","539","540","542","543","544","545","546","549","551","552","553","554","556","557","558","559","560","561","562","563","567","568","572","573","575","576","578","579","580","581","582","583","584","585","586","587","912","913","914","915","916","917","918","919","920","921","922","923","924","925","926","927","970","971","972","973","974","975","976","977","978","979","980","981","982"].includes(tail)) {
 			// Source: FOS COMMAND "TC*10"
-			result += "<b>" + dptr + " - Thrust Bump Available for N" + tail + "<\/b><br/>";
+			result += "<br/><b>" + dptr + " - Thrust Bump Available for N" + tail + "<\/b>";
 		}
 	}
 
