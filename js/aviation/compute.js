@@ -469,7 +469,7 @@ compute = function(str_override = "") {
 			var eta_regex = /FUEL\t[^\n]+\nS\s\d+\n[\d\:]*\n\d+\nE\s\d+\n[\d\:]+\n(\d+)\n/g;
 			var arrfuel_regex = /Fuels\n\n\(FAA\)\n\n(\d+)\t/g;
 			var desk_regex = /Desk\:\s(FD\d+)/g;
-			if (fkeystxt.match(rls_regex)) {
+			if (fkeystxt.match(rls_regex) && fkeystxt.match(dct_regex)) {
 				output += '<hr><textarea rows="8" cols="80">ACR N' + result[5] + ' FTM/ACK¶\n' +
 					'RLS AMD ' + rls_regex.exec(fkeystxt)[1] + ' // ATC RRTE¶\n' +
 					'PPOS ' + dct_regex.exec(fkeystxt)[1] + ' AS FILED¶\n' +
