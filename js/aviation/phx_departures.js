@@ -41,7 +41,7 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "AUS": // PHX-AUS // Updated 03-14-2026
 			result += "<!-- Updated 03-14-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J2 FST DILLO LAIKS4 KAUS\" readonly>"; // CDR EC
+			result += "<br/><input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP Q4 DILLO LAIKS4 KAUS\" readonly>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX PRTZY LAIKS4 KAUS\" readonly>";
 			result += "<br/><br/>North via SPS<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO CNX J74 TXO J72 SPS J58 FUZ WINDU SEWZY6 KAUS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
