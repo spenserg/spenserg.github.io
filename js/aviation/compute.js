@@ -353,9 +353,12 @@ compute = function(str_override = "") {
 		// A320 max autoland
 		if (["A320","H205"].includes(ac_type)) {
 			var ab_no = parseInt(tmp_rslt[5]);
+			var apts_above_2500 = ["KABQ","KAMA","KBIL","KBOI","KBZN","KCOS","CPR","CYS","KDEN","KEGE","KELP","KFLG","KGJT","KGPI","KGUC","KHDN","KJAC","KLBB","KMAF","KMSO","KMTJ","KPUB","KPVU","KRAP","KRDM","KROW","KSLC","KRNO","KTUS"];
 			if (ab_no < 126 || (ab_no > 128 && ab_no < 663) || ab_no > 680) {
 				// Max Autoland 2500 ft MSL
-				output += "<b style='color:orange'>Max Autoland 2500 ft MSL<\/b><br/>";
+				output += "<b" +
+					((apts_above_2500.includes(result[1])) ? " style='color:orange'" : "") +
+					">Max Autoland 2500 ft MSL<\/b><br/>";
 			}
 		}
 
