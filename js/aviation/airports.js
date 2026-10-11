@@ -1194,6 +1194,34 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 	return result;
 }
 
+get_all_in_fir = function (str = null) {
+	if (typeof str === 'string' || str instanceof String) {
+		switch (str) {
+			case "ZAB": return ['KABQ','KAMA','KELP','KFLG','KPHX','KROW','KTUS']; break;
+			case "ZAU": return ['KCID','KGRR','KGUS','KMDW','KMKE','KMLI','KMSN','KORD','KRFD','KSBN']; break;
+			case "ZBW": return ['KALB','KBDL','KBGR','KBOS','KBTV','KMHT','KPSM','KPVD','KPWM','KSYR']; break;
+			case "ZDC": return ['KBWI','KDCA','KIAD','KILM','KORF','KRDU','KRIC']; break;
+			case "ZDV": return ['KCOS','KCPR','KCYS','KDEN','KDRO','KEGE','KGJT','KGUC','KHDN','KMTJ','KPUB','KRAP']; break;
+			case "ZFW": return ['KABI','KACT','KAFW','KCNW','KDAL','KDFW','KGGG','KLAW','KLBB','KMAF','KOKC','KSHV','KSPS']; break;
+			case "ZHU": return ['KAUS','KBRO','KBTR','KCRP','KGPT','KGRK','KHOU','KHRL','KIAH','KLCH','KLRD','KMFE','KMOB','KMSY','KSAT']; break;
+			case "ZID": return ['KCMH','KCVG','KDAY','KEVV','KIND','KLEX','KSDF']; break;
+			case "ZJX": return ['KCAE','KCHS','KDAB','KECP','KGNV','KJAX','KMCO','KMLB','KMYR','KPNS','KSAV','KSFB','KTLH','KVPS','KVQQ']; break;
+			case "ZKC": return ['KBLV','KCOU','KFOE','KICT','KMCI','KSGF','KSTL','KTUL']; break;
+			case "ZLA": return ['KBFL','KBUR','KIFP','KLAS','KLAX','KONT','KPSP','KSAN','KSBA','KSBP','KSNA']; break;
+			case "ZLC": return ['KBIL','KBOI','KBZN','KGPI','KGTF','KJAC','KMSO','KPIH','KPVU','KSLC']; break;
+			case "ZMA": return ['KDJT','KEYW','KFLL','KMIA','KPBI','KPIE','KRSW','KSRQ','KTPA']; break;
+			case "ZME": return ['KBNA','KJAN','KLIT','KMEM','KXNA']; break;
+			case "ZMP": return ['KDLH','KDSM','KFAR','KFSD','KGRB','KLNK','KMSP','KOMA','KRST','KTVC']; break;
+			case "ZNY": return ['KABE','KAVP','KEWR','KJFK','KLGA','KMDT','KPHL','KSWF']; break;
+			case "ZOA": return ['KFAT','KMRY','KRNO','KSFO','KSJC','KSMF','KSTS']; break;
+			case "ZOB": return ['KBUF','KCAK','KCLE','KDTW','KFNT','KPIT','KROC']; break;
+			case "ZSE": return ['KBFI','KEUG','KGEG','KMWH','KPAE','KPDX','KRDM','KSEA','KYKM']; break;
+			case "ZTL": return ['KAGS','KATL','KAVL','KBHM','KCHA','KCLT','KGSO','KGSP','KHSV','KMGM','KTYS']; break;
+		}
+	}
+	return [];
+}
+
 convert_iata = function (str = null) {
 	if (typeof str === 'string' || str instanceof String) {
 		if (str.length == 3) { return str; }
