@@ -180,10 +180,10 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/>LAX curfew 2100L - 0700L, see <a href=\"https://www.lawa.org/media/30137\" target=\"_blank\">KLAX Noise Abatement Procedures<\/a>";
 			if (ac_type.includes("321")) {
 				result += "<br/>A321 - File OSHNN instead of ORKAS";
-				result += "<br/>KLAX ORCKA5 LAS BAWER => KLAX OSHNN1 BEALE BAWER";
+				result += "<br/><b>KLAX ORCKA5 LAS BAWER => KLAX OSHNN1 BEALE BAWER<\/b>";
 			} else {
 				result += "<br/>Departures 2100L-0700L, file OSHNN instead of ORKAS";
-				result += "<br/>KLAX ORCKA5 LAS BAWER => KLAX OSHNN1 BEALE BAWER";
+				result += "<br/><b>KLAX ORCKA5 LAS BAWER => KLAX OSHNN1 BEALE BAWER<\/b>";
 			}
 			result += "<br/>LAX Flow: <button type='button' id='LAX_standard_left' class='btn" + ((flows['LAX'] == 0) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 0)'>West</button>&nbsp;&nbsp;<button type='button' id='LAX_standard_right' class='btn" + ((flows['LAX'] == 1) ? " selected" : "") + "' onclick='change_flow(\"LAX\", 1)'>East</button>";
 			show_flow_info = "West Rwy24L/25R<br/>E Rwy 6R/7L: LAXX/GARDY/TRTON";
