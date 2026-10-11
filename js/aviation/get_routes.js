@@ -10776,7 +10776,7 @@ KILM RDU BBDOL PAATS4 KPHL
 				case "CLT": // ROC-CLT // Updated 01-30-2026
 					result += "<!-- Updated 01-30-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KROC GEE BURST HVQ LNDIZ PARQR7 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KROC BURST HVQ LNDIZ PARQR7 KCLT\" readonly>";
 					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KROC GEE SFK J220 AML GVE AIROW CHSLY9 KCLT\" readonly>";
 					result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KROC JHW DJB APE HVQ LNDIZ PARQR7 KCLT\" readonly>";
 					result += "<br/><br/>West via ROD<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KROC JHW DJB ROD FLM SKYWA FILPZ7 KCLT\" readonly>";
