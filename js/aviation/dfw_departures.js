@@ -391,7 +391,7 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "CHS": // DFW-CHS // Updated 10-10-2026
 			result += "<!-- Updated 10-10-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KDFW FORCK3 FORCK MHZ MERDN Q184 ARNNY FRDDO NOKIE DEQUE BAGGY3 KCHS\" readonly>"; // CDR 0P
+			result += "<br/><input style=\"width:75%\" value=\"KDFW FORCK3 FORCK MHZ MERDN Q184 ARNNY FRDDO SARGE DEQUE BAGGY3 KCHS\" readonly>"; // Based on CDR 0P
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW TRYTN4 LOOSE MEM GQO ODF DEFFN OSPRI7 KCHS\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW MRSSH3 ZALEA MCB J50 CEW J2 DEFUN KJ06Q AMG SAV BAGGY3 KCHS\" readonly>";
 			result += "<br/><br/>North/ZME Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC FAM J78 PXV RYANS J99 VXV DEFFN OSPRI7 KCHS\" readonly>";
