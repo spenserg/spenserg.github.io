@@ -2215,7 +2215,7 @@ KBWI FOXHL1 RAMAY EKN HNN IIU ENL STL TRTLL6 KORD
 				case "DFW": // CHS-DFW // Updated 07-11-2026
 					result += "<!-- Updated 07-11-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KCHS STUNO1 DBN MGM J20 MHZ YUYUN BEREE3 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KCHS STUNO1 DBN ARNNY Q184 SARKK YUYUN BEREE3 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCHS STUNO1 IRQ RMG J66 LIT FEWWW SEEVR4 KDFW\" readonly>";
 					result += "<br/>South/ZTL Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCHS LGRHD3 GIPPL SZW CEW J50 AEX PNUTS BEREE3 KDFW\" readonly>";
 					// result += "<br/><br/>DFW WEST: <input style=\"width:75%\" value=\"KCHS LGRHD3 GIPPL SZW CEW J50 AEX PNUTS BEREE3 KDFW\" readonly>";
