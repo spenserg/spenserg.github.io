@@ -1100,14 +1100,14 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>H2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 KPASA Q99 BLAAN Q69 RICCS JST ELZ BEEPS NABOR KSYR\" readonly>";
 			result += "<br/>M2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA MAYNR3 MAYNR MARCI SHAQQ KNOST DEANR CAMJO Q99 BLAAN Q69 RICCS JST ELZ BEEPS NABOR KSYR\" readonly>";
 			break;
-		case "TLH": // MIA-TLH // Updated 10-22-2025
-			result += "<!-- Updated 10-22-2025 P -->";
-			result += "<br/><br/><b>Faa Pref Route:</b>";
+		case "TLH": // MIA-TLH // Updated 10-13-2026
+			result += "<!-- Updated 10-13-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route (Max FL340):</b> per <a href=\"https://zjxartcc.org/publications/23/file\" target=\"_blank\">ZJX/ZMA LOA<\/a>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA KTLH\" readonly>"; // CDR H0
 			result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS KTLH\" readonly>"; // CDR F2
 			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-22-2025
-			result += "<!-- Verified with ATCSCC on 10-22-2025 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-13-2026
+			result += "<!-- Verified with ATCSCC on 10-13-2026 -->";
 			result += "<br/>F2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FLMGO2 STYMY Q77 SHRKS KTLH\" readonly>";
 			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR Q116 JAWJA KTLH\" readonly>";
 			result += "<br/>H0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA HURCN4 SMELZ Q116 JAWJA KTLH\" readonly>";
