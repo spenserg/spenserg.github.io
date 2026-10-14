@@ -876,20 +876,22 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>LL<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT LILLS6 LILLS RAEFO MRPIT CAKET Q97 DEBRL CSTAL3 KMIA\" readonly>";
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ICONS8 NOOKS WURFL Q83 JEVED Q97 DEBRL CSTAL3 KMIA\" readonly>";
 			break;
-		case "MKE": // CLT-MKE // Updated 11-24-2025
-			result += "<!-- Updated 11-24-2025 P -->";
+		case "MKE": // CLT-MKE // Updated 10-14-2026
+			result += "<!-- Updated 10-14-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT JOJJO8 DOOGE FLM MACES VINNE BRAVE EXARR KMKE\" readonly>"; // CDR RP
-			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL8 CLAWD HNN APE CRL GETCH LYSTR SUDDS KMKE\" readonly>";
-			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ THRSR VLKNN MEM ARG STL SPI CHZHD GOPAC3 KMKE\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-24-2025
-			result += "<!-- Verified with ATCSCC on 11-24-2025 -->";
-			result += "<br/>BZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY8 BOBZY BRAYN REWET VXV IIU J89 MACES VINNE BRAVE EXARR KMKE\" readonly>";
-			result += "<br/>ES<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ THRSR GAD MEM J71 ENL JOT LEEDN GOPAC3 KMKE\" readonly>";
-			result += "<br/>KL<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT DURST1 AUDII FAK LDN TOMAC LEJOY Q178 DJB J34 CRL PEGEE MKG SUDDS KMKE\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KCLT JOJJO8 DOOGE FLM MACES VINNE BRAVE EXARR KMKE\" readonly>"; // Based on CDR RP
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT WEAZL8 CLAWD HNN APE CRL GETCH LYSTR SUDDS KMKE\" readonly>";
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY8 BOBZY BRAYN REWET VXV IIU J89 MACES VINNE BRAVE EXARR KMKE\" readonly>"; // CDR BZ
+			result += "<br/><br/>North via CLE<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT DURST1 AUDII FAK LDN LEJOY Q178 DJB J34 CRL PEGEE MKG SUDDS KMKE\" readonly>"; // Based on CDR KL
+			result += "<br/>South via MEM<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ THRSR VLKNN MEM ARG STL SPI CHZHD GOPAC3 KMKE\" readonly>"; // Based on CDR ES
+			// result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-14-2026
+			result += "<!-- Verified with ATCSCC on 10-14-2026 -->";
+			result += "<br/>BZ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY8 BOBZY BRAYN REWET VXV IIU J89 MACES VINNE BRAVE EXARR KMKE\" readonly>";
+			result += "<br/>ES<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ THRSR GAD MEM J71 ENL JOT LEEDN GOPAC3 KMKE\" readonly>";
+			result += "<br/>KL<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT DURST1 AUDII FAK LDN TOMAC LEJOY Q178 DJB J34 CRL PEGEE MKG SUDDS KMKE\" readonly>";
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO8 JOJJO DOOGE FLM MACES VINNE BRAVE EXARR KMKE\" readonly>";
-			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL8 CLAWD HNN MACES VINNE BRAVE EXARR KMKE\" readonly>";
+			result += "<br/>WE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL8 CLAWD HNN MACES VINNE BRAVE EXARR KMKE\" readonly>";
 			break;
 		case "MLB": // CLT-MLB // Updated 03-11-2026
 			result += "<!-- Updated 03-11-2026 P -->";
