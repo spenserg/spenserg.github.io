@@ -71,11 +71,11 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>QU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN PGS J64 HEC J6 PMD FASTO2 KBFL\" readonly>";
 			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA EED J6 PMD FASTO2 KBFL\" readonly>";
 			break;
-		case "BNA": // PHX-BNA // Updated 10-05-2025
-			result += "<!-- Updated 10-05-2025 P -->";
-			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 10-05-2025
-			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO TCC J6 IRW FSM LOPPY CHSNE3 KBNA\" readonly>";
-			// result += "<br/><b>As of 2025-10-05, Fkeys tries to cut thru ZKC- Use IRW to stay south of ZKC<\/b>";
+		case "BNA": // PHX-BNA // Updated 10-15-2026
+			result += "<!-- Updated 10-15-2026 P -->";
+			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 10-15-2026
+			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KPHX BROAK1 MAXXO TCC J6 IRW J14 LIT MEMFS CHSNE3 KBNA\" readonly>";
+			result += "<br/><b>As of 2025-10-05, Fkeys tries to cut thru ZKC- Use IRW to stay south of ZKC<\/b>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 JARPA RSK J110 BUM J112 FAM NMANN RYYMN4 KBNA\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ECLPS1 PHASE ELP J50 ABI J42 TXK Q34 MEMFS CHSNE3 KBNA\" readonly>"; // CDR EC
 			// result += "<br/><br/><b>Non RNAV</b>"; // toddo
