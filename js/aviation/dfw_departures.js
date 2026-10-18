@@ -1526,7 +1526,6 @@ dfw_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 		case "MKE": // DFW-MKE // Updated 10-18-2026
 			result += "<!-- Updated 10-18-2026 P -->";
 			// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-22-2026
-			result += "<br/><input style=\"width:75%\" value=\"KDFW AKUNA9 MLC SGF BAYLI JOT LEEDN GOPAC3 KMKE\" readonly>"; // CDR 0P
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KDFW AKUNA9 MLC RZC STL CHZHD GOPAC3 KMKE\" readonly>"; // Based on CDR 0P
 			result += "<br/><b>FAA PREF uses .. JOT LEEDN GOPAC3 KMKE</b>";
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KDFW BLECO8 TUL J25 DSM OGECA GOPAC3 KMKE\" readonly>";
