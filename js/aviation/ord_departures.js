@@ -1295,8 +1295,19 @@ KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO AHPAH CAM CDOGG4 KPWM
 			result += "<br/>6S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD BACEN BLOKR BEKKI ENL PLESS Q19 HITMN VXV KPASS ALDAN4 KRDU\" readonly>";
 			result += "<br/>M1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR FRIKY ALDAN4 KRDU\" readonly>";
 			break;
-
-// TODO ORD-RIC // ORD.DCT.EARND.DCT.ELANR.DCT.EMMLY.DCT.ETAME.DCT.EMEGE.DCT.FLM.J24.MOL.SPIDR4.RIC
+		case "RIC": // ORD-RIC // Updated 10-18-2026
+			result += "<!-- Updated 10-18-2026 P -->";
+			result += "<br/><input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM J24 MOL SPIDR5 KRIC\" readonly>"; // Based on CDR 0S
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA JERRI BUCKO LDN KRIC\" readonly>"; // CDR 2E
+			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR Q34 DENNY MOL SPIDR5 KRIC\" readonly>"; // CDR 2S
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-18-2026
+			result += "<!-- Verified with ATCSCC on 10-18-2026 -->";
+			result += "<br/>0S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM MOL SPIDR5 KRIC\" readonly>";
+			result += "<br/>2E<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA JERRI BUCKO LDN KRIC\" readonly>";
+			result += "<br/>2S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR Q34 DENNY MOL SPIDR5 KRIC\" readonly>";
+			result += "<br/>5S<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD CMSKY CARYN CYBIL PXV RAMRD SITTR Q34 DENNY MOL SPIDR5 KRIC\" readonly>";
+			result += "<br/>M1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR Q34 DENNY MOL SPIDR5 KRIC\" readonly>";
+			break;
 
 			/* TODO - FOS ROUTES: KORD - KROC
 KORD EBAKE WISMO POSTS PADDE SVM Q907 DERLO ROC KROC
