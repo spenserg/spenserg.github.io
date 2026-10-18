@@ -1297,6 +1297,7 @@ KORD RAYNR BRTMN TAAYZ SQUIB HAUCK HRRSH HOCKE SIKBO AHPAH CAM CDOGG4 KPWM
 			break;
 		case "RIC": // ORD-RIC // Updated 10-18-2026
 			result += "<!-- Updated 10-18-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ETAME EMEGE FLM J24 MOL SPIDR5 KRIC\" readonly>"; // Based on CDR 0S
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD MOBLE ADIME OTENS ANEWA JERRI BUCKO LDN KRIC\" readonly>"; // CDR 2E
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KORD EARND ELANR EMMLY ERECO IIU Q108 SITTR Q34 DENNY MOL SPIDR5 KRIC\" readonly>"; // CDR 2S
