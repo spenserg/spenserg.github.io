@@ -1088,7 +1088,10 @@ check_page_for_errors = function (text = "") {
 						}
 					} else {
 						if (convert_iata(tmp_pieces[0]).localeCompare(dptr) != 0) {
-							errors['misc'].push("Check city pair (" + tmp_pieces[0] + " || " + dptr + "): " + tmp_xee[2]);
+							var em_regex = /width\:\d+em/;
+							if (!em_regex.test(tmp_xee[0])) {
+								errors['misc'].push("Check city pair (" + tmp_pieces[0] + " || " + dptr + "): " + tmp_xee[2]);
+							}
 						}
 					}
 					if (convert_iata(tmp_pieces[tmp_pieces.length - 1]) == null) {
@@ -1097,7 +1100,10 @@ check_page_for_errors = function (text = "") {
 						}
 					} else {
 						if (convert_iata(tmp_pieces[tmp_pieces.length - 1]).localeCompare(dest) != 0) {
-							errors['misc'].push("Check city pair (" + tmp_pieces[tmp_pieces.length - 1] + " || " + dest + "): " + tmp_xee[2]);
+							var em_regex = /width\:\d+em/;
+							if (!em_regex.test(tmp_xee[0])) {
+								errors['misc'].push("Check city pair (" + tmp_pieces[tmp_pieces.length - 1] + " || " + dest + "): " + tmp_xee[2]);
+							}
 						}
 					}
 					var super_tmp_obj = {};
