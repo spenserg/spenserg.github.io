@@ -7172,17 +7172,18 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA BIGGY Q75 GVE AIROW CHSLY9 KCLT\" readonly>";
 					result += "<br/>PS<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA NEWEL J60 PSB HVQ LNDIZ PARQR7 KCLT\" readonly>";
 					break;
-				case "DCA": // LGA-DCA // Updated 06-19-2025
-					result += "<!-- Updated 06-19-2025 -->";
-					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KLGA BIGGY Q75 MXE CLIPR3 KDCA\" readonly>";
+				case "DCA": // LGA-DCA // Updated 10-18-2026
+					result += "<!-- Updated 10-18-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route (Avg FL250):</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KLGA BIGGY Q75 MXE CLIPR3 KDCA\" readonly>"; // CDR PH
 					// result += "<br/>West<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA COATE LAAYK T212 SEG T291 HAR BAL KDCA\" readonly>";
+					result += "<br/><br/>East<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA WHITE T303 ATR LAFLN DEALE3 KDCA\" readonly>"; // CDR WH
 					result += "<br/><br/>East/OW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA SHIPP LINND AZEZU ZIBUT AR9 ORF HPW WAVES CAPSS4 KDCA\" readonly>";
 					result += "<br/><br/>SERMN SOUTH (Max FL080)<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLGA JFK T303 LEEAH T315 CHOPS T320 VAALI CAPKO KDCA\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KLGA WHITE BAL KDCA\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 06-19-2025
-					result += "<!-- Verified with ATCSCC on 06-19-2025 -->";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KLGA WHITE BAL KDCA\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-18-2026
+					result += "<!-- Verified with ATCSCC on 10-18-2026 -->";
 					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA BIGGY Q75 MXE CLIPR3 KDCA\" readonly>";
 					result += "<br/>PL<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA BIGGY V3 MXE CLIPR3 KDCA\" readonly>";
 					result += "<br/>SR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLGA JFK T224 CYN LEEAH T315 CHOPS T320 VAALI CAPKO KDCA\" readonly>";
