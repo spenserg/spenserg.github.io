@@ -10751,6 +10751,30 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>AR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRIC HOUKY MAZON KOHLS SKARP Y313 HOAGG BNFSH3 KMIA\" readonly>";
 					result += "<br/>ML<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRIC HOUKY MAZON KOHLS Q97 EBAYY MOGAE BNFSH3 KMIA\" readonly>";
 					break;
+				case "ORD": // RIC-ORD // Updated 10-18-2026
+					result += "<!-- Updated 10-18-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KRIC KALLI7 READE MOL GEFFS J149 ROD WATSN4 KORD\" readonly>"; // CDR 00
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRIC KALLI7 READE MOL LEJOY Q178 LEPEW WEEVR Q62 WATSN WATSN4 KORD\" readonly>"; // CDR C3
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRIC KALLI7 READE MOL J24 FLM HEVAN BONNT VEECK5 KORD\" readonly>"; // CDR C6
+					result += "<br/><br/>North via GRR<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRIC KALLI7 READE MOL LEJOY Q178 LEPEW RRONS KAYYS WYNDE3 KORD\" readonly>"; // CDR C4
+					result += "<br/><br/><b>Playbooks:</b>";
+					result += "<br/>ORD EAST 3<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRIC KALLI7 READE MOL J24 FLM HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>ORD FWA<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRIC KALLI7 READE MOL J24 FLM HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/>ORD NO VEECK<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRIC KALLI7 READE MOL LEJOY Q178 LEPEW WEEVR Q62 WATSN WATSN4 KORD\" readonly>";
+					result += "<br/>ORD NO VEECK WATSN 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRIC KALLI7 READE MOL LEJOY Q178 LEPEW RRONS KAYYS WYNDE3 KORD\" readonly>";
+					result += "<br/>ORD OXI ROYKO 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRIC KALLI7 READE MOL J24 HVQ J78 PXV FAM FTZ TRTLL6 KORD\" readonly>";
+					result += "<br/>ORD PAITN WATSN<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KRIC KALLI7 READE MOL J24 FLM HEVAN BONNT VEECK5 KORD\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-18-2026
+					result += "<!-- Verified with ATCSCC on 10-18-2026 -->";
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRIC KALLI7 READE MOL GEFFS J149 ROD WATSN4 KORD\" readonly>";
+					result += "<br/>C1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRIC KALLI7 READE MOL J24 FLM HEVAN BONNT VEECK5 KORD\" readonly>"; // ORD EAST 3
+					result += "<br/>C2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRIC KALLI7 READE MOL J24 FLM HEVAN BONNT VEECK5 KORD\" readonly>"; // ORD FWA
+					result += "<br/>C3<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRIC KALLI7 READE MOL LEJOY Q178 LEPEW WEEVR Q62 WATSN WATSN4 KORD\" readonly>"; // ORD NO VEECK
+					result += "<br/>C4<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRIC KALLI7 READE MOL LEJOY Q178 LEPEW RRONS KAYYS WYNDE3 KORD\" readonly>"; // ORD NO VEECK WATSN 1
+					result += "<br/>C5<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRIC KALLI7 READE MOL J24 HVQ J78 PXV FAM FTZ TRTLL6 KORD\" readonly>"; // ORD OXI ROYKO 1
+					result += "<br/>C6<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KRIC KALLI7 READE MOL J24 FLM HEVAN BONNT VEECK5 KORD\" readonly>"; // ORD PAITN WATSN
+					break;
 			}
 		break; // End of RIC
 
