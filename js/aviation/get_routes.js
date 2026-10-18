@@ -5278,7 +5278,7 @@ KFAR FAR V2 GEP V82 RST V24 LNR V97 JVL ORD
 
 		case "GEG":
 			switch(arvl) {
-				case "DFW":  // GEG-DFW // Updated 09-12-2026
+				case "DFW": // GEG-DFW // Updated 09-12-2026
 					result += "<!-- Updated 09-12-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 09-12-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KGEG LKT J52 OCS J163 CHE PUB J17 PNH MDANO VKTRY2 KDFW\" readonly>";
@@ -6696,7 +6696,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					result += "<br/>D1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KJFK WAVEY EMJAY Q167 ZJAAY Q97 SAWED MOXXY Q85 KAATT SESUE PANDY TWINS NOKIE MGMRY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT FST ELP J50 SSO J4 BXK EMLLD DSNEE6 KSNA\" readonly>"; // DELMARVA 1
 					break;
 				/* Latin Dest */
-				case "PUJ":  // JFK-PUJ // Updated 08-22-2026
+				case "PUJ": // JFK-PUJ // Updated 08-22-2026
 					result += "<!-- Updated 08-22-2026 P -->";
 					// result += "<br/><br/><b>Standard Route:</b>";
 					result += "<br/><br/>L455: <input style=\"width:75%\" value=\"KJFK SHIPP Y488 SAUCR L453 CERDA L464 SEBUG POKEG MDPC\" readonly>";
@@ -11388,7 +11388,7 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 05-18-2025
 					break;
-				case "PHX":  // STS-PHX // Updated 10-11-2026
+				case "PHX": // SBP-PHX // Updated 10-11-2026
 					result += "<!-- Updated 10-11-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSBP DERBB MARIC PMD J65 BLH HYDRR1 KPHX\" readonly>";
@@ -11655,7 +11655,7 @@ KILM RDU BBDOL PAATS4 KPHL
 
 		case "SJC":
 			switch(arvl) {
-				case "DFW":  // SJC-DFW // Updated 09-06-2026
+				case "DFW": // SJC-DFW // Updated 09-06-2026
 					result += "<!-- Updated 09-06-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KSJC SPTNS1 TECKY NTELL OAL Q136 KATTS Q164 ROCCY Q130 PNH MDANO VKTRY2 KDFW\" readonly>";
