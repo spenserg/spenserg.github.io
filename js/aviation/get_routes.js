@@ -6177,14 +6177,15 @@ KILM RDU BBDOL PAATS4 KPHL
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 03-21-2026
 					break;
-				case "DFW": // JAX-DFW // Updated 09-30-2025
-					result += "<!-- Updated 09-30-2025 P -->";
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KJAX JETIN2 CAPPS CABLO DEFUN J2 CEW J50 AEX PNUTS BEREE3 KDFW\" readonly>";
+				case "DFW": // JAX-DFW // Updated 10-22-2026
+					result += "<!-- Updated 10-22-2026 P -->";
+					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KJAX JETIN2 CAPPS CABLO DEFUN J2 CEW J50 MCB PNUTS BEREE3 KDFW\" readonly>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAX BRSTL1 ALLMA MGM J20 MHZ YUYUN BEREE3 KDFW\" readonly>";
-					result += "<br/>South via IAH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAX JETIN2 CAPPS CABLO DEFUN J2 CEW SJI Q56 HRV KCEEE TKNIQ IAH CRIED BEREE3 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KJAX TAY CEW LCH DAS IAH CWK AGJ ACT YEAGR4 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 09-30-2025
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAX JETIN2 CAPPS CABLO DEFUN J2 CEW SJI Q56 HRV KCEEE TKNIQ IAH CRIED BEREE3 KDFW\" readonly>";
+					result += "<br/><br/>North via LIT<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KJAX BRSTL1 ALLMA LGC VUZ J14 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KJAX TAY CEW LCH DAS IAH CWK AGJ ACT YEAGR4 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-22-2026
 					break;
 				case "MIA": // JAX-MIA // Updated 07-26-2025
 					result += "<!-- Updated 07-26-2025 -->";
