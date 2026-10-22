@@ -704,6 +704,7 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KCLT BOBZY8 BNA J46 TUL MMB FTI J8 GUP J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>"; // Playbook TUL 1
 			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO8 CUBIM Q50 IIU J8 STL Q176 CIM J96 DRK J231 HIPPI GABBL HLYWD1 KLAX\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC TXK J42 ABI J66 EWM J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
+			result += "<br/><b>Jackal SUA active: .. J66 EWM J4 SSO J50 TFD J212 BXK J4 WLVRN ESTWD HLYWD1<\/b>";
 			result += "<br/><br/>North via STL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO8 DOOGE Q93 HEVAN VHP J80 MCI J24 SLN J102 ALS J44 RSK J10 FLG HIPPI GABBL HLYWD1 KLAX\" readonly>";
 			result += "<br/>South via IAH<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ MGMRY CATLN Q22 GUSTI IAH J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
 			result += "<br/>South/ZTL Avoid<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ICONS8 NOOKS CAE SAV AMG DEFUN J2 IAH J86 ELP J50 SSO J4 WLVRN ESTWD HLYWD1 KLAX\" readonly>";
