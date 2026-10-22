@@ -4872,55 +4872,58 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 					result += "<br/>X6<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR PARKE J6 EYTEE J149 FWA WATSN4 KORD\" readonly>";
 					result += "<br/>ZS<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO NOSIK ZOHAN GRB SHIKY FYTTE7 KORD\" readonly>";
 					break;
-				case "PHX": // EWR-PHX // Updated 11-10-2025
-					result += "<!-- Updated 11-10-2025 P -->";
-					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 11-10-2025
+				case "PHX": // DFW-PHX // Updated 10-22-2026
+					result += "<!-- Updated 10-22-2026 P -->";
+					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA pref route as of 10-22-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 AIR J110 STL BUM ICT LBL FTI ZUN EAGUL6 KPHX\" readonly>"; // Based on CDR 80
 					result += "<br/><b>Via SLN: .. AIR J80 MCI J24 SLN J96 GUP EAGUL6 KPHX<\/b>";
 					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR NEWEL J60 DJB CPONE JOT J60 LNK J146 GLD PUB ALS J102 GUP EAGUL6 KPHX\" readonly>"; // Based on CDR 60
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR LANNA J48 CSN FANPO Q40 ALEAN Q66 METWO BNA J46 TUL MMB FTI J244 ZUN EAGUL6 KPHX\" readonly>"; // Based on CDR 48
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 AIR J110 STL BUM MMB J26 ELP DRRVR PINNG1 KPHX\" readonly>";
+					result += "<br/><b>Via IRW: .. STL J8 SGF J98 IRW CDS KA18W EWM DRRVR PINNG1 KPHX<\/b>";
 					// result += "<br/><br/>South: <input style=\"width:75%\" value=\"KEWR PARKE J6 HVQ Q68 LITTR MEEOW J66 EWM DRRVR PINNG1 KPHX\" readonly>";
 					// result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR LANNA J48 CSN FANPO Q40 ALEAN VXV BNA J46 TUL J78 ABQ J18 PXR KPHX\" readonly>"; // CDR 48
 					result += "<br/><br/>South via ATL<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR BIGGY Q75 GVE LYH COLZI Q52 CHOPZ THRSR VLKNN Q30 IZAAC TXK J42 FUZ J4 EWM DRRVR PINNG1 KPHX\" readonly>"; // Based on CDR 75
-					result += "<br/><br/>ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR LANNA J48 CSN FANPO Q40 NIOLA GRGIA ARNNY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT ELP DRRVR PINNG1 KPHX\" readonly>"; // CDR EP
+					result += "<br/><br/>BNA<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR LANNA J48 CSN FANPO Q40 ALEAN Q66 METWO BNA J46 TUL MMB FTI J244 ZUN EAGUL6 KPHX\" readonly>"; // Based on CDR 48
+					result += "<br/>ELP<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KEWR LANNA J48 CSN FANPO Q40 NIOLA GRGIA ARNNY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT ELP DRRVR PINNG1 KPHX\" readonly>"; // CDR EP
 					result += "<br/>KENPA WEST 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE KENPA CESNA ONL LBF ALS GUP EAGUL6 KPHX\" readonly>"; // CDR 1K
 					result += "<br/>NOSIK WEST 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE NOSIK ZOHAN LAAKE ONL LBF ALS GUP EAGUL6 KPHX\" readonly>"; // CDR 1N
-					// result += "<br/><br/><b>Non RNAV</b>"; // toddo
+					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><input style=\"width:75%\"; value=\"KEWR COATE Q436 HERBA JHW Q29 CREEP J110 STL BUM ICT TOTOE FTI BUKKO ZUN EAGUL6 KPHX\"; readonly>"; // CDR 36
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-10-2025
-					result += "<!-- Verified with ATCSCC on 11-10-2025 -->";
-					result += "<br/>1D<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM BUGSY POLTY UBTIX ULAMO STNRD COLDD EXHOS SWTHN DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-22-2026
+					result += "<!-- Verified with ATCSCC on 10-22-2026 -->";
+					result += "<br/>1D<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM BUGSY POLTY UBTIX ULAMO STNRD COLDD EXHOS STORZ DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/>1K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE KENPA CESNA ONL LBF ALS GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>1N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE NOSIK ZOHAN LAAKE ONL LBF ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>1R<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KAPUX ROTMA COLDD EXHOS SWTHN DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
-					result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE Q917 SSM APUNY OGSIQ SWTHN DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
-					result += "<br/>2C<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM BUGSY POLTY UBTIX BONAB CHICA AGLIN WILTN SWTHN DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>1R<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KAPUX ROTMA COLDD EXHOS STORZ DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>1S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE Q917 SSM APUNY OGSIQ STORZ DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>2C<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM BUGSY POLTY UBTIX BONAB CHICA AGLIN WILTN STORZ DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/>2D<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM BUGSY POLTY UBTIX ULAMO STNRD COLDD FAR MOTLY ALS GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>2K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KENPA CESNA ONL LBF ALS GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>2N<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO NOSIK ZOHAN LAAKE ONL LBF ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SSM APUNY OGSIQ SWTHN DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>2S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SSM APUNY OGSIQ STORZ DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/>36<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR COATE Q436 HERBA JHW Q29 CREEP J110 STL BUM ICT TOTOE FTI BUKKO ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>3C<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM PBERG BOSAM OLASI PEKVO CANSO CHICA AGLIN WILTN SWTHN DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>3C<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM PBERG BOSAM OLASI PEKVO CANSO CHICA AGLIN WILTN STORZ DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/>3K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SIKBO KENPA CESNA ONL LBF ALS GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>3R<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KAPUX ROTMA COLDD FAR MOTLY ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON BURWA SSM APUNY OGSIQ SWTHN DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>3S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON BURWA SSM APUNY OGSIQ STORZ DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/>48<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR LANNA J48 CSN FANPO Q40 ALEAN VXV BNA J46 TUL J78 ABQ J18 PXR KPHX\" readonly>";
 					result += "<br/>4R<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM BUGSY LETAK ROTMA COLDD FAR MOTLY ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>4S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM BUGSY POLTY SSM APUNY OGSIQ SWTHN DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
-					result += "<br/>5K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE KENPA CESNA EXHOS SWTHN DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>4S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM BUGSY POLTY SSM APUNY OGSIQ STORZ DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>5K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE KENPA CESNA EXHOS STORZ DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/>60<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEWEL J60 DJB CPONE JOT J60 LNK HLC ALS J102 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>64<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEWEL J60 DANNR RAV J64 FWA WHETT DARCY EDENS LMN PWE HLC J64 PUB ALS J102 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>6F<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR PARKE J6 HVQ J78 FAM SGF TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>6K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KENPA CESNA EXHOS SWTHN DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
+					result += "<br/>6K<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON KENPA CESNA EXHOS STORZ DNW FFU BCE CORKR MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/>6S<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GREKI JUDDS CAM NOVON SSM APUNY TTAIL MOTLY ALS GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>6T<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR PARKE J6 HVQ Q68 RAMRD ARG TUL IFI PNH J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>75<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR BIGGY Q75 GVE LYH COLZI Q52 CHOPZ THRSR MEM J66 LIT J14 IRW J6 ZUN EAGUL6 KPHX\" readonly>";
-					result += "<br/>80<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 AIR J80 MCI J24 SLN J96 GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>8N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR ZIMMZ Q42 LCOLN IRK J26 MCI J24 SLN J96 GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>80<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 AIR J80 MCI J24 SLN J96 GCK CIM J96 GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>8N<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR ZIMMZ Q42 LCOLN IRK J26 MCI J24 SLN J96 GCK CIM J96 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>8X<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 BEETS HACKS J149 EMPTY J80 VHP J110 BUM ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>95<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 KELIE JHW Q29 CREEP J110 STL BUM ICT TOTOE FTI BUKKO ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>AZ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR ELVAE NECCK DIXIE Y481 OHRYN Y488 STERN Y493 BAHAA Y438 KOOKK CAMJO CABLO DEFUN J2 CEW J50 ABI J65 CME J15 ABQ J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>CW<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR COATE Q436 RAAKK Q438 RUBYY DABJU J36 BAE MCW ONL PUB ALS GUP EAGUL6 KPHX\" readonly>";
+					result += "<br/>D1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR ELVAE NECCK WHITE Q409 CRPLR Q85 MOXXY Q85 KAATT SESUE PANDY TWINS NOKIE MGMRY SJI Q56 HRV KCEEE TKNIQ MOLLR JCT FST ELP DRRVR PINNG1 KPHX\" readonly>"; // DELMARVA 1
 					result += "<br/>E1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEWEL J60 DANNR RAV J64 FWA WHETT DARCY EDENS LMN PWE HLC PUB ALS GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>E2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEWEL J60 DANNR RAV J64 FWA WHETT DARCY EDENS LMN PWE HLC J64 RSK FLG DUTEY MAIER BRUSR1 KPHX\" readonly>";
 					result += "<br/>EM<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR LANNA J48 CSN FANPO Q40 BFOLO FIBER HRISN IZAAC EIC J4 ABI J66 EWM DRRVR PINNG1 KPHX\" readonly>";
@@ -4932,7 +4935,7 @@ ECP-TEEEM.Q99-POLYY-TUBAS-RDU-WAVES DCA
 					result += "<br/>LV<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR BIGGY Q75 GVE LYH COLZI Q52 CHOPZ MGMRY SJI LEV BOWFN HOODO PSX CARTI HFMAN DLF KOBLE MRF ELP DRRVR PINNG1 KPHX\" readonly>";
 					result += "<br/>NE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR NEION Q232 DARBO J49 PSB J60 DJB CPONE JOT J60 LNK HLC J64 PUB ALS J102 GUP EAGUL6 KPHX\" readonly>";
 					result += "<br/>NL<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR GAYEL Q818 WOZEE Q935 HOCKE GRB GEP ONL LBF ALS GUP EAGUL6 KPHX\" readonly>";
-					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR PARKE J6 HVQ Q68 RAMRD ARG FSM IRW J6 ZUN EAGUL6 KPHX\" readonly>";
+					result += "<br/>P1<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR PARKE J6 HVQ Q68 RAMRD ARG FSM IRW PNH J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>P2<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR LANNA J48 CSN FANPO Q40 ALEAN Q66 LITTR KOMMA IRW J6 ZUN EAGUL6 KPHX\" readonly>";
 					result += "<br/>PH<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KEWR ZIMMZ Q42 MIKYG Q480 AIR J110 STL BUM ICT TOTOE FTI J244 ZUN EAGUL6 KPHX\" readonly>";
 					break;
