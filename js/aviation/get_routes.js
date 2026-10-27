@@ -8675,21 +8675,24 @@ KILM RDU BBDOL PAATS4 KPHL
 
 		case "ORF":
 			switch(arvl) {
-				case "CLT": // ORF-CLT // Updated 09-11-2025
-					result += "<!-- Updated 09-11-2025 P -->";
+				case "CLT": // ORF-CLT // Updated 10-27-2026
+					result += "<!-- Updated 10-27-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route (Avg FL220):</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KORF COUPN CHSLY9 KCLT\" readonly>";
-					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORF HPW FAK MOL J24 HVQ YOCKY SKYWA FILPZ7 KCLT\" readonly>";
-					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET6 KCLT\" readonly>"; // CDR 41
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KORF TYI RDU LIB MAJIC1 KCLT\" readonly>";
-					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-11-2025
-					result += "<!-- Verified with ATCSCC on 09-11-2025 -->";
-					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF COUPN CHSLY9 KCLT\" readonly>";
-					result += "<br/>41<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET6 KCLT\" readonly>";
-					result += "<br/>63<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET6 KCLT\" readonly>";
-					result += "<br/>C1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET6 KCLT\" readonly>";
-					result += "<br/>C2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF KOOKI ELLDE OKNEE MLLET6 KCLT\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KORF NUTIY1 NUTIY COUPN CHSLY9 KCLT\" readonly>"; // CDR 00
+					result += "<br/><br/>North<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORF NUTIY1 KELLE AIROW CHSLY9 KCLT\" readonly>";
+					result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORF SWOPE1 ELLDE OKNEE MLLET6 KCLT\" readonly>"; // CDR 41
+					result += "<br/><br/>North via BKW<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORF NUTIY1 KELLE MOL BKW LNDIZ PARQR7 KCLT\" readonly>";
+					result += "<br/><br/>CLT NO CHSLY<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORF SWOPE1 ELLDE OKNEE MLLET6 KCLT\" readonly>";
+					result += "<br/>CLT NO FILPZ PARQR<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KORF SWOPE1 ELLDE OKNEE MLLET6 KCLT\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KORF TYI RDU LIB MAJIC1 KCLT\" readonly>";
+					result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-27-2026
+					result += "<!-- Verified with ATCSCC on 10-27-2026 -->";
+					result += "<br/>00<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF NUTIY1 NUTIY COUPN CHSLY9 KCLT\" readonly>";
+					result += "<br/>41<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF SWOPE1 ELLDE OKNEE MLLET6 KCLT\" readonly>";
+					result += "<br/>63<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF SWOPE1 ELLDE OKNEE MLLET6 KCLT\" readonly>";
+					result += "<br/>C1<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF SWOPE1 ELLDE OKNEE MLLET6 KCLT\" readonly>"; // CLT NO CHSLY
+					result += "<br/>C2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KORF SWOPE1 ELLDE OKNEE MLLET6 KCLT\" readonly>"; // CLT NO FILPZ PARQR
 					break;
 				case "DFW": // ORF-DFW // Updated 05-06-2026
 					result += "<!-- Updated 05-06-2026 P -->";
