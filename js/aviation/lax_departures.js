@@ -25,21 +25,28 @@ lax_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>KT<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J50 ELP J2 FST J138 SAT Q24 LSU SHYRE HOBTT3 KATL\" readonly>";
 			result += "<br/>WR<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE DRK J6 IRW FSM MEM HUTCC KNSAW RUSSA GLAVN2 KATL\" readonly>"; // ATL NO HOBTT
 			break;
-		case "AUS": // LAX-AUS // Updated 02-01-2026
-			result += "<!-- Updated 02-01-2026 P -->";
+		case "AUS": // LAX-AUS // Updated 10-29-2026
+			result += "<!-- Updated 10-29-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH TFD SSO ELP FST DILLO LAIKS4 KAUS\" readonly>";
-			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J78 ABQ J72 TXO BOBVE ACT BLEWE5 KAUS\" readonly>";
-			result += "<br/><br/>AUS SAT MRF<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP MRF OZMOS JCT DILLO LAIKS4 KAUS\" readonly>";
-			result += "<br/>MOJAVE EAST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 FST DILLO LAIKS4 KAUS\" readonly>";
-			result += "<br/>SPRINGS EAST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX PNDAH2 TCATE IPL J18 GBN J50 ELP J2 FST DILLO LAIKS4 KAUS\" readonly>";
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 IPL J18 GBN J50 ACT BLEWE5 KAUS\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-01-2026
-			result += "<!-- Verified with ATCSCC on 02-01-2026 -->";
-			result += "<br/>AU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP MRF OZMOS JCT DILLO LAIKS4 KAUS\" readonly>"; // AUS SAT MRF
-			result += "<br/>ME<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP J2 FST DILLO LAIKS4 KAUS\" readonly>"; // MOJAVE EAST
-			result += "<br/>SE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX PNDAH2 TCATE IPL J18 GBN J50 ELP J2 FST DILLO LAIKS4 KAUS\" readonly>"; // SPRINGS EAST
+			result += "<br/><input style=\"width:75%\"; value=\"KLAX DOTSS2 CNERY BLH J50 ELP J86 FST DILLO LAIKS4 KAUS\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J74 CNX LBB PRTZY LAIKS4 KAUS\" readonly>";
+			result += "<br/>South<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CNERY BLH J169 TFD J50 ELP MRF OZMOS JCT DILLO LAIKS4 KAUS\" readonly>"; // CDR AU
+			result += "<br/><br/>North via ABQ<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KLAX DOTSS2 CLEEE PKE J96 DRK J6 ABQ J72 TXO PRTZY LAIKS4 KAUS\" readonly>";
+			result += "<br/><br/><b>Playbooks:</b>";
+			result += "<br/>AUS SAT MRF<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX CNERY BLH J169 TFD J50 ELP MRF OZMOS JCT DILLO LAIKS4 KAUS\" readonly>";
+			result += "<br/>MEX AMUDI EAST 1<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX TCATE IPL MXL AMUDI IMEXA JALIL VOKOM MRF DILLO LAIKS4 KAUS\" readonly>";
+			result += "<br/>MEX AMUDI EAST 2<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX TCATE IPL MXL AMUDI IMEXA AGNID OBGIY DOBBY DXEEE3 KAUS\" readonly>";
+			result += "<br/>MOJAVE EAST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX CNERY BLH J169 TFD J50 ELP J2 FST DILLO LAIKS4 KAUS\" readonly>";
+			result += "<br/>SPRINGS EAST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KLAX TCATE IPL J2 GBN J50 ELP J2 FST DILLO LAIKS4 KAUS\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\"; value=\"KLAX LAXX1 IPL J18 GBN J50 ACT BLEWE5 KAUS\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-29-2026
+			result += "<!-- Verified with ATCSCC on 10-29-2026 -->";
+			result += "<br/>AD<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX TCATE IPL MXL AMUDI IMEXA AGNID OBGIY DOBBY DXEEE3 KAUS\" readonly>"; // MEX AMUDI EAST 2
+			result += "<br/>AM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX TCATE IPL MXL AMUDI IMEXA JALIL VOKOM MRF DILLO LAIKS4 KAUS\" readonly>"; // MEX AMUDI EAST 1
+			result += "<br/>AU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CNERY BLH J169 TFD J50 ELP MRF OZMOS JCT DILLO LAIKS4 KAUS\" readonly>"; // AUS SAT MRF
+			result += "<br/>ME<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX CNERY BLH J169 TFD J50 ELP J2 FST DILLO LAIKS4 KAUS\" readonly>"; // MOJAVE EAST
+			result += "<br/>SE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KLAX TCATE IPL J2 GBN J50 ELP J2 FST DILLO LAIKS4 KAUS\" readonly>"; // SPRINGS EAST
 			break;
 		case "BNA": // LAX-BNA // Updated 10-05-2026
 			result += "<!-- Updated 10-05-2026 P -->";
