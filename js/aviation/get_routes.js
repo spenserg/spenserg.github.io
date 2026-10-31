@@ -5522,11 +5522,12 @@ KGSP MCN SPLSH CHRGE MATCY FROGZ1 KMIA
 
 		case "GUC":
 			switch(arvl) {
-				case "DFW": // GUC-DFW // Updated 06-24-2026
-					result += "<!-- Updated 06-24-2026 P -->";
+				case "DFW": // GUC-DFW // Updated 10-30-2026
+					result += "<!-- Updated 10-30-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\"; value=\"KGUC HBU J206 ALS PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KGUC HELPS ESPAN CNX J15 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
+					result += "<br/><input style=\"width:75%\"; value=\"KGUC GYLES1 BUUTE ALS PNH MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGUC GYLES1 HARVD PUB LBL MMB HOFFF VKTRY2 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KGUC HELPS ESPAN CNX J15 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><input style=\"width:75%\"; value=\"KGUC DUFEL CIM PNH UKW8 KDFW\" readonly>";
 					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-24-2026
