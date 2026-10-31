@@ -999,19 +999,19 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN PGS BLD J92 BTY RUSME RAZRR5 KSJC\" readonly>";
 			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BTY RUSME RAZRR5 KSJC\" readonly>";
 			break;
-		case "SLC": // PHX-SLC // Updated 02-20-2026
-			result += "<!-- Updated 02-20-2026 P -->";
+		case "SLC": // PHX-SLC // Updated 10-30-2026
+			result += "<!-- Updated 10-30-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KPHX QUAKY1 GCN BCE QWENN5 KSLC\" readonly>"; // Based on CDR QU
-			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 YOOPR DVC JNC J15 TCH KSLC\" readonly>"; // CDR MR
-			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BLD J107 MLF J9 TCH KSLC\" readonly>"; // CDR ZE
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\"; value=\"KPHX PXR J11 BCE MLF JAMMN5 KSLC\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 02-20-2026
-			result += "<!-- Verified with ATCSCC on 02-20-2026 -->";
-			result += "<br/>KE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 WLVRN PKE LAKRR MLF KSLC\" readonly>";
+			result += "<br/><input style=\"width:75%\" value=\"KPHX QUAKY1 GCN BCE QWENN7 KSLC\" readonly>"; // Based on CDR QU
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 YOOPR DVC JNC HELPR JAZZZ1 KSLC\" readonly>"; // Based on CDR MR
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BLD J107 MLF QWENN7 KSLC\" readonly>"; // Based on CDR ZE
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\"; value=\"KPHX PXR J11 BCE MLF JAMMN5 KSLC\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-30-2026
+			result += "<!-- Verified with ATCSCC on 10-30-2026 -->";
+			result += "<br/>KE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 WLVRN PKE LAKRR MLF QWENN7 KSLC\" readonly>";
 			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 YOOPR DVC JNC J15 TCH KSLC\" readonly>";
-			result += "<br/>QU<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN BCE J11 FFU KSLC\" readonly>";
+			result += "<br/>QU<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX QUAKY1 GCN BCE J11 FFU KSLC\" readonly>";
 			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BLD J107 MLF J9 TCH KSLC\" readonly>";
 			break;
 		case "SMF": // PHX-SMF // Updated 09-14-2026
