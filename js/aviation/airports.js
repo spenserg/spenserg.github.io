@@ -167,7 +167,7 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/>GJT - Run VAA above 25C";
 			break;
 		case "GUC":
-			result += "<br/>GUC Flow: <button type='button' id='GUC_standard_left' class='btn" + ((flows['GUC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"GUC\", 0)'>West Rwy27</button>&nbsp;&nbsp;<button type='button' id='GUC_standard_right' class='btn" + ((flows['GUC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"GUP\", 1)'>East Rwy25</button>";
+			result += "<br/>GUC Flow: <button type='button' id='GUC_standard_left' class='btn" + ((flows['GUC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"GUC\", 0)'>West Rwy25</button>&nbsp;&nbsp;<button type='button' id='GUC_standard_right' class='btn" + ((flows['GUC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"GUC\", 1)'>East Rwy25</button>";
 			show_flow_info = "W Rwy25: GYLES<br/>E Rwy7: LISSA";
 			break;
 		case "IAH":
@@ -804,6 +804,11 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KGPI GPI1 SKOTT", "KGPI RIDDG3 SKOTT");
 						result = result.replaceAll("KGPI GPI1 ANGIL", "KGPI RIDDG3 RIDDG");
 */
+					case "GUC": // GUC West // Rwy25
+						result = result.replaceAll("KGUC LISSA1 BUUTE", "KGUC GYLES1 BUUTE");
+						result = result.replaceAll("KGUC LISSA1 JAKEZ", "KGUC GYLES1 JAKEZ");
+						result = result.replaceAll("KGUC LISSA1 GYLES", "KGUC GYLES1 HARVD");
+						break;
 					case "IAH": // IAH west // Rwy26 Rwy27
 						result = result.replaceAll("SKNRD5 KIAH", "DOOBI3 KIAH");
 						result = result.replaceAll("GUSHR3 KIAH", "DRLLR5 KIAH");
@@ -1023,6 +1028,10 @@ change_flow_str = function (airport = "XXX", new_config = -1, result = "") {
 						result = result.replaceAll("KGPI RIDDG3 SKOTT CHOTE", "KGPI GPI1 CHOTE");
 						result = result.replaceAll("KGPI RIDDG3 SKOTT", "KGPI SKOTT3 SKOTT");
 */
+					case "GUC": // GUC East // Rwy7
+						result = result.replaceAll("KGUC GYLES1 BUUTE", "KGUC LISSA1 BUUTE");
+						result = result.replaceAll("KGUC GYLES1 JAKEZ", "KGUC LISSA1 JAKEZ");
+						result = result.replaceAll("KGUC GYLES1 HARVD", "KGUC LISSA1 GYLES");
 					case "IAH": // IAH East // Rwy8 Rwy9
 						// IAH STARS
 						result = result.replaceAll("DOOBI3 KIAH", "SKNRD5 KIAH");
