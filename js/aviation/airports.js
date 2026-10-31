@@ -166,6 +166,10 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 		case "GJT":
 			result += "<br/>GJT - Run VAA above 25C";
 			break;
+		case "GUC":
+			result += "<br/>GUC Flow: <button type='button' id='GUC_standard_left' class='btn" + ((flows['GUC'] == 0) ? " selected" : "") + "' onclick='change_flow(\"GUC\", 0)'>West Rwy27</button>&nbsp;&nbsp;<button type='button' id='GUC_standard_right' class='btn" + ((flows['GUC'] == 1) ? " selected" : "") + "' onclick='change_flow(\"GUP\", 1)'>East Rwy25</button>";
+			show_flow_info = "W Rwy25: GYLES<br/>E Rwy7: LISSA";
+			break;
 		case "IAH":
 			result += "<br/>IAH Landing: <button type='button' id='IAH_standard_left' class='btn" + ((flows['IAH'] == 0) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 0)'>West Rwy26</button>&nbsp;&nbsp;<button type='button' id='IAH_standard_right' class='btn" + ((flows['IAH'] == 1) ? " selected" : "") + "' onclick='change_flow(\"IAH\", 1)'>East Rwy8</button>";
 			show_flow_info = "Landing East: GUMBY, PITZZ<br/>Landing West: MMUGS, BNDTO<br/>ALL: FLYZA, RITAA, STRYA, STYCK, WYLSN";
