@@ -5563,29 +5563,31 @@ KGSP MCN SPLSH CHRGE MATCY FROGZ1 KMIA
 
 		case "HSV":
 			switch(arvl) {
-				case "CLT": // HSV-CLT // Updated 11-26-2025
+				case "CLT": // HSV-CLT // Updated 10-30-2026
+					result += "<!-- Updated 10-30-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KHSV GQO TAZZA FILPZ7 KCLT\" readonly>";
 					result += "<br/><br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KHSV THRSR BESTT JONZE8 KCLT\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-26-2025
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-30-2026
 					break;
-				case "DFW": // HSV-DFW // Updated 06-05-2025
-					result += "<!-- Updated 06-05-2025 P -->";
+				case "DFW": // HSV-DFW // Updated 10-30-2026
+					result += "<!-- Updated 10-30-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\"; value=\"KHSV MSL MEM J66 LIT MEEOW FEWWW SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/>South: <input style=\"width:75%\"; value=\"KHSV MSL SQS YUYUN BEREE3 KDFW\" readonly>";
-					result += "<br/>North via ARG<input style=\"width:75%\" value=\"KHSV VISQA ARG FSM RRNET SEEVR4 KDFW\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\"; value=\"KHSV MEI MCB AEX DAS IAH J86 SPURS AGJ ACT YEAGR4 KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 06-05-2025
+					result += "<br/><input style=\"width:75%\"; value=\"KHSV MSL MEM J66 LIT FEWWW SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KHSV VISQA ARG FSM RRNET SEEVR4 KDFW\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KHSV MSL SQS YUYUN BEREE3 KDFW\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\"; value=\"KHSV MEI MCB AEX DAS IAH J86 SPURS AGJ ACT YEAGR4 KDFW\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-30-2026
 					break;
-				case "ORD": // HSV-ORD // Updated 11-26-2025
+				case "ORD": // HSV-ORD // Updated 10-30-2026
+					result += "<!-- Updated 10-30-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
 					result += "<br/><input style=\"width:75%\" value=\"KHSV VISQA FTZ TRTLL6 KORD\" readonly>";
 					result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KHSV GLAZR Q118 MZZ VEECK5 KORD\" readonly>";
-					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-26-2025
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-30-2026
 					break;
 			}
 		break; // End of HSV
