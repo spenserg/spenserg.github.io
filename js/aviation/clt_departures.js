@@ -1386,11 +1386,11 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 // CLT-SGF skipped
 // CLT-SHV skipped
 
-		case "SLC": // CLT-SLC // Updated 03-24-2026
+		case "SLC": // CLT-SLC // Updated 10-30-2026
 			result += "<!-- Updated 03-24-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT BOBZY8 BNA FAM J112 BUM SLN HLC J80 FQF J116 EKR RACER JAZZZ1 KSLC\" readonly>"; // CDR RP
-			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO8 DOOGE FLM J24 VHP RBS DSM KUTCH BFF J94 OCS CARTR1 KSLC\" readonly>";
+			result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT JOJJO8 DOOGE FLM J24 VHP RBS DSM KUTCH BFF J94 OCS CARTR2 KSLC\" readonly>";
 			result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY8 BNA J46 ARG RZC VEGUC Q128 FLOOD HBU JNC J12 HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/><br/>South via TXK<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC SUTTN J52 TXK ADM PNH ALS JNC J12 HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/>South via IAH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ MGMRY CATLN Q22 GUSTI IAH J86 INW CORKR J11 BCE QWENN7 KSLC\" readonly>";
@@ -1399,13 +1399,13 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>LEV WEST<span style=\"color:red\"> (Coord Req)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ MGMRY SJI LEV BOWFN HOODO PSX CARTI HFMAN DLF KOBLE FST CNM CME CNX JNC HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/>ROCKIES SOUTH<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ THRSR VLKNN Q30 IZAAC SUTTN J52 TXK GTH TCC J76 FTI RSK JNC J12 HELPR JAZZZ1 KSLC\" readonly>";
 			result += "<br/>TUL 1<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KCLT BOBZY8 BNA J46 TUL GCK HGO EKR RACER JAZZZ1 KSLC\" readonly>";
-			// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 03-24-2026
-			result += "<!-- Verified with ATCSCC on 03-24-2026 -->";
-			result += "<br/>BE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY9 GANDT DBN MGMRY MEI ICT J182 GLD J80 FQF J116 EKR RACER JAZZZ1 KSLC\" readonly>";
-			result += "<br/>JJ<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO8 CUBIM RAMRD FAM J112 BUM SLN HLC J80 FQF J116 EKR RACER JAZZZ1 KSLC\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 10-30-2026
+			result += "<!-- Verified with ATCSCC on 10-30-2026 -->";
+			result += "<br/>BE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BEAVY9 GANDT DBN MGMRY MEI ICT J182 GLD J80 FQF J116 EKR RACER JAZZZ1 KSLC\" readonly>";
+			result += "<br/>JJ<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT JOJJO8 CUBIM RAMRD FAM J112 BUM SLN HLC J80 FQF J116 EKR RACER JAZZZ1 KSLC\" readonly>";
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BOBZY8 BNA FAM J112 BUM SLN HLC J80 FQF J116 EKR RACER JAZZZ1 KSLC\" readonly>";
-			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL8 CLAWD HVQ FAM J112 BUM SLN HLC J80 FQF J116 EKR RACER JAZZZ1 KSLC\" readonly>";
+			result += "<br/>WE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL8 CLAWD HVQ FAM J112 BUM SLN HLC J80 FQF J116 EKR RACER JAZZZ1 KSLC\" readonly>";
 			break;
 		case "SMF": // CLT-SMF // Updated 07-18-2025
 			result += "<!-- Updated 07-18-2025 P -->";
