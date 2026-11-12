@@ -283,7 +283,8 @@ compute = function(str_override = "") {
 
 		output = '<div class="container text-left" style="margin:0;padding:5"><div class="row"><div class="col-6">' + result[3] + '&nbsp;&nbsp;&nbsp;' +
 			(is_domestic(result[1], false) ? ('<span style="cursor:pointer" onclick="$(\'#dom_fir\').toggle()">' + result[1] + '</span><span id="dom_fir" style="display:none">&nbsp;&nbsp;(' + get_fir(result[1]) + ")</span>") : (convert_iata(result[1]) + '&nbsp;/&nbsp;' + convert_icao(result[1]))) +
-			'&nbsp;&nbsp;&nbsp;' + result[5] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result[4] + "<br/>" + output;
+			'&nbsp;&nbsp;&nbsp;' + result[5] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +  
+			((result[4].localeCompare("000000") == 0) ? ('&nbsp;&nbsp;<b style="color:red">No Capt Assigned<\/b>') : result[4]) + "<br/>" + output;
 
 		// Unrecognized Airport or ARTCC
 		if (convert_iata(result[1]).localeCompare("XXX") == 0 || convert_icao(result[1]).localeCompare("XXXX") == 0) {
