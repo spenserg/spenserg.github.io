@@ -970,17 +970,16 @@ clt_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT ESTRR8 IPTAY CHOPZ MGMRY CATLN Q56 SJI MNSTR2 KMSY\" readonly>";
 			result += "<br/>WE<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT WEAZL8 CLAWD ZIEBR YOCKY RAMRD MHZ MCB TRSSH2 KMSY\" readonly>";
 			break;
-		case "MYR": // CLT-MYR // Updated 09-23-2025
-			result += "<!-- Updated 09-23-2025 P -->";
+		case "MYR": // CLT-MYR // Updated 11-13-2026
+			result += "<!-- Updated 11-13-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route (Avg FL230):</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KCLT KWEEN8 UNJAM KMYR\" readonly>"; // CDR RP
-			result += "<br/><b>As of 2025-09-28, CDP RP includes TASTY but flights usually turn at or before UNJAM<\/b>";
-			result += "<br/><br/><b>Non RNAV</b>";
-			result += "<br/><input style=\"width:75%\" value=\"KCLT LILLS6 LILLS KMYR\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 09-23-2025
-			result += "<!-- Verified with ATCSCC on 09-23-2025 -->";
-			result += "<br/>BA<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT BATTA1 RDU V136 CRE KMYR\" readonly>";
-			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN8 UNJAM TASTY KMYR\" readonly>";
+			// result += "<br/><br/><b>Non RNAV</b>";
+			// result += "<br/><input style=\"width:75%\" value=\"KCLT LILLS6 LILLS KMYR\" readonly>";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-13-2026
+			result += "<!-- Verified with ATCSCC on 11-13-2026 -->";
+			result += "<br/>LL<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT LILLS6 LILLS FAY BRDWK BRDWK1 KMYR\" readonly>";
+			result += "<br/>RP<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KCLT KWEEN8 UNJAM BRDWK BRDWK1 KMYR\" readonly>";
 			break;
 		case "OKC": // CLT-OKC // Updated 09-30-2025
 			result += "<!-- Updated 09-30-2025 P -->";
