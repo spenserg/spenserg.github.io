@@ -537,6 +537,9 @@ airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, a
 			result += "<br/>MTJ - Rwy 13/31 N/A";
 			result += "<br/>MTJ - At night: Rwy 35 N/A; no circle to land";
 			break;
+		case "ORD":
+			result += "<br/><b>FL280 at HEVAN if using HEVAN-BONNT<\/b>";
+			break;
 		case "PSP":
 			result += "<br/>PSP - No ILS procedures, do not plan RNAV apch for alternates";
 			break;
