@@ -72,11 +72,10 @@ get_cutoff = function (sta = "") {
 	return ["ZZZ","ZZZZZZZZ","N",0];
 }
 
-airport_extra = function (flows = {}, dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, result = "") {
+airport_extra = function (dptr = "XXX", arvl = "XXX", tail = null, ac_type = null, result = "") {
 	dptr = ((dptr.length == 4) ? convert_iata(dptr) : dptr);
 	arvl = ((arvl.length == 4) ? convert_iata(arvl) : arvl);
-	flows = ((Object.keys(flows).length == 0) ? {"ABQ":0,"ATL":0,"BZN":0,"DFW":0,"DTW":0,"ELP":0,"FCA":0,"IAH":0,"JAC":0,"LAX":0,"MCO":0,"MIA":0,"MSO":0,"PSP":0,"RNO":0,"SAN":0,"SBP":0,"SFO":0,"SJC":0,"SLC":0,"SMF":0,"SNA":0,"TUS":0} : flows);
-
+	
 	// A012
 	if (is_atwelve(arvl)) { result += "<br/><b>" + arvl + " is an A012 Airport<\/b>"; }
 
