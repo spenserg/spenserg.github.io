@@ -91,6 +91,11 @@ airport_extra = function (dptr = "XXX", arvl = "XXX", tail = null, ac_type = nul
 		}
 	}
 
+	/* Euro Arrivals */
+	if (["DEL","DOH"].includes(arvl)) {
+			result += "<br/>Verify any enroute alts are outside the Schengen Zone.";
+	}
+
 	var show_flow_info = "";
 	switch(dptr) {
 		case "ABQ":
