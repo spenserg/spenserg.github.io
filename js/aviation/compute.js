@@ -391,7 +391,7 @@ compute = function(str_override = "") {
 		console.log("flifo parse error");
 	}
 
-	output = airport_extra(flows, result[1], result[2], result[5], ac_type, output);
+	output = airport_extra(result[1], result[2], result[5], ac_type, output);
 	
 	// Routes
 	//if (regz.exec(fkeystxt) == null && (testing || (rega.exec(fkeystxt) != null))) {
@@ -492,13 +492,6 @@ compute = function(str_override = "") {
 		output = change_flow_str(((result[1].length == 3) ? result[1] : convert_iata(result[1])), flows[((result[1].length == 3) ? result[1] : convert_iata(result[1]))], output);
 		output = change_flow_str(((result[2].length == 3) ? result[2] : convert_iata(result[2])), flows[((result[2].length == 3) ? result[2] : convert_iata(result[2]))], output);
 	}
-
 	$("#total").html('<br/>' + output);
-	/*
-	if (result != null && (rega.exec(fkeystxt) != null) && (regb.exec(fkeystxt) != null)) {
-		change_flow(((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1]), flows[((result[1].length == 4) ? (result[1].substr(1, 4)) : result[1])], true);
-		change_flow(((result[2].length == 4) ? (result[2].substr(1, 4)) : result[2]), flows[((result[2].length == 4) ? (result[2].substr(1, 4)) : result[2])], true);
-	}
-	*/
 	if (!input_boxes_shown) { $("#input_boxes").hide(); }
 }
