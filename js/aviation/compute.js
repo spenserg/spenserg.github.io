@@ -301,26 +301,23 @@ compute = function(str_override = "") {
 		if (["319S", "H319", "319W", "A320", "H205", "B772"].includes(ac_type)) {
 			// Cat C
 			output += "C"; // 121-141 Kts
-			if (["H319","A321","321T","321K"].includes(ac_type)) {
-				output += "&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
-			}
 		} else if (["738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X", "773W", "7878", "7879", "789P"].includes(ac_type)) {
 			if (ac_type == "738R") {
 				// SFP - Cat C under certain conditions
 				output += "C / D&nbsp;&nbsp;<button id='cd_button' onclick=\"toggle_cd()\">Show Details<\/button>" +
 					"<div id='cd_details' style='display:none;border:1px solid black;margin:2px;width:75%'>C - [flaps 40 straight-in]<br/> D - [circle-to-land]<\/div>";
-				if (["H319","A321","321T","321K"].includes(ac_type)) {
-					output += "<br/>&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
-				}
 			} else {
 				// Cat D
 				output += "D"; // 141-165 Kts
-				if (["H319","A321","321T","321K"].includes(ac_type)) {
-					output += "&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
-				}
 			}
 		} else { output += "Unknown"; }
 
+		// Overwater Warnings
+		if (["H319","A321","321T","321K"].includes(ac_type)) {
+			output += "&nbsp;&nbsp;<b style='color:orange'>100/162NM<\/b>";
+		} else if (["H205"].includes(ac_type)) {
+			output += "&nbsp;&nbsp;<b style='color:orange'>50NM OW before Oasis<\/b>";
+		}
 		// Cost Index
 		output += "<br/>&nbsp;ci: ";
 		if (["319S", "H319", "319W", "A320", "H205", "738M", "738K", "738R", "321T", "A321", "321E", "321K", "321R", "321N", "321X"].includes(ac_type)) {
