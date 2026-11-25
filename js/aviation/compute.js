@@ -474,9 +474,9 @@ compute = function(str_override = "") {
 			if (fkeystxt.match(rls_regex) && fkeystxt.match(dct_regex) && fkeystxt.match(via_regex)) {
 				output += '<hr><textarea rows="8" cols="80">ACR N' + result[5] + ' FTM/ACK¶\n' +
 					'RLS AMD ' + rls_regex.exec(fkeystxt)[1] + ' // ATC RRTE¶\n' +
-					'PPOS ' + via_regex.exec(fkeystxt)[1] + '\n' +
+					'PPOS ' + (via_regex.exec(fkeystxt)[1]).replaceAll(/[A-Z]{4}\/F\d+\s/g,"") + '¶\n' +
 					'ETA ' + eta_regex.exec(fkeystxt)[1] + 'Z¶\n' +
-					'EST ARR FUEL ' + (Math.floor(parseInt(arrfuel_regex.exec(fkeystxt)[1])/1000)*1000) + '¶\n' +
+					'EST ARR FUEL ' + (Math.floor(parseInt(arrfuel_regex.exec(fkeystxt)[1])/100)*100) + '¶\n' +
 					desk_regex.exec(fkeystxt)[1] + ' SG';
 				output += '</textarea>';
 			}
