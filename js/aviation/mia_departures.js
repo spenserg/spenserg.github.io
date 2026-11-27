@@ -115,8 +115,8 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 
 // MIA-BOI skipped
 
-		case "BOS": // MIA-BOS // Updated 01-22-2026
-			result += "<!-- Updated 01-22-2026 P -->";
+		case "BOS": // MIA-BOS // Updated 11-26-2026
+			result += "<!-- Updated 11-26-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
 			result += "<br/><input style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA GRUBR Y299 SEELO WAALT Q131 EARZZ JAMIE Q133 JFK ROBUC3 KBOS\" readonly>"; // CDR Z0
 			result += "<br/><br/>Non OW<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 JROSS ELLDE Q97 PAACK JAMIE Q133 JFK ROBUC3 KBOS\" readonly>"; // CDR A0
@@ -127,8 +127,8 @@ mia_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			// result += "<br/>VACAPES NORTH 1: <input style=\"width:75%\"; value=\"KMIA FOLZZ3 ALYRA PELCN ROWSY ECG CORNE FATON CCC RUIZE ROBUC3 KBOS\" readonly>";
 			result += "<br/><br/><b>Non RNAV</b>";
 			result += "<br/><input style=\"width:75%\"; value=\"KMIA ORL CRG SAV CHS ISO ORF SBY ACY JFK ORW7 KBOS\" readonly>";
-			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 01-22-2026
-			result += "<!-- Verified with ATCSCC on 01-22-2026 -->";
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-26-2026
+			result += "<!-- Verified with ATCSCC on 11-26-2026 -->";
 			result += "<br/>A0<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA ALTNN2 DUCEN Q87 JROSS ELLDE Q97 PAACK JAMIE Q133 JFK ROBUC3 KBOS\" readonly>";
 			result += "<br/>DW<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA FOLZZ3 ALYRA ROWSY Y494 YAALE Y495 OWENZ FATON CCC RUIZE ROBUC3 KBOS\" readonly>";
 			result += "<br/>G2<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KMIA GLADZ4 SHAQQ KNOST DEANR CAMJO Q99 POLYY DADDS Q87 GEARS BBOBO Q22 RBV Q419 JFK ROBUC3 KBOS\" readonly>";
