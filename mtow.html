@@ -227,8 +227,11 @@ cdr_parse = function (input = null, to_array = false, result_arr = {'faa_pref' :
 	var num_ok_to_file = 0;
 	var only_one_ok_to_file_pref = {};
 	var fp_comment = " \nCDR LIST:";
+	var known_pref_apts = ["KCLT","KDCA","KDFW","KMSP","KPHL"];
+	var pref_rte_ids = {"KCLT":"RP","KDCA":"00","KDFW":"0P","KMSP":"P1","KPHL":"PH"};
 
 	var counter = 0;
+	// Loop through all CDRS
 	while(null != (z = reg_tmp.exec(input))) {
 		counter++;
 		dptr = ((z[2].length != 4) ? convert_iata(z[2]) : z[2]);
@@ -243,18 +246,9 @@ cdr_parse = function (input = null, to_array = false, result_arr = {'faa_pref' :
 		}
 
 		// FAA Pref
-		if (dptr == "KCLT" && z[1] == "RP") { // CLT
-			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR RP";
-			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR RP', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR RP"};
-		} else if (dptr == "KDCA" && z[1] == "00") { // DCA
-			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 00";
-			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR 00', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 00"};
-		} else if (dptr == "KDFW" && z[1] == "0P") { // DFW
-			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0P";
-			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR 0P', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR 0P"};
-		} else if (dptr == "KPHL" && z[1] == "PH") { // PHL
-			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR PH";
-			result_arr['faa_pref'] = {'route' : z[4], 'notes' : 'CDR PH', 'avg_fl' : null, 'result_str' : "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR PH"};
+		if (known_pref_apts.includes(dptr)) {
+			faa_pref = "result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR " + pref_rte_ids[dptr];
+			result_arr['faa_pref'] = {'route' : z[4], 'notes' : ('CDR ' + pref_rte_ids[dptr]), 'avg_fl' : null, 'result_str' : ("result += \"<br/><input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\"; \/\/ CDR " + pref_rte_ids[dptr])};
 		}
 
 		// Playbook
@@ -267,27 +261,8 @@ cdr_parse = function (input = null, to_array = false, result_arr = {'faa_pref' :
 		// if (z[2] == "KDFW" && z[4].includes("KDFW NELYN6 SAT FST")) { z[7] = "COWBOY WEST 2 (FL220 to SAT)"; }
 
 		// Shorten CDR names
-		z[7] = z[7].replace("DOMESTIC HARP", "DOM HARP");
-		z[7] = z[7].replace("OHIO VALLEY", "OHIO VLY");
-		z[7] = z[7].replace("DQO TUNNEL", "DQO TNL");
-		z[7] = z[7].replace("TO FLORIDA", "TO FL");
-		z[7] = z[7].replace("FLORIDA TO", "FL TO");
-		
-		z[7] = z[7].replace(" SOUTHWEST", " SW");
-		z[7] = z[7].replace(" NORTHWEST", " NW");
-		z[7] = z[7].replace(" SOUTHEAST", " SE");
-		z[7] = z[7].replace(" NORTHEAST", " NE");
+		z[7] = shorten_cdr_names(z[7]);
 
-		z[7] = z[7].replace(" SOUTH WEST", " SW");
-		z[7] = z[7].replace(" NORTH WEST", " NW");
-		z[7] = z[7].replace(" SOUTH EAST", " SE");
-		z[7] = z[7].replace(" NORTH EAST", " NE");
-		
-		z[7] = z[7].replace(" NORTH FLOW", " N");
-		z[7] = z[7].replace(" SOUTH FLOW", " S");
-		z[7] = z[7].replace(" NORTH", " N");
-		z[7] = z[7].replace(" SOUTH", " S");
-		
 		if (z[7].length > 0 && z[7].substring(0,3) != "GA ") {
 			playbooks[z[7]] = {'route' : z[4], 'desc' : z[7], 'coord_req' : ((z[5] == "N") ? false : true),
 						 'result_str' : ("result += \"<br/>" + z[7] + file_status + ": <input style=\\\"width:75%\\\" value=\\\"" + z[4] + "\\\" readonly>\";") };
@@ -316,7 +291,7 @@ cdr_parse = function (input = null, to_array = false, result_arr = {'faa_pref' :
 	}
 	fp_comment += "\n \n";
 
-	if (num_ok_to_file == 1 && !["KCLT","KDCA","KDFW","KPHL"].includes(dptr)) {
+	if (num_ok_to_file == 1 && !known_pref_apts.includes(dptr)) {
 		faa_pref = only_one_ok_to_file_pref['result_str'];
 		result_arr['faa_pref'] = only_one_ok_to_file_pref;
 		if (debug_mode) { console.log("Only one ok-to-file CDR found"); }
@@ -391,6 +366,7 @@ cdr_parse = function (input = null, to_array = false, result_arr = {'faa_pref' :
 			'result += \"<!-- Updated ' + today_str + ' P -->\";';
 
 		// Pref Route / NRP / CFS
+		/*
 		if (fp_lines != null && fp_lines.length > 1) {
 			if (fp_lines[2].includes("Faa Pref Route")) {
 				header += textarea_tabs + 'result += \"<br/><br/>' + fp_lines[2] + '\";' + textarea_tabs + 'result += \"<br/>' + fp_lines[3].replaceAll('\"','\\\"') + '\";';
@@ -424,30 +400,28 @@ cdr_parse = function (input = null, to_array = false, result_arr = {'faa_pref' :
 				header += textarea_tabs + '// TODO: FAA Pref Route // NRP Rte QQ';
 			}
 		}
-		output += '<textarea rows="20" cols="100">' + header;
-		header = '<textarea rows="8" cols="80">' + header + '</textarea>';
-
-		/*
-		new_cdr_str += "&nbsp;&nbsp;Desc: <input id=\"cdrdesc_" + z[1] + "\" style=\"width:10%\" value=\"XXX\" onchange=\"update_cdr_text('" + z[1] + "'," + ((z[2].includes("Coord Req")) ? 'true' : 'false') + ")\" } />" +
-			"&nbsp;&nbsp;<input id=\"cdrdescbr_" + z[1] + "\" style=\"width:10%\" value=\"<br/>XXX\" readonly><br/>" +
-			z[1] + ": <input id=\'cdrcp_" + z[1] + "\' style=\'width:75%\' value=\'" +
-			"result += \"<br/>XXX" + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ") + 
-			"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
-			if (z[4].trim().length > 0) {
-				new_cdr_str += z[4] + ": <input style=\'width:75%\' value=\'" +
-					"result += \"<br/>" + z[4] + ((z[2].includes("Coord Req")) ? "<span style=\\\"color:red\\\"> (Coord Req)</span>: " : "<span style=\\\"color:green\\\"> (Ok to File)</span>: ") + 
-					"<input style=\\\"width:75%\\\" " + z[3] + " readonly>\"; \/\/ CDR " + z[1] + "\' readonly><br/>";
-			}
 		*/
+		if (faa_pref.trim().length > 0) {
+			header += textarea_tabs + 'result += \"<br/><br/><b>Faa Pref Route:</b>\";' + textarea_tabs + faa_pref;
+		} else {
+			header += textarea_tabs + '// TODO: Verify FAA Pref Route // NRP Rte QQ';
+		}
+
+		output += '<textarea rows="20" cols="100">' + header;
+		header = '<textarea rows="5" cols="80">' + header + '</textarea>';
 
 		// Copy from current body
 		var middle = "";
 		var cdrs_and_beyond = false;
 		var add_row = false;
+		var fpl_cdr_start_index = 0;
 		if (fp_lines.length > 1) {
 			for (var ki = ((fp_lines[2].includes("Faa Pref Route")) ? 4 : 3); ki < fp_lines.length; ki++) {
 				// .replaceAll("<","&lt;").replaceAll(">","&gt;");
-				if (fp_lines[ki].includes(">CDRS<") || fp_lines[ki].includes("Verified with ATCSCC")) { break; }
+				if (fp_lines[ki].includes(">CDRS<") || fp_lines[ki].includes("Verified with ATCSCC")) {
+					fpl_cdr_start_index = (ki + 1)
+					break;
+				}
 				if (fp_lines[ki].trim().length == 0) { add_row = true; }
 				else {
 					middle += textarea_tabs + 'result += \"<br/>' + (add_row ? '<br/>' : "") + fp_lines[ki].replaceAll('\"','\\\"') + '";';
@@ -481,7 +455,21 @@ cdr_parse = function (input = null, to_array = false, result_arr = {'faa_pref' :
 			textarea_tabs + 'result += \"<!-- Verified with ATCSCC on ' + today_str + ' -->\";' +
 			cdr_str + textarea_tabs + 'break;</textarea><br/><br/>';
 		output += textarea_tabs + bottom;
-		bottom = '<br/><br/><textarea rows="10" cols="80">' + bottom + '</textarea>';
+
+		// Match current CDRs against existing ones
+		var tmp_existing_cdrs = textarea_tabs + fp_lines.slice(fpl_cdr_start_index).join(textarea_tabs);
+		var tmp_newcdr_test = cdr_str.replaceAll('result += "<br/>','').replaceAll('\\\"','"').replaceAll('";','');
+		bottom = '<br/><b style="color:' + 
+			((tmp_existing_cdrs.localeCompare(tmp_newcdr_test) == 0) ? 'green">CDRs Match</b>' : 'red">CDRs DONT Match</b><br/>') +
+			'<br/><textarea rows="10" cols="80">' + bottom + '</textarea><br/>';
+
+/*
+FOR TESTING
+
+		bottom += '<br/><textarea rows="10" cols="80">' + tmp_existing_cdrs + '</textarea>' +
+			'<br/><textarea rows="10" cols="80">' + tmp_newcdr_test + '</textarea><br/><br/>';
+*/
+
 	}
 	// output += new_cdr_str + '<br/><br/><button onclick=\"clear_input(0)\">Clear</button>';
 	if (debug_mode) {
@@ -490,8 +478,20 @@ cdr_parse = function (input = null, to_array = false, result_arr = {'faa_pref' :
 	if (to_array) { return result_arr; }
 	'<b style=\'color:red\'>' + faa_result['errors'] + '<\/b>' +
 				'<span style=\'color:orange\'>' + faa_result['warnings']  + '<\/span><br/><br/>';
-	return '<textarea rows="8" cols="80">' + fp_comment + '</textarea><br/><br/>' +
-		header + middle + bot_mid + bottom + "<hr>" + output + new_cdr_str;
+	/*
+	header = case xxx: // xxx-yyy // updated 123456
+	middle = Everything together
+	bot_mid = Playbooks
+	bottom = CDRs
+	fp_comment = CDRs formatted for copy-pasting directly into fp comment section
+	*/
+	return header + 
+		//middle + 
+		 bot_mid + bottom +
+		'<textarea rows="8" cols="80">' + fp_comment + '</textarea>' +
+		'<hr>' +
+		// output +
+		new_cdr_str;
 }
 
 function merge_faa_pref (result_arr = {}) {
@@ -1688,6 +1688,30 @@ All NY Metros are radar vectors to a fix per their AIP
 	result = result.replaceAll("CYYZ NUGOP", ""); // TODO
 	result = result.replaceAll("CYYZ TULEK", ""); // TODO
 */
+	return result;
+}
+
+shorten_cdr_names = function(result = "") {
+	result = result.replace("DOMESTIC HARP", "DOM HARP");
+	result = result.replace("OHIO VALLEY", "OHIO VLY");
+	result = result.replace("DQO TUNNEL", "DQO TNL");
+	result = result.replace("TO FLORIDA", "TO FL");
+	result = result.replace("FLORIDA TO", "FL TO");
+		
+	result = result.replace(" SOUTHWEST", " SW");
+	result = result.replace(" NORTHWEST", " NW");
+	result = result.replace(" SOUTHEAST", " SE");
+	result = result.replace(" NORTHEAST", " NE");
+
+	result = result.replace(" SOUTH WEST", " SW");
+	result = result.replace(" NORTH WEST", " NW");
+	result = result.replace(" SOUTH EAST", " SE");
+	result = result.replace(" NORTH EAST", " NE");
+		
+	result = result.replace(" NORTH FLOW", " N");
+	result = result.replace(" SOUTH FLOW", " S");
+	result = result.replace(" NORTH", " N");
+	result = result.replace(" SOUTH", " S");
 	return result;
 }
 
