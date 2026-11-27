@@ -90,6 +90,19 @@ phx_departures = function (arvl = "XXX", tail = null, ac_type = null, result = "
 			result += "<br/>ST<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX STRRM1 TUS J2 ELP J50 ABI J42 TXK Q34 MEMFS CHSNE3 KBNA\" readonly>";
 			result += "<br/>TM<span style=\"color:red\"> (Coord Req)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX PXR J65 TMACK ONM CNX J74 IRW J78 TUL LOPPY CHSNE3 KBNA\" readonly>";
 			break;
+		case "BOI": // PHX-BOI // Updated 11-27-2026
+			result += "<!-- Updated 11-27-2026 P -->";
+			result += "<br/><br/><b>Faa Pref Route:</b>";
+			result += "<br/><input style=\"width:75%\" value=\"KPHX QUAKY1 GCN WINEN Q73 BROPH SPUUD4 KBOI\" readonly>";
+			result += "<br/><br/>East<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX MRBIL1 YOOPR DVC JNC J15 TWF BROPH SPUUD4 KBOI\" readonly>";
+			result += "<br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX QUAKY1 GCN WINEN Q35 NEERO SADYL4 KBOI\" readonly>";
+			result += "<br/><br/>West via RNO<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BTY J92 FMG J7 REO KBOI\" readonly>"; // Based on CDR ZE
+			result += "<br/><br/><b>CDRS</b>"; // Verified with ATCSCC on 11-27-2026
+			result += "<!-- Verified with ATCSCC on 11-27-2026 -->";
+			result += "<br/>KE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX KEENS3 WLVRN PKE BLD MLF TCH KBOI\" readonly>";
+			result += "<br/>MR<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX MRBIL1 GCN BCE J11 TCH BROPH SPUUD4 KBOI\" readonly>";
+			result += "<br/>ZE<span style=\"color:green\"> (Ok to File)</span>: <input class=\"cdr_input\" style=\"width:75%\" value=\"KPHX ZEPER2 RRSTA DOVEE BTY J92 FMG J7 BOI KBOI\" readonly>";
+			break;
 		case "BOS": // PHX-BOS // Updated 02-28-2026
 			result += "<!-- Updated 02-28-2026 P -->";
 			result += "<br/><br/><b>Faa Pref Route:</b>";
