@@ -1293,33 +1293,36 @@ KBHM RHETT BNA CREEP BLISS J152 JST BOJID2 KPHL
 
 		case "BOI":
 			switch(arvl) {
-				case "DFW": // BOI-DFW // Updated 07-22-2026
-					result += "<!-- Updated 07-22-2026 P -->";
+				case "DFW": // BOI-DFW // Updated 11-27-2026
+					result += "<!-- Updated 11-27-2026 P -->";
 					// result += "<br/><br/><b>Faa Pref Route:</b>"; // No FAA Pref route as of 07-22-2026
 					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBOI ROARR BYI Q154 KENTO EZEEE MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI3 BOI J163 OCS J52 HGO EZEEE MDANO VKTRY2 KDFW\" readonly>";
+					result += "<br/><b>As of 2026-11-27 optimize will pick PNH-MDANO but it usually gets rerouted .. EZEEE MDANO VKTRY<\/b>";
+					result += "<br/><br/>North<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI J163 OCS J52 HGO EZEEE MDANO VKTRY2 KDFW\" readonly>";
 					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BROPH Q73 CRITO MLF J58 PNH MDANO VKTRY2 KDFW\" readonly>";
-					result += "<br/><br/>NE Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI3 BOI J54 CKW CYS LEWOY Q148 BVO HITUG SEEVR4 KDFW\" readonly>";
+					result += "<br/><br/>NE Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI J54 CKW CYS LEWOY Q148 BVO HITUG SEEVR4 KDFW\" readonly>";
 					result += "<br/>SW Arvl<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BROPH Q73 CRITO MLF J58 RSK J15 CME BGS GEEKY BOOVE7 KDFW\" readonly>";
 					// result += "<br/><br/><b>Non RNAV</b>";
 					// result += "<br/><input style=\"width:75%\" value=\"KBOI BOI3 BOI J54 PIH J20 LAA J168 SPS KDFW\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-22-2026
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-27-2026
 					break;
-				case "ORD": // BOI-ORD // Updated 10-31-2025
-					// result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><br/>NRP: <input style=\"width:75%\" value=\"KBOI BOI3 BOI DBS J82 FSD J16 MCW ZZIPR FYTTE7 KORD\" readonly>";
-					result += "<br/><br/>North/ZDV Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI3 BOI J7 LKT HIA J16 DPR J34 RWF HSTIN Q156 ZZIPR FYTTE7 KORD\" readonly>";
-					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI3 BOI BYI Q154 BONGO DBL BRK HGO J24 SLN J96 IRK SHAIN2 KORD\" readonly>";
-					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 10-31-2025
-					break;
-				case "PHX": // BOI-PHX // Updated 07-11-2025
+				case "ORD": // BOI-ORD // Updated 11-27-2026
+					result += "<!-- Updated 11-27-2026 P -->";
 					result += "<br/><br/><b>Faa Pref Route:</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBOI BOI3 BOI ROARR LYONS CRITO WINEN Q35 CORKR TENTS BRUSR1 KPHX\" readonly>";
+					result += "<br/><input style=\"width:75%\" value=\"KBOI FETHR DBS J82 FSD ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/><br/>North/ZDV Avoid<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BOI J7 LKT BIL J16 DPR UFFDA Q156 HSTIN ZZIPR FYTTE7 KORD\" readonly>";
+					result += "<br/>South<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI BROPH TWF J15 TCH J173 EKR J116 FQF J80 CATTS AGENT J96 IRK SHAIN2 KORD\" readonly>";
+					// result += "<br/><br/><b>Non RNAV</b>"; // TODDO
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-27-2026
+					break;
+				case "PHX": // BOI-PHX // Updated 11-27-2026
+					result += "<!-- Updated 11-27-2026 P -->";
+					result += "<br/><br/><b>Faa Pref Route:</b>";
+					result += "<br/><input style=\"width:75%\" value=\"KBOI ROARR BROPH Q73 WINEN Q35 CORKR TENTS BRUSR1 KPHX\" readonly>";
 					result += "<br/><br/>West<span style=\"color:green\"> (Ok to File)</span>: <input style=\"width:75%\" value=\"KBOI GOWEN4 FIMGU HYVAL REO J7 FMG J92 BLD PRFUM WOTRO BRUSR1 KPHX\" readonly>";
-					result += "<br/><br/><b>Non RNAV</b>";
-					result += "<br/><input style=\"width:75%\" value=\"KBOI BOI3 BOI J15 TCH J11 DRK COYOT5 KPHX\" readonly>";
-					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 07-11-2025
+					// result += "<br/><br/><b>Non RNAV</b>";
+					// result += "<br/><input style=\"width:75%\" value=\"KBOI BOI3 BOI J15 TCH J11 DRK COYOT5 KPHX\" readonly>";
+					// result += "<br/><br/><b>CDRS</b>"; // No CDRs as of 11-27-2026
 					break;
 			}
 		break; // End of BOI
